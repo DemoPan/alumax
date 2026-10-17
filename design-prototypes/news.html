@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <title>ALUMAX | News, Global Exhibitions &amp; Media Center</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#000000",
+            "surface-dim": "#d8dadc",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e0e3e5",
+            "inverse-on-surface": "#eff1f3",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#b2c8e8",
+            "inverse-surface": "#2d3133",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#6f85a3",
+            "secondary-fixed": "#ffddb5",
+            "secondary": "#7b5825",
+            "on-primary-fixed": "#0f1c2c",
+            "on-secondary-fixed": "#2a1800",
+            "on-secondary-container": "#7a5724",
+            "primary-fixed": "#d6e4f9",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#324863",
+            "on-primary-fixed-variant": "#3a4859",
+            "surface-container-highest": "#e0e3e5",
+            "on-tertiary-fixed": "#021d35",
+            "background": "#f8f9fb",
+            "secondary-fixed-dim": "#edbe82",
+            "surface-container-low": "#f2f4f6",
+            "outline-variant": "#c4c6cc",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eceef0",
+            "surface-container-high": "#e6e8ea",
+            "surface-tint": "#525f71",
+            "secondary-container": "#ffcf92",
+            "on-primary-container": "#778598",
+            "primary-container": "#0d1b2a",
+            "on-secondary-fixed-variant": "#60400f",
+            "surface-bright": "#f8f9fb",
+            "outline": "#74777d",
+            "tertiary-container": "#021d35",
+            "tertiary-fixed": "#d2e4ff",
+            "primary-fixed-dim": "#bac8dc",
+            "tertiary": "#000000",
+            "on-surface-variant": "#44474c",
+            "on-background": "#191c1e",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-surface": "#191c1e",
+            "inverse-primary": "#bac8dc",
+            "surface": "#f8f9fb"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "margin": "3rem"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "display": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["JetBrains Mono"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-secondary selection:text-white">
+  <!-- ========================================================================= -->
+  <!-- 1. PERSISTENT GLOBAL NAVIGATION BAR (HEADER)                             -->
+  <!-- ========================================================================= -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-[#0d1b2a] shadow-[0_1px_8px_rgba(0,0,0,0.12)] border-b border-white/10">
+    <div class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between">
+      <!-- ALUMAX Geometric Gold Logo & Accreditation -->
+      <div class="flex items-center gap-space-lg">
+        <a class="flex items-center gap-3 group" data-path="home" href="#">
+          <div class="w-9 h-9 border border-[#b88e56] bg-[#0d1b2a] flex items-center justify-center relative">
+            <div
+              class="w-4 h-4 border border-[#b88e56] rotate-45 transition-transform duration-300 group-hover:rotate-90">
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-headline text-[20px] leading-7 text-[#ffffff] tracking-wider font-bold">ALUMAX</span>
+            <span class="font-label text-[11px] leading-[14px] text-[#c4c6cc] tracking-widest uppercase">Architectural
+              Facades</span>
+          </div>
+        </a>
+        <div class="hidden xl:block h-6 w-[1px] bg-[#324863]"></div>
+        <div class="hidden xl:flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#edbe82]"></span>
+          <span class="font-label text-[11px] text-[#c4c6cc] uppercase tracking-wider">ISO 9001 · EN13501 · ASTM</span>
+        </div>
+      </div>
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-space-lg">
+        <a class="font-label text-[12px] uppercase tracking-wider text-[#c4c6cc] hover:text-[#ffffff] transition-colors py-1"
+          data-path="home" href="#">HOME</a>
+        <a class="font-label text-[12px] uppercase tracking-wider text-[#c4c6cc] hover:text-[#ffffff] transition-colors py-1"
+          data-path="products" href="#">PRODUCTS</a>
+        <a class="font-label text-[12px] uppercase tracking-wider text-[#c4c6cc] hover:text-[#ffffff] transition-colors py-1"
+          data-path="projects" href="#">PROJECTS</a>
+        <a class="font-label text-[12px] uppercase tracking-wider text-[#c4c6cc] hover:text-[#ffffff] transition-colors py-1"
+          data-path="engineering" href="#">ENGINEERING</a>
+        <a class="font-label text-[12px] uppercase tracking-wider text-[#c4c6cc] hover:text-[#ffffff] transition-colors py-1"
+          data-path="about-us" href="#">ABOUT US</a>
+        <a aria-current="page"
+          class="font-label text-[12px] uppercase tracking-wider transition-colors py-1 text-[#ffddb5] font-semibold border-b-2 border-[#ffddb5]"
+          data-path="news" href="#">NEWS</a>
+        <a class="font-label text-[12px] uppercase tracking-wider text-[#c4c6cc] hover:text-[#ffffff] transition-colors py-1"
+          data-path="contact" href="#">CONTACT</a>
+      </nav>
+      <!-- Language Dropdown & CTAs -->
+      <div class="flex items-center gap-space-md">
+        <!-- Language Selector Dropdown -->
+        <div class="relative group py-2">
+          <button
+            class="relative flex items-center gap-1.5 px-3 py-1.5 border border-[#324863] bg-[#021d35] text-[#ffffff] cursor-pointer hover:border-[#b88e56] transition-colors font-label text-[11px]"
+            type="button">
+            <span class="material-symbols-outlined text-[16px] text-[#edbe82]">public</span>
+            <span class="tracking-wider font-semibold uppercase">EN</span>
+            <span
+              class="material-symbols-outlined text-[14px] text-[#c4c6cc] group-hover:rotate-180 transition-transform">expand_more</span>
+          </button>
+          <div
+            class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute right-0 top-full mt-1 w-40 bg-[#0d1b2a] border border-[#324863] shadow-2xl p-1.5 z-50 text-left">
+            <a class="flex items-center justify-between px-3 py-2 text-secondary-fixed bg-white/10 font-label text-[11px] font-semibold"
+              href="#">
+              <span>English (EN)</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            </a>
+            <a class="flex items-center px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-label text-[11px]"
+              href="#">
+              <span>Español (ES)</span>
+            </a>
+            <a class="flex items-center px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-label text-[11px]"
+              href="#">
+              <span>Français (FR)</span>
+            </a>
+            <a class="flex items-center px-3 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition-colors font-label text-[11px]"
+              href="#">
+              <span>العربية (AR)</span>
+            </a>
+          </div>
+        </div>
+        <a class="inline-flex items-center justify-center h-10 px-5 bg-[#b88e56] text-[#0f1c2c] font-label text-[12px] font-semibold tracking-wider uppercase hover:bg-[#edbe82] transition-colors"
+          data-path="sample-box" href="#">
+          <span class="material-symbols-outlined text-[18px] mr-2">inventory_2</span>SAMPLE BOX
+        </a>
+        <div class="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white border border-white/20">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ========================================================================= -->
+  <!-- MAIN CONTENT CONTAINER                                                   -->
+  <!-- ========================================================================= -->
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+    <!-- ======================================================================= -->
+    <!-- 2. HERO SECTION - FULL-SCREEN HIGH-IMPACT CAROUSEL / SLIDER             -->
+    <!-- ======================================================================= -->
+    <section class="relative w-full h-[620px] bg-[#0d1b2a] text-white overflow-hidden select-none" id="hero-carousel">
+      <!-- Radial grid background pattern -->
+      <div
+        class="absolute inset-0 opacity-10 bg-[radial-gradient(#edbe82_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none z-10">
+      </div>
+      <!-- Slide Items Wrapper -->
+      <div class="relative w-full h-full" id="slides-wrapper">
+        <!-- Slide 1: Dubai Big 5 Flagship Exhibition -->
+        <div
+          class="carousel-slide active absolute inset-0 opacity-100 transition-opacity duration-700 ease-in-out z-20 flex flex-col justify-between"
+          data-slide-index="0">
+          <div class="absolute inset-0 z-0">
+            <img alt="The Big 5 Dubai 2025 ALUMAX Exhibition Pavilion" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7p_99scQ9WUqoT-ZE4HSj_yxMCN1qJ__EYxDmEVQYVltiNWtJ7rwJ8fYGR9ogtTc-dMfHNvzRMTBJ50kL4hwH_MsxyXkQA9igNdU78vpFeJ4X8tTv1u4nV5n9__w3MJppyMSTHHccwil1A-jNDxILd1_GPvUDNzUQiz712EKiToK4ZrEgkrVD_XpfDhNc9psZSDc_1migt5_GUV-99LNq0J8ME7Ba9cnU_D6foUn0QbM3YRccuofM" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-[#0d1b2a]/75 to-[#0d1b2a]/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/80 to-transparent"></div>
+          </div>
+          <!-- Slide Top Telemetry -->
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin pt-8">
+            <div
+              class="flex flex-wrap items-center justify-between gap-4 font-label text-[11px] pb-4 border-b border-white/10 text-[#c4c6cc]">
+              <div class="flex items-center gap-3">
+                <span
+                  class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+                <span class="text-secondary-fixed uppercase tracking-widest font-semibold">ALUMAX Dispatch // World
+                  Trade Centre Dubai</span>
+                <span class="text-[#324863]">|</span>
+                <span class="text-slate-300">Stand Z2-H38 · Live Solar Tracking Demo</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-4 text-slate-400">
+                <span>COVERAGE: FLAGSHIP SHOWCASE</span>
+                <span>•</span>
+                <span>STATUS: LIVE EVENT</span>
+              </div>
+            </div>
+          </div>
+          <!-- Slide Content Center -->
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin my-auto pb-4">
+            <div class="max-w-3xl space-y-4">
+              <div class="flex items-center gap-2.5">
+                <span
+                  class="px-3 py-1 bg-secondary text-white font-label text-[11px] font-semibold uppercase tracking-wider">
+                  Global Exhibition
+                </span>
+                <span
+                  class="px-2.5 py-1 bg-white/10 text-secondary-fixed backdrop-blur-md font-label text-[11px] uppercase tracking-wider">
+                  Nov 24, 2024 · 5 Min Read
+                </span>
+              </div>
+              <h1
+                class="font-headline text-[32px] sm:text-[44px] lg:text-[48px] font-bold text-white tracking-tight leading-tight">
+                ALUMAX Showcases Next-Gen Dynamic Solar Louvers and Ultra-Flat Solid Cladding at The Big 5 Dubai 2025
+              </h1>
+              <p class="font-body text-[15px] sm:text-[17px] text-slate-300 leading-relaxed max-w-2xl">
+                Unveiled in Hall 2, ALUMAX's motorized solar blade arrays demonstrated autonomous solar tracking
+                synchronized directly with BACnet &amp; KNX Building Management Systems under simulated high-temperature
+                desert conditions.
+              </p>
+              <div class="pt-3 flex flex-wrap items-center gap-4">
+                <button
+                  class="inline-flex items-center justify-center gap-2 h-12 px-7 bg-[#b88e56] hover:bg-[#edbe82] text-[#0f1c2c] font-headline text-[14px] uppercase tracking-wider font-semibold transition-colors">
+                  <span>View Details</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+                <div
+                  class="hidden md:flex items-center gap-2 px-4 py-2.5 bg-[#021d35]/80 border border-[#324863] text-slate-300 font-label text-[12px]">
+                  <span class="material-symbols-outlined text-[16px] text-secondary-fixed">pin_drop</span>
+                  <span>Dubai World Trade Centre · Stand Z2-H38</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Spacer for bottom progress bar -->
+          <div class="h-16"></div>
+        </div>
+        <!-- Slide 2: KAFD Tower 3 Project Milestone -->
+        <div
+          class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out z-10 flex flex-col justify-between"
+          data-slide-index="1">
+          <div class="absolute inset-0 z-0">
+            <img alt="KAFD Tower 3 Riyadh Kinetic Louvers Installation" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKAOkBKrv6a2PFgXpQ1vnS8GEWLQixnUu8eLhG5dJV8FnRmKIHvP-6MonzL8nXwBm1SSeWUeLOPVGvaLBlJ2Y_LApkt-0X2WlPMIKukpBbrlX6neR94y8rZqqWHhGFILudwNzu6UHlRfaFfqiy96c1y6BVraP1211LTE1EWbT7t9m0rJOlX6IOoA0d6FRNT4vMrThBbABfBZEzmN73RGxplrvmnq5yBSwoWQPXeyL4sjLtDFgwiTJ1" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-[#0d1b2a]/75 to-[#0d1b2a]/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/80 to-transparent"></div>
+          </div>
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin pt-8">
+            <div
+              class="flex flex-wrap items-center justify-between gap-4 font-label text-[11px] pb-4 border-b border-white/10 text-[#c4c6cc]">
+              <div class="flex items-center gap-3">
+                <span
+                  class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+                <span class="text-secondary-fixed uppercase tracking-widest font-semibold">Landmark Milestone // Riyadh,
+                  Saudi Arabia</span>
+                <span class="text-[#324863]">|</span>
+                <span class="text-slate-300">Envelope Scope: 14,200 m² Facade Fins</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-4 text-slate-400">
+                <span>CASE STUDY: CS-204</span>
+                <span>•</span>
+                <span>STATUS: COMPLETED</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin my-auto pb-4">
+            <div class="max-w-3xl space-y-4">
+              <div class="flex items-center gap-2.5">
+                <span
+                  class="px-3 py-1 bg-secondary text-white font-label text-[11px] font-semibold uppercase tracking-wider">
+                  Landmark Milestone
+                </span>
+                <span
+                  class="px-2.5 py-1 bg-white/10 text-secondary-fixed backdrop-blur-md font-label text-[11px] uppercase tracking-wider">
+                  Oct 18, 2024 · 4 Min Read
+                </span>
+              </div>
+              <h1
+                class="font-headline text-[32px] sm:text-[44px] lg:text-[48px] font-bold text-white tracking-tight leading-tight">
+                KAFD Tower 3 in Riyadh Completes Installation of 14,200m² Custom Anodized Aluminum Façade Panels
+              </h1>
+              <p class="font-body text-[15px] sm:text-[17px] text-slate-300 leading-relaxed max-w-2xl">
+                Engineered for extreme desert diurnal thermal cycles, the high-tensile alloy fins feature autonomous
+                astronomical clock positioning to slash peak solar heat gains by 38% across the building perimeter.
+              </p>
+              <div class="pt-3 flex flex-wrap items-center gap-4">
+                <button
+                  class="inline-flex items-center justify-center gap-2 h-12 px-7 bg-[#b88e56] hover:bg-[#edbe82] text-[#0f1c2c] font-headline text-[14px] uppercase tracking-wider font-semibold transition-colors">
+                  <span>View Details</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+                <div
+                  class="hidden md:flex items-center gap-2 px-4 py-2.5 bg-[#021d35]/80 border border-[#324863] text-slate-300 font-label text-[12px]">
+                  <span class="material-symbols-outlined text-[16px] text-secondary-fixed">domain</span>
+                  <span>King Abdullah Financial District · Tower 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-16"></div>
+        </div>
+        <!-- Slide 3: Rotterdam Logistics Expansion -->
+        <div
+          class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out z-10 flex flex-col justify-between"
+          data-slide-index="2">
+          <div class="absolute inset-0 z-0">
+            <img alt="Rotterdam Logistics Port &amp; CNC Technical Hub" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyqEWVwyBPFRoN408trk_8DisWjnwgXpqAAmhQGI6Erj0BWWNlz4w8vv-c1iYQML84oD20H8H_O1TegCu3I5L_BxHF4twhDGp5q0_Dv1A7UxuRIRcGAuz0jZJgHHsyyPg92ElDdEc6Pmp3ChuXWl6Vjk2yHZMSUuoN4UNuwbQMaix3D4R1D7aWPboT5gJy6QG761L2Ety2MGtrj-UGopfwD2P30vz6ogk95jn2EKZrthi2EWdDEUVH" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-[#0d1b2a]/75 to-[#0d1b2a]/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/80 to-transparent"></div>
+          </div>
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin pt-8">
+            <div
+              class="flex flex-wrap items-center justify-between gap-4 font-label text-[11px] pb-4 border-b border-white/10 text-[#c4c6cc]">
+              <div class="flex items-center gap-3">
+                <span
+                  class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+                <span class="text-secondary-fixed uppercase tracking-widest font-semibold">European Logistics //
+                  Rotterdam Port, NL</span>
+                <span class="text-[#324863]">|</span>
+                <span class="text-slate-300">6,000 m² Buffered Architectural Inventory</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-4 text-slate-400">
+                <span>FACILITY: LIVE DISPATCH</span>
+                <span>•</span>
+                <span>DISTRIBUTION: NORTH &amp; WEST EUROPE</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin my-auto pb-4">
+            <div class="max-w-3xl space-y-4">
+              <div class="flex items-center gap-2.5">
+                <span
+                  class="px-3 py-1 bg-secondary text-white font-label text-[11px] font-semibold uppercase tracking-wider">
+                  Global Expansion
+                </span>
+                <span
+                  class="px-2.5 py-1 bg-white/10 text-secondary-fixed backdrop-blur-md font-label text-[11px] uppercase tracking-wider">
+                  Jun 10, 2024 · 4 Min Read
+                </span>
+              </div>
+              <h1
+                class="font-headline text-[32px] sm:text-[44px] lg:text-[48px] font-bold text-white tracking-tight leading-tight">
+                Expanding European Distribution: ALUMAX Opens New Logistics &amp; Rapid CNC Hub in Rotterdam
+              </h1>
+              <p class="font-body text-[15px] sm:text-[17px] text-slate-300 leading-relaxed max-w-2xl">
+                Equipped with rapid-milling CNC sample fabrication and buffered architectural coils, slashing lead times
+                for North European commercial building envelope tenders and sample mock-ups.
+              </p>
+              <div class="pt-3 flex flex-wrap items-center gap-4">
+                <button
+                  class="inline-flex items-center justify-center gap-2 h-12 px-7 bg-[#b88e56] hover:bg-[#edbe82] text-[#0f1c2c] font-headline text-[14px] uppercase tracking-wider font-semibold transition-colors">
+                  <span>View Details</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+                <div
+                  class="hidden md:flex items-center gap-2 px-4 py-2.5 bg-[#021d35]/80 border border-[#324863] text-slate-300 font-label text-[12px]">
+                  <span class="material-symbols-outlined text-[16px] text-secondary-fixed">local_shipping</span>
+                  <span>Port of Rotterdam · Hub Terminal 2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-16"></div>
+        </div>
+      </div>
+      <!-- Carousel Navigation & Indicators Bottom Bar -->
+      <div class="absolute bottom-0 left-0 right-0 z-40 bg-[#0a1520]/80 backdrop-blur-md border-t border-white/10 py-3">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-4">
+          <!-- Slide Switcher Tabs -->
+          <div class="flex items-center gap-2 sm:gap-4 overflow-x-auto" id="carousel-tab-nav">
+            <button
+              class="carousel-tab-btn active px-3 py-1.5 flex items-center gap-2 text-left border-b-2 border-secondary font-label text-[12px] text-secondary-fixed"
+              data-target="0">
+              <span class="font-bold">01</span>
+              <span class="hidden sm:inline font-medium uppercase truncate max-w-[200px]">The Big 5 Dubai 2025</span>
+            </button>
+            <button
+              class="carousel-tab-btn px-3 py-1.5 flex items-center gap-2 text-left border-b-2 border-transparent font-label text-[12px] text-slate-400 hover:text-white"
+              data-target="1">
+              <span class="font-bold">02</span>
+              <span class="hidden sm:inline font-medium uppercase truncate max-w-[200px]">KAFD Tower 3 Riyadh</span>
+            </button>
+            <button
+              class="carousel-tab-btn px-3 py-1.5 flex items-center gap-2 text-left border-b-2 border-transparent font-label text-[12px] text-slate-400 hover:text-white"
+              data-target="2">
+              <span class="font-bold">03</span>
+              <span class="hidden sm:inline font-medium uppercase truncate max-w-[200px]">Rotterdam Logistics Hub</span>
+            </button>
+          </div>
+          <!-- Slide Controls Prev/Next -->
+          <div class="flex items-center gap-2">
+            <button aria-label="Previous Slide"
+              class="w-9 h-9 border border-[#324863] bg-[#021d35] hover:bg-[#b88e56] hover:text-[#0f1c2c] text-white flex items-center justify-center transition-colors"
+              id="carousel-prev-btn">
+              <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+            </button>
+            <span class="font-label text-[11px] text-[#c4c6cc] px-1" id="carousel-counter">01 / 03</span>
+            <button aria-label="Next Slide"
+              class="w-9 h-9 border border-[#324863] bg-[#021d35] hover:bg-[#b88e56] hover:text-[#0f1c2c] text-white flex items-center justify-center transition-colors"
+              id="carousel-next-btn">
+              <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================================= -->
+    <!-- 3. NEWS ARTICLES DISPLAY SECTION WITH TOP CONTROL TOOLBAR & VIEW TOGGLE -->
+    <!-- ======================================================================= -->
+    <section class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin py-16">
+      <!-- Top Control Toolbar -->
+      <div class="space-y-6 pb-8 border-b border-surface-container-high mb-10">
+        <!-- Header Title & Telemetry -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 font-label text-[11px] text-secondary uppercase tracking-widest mb-1">
+              <span>02 / Editorial Archive</span>
+              <span>•</span>
+              <span>Total 28 Releases</span>
+            </div>
+            <h2 class="font-headline text-[28px] sm:text-[34px] font-bold text-on-surface tracking-tight">
+              Curated Architectural Dispatches
+            </h2>
+          </div>
+          <!-- View Switcher (Card View vs List View) & Search -->
+          <div class="flex flex-wrap items-center gap-3">
+            <!-- Search Input -->
+            <div class="relative w-full sm:w-64">
+              <input
+                class="w-full h-10 pl-9 pr-3 bg-surface-container-lowest border border-outline-variant text-body text-[13px] text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary"
+                placeholder="Search news or alloy..." type="text" />
+              <span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-outline">search</span>
+            </div>
+            <!-- Year Filter -->
+            <select
+              class="h-10 pl-3 pr-8 bg-surface-container-lowest border border-outline-variant font-label text-[12px] text-on-surface focus:outline-none focus:border-secondary">
+              <option>All Years</option>
+              <option selected="">2025</option>
+              <option>2024</option>
+              <option>2023</option>
+            </select>
+            <!-- VIEW TOGGLE BUTTONS (CRITICAL REQUIREMENT) -->
+            <div class="flex items-center bg-surface-container-high p-1 border border-outline-variant/60">
+              <button
+                class="view-toggle-btn active flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest text-on-surface shadow-sm font-label text-[12px] font-semibold transition-all"
+                id="btn-card-view" title="Switch to Card View">
+                <span class="material-symbols-outlined text-[16px] text-secondary">grid_view</span>
+                <span class="hidden sm:inline">Card View</span>
+              </button>
+              <button
+                class="view-toggle-btn flex items-center gap-1.5 px-3 py-1.5 text-on-surface-variant hover:text-on-surface font-label text-[12px] transition-all"
+                id="btn-list-view" title="Switch to List View">
+                <span class="material-symbols-outlined text-[16px]">view_list</span>
+                <span class="hidden sm:inline">List View</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap items-center gap-2 overflow-x-auto" id="filter-container">
+          <button
+            class="filter-tab active px-4 py-2 bg-primary text-white font-label text-[12px] uppercase tracking-wider font-semibold shadow-sm transition-colors"
+            data-cat="all">
+            All News (28)
+          </button>
+          <button
+            class="filter-tab px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label text-[12px] uppercase tracking-wider transition-colors"
+            data-cat="events">
+            Exhibitions &amp; Events
+          </button>
+          <button
+            class="filter-tab px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label text-[12px] uppercase tracking-wider transition-colors"
+            data-cat="projects">
+            Project Milestones
+          </button>
+          <button
+            class="filter-tab px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label text-[12px] uppercase tracking-wider transition-colors"
+            data-cat="testing">
+            Corporate &amp; Testing
+          </button>
+          <button
+            class="filter-tab px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label text-[12px] uppercase tracking-wider transition-colors"
+            data-cat="rd">
+            Materials R&amp;D
+          </button>
+          <button
+            class="filter-tab px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label text-[12px] uppercase tracking-wider transition-colors"
+            data-cat="press">
+            Press Releases
+          </button>
+        </div>
+      </div>
+      <!-- ===================================================================== -->
+      <!-- VIEW MODE A: CARD VIEW (GRID VIEW - 3 COLUMNS)                        -->
+      <!-- ===================================================================== -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="news-card-view-container">
+        <!-- Card 1 -->
+        <article
+          class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+          data-category="projects">
+          <div class="relative h-60 overflow-hidden bg-primary-container">
+            <img alt="KAFD Tower 3 in Riyadh"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKAOkBKrv6a2PFgXpQ1vnS8GEWLQixnUu8eLhG5dJV8FnRmKIHvP-6MonzL8nXwBm1SSeWUeLOPVGvaLBlJ2Y_LApkt-0X2WlPMIKukpBbrlX6neR94y8rZqqWHhGFILudwNzu6UHlRfaFfqiy96c1y6BVraP1211LTE1EWbT7t9m0rJOlX6IOoA0d6FRNT4vMrThBbABfBZEzmN73RGxplrvmnq5yBSwoWQPXeyL4sjLtDFgwiTJ1" />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-2.5 py-1 bg-surface-container-lowest/95 backdrop-blur text-on-surface font-label text-[11px] uppercase tracking-wider font-semibold">
+                Project Milestones
+              </span>
+            </div>
+            <div
+              class="absolute bottom-3 right-3 px-2 py-0.5 bg-primary-container/85 text-surface-bright font-label text-[11px]">
+              Riyadh, KSA
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center gap-3 font-label text-[12px] text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span> Oct 18,
+                  2024</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] leading-snug text-on-surface font-semibold mb-3 group-hover:text-secondary transition-colors line-clamp-2">
+                KAFD Tower 3 in Riyadh Completes Installation of 14,200 m² ALUMAX Kinetic Louvers
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+                Engineered for extreme desert diurnal cycling, the installation features custom gold anodized extruded
+                fins with autonomous astronomical clock positioning to slash peak solar gains.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+              <span class="font-label text-[11px] text-on-surface-variant uppercase font-medium">Case Study //
+                CS-204</span>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0d1b2a] hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold transition-colors">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article
+          class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+          data-category="testing">
+          <div class="relative h-60 overflow-hidden bg-primary-container">
+            <img alt="Laboratory structural testing chamber for curtain wall facade panels"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPnUTdmexzXLWcxNxHeXcChL-rlZmRykGEBQfBKmGfyWAGD-T_GiB_avb6LdwXK9XN-lzUVTvsGT0C2F39LsIiJyhlWHoEb6BfTGgkC6mmnRPvqkhbeKCK_PVMoTjDOr-BC0B7SRhg8sWbBdotSesMR0bbx_XX6oCuF4UnXFum3Ml7BKYqbYAPQEQI_KJFZrS8mS8RKnrnY5sTBHUWXrveXwxwMb3dzf2o0ygsEvMMsXCtWhntorHA" />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-2.5 py-1 bg-surface-container-lowest/95 backdrop-blur text-on-surface font-label text-[11px] uppercase tracking-wider font-semibold">
+                Corporate &amp; Testing
+              </span>
+            </div>
+            <div
+              class="absolute bottom-3 right-3 px-2 py-0.5 bg-primary-container/85 text-surface-bright font-label text-[11px]">
+              CWCT / ASTM Tested
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center gap-3 font-label text-[12px] text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span> Sep 29,
+                  2024</span>
+                <span>•</span>
+                <span>6 min read</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] leading-snug text-on-surface font-semibold mb-3 group-hover:text-secondary transition-colors line-clamp-2">
+                ALUMAX Awarded CWCT &amp; ASTM E330 AAMA Rigorous Dynamic Performance Certification
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+                Comprehensive laboratory evaluations verified zero air leakage under 600Pa static pressures and flawless
+                water tightness under 1000Pa dynamic pulse tests.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+              <span class="font-label text-[11px] text-on-surface-variant uppercase font-medium">Test Dossier
+                Available</span>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0d1b2a] hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold transition-colors">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article
+          class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+          data-category="events">
+          <div class="relative h-60 overflow-hidden bg-primary-container">
+            <img alt="Architectural pavilion render with European timber and aluminum facade"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj8VOGHU4VC4SWFqyP9wwOxPt0wE4rpE0THlqQZ7bHiO1GGJ_fuTsSicPO0nVszuz2r3hQ5wEXaawte_af2x-NFMRsaNjO5N-XGYTSzOY5difyHT2AOiuLFJgeVhsfwCGhx3VfRK3Ua4bZEvKkBZccMZkdRqAAmVUO0qdqy7kzS7ET7L4FSDJ1z0R801BMdpAJ0L1BviME7eD1h5soCdzFpfwjEL1F2xr6jUVMgrGD5D9b0oL-gFUD" />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-2.5 py-1 bg-surface-container-lowest/95 backdrop-blur text-on-surface font-label text-[11px] uppercase tracking-wider font-semibold">
+                Exhibitions &amp; Events
+              </span>
+            </div>
+            <div
+              class="absolute bottom-3 right-3 px-2 py-0.5 bg-primary-container/85 text-surface-bright font-label text-[11px]">
+              Munich, Germany
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center gap-3 font-label text-[12px] text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span> Aug 14,
+                  2024</span>
+                <span>•</span>
+                <span>3 min read</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] leading-snug text-on-surface font-semibold mb-3 group-hover:text-secondary transition-colors line-clamp-2">
+                Upcoming Exhibition: Visit ALUMAX at BAU Munich 2025 - Hall B1, Stand 420
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+                Showcasing European-certified thermal-break honeycomb composite systems and ultra-thin corrugated core
+                panels tailored for low-carbon building envelopes.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+              <span class="font-label text-[11px] text-on-surface-variant uppercase font-medium">VIP Booth Pass
+                Live</span>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0d1b2a] hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold transition-colors">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article
+          class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+          data-category="rd">
+          <div class="relative h-60 overflow-hidden bg-primary-container">
+            <img alt="Close up macro cross section of high tensile aluminum alloy sheet"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvifsPZcoD05KK3xlwodLDSaaX3OjHYAS3apXRlit4nhLYlV_mtoFtZOX7B4x-XhCYdxQ5dZAnJhA6u8SACNhTGFB546ZEhKoMVpTdJPnaMI7TQ2zO5mXr0z8lFn_4cxudCOMVyyChdUQbio57S2a0dz4VtCFUvsrhWYERa_jQ1e0pQ8BJl8iN68eBsLm-k9gsiO2B33i5kxjxGT3_pjZrztaVxzR2OrFGpYzWLClpV6fJdbYu4A3B" />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-2.5 py-1 bg-surface-container-lowest/95 backdrop-blur text-on-surface font-label text-[11px] uppercase tracking-wider font-semibold">
+                Materials R&amp;D
+              </span>
+            </div>
+            <div
+              class="absolute bottom-3 right-3 px-2 py-0.5 bg-primary-container/85 text-surface-bright font-label text-[11px]">
+              Whitepaper No. 12
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center gap-3 font-label text-[12px] text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span> Jul 22,
+                  2024</span>
+                <span>•</span>
+                <span>8 min read</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] leading-snug text-on-surface font-semibold mb-3 group-hover:text-secondary transition-colors line-clamp-2">
+                Whitepaper Published: Mitigating Desert Thermal Shock with High-Tensile AA5052-H32 Alloy
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+                An empirical analysis of expansion coefficient control and oil-canning mitigation across large-span
+                continuous cassette panels subjected to 55°C daily temperature swings.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+              <span class="font-label text-[11px] text-on-surface-variant uppercase font-medium">Research Paper</span>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0d1b2a] hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold transition-colors">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 5 -->
+        <article
+          class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+          data-category="projects">
+          <div class="relative h-60 overflow-hidden bg-primary-container">
+            <img alt="Modern logistics warehouse and technical support dock in Port of Rotterdam"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyqEWVwyBPFRoN408trk_8DisWjnwgXpqAAmhQGI6Erj0BWWNlz4w8vv-c1iYQML84oD20H8H_O1TegCu3I5L_BxHF4twhDGp5q0_Dv1A7UxuRIRcGAuz0jZJgHHsyyPg92ElDdEc6Pmp3ChuXWl6Vjk2yHZMSUuoN4UNuwbQMaix3D4R1D7aWPboT5gJy6QG761L2Ety2MGtrj-UGopfwD2P30vz6ogk95jn2EKZrthi2EWdDEUVH" />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-2.5 py-1 bg-surface-container-lowest/95 backdrop-blur text-on-surface font-label text-[11px] uppercase tracking-wider font-semibold">
+                Project Milestones
+              </span>
+            </div>
+            <div
+              class="absolute bottom-3 right-3 px-2 py-0.5 bg-primary-container/85 text-surface-bright font-label text-[11px]">
+              Rotterdam, NL
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center gap-3 font-label text-[12px] text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span> Jun 10,
+                  2024</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] leading-snug text-on-surface font-semibold mb-3 group-hover:text-secondary transition-colors line-clamp-2">
+                Expanding European Distribution: ALUMAX Opens New Logistics &amp; Technical Support Hub
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+                Equipped with a 6,000 m² buffered inventory of architectural coils and rapid-milling CNC sample
+                fabrication, slashing lead times for North European facade contracts.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+              <span class="font-label text-[11px] text-on-surface-variant uppercase font-medium">Facility
+                Overview</span>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0d1b2a] hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold transition-colors">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article
+          class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+          data-category="rd">
+          <div class="relative h-60 overflow-hidden bg-primary-container">
+            <img alt="Architectural metallic facade panel with ultra matte titanium zinc textured finish"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWIZBIPNJuu_U0YR6wsif6SJySqBjIjqpYLV1QiJDJ_EbeOr-kJWE2O6zecb68xua0XEWOEbab_ak5owg4faympXKhJwojOeZbozgge5xfJ7Qf85OgTBKyDyqlGmxXENV4MRgBT8qXpeImd4-gwdriYsIqn6hsM4hI480I74kiq_QicMdvDl6qEZPk1YiRxaNzTVtVfJZ7Im6K2Pq77L9ZZSWFR9HqPD9YQVw8xbUk9RseGGXSP-18" />
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-2.5 py-1 bg-surface-container-lowest/95 backdrop-blur text-on-surface font-label text-[11px] uppercase tracking-wider font-semibold">
+                Materials R&amp;D
+              </span>
+            </div>
+            <div
+              class="absolute bottom-3 right-3 px-2 py-0.5 bg-primary-container/85 text-surface-bright font-label text-[11px]">
+              Qualicoat Class 3
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex items-center gap-3 font-label text-[12px] text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span> May 18,
+                  2024</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] leading-snug text-on-surface font-semibold mb-3 group-hover:text-secondary transition-colors line-clamp-2">
+                Next-Generation Titanium-Zinc Look PVDF Coating Achieves Qualicoat Class 3 Compliance
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+                Offering the natural weathered patina of classic rolled zinc combined with the superior structural
+                rigidity, 65% weight reduction, and non-combustibility of aluminum cores.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+              <span class="font-label text-[11px] text-on-surface-variant uppercase font-medium">Swatch Deck</span>
+              <button
+                class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0d1b2a] hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold transition-colors">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- ===================================================================== -->
+      <!-- VIEW MODE B: LIST VIEW (HORIZONTAL SLEEK ROWS - TOGGLED VIA JS)       -->
+      <!-- ===================================================================== -->
+      <div class="hidden flex-col gap-4" id="news-list-view-container">
+        <!-- List Item 1 -->
+        <article
+          class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
+          data-category="projects">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <!-- 16:9 Thumbnail -->
+            <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
+              <img alt="KAFD Tower 3 in Riyadh"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKAOkBKrv6a2PFgXpQ1vnS8GEWLQixnUu8eLhG5dJV8FnRmKIHvP-6MonzL8nXwBm1SSeWUeLOPVGvaLBlJ2Y_LApkt-0X2WlPMIKukpBbrlX6neR94y8rZqqWHhGFILudwNzu6UHlRfaFfqiy96c1y6BVraP1211LTE1EWbT7t9m0rJOlX6IOoA0d6FRNT4vMrThBbABfBZEzmN73RGxplrvmnq5yBSwoWQPXeyL4sjLtDFgwiTJ1" />
+              <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-white font-label text-[10px] uppercase">
+                Project Milestones
+              </div>
+            </div>
+            <!-- Info & Excerpt -->
+            <div class="md:col-span-5 lg:col-span-6 space-y-2">
+              <div class="flex flex-wrap items-center gap-3 font-label text-[11px] text-on-surface-variant">
+                <span class="text-secondary font-semibold">Oct 18, 2024</span>
+                <span>•</span>
+                <span>4 min read</span>
+                <span>•</span>
+                <span class="px-2 py-0.5 bg-surface-container-high text-on-surface">Riyadh, KSA</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] sm:text-[20px] font-bold text-on-surface group-hover:text-secondary transition-colors">
+                KAFD Tower 3 in Riyadh Completes Installation of 14,200 m² ALUMAX Kinetic Louvers
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                Engineered for extreme desert diurnal cycling, the installation features custom gold anodized extruded
+                fins with autonomous astronomical clock positioning to slash peak solar gains by 38%.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Alloy:
+                  AA6063-T6</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Finish:
+                  Class 1 Anodizing</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">BMS:
+                  BACnet Integrated</span>
+              </div>
+            </div>
+            <!-- Right CTA Button -->
+            <div class="md:col-span-3 lg:col-span-3 flex md:justify-end">
+              <button
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0d1b2a] group-hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold tracking-wider transition-colors shadow-sm">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- List Item 2 -->
+        <article
+          class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
+          data-category="testing">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
+              <img alt="Testing Laboratory"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPnUTdmexzXLWcxNxHeXcChL-rlZmRykGEBQfBKmGfyWAGD-T_GiB_avb6LdwXK9XN-lzUVTvsGT0C2F39LsIiJyhlWHoEb6BfTGgkC6mmnRPvqkhbeKCK_PVMoTjDOr-BC0B7SRhg8sWbBdotSesMR0bbx_XX6oCuF4UnXFum3Ml7BKYqbYAPQEQI_KJFZrS8mS8RKnrnY5sTBHUWXrveXwxwMb3dzf2o0ygsEvMMsXCtWhntorHA" />
+              <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-white font-label text-[10px] uppercase">
+                Corporate &amp; Testing
+              </div>
+            </div>
+            <div class="md:col-span-5 lg:col-span-6 space-y-2">
+              <div class="flex flex-wrap items-center gap-3 font-label text-[11px] text-on-surface-variant">
+                <span class="text-secondary font-semibold">Sep 29, 2024</span>
+                <span>•</span>
+                <span>6 min read</span>
+                <span>•</span>
+                <span class="px-2 py-0.5 bg-surface-container-high text-on-surface">CWCT / ASTM Tested</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] sm:text-[20px] font-bold text-on-surface group-hover:text-secondary transition-colors">
+                ALUMAX Awarded CWCT &amp; ASTM E330 AAMA Rigorous Dynamic Performance Certification
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                Comprehensive laboratory evaluations verified zero air leakage under 600Pa static pressures, flawless
+                water tightness under 1000Pa dynamic pulse tests, and seismic displacement resilience.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">ASTM E330
+                  / E283 / E331</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">CWCT
+                  Standard</span>
+              </div>
+            </div>
+            <div class="md:col-span-3 lg:col-span-3 flex md:justify-end">
+              <button
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0d1b2a] group-hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold tracking-wider transition-colors shadow-sm">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- List Item 3 -->
+        <article
+          class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
+          data-category="events">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
+              <img alt="BAU Munich Pavilion"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj8VOGHU4VC4SWFqyP9wwOxPt0wE4rpE0THlqQZ7bHiO1GGJ_fuTsSicPO0nVszuz2r3hQ5wEXaawte_af2x-NFMRsaNjO5N-XGYTSzOY5difyHT2AOiuLFJgeVhsfwCGhx3VfRK3Ua4bZEvKkBZccMZkdRqAAmVUO0qdqy7kzS7ET7L4FSDJ1z0R801BMdpAJ0L1BviME7eD1h5soCdzFpfwjEL1F2xr6jUVMgrGD5D9b0oL-gFUD" />
+              <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-white font-label text-[10px] uppercase">
+                Exhibitions &amp; Events
+              </div>
+            </div>
+            <div class="md:col-span-5 lg:col-span-6 space-y-2">
+              <div class="flex flex-wrap items-center gap-3 font-label text-[11px] text-on-surface-variant">
+                <span class="text-secondary font-semibold">Aug 14, 2024</span>
+                <span>•</span>
+                <span>3 min read</span>
+                <span>•</span>
+                <span class="px-2 py-0.5 bg-surface-container-high text-on-surface">Munich, Germany</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] sm:text-[20px] font-bold text-on-surface group-hover:text-secondary transition-colors">
+                Upcoming Exhibition: Visit ALUMAX at BAU Munich 2025 - Hall B1, Stand 420
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                Showcasing European-certified thermal-break honeycomb composite systems and ultra-thin corrugated core
+                panels tailored for low-carbon renovations and Passivhaus standards.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">BAU
+                  2025</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Hall B1 ·
+                  Stand 420</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">VIP Passes
+                  Active</span>
+              </div>
+            </div>
+            <div class="md:col-span-3 lg:col-span-3 flex md:justify-end">
+              <button
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0d1b2a] group-hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold tracking-wider transition-colors shadow-sm">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- List Item 4 -->
+        <article
+          class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
+          data-category="rd">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
+              <img alt="Alloy Cross Section"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvifsPZcoD05KK3xlwodLDSaaX3OjHYAS3apXRlit4nhLYlV_mtoFtZOX7B4x-XhCYdxQ5dZAnJhA6u8SACNhTGFB546ZEhKoMVpTdJPnaMI7TQ2zO5mXr0z8lFn_4cxudCOMVyyChdUQbio57S2a0dz4VtCFUvsrhWYERa_jQ1e0pQ8BJl8iN68eBsLm-k9gsiO2B33i5kxjxGT3_pjZrztaVxzR2OrFGpYzWLClpV6fJdbYu4A3B" />
+              <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-white font-label text-[10px] uppercase">
+                Materials R&amp;D
+              </div>
+            </div>
+            <div class="md:col-span-5 lg:col-span-6 space-y-2">
+              <div class="flex flex-wrap items-center gap-3 font-label text-[11px] text-on-surface-variant">
+                <span class="text-secondary font-semibold">Jul 22, 2024</span>
+                <span>•</span>
+                <span>8 min read</span>
+                <span>•</span>
+                <span class="px-2 py-0.5 bg-surface-container-high text-on-surface">Whitepaper No. 12</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] sm:text-[20px] font-bold text-on-surface group-hover:text-secondary transition-colors">
+                Whitepaper Published: Mitigating Desert Thermal Shock with High-Tensile AA5052-H32 Alloy
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                An empirical analysis of expansion coefficient control and oil-canning mitigation across large-span
+                continuous cassette panels subjected to 55°C daily temperature differentials.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Alloy
+                  AA5052-H32</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Thermal
+                  Expansion Delta</span>
+              </div>
+            </div>
+            <div class="md:col-span-3 lg:col-span-3 flex md:justify-end">
+              <button
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0d1b2a] group-hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold tracking-wider transition-colors shadow-sm">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- List Item 5 -->
+        <article
+          class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
+          data-category="projects">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
+              <img alt="Logistics Hub"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyqEWVwyBPFRoN408trk_8DisWjnwgXpqAAmhQGI6Erj0BWWNlz4w8vv-c1iYQML84oD20H8H_O1TegCu3I5L_BxHF4twhDGp5q0_Dv1A7UxuRIRcGAuz0jZJgHHsyyPg92ElDdEc6Pmp3ChuXWl6Vjk2yHZMSUuoN4UNuwbQMaix3D4R1D7aWPboT5gJy6QG761L2Ety2MGtrj-UGopfwD2P30vz6ogk95jn2EKZrthi2EWdDEUVH" />
+              <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-white font-label text-[10px] uppercase">
+                Project Milestones
+              </div>
+            </div>
+            <div class="md:col-span-5 lg:col-span-6 space-y-2">
+              <div class="flex flex-wrap items-center gap-3 font-label text-[11px] text-on-surface-variant">
+                <span class="text-secondary font-semibold">Jun 10, 2024</span>
+                <span>•</span>
+                <span>4 min read</span>
+                <span>•</span>
+                <span class="px-2 py-0.5 bg-surface-container-high text-on-surface">Rotterdam, NL</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] sm:text-[20px] font-bold text-on-surface group-hover:text-secondary transition-colors">
+                Expanding European Distribution: ALUMAX Opens New Logistics &amp; Technical Support Hub
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                Equipped with a 6,000 m² buffered inventory of standard architectural coils and rapid-milling CNC sample
+                fabrication, slashing lead times for North European facade contracts.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">EU
+                  Hub</span>
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Fast CNC
+                  Prototyping</span>
+              </div>
+            </div>
+            <div class="md:col-span-3 lg:col-span-3 flex md:justify-end">
+              <button
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0d1b2a] group-hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold tracking-wider transition-colors shadow-sm">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- List Item 6 -->
+        <article
+          class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
+          data-category="rd">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
+              <img alt="Titanium Zinc Look Coating"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWIZBIPNJuu_U0YR6wsif6SJySqBjIjqpYLV1QiJDJ_EbeOr-kJWE2O6zecb68xua0XEWOEbab_ak5owg4faympXKhJwojOeZbozgge5xfJ7Qf85OgTBKyDyqlGmxXENV4MRgBT8qXpeImd4-gwdriYsIqn6hsM4hI480I74kiq_QicMdvDl6qEZPk1YiRxaNzTVtVfJZ7Im6K2Pq77L9ZZSWFR9HqPD9YQVw8xbUk9RseGGXSP-18" />
+              <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/80 text-white font-label text-[10px] uppercase">
+                Materials R&amp;D
+              </div>
+            </div>
+            <div class="md:col-span-5 lg:col-span-6 space-y-2">
+              <div class="flex flex-wrap items-center gap-3 font-label text-[11px] text-on-surface-variant">
+                <span class="text-secondary font-semibold">May 18, 2024</span>
+                <span>•</span>
+                <span>5 min read</span>
+                <span>•</span>
+                <span class="px-2 py-0.5 bg-surface-container-high text-on-surface">Qualicoat Class 3</span>
+              </div>
+              <h3
+                class="font-headline text-[18px] sm:text-[20px] font-bold text-on-surface group-hover:text-secondary transition-colors">
+                Next-Generation Titanium-Zinc Look PVDF Coating Achieves Qualicoat Class 3 Compliance
+              </h3>
+              <p class="font-body text-[13px] text-on-surface-variant line-clamp-2 leading-relaxed">
+                Offering the natural weathered patina of classic rolled zinc combined with the superior structural
+                rigidity, 65% weight reduction, and non-combustibility of aluminum composite cores.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Qualicoat
+                  Class 3</span>
+                <span
+                  class="font-label text-[10px] px-2 py-0.5 bg-surface-container text-on-surface-variant">Titanium-Zinc
+                  Look</span>
+              </div>
+            </div>
+            <div class="md:col-span-3 lg:col-span-3 flex md:justify-end">
+              <button
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 bg-[#0d1b2a] group-hover:bg-secondary text-white font-label text-[12px] uppercase font-semibold tracking-wider transition-colors shadow-sm">
+                <span>View Details</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- Pagination Footer -->
+      <div
+        class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 bg-surface-container-low p-4 border border-surface-container-high">
+        <div class="font-label text-[12px] text-on-surface-variant">
+          Displaying <strong>6</strong> of <strong>28</strong> published architectural releases &amp; dispatches
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            class="w-9 h-9 bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-secondary hover:text-white transition-colors border border-outline-variant/50">
+            <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+          </button>
+          <span
+            class="w-9 h-9 flex items-center justify-center font-label text-[12px] font-semibold bg-[#0d1b2a] text-white">1</span>
+          <button
+            class="w-9 h-9 flex items-center justify-center font-label text-[12px] bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50">2</button>
+          <button
+            class="w-9 h-9 flex items-center justify-center font-label text-[12px] bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50">3</button>
+          <button
+            class="w-9 h-9 bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-secondary hover:text-white transition-colors border border-outline-variant/50">
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ========================================================================= -->
+  <!-- 4. PERSISTENT GLOBAL FOOTER (IDENTICAL 5-COLUMN SYSTEM)                   -->
+  <!-- ========================================================================= -->
+  <footer class="w-full bg-[#0d1b2a] text-[#eff1f3] border-t border-[#324863]">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl border-b border-[#324863]">
+        <!-- Col 1: Brand & Certification Badges -->
+        <div class="lg:col-span-1 flex flex-col gap-space-md">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 border border-[#b88e56] flex items-center justify-center">
+              <div class="w-3.5 h-3.5 border border-[#b88e56] rotate-45"></div>
+            </div>
+            <span class="font-headline text-[18px] text-[#ffffff] font-bold tracking-wider">ALUMAX</span>
+          </div>
+          <p class="font-body text-[13px] text-[#c4c6cc] leading-relaxed">
+            Global tier-1 manufacturer of solid aluminum cladding, structural honeycomb cores, and intelligent solar
+            louvers for monumental commercial envelopes.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="font-label text-[11px] px-2 py-0.5 border border-[#324863] text-[#edbe82] bg-[#021d35]">ISO
+              9001:2015</span>
+            <span class="font-label text-[11px] px-2 py-0.5 border border-[#324863] text-[#edbe82] bg-[#021d35]">EN
+              13501-1 A2</span>
+            <span class="font-label text-[11px] px-2 py-0.5 border border-[#324863] text-[#edbe82] bg-[#021d35]">ASTM
+              E84 / E119</span>
+          </div>
+          <div class="flex items-center gap-3 pt-2 text-[#c4c6cc]">
+            <span class="material-symbols-outlined text-[20px] hover:text-[#edbe82] cursor-pointer transition-colors"
+              title="Share">share</span>
+            <span class="material-symbols-outlined text-[20px] hover:text-[#edbe82] cursor-pointer transition-colors"
+              title="Video">play_circle</span>
+            <span class="material-symbols-outlined text-[20px] hover:text-[#edbe82] cursor-pointer transition-colors"
+              title="Chat">chat</span>
+            <span class="material-symbols-outlined text-[20px] hover:text-[#edbe82] cursor-pointer transition-colors"
+              title="Photos">photo_camera</span>
+            <span class="material-symbols-outlined text-[20px] hover:text-[#edbe82] cursor-pointer transition-colors"
+              title="Network">hub</span>
+          </div>
+        </div>
+        <!-- Col 2: Systems Matrix -->
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline text-[16px] text-[#ffffff] tracking-wide mb-2 uppercase font-semibold">Systems Matrix
+          </h4>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="products"
+            href="#">Solid Cladding (铝单板)</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="products"
+            href="#">Honeycomb Panels (金属蜂窝板)</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="products"
+            href="#">Corrugated Core Sheets (波纹板)</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="products"
+            href="#">Insulated Wall Units (一体板)</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="products"
+            href="#">Intelligent Louvers (遮阳百叶)</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="products"
+            href="#">Architectural Grilles (铝窗花)</a>
+        </div>
+        <!-- Col 3: Engineering & Export -->
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline text-[16px] text-[#ffffff] tracking-wide mb-2 uppercase font-semibold">Engineering
+            &amp; Export</h4>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="engineering"
+            href="#">BIM &amp; Revit Library (RFA/IFC)</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="engineering"
+            href="#">Wind-load Stress Testing</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="engineering"
+            href="#">A2 Fire Performance Dossier</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="engineering"
+            href="#">PVDF &amp; Anodizing Finishes</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="engineering"
+            href="#">Container Logistics &amp; Packing</a>
+          <a class="font-body text-[13px] text-[#c4c6cc] hover:text-[#ffddb5] transition-colors" data-path="engineering"
+            href="#">Factory Audit Documentation</a>
+        </div>
+        <!-- Col 4: Global Hubs -->
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline text-[16px] text-[#ffffff] tracking-wide mb-2 uppercase font-semibold">Global Hubs
+          </h4>
+          <div class="mb-2">
+            <p class="font-label text-[12px] text-[#edbe82] font-semibold uppercase">Dubai Desk (MENA)</p>
+            <p class="font-body text-[13px] text-[#c4c6cc]">Business Bay Tower 4, Suite 1902, Dubai, UAE</p>
+          </div>
+          <div class="mb-2">
+            <p class="font-label text-[12px] text-[#edbe82] font-semibold uppercase">Rotterdam Office (EU)</p>
+            <p class="font-body text-[13px] text-[#c4c6cc]">Maashaven Zuidzijde 21, 3081 AE Rotterdam</p>
+          </div>
+          <div>
+            <p class="font-label text-[12px] text-[#edbe82] font-semibold uppercase">Manufacturing HQ (APAC)</p>
+            <p class="font-body text-[13px] text-[#c4c6cc]">Nanhai Industrial Park, Foshan, Guangdong</p>
+          </div>
+        </div>
+        <!-- Col 5: Project RFQ -->
+        <div class="flex flex-col gap-space-sm">
+          <h4 class="font-headline text-[16px] text-[#ffffff] tracking-wide mb-2 uppercase font-semibold">Project RFQ
+          </h4>
+          <p class="font-body text-[13px] text-[#c4c6cc]">Transmit facade schedules, CAD elevations, or custom
+            fabrication tenders directly to export engineers.</p>
+          <a class="inline-flex items-center justify-center h-10 px-4 mt-2 bg-[#ffffff] text-[#0f1c2c] font-label text-[12px] font-semibold tracking-wider uppercase hover:bg-[#ffddb5] transition-colors"
+            data-path="contact" href="#">
+            <span class="material-symbols-outlined text-[16px] mr-2">mail</span>TRANSMIT INQUIRY
+          </a>
+          <div class="mt-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[16px] text-[#edbe82]">verified</span>
+            <span class="font-label text-[11px] text-[#c4c6cc]">Direct Factory Export FOB/CIF</span>
+          </div>
+        </div>
+      </div>
+      <!-- Legal & Copyright Line -->
+      <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="font-label text-[11px] text-[#c4c6cc]">© 2025 ALUMAX Metal Cladding &amp; Facades Co., Ltd. All
+          international rights reserved.</p>
+        <div class="flex items-center gap-space-lg font-label text-[11px] text-[#c4c6cc]">
+          <a class="hover:text-[#ffffff] transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-[#ffffff] transition-colors" href="#">Export Compliance</a>
+          <a class="hover:text-[#ffffff] transition-colors" href="#">Terms of Supply</a>
+          <a class="hover:text-[#ffffff] transition-colors" href="#">ASTM/EN Quality Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE VANILLA JAVASCRIPT: CAROUSEL & VIEW TOGGLE (CARD / LIST)       -->
+  <!-- ========================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // -------------------------------------------------------------
+      // 1. CAROUSEL SLIDER ENGINE
+      // -------------------------------------------------------------
+      const slides = document.querySelectorAll('.carousel-slide');
+      const tabs = document.querySelectorAll('.carousel-tab-btn');
+      const prevBtn = document.getElementById('carousel-prev-btn');
+      const nextBtn = document.getElementById('carousel-next-btn');
+      const counter = document.getElementById('carousel-counter');
+      let currentSlide = 0;
+      let autoPlayInterval = null;
+
+      function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.remove('opacity-0', 'z-10');
+            slide.classList.add('opacity-100', 'z-20');
+          } else {
+            slide.classList.remove('opacity-100', 'z-20');
+            slide.classList.add('opacity-0', 'z-10');
+          }
+        });
+
+        tabs.forEach((tab, i) => {
+          if (i === index) {
+            tab.classList.add('active', 'border-secondary', 'text-secondary-fixed');
+            tab.classList.remove('border-transparent', 'text-slate-400');
+          } else {
+            tab.classList.remove('active', 'border-secondary', 'text-secondary-fixed');
+            tab.classList.add('border-transparent', 'text-slate-400');
+          }
+        });
+
+        if (counter) {
+          counter.textContent = `0${index + 1} / 0${slides.length}`;
+        }
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetTimer(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetTimer(); });
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = parseInt(tab.getAttribute('data-target'), 10);
+          goToSlide(target);
+          resetTimer();
+        });
+      });
+
+      function startTimer() {
+        autoPlayInterval = setInterval(nextSlide, 6500);
+      }
+
+      function resetTimer() {
+        clearInterval(autoPlayInterval);
+        startTimer();
+      }
+
+      startTimer();
+
+      // -------------------------------------------------------------
+      // 2. VIEW SWITCHER (CARD VIEW vs LIST VIEW)
+      // -------------------------------------------------------------
+      const btnCardView = document.getElementById('btn-card-view');
+      const btnListView = document.getElementById('btn-list-view');
+      const cardContainer = document.getElementById('news-card-view-container');
+      const listContainer = document.getElementById('news-list-view-container');
+
+      function setViewMode(mode) {
+        if (mode === 'card') {
+          // Activate Card button
+          btnCardView.classList.add('active', 'bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+          btnCardView.classList.remove('text-on-surface-variant');
+          btnCardView.querySelector('.material-symbols-outlined').classList.add('text-secondary');
+
+          // Deactivate List button
+          btnListView.classList.remove('active', 'bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+          btnListView.classList.add('text-on-surface-variant');
+          btnListView.querySelector('.material-symbols-outlined').classList.remove('text-secondary');
+
+          // Toggle displays
+          cardContainer.classList.remove('hidden');
+          listContainer.classList.add('hidden');
+        } else {
+          // Activate List button
+          btnListView.classList.add('active', 'bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+          btnListView.classList.remove('text-on-surface-variant');
+          btnListView.querySelector('.material-symbols-outlined').classList.add('text-secondary');
+
+          // Deactivate Card button
+          btnCardView.classList.remove('active', 'bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+          btnCardView.classList.add('text-on-surface-variant');
+          btnCardView.querySelector('.material-symbols-outlined').classList.remove('text-secondary');
+
+          // Toggle displays
+          cardContainer.classList.add('hidden');
+          listContainer.classList.remove('hidden');
+          listContainer.classList.add('flex');
+        }
+      }
+
+      if (btnCardView && btnListView) {
+        btnCardView.addEventListener('click', () => setViewMode('card'));
+        btnListView.addEventListener('click', () => setViewMode('list'));
+      }
+
+      // -------------------------------------------------------------
+      // 3. CATEGORY FILTER TABS
+      // -------------------------------------------------------------
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const cardItems = document.querySelectorAll('.news-item');
+      const listItems = document.querySelectorAll('.news-list-item');
+
+      filterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach((t) => {
+            t.classList.remove('bg-primary', 'text-white', 'font-semibold');
+            t.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          });
+          tab.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          tab.classList.add('bg-primary', 'text-white', 'font-semibold');
+
+          const cat = tab.getAttribute('data-cat');
+
+          // Filter card items
+          cardItems.forEach((card) => {
+            const cardCat = card.getAttribute('data-category');
+            if (cat === 'all' || cardCat === cat) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Filter list items
+          listItems.forEach((item) => {
+            const itemCat = item.getAttribute('data-category');
+            if (cat === 'all' || itemCat === cat) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

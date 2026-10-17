@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+
+<html lang="en" style="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <title>ALUMAX | Architectural Envelopes &amp; Adaptive Facade Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f2f4f6",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-fixed": "#0f1c2c",
+            "tertiary-fixed": "#d2e4ff",
+            "background": "#f8f9fb",
+            "inverse-primary": "#bac8dc",
+            "on-primary": "#ffffff",
+            "primary": "#000000",
+            "inverse-on-surface": "#eff1f3",
+            "primary-fixed-dim": "#bac8dc",
+            "primary-container": "#0d1b2a",
+            "on-tertiary-container": "#6f85a3",
+            "outline-variant": "#c4c6cc",
+            "on-primary-fixed-variant": "#3a4859",
+            "on-primary-container": "#778598",
+            "surface-variant": "#e0e3e5",
+            "on-surface-variant": "#44474c",
+            "outline": "#74777d",
+            "on-tertiary-fixed-variant": "#324863",
+            "primary-fixed": "#d6e4f9",
+            "on-tertiary-fixed": "#021d35",
+            "on-error-container": "#93000a",
+            "surface-tint": "#525f71",
+            "surface": "#f8f9fb",
+            "surface-bright": "#f8f9fb",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#edbe82",
+            "error-container": "#ffdad6",
+            "on-background": "#191c1e",
+            "tertiary-fixed-dim": "#b2c8e8",
+            "on-secondary-fixed": "#2a1800",
+            "inverse-surface": "#2d3133",
+            "tertiary": "#000000",
+            "on-surface": "#191c1e",
+            "surface-dim": "#d8dadc",
+            "on-secondary-container": "#7a5724",
+            "surface-container": "#eceef0",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#021d35",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#60400f",
+            "secondary-container": "#ffcf92",
+            "secondary-fixed": "#ffddb5",
+            "secondary": "#7b5825"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "body-lg": ["Manrope"],
+            "display-xl": ["Space Grotesk"],
+            "body-sm": ["Manrope"],
+            "body-md": ["Manrope"],
+            "headline-lg": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+            "label-lg": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "display-xl-mobile": ["Space Grotesk"],
+            "label-md": ["JetBrains Mono"],
+            "headline-md": ["Space Grotesk"],
+            "label-sm": ["JetBrains Mono"],
+            "display-lg-mobile": ["Space Grotesk"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary selection:text-white">
+  <!-- 1. TOP HEADER: CLEAN GEOMETRIC LOGO ONLY (NO TEXT BESIDE IT), DROPDOWN LANG SELECTOR, NO USD CURRENCY -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-[#0d1b2a]/95 backdrop-blur-xl border-b border-white/10 transition-all">
+    <div
+      class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-lg">
+      <!-- Clean geometric logo only -->
+      <div class="flex items-center">
+        <a aria-label="ALUMAX Home" class="flex items-center group" href="#">
+          <svg class="h-9 w-9 text-secondary-fixed transition-transform duration-300 group-hover:scale-105"
+            fill="currentColor" viewbox="0 0 40 40">
+            <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5">
+            </path>
+            <path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
+            <line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
+          </svg>
+        </a>
+      </div>
+      <!-- Navigation links -->
+      <nav class="hidden xl:flex items-center gap-space-lg">
+        <a class="font-label-md text-label-md text-white border-b-2 border-secondary pb-1 tracking-wider uppercase"
+          href="#">Home</a>
+        <a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+          href="#featured-envelope-systems">Products</a>
+        <a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+          href="#landmark-projects">Projects</a>
+        <a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+          href="#manufacturing-strengths">Engineering</a>
+        <a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+          href="#technical-resources">Resources</a>
+        <a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+          href="#fast-rfq-section">Contact</a>
+      </nav>
+      <!-- Language Selector Dropdown & Sample Box CTA -->
+      <div class="flex items-center gap-3">
+        <!-- Language Dropdown -->
+        <div class="relative group py-2">
+          <button
+            class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 font-label-sm text-label-sm text-white transition-all"
+            type="button">
+            <span class="material-symbols-outlined text-[16px] text-secondary-fixed">language</span>
+            <span class="font-semibold tracking-wider text-secondary-fixed">EN</span>
+            <span
+              class="material-symbols-outlined text-sm text-slate-400 group-hover:text-white transition-transform group-hover:rotate-180">expand_more</span>
+          </button>
+          <div
+            class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute right-0 top-full mt-1 w-44 bg-[#0d1b2a] border border-white/15 rounded-xl shadow-2xl p-2 z-50 text-left backdrop-blur-xl">
+            <div
+              class="text-[11px] font-label-sm uppercase tracking-widest text-slate-400 px-3 py-1.5 border-b border-white/10">
+              Select Language</div>
+            <a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-secondary-fixed bg-white/10 font-semibold"
+              href="#">
+              <span class="">English (EN)</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            </a>
+            <a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+              href="#">
+              <span class="">Español (ES)</span>
+            </a>
+            <a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+              href="#">
+              <span class="">Français (FR)</span>
+            </a>
+            <a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+              href="#">
+              <span class="">العربية (AR)</span>
+            </a>
+            <a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+              href="#">
+              <span class="">Deutsch (DE)</span>
+            </a>
+          </div>
+        </div>
+        <!-- Right CTA button -->
+        <a class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/90 text-on-secondary font-label-sm text-label-sm uppercase tracking-wider rounded-lg transition-all shadow-md font-semibold"
+          href="#fast-rfq-section">
+          <span class="material-symbols-outlined text-base">inventory_2</span>
+          <span class="">Sample Box</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="w-full bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- BREADCRUMB & STATUS STRIP -->
+      <section class="w-full bg-surface-container-low text-on-surface py-3 px-6 md:px-12">
+        <div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+          <nav aria-label="Breadcrumb"
+            class="flex items-center gap-2 font-label text-slate-500 uppercase tracking-widest text-[11px]">
+            <a class="hover:text-primary transition-colors" href="#">HOME</a>
+            <span class="text-slate-400">/</span>
+            <a class="hover:text-primary transition-colors text-secondary font-semibold" href="#">PRODUCTS</a>
+            <span class="text-slate-400">/</span>
+            <a class="hover:text-primary transition-colors" href="#">ARCHITECTURAL COMPOSITES</a>
+            <span class="text-slate-400">/</span>
+            <span class="text-slate-900 font-medium">CORRUGATED CORE ALUMINUM PANELS</span>
+          </nav>
+          <div class="flex items-center gap-4 font-label text-[11px] text-slate-600">
+            <span
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-highest text-slate-800 rounded-none font-semibold">
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              EN 13501-1 CLASS A1 CERTIFIED
+            </span>
+            <span class="hidden sm:inline text-slate-400">|</span>
+            <span class="hidden sm:inline font-mono tracking-tight text-slate-500">SPEC REV: 2025.04.B</span>
+          </div>
+        </div>
+      </section>
+      <!-- PRODUCT HERO & INTERACTIVE SPECIFICATION MATRIX -->
+      <section class="w-full bg-surface py-10 md:py-16 px-6 md:px-12">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+          <!-- LEFT 7 COLS: VISUAL GALLERY -->
+          <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="relative bg-primary-container text-white overflow-hidden shadow-xl aspect-[16/10] w-full group">
+              <img alt="Corrugated Core Aluminum Panel Cutaway"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="Technical architectural photography of continuous sinusoidal wave corrugated aluminum core composite panel cutaway. Showing roll-bonded metallic silver exterior skin, open flute structural cavity, precision extruded edges, and non-combustible metallic core with natural anodized reflections under studio lighting."
+                id="main-preview-img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK8QNZGGNOSVBjbS3gftadZTZxzOsvhj0yc3iRw0AreeTQJaob1kMrj_NriMAlvDsDYNb39hXGrEXXarO6_hBLTv2g-yH6cQS5lQrx1qSBZVQGTLCkNCXXkGBHtB9JBG-w41qrFXqNEoPDZQsJHrycExKIbgrAz3srR0YHb5D-8Zj9Z2l0L0IUujTCNLGgxWSuczWDC_E20wFfvoV6mlgWbzyV9pdsi0taLIPndwU" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent pointer-events-none">
+              </div>
+              <!-- Tactical HUD Overlay -->
+              <div class="absolute top-4 left-4 flex flex-col gap-1.5">
+                <span
+                  class="px-3 py-1 bg-primary text-secondary-fixed font-label text-xs tracking-wider uppercase font-semibold">
+                  SERIES: ALU-CC-4000
+                </span>
+                <span
+                  class="px-3 py-1 bg-surface/90 text-on-surface backdrop-blur-md font-label text-[11px] uppercase tracking-wide">
+                  MONO-MATERIAL 100% AL
+                </span>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                <div class="space-y-1">
+                  <p class="font-label text-xs text-secondary-fixed uppercase tracking-widest">Core Architecture</p>
+                  <h3 class="font-headline text-lg sm:text-xl font-bold text-white tracking-tight">Sinusoidal Flute
+                    12.5mm Pitch Roll-Bonded</h3>
+                </div>
+                <span
+                  class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-md text-white font-label text-xs tracking-wider">
+                  <span class="material-symbols-outlined text-sm text-secondary-fixed">verified</span>
+                  0% POLYETHYLENE
+                </span>
+              </div>
+            </div>
+            <!-- Interactive Thumbnails -->
+            <div class="grid grid-cols-4 gap-3 md:gap-4">
+              <button
+                class="gallery-thumb active relative aspect-[4/3] bg-surface-container overflow-hidden p-1 transition-all focus:outline-none"
+                onclick="changeGallery(0)" type="button">
+                <img alt="Wave Core Section" class="w-full h-full object-cover"
+                  data-alt="Macro 3D CAD visualization of high-density corrugated sinusoidal aluminum wave core between two architectural face sheets, cold-rolled continuous bonding lines in crisp studio light."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkcM2A1HnAwPT_5zUw1XMLvv33VXbrrZVPAsYu3VddsP1NEx2j7E2lfjzfTsJ46P3MHJho2hdjXWuds9oNiLhxhBXHOxeXMNOiDqPmb2_B8ARDHyoxehaqN1G2Fh0pk2nVYvMnrTa0_fZq0iZJj9ZEfkIYgOufKqcMvfxkVpAG-Fcw3DQolZkRNhN10jPS0XXM_6dmXbvlx_JsSMH18U2XdgD3FJ0gH96_hezajms" />
+                <span
+                  class="absolute bottom-1 left-1 font-label text-[9px] uppercase px-1.5 py-0.5 bg-primary/80 text-white font-medium">Core
+                  Cross-Sec</span>
+              </button>
+              <button
+                class="gallery-thumb relative aspect-[4/3] bg-surface-container overflow-hidden p-1 transition-all focus:outline-none"
+                onclick="changeGallery(1)" type="button">
+                <img alt="Airport Terminal Cladding" class="w-full h-full object-cover"
+                  data-alt="Exterior high-angle perspective of an international airport terminal building envelope paneled in 6mm champagne bronze corrugated aluminum composite sheets under midday sun."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIQ6MU_jPyUZhhqBnmtEtEuW0FxCAuEev8iP1grvP4EmU7-_eaSn4tN3aQJ5JbYPzHN7bRKacwdFCx7y8uAmQjsTsaQak5hoWv2arDuS38dL6dCmVry0Wn--zBMVyx0HFrsAz9pCt4_E9koqKXwdK9-PmTQ_xLAA4L8EfpanT5q_hCSP81WpWCjYGq3cpXo2i48BjyCeRaUfoVI2LO90H20IMQ52JcHxVWtmOgFLM" />
+                <span
+                  class="absolute bottom-1 left-1 font-label text-[9px] uppercase px-1.5 py-0.5 bg-primary/80 text-white font-medium">Airport
+                  Envelope</span>
+              </button>
+              <button
+                class="gallery-thumb relative aspect-[4/3] bg-surface-container overflow-hidden p-1 transition-all focus:outline-none"
+                onclick="changeGallery(2)" type="button">
+                <img alt="Profile Caliper Spec" class="w-full h-full object-cover"
+                  data-alt="Micro calibrated macro engineering photograph of 4mm and 6mm corrugated aluminum composite panel cross sections resting on technical drafting blueprint paper with calipers."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXKUTZ8n5QxxfgPQQYmbnhEYdXXzJP4j3R68LeGkIMXv-ERbgK2RbHaTDSuS-G9zgJ_QkrrrkVx6RGigrEkzN-_mNAOf9rn9cdyMwm9DVyFSyFDv2_aj171OrXoV8B56K6TcIVav2ZkfpcQZISQSABVRxMr2uuFBFSftsfyhCQYmALkr-GCWbClVMNDKa3MNNpmHCeiIVjIzlg_DWo5-4wT05R5bBYe1QZ4m7DWok" />
+                <span
+                  class="absolute bottom-1 left-1 font-label text-[9px] uppercase px-1.5 py-0.5 bg-primary/80 text-white font-medium">Profile
+                  Thickness</span>
+              </button>
+              <button
+                class="gallery-thumb relative aspect-[4/3] bg-surface-container overflow-hidden p-1 transition-all focus:outline-none"
+                onclick="changeGallery(3)" type="button">
+                <img alt="Concealed Joint Mounting" class="w-full h-full object-cover"
+                  data-alt="Full scale mockup of concealed extruded aluminum Z-clip cassette bracket mounting system fixed to structural steel mullion behind corrugated composite panel."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjbIfMHawUgutcryDxdKRZPI8QdKewHWWJo8KSDdvw9_NMAIqIk9nQg_vDi_Z_QbVmQXl6gT5iDqqMKt4sfcffuKQROQwv33pfwb4IUR2XVLSWgl1ZjIk_psLF1vHF_WGFJ3hwem6q5cRhmuJMaPGl_eyfsHZMk8WU5UQZEBcLRriCiXCdLAb6J6hadASdW_I38OLuB1ke_zTzOqej50t72eEVNeZBPm4LtDyvGLs" />
+                <span
+                  class="absolute bottom-1 left-1 font-label text-[9px] uppercase px-1.5 py-0.5 bg-primary/80 text-white font-medium">Z-Clip
+                  Cassette</span>
+              </button>
+            </div>
+            <!-- Quick Spec Badges Row -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="bg-surface-container-lowest p-3.5 shadow-sm space-y-1">
+                <span class="font-label text-[10px] uppercase text-slate-500 tracking-wider">Combustibility</span>
+                <p class="font-headline text-base font-bold text-slate-900">EN 13501 A1</p>
+                <p class="font-body text-[11px] text-slate-500">Zero plastic, non-flammable</p>
+              </div>
+              <div class="bg-surface-container-lowest p-3.5 shadow-sm space-y-1">
+                <span class="font-label text-[10px] uppercase text-slate-500 tracking-wider">Areal Mass</span>
+                <p class="font-headline text-base font-bold text-slate-900">4.3 kg/m²</p>
+                <p class="font-body text-[11px] text-slate-500">60% lighter vs 3.0mm solid</p>
+              </div>
+              <div class="bg-surface-container-lowest p-3.5 shadow-sm space-y-1">
+                <span class="font-label text-[10px] uppercase text-slate-500 tracking-wider">Wind Deflection</span>
+                <p class="font-headline text-base font-bold text-slate-900">5.0 kPa+</p>
+                <p class="font-body text-[11px] text-slate-500">ASTM E330 high-rise tested</p>
+              </div>
+              <div class="bg-surface-container-lowest p-3.5 shadow-sm space-y-1">
+                <span class="font-label text-[10px] uppercase text-slate-500 tracking-wider">Max Envelope Span</span>
+                <p class="font-headline text-base font-bold text-slate-900">1,500 × 6,000</p>
+                <p class="font-body text-[11px] text-slate-500">Custom roll-form lengths</p>
+              </div>
+            </div>
+          </div>
+          <!-- RIGHT 5 COLS: SPEC CONFIGURATOR & COMMERCIAL CTAs -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-2 py-0.5 bg-secondary text-white font-label text-[11px] uppercase tracking-wider font-semibold">
+                    ARCHITECTURAL SPECIFICATION
+                  </span>
+                  <span class="font-label text-xs text-slate-500 uppercase tracking-widest">ALUMAX // FAÇADE
+                    SERIES</span>
+                </div>
+                <h1 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
+                  ALU-CC-4000
+                </h1>
+                <h2 class="font-headline text-lg sm:text-xl font-medium text-slate-700">
+                  Corrugated Core Aluminum Composite Panel <span class="text-slate-400 font-normal">| 金属铝波纹芯复合板</span>
+                </h2>
+              </div>
+              <p class="font-body text-sm leading-relaxed text-slate-600">
+                Precision roll-bonded continuous structural architectural sandwich panel featuring an engineered
+                sinusoidal wave core made from 100% recyclable high-grade aluminum. Eliminates organic thermoplastic
+                resins completely, delivering uncompromising EN 13501-1 Class A1 fire safety, exceptional
+                rigidity-to-weight ratio, and flawless optical flatness across extended span exterior envelopes.
+              </p>
+              <!-- Interactive Parameter Configurator -->
+              <div class="bg-surface-container-low p-5 space-y-4">
+                <div class="flex items-center justify-between">
+                  <h4 class="font-label text-xs uppercase tracking-wider text-slate-900 font-bold">1. Panel Total
+                    Thickness (mm)</h4>
+                  <span class="font-label text-xs font-semibold text-secondary" id="selected-thickness-val">4.0 mm
+                    [Standard Envelope]</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                  <button
+                    class="thickness-btn py-2 px-3 bg-surface-container-lowest text-xs font-label uppercase font-medium text-slate-800 shadow-sm hover:bg-white text-center"
+                    onclick="setParam('thickness', '4mm', '4.0 mm [Standard Envelope]')" type="button">
+                    4.0 mm
+                  </button>
+                  <button
+                    class="thickness-btn py-2 px-3 bg-surface text-xs font-label uppercase font-medium text-slate-700 shadow-sm hover:bg-white text-center"
+                    onclick="setParam('thickness', '6mm', '6.0 mm [High-Wind High-Rise]')" type="button">
+                    6.0 mm
+                  </button>
+                  <button
+                    class="thickness-btn py-2 px-3 bg-surface text-xs font-label uppercase font-medium text-slate-700 shadow-sm hover:bg-white text-center"
+                    onclick="setParam('thickness', '8mm', '8.0 mm [Megapanel Long-Span]')" type="button">
+                    8.0 mm
+                  </button>
+                </div>
+                <div class="space-y-2 pt-2">
+                  <h4 class="font-label text-xs uppercase tracking-wider text-slate-900 font-bold">2. Aluminum Alloy
+                    Skin Gauges</h4>
+                  <div class="grid grid-cols-2 gap-2">
+                    <button class="skin-btn p-2.5 bg-surface-container-lowest text-left shadow-sm"
+                      onclick="setParam('skin', 'standard', 'Front 0.7mm / Back 0.5mm (Alloy 3003-H14)')" type="button">
+                      <div class="font-label text-xs font-bold text-slate-900">0.7mm / 0.5mm</div>
+                      <div class="font-body text-[11px] text-slate-500">Standard Architectural (Alloy 3003-H14)</div>
+                    </button>
+                    <button class="skin-btn p-2.5 bg-surface text-left shadow-sm"
+                      onclick="setParam('skin', 'heavy', 'Front 1.0mm / Back 0.8mm (Alloy 5005-H34)')" type="button">
+                      <div class="font-label text-xs font-bold text-slate-900">1.0mm / 0.8mm</div>
+                      <div class="font-body text-[11px] text-slate-500">Heavy Impact / High Traffic (Alloy 5005-H34)
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <div class="space-y-2 pt-2">
+                  <h4 class="font-label text-xs uppercase tracking-wider text-slate-900 font-bold">3. Exterior
+                    Fluorocarbon Finish</h4>
+                  <div class="grid grid-cols-3 gap-2">
+                    <button class="finish-btn p-2 bg-surface-container-lowest text-center shadow-sm"
+                      onclick="setParam('finish', 'pvdf', 'PVDF 3-Coat Kynar 500 (35μm)')" type="button">
+                      <span class="block w-4 h-4 mx-auto mb-1 bg-[#8d9095]"></span>
+                      <span class="font-label text-[11px] uppercase block text-slate-800">PVDF 3-Coat</span>
+                    </button>
+                    <button class="finish-btn p-2 bg-surface text-center shadow-sm"
+                      onclick="setParam('finish', 'bronze', 'Champagne Bronze Fluorocarbon (38μm)')" type="button">
+                      <span class="block w-4 h-4 mx-auto mb-1 bg-[#b88e56]"></span>
+                      <span class="font-label text-[11px] uppercase block text-slate-800">Champagne</span>
+                    </button>
+                    <button class="finish-btn p-2 bg-surface text-center shadow-sm"
+                      onclick="setParam('finish', 'brushed', 'Brushed Titanium FEVE (30μm)')" type="button">
+                      <span class="block w-4 h-4 mx-auto mb-1 bg-[#ccd2d9]"></span>
+                      <span class="font-label text-[11px] uppercase block text-slate-800">Brushed FEVE</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Dynamic Summary Callout -->
+                <div class="bg-surface-container-highest p-3 flex items-center justify-between text-xs font-label">
+                  <span class="text-slate-600">SELECTED SPEC:</span>
+                  <span class="text-slate-900 font-bold" id="active-summary-sku">ALU-CC-4000-4MM-07-PVDF</span>
+                </div>
+              </div>
+            </div>
+            <!-- Action CTAs -->
+            <div class="space-y-3 pt-2">
+              <a class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-primary hover:bg-secondary text-white font-headline text-sm uppercase font-semibold tracking-wider transition-colors shadow-md"
+                href="#rfq-submittal-section">
+                <span class="material-symbols-outlined text-lg text-secondary-fixed">inventory</span>
+                REQUEST SPECIMEN KIT &amp; BOQ QUOTE
+              </a>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <a class="inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-surface-container-lowest hover:bg-surface-container text-slate-900 font-label text-xs uppercase font-medium shadow-sm transition-all"
+                  href="#technical-matrix">
+                  <span class="material-symbols-outlined text-base text-slate-600">description</span>
+                  TDS SPEC SHEET (3.9 MB)
+                </a>
+                <a class="inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-surface-container-lowest hover:bg-surface-container text-slate-900 font-label text-xs uppercase font-medium shadow-sm transition-all"
+                  href="#bim-cad-anchor">
+                  <span class="material-symbols-outlined text-base text-secondary">view_in_ar</span>
+                  REVIT BIM FAMILIES (LOD 400)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- RIGOROUS ENGINEERING METRICS & FIRE SAFETY BENCHMARK -->
+      <section class="w-full bg-surface-container-low py-14 px-6 md:px-12" id="technical-matrix">
+        <div class="max-w-[1440px] mx-auto space-y-10">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div class="space-y-1">
+              <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold">CERTIFIED PERFORMANCE
+                // 权威检测认证</span>
+              <h2 class="font-headline text-2xl sm:text-3xl font-bold text-primary">Mechanical Strength &amp; Fire
+                Physics Matrix</h2>
+              <p class="font-body text-sm text-slate-600 max-w-2xl">
+                Tested under ISO/IEC 17025 accredited international laboratories. Rigorously verified for extreme
+                positive/negative wind loads, shear deflection, and zero-ignition structural performance.
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-label text-xs text-slate-500 uppercase">STANDARDS:</span>
+              <span class="px-2 py-1 bg-surface-container-highest text-[11px] font-label text-slate-800">EN
+                13501-1</span>
+              <span class="px-2 py-1 bg-surface-container-highest text-[11px] font-label text-slate-800">ASTM
+                E330</span>
+              <span class="px-2 py-1 bg-surface-container-highest text-[11px] font-label text-slate-800">ASTM
+                C393</span>
+            </div>
+          </div>
+          <!-- Technical Comparison Table -->
+          <div class="overflow-x-auto bg-surface-container-lowest shadow-md">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-primary text-white font-label text-xs uppercase tracking-wider">
+                  <th class="p-4 font-semibold">Engineering Parameter</th>
+                  <th class="p-4 font-semibold">Test Standard</th>
+                  <th class="p-4 font-semibold text-secondary-fixed">ALU-CC-4000 (Corrugated Core)</th>
+                  <th class="p-4 font-semibold text-slate-400">Traditional FR-ACP (Mineral PE)</th>
+                  <th class="p-4 font-semibold text-slate-400">3.0mm Solid Aluminum Plate</th>
+                </tr>
+              </thead>
+              <tbody class="font-body text-sm divide-y divide-surface-container">
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Combustibility Classification</td>
+                  <td class="p-4 font-label text-xs text-slate-600">EN 13501-1 / BS 476 Pt 4</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    Class A1 (Non-combustible, No Smoke s1, No Droplets d0)
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">Class B-s1, d0 (Mineral Filled)</td>
+                  <td class="p-4 font-label text-xs text-slate-600">Class A1 Non-combustible</td>
+                </tr>
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Areal Weight (4.0mm System)</td>
+                  <td class="p-4 font-label text-xs text-slate-600">ISO 1183 Balance Mass</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    4.32 kg/m² (-62% vs Solid Plate)
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">7.60 kg/m²</td>
+                  <td class="p-4 font-label text-xs text-slate-600">8.15 kg/m² (Solid 3.0mm)</td>
+                </tr>
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Flexural Rigidity (E × I)</td>
+                  <td class="p-4 font-label text-xs text-slate-600">ASTM C393 / EN 14509</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    0.245 × 10¹¹ N·mm²/m
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">0.125 × 10¹¹ N·mm²/m</td>
+                  <td class="p-4 font-label text-xs text-slate-600">0.240 × 10¹¹ N·mm²/m</td>
+                </tr>
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Shear Resistance Across Ribs</td>
+                  <td class="p-4 font-label text-xs text-slate-600">ASTM C273 / EN 12090</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    2.85 MPa (Continuous Corrugation)
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">1.40 MPa</td>
+                  <td class="p-4 font-label text-xs text-slate-600">Homogeneous Isotropic</td>
+                </tr>
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Peel Strength (Skin to Core)</td>
+                  <td class="p-4 font-label text-xs text-slate-600">ASTM D1781 Climbing Drum</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    98.6 N·mm/mm (Molecular Hot Roll-Bond)
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">72.0 N·mm/mm</td>
+                  <td class="p-4 font-label text-xs text-slate-600">N/A (Monolithic)</td>
+                </tr>
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Max Wind Pressure Resistance</td>
+                  <td class="p-4 font-label text-xs text-slate-600">ASTM E330 Structural Deflection</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    ± 5.4 kPa (L/180 Pass @ 1500mm Span)
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">± 3.2 kPa</td>
+                  <td class="p-4 font-label text-xs text-slate-600">± 5.0 kPa (Requires Stiffeners)</td>
+                </tr>
+                <tr class="hover:bg-surface-container-low transition-colors">
+                  <td class="p-4 font-headline font-semibold text-slate-900">Thermal Decomposition VOCs</td>
+                  <td class="p-4 font-label text-xs text-slate-600">EN ISO 11925-2 Toxicity</td>
+                  <td class="p-4 font-label text-xs font-bold text-slate-950 bg-secondary/10">
+                    Zero Toxic Gases / 0% Smoke Release
+                  </td>
+                  <td class="p-4 font-label text-xs text-slate-600">Trace Gas from Binder</td>
+                  <td class="p-4 font-label text-xs text-slate-600">Zero Toxic Gases</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- In-Depth Engineering Diagram Callout -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface-container-lowest p-6 shadow-sm space-y-3">
+              <div class="w-10 h-10 bg-primary text-secondary-fixed flex items-center justify-center">
+                <span class="material-symbols-outlined">waves</span>
+              </div>
+              <h3 class="font-headline text-lg font-bold text-slate-900">Sinusoidal Geometry Principle</h3>
+              <p class="font-body text-xs text-slate-600 leading-relaxed">
+                The patented 12.5mm wave-pitch sinusoidal core acts as an infinite series of structural I-beams. Forces
+                applied to the outer sheet are immediately converted into tensile and compressive vectors along the
+                continuous flutes.
+              </p>
+              <div class="font-label text-[11px] text-secondary font-semibold uppercase">Flute Height: 2.8mm ± 0.05mm
+              </div>
+            </div>
+            <div class="bg-surface-container-lowest p-6 shadow-sm space-y-3">
+              <div class="w-10 h-10 bg-primary text-secondary-fixed flex items-center justify-center">
+                <span class="material-symbols-outlined">air</span>
+              </div>
+              <h3 class="font-headline text-lg font-bold text-slate-900">Internal Micro-Cavity Ventilation</h3>
+              <p class="font-body text-xs text-slate-600 leading-relaxed">
+                Unlike closed honeycomb cells, the open sinusoidal wave channels permit linear micro-aeration along the
+                flute orientation. This prevents internal hydrostatic pressure spikes and accelerates thermal
+                dissipation in desert climates.
+              </p>
+              <div class="font-label text-[11px] text-secondary font-semibold uppercase">Flow Area: 1,420 mm²/m Panel
+              </div>
+            </div>
+            <div class="bg-surface-container-lowest p-6 shadow-sm space-y-3">
+              <div class="w-10 h-10 bg-primary text-secondary-fixed flex items-center justify-center">
+                <span class="material-symbols-outlined">recycling</span>
+              </div>
+              <h3 class="font-headline text-lg font-bold text-slate-900">Circular Mono-Material Stream</h3>
+              <p class="font-body text-xs text-slate-600 leading-relaxed">
+                100% aluminum composition requires zero delamination sorting during building decommissioning. Scraps and
+                retired cassettes are melted directly into secondary ingot stock with less than 5% original smelting
+                energy.
+              </p>
+              <div class="font-label text-[11px] text-secondary font-semibold uppercase">Recycled Content: &gt; 35%
+                Post-Industrial</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ARCHITECTURAL FABRICATION, MILLING & CASSETTE DETAILS -->
+      <section class="w-full bg-surface py-14 px-6 md:px-12" id="bim-cad-anchor">
+        <div class="max-w-[1440px] mx-auto space-y-10">
+          <div class="space-y-2">
+            <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold">FABRICATION &amp;
+              JOINERY DETAILS // 节点详图</span>
+            <h2 class="font-headline text-2xl sm:text-3xl font-bold text-primary">Standard Milling Profiles &amp;
+              Cassette Assembly</h2>
+            <p class="font-body text-sm text-slate-600 max-w-3xl">
+              Engineered for CNC V-groove routing using standard tungsten carbide 90° or 135° cutters. Panels fold
+              seamlessly into rigid architectural cassettes without fracturing the outer roll-coated skin.
+            </p>
+          </div>
+          <!-- Detail Showcase Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Detail 01 -->
+            <div class="bg-surface-container-lowest shadow-sm flex flex-col justify-between group">
+              <div class="p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-label text-xs px-2 py-0.5 bg-primary text-white font-semibold">DETAIL 01</span>
+                  <span class="font-label text-[11px] text-slate-500 uppercase">Routing Specification</span>
+                </div>
+                <div
+                  class="w-full h-44 bg-surface-container-low flex items-center justify-center p-4 overflow-hidden relative">
+                  <!-- Inline Precision Vector Diagram for V-Groove -->
+                  <svg class="w-full h-full text-slate-700" viewbox="0 0 240 120">
+                    <rect fill="#c4ced8" height="8" width="220" x="10" y="80"></rect>
+                    <path d="M10 80 L90 80 L120 40 L150 80 L230 80" fill="none" stroke="currentColor" stroke-width="2">
+                    </path>
+                    <!-- Corrugation indicator -->
+                    <path d="M20 75 Q 30 65, 40 75 T 60 75 T 80 75" fill="none" stroke="#7b5825" stroke-width="2">
+                    </path>
+                    <path d="M160 75 Q 170 65, 180 75 T 200 75 T 220 75" fill="none" stroke="#7b5825" stroke-width="2">
+                    </path>
+                    <!-- Cutter angle mark -->
+                    <line stroke="#000" stroke-dasharray="2 2" stroke-width="1.5" x1="120" x2="120" y1="20" y2="40">
+                    </line>
+                    <text fill="#000" font-family="JetBrains Mono" font-size="9" x="125" y="32">90° CNC ROUTER</text>
+                    <text fill="#525f71" font-family="JetBrains Mono" font-size="8" x="75" y="105">0.3mm RESIDUAL CORE
+                      BASE</text>
+                  </svg>
+                </div>
+                <h3 class="font-headline text-base font-bold text-slate-900">V-Groove 90° Routing &amp; Flange Return
+                </h3>
+                <p class="font-body text-xs text-slate-600 leading-relaxed">
+                  Routed from the backside through the rear skin and corrugated wave core. A calibrated 0.2mm - 0.3mm
+                  core base remains undisturbed to prevent metal fatigue when cold-folding 90° returns.
+                </p>
+              </div>
+              <div class="p-4 bg-surface-container-low flex items-center justify-between text-xs font-label">
+                <span class="text-slate-600">Minimum Bend Radius</span>
+                <span class="font-semibold text-slate-900">R = 2.0 mm</span>
+              </div>
+            </div>
+            <!-- Detail 02 -->
+            <div class="bg-surface-container-lowest shadow-sm flex flex-col justify-between group">
+              <div class="p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-label text-xs px-2 py-0.5 bg-primary text-white font-semibold">DETAIL 02</span>
+                  <span class="font-label text-[11px] text-slate-500 uppercase">Subframe Integration</span>
+                </div>
+                <div
+                  class="w-full h-44 bg-surface-container-low flex items-center justify-center p-4 overflow-hidden relative">
+                  <!-- Inline Precision Vector Diagram for Z-Clip Mullion -->
+                  <svg class="w-full h-full text-slate-700" viewbox="0 0 240 120">
+                    <!-- Vertical Mullion -->
+                    <rect fill="#e0e3e5" height="100" stroke="#74777d" stroke-width="1.5" width="30" x="40" y="10">
+                    </rect>
+                    <!-- Z-bracket -->
+                    <path d="M70 45 L100 45 L100 75 L130 75" fill="none" stroke="#7b5825" stroke-width="3"></path>
+                    <!-- Fastener -->
+                    <line stroke="#000" stroke-width="2" x1="60" x2="85" y1="45" y2="45"></line>
+                    <circle cx="85" cy="45" fill="#000" r="3"></circle>
+                    <!-- Panel Cassette Return -->
+                    <rect fill="#0f1c2c" height="60" width="8" x="130" y="30"></rect>
+                    <rect fill="#0f1c2c" height="8" width="80" x="138" y="30"></rect>
+                    <text fill="#525f71" font-family="JetBrains Mono" font-size="8" x="80" y="105">EXTRUDED Z-CLIP
+                      MOUNT</text>
+                  </svg>
+                </div>
+                <h3 class="font-headline text-base font-bold text-slate-900">Concealed Fastening Cassette (Z-Clip)</h3>
+                <p class="font-body text-xs text-slate-600 leading-relaxed">
+                  Cassette folded flanges are riveted with structural corner brackets. Panels hook onto continuous
+                  vertical aluminum T- or Z-runners with stainless steel isolating washers to prevent bimetallic
+                  corrosion.
+                </p>
+              </div>
+              <div class="p-4 bg-surface-container-low flex items-center justify-between text-xs font-label">
+                <span class="text-slate-600">Sub-framing Clearance</span>
+                <span class="font-semibold text-slate-900">50 mm Cavity Min</span>
+              </div>
+            </div>
+            <!-- Detail 03 -->
+            <div class="bg-surface-container-lowest shadow-sm flex flex-col justify-between group">
+              <div class="p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-label text-xs px-2 py-0.5 bg-primary text-white font-semibold">DETAIL 03</span>
+                  <span class="font-label text-[11px] text-slate-500 uppercase">Movement Joint</span>
+                </div>
+                <div
+                  class="w-full h-44 bg-surface-container-low flex items-center justify-center p-4 overflow-hidden relative">
+                  <!-- Inline Diagram for Shadow Joint -->
+                  <svg class="w-full h-full text-slate-700" viewbox="0 0 240 120">
+                    <!-- Left panel edge -->
+                    <rect fill="#0f1c2c" height="8" width="80" x="20" y="40"></rect>
+                    <rect fill="#0f1c2c" height="35" width="8" x="95" y="40"></rect>
+                    <!-- Right panel edge -->
+                    <rect fill="#0f1c2c" height="35" width="8" x="135" y="40"></rect>
+                    <rect fill="#0f1c2c" height="8" width="80" x="135" y="40"></rect>
+                    <!-- Joint Gasket -->
+                    <rect fill="#7b5825" fill-opacity="0.5" height="12" width="32" x="103" y="55"></rect>
+                    <!-- Dimension -->
+                    <line stroke="#ba1a1a" stroke-width="1.5" x1="103" x2="135" y1="30" y2="30"></line>
+                    <text fill="#ba1a1a" font-family="JetBrains Mono" font-size="8" x="106" y="25">15mm GAP</text>
+                    <text fill="#525f71" font-family="JetBrains Mono" font-size="8" x="65" y="105">EPDM WEATHERING
+                      BEAD</text>
+                  </svg>
+                </div>
+                <h3 class="font-headline text-base font-bold text-slate-900">Horizontal Shadow Gap Express Joint</h3>
+                <p class="font-body text-xs text-slate-600 leading-relaxed">
+                  Engineered open shadow gaps (15mm - 20mm width) featuring dry-joint EPDM/Neoprene multi-fin continuous
+                  weather gaskets or open-joint rainscreen baffle designs with rear weeping drainage.
+                </p>
+              </div>
+              <div class="p-4 bg-surface-container-low flex items-center justify-between text-xs font-label">
+                <span class="text-slate-600">Expansion Allowance</span>
+                <span class="font-semibold text-slate-900">± 3.5 mm / Panel</span>
+              </div>
+            </div>
+          </div>
+          <!-- Download Strip -->
+          <div class="p-6 bg-primary text-white flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="space-y-1 text-center md:text-left">
+              <h4 class="font-headline text-base font-bold">Download Complete Milling &amp; Installation Technical
+                Manual</h4>
+              <p class="font-body text-xs text-slate-300">Includes DWG elevation assemblies, CNC G-code cutter
+                geometries, and Revit families (LOD 400).</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <a class="px-4 py-2.5 bg-secondary text-white font-label text-xs uppercase font-semibold hover:bg-secondary/90 transition-colors inline-flex items-center gap-2"
+                href="#">
+                <span class="material-symbols-outlined text-base">download</span>
+                PACKAGE (ZIP // 28.4 MB)
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- GLOBAL CASE STUDIES / LANDMARK REFERENCES -->
+      <section class="w-full bg-surface-container-low py-14 px-6 md:px-12">
+        <div class="max-w-[1440px] mx-auto space-y-10">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div class="space-y-1">
+              <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold">PROVEN DURABILITY //
+                国际工程案例</span>
+              <h2 class="font-headline text-2xl sm:text-3xl font-bold text-primary">Global Completed Landmark Projects
+              </h2>
+              <p class="font-body text-sm text-slate-600">Installed on over 1,200,000 m² of high-traffic transit
+                terminals, convention halls, and commercial towers.</p>
+            </div>
+            <a class="font-label text-xs text-secondary hover:text-primary transition-colors uppercase font-semibold flex items-center gap-1"
+              href="#">
+              Explore All Global References <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group">
+              <div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+                <img alt="Doha Metro Station Concourse"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Doha Metro transit station concourse exterior featuring futuristic curved white and champagne gold architectural cladding using corrugated core aluminum composite panels in warm desert daylight."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnwZDSDmn8M_7IU1qmMXNvxy4hwmcKVL3p2UA7UlZk4JSz-0_TgDlyNHXzoIMW7vzUy9F9A6279jEWZyuqH9Ue2j2lXMnb0uyFZVqNFYVcZw744OvRhSvTlyb42jNs5FDmgmiTQ_SShI4J-LounatdAAgFeKoSVUJ8RpukQa0_vQ7zaf5IeXyh_ZhjHcb_c9QH2soAsMKtLpL-05Ab_4rct9_rr9ZV5kAEX8Nq5Qk" />
+                <span
+                  class="absolute top-3 left-3 px-2 py-0.5 bg-primary/90 text-white font-label text-[10px] uppercase">
+                  TRANSIT INFRASTRUCTURE
+                </span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div class="space-y-1">
+                  <h3 class="font-headline text-base font-bold text-slate-900">Doha Metro Red Line Concourse</h3>
+                  <p class="font-body text-xs text-slate-500">Doha, Qatar // Completed 2022</p>
+                </div>
+                <div class="pt-3 border-t border-surface-container space-y-1.5 font-label text-[11px] text-slate-700">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Envelope Area:</span>
+                    <span class="font-semibold">42,500 m²</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Material Spec:</span>
+                    <span class="font-semibold">ALU-CC-4000 (6mm)</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Wind Benchmark:</span>
+                    <span class="font-semibold text-secondary">ASTM E330 4.8 kPa</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group">
+              <div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+                <img alt="Madrid Exhibition Center"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Madrid International Exhibition Center modern exhibition hall facade covered in geometric metallic corrugated aluminum panels reflecting bright Spanish afternoon sunlight."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDA6uHoNW1YZECIbfZrSlNPCHu9NzZs0w8jyb4NC-SjCtAaLmBuhAHZX7Gqomi_BwARg-hpFXc-HV4STLKlqlRmLvwiVFtDc1-kg0zQ89wVQLkBjG0CRu6fqraYUoQSwrXfkczatw5c5ptQi0lYun8H3U1MSomXX1F783IBXS6C7JaEJj5au8qX35GwMqvOEGydVfICS-ngy33ZrC9r4YGPv-qUe06mamx4xVLq5U" />
+                <span
+                  class="absolute top-3 left-3 px-2 py-0.5 bg-primary/90 text-white font-label text-[10px] uppercase">
+                  CULTURAL &amp; EXHIBITION
+                </span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div class="space-y-1">
+                  <h3 class="font-headline text-base font-bold text-slate-900">IFEMA North Exhibition Expansion</h3>
+                  <p class="font-body text-xs text-slate-500">Madrid, Spain // Completed 2023</p>
+                </div>
+                <div class="pt-3 border-t border-surface-container space-y-1.5 font-label text-[11px] text-slate-700">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Envelope Area:</span>
+                    <span class="font-semibold">28,000 m²</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Material Spec:</span>
+                    <span class="font-semibold">ALU-CC-4000 (4mm Brushed)</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Fire Rating:</span>
+                    <span class="font-semibold text-secondary">EN 13501-1 Class A1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col group">
+              <div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+                <img alt="Riyadh Metro Station Portal"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  data-alt="Modern high speed rail station canopy and monumental entrance portal in Riyadh clad in champagne metallic corrugated composite panels with recessed dynamic architectural lighting."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3ozKaa0dSp7tUe8PkQ521b2zYyeYQv3_9KKJ6Jzx323cnIPUworQAtFPqDID4cye3Zfn_SGVcHu-w0QyxuTVsVfhfiUF7HVBug9YCcQR-xWecellVlXILDXUsdDp_MXmcEaSbrOjsKBSbjOywPNGn7n67zn-mgWtZ27BAs6RD0rbderAp36iBdigH3yrbVRSAMk5q15QloEteXBQRH9kWkHGvHRO-xNnflQAWis" />
+                <span
+                  class="absolute top-3 left-3 px-2 py-0.5 bg-primary/90 text-white font-label text-[10px] uppercase">
+                  HIGH SPEED TRANSIT
+                </span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div class="space-y-1">
+                  <h3 class="font-headline text-base font-bold text-slate-900">King Abdullah Financial District Station
+                  </h3>
+                  <p class="font-body text-xs text-slate-500">Riyadh, Saudi Arabia // Completed 2024</p>
+                </div>
+                <div class="pt-3 border-t border-surface-container space-y-1.5 font-label text-[11px] text-slate-700">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Envelope Area:</span>
+                    <span class="font-semibold">36,800 m²</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Material Spec:</span>
+                    <span class="font-semibold">ALU-CC-4000 (6mm Champagne)</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Thermal Deflection:</span>
+                    <span class="font-semibold text-secondary">&lt; 1.2 mm @ 75°C Surface</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- GREEN BUILDING & EXPORT CRATING CREDENTIALS -->
+      <section class="w-full bg-surface py-12 px-6 md:px-12">
+        <div
+          class="max-w-[1440px] mx-auto bg-surface-container-high p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold">SUSTAINABLE ARCHITECTURE
+              // 绿色建筑评级</span>
+            <h2 class="font-headline text-2xl font-bold text-primary">LEED v4 &amp; BREEAM Project Contribution</h2>
+            <p class="font-body text-sm text-slate-700 leading-relaxed">
+              ALU-CC-4000 is manufactured using 100% continuous coil-coated non-ferrous metals with zero volatile
+              organic compound (VOC) emissions during building lifecycle or elevated fire exposure. Completely compliant
+              with Environmental Product Declarations (EPD ISO 14025), qualifying projects for maximum Materials and
+              Resources (MR) credits.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 bg-surface-container-lowest text-slate-800 font-label text-xs">LEED v4 MR: Recycled
+                Content</span>
+              <span class="px-3 py-1 bg-surface-container-lowest text-slate-800 font-label text-xs">BREEAM: Mat 01 Life
+                Cycle</span>
+              <span class="px-3 py-1 bg-surface-container-lowest text-slate-800 font-label text-xs">Fumigated ISPM-15
+                Crating</span>
+              <span class="px-3 py-1 bg-surface-container-lowest text-slate-800 font-label text-xs">Direct 20GP / 40HQ
+                Ocean Stowage</span>
+            </div>
+          </div>
+          <div class="lg:col-span-4 bg-primary text-white p-6 space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed text-2xl">verified</span>
+              <span class="font-headline text-sm font-bold uppercase tracking-wider">Export Protection Standard</span>
+            </div>
+            <p class="font-body text-xs text-slate-300 leading-relaxed">
+              Standard shipment includes protective PE laser-cutting release film, interleaving foam cushions, and
+              moisture-sealed heat-treated wooden crates reinforced with galvanized steel bands.
+            </p>
+            <div class="font-label text-[11px] text-secondary-fixed uppercase pt-1">
+              Zero Salt-Mist Deterioration Guarantee
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAST-TRACK RFQ & FAÇADE ENGINEERING SUBMITTAL FORM -->
+      <section class="w-full bg-primary-container text-white py-16 px-6 md:px-12" id="rfq-submittal-section">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Submittal Left Info -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-2">
+              <span class="font-label text-xs uppercase tracking-widest text-secondary-fixed font-bold">DIRECT FACTORY
+                PROCUREMENT // 商务及打样</span>
+              <h2 class="font-headline text-3xl sm:text-4xl font-bold tracking-tight text-white">Request Project
+                Quotation &amp; Specimen Kit</h2>
+              <p class="font-body text-sm text-slate-300 leading-relaxed">
+                Our international engineering consultation desk provides rapid structural preliminary calculations, BOQ
+                optimization, and overnight courier sample boxes (including 4mm/6mm panel samples and color fan decks)
+                for registered façade contractors, consultants, and architectural practices.
+              </p>
+            </div>
+            <div class="space-y-4 pt-4 border-t border-white/10 font-label text-xs">
+              <div class="flex items-center gap-3 text-slate-200">
+                <span class="material-symbols-outlined text-secondary-fixed">timer</span>
+                <span>24-Hour Technical &amp; Commercial Submittal Turnaround</span>
+              </div>
+              <div class="flex items-center gap-3 text-slate-200">
+                <span class="material-symbols-outlined text-secondary-fixed">box</span>
+                <span>Sample Specimen Box Shipped via DHL Express Worldwide</span>
+              </div>
+              <div class="flex items-center gap-3 text-slate-200">
+                <span class="material-symbols-outlined text-secondary-fixed">calculate</span>
+                <span>Complimentary Structural Wind Load &amp; Panel Thickness Optimization</span>
+              </div>
+            </div>
+            <div class="bg-white/5 p-4 space-y-2 border border-white/10">
+              <span class="font-label text-[11px] uppercase tracking-wider text-secondary-fixed font-bold">Global
+                Engineering Support Desk</span>
+              <p class="font-body text-xs text-slate-300">Direct Contact: export@alumax-facade.com</p>
+              <p class="font-body text-xs text-slate-300">International Hotline: +971 4 881 2900 / +86 757 8588 3100</p>
+            </div>
+          </div>
+          <!-- Submittal Right Form -->
+          <div class="lg:col-span-7 bg-surface-container-lowest text-slate-900 p-8 shadow-2xl">
+            <form class="space-y-5" id="rfq-form" onsubmit="handleRfqSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Contact Name *</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                    placeholder="e.g. David Vance" required="" type="text" />
+                </div>
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Work Corporate Email
+                    *</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                    placeholder="name@architects-firm.com" required="" type="email" />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Company / Façade
+                    Consultancy *</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                    placeholder="e.g. Foster &amp; Façade Engineers" required="" type="text" />
+                </div>
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Destination Country / Port
+                    *</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                    placeholder="e.g. Jebel Ali, Dubai / Hamburg, DE" required="" type="text" />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Estimated Area (m²)</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                    placeholder="e.g. 15000" type="number" />
+                </div>
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Target Thickness</label>
+                  <select
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body">
+                    <option value="4mm">4.0 mm Standard</option>
+                    <option value="6mm">6.0 mm High Wind</option>
+                    <option value="8mm">8.0 mm Megapanel</option>
+                    <option value="undecided">Consultant to Recommend</option>
+                  </select>
+                </div>
+                <div class="space-y-1">
+                  <label class="block font-label text-xs uppercase text-slate-700 font-bold">Design Wind (kPa)</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                    placeholder="e.g. 3.5 kPa" type="text" />
+                </div>
+              </div>
+              <div class="space-y-1">
+                <label class="block font-label text-xs uppercase text-slate-700 font-bold">Project Scope &amp; Special
+                  Requirements</label>
+                <textarea
+                  class="w-full px-3.5 py-2.5 bg-surface-container-low border border-slate-300 focus:border-secondary focus:bg-white focus:outline-none text-sm font-body"
+                  placeholder="Specify building height, finish preference (PVDF / Anodized / Titanium), custom louver integration, or CAD drawing reference details..."
+                  rows="3"></textarea>
+              </div>
+              <div class="flex items-start gap-2.5 pt-1">
+                <input checked="" class="mt-1 h-4 w-4 text-secondary rounded-none border-slate-300 focus:ring-0"
+                  id="sample-request-box" type="checkbox" />
+                <label class="font-body text-xs text-slate-600" for="sample-request-box">
+                  Also ship complimentary Physical Specimen Box (includes 4mm &amp; 6mm cutaway samples, PVDF color
+                  charts, and third-party laboratory test certificates) to the company address.
+                </label>
+              </div>
+              <button
+                class="w-full py-3.5 bg-primary hover:bg-secondary text-white font-headline text-sm font-bold uppercase tracking-wider transition-colors shadow-md flex items-center justify-center gap-2"
+                type="submit">
+                <span class="material-symbols-outlined text-lg text-secondary-fixed">send</span>
+                SUBMIT ENGINEERING RFQ &amp; REQUEST SAMPLE KIT
+              </button>
+              <p class="font-label text-[11px] text-center text-slate-400">
+                Strict confidentiality guaranteed. Drawings protected by mutual non-disclosure compliance.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      // Interactive Gallery Preview Switcher
+      const galleryData = [
+        {
+          title: "Sinusoidal Flute 12.5mm Pitch Roll-Bonded",
+          desc: "Core Architecture: Patented Sinusoidal Wave Continuous Bonding",
+          alt: "Technical architectural photography of continuous sinusoidal wave corrugated aluminum core composite panel cutaway. Showing roll-bonded metallic silver exterior skin, open flute structural cavity, precision extruded edges, and non-combustible metallic core with natural anodized reflections under studio lighting."
+        },
+        {
+          title: "Airport Terminal Building Envelope",
+          desc: "Reference Facade: 6mm Corrugated Panels Withstanding High Jet-Blast Wind Loads",
+          alt: "Exterior high-angle perspective of an international airport terminal building envelope paneled in 6mm champagne bronze corrugated aluminum composite sheets under midday sun."
+        },
+        {
+          title: "Profile Caliper Cross-Section (4mm vs 6mm)",
+          desc: "Engineered Tolerances: High Rigidity With Featherweight Mass",
+          alt: "Micro calibrated macro engineering photograph of 4mm and 6mm corrugated aluminum composite panel cross sections resting on technical drafting blueprint paper with calipers."
+        },
+        {
+          title: "Concealed Z-Clip Cassette Mounting System",
+          desc: "Dry Joinery: Structural Aluminum Sub-Runner & Isolating Neoprene Pads",
+          alt: "Full scale mockup of concealed extruded aluminum Z-clip cassette bracket mounting system fixed to structural steel mullion behind corrugated composite panel."
+        }
+      ];
+
+      function changeGallery(idx) {
+        const mainImg = document.getElementById('main-preview-img');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+
+        thumbs.forEach((thumb, i) => {
+          if (i === idx) {
+            thumb.classList.add('ring-2', 'ring-secondary');
+          } else {
+            thumb.classList.remove('ring-2', 'ring-secondary');
+          }
+        });
+
+        if (mainImg && galleryData[idx]) {
+          mainImg.setAttribute('data-alt', galleryData[idx].alt);
+          mainImg.src = "placeholder";
+        }
+      }
+
+      // Interactive Parameter Configurator State
+      const configState = {
+        thickness: '4mm',
+        skin: 'standard',
+        finish: 'pvdf'
+      };
+
+      function setParam(category, val, label) {
+        configState[category] = val;
+
+        if (category === 'thickness') {
+          document.getElementById('selected-thickness-val').textContent = label;
+          document.querySelectorAll('.thickness-btn').forEach(b => {
+            if (b.textContent.trim().toLowerCase().includes(val)) {
+              b.className = 'thickness-btn py-2 px-3 bg-secondary text-white text-xs font-label uppercase font-medium shadow-sm text-center';
+            } else {
+              b.className = 'thickness-btn py-2 px-3 bg-surface text-xs font-label uppercase font-medium text-slate-700 shadow-sm hover:bg-white text-center';
+            }
+          });
+        }
+
+        if (category === 'skin') {
+          document.querySelectorAll('.skin-btn').forEach(b => {
+            b.classList.remove('bg-secondary', 'text-white');
+            b.classList.add('bg-surface');
+          });
+          event.currentTarget.classList.add('bg-secondary', 'text-white');
+          event.currentTarget.classList.remove('bg-surface');
+        }
+
+        if (category === 'finish') {
+          document.querySelectorAll('.finish-btn').forEach(b => {
+            b.classList.remove('ring-2', 'ring-secondary');
+          });
+          event.currentTarget.classList.add('ring-2', 'ring-secondary');
+        }
+
+        // Update SKU string
+        const sku = `ALU-CC-4000-${configState.thickness.toUpperCase()}-${configState.skin === 'standard' ? '07' : '10'}-${configState.finish.toUpperCase()}`;
+        const skuEl = document.getElementById('active-summary-sku');
+        if (skuEl) skuEl.textContent = sku;
+      }
+
+      function handleRfqSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<span class="material-symbols-outlined text-lg animate-spin">sync</span> TRANSMITTING RFQ PACKET...`;
+
+        setTimeout(() => {
+          btn.innerHTML = `<span class="material-symbols-outlined text-lg">check_circle</span> SUBMITTAL RECEIVED — REF #ALX-${Math.floor(100000 + Math.random() * 900000)}`;
+          btn.classList.remove('bg-primary');
+          btn.classList.add('bg-green-700');
+        }, 1200);
+      }
+    </script>
+  </main>
+  <!-- ========================================================================= -->
+  <!-- FOOTER (NO FLOATING OVERLAY BUTTON, FULL SOCIAL MEDIA, CLEAN COLUMNS)     -->
+  <!-- ========================================================================= -->
+  <footer class="w-full bg-[#0d1b2a] text-white border-t border-white/10">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl">
+        <!-- Col 1 & 2: Brand, Summary & Social Media Icons -->
+        <div class="lg:col-span-2 space-y-space-md">
+          <div class="flex items-center gap-3">
+            <svg class="h-8 w-8 text-secondary-fixed" fill="currentColor" viewbox="0 0 40 40">
+              <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round"
+                stroke-width="3.5"></path>
+              <path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
+              <line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
+            </svg>
+            <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-white font-bold">ALUMAX
+              ARCHITECTURAL</span>
+          </div>
+          <p class="font-body-md text-body-md text-slate-300 max-w-md">
+            Global premier manufacturer of precision-engineered curtain walls, motorized adaptive facades, and
+            high-performance architectural envelopes. Supplying tested systems to over 60 countries across Europe, the
+            Middle East, Southeast Asia, and the Americas.
+          </p>
+          <!-- Social Media Icons for International B2B Reach -->
+          <div class="space-y-2 pt-2">
+            <span
+              class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider block font-semibold">Global
+              Social &amp; Project Channels</span>
+            <div class="flex items-center gap-2">
+              <!-- LinkedIn -->
+              <a aria-label="ALUMAX on LinkedIn"
+                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
+                href="#" title="LinkedIn">
+                <span class="font-label-sm text-label-sm font-bold group-hover:text-on-secondary">in</span>
+              </a>
+              <!-- YouTube -->
+              <a aria-label="ALUMAX on YouTube"
+                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
+                href="#" title="YouTube">
+                <span class="material-symbols-outlined text-lg group-hover:text-on-secondary">smart_display</span>
+              </a>
+              <!-- X (Twitter) -->
+              <a aria-label="ALUMAX on X"
+                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
+                href="#" title="X (Twitter)">
+                <span class="font-label-sm text-label-sm font-bold group-hover:text-on-secondary">𝕏</span>
+              </a>
+              <!-- WeChat -->
+              <a aria-label="ALUMAX on WeChat"
+                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
+                href="#" title="WeChat">
+                <span class="material-symbols-outlined text-lg group-hover:text-on-secondary">chat</span>
+              </a>
+              <!-- Instagram -->
+              <a aria-label="ALUMAX on Instagram"
+                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
+                href="#" title="Instagram">
+                <span class="material-symbols-outlined text-lg group-hover:text-on-secondary">photo_camera</span>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-space-sm pt-space-xs">
+            <span
+              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">ISO
+              9001:2015</span>
+            <span
+              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">CE
+              Certified</span>
+            <span
+              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">ASTM
+              E84 / EN13501 A2</span>
+            <span
+              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">BMS
+              IoT Ready</span>
+          </div>
+        </div>
+        <!-- Col 3: Systems Matrix -->
+        <div class="space-y-space-md">
+          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Systems Matrix</div>
+          <ul class="space-y-space-xs">
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#featured-envelope-systems">Intelligent Motorized Louvers</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#featured-envelope-systems">Solid Aluminum Panels (3.0mm)</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#featured-envelope-systems">Aluminum Honeycomb Panels</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#featured-envelope-systems">Corrugated Core Panels</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#featured-envelope-systems">Pre-Insulated Envelope Panels</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#featured-envelope-systems">Architectural Louvers &amp; Sunshades</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#">High-Traffic Steel Cladding</a></li>
+          </ul>
+        </div>
+        <!-- Col 4: Engineering & Export -->
+        <div class="space-y-space-md">
+          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Engineering &amp; Export</div>
+          <ul class="space-y-space-xs">
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#technical-resources">BIM LOD 400 Library</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#technical-resources">ASTM &amp; EN Test Certifications</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#landmark-projects">Airport &amp; High-Rise References</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#manufacturing-strengths">CNC Precision Lines</a></li>
+            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
+                href="#manufacturing-strengths">Export Shipping &amp; Crating</a></li>
+          </ul>
+        </div>
+        <!-- Col 5: Global Inquiries -->
+        <div class="space-y-space-md">
+          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Global Inquiries</div>
+          <p class="font-body-sm text-body-sm text-slate-300">Engineering Consultation &amp; Overseas Export Support
+            Center.</p>
+          <div class="font-label-sm text-label-sm space-y-space-xs text-slate-300">
+            <p class="">Dubai, UAE // Regional MENA Office</p>
+            <p class="">Rotterdam, NL // European Logistics Hub</p>
+            <p class="">Foshan, CN // Global Manufacturing Center</p>
+            <p class="text-secondary-fixed font-semibold pt-space-xs">export@alumax-facade.com</p>
+          </div>
+          <div class="pt-space-xs">
+            <a class="inline-block font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed hover:text-white transition-colors"
+              href="#fast-rfq-section">
+              Global Representative Network →
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Legal & Copyright -->
+      <div
+        class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <p class="font-label-sm text-label-sm text-slate-400">© 2025 ALUMAX Architectural Envelopes Co., Ltd. All rights
+          reserved. Precision Architectural Facade Systems.</p>
+        <div class="flex items-center gap-space-lg font-label-sm text-label-sm text-slate-400">
+          <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-white transition-colors" href="#">Export Compliance &amp; Certifications</a>
+          <a class="hover:text-white transition-colors" href="#">Terms of Supply</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- SCRIPT FOR HERO SLIDE SWITCHER -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroBg = document.getElementById('hero-bg-slide');
+      const slideBtns = document.querySelectorAll('.hero-slide-btn');
+      const playbackToggle = document.getElementById('playback-toggle-btn');
+      const playbackIcon = document.getElementById('playback-icon');
+
+      let currentSlide = 0;
+      let isPlaying = true;
+      let timer = null;
+
+      function switchSlide(index) {
+        slideBtns.forEach((btn, i) => {
+          const dot = btn.querySelector('span');
+          if (i === index) {
+            btn.classList.add('active', 'bg-white/15', 'border-secondary');
+            btn.classList.remove('bg-white/5', 'border-white/5');
+            if (dot) {
+              dot.classList.add('bg-secondary');
+              dot.classList.remove('bg-slate-500');
+            }
+            const newBg = btn.getAttribute('data-bg');
+            if (newBg && heroBg) {
+              heroBg.src = newBg;
+            }
+          } else {
+            btn.classList.remove('active', 'bg-white/15', 'border-secondary');
+            btn.classList.add('bg-white/5', 'border-white/5');
+            if (dot) {
+              dot.classList.remove('bg-secondary');
+              dot.classList.add('bg-slate-500');
+            }
+          }
+        });
+        currentSlide = index;
+      }
+
+      slideBtns.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          switchSlide(idx);
+        });
+      });
+
+      function startSlideshow() {
+        timer = setInterval(() => {
+          let next = (currentSlide + 1) % slideBtns.length;
+          switchSlide(next);
+        }, 5500);
+      }
+
+      function stopSlideshow() {
+        if (timer) clearInterval(timer);
+      }
+
+      if (playbackToggle) {
+        playbackToggle.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          if (isPlaying) {
+            playbackIcon.textContent = 'pause';
+            startSlideshow();
+          } else {
+            playbackIcon.textContent = 'play_arrow';
+            stopSlideshow();
+          }
+        });
+      }
+
+      startSlideshow();
+    });
+  </script>
+</body>
+
+</html>

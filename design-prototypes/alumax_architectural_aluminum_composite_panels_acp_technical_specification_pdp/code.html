@@ -1,0 +1,1159 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>ALUMAX | Architectural Envelopes &amp; Adaptive Facade Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body { margin:0; padding:0; }
+      body { overscroll-behavior:none; }
+      main > :first-child { margin-top:0 !important; }
+      main > :last-child { margin-bottom:0 !important; }
+    }
+    ::-webkit-scrollbar { display:none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f2f4f6",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-fixed": "#0f1c2c",
+            "tertiary-fixed": "#d2e4ff",
+            "background": "#f8f9fb",
+            "inverse-primary": "#bac8dc",
+            "on-primary": "#ffffff",
+            "primary": "#000000",
+            "inverse-on-surface": "#eff1f3",
+            "primary-fixed-dim": "#bac8dc",
+            "primary-container": "#0d1b2a",
+            "on-tertiary-container": "#6f85a3",
+            "outline-variant": "#c4c6cc",
+            "on-primary-fixed-variant": "#3a4859",
+            "on-primary-container": "#778598",
+            "surface-variant": "#e0e3e5",
+            "on-surface-variant": "#44474c",
+            "outline": "#74777d",
+            "on-tertiary-fixed-variant": "#324863",
+            "primary-fixed": "#d6e4f9",
+            "on-tertiary-fixed": "#021d35",
+            "on-error-container": "#93000a",
+            "surface-tint": "#525f71",
+            "surface": "#f8f9fb",
+            "surface-bright": "#f8f9fb",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#edbe82",
+            "error-container": "#ffdad6",
+            "on-background": "#191c1e",
+            "tertiary-fixed-dim": "#b2c8e8",
+            "on-secondary-fixed": "#2a1800",
+            "inverse-surface": "#2d3133",
+            "tertiary": "#000000",
+            "on-surface": "#191c1e",
+            "surface-dim": "#d8dadc",
+            "on-secondary-container": "#7a5724",
+            "surface-container": "#eceef0",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#021d35",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#60400f",
+            "secondary-container": "#ffcf92",
+            "secondary-fixed": "#ffddb5",
+            "secondary": "#7b5825"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "gutter": "1.5rem"
+          },
+          fontFamily: {
+            "body-lg": ["Manrope"],
+            "display-xl": ["Space Grotesk"],
+            "body-sm": ["Manrope"],
+            "body-md": ["Manrope"],
+            "headline-lg": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+            "label-lg": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "display-xl-mobile": ["Space Grotesk"],
+            "label-md": ["JetBrains Mono"],
+            "headline-md": ["Space Grotesk"],
+            "label-sm": ["JetBrains Mono"],
+            "display-lg-mobile": ["Space Grotesk"]
+          },
+          fontSize: {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "display-xl": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "display-lg": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "display-xl-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+            "display-lg-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary selection:text-white">
+<!-- 1. TOP HEADER: CLEAN GEOMETRIC LOGO ONLY (NO TEXT BESIDE IT), DROPDOWN LANG SELECTOR, NO USD CURRENCY -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0d1b2a]/95 backdrop-blur-xl border-b border-white/10 transition-all">
+<div class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-lg">
+<!-- Clean geometric logo only -->
+<div class="flex items-center">
+<a aria-label="ALUMAX Home" class="flex items-center group" href="#">
+<svg class="h-9 w-9 text-secondary-fixed transition-transform duration-300 group-hover:scale-105" fill="currentColor" viewBox="0 0 40 40">
+<path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5"></path>
+<path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
+<line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
+</svg>
+</a>
+</div>
+<!-- Navigation links -->
+<nav class="hidden xl:flex items-center gap-space-lg">
+<a class="font-label-md text-label-md text-white border-b-2 border-secondary pb-1 tracking-wider uppercase" href="#">Home</a>
+<a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider" href="#featured-envelope-systems">Products</a>
+<a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider" href="#landmark-projects">Projects</a>
+<a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider" href="#manufacturing-strengths">Engineering</a>
+<a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider" href="#technical-resources">Resources</a>
+<a class="font-label-md text-label-md text-slate-300 hover:text-white transition-colors uppercase tracking-wider" href="#fast-rfq-section">Contact</a>
+</nav>
+<!-- Language Selector Dropdown & Sample Box CTA -->
+<div class="flex items-center gap-3">
+<!-- Language Dropdown -->
+<div class="relative group py-2">
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 font-label-sm text-label-sm text-white transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">language</span>
+<span class="font-semibold tracking-wider text-secondary-fixed">EN</span>
+<span class="material-symbols-outlined text-sm text-slate-400 group-hover:text-white transition-transform group-hover:rotate-180">expand_more</span>
+</button>
+<div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute right-0 top-full mt-1 w-44 bg-[#0d1b2a] border border-white/15 rounded-xl shadow-2xl p-2 z-50 text-left backdrop-blur-xl">
+<div class="text-[11px] font-label-sm uppercase tracking-widest text-slate-400 px-3 py-1.5 border-b border-white/10">Select Language</div>
+<a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-secondary-fixed bg-white/10 font-semibold" href="#">
+<span class="">English (EN)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="">Español (ES)</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="">Français (FR)</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="">العربية (AR)</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded font-label-sm text-label-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="">Deutsch (DE)</span>
+</a>
+</div>
+</div>
+<!-- Right CTA button -->
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/90 text-on-secondary font-label-sm text-label-sm uppercase tracking-wider rounded-lg transition-all shadow-md font-semibold" href="#fast-rfq-section">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="">Sample Box</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full bg-surface"><div class="flex flex-col w-full">
+<!-- BREADCRUMB & METADATA BAR -->
+<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-4">
+<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-label-sm uppercase tracking-widest text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">HOME</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#featured-envelope-systems">PRODUCTS</a>
+<span class="text-outline-variant">/</span>
+<span class="text-outline">FACADE PANELS</span>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary font-semibold">ARCHITECTURAL ALUMINUM COMPOSITE PANELS (ACP)</span>
+</nav>
+<div class="flex items-center gap-4">
+<span class="font-label text-label-sm uppercase px-2.5 py-1 bg-surface-container-high text-on-surface-variant font-medium">CODE: ALU-ACP-1000</span>
+<span class="font-label text-label-sm uppercase px-2.5 py-1 bg-secondary-fixed text-on-secondary-fixed font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          ASTM E84 / EN 13501-1 CLASS A2 &amp; B1
+        </span>
+</div>
+</div>
+</section>
+<!-- PRODUCT OVERVIEW & INTERACTIVE SPEC SELECTOR -->
+<section class="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-12 md:py-16">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- LEFT 7 COLS: COMPREHENSIVE IMAGE SHOWCASE -->
+<div class="lg:col-span-7 flex flex-col gap-5">
+<!-- Main Stage Image Container -->
+<div class="relative w-full aspect-[16/10] bg-surface-container-high overflow-hidden shadow-md group rounded-xl border border-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="Photorealistic cutaway rendering of multi-layer architectural fire-retardant aluminum composite panel ALU-ACP-1000. Features 0.5mm AA3003 exterior aluminum skin with champagne bronze PVDF fluorocarbon coating, visible non-combustible white-grey mineral core, high-strength polymeric adhesive layers, and precision routed edge. Crisp architectural studio lighting against slate grey background with technical dimensions." id="main-acp-display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIaJ7Zo0k13L_e9_JJg-f_Z7TgrpSfazrfvdox_D2eOyDvDWvVqohr0sU3o8MnQvMiERflBk8hbrGuEdD14wVAvxFB_9Vtd-mEi4J_Rsp_RftPpY0G-r-AelBD6hbVXMp2KHZp0YhIfW9vRkW2fInLdIvSZfsy39ijHX0P3bx7Pbwo-ybv0gU5M9f8dK38QVQn4no_26ILz3VmZR15Nms7cXP67fDtcmxgvzagUeI">
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="font-label text-label-xs uppercase px-3 py-1 bg-primary-container text-on-primary font-medium tracking-widest shadow-sm">
+              ENGINEERING CUTAWAY // 0.5MM SKIN + FR MINERAL CORE
+            </span>
+<span class="font-label text-label-xs uppercase px-3 py-1 bg-surface-container-lowest/90 backdrop-blur text-on-surface font-semibold tracking-wider w-fit">
+              FEVE / PVDF 3-COAT 35μm
+            </span>
+</div>
+<!-- Bottom Micro Specs Bar over Image -->
+<div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary-container/90 via-primary-container/60 to-transparent flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-6 font-label text-label-xs">
+<span class="">CORE DENSITY: <strong class="text-secondary-fixed">1.75–1.90 g/cm³</strong></span>
+<span class="">PEEL STRENGTH: <strong class="text-secondary-fixed">&gt; 9.2 N/mm</strong></span>
+<span class="">FLATNESS: <strong class="text-secondary-fixed">&lt; 1.5 mm/m</strong></span>
+</div>
+<button class="font-label text-label-xs uppercase tracking-widest text-secondary-fixed flex items-center gap-1 hover:text-white transition-colors" onclick="alert('Viewing high-resolution zoom viewport...')">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span> 360° INSPECT
+            </button>
+</div>
+</div>
+<!-- 4 Interactive Thumbnails -->
+<div class="grid grid-cols-4 gap-3"><button class="gallery-thumb-btn active p-1.5 bg-surface-container-low hover:bg-surface-container-high transition-all text-left flex flex-col gap-1 shadow-sm rounded-lg border border-surface-container-high" data-caption="ENGINEERING CUTAWAY // 0.5MM SKIN + FR MINERAL CORE" data-prompt="Photorealistic cutaway rendering of multi-layer architectural fire-retardant aluminum composite panel ALU-ACP-1000. Features 0.5mm AA3003 exterior aluminum skin with champagne bronze PVDF fluorocarbon coating, visible non-combustible white-grey mineral core, high-strength polymeric adhesive layers, and precision routed edge. Crisp architectural studio lighting against slate grey background with technical dimensions." data-target="placeholder" type="button">
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container rounded">
+<img class="w-full h-full object-cover" data-alt="High-density A2 fire-rated mineral core cross section cutaway of aluminum composite material showing polymer bonding layers and milled V-groove." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWx9ehUH9_uMSVoH4ftR-wHKn1uKcq2yCI0vvZNC_tK-meubnwkBMIiJsitp8kTIIrqIcUJ8ywAVrLHGxH7PJgJrj67FniRVAS_C_T4ILtgoYlvQo-_FLe-mSjcDeT-qwgMwxBkdeVGOK6uFwuC8Fu2pnph0jQQDm8FmD1R8fmKgCm0l_GBRBMDu0HQkP20rJFUKn8xR0sqxHnH1V-8SnLJPRHvP5lbGr2udLT_k4">
+</div>
+<span class="font-label text-[10px] uppercase font-bold text-on-surface truncate pt-1">01. FR CORE CUTAWAY</span>
+<span class="font-body text-[11px] text-on-surface-variant truncate">A2/B1 Matrix</span>
+</button>
+<button class="gallery-thumb-btn p-1.5 bg-surface-container-low hover:bg-surface-container-high transition-all text-left flex flex-col gap-1 shadow-sm rounded-lg border border-transparent" data-caption="APPLIED ARCHITECTURE // COLD-ROLLED COLUMN &amp; CANOPY ENVELOPE" data-prompt="Architectural photography of luxury international airport terminal facade utilizing champagne gold curved aluminum composite panels. Seamless curved column cladding and sharp cantilevered soffit with invisible rivet fastening system under clear daylight." data-target="placeholder" type="button">
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container rounded">
+<img class="w-full h-full object-cover" data-alt="Curved column wraps and smooth architectural soffits fabricated from flexible 4mm aluminum composite panels at modern metro transit concourse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZkEKnwrGokGkxARuXYbzlUKKUCQBk9m1N_lxwaiQ80Juqp9FoColq4JLa3bQo45Xm0AzTSpXgpnnfUiWNlXv19hAgXYxR9dmlBPBBVVxgGxcTJCyMfcUe0vYMRJJSFbSd0rTj-iAJcjPI-whEAvXM9N3o1T3YWD7ryBkLIzftHy75uUuxpSEkyHLW5C0QlQ8NeDA38_o9hZVY8ZV23yjWxDCOujob64b-HPqsdro">
+</div>
+<span class="font-label text-[10px] uppercase font-bold text-on-surface truncate pt-1">02. CURVED CLADDING</span>
+<span class="font-body text-[11px] text-on-surface-variant truncate">Roll-Formed Soffit</span>
+</button>
+<button class="gallery-thumb-btn p-1.5 bg-surface-container-low hover:bg-surface-container-high transition-all text-left flex flex-col gap-1 shadow-sm rounded-lg border border-transparent" data-caption="SURFACE LAB // METALLIC, CHAMELEON &amp; FEVE FINISH SWATCHES" data-prompt="Close-up macro swatch array of architectural aluminum composite finishes: metallic champagne bronze, iridescent chameleon color-shifting blue-violet, brushed graphite, and ultra-high-gloss Lumiflon FEVE white. Specular reflections highlight color depth and flawless flatness." data-target="placeholder" type="button">
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container rounded">
+<img class="w-full h-full object-cover" data-alt="Material swatch library showing champagne bronze, chameleon pearlescent, and high-gloss architectural ACP finish panels aligned in precision array." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJlrcRQ-ftyzeMSgsrW2elAMCwW3dHm_YneJ7G63Ya6drPElCoi9d2ecTsugeJOgZH8DeJtOP-I-MEM26ywa-9wkflyALZROxYpOa1swep17kzi2QwskJeteOfZ8xlnOEyFsKGkRQd-sfq4agiWWNFKgygDosvD1KQghOascmcxhehqlr7-aHc1sKrh9KNL8YgdJyPAPMlsmx9n66ky6qve0-OvGtgkmS-8eHEGzo">
+</div>
+<span class="font-label text-[10px] uppercase font-bold text-on-surface truncate pt-1">03. COLOR SWATCHES</span>
+<span class="font-body text-[11px] text-on-surface-variant truncate">FEVE / Kynar 500</span>
+</button>
+<button class="gallery-thumb-btn p-1.5 bg-surface-container-low hover:bg-surface-container-high transition-all text-left flex flex-col gap-1 shadow-sm rounded-lg border border-transparent" data-caption="FABRICATION // CNC ROUTER V-GROOVING &amp; MITER FOLDING" data-prompt="Industrial high-speed CNC router machining an architectural ACP panel back face with a 90-degree V-grooving carbide bit. Crisp shavings, exposed mineral core line, and pristine folded cassette edge demonstration under industrial factory work lights." data-target="placeholder" type="button">
+<div class="aspect-[4/3] w-full overflow-hidden bg-surface-container rounded">
+<img class="w-full h-full object-cover" data-alt="CNC router machine cutting precision 90-degree V-groove groove on aluminum composite panel for tray cassette fabrication in curtain wall workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXozRC_h7sf7re-7BnOoIksotFKymR4drwbzMjita_evJKRpfbynb3i6-8R1VLjosTvRH5ZYpddASoERPditg0J-vpxJ00iyEdNKaYFajFG4XapbGIIuHcc83C4c70AxN1umz5zRgsb3yO7GSkknMxQzKNuKGKxzk3cie1zQ9xgftoTbqOdhhd8dV7Knwp9kApEazBr5xnkosCkROX-GzjyYDnLjxKXcf1a3hMWl4">
+</div>
+<span class="font-label text-[10px] uppercase font-bold text-on-surface truncate pt-1">04. CNC V-GROOVING</span>
+<span class="font-body text-[11px] text-on-surface-variant truncate">Cassette Forming</span>
+</button></div>
+<!-- Performance Credential Badges -->
+<div class="bg-surface-container-low rounded-xl border border-surface-container-high p-4 grid grid-cols-2 sm:grid-cols-4 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-surface-container-high shadow-sm">
+<div class="flex flex-col gap-1 pr-2">
+<span class="font-label text-label-xs uppercase text-on-surface-variant">FIRE BEHAVIOR</span>
+<span class="font-headline text-headline-sm font-semibold text-primary">A2-s1, d0</span>
+<span class="font-body text-body-sm text-outline">EN 13501-1 / NFPA 285</span>
+</div>
+<div class="flex flex-col gap-1 sm:pl-4 pt-3 sm:pt-0 pr-2">
+<span class="font-label text-label-xs uppercase text-on-surface-variant">PEEL STRENGTH</span>
+<span class="font-headline text-headline-sm font-semibold text-secondary">&gt; 9.0 N/mm</span>
+<span class="font-body text-body-sm text-outline">ASTM D1781 Standard</span>
+</div>
+<div class="flex flex-col gap-1 sm:pl-4 pt-3 sm:pt-0 pr-2">
+<span class="font-label text-label-xs uppercase text-on-surface-variant">FACADE FLATNESS</span>
+<span class="font-headline text-headline-sm font-semibold text-primary">&lt; 1.5 mm/m</span>
+<span class="font-body text-body-sm text-outline">Zero Oil-Canning</span>
+</div>
+<div class="flex flex-col gap-1 sm:pl-4 pt-3 sm:pt-0">
+<span class="font-label text-label-xs uppercase text-on-surface-variant">WARRANTY TERM</span>
+<span class="font-headline text-headline-sm font-semibold text-secondary">20 YEARS</span>
+<span class="font-body text-body-sm text-outline">AAMA 2605 3-Coat PVDF</span>
+</div>
+</div>
+</div>
+<!-- RIGHT 5 COLS: PRODUCT SPEC CONFIGURATOR & COMMERCIAL CONVERSION -->
+<div class="lg:col-span-5 flex flex-col gap-6 bg-surface-container-low p-6 md:p-8 shadow-sm rounded-xl border border-surface-container-high">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label text-label-xs uppercase tracking-wider text-secondary font-bold">ARCHITECTURAL SPECIFICATION MATRIX</span>
+<span class="text-xs text-outline">•</span>
+<span class="font-body text-body-sm text-on-surface-variant">ALU-ACP-1000 SERIES</span>
+</div>
+<h1 class="font-headline text-headline-lg font-bold text-on-surface tracking-tight uppercase leading-tight">
+            Fire-Retardant Aluminum Composite Panels
+          </h1>
+<p class="font-body text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+            Engineered architectural composite material (ACM) pairing high-tensile 3003-H14 aluminum coil skins with non-combustible mineral-filled cores. Precision-bonded through continuous automated thermal lamination for mega-span curtain walls, retail pavilions, and high-wind transport hubs.
+          </p>
+</div>
+<!-- Dynamic Spec Configuration Block -->
+<div class="space-y-5 pt-2"><!-- 1. Core Selection -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label text-label-xs uppercase text-on-surface font-semibold tracking-wider">1. Mineral Core Fire Rating</label>
+<span class="font-label text-[11px] text-secondary font-bold" id="selected-core-badge">FR-A2 (Non-Combustible Mineral)</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="spec-opt-btn active p-3 bg-surface-container-lowest rounded-lg border border-secondary text-left transition-all hover:bg-surface-container-high shadow-sm" data-category="core" data-rate="A2-s1, d0" data-val="FR-A2 (Non-Combustible Mineral)" type="button">
+<span class="block font-headline text-headline-sm font-bold text-primary">GRADE FR-A2</span>
+<span class="block font-body text-body-sm text-on-surface-variant">≥ 90% Mineral (EN 13501 A2)</span>
+</button>
+<button class="spec-opt-btn p-3 bg-surface-container-lowest rounded-lg border border-transparent text-left transition-all hover:bg-surface-container-high shadow-sm" data-category="core" data-rate="B-s1, d0" data-val="FR-B1 (Flame-Retardant Core)" type="button">
+<span class="block font-headline text-headline-sm font-bold text-primary">GRADE FR-B1</span>
+<span class="block font-body text-body-sm text-on-surface-variant">Mineral-Filled Flame Retardant</span>
+</button>
+</div>
+</div>
+<!-- 2. Panel Overall Thickness -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label text-label-xs uppercase text-on-surface font-semibold tracking-wider">2. Total Panel Thickness</label>
+<span class="font-label text-[11px] text-secondary font-bold" id="selected-thick-badge">4.0 mm [Standard Exterior]</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="thick" data-val="3.0 mm (Interior/Canopy)" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">3.0mm</span>
+<span class="block font-label text-[10px] text-on-surface-variant">Interior</span>
+</button>
+<button class="spec-opt-btn active p-2.5 bg-surface-container-lowest rounded-lg border border-secondary text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="thick" data-val="4.0 mm [Standard Exterior]" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">4.0mm</span>
+<span class="block font-label text-[10px] text-secondary font-bold">Facade Std</span>
+</button>
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="thick" data-val="5.0 mm (High Wind Load)" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">5.0mm</span>
+<span class="block font-label text-[10px] text-on-surface-variant">High-Rise</span>
+</button>
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="thick" data-val="6.0 mm (Acoustic / Extreme)" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">6.0mm</span>
+<span class="block font-label text-[10px] text-on-surface-variant">Structural</span>
+</button>
+</div>
+</div>
+<!-- 3. Aluminum Skin Thickness -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label text-label-xs uppercase text-on-surface font-semibold tracking-wider">3. Aluminum Alloy Skin (Top / Back)</label>
+<span class="font-label text-[11px] text-secondary font-bold" id="selected-skin-badge">0.50 mm (AA3003-H14 Heavy Duty)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="skin" data-val="0.30 mm (Commercial Light)" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">0.30mm</span>
+<span class="block font-label text-[10px] text-on-surface-variant">Light Architectural</span>
+</button>
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="skin" data-val="0.40 mm (Standard Architectural)" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">0.40mm</span>
+<span class="block font-label text-[10px] text-on-surface-variant">Standard Exterior</span>
+</button>
+<button class="spec-opt-btn active p-2.5 bg-surface-container-lowest rounded-lg border border-secondary text-center transition-all hover:bg-surface-container-high shadow-sm" data-category="skin" data-val="0.50 mm (AA3003-H14 Heavy Duty)" type="button">
+<span class="block font-headline text-headline-sm font-semibold text-primary">0.50mm</span>
+<span class="block font-label text-[10px] text-secondary font-bold">Heavy-Duty Eng</span>
+</button>
+</div>
+</div>
+<!-- 4. Fluorocarbon Surface Treatment -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label text-label-xs uppercase text-on-surface font-semibold tracking-wider">4. Surface Finish &amp; Coating Tech</label>
+<span class="font-label text-[11px] text-secondary font-bold" id="selected-finish-badge">PVDF Kynar 500 (3-Coat 35μm)</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="spec-opt-btn active p-2.5 bg-surface-container-lowest rounded-lg border border-secondary text-left transition-all hover:bg-surface-container-high shadow-sm" data-category="finish" data-val="PVDF Kynar 500 (3-Coat 35μm)" type="button">
+<span class="block font-headline text-body-md font-bold text-primary">PVDF Kynar 500®</span>
+<span class="block font-label text-[10px] text-on-surface-variant">70% Fluorocarbon resin</span>
+</button>
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-left transition-all hover:bg-surface-container-high shadow-sm" data-category="finish" data-val="FEVE Lumiflon High-Gloss" type="button">
+<span class="block font-headline text-body-md font-bold text-primary">Lumiflon® FEVE</span>
+<span class="block font-label text-[10px] text-on-surface-variant">High-Gloss (Up to 80% gloss)</span>
+</button>
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-left transition-all hover:bg-surface-container-high shadow-sm" data-category="finish" data-val="Nano Hydrophilic Self-Clean" type="button">
+<span class="block font-headline text-body-md font-bold text-primary">Nano Self-Cleaning</span>
+<span class="block font-label text-[10px] text-on-surface-variant">Super-hydrophilic coating</span>
+</button>
+<button class="spec-opt-btn p-2.5 bg-surface-container-lowest rounded-lg border border-transparent text-left transition-all hover:bg-surface-container-high shadow-sm" data-category="finish" data-val="Chameleon Pearlescent Shift" type="button">
+<span class="block font-headline text-body-md font-bold text-primary">Chameleon Optical</span>
+<span class="block font-label text-[10px] text-on-surface-variant">Angle-dependent shift</span>
+</button>
+</div>
+</div></div>
+<!-- Configured Spec Summary Box -->
+<div class="p-4 bg-primary-container text-on-primary space-y-2 rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-xs uppercase text-slate-300">Configured Engineering Code</span>
+<span class="font-label text-label-xs text-secondary-fixed">EX-WORKS / FOB FOSHAN / CIF GLOBAL</span>
+</div>
+<div class="font-label text-label-md font-bold text-secondary-fixed tracking-wider" id="dynamic-spec-code">
+            ALU-ACP-1000 / A2 / 4.0MM / SKIN-0.50 / PVDF-KYNAR
+          </div>
+<p class="font-body text-[12px] text-slate-300">
+            Complies with ASTM E84 Class A, EN 13501-1 Class A2-s1,d0, BS 476 Part 6 &amp; 7. Available in custom coil slitting widths up to 2000mm and lengths up to 6000mm.
+          </p>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-3 pt-2"><a class="w-full py-3.5 px-6 bg-secondary hover:bg-secondary/90 text-on-secondary font-headline text-headline-sm uppercase tracking-wider text-center font-bold transition-all shadow-md rounded-lg flex items-center justify-center gap-2" href="#fast-rfq-section">
+<span class="material-symbols-outlined text-lg">package_2</span>
+            REQUEST COMPLIMENTARY ACP SAMPLE SWATCHES
+          </a>
+<div class="grid grid-cols-2 gap-3">
+<a class="py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-label text-label-xs uppercase tracking-wider text-center font-semibold transition-all rounded-lg flex items-center justify-center gap-1.5 shadow-sm" href="#technical-resources">
+<span class="material-symbols-outlined text-sm">download</span>
+              BROCHURE (PDF 5.2MB)
+            </a>
+<a class="py-3 px-4 bg-surface-container-highest hover:bg-surface-container text-on-surface font-label text-label-xs uppercase tracking-wider text-center font-semibold transition-all rounded-lg flex items-center justify-center gap-1.5 shadow-sm" href="#technical-resources">
+<span class="material-symbols-outlined text-sm">view_in_ar</span>
+              BIM / CAD LOD 400
+            </a>
+</div></div>
+</div>
+</div>
+</section>
+<!-- FIRE SAFETY & PHYSICAL PERFORMANCE BENCHMARKS -->
+<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-16">
+<div class="max-w-[1440px] mx-auto space-y-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label text-label-xs uppercase tracking-widest text-secondary font-bold block mb-1">
+            LABORATORY VERIFICATION // 第三方国际检测
+          </span>
+<h2 class="font-headline text-headline-lg font-bold text-on-surface uppercase tracking-tight">
+            Fire Safety &amp; Structural Performance Metrics
+          </h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label text-label-sm px-3 py-1.5 bg-surface-container-lowest text-on-surface font-medium shadow-sm">
+            INTERTEK TESTED
+          </span>
+<span class="font-label text-label-sm px-3 py-1.5 bg-surface-container-lowest text-on-surface font-medium shadow-sm">
+            SGS LAB CERTIFIED
+          </span>
+<span class="font-label text-label-sm px-3 py-1.5 bg-surface-container-lowest text-on-surface font-medium shadow-sm">
+            TÜV RHEINLAND
+          </span>
+</div>
+</div>
+<!-- Performance Grid Table & Comparative Data -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- 8 Cols Technical Schedule Table -->
+<div class="lg:col-span-8 bg-surface-container-lowest shadow-sm overflow-x-auto">
+<table class="w-full text-left font-body text-body-sm">
+<thead class="bg-primary-container text-on-primary font-label text-label-xs uppercase tracking-wider">
+<tr>
+<th class="py-3.5 px-4">Physical Property / Parameter</th>
+<th class="py-3.5 px-4">Testing Protocol</th>
+<th class="py-3.5 px-4">ALUMAX FR-A2</th>
+<th class="py-3.5 px-4">ALUMAX FR-B1</th>
+<th class="py-3.5 px-4">Standard Industry ACP</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-label text-label-sm">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">180° Drum Peel Strength</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">ASTM D1781</td>
+<td class="py-3.5 px-4 text-secondary font-bold">≥ 9.2 N/mm</td>
+<td class="py-3.5 px-4 text-primary font-bold">≥ 8.5 N/mm</td>
+<td class="py-3.5 px-4 text-outline font-medium">5.0 N/mm Min</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/50">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">Combustion Classification</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">EN 13501-1</td>
+<td class="py-3.5 px-4 text-secondary font-bold">Class A2-s1, d0</td>
+<td class="py-3.5 px-4 text-primary font-bold">Class B-s1, d0</td>
+<td class="py-3.5 px-4 text-outline font-medium">Class D / E (Polyethylene)</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">Wall Assembly Fire Behavior</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">NFPA 285</td>
+<td class="py-3.5 px-4 text-secondary font-bold">Passed (Zero Spread)</td>
+<td class="py-3.5 px-4 text-primary font-bold">Passed (Controlled)</td>
+<td class="py-3.5 px-4 text-outline font-medium">Requires Intumescent Barrier</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/50">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">Tensile Strength (Skin AA3003)</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">ASTM E8M</td>
+<td class="py-3.5 px-4 text-on-surface">Rm ≥ 130–175 MPa</td>
+<td class="py-3.5 px-4 text-on-surface">Rm ≥ 130–175 MPa</td>
+<td class="py-3.5 px-4 text-outline font-medium">Rm ≥ 110 MPa (AA1100)</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">Flexural Modulus of Elasticity</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">ASTM C393</td>
+<td class="py-3.5 px-4 text-secondary font-bold">E ≥ 70,500 MPa</td>
+<td class="py-3.5 px-4 text-primary font-bold">E ≥ 42,000 MPa</td>
+<td class="py-3.5 px-4 text-outline font-medium">E ≥ 25,000 MPa</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/50">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">Coefficient of Thermal Expansion</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">ASTM D696</td>
+<td class="py-3.5 px-4 text-on-surface">2.4 mm/m @ 100°C</td>
+<td class="py-3.5 px-4 text-on-surface">2.4 mm/m @ 100°C</td>
+<td class="py-3.5 px-4 text-outline font-medium">&gt; 3.0 mm/m</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-headline text-on-surface font-semibold">Accelerated Salt Spray Weathering</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-label text-label-xs">AAMA 2605 / ASTM B117</td>
+<td class="py-3.5 px-4 text-secondary font-bold">4,000 Hours (No Blister)</td>
+<td class="py-3.5 px-4 text-primary font-bold">3,000 Hours (AAMA 2604)</td>
+<td class="py-3.5 px-4 text-outline font-medium">1,000 Hours (Polyester)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- 4 Cols Visual Comparison Gauge / Sparkline Cards -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<!-- Radial Chart SVG Card: Mineral Core Non-Combustibility -->
+<div class="p-6 bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-xs uppercase text-on-surface-variant font-bold">CORE MINERAL RATIO</span>
+<span class="font-label text-label-xs text-secondary font-bold">A2 COMPLIANT</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Inline Gauge SVG -->
+<div class="w-24 h-24 shrink-0 relative">
+<svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="92, 100" stroke-linecap="butt" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline text-headline-sm font-bold text-primary">
+                  92%
+                </div>
+</div>
+<div class="space-y-1">
+<div class="font-headline text-headline-sm font-bold text-on-surface">Inorganic Hydroxide</div>
+<p class="font-body text-body-sm text-on-surface-variant">
+                  High-purity magnesium/aluminum trihydrate core releases bound hydration at &gt; 340°C, self-extinguishing flame propagation.
+                </p>
+</div>
+</div>
+</div>
+<!-- Peel Off Bond Strength Sparkline Card -->
+<div class="p-6 bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-xs uppercase text-on-surface-variant font-bold">PEEL DELAMINATION THRESHOLD</span>
+<span class="font-label text-label-xs text-secondary font-bold">ASTM D1781</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-headline-lg font-bold text-primary">9.42</span>
+<span class="font-label text-label-sm text-on-surface-variant">N/mm Peak Tensile</span>
+</div>
+<!-- SVG Sparkline Bar Visualization -->
+<div class="h-10 w-full flex items-end gap-1.5 pt-2">
+<div class="w-1/6 bg-surface-container-high h-[40%]"></div>
+<div class="w-1/6 bg-surface-container-high h-[55%]"></div>
+<div class="w-1/6 bg-surface-container-highest h-[70%]"></div>
+<div class="w-1/6 bg-secondary-fixed h-[85%]"></div>
+<div class="w-1/6 bg-secondary h-[95%]"></div>
+<div class="w-1/6 bg-primary h-[100%]"></div>
+</div>
+<div class="flex justify-between font-label text-[10px] text-outline pt-1">
+<span class="">Standard (5.0)</span>
+<span class="">ALUMAX Testing Average (9.4 N/mm)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FABRICATION, ROUTING & COLD-FORMING GUIDELINES -->
+<section class="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-16">
+<div class="max-w-[1440px] mx-auto space-y-12">
+<div>
+<span class="font-label text-label-xs uppercase tracking-widest text-secondary font-bold block mb-1">
+          ARCHITECTURAL WORKSHOP MANUAL // 现场加工与冷弯规范
+        </span>
+<h2 class="font-headline text-headline-lg font-bold text-on-surface uppercase tracking-tight">
+          Panel Fabrication &amp; Substructure Jointing Systems
+        </h2>
+<p class="font-body text-body-md text-on-surface-variant max-w-2xl mt-1">
+          ALUMAX composite panels support rapid site routing, cassette returns, and cold roll-forming with conventional CNC or handheld grooving equipment without micro-fracturing the outer coating.
+        </p>
+</div>
+<!-- 3-Column Diagrammatic Guide -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1: V-Grooving -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-4 shadow-sm group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-md font-bold px-2 py-1 bg-primary text-on-primary">01 // MILLING</span>
+<span class="font-label text-label-xs uppercase text-secondary font-semibold">90° &amp; 135° GROOVE</span>
+</div>
+<div class="aspect-[16/9] w-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Technical schematic diagram showing CNC router bit 90 degree V-groove blade profile milling through the aluminum composite panel back skin and mineral core leaving 0.8mm core plus front skin." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLVEGfFy56Cu94mCiUmAu7c6vby27mniXLQw9DmoQBAODaSFMMDdhpDSCeujNi7Ww6pSVYHKuyvkRNbdB6aZbmAMOh9ftQwPHR-Vi3NVpACPgSpfyGHnfj0pC7ybfeeAo7vE7t3sf5tVdFad7lYJ5Y20eetzdSRW2pPniY485RDBrNmlYirFBovKuWocjRQrSvZEF5bLQDZ_GfAhVrfyUSCNyuXHtWpg-PSdyRsRQ">
+</div>
+<div class="space-y-2">
+<h3 class="font-headline text-headline-sm font-semibold text-on-surface">V-Groove CNC Milling for Sharp Corners</h3>
+<p class="font-body text-body-sm text-on-surface-variant">
+              Route a 90° or 135° V-groove on the rear face leaving <strong>0.5mm to 0.8mm</strong> of mineral core intact alongside the outer aluminum skin. This facilitates hand-folding into sharp crisp architectural cassettes with zero paint crazing.
+            </p>
+</div>
+<div class="mt-auto pt-3 border-t border-surface-container-high font-label text-label-xs text-outline space-y-1">
+<div class="">FEED SPEED: <strong class="text-on-surface">15–25 m/min</strong></div>
+<div class="">CUTTER TIP: <strong class="text-on-surface">R1.5mm to R2.0mm radius</strong></div>
+</div>
+</div>
+<!-- Step 2: Roll-Bending -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-4 shadow-sm group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-md font-bold px-2 py-1 bg-primary text-on-primary">02 // COLD BENDING</span>
+<span class="font-label text-label-xs uppercase text-secondary font-semibold">MIN RADIUS 300MM</span>
+</div>
+<div class="aspect-[16/9] w-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Three-roll pyramid plate bending machine shaping a full length 4mm architectural aluminum composite panel into smooth circular column cladding radius." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI39xulZbQvSjuiOy3ur-o6UKfqmUvdolyDew7IdMe1lrrTh_efn3193Qew9Ap5k9dWsTd-R-9xpJarQF_urOJPg3Ksl6UgyV8DLkLsXMq_ZF4h9Lopho-8OpK1Ac1qJylCp4WTq28k49wrftP4on97RqqCar1EFY77y_rrY2iclTgRY1oJjTVEuUMpbQrGguxKGX94PMFrUSusbbQPI5b5BsTfhJHkxzdwMTLEj8">
+</div>
+<div class="space-y-2">
+<h3 class="font-headline text-headline-sm font-semibold text-on-surface">Roll-Bending for Columns &amp; Soffits</h3>
+<p class="font-body text-body-sm text-on-surface-variant">
+              Achieve continuous architectural curves using precision 3-roller pyramid bending machines. The elastomeric polymeric adhesive prevents core-skin shear delamination at cold radii as tight as <strong>R ≥ 300mm</strong> on 4.0mm panels.
+            </p>
+</div>
+<div class="mt-auto pt-3 border-t border-surface-container-high font-label text-label-xs text-outline space-y-1">
+<div class="">MIN CURVATURE: <strong class="text-on-surface">R = 300mm (4mm panel)</strong></div>
+<div class="">ROLLER TYPE: <strong class="text-on-surface">Polished or Urethane Coated</strong></div>
+</div>
+</div>
+<!-- Step 3: Fastening & Jointing -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-4 shadow-sm group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-md font-bold px-2 py-1 bg-primary text-on-primary">03 // FIXING</span>
+<span class="font-label text-label-xs uppercase text-secondary font-semibold">THERMAL REVEAL JOINT</span>
+</div>
+<div class="aspect-[16/9] w-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cross-section architectural drawing of aluminum composite cassette hung on extruded aluminum top-hat mullion profile with stainless rivets and EPDM gasket seal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxNGoXm2oOXFQjumYrAVWgUlUjOk4BNooy8OzEP7M-R63QbtZXP7azNQdcUm0zSVHkbwnAVZO32ps4TeELJw3yi9V7UUazyX2mQfGErfqinccbeKR486gpC0sD8A25SQlaFFto00oT6CDZxEDW5jznaZ1IQ6Yk2rFUoT3Ng7pifc-vyFoIIAgzaUsaS9u0hI1MNrWu9tjSUMQYKyCNt7Stgs-P-12bfxoVLY7zWe0">
+</div>
+<div class="space-y-2">
+<h3 class="font-headline text-headline-sm font-semibold text-on-surface">Cassette Hanging &amp; Top-Hat Substructure</h3>
+<p class="font-body text-body-sm text-on-surface-variant">
+              Fix routed folded cassettes to aluminum alloy extruded subframes (6063-T6). Use slotted holes for thermal expansion allowance and concealed rivets or structural silicone for continuous pristine exterior reveals.
+            </p>
+</div>
+<div class="mt-auto pt-3 border-t border-surface-container-high font-label text-label-xs text-outline space-y-1">
+<div class="">JOINT WIDTH: <strong class="text-on-surface">15mm – 20mm Reveal</strong></div>
+<div class="">SEALANT: <strong class="text-on-surface">Neutral Silicone / Open Rain-screen</strong></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HIGH-SPEED AUTOMATED LAMINATING LINE & QUALITY ASSURANCE -->
+<section class="w-full bg-primary-container text-on-primary px-margin-mobile md:px-margin py-16">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-6 space-y-6">
+<span class="font-label text-label-xs uppercase tracking-widest text-secondary-fixed font-bold block">
+          MANUFACTURING EXCELLENCE // 连续高温热复合生产线
+        </span>
+<h2 class="font-headline text-headline-lg font-bold text-white uppercase tracking-tight leading-tight">
+          Continuous Hot-Melt Lamination &amp; Zero-Defect QA
+        </h2>
+<p class="font-body text-body-md text-slate-300 leading-relaxed">
+          Operating five fully computerized multi-roller thermal lamination lines with continuous infrared pyrometers. In-line ultrasonic resonance checks monitor skin-to-core bonding every 10 meters, ensuring zero delamination risk across harsh global maritime and desert thermal cyclings.
+        </p>
+<div class="grid grid-cols-2 gap-4 pt-2">
+<div class="p-4 bg-white/5 backdrop-blur border-b-2 border-secondary space-y-1">
+<span class="font-label text-label-xs uppercase text-slate-400">COLOR UNIFORMITY</span>
+<div class="font-headline text-headline-md font-bold text-secondary-fixed">ΔE ≤ 0.5</div>
+<p class="font-body text-[12px] text-slate-300">Konica Minolta Spectrophotometer tested across each coil batch.</p>
+</div>
+<div class="p-4 bg-white/5 backdrop-blur border-b-2 border-secondary space-y-1">
+<span class="font-label text-label-xs uppercase text-slate-400">ANNUAL CAPACITY</span>
+<div class="font-headline text-headline-md font-bold text-white">4,200,000 m²</div>
+<p class="font-body text-[12px] text-slate-300">Dedicated overseas export lines shipping to 60+ countries.</p>
+</div>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">check_circle</span>
+<span class="font-body text-body-sm text-slate-200">Continuous 190°C–210°C heated roller calendering ensuring uniform polymeric flow.</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">check_circle</span>
+<span class="font-body text-body-sm text-slate-200">Non-toxic protective film with high UV resistance for up to 6 months post-installation.</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">check_circle</span>
+<span class="font-body text-body-sm text-slate-200">Reinforced export solid wood crates with desiccants and moisture-barrier sheeting.</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual of Continuous Automated ACP Line -->
+<div class="lg:col-span-6">
+<div class="relative aspect-[16/11] w-full bg-surface-container-high overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Industrial wide-angle view of state of the art automated continuous aluminum composite panel hot lamination manufacturing facility in Foshan. Heavy precision calender rollers, molten core extrusion, and digital temperature control screens with robotic stackers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQdqSlYFiK7SmHm-ebJvlgE5ra_rTWeQT-6vUdiscaUsggXcjQG0yL59jLTRCSF8sKKgjXb0wjB9CoR2pQm3vQ5C8zOOSalpnU3pVHshVvOrEtLI_0IrxREHw496l0AdLbRKdKlbH9gdsZXj2-SJpq-TRr6XV9HYewkxRszH4DHnZnJzb2QAJZi3zrErhwSTnjcxCnZEFoA5ofSZ3yh1TE3SsJUfVgvMEZi3Lyfn8">
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-primary-container/90 backdrop-blur text-white flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] uppercase tracking-wider text-secondary-fixed">FACTORY LINE #04 // FOSHAN BASE</span>
+<span class="font-body text-body-sm font-semibold">Automated Ultrasonic Lamination Inspection</span>
+</div>
+<span class="font-label text-label-xs bg-white/10 px-2 py-1 uppercase text-slate-300">ISO 9001:2015</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LANDMARK GLOBAL CASE REFERENCES -->
+<section class="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-16" id="landmark-projects">
+<div class="max-w-[1440px] mx-auto space-y-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label text-label-xs uppercase tracking-widest text-secondary font-bold block mb-1">
+            PROJECT PORTFOLIO // 全球标志性工程应用
+          </span>
+<h2 class="font-headline text-headline-lg font-bold text-on-surface uppercase tracking-tight">
+            Landmark Commercial &amp; Transport Deployments
+          </h2>
+</div>
+<a class="font-label text-label-sm uppercase tracking-wider text-secondary font-bold hover:underline flex items-center gap-1" href="#fast-rfq-section">
+          VIEW ALL 180+ PROJECT REFERENCES →
+        </a>
+</div>
+<!-- 3 Showcase Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Project 1: Milan -->
+<div class="bg-surface-container-low shadow-sm flex flex-col group overflow-hidden">
+<div class="aspect-[16/10] w-full bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern architectural facade of luxury commercial pavilion in Milan Design District clad in champagne gold iridescent aluminum composite panels with sharp vertical louvers and geometric cutouts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkD14D96RfHx2yrGy5hXbrcQpsFZP2jXBlDGWdNVBRmOeNNEi4CUx0F1GgbFxyhbuIDRJTpZ3ssYnQ1m4BHF04MbWO7Qxr7P4-e_D0M39-tCmU00-i_c-SkX-Yz06gw2q8qUmc2TWKity4-xnOIR5TKR_GY9c_c_V7NJVkHDuaZUAvAnL1ASp9XaUQfVOdHdxdtOrCjQJGeG9TFgCpvmVeXk55s6VYuxoG3cZ2Lx8">
+<span class="absolute top-3 left-3 font-label text-[10px] uppercase px-2.5 py-1 bg-primary text-on-primary font-bold">
+              MILAN, ITALY
+            </span>
+</div>
+<div class="p-6 flex flex-col gap-3 flex-grow">
+<span class="font-label text-label-xs text-secondary font-semibold uppercase">COMMERCIAL COMPLEX</span>
+<h3 class="font-headline text-headline-sm font-bold text-on-surface">Milan Design District Pavilion</h3>
+<p class="font-body text-body-sm text-on-surface-variant flex-grow">
+              Custom Chameleon pearlescent FEVE panels fabricated into faceted origami-style volumetric cassette modules.
+            </p>
+<div class="pt-4 border-t border-surface-container-high grid grid-cols-2 gap-2 font-label text-[11px] text-outline">
+<div class="">AREA: <strong class="text-on-surface">18,500 m²</strong></div>
+<div class="">RATING: <strong class="text-on-surface">EN 13501 A2</strong></div>
+</div>
+</div>
+</div>
+<!-- Project 2: Singapore -->
+<div class="bg-surface-container-low shadow-sm flex flex-col group overflow-hidden">
+<div class="aspect-[16/10] w-full bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Exterior high-rise shopping mall podium in Singapore Orchard Road with large-format ultra-flat dark graphite gray aluminum composite cladding panels and integrated LED media mullions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9MM18XY8zlquCs7BzJoCL_ZNOTm38uRIzF2cTtGjLEg-0WgFQXWoofKzfK1FrUXc0EPGvlg0HZOu_s0pIDqIUGDKyC2YmUxTK1u4WajRoEGXRLl_feD-rcVS9zxMPPON_FHBzzl1KeDVwbaxZkQ9VY15rVxpRki_znrRLkWp61iHA65vgivkcOKJxaR3xobTINGs9F7FeBVBTBm0IOX9AZ39duFmYJsnedGaZ8bM">
+<span class="absolute top-3 left-3 font-label text-[10px] uppercase px-2.5 py-1 bg-primary text-on-primary font-bold">
+              ORCHARD ROAD, SINGAPORE
+            </span>
+</div>
+<div class="p-6 flex flex-col gap-3 flex-grow">
+<span class="font-label text-label-xs text-secondary font-semibold uppercase">RETAIL &amp; TRANSPORT PODIUM</span>
+<h3 class="font-headline text-headline-sm font-bold text-on-surface">Orchard Central Commercial Atrium</h3>
+<p class="font-body text-body-sm text-on-surface-variant flex-grow">
+              Super-hydrophilic Nano self-cleaning PVDF panels tested to withstand tropical monsoon precipitation without stain streaking.
+            </p>
+<div class="pt-4 border-t border-surface-container-high grid grid-cols-2 gap-2 font-label text-[11px] text-outline">
+<div class="">AREA: <strong class="text-on-surface">24,000 m²</strong></div>
+<div class="">FINISH: <strong class="text-on-surface">Nano PVDF</strong></div>
+</div>
+</div>
+</div>
+<!-- Project 3: Sydney Metro -->
+<div class="bg-surface-container-low shadow-sm flex flex-col group overflow-hidden">
+<div class="aspect-[16/10] w-full bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High traffic public transportation train concourse and retail pavilion in Sydney featuring curved metallic silver aluminum composite soffits and column enclosures under bright natural skylights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIbD3e5jXa906PuatU7ZHazG9k-paXj6LWjQDzvCC_fdiuhh3d6RsfZwTO0e0sKrFxPTpteBdWH7QW20AVkbQ2TV5xm6ARd6xPU9n0ZAMvvEPTM3fJlri5UqGqXzn4CWl6P12AbGyeTEN4-wIb1Dy3CeUuPqTmHHKBndI8oNuPgeJBFgSLETpCsahS6fUzzY2KQmtuW8jyHH-pxitACMN7f2mAFPBeU9U1DqXc_OE">
+<span class="absolute top-3 left-3 font-label text-[10px] uppercase px-2.5 py-1 bg-primary text-on-primary font-bold">
+              SYDNEY, AUSTRALIA
+            </span>
+</div>
+<div class="p-6 flex flex-col gap-3 flex-grow">
+<span class="font-label text-label-xs text-secondary font-semibold uppercase">TRANSIT INFRASTRUCTURE</span>
+<h3 class="font-headline text-headline-sm font-bold text-on-surface">Metro Central Retail Interchange</h3>
+<p class="font-body text-body-sm text-on-surface-variant flex-grow">
+              Heavy-duty 0.5mm skin 6.0mm ACP applied to column wraps and high-impact pedestrian walkways. AS 1530.1 non-combustible certified.
+            </p>
+<div class="pt-4 border-t border-surface-container-high grid grid-cols-2 gap-2 font-label text-[11px] text-outline">
+<div class="">AREA: <strong class="text-on-surface">32,200 m²</strong></div>
+<div class="">THICKNESS: <strong class="text-on-surface">6.0mm Heavy</strong></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ENGINEERING TENDER SUBMITTAL & FAST RFQ FORM -->
+<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-16" id="fast-rfq-section">
+<div class="max-w-[1440px] mx-auto bg-surface-container-lowest shadow-md grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
+<!-- Left 5 Cols: Procurement Support & Sample Kit Promise -->
+<div class="lg:col-span-5 bg-primary-container text-on-primary p-8 md:p-12 flex flex-col justify-between">
+<div class="space-y-6">
+<span class="font-label text-label-xs uppercase tracking-widest text-secondary-fixed font-bold block">
+            GLOBAL TENDER SUPPORT // 样品盒与工程报价
+          </span>
+<h2 class="font-headline text-headline-lg font-bold text-white uppercase tracking-tight leading-tight">
+            Request Engineered Swatch Box &amp; Rapid RFQ
+          </h2>
+<p class="font-body text-body-md text-slate-300">
+            Receive our comprehensive overseas architect sample kit containing 12 finish swatches (PVDF, Lumiflon FEVE, Brushed, Chameleon), cutaway mineral cores (A2 &amp; B1), and full ASTM/EN laboratory test reports.
+          </p>
+<div class="space-y-4 pt-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-xl shrink-0 mt-0.5">flight_takeoff</span>
+<div>
+<strong class="font-headline text-body-md text-white block">Express International Dispatch</strong>
+<span class="font-body text-body-sm text-slate-300">Complimentary 48-hour DHL/FedEx courier dispatch to design offices globally.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-xl shrink-0 mt-0.5">engineering</span>
+<div>
+<strong class="font-headline text-body-md text-white block">Facade Structural Calculation</strong>
+<span class="font-body text-body-sm text-slate-300">Wind load deflection (Pa) and substructure bracket spacing verification.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-xl shrink-0 mt-0.5">verified_user</span>
+<div>
+<strong class="font-headline text-body-md text-white block">Direct Mill Guarantee</strong>
+<span class="font-body text-body-sm text-slate-300">Factory direct export pricing with standard 20-year international warranty deeds.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 font-label text-label-xs text-slate-400 space-y-1">
+<div class="">DIRECT TENDER DESK: <strong class="text-secondary-fixed">tender@alumax-facade.com</strong></div>
+<div class="">WHATSAPP / WECHAT: <strong class="text-white">+86 757 8829 4410</strong></div>
+</div>
+</div>
+<!-- Right 7 Cols: Structured B2B Inbound Form -->
+<div class="lg:col-span-7 p-8 md:p-12 flex flex-col justify-center">
+<form class="space-y-6" id="acp-rfq-form" onsubmit="event.preventDefault(); alert('Inquiry submitted! Our international facade engineering desk will respond within 4 hours.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Contact Name *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all" placeholder="e.g. David Henderson, AIA" required="" type="text">
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Professional Email *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all" placeholder="david@facade-consultants.com" required="" type="email">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Company / Architectural Firm</label>
+<input class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all" placeholder="e.g. Apex Facade Studio Pte" type="text">
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Country / Destination Port *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all" placeholder="e.g. Dubai / Port Jebel Ali" required="" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Estimated Quantity</label>
+<select class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all">
+<option>Sample Box Only (No Project)</option>
+<option>Under 1,000 m²</option>
+<option selected="">1,000 m² – 5,000 m²</option>
+<option>5,000 m² – 20,000 m²</option>
+<option>&gt; 20,000 m² (Mega Project)</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Required Core Grade</label>
+<select class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all">
+<option selected="">FR-A2 (Non-Combustible Mineral)</option>
+<option>FR-B1 (Flame-Retardant)</option>
+<option>PE Core (Signage / Interior Only)</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Finish Preference</label>
+<select class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all">
+<option selected="">PVDF Kynar 500 (3-Coat)</option>
+<option>FEVE Lumiflon Gloss</option>
+<option>Nano Self-Cleaning</option>
+<option>Chameleon Pearlescent</option>
+<option>Custom RAL / Anodized</option>
+</select>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-label-xs uppercase font-semibold text-on-surface">Project Scope / Specific Dimensions / CAD Upload Info</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body text-body-sm focus:outline-none focus:bg-white focus:ring-1 focus:ring-secondary transition-all" placeholder="Please specify facade panel modular dimensions, wind load requirements, edge folding requirements, or link to CAD/BIM drawing package." rows="3"></textarea>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+<label class="flex items-center gap-2 cursor-pointer font-body text-body-sm text-on-surface-variant">
+<input checked="" class="text-secondary rounded-none focus:ring-secondary h-4 w-4" type="checkbox">
+<span class="">Include complimentary physical material swatch folder</span>
+</label>
+<button class="w-full sm:w-auto px-8 py-3.5 bg-primary hover:bg-secondary text-on-primary font-headline text-body-md uppercase tracking-wider font-bold transition-all shadow-md" type="submit">
+              SUBMIT INQUIRY FOR QUOTE →
+            </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // INTERACTIVE GALLERY LOGIC
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainImg = document.getElementById('main-acp-display');
+    const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
+
+    thumbBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        thumbBtns.forEach(b => {
+          b.classList.remove('active', 'bg-surface-container-high');
+          b.classList.add('bg-surface-container-low');
+        });
+        btn.classList.add('active', 'bg-surface-container-high');
+        btn.classList.remove('bg-surface-container-low');
+
+        const prompt = btn.getAttribute('data-prompt');
+        if (mainImg && prompt) {
+          mainImg.setAttribute('data-alt', prompt);
+          // Visual fade micro-interaction
+          mainImg.style.opacity = '0.5';
+          setTimeout(() => {
+            mainImg.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+
+    // SPEC MATRIX SELECTOR LOGIC
+    const specBtns = document.querySelectorAll('.spec-opt-btn');
+    const dynamicCode = document.getElementById('dynamic-spec-code');
+
+    let currentSpec = {
+      core: 'A2',
+      thick: '4.0MM',
+      skin: 'SKIN-0.50',
+      finish: 'PVDF-KYNAR'
+    };
+
+    specBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-category');
+        const val = btn.getAttribute('data-val');
+
+        // Toggle active style in category group
+        const group = document.querySelectorAll(`.spec-opt-btn[data-category="${cat}"]`);
+        group.forEach(b => {
+          b.classList.remove('active', 'bg-secondary-fixed/30');
+          b.classList.add('bg-surface-container-lowest');
+        });
+        btn.classList.add('active', 'bg-secondary-fixed/30');
+        btn.classList.remove('bg-surface-container-lowest');
+
+        // Update badges
+        if (cat === 'core') {
+          document.getElementById('selected-core-badge').textContent = val;
+          currentSpec.core = val.includes('A2') ? 'A2' : 'B1';
+        } else if (cat === 'thick') {
+          document.getElementById('selected-thick-badge').textContent = val;
+          currentSpec.thick = val.split(' ')[0].toUpperCase();
+        } else if (cat === 'skin') {
+          document.getElementById('selected-skin-badge').textContent = val;
+          currentSpec.skin = 'SKIN-' + val.split(' ')[0];
+        } else if (cat === 'finish') {
+          document.getElementById('selected-finish-badge').textContent = val;
+          currentSpec.finish = val.includes('FEVE') ? 'FEVE-LUMIFLON' : 
+                               val.includes('Nano') ? 'NANO-SELF-CLEAN' : 
+                               val.includes('Chameleon') ? 'CHAMELEON-OPTICAL' : 'PVDF-KYNAR';
+        }
+
+        // Reconstruct engineering code
+        if (dynamicCode) {
+          dynamicCode.textContent = `ALU-ACP-1000 / ${currentSpec.core} / ${currentSpec.thick} / ${currentSpec.skin} / ${currentSpec.finish}`;
+        }
+      });
+    });
+  });
+</script></main>
+<!-- ========================================================================= -->
+<!-- FOOTER (NO FLOATING OVERLAY BUTTON, FULL SOCIAL MEDIA, CLEAN COLUMNS)     -->
+<!-- ========================================================================= -->
+<footer class="w-full bg-[#0d1b2a] text-white border-t border-white/10">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl">
+<!-- Col 1 & 2: Brand, Summary & Social Media Icons -->
+<div class="lg:col-span-2 space-y-space-md">
+<div class="flex items-center gap-3">
+<svg class="h-8 w-8 text-secondary-fixed" fill="currentColor" viewBox="0 0 40 40">
+<path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5"></path>
+<path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
+<line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
+</svg>
+<span class="font-headline-sm text-headline-sm uppercase tracking-tight text-white font-bold">ALUMAX ARCHITECTURAL</span>
+</div>
+<p class="font-body-md text-body-md text-slate-300 max-w-md">
+          Global premier manufacturer of precision-engineered curtain walls, motorized adaptive facades, and high-performance architectural envelopes. Supplying tested systems to over 60 countries across Europe, the Middle East, Southeast Asia, and the Americas.
+        </p>
+<!-- Social Media Icons for International B2B Reach -->
+<div class="space-y-2 pt-2">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider block font-semibold">Global Social &amp; Project Channels</span>
+<div class="flex items-center gap-2">
+<!-- LinkedIn -->
+<a aria-label="ALUMAX on LinkedIn" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group" href="#" title="LinkedIn">
+<span class="font-label-sm text-label-sm font-bold group-hover:text-on-secondary">in</span>
+</a>
+<!-- YouTube -->
+<a aria-label="ALUMAX on YouTube" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group" href="#" title="YouTube">
+<span class="material-symbols-outlined text-lg group-hover:text-on-secondary">smart_display</span>
+</a>
+<!-- X (Twitter) -->
+<a aria-label="ALUMAX on X" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group" href="#" title="X (Twitter)">
+<span class="font-label-sm text-label-sm font-bold group-hover:text-on-secondary">𝕏</span>
+</a>
+<!-- WeChat -->
+<a aria-label="ALUMAX on WeChat" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group" href="#" title="WeChat">
+<span class="material-symbols-outlined text-lg group-hover:text-on-secondary">chat</span>
+</a>
+<!-- Instagram -->
+<a aria-label="ALUMAX on Instagram" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group" href="#" title="Instagram">
+<span class="material-symbols-outlined text-lg group-hover:text-on-secondary">photo_camera</span>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">ISO 9001:2015</span>
+<span class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">CE Certified</span>
+<span class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">ASTM E84 / EN13501 A2</span>
+<span class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">BMS IoT Ready</span>
+</div>
+</div>
+<!-- Col 3: Systems Matrix -->
+<div class="space-y-space-md">
+<div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Systems Matrix</div>
+<ul class="space-y-space-xs">
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#featured-envelope-systems">Intelligent Motorized Louvers</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#featured-envelope-systems">Solid Aluminum Panels (3.0mm)</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#featured-envelope-systems">Aluminum Honeycomb Panels</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#featured-envelope-systems">Corrugated Core Panels</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#featured-envelope-systems">Pre-Insulated Envelope Panels</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#featured-envelope-systems">Architectural Louvers &amp; Sunshades</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#">High-Traffic Steel Cladding</a></li>
+</ul>
+</div>
+<!-- Col 4: Engineering & Export -->
+<div class="space-y-space-md">
+<div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Engineering &amp; Export</div>
+<ul class="space-y-space-xs">
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#technical-resources">BIM LOD 400 Library</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#technical-resources">ASTM &amp; EN Test Certifications</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#landmark-projects">Airport &amp; High-Rise References</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#manufacturing-strengths">CNC Precision Lines</a></li>
+<li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors" href="#manufacturing-strengths">Export Shipping &amp; Crating</a></li>
+</ul>
+</div>
+<!-- Col 5: Global Inquiries -->
+<div class="space-y-space-md">
+<div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Global Inquiries</div>
+<p class="font-body-sm text-body-sm text-slate-300">Engineering Consultation &amp; Overseas Export Support Center.</p>
+<div class="font-label-sm text-label-sm space-y-space-xs text-slate-300">
+<p class="">Dubai, UAE // Regional MENA Office</p>
+<p class="">Rotterdam, NL // European Logistics Hub</p>
+<p class="">Foshan, CN // Global Manufacturing Center</p>
+<p class="text-secondary-fixed font-semibold pt-space-xs">export@alumax-facade.com</p>
+</div>
+<div class="pt-space-xs">
+<a class="inline-block font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed hover:text-white transition-colors" href="#fast-rfq-section">
+            Global Representative Network →
+          </a>
+</div>
+</div>
+</div>
+<!-- Bottom Legal & Copyright -->
+<div class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-md">
+<p class="font-label-sm text-label-sm text-slate-400">© 2025 ALUMAX Architectural Envelopes Co., Ltd. All rights reserved. Precision Architectural Facade Systems.</p>
+<div class="flex items-center gap-space-lg font-label-sm text-label-sm text-slate-400">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Export Compliance &amp; Certifications</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Supply</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- SCRIPT FOR HERO SLIDE SWITCHER -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroBg = document.getElementById('hero-bg-slide');
+    const slideBtns = document.querySelectorAll('.hero-slide-btn');
+    const playbackToggle = document.getElementById('playback-toggle-btn');
+    const playbackIcon = document.getElementById('playback-icon');
+
+    let currentSlide = 0;
+    let isPlaying = true;
+    let timer = null;
+
+    function switchSlide(index) {
+      slideBtns.forEach((btn, i) => {
+        const dot = btn.querySelector('span');
+        if (i === index) {
+          btn.classList.add('active', 'bg-white/15', 'border-secondary');
+          btn.classList.remove('bg-white/5', 'border-white/5');
+          if (dot) {
+            dot.classList.add('bg-secondary');
+            dot.classList.remove('bg-slate-500');
+          }
+          const newBg = btn.getAttribute('data-bg');
+          if (newBg && heroBg) {
+            heroBg.src = newBg;
+          }
+        } else {
+          btn.classList.remove('active', 'bg-white/15', 'border-secondary');
+          btn.classList.add('bg-white/5', 'border-white/5');
+          if (dot) {
+            dot.classList.remove('bg-secondary');
+            dot.classList.add('bg-slate-500');
+          }
+        }
+      });
+      currentSlide = index;
+    }
+
+    slideBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', () => {
+        switchSlide(idx);
+      });
+    });
+
+    function startSlideshow() {
+      timer = setInterval(() => {
+        let next = (currentSlide + 1) % slideBtns.length;
+        switchSlide(next);
+      }, 5500);
+    }
+
+    function stopSlideshow() {
+      if (timer) clearInterval(timer);
+    }
+
+    if (playbackToggle) {
+      playbackToggle.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          playbackIcon.textContent = 'pause';
+          startSlideshow();
+        } else {
+          playbackIcon.textContent = 'play_arrow';
+          stopSlideshow();
+        }
+      });
+    }
+
+    startSlideshow();
+  });
+</script>
+
+
+</body></html>

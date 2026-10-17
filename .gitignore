@@ -1,0 +1,24 @@
+# WordPress 核心（本地由 WordPress Studio 提供，不入库）
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
+/wp-*.php
+
+# 本地配置与数据库
+/wp-config.php
+*.stackdump
+
+# wp-content 下只跟踪 alumax 主题
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/alumax/
+
+# 系统与编辑器杂项
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
