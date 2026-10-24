@@ -2,24 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- BREADCRUMB & METADATA BAR -->
-<section class="w-full bg-surface-container-low py-4">
-<div class="max-w-[1440px] mx-auto px-5 md:px-12 flex flex-wrap items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#">Home</a>
-<span class="text-outline-variant">/</span>
-<a class="text-secondary font-semibold" href="#">Products</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors" href="#">Architectural Screens</a>
-<span class="text-outline-variant">/</span>
-<span class="text-on-surface font-semibold">ALU-GR-2000 Mashrabiya &amp; Grilles</span>
-</nav>
-<div class="flex items-center gap-3 font-label text-xs">
-<span class="bg-surface-container-highest text-on-surface px-2.5 py-1 tracking-wider">DOC ID: SPEC-ALU-GR2000-REV4</span>
-<span class="bg-secondary text-on-secondary px-2.5 py-1 font-semibold uppercase tracking-wider">CSI SEC 07 42 13 / 08 90 00</span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- PRODUCT HERO & CONFIGURATOR BENCHMARK -->
 <section class="w-full py-10 md:py-16">
 <div class="max-w-[1440px] mx-auto px-5 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">

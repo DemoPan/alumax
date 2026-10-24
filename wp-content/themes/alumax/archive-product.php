@@ -4,21 +4,10 @@ get_header();
 ?>
   <main class="w-full bg-surface">
     <div class="flex flex-col w-full">
-      <!-- 1. BREADCRUMB & INTRO HERO BAR -->
-      <section class="w-full bg-surface-container-low pt-28 pb-12">
+      <?php get_template_part('template-parts/product-breadcrumb', null, array('current' => '')); ?>
+      <!-- 1. INTRO HERO BAR -->
+      <section class="w-full bg-surface-container-low py-12">
         <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-          <!-- Breadcrumb -->
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <nav aria-label="Breadcrumbs"
-              class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
-              <a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
-                <span class="material-symbols-outlined text-sm">roofing</span>
-                <span>Home</span>
-              </a>
-              <span class="text-outline">/</span>
-              <span class="text-secondary font-medium">Products &amp; Architectural Systems</span>
-            </nav>
-          </div>
           <!-- Main Headline Grid -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div class="lg:col-span-8 space-y-4">
@@ -65,52 +54,43 @@ get_header();
         <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-4">
           <!-- Top Tier: Primary Application Tabs & View Switcher -->
           <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-            <!-- Application Filter Tabs -->
+            <!-- Application Filter Tabs（动态读取产品分类，后台 产品 → 产品分类 配置） -->
             <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0" id="filter-tabs">
+              <?php
+              $alumax_archive_total = (int) wp_count_posts('product')->publish;
+              $alumax_archive_cats = get_terms(['taxonomy' => 'product_category', 'hide_empty' => true]);
+              if (is_wp_error($alumax_archive_cats)) {
+                  $alumax_archive_cats = [];
+              }
+              ?>
               <button
                 class="filter-tab active px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider bg-primary text-on-primary whitespace-nowrap transition-colors"
                 data-filter="all">
-                All Systems (11)
+                All Systems (<?php echo $alumax_archive_total; ?>)
               </button>
+              <?php foreach ($alumax_archive_cats as $alumax_archive_cat) : ?>
               <button
                 class="filter-tab px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:bg-surface-variant whitespace-nowrap transition-colors"
-                data-filter="exterior">
-                Exterior Cladding (5)
+                data-filter="<?php echo esc_attr($alumax_archive_cat->slug); ?>">
+                <?php echo esc_html($alumax_archive_cat->name); ?> (<?php echo (int) $alumax_archive_cat->count; ?>)
               </button>
-              <button
-                class="filter-tab px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:bg-surface-variant whitespace-nowrap transition-colors"
-                data-filter="solar">
-                Solar &amp; Shading (2)
-              </button>
-              <button
-                class="filter-tab px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:bg-surface-variant whitespace-nowrap transition-colors"
-                data-filter="composites">
-                Insulated &amp; Composites (3)
-              </button>
-              <button
-                class="filter-tab px-4 py-2 rounded font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface hover:bg-surface-variant whitespace-nowrap transition-colors"
-                data-filter="interior">
-                Ceilings &amp; Screens (2)
-              </button>
+              <?php endforeach; ?>
             </div>
-            <!-- Search Bar and View Mode Switch -->
+            <!-- View Mode Switch（服务端切换：?view=list 时所有卡片用主推卡样式） -->
+            <?php
+            $alumax_list_view = isset($_GET['view']) && $_GET['view'] === 'list';
+            $alumax_archive_link = get_post_type_archive_link('product');
+            ?>
             <div class="flex items-center gap-3">
-              <div class="relative flex-1 md:w-80">
-                <span
-                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
-                <input
-                  class="w-full pl-10 pr-4 py-2 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-inner"
-                  id="catalog-search" placeholder="Search alloy, standard, or finish..." type="text" />
-              </div>
               <div class="flex items-center bg-surface-container-high p-1 rounded">
-                <button class="p-1.5 rounded bg-surface-container-lowest text-primary shadow-sm" id="view-grid"
-                  title="Card Grid View">
+                <a class="p-1.5 rounded <?php echo $alumax_list_view ? 'text-outline hover:text-on-surface transition-colors' : 'bg-surface-container-lowest text-primary shadow-sm'; ?>"
+                  href="<?php echo esc_url($alumax_archive_link); ?>" title="Grid View">
                   <span class="material-symbols-outlined text-lg">grid_view</span>
-                </button>
-                <button class="p-1.5 rounded text-outline hover:text-on-surface transition-colors" id="view-list"
-                  title="Compact Technical Spec View">
+                </a>
+                <a class="p-1.5 rounded <?php echo $alumax_list_view ? 'bg-surface-container-lowest text-primary shadow-sm' : 'text-outline hover:text-on-surface transition-colors'; ?>"
+                  href="<?php echo esc_url(add_query_arg('view', 'list', $alumax_archive_link)); ?>" title="List View">
                   <span class="material-symbols-outlined text-lg">format_list_bulleted</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -184,109 +164,24 @@ get_header();
               <h2 class="font-headline-lg text-headline-lg text-on-surface">Architectural Metal Catalog</h2>
             </div>
             <div class="font-label-md text-label-md text-on-surface-variant">
-              Showing <span class="font-semibold text-secondary" id="product-count">11 of 11</span> Systems
+              Showing <span class="font-semibold text-secondary"
+                id="product-count"><?php echo $alumax_archive_total . ' of ' . $alumax_archive_total; ?></span> Systems
             </div>
           </div>
           <!-- PRODUCT CARDS GRID -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-container">
+          <div class="<?php echo $alumax_list_view ? 'grid grid-cols-1 gap-8' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'; ?>" id="products-container">
             <?php if (have_posts()) : ?>
               <?php $alumax_product_index = 0; ?>
               <?php while (have_posts()) : the_post(); ?>
                 <?php
                 $alumax_product_index++;
-                $alumax_product_img = get_the_post_thumbnail_url(get_the_ID(), 'large')
-                    ?: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvXlM-HZftoZbHEhI0OfRev0B4_BUsUN-g8s9XgFUNnhUF3d243Q9YdAxxKwKm1YZ6pEiYZD8PYD3LIbYtVvaYDuE5xMLHEKXNY77RyvMdQU6WkaBz9u_aaCZ2Lze9rjN8K5s6FJI_3d8IJZ1QxZbc47sz6WG7vuYnjbG6hLI7co_i68QJ0lvTfm0BqfrRY0kOdQN8EHomQ1VPfqsXl85wRQr4Zx97q0RQBMVF6Oo';
-                $alumax_specs = alumax_product_specs(get_the_ID());
+                if ($alumax_list_view) {
+                    // 列表模式：所有卡片都复用主推卡样式，仅第一张显示 FEATURED 徽章
+                    get_template_part('template-parts/product-card-featured', null, array('badge' => $alumax_product_index === 1));
+                } else {
+                    get_template_part('template-parts/' . ($alumax_product_index === 1 ? 'product-card-featured' : 'product-card'));
+                }
                 ?>
-                <?php if ($alumax_product_index === 1) : ?>
-                <!-- FEATURED PRODUCT: <?php echo esc_html(get_the_title()); ?> -->
-                <div
-                  class="product-item lg:col-span-2 bg-surface-container-lowest rounded overflow-hidden shadow-md group relative flex flex-col justify-between">
-                  <div class="absolute top-4 left-4 z-20 flex flex-wrap gap-2">
-                    <span
-                      class="bg-secondary text-on-secondary px-3 py-1 rounded font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow">
-                      <span class="material-symbols-outlined text-sm">neurology</span>
-                      Featured System
-                    </span>
-                  </div>
-                  <div class="grid grid-cols-1 md:grid-cols-12 min-h-[380px]">
-                    <!-- Visual Half -->
-                    <div class="md:col-span-7 relative overflow-hidden bg-surface-container-high">
-                      <div
-                        class="w-full h-full min-h-[300px] md:min-h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                        style="background-image: url('<?php echo esc_url($alumax_product_img); ?>')">
-                      </div>
-                      <div
-                        class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-transparent via-transparent to-surface-container-lowest">
-                      </div>
-                    </div>
-                    <!-- Content Half -->
-                    <div class="md:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6">
-                      <div>
-                        <h3 class="font-headline-md text-headline-md text-on-surface mt-1">
-                          <?php the_title(); ?>
-                        </h3>
-                        <div class="font-body-sm text-body-sm text-on-surface-variant mt-2">
-                          <?php the_excerpt(); ?>
-                        </div>
-                        <?php if (!empty($alumax_specs)) : ?>
-                        <!-- Spec Badge Grid -->
-                        <div class="grid grid-cols-2 gap-2 mt-4 pt-4 bg-surface-container-low p-3 rounded">
-                          <?php foreach ($alumax_specs as $alumax_spec) : ?>
-                          <div>
-                            <span class="block font-label-sm text-label-sm text-outline"><?php echo esc_html($alumax_spec['name']); ?></span>
-                            <span class="font-label-md text-label-md text-on-surface font-semibold"><?php echo esc_html($alumax_spec['value']); ?></span>
-                          </div>
-                          <?php endforeach; ?>
-                        </div>
-                        <?php endif; ?>
-                      </div>
-                      <!-- Action Links -->
-                      <div class="flex items-center justify-between pt-4">
-                        <a class="px-4 py-2 bg-primary text-on-primary hover:bg-secondary font-label-md text-label-md uppercase tracking-wider rounded transition-colors"
-                          href="<?php echo esc_url(get_permalink()); ?>">
-                          View System
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <?php else : ?>
-                <!-- PRODUCT: <?php echo esc_html(get_the_title()); ?> -->
-                <div
-                  class="product-item bg-surface-container-lowest rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
-                  <div>
-                    <div class="relative h-64 bg-surface-container-high overflow-hidden">
-                      <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                        style="background-image: url('<?php echo esc_url($alumax_product_img); ?>')">
-                      </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                      <h3 class="font-headline-sm text-headline-sm text-on-surface"><?php the_title(); ?></h3>
-                      <div class="font-body-sm text-body-sm text-on-surface-variant">
-                        <?php the_excerpt(); ?>
-                      </div>
-                      <?php if (!empty($alumax_specs)) : ?>
-                      <!-- Param Micro Table -->
-                      <div class="bg-surface-container-low p-3 rounded space-y-1.5 font-label-sm text-label-sm">
-                        <?php foreach ($alumax_specs as $alumax_spec) : ?>
-                        <div class="flex justify-between text-on-surface">
-                          <span class="text-outline"><?php echo esc_html($alumax_spec['name']); ?></span>
-                          <span class="font-semibold"><?php echo esc_html($alumax_spec['value']); ?></span>
-                        </div>
-                        <?php endforeach; ?>
-                      </div>
-                      <?php endif; ?>
-                    </div>
-                  </div>
-                  <div class="p-6 pt-0 flex items-center justify-end">
-                    <a class="px-3 py-1.5 bg-surface-container-high hover:bg-secondary hover:text-white rounded font-label-sm text-label-sm text-on-surface transition-colors"
-                      href="<?php echo esc_url(get_permalink()); ?>">
-                      View System
-                    </a>
-                  </div>
-                </div>
-                <?php endif; ?>
               <?php endwhile; ?>
             <?php else : ?>
               <div
@@ -633,40 +528,38 @@ get_header();
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // 1. DYNAMIC CATEGORY FILTERING & SEARCH
+        // 1. DYNAMIC CATEGORY & PARAMETER FILTERING
+        // 分类标签联动后台「产品分类」；参数下拉与产品的「产品特性」字段文本匹配
         const tabs = document.querySelectorAll('.filter-tab');
         const products = document.querySelectorAll('.product-item');
-        const searchInput = document.getElementById('catalog-search');
         const productCount = document.getElementById('product-count');
 
         const fireSelect = document.getElementById('filter-fire');
         const alloySelect = document.getElementById('filter-alloy');
         const coatingSelect = document.getElementById('filter-coating');
+        const thicknessSelect = document.getElementById('filter-thickness');
 
         function applyFilters() {
           const activeTab = document.querySelector('.filter-tab.active');
           const activeFilter = activeTab ? activeTab.getAttribute('data-filter') : 'all';
-          const searchTerm = searchInput.value.toLowerCase().trim();
-          const fireVal = fireSelect.value;
-          const alloyVal = alloySelect.value;
-          const coatingVal = coatingSelect.value;
+          const fireVal = fireSelect.value.toLowerCase();
+          const alloyVal = alloySelect.value.toLowerCase();
+          const coatingVal = coatingSelect.value.toLowerCase();
+          const thicknessVal = thicknessSelect.value.toLowerCase();
 
           let visible = 0;
 
           products.forEach(item => {
-            const itemCat = item.getAttribute('data-category');
-            const itemFire = item.getAttribute('data-fire');
-            const itemAlloy = item.getAttribute('data-alloy');
-            const itemCoating = item.getAttribute('data-coating');
-            const textContent = item.textContent.toLowerCase();
+            const itemCats = (item.getAttribute('data-categories') || '').split(/\s+/);
+            const itemSpecs = item.getAttribute('data-specs') || '';
 
-            let matchesCat = (activeFilter === 'all') || (itemCat === activeFilter);
-            let matchesSearch = !searchTerm || textContent.includes(searchTerm);
-            let matchesFire = (fireVal === 'all') || (itemFire === fireVal);
-            let matchesAlloy = (alloyVal === 'all') || (itemAlloy === alloyVal);
-            let matchesCoating = (coatingVal === 'all') || (itemCoating === coatingVal);
+            const matchesCat = (activeFilter === 'all') || itemCats.includes(activeFilter);
+            const matchesFire = (fireVal === 'all') || itemSpecs.includes(fireVal);
+            const matchesAlloy = (alloyVal === 'all') || itemSpecs.includes(alloyVal);
+            const matchesCoating = (coatingVal === 'all') || itemSpecs.includes(coatingVal);
+            const matchesThickness = (thicknessVal === 'all') || itemSpecs.includes(thicknessVal);
 
-            if (matchesCat && matchesSearch && matchesFire && matchesAlloy && matchesCoating) {
+            if (matchesCat && matchesFire && matchesAlloy && matchesCoating && matchesThickness) {
               item.classList.remove('hidden');
               visible++;
             } else {
@@ -691,39 +584,12 @@ get_header();
           });
         });
 
-        if (searchInput) {
-          searchInput.addEventListener('input', applyFilters);
-        }
         if (fireSelect) fireSelect.addEventListener('change', applyFilters);
         if (alloySelect) alloySelect.addEventListener('change', applyFilters);
         if (coatingSelect) coatingSelect.addEventListener('change', applyFilters);
+        if (thicknessSelect) thicknessSelect.addEventListener('change', applyFilters);
 
-        // 2. VIEW SWITCHER (GRID VS LIST VIEW)
-        const viewGrid = document.getElementById('view-grid');
-        const viewList = document.getElementById('view-list');
-        const productsContainer = document.getElementById('products-container');
-
-        if (viewGrid && viewList && productsContainer) {
-          viewList.addEventListener('click', () => {
-            productsContainer.classList.remove('md:grid-cols-2', 'lg:grid-cols-3');
-            productsContainer.classList.add('grid-cols-1');
-            viewList.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
-            viewList.classList.remove('text-outline');
-            viewGrid.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
-            viewGrid.classList.add('text-outline');
-          });
-
-          viewGrid.addEventListener('click', () => {
-            productsContainer.classList.add('md:grid-cols-2', 'lg:grid-cols-3');
-            productsContainer.classList.remove('grid-cols-1');
-            viewGrid.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
-            viewGrid.classList.remove('text-outline');
-            viewList.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
-            viewList.classList.add('text-outline');
-          });
-        }
-
-        // 3. SPECIFICATION MODAL BEHAVIOR
+        // 2. SPECIFICATION MODAL BEHAVIOR
         const modal = document.getElementById('spec-modal');
         const closeModal = document.getElementById('close-modal');
         const modalSecondary = document.getElementById('modal-secondary-btn');

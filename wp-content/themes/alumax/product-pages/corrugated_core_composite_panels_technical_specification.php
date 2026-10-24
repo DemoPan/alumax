@@ -2,28 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- BREADCRUMB & STATUS STRIP -->
-<section class="w-full bg-surface-container-low text-on-surface py-3 px-6 md:px-12">
-<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-slate-500 uppercase tracking-widest text-[11px]">
-<a class="hover:text-primary transition-colors" href="#">HOME</a>
-<span class="text-slate-400">/</span>
-<a class="hover:text-primary transition-colors text-secondary font-semibold" href="#">PRODUCTS</a>
-<span class="text-slate-400">/</span>
-<a class="hover:text-primary transition-colors" href="#">ARCHITECTURAL COMPOSITES</a>
-<span class="text-slate-400">/</span>
-<span class="text-slate-900 font-medium">CORRUGATED CORE ALUMINUM PANELS</span>
-</nav>
-<div class="flex items-center gap-4 font-label text-[11px] text-slate-600">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-highest text-slate-800 rounded-none font-semibold">
-<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-          EN 13501-1 CLASS A1 CERTIFIED
-        </span>
-<span class="hidden sm:inline text-slate-400">|</span>
-<span class="hidden sm:inline font-mono tracking-tight text-slate-500">SPEC REV: 2025.04.B</span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- PRODUCT HERO & INTERACTIVE SPECIFICATION MATRIX -->
 <section class="w-full bg-surface py-10 md:py-16 px-6 md:px-12">
 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">

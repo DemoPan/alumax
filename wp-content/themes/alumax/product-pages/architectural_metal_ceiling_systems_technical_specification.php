@@ -2,27 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- Top Spec Navigation Bar / Breadcrumb Strip -->
-<section class="w-full bg-surface-container-low text-on-surface py-4 px-4 sm:px-8 lg:px-12">
-<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-xs tracking-wider uppercase text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#">HOME</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors" href="#">PRODUCTS</a>
-<span class="text-outline-variant">/</span>
-<span class="text-outline">INTERIOR &amp; EXTERIOR CEILINGS</span>
-<span class="text-outline-variant">/</span>
-<span class="text-secondary font-semibold">ARCHITECTURAL METAL CEILING SYSTEMS</span>
-</nav>
-<div class="flex items-center gap-4">
-<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container text-on-surface font-label text-xs uppercase font-medium">
-<span class="w-2 h-2 bg-secondary"></span>
-          SYS. CODE: ALU-CL-6000 // 金属吊顶板
-        </span>
-<span class="hidden sm:inline-block font-label text-xs text-on-surface-variant">REV 2025.4 // EXPORT READY</span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- Product Hero & Interactive Specification Lab -->
 <section class="w-full bg-surface-container-lowest py-10 px-4 sm:px-8 lg:px-12 shadow-sm">
 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">

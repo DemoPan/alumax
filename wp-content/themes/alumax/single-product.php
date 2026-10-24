@@ -21,41 +21,7 @@ get_header();
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <main class="w-full bg-surface">
     <div class="flex flex-col w-full">
-      <!-- BREADCRUMBS & COMPLIANCE BAR -->
-      <section class="w-full bg-surface-container-low border-b border-surface-variant">
-        <div
-          class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin py-space-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
-          <div class="flex items-center flex-wrap gap-2 text-on-surface-variant font-label-sm text-label-sm">
-            <a class="hover:text-primary transition-colors flex items-center gap-1" href="<?php echo esc_url(home_url('/')); ?>">
-              <span class="material-symbols-outlined text-sm">home</span> Home
-            </a>
-            <span class="text-outline-variant">/</span>
-            <a class="hover:text-primary transition-colors" href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Products &amp;
-              Architectural Systems</a>
-            <span class="text-outline-variant">/</span>
-            <span class="text-primary font-semibold"><?php the_title(); ?></span>
-          </div>
-          <!-- Compliance Badges -->
-          <div class="flex items-center flex-wrap gap-2">
-            <span
-              class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase rounded tracking-wider font-semibold">
-              <span class="material-symbols-outlined text-[14px] text-secondary">verified</span> ASTM E84 Class A
-            </span>
-            <span
-              class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase rounded tracking-wider font-semibold">
-              <span class="material-symbols-outlined text-[14px] text-secondary">shield</span> EN 13501-1 Class A2-s1,d0
-            </span>
-            <span
-              class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase rounded tracking-wider font-semibold">
-              <span class="material-symbols-outlined text-[14px] text-secondary">done_all</span> AAMA 2605 Tested
-            </span>
-            <span
-              class="inline-flex items-center gap-1 px-2.5 py-1 bg-primary text-on-primary font-label-sm text-label-sm uppercase rounded tracking-wider font-semibold">
-              CE MARKED
-            </span>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('template-parts/product-breadcrumb'); ?>
       <!-- PRODUCT HERO & INTERACTIVE SPECIFICATION CONFIGURATOR -->
       <section class="w-full bg-surface py-space-xl">
         <div

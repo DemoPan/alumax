@@ -2,29 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- Top Technical Breadcrumbs & Spec Bar -->
-<section class="w-full bg-surface-container-low">
-<div class="max-w-[1440px] mx-auto px-5 md:px-12 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center flex-wrap gap-2 text-xs font-label uppercase tracking-widest text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#">Home</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors text-secondary font-semibold" href="#featured-envelope-systems">Products</a>
-<span class="text-outline-variant">/</span>
-<span class="text-on-surface-variant">Solar Architecture</span>
-<span class="text-outline-variant">/</span>
-<span class="text-primary font-bold">ALU-LB-3000 // S-Blade System</span>
-</nav>
-<div class="flex items-center gap-3">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-highest text-primary font-label text-[11px] font-semibold tracking-wider uppercase">
-<span class="w-2 h-2 bg-secondary"></span>
-          EN 13030 Class A Rain Defense
-        </span>
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary-container text-white font-label text-[11px] font-medium tracking-wider uppercase">
-          AMCA 500-L Tested
-        </span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- Product Showcase & Interactive Spec Engineering Section -->
 <section class="w-full bg-surface py-12 md:py-16">
 <div class="max-w-[1440px] mx-auto px-5 md:px-12">

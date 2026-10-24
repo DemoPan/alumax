@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 function alumax_home_defaults() {
-    return [
+    $defaults = [
         // Hero
         'hero_badge' => 'Next-Generation Architectural Envelopes & Solar Shading',
         'hero_title' => 'Engineered Architectural Metals & Adaptive Facade Systems',
@@ -37,25 +37,136 @@ function alumax_home_defaults() {
         's3_title' => 'FEATURED ARCHITECTURAL ENVELOPE & FACADE SYSTEMS',
         's3_subtitle' => 'Precision-engineered aluminum panels, structural composites, and motorized sun-shading solutions for international landmarks.',
         // Section 4: Manufacturing
-        's4_eyebrow' => 'Heavy Industrial Manufacturing Capacity',
-        's4_title' => '150,000 m² Monthly Output • 6 Automated CNC Lines • Zero-Defect QC',
-        's4_subtitle' => 'Continuous 85,000 m² smart metal fabrication campus equipped with German Trumpf laser cutters and Japanese automated Ransburg vertical coating towers.',
+        's4_eyebrow' => 'Smart Manufacturing & Fabrication Precision',
+        's4_title' => '150,000 m² Monthly Capacity • 6 Automated CNC Lines • Zero-Defect Metallurgy',
+        's4_subtitle' => 'Continuous 85,000 m² smart metal fabrication campus equipped with German Trumpf laser cutters, Italian Salvagnini panel benders, and Japanese automated Ransburg vertical fluorocarbon coating lines.',
+        's4_bg_image' => 'https://lh3.googleusercontent.com/aida/AEtjO1VX-1APmxkQtKJO_kHBQr_udIAcu29QJBYCEvpD_4lIb4tA6bAUOcW9LKboQdvXLVXeVhuppuqjFlUgURlUTgqqLmUU1wNV5uHe9f1pXW5XuiAVSQ7BQI2TSxzRmzkNX5TETbp_qfXSYonIdkll9Pp52qPRF8B26RjxoU89e26hSueuMcfukKIoe03Wv4MTWUNnoX0RKyU61DGWGiGjprkVO0DIec8R0yz7M3B4Yaki9qkNFGaswEmyhmo',
         // Section 5: Landmark Projects
         's5_eyebrow' => 'Global Project References',
         's5_title' => '1,200+ Projects Completed Across 6 Continents',
-        // Section 6: Technical Resources
-        's6_eyebrow' => 'Architect & Engineer Download Center',
-        's6_title' => 'Facade Engineering Tools, CAD/BIM & Test Certifications',
-        's6_subtitle' => 'Direct access to official laboratory test certificates, wind-load calculation whitepapers, and standard joint detail drawings.',
-        // Section 7: Global Presence
-        's7_eyebrow' => 'Worldwide Export Logistics Footprint',
-        's7_title' => 'Delivering Certified Façades to Over 60 Countries',
-        's7_subtitle' => 'Supported by localized regional liaison offices and distribution hubs in Dubai, Rotterdam, Singapore, and Houston.',
-        // Section 8: Fast RFQ
-        's8_eyebrow' => 'Complimentary Architect Sample Kit',
-        's8_title' => 'Get a Project Estimate & Sample Box Within 24h',
-        's8_subtitle' => 'Send us your project drawings (DWG/BIM/PDF) or specification schedules. Our international facade estimating team will provide an itemized FOB/CIF quotation within one working day.',
     ];
+
+    // Section 2 finish cards
+    $s2_cards = [
+        [
+            'tag' => 'AAMA 2605 Certified',
+            'title' => 'Fluorocarbon PVDF (Kynar 500)',
+            'desc' => '3-Coat 2-Bake system, 35μm minimum dry film thickness. Engineered for extreme solar UV and salt-spray resistance.',
+            'spec_label' => 'Warranty',
+            'spec_value' => '30-Yr Exterior',
+            'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBSKyFgB-1gbPpcw77fwoFlWVCl7zs2f77dw-F_B0OucwuvHrZB8vEP7rBJKUyhYc5Z8nCY_hcrotCjS9nPVqJuUPUQ0r5etRuiCD6SfwbOZaIjGx-1EcWaTq4izjVVqXD5owfxdUQCVqBbm_i9EAtd-0Hbe2iPdCCEOhJtamPymYhAueolPEEC2hg64MwJDjmfWAkfsdzhbwDrgkYmAm4wzbcSowYbFGTrrOKFfy-ENc_UOKnn-sdT',
+        ],
+        [
+            'tag' => 'Class 1 Electrolytic',
+            'title' => 'Architectural Anodizing',
+            'desc' => 'Electrolytic satin finish available in natural silver, champagne, and dark bronze with uniform 25μm oxide depth.',
+            'spec_label' => 'Oxide Layer',
+            'spec_value' => '25μm Depth',
+            'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDSiqGc-P2zUtof-U7Frj19aZ3jT7n9WPKwqoVb72PruTpf-UlOuguqyOAj26EDvquR1sCqmQtK2TwjD_eVKQhHs-j-dnInViZEURFVnGWnpjW7nWJZh9UhSKkQRxHYgzB9QjSwCkPyMYClQjPC8nlBuMCfOK-CnpH_h456yL654iZH57rgV6SnUts7OOhdldfIc7RtAtcICgLKfKDDX4rnYdz7LOOEVVO4mfCEYNXuW8uRR3Jgjf8E',
+        ],
+        [
+            'tag' => 'Natural Mineral Look',
+            'title' => 'Textured Stone & Quartz',
+            'desc' => '3D mineral tactile coating providing granite/limestone look while being 80% lighter than natural stone slabs.',
+            'spec_label' => 'Combustibility',
+            'spec_value' => 'Class A Non-Comb.',
+            'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBM-pEeC3oGTrZ1GQvz14eind6a-1BuRjK-RSWNEXkZer_QhGLD3oTbaL60gBpIAyRhaxBwtcA-I-uyPxbXOpQ4nb_CScmx8Qg_ppQ5zqtTybrvcSXlYMmLTj4VS84D5Srq4MqsVujt7u1jsGxxxrkf0yZGUudF1SBycw4tzEA6bDIkLfpjd0vr2rGwbVoeAJUjq2AFKocQqoZ9_Ue0q1A7pGJhXZBLP8UlKusNVQrf8mcOeka1JHCO',
+        ],
+        [
+            'tag' => 'High-Vacuum Sublimation',
+            'title' => 'Thermal Transfer Woodgrain',
+            'desc' => 'High-vacuum thermal transfer delivering warm architectural wood effect with zero rotting, swelling, or splintering.',
+            'spec_label' => 'Stability',
+            'spec_value' => 'UV-Stabilized',
+            'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuChi2_CI9dFb9uMuzfo7o9Q2vTK-3okyMxKQKrId6QHGXh2_2wbzWK5_PYR9KeQNJsNb2iG5pKHlJBOB9w-SwObum70xGqUP47eP3nd6Wo-QHA2xDsgX_SMk0PB0e8lJpwk3VTdLcKS4i6o3idMJ_gz5xXTS0U6qS31849MZSNh9Oh4nO4z7NWQi8XWReVKpOsW-gAs4Wu7DVsOmcFzs66x2dqH8wrSetnFeY-ZD4yD7dJ0uBQgdDBQ',
+        ],
+        [
+            'tag' => 'Self-Cleaning Fluoropolymer',
+            'title' => 'FEVE Ultra-Weatherable',
+            'desc' => 'High-gloss, scratch-resistant fluoropolymer coating with hydrophobic self-cleaning properties and anti-graffiti finish.',
+            'spec_label' => 'Gloss Retention',
+            'spec_value' => '> 80% at 20 Years',
+            'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDgloJJtmlo2HPXXLQ4dzRNKoj_rArb0I8nPDHrjjKr1M0M0G21B7dSCsr8M53WMP5KkXhMPKSSlgHKkSaayLuf89F5pL1GagBgBEjN-EfahCPaua5EuPRPKwTPh_s2dj6NLqKI2K3IMpnbKbs9j2rKuIqo1g68H3kiJFELkIatrNnD7zVCg9-Mxbx0DELhw1VtSqoip61kEE_FyHO5DQmsqWSP9kNAR7EhCXzvABjmlXPzi6rVVeWs',
+        ],
+    ];
+
+    foreach ($s2_cards as $i => $card) {
+        $n = $i + 1;
+        foreach ($card as $prop => $value) {
+            $defaults["s2_card{$n}_{$prop}"] = $value;
+        }
+    }
+
+    // Section 4 KPI metrics
+    $s4_metrics = [
+        ['value' => '±0.3mm', 'label' => 'Precision Machining Tolerance'],
+        ['value' => '6 Lines', 'label' => 'CNC Turret & Laser Punching'],
+        ['value' => '300m', 'label' => 'Continuous Ransburg PVDF Line'],
+        ['value' => '100%', 'label' => 'BIM LOD 400 CAM Coordination'],
+        ['value' => 'Zero', 'label' => 'Delamination / ASTM & EN A2'],
+    ];
+
+    foreach ($s4_metrics as $i => $metric) {
+        $n = $i + 1;
+        foreach ($metric as $prop => $value) {
+            $defaults["s4_metric{$n}_{$prop}"] = $value;
+        }
+    }
+
+    // Section 4 fabrication process cards
+    $s4_cards = [
+        [
+            'icon' => 'precision_manufacturing',
+            'title' => 'High-Speed CNC Laser & Turret Punching',
+            'desc' => 'German Trumpf 5-axis systems delivering 0.05mm positioning precision for complex parametric facade perforations, acoustic patterns, and geometric cutouts.',
+            'spec_label' => 'Repeatability',
+            'spec_value' => '±0.05mm Positioning',
+        ],
+        [
+            'icon' => 'architecture',
+            'title' => 'Automated Salvagnini Panel Bending',
+            'desc' => 'Automated robotic stretch-forming ensuring razor-sharp crisp edges and non-distorting corner folds on complex architectural envelope cassettes.',
+            'spec_label' => 'Corner Profile',
+            'spec_value' => 'Zero Stress Micro-Radius',
+        ],
+        [
+            'icon' => 'format_paint',
+            'title' => 'Japanese Ransburg Electrostatic PVDF Coating',
+            'desc' => 'Dual 3-coat 2-bake vertical lines featuring automated electrostatic bells for uniform film thickness, color consistency, and extreme UV weatherability.',
+            'spec_label' => 'Specification',
+            'spec_value' => 'AAMA 2605 / 35μm Min',
+        ],
+        [
+            'icon' => 'layers',
+            'title' => 'Automated Core Bonding & Honeycomb Laminating',
+            'desc' => 'Hot-press continuous vacuum bonding lines producing completely oil-canning-free, ultra-flat honeycomb composite panels for supertall curtain walls.',
+            'spec_label' => 'Flatness Tolerance',
+            'spec_value' => '< 1.0mm per 3000mm',
+        ],
+        [
+            'icon' => 'view_in_ar',
+            'title' => 'Advanced Hyperbolic 3D Stretch Forming',
+            'desc' => 'Multi-point stretch forming matrix capable of shaping double-curved and non-developable metal facades with zero wrinkling or thinning defects.',
+            'spec_label' => 'Geometry',
+            'spec_value' => 'Freeform Double-Curved',
+        ],
+        [
+            'icon' => 'verified',
+            'title' => 'Automated Ultrasonic & Optical QC Inspection',
+            'desc' => '100% inline defect detection, automated laser surface flatness verification, and adhesive bond ultrasonic verification before final protective packing.',
+            'spec_label' => 'Quality Yield',
+            'spec_value' => '99.8% Zero-Defect Rate',
+        ],
+    ];
+
+    foreach ($s4_cards as $i => $card) {
+        $n = $i + 1;
+        foreach ($card as $prop => $value) {
+            $defaults["s4_card{$n}_{$prop}"] = $value;
+        }
+    }
+
+    return $defaults;
 }
 
 function alumax_home_fields() {
@@ -91,12 +202,12 @@ function alumax_home_fields() {
             'fields' => [],
         ],
         's2' => ['label' => 'Section 2 · 表面处理', 'fields' => []],
+        's2_cards' => ['label' => 'Section 2 · 表面处理卡片（5 张）', 'fields' => []],
         's3' => ['label' => 'Section 3 · 产品展示', 'fields' => []],
         's4' => ['label' => 'Section 4 · 制造能力', 'fields' => []],
+        's4_metrics' => ['label' => 'Section 4 · 制造能力指标（5 项）', 'fields' => []],
+        's4_cards' => ['label' => 'Section 4 · 工艺流程卡片（6 张）', 'fields' => []],
         's5' => ['label' => 'Section 5 · 地标案例', 'fields' => []],
-        's6' => ['label' => 'Section 6 · 技术资料', 'fields' => []],
-        's7' => ['label' => 'Section 7 · 全球布局', 'fields' => []],
-        's8' => ['label' => 'Section 8 · 快速询价', 'fields' => []],
     ];
 
     for ($i = 1; $i <= 4; $i++) {
@@ -110,12 +221,36 @@ function alumax_home_fields() {
         $groups['hero_slides']['fields'][] = $text("hero_slide{$i}_sub", "轮播 {$i} 副标题");
     }
 
-    foreach (['s2', 's3', 's4', 's5', 's6', 's7', 's8'] as $s) {
+    foreach (['s2', 's3', 's4', 's5'] as $s) {
         $groups[$s]['fields'][] = $text("{$s}_eyebrow", '眉标（小标签）');
         $groups[$s]['fields'][] = $text("{$s}_title", '标题');
         if ($s !== 's5') {
             $groups[$s]['fields'][] = $textarea("{$s}_subtitle", '副标题');
         }
+    }
+
+    $groups['s4']['fields'][] = $image('s4_bg_image', '板块背景图');
+
+    for ($i = 1; $i <= 5; $i++) {
+        $groups['s2_cards']['fields'][] = $image("s2_card{$i}_image", "卡片 {$i} 背景图");
+        $groups['s2_cards']['fields'][] = $text("s2_card{$i}_tag", "卡片 {$i} 标签");
+        $groups['s2_cards']['fields'][] = $text("s2_card{$i}_title", "卡片 {$i} 标题");
+        $groups['s2_cards']['fields'][] = $textarea("s2_card{$i}_desc", "卡片 {$i} 描述");
+        $groups['s2_cards']['fields'][] = $text("s2_card{$i}_spec_label", "卡片 {$i} 底部规格名称");
+        $groups['s2_cards']['fields'][] = $text("s2_card{$i}_spec_value", "卡片 {$i} 底部规格值");
+    }
+
+    for ($i = 1; $i <= 5; $i++) {
+        $groups['s4_metrics']['fields'][] = $text("s4_metric{$i}_value", "指标 {$i} 数值");
+        $groups['s4_metrics']['fields'][] = $text("s4_metric{$i}_label", "指标 {$i} 说明");
+    }
+
+    for ($i = 1; $i <= 6; $i++) {
+        $groups['s4_cards']['fields'][] = $text("s4_card{$i}_icon", "卡片 {$i} 图标（Material Symbols 名称）");
+        $groups['s4_cards']['fields'][] = $text("s4_card{$i}_title", "卡片 {$i} 标题");
+        $groups['s4_cards']['fields'][] = $textarea("s4_card{$i}_desc", "卡片 {$i} 描述");
+        $groups['s4_cards']['fields'][] = $text("s4_card{$i}_spec_label", "卡片 {$i} 底部规格名称");
+        $groups['s4_cards']['fields'][] = $text("s4_card{$i}_spec_value", "卡片 {$i} 底部规格值");
     }
 
     return $groups;

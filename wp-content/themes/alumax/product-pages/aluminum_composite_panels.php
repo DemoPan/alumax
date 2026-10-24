@@ -2,27 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- BREADCRUMB & METADATA BAR -->
-<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-4">
-<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-label-sm uppercase tracking-widest text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#">HOME</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors" href="#featured-envelope-systems">PRODUCTS</a>
-<span class="text-outline-variant">/</span>
-<span class="text-outline">FACADE PANELS</span>
-<span class="text-outline-variant">/</span>
-<span class="text-secondary font-semibold">ARCHITECTURAL ALUMINUM COMPOSITE PANELS (ACP)</span>
-</nav>
-<div class="flex items-center gap-4">
-<span class="font-label text-label-sm uppercase px-2.5 py-1 bg-surface-container-high text-on-surface-variant font-medium">CODE: ALU-ACP-1000</span>
-<span class="font-label text-label-sm uppercase px-2.5 py-1 bg-secondary-fixed text-on-secondary-fixed font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">verified</span>
-          ASTM E84 / EN 13501-1 CLASS A2 &amp; B1
-        </span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- PRODUCT OVERVIEW & INTERACTIVE SPEC SELECTOR -->
 <section class="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-12 md:py-16">
 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">

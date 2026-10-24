@@ -3,39 +3,7 @@ if (!defined('ABSPATH')) { exit; }
 ?>
   <main class="w-full bg-surface">
     <div class="flex flex-col w-full">
-      <!-- BREADCRUMB & METADATA BAR -->
-      <section class="w-full bg-surface-container-low py-space-sm">
-        <div
-          class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex flex-wrap items-center justify-between gap-space-sm">
-          <nav
-            class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
-            <a class="hover:text-primary transition-colors" href="#">Products</a>
-            <span class="text-outline-variant">/</span>
-            <a class="hover:text-primary transition-colors" href="#">Solar &amp; Shading Systems</a>
-            <span class="text-outline-variant">/</span>
-            <span class="text-primary font-semibold">Intelligent Motorized Louvers</span>
-            <span
-              class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded font-label-sm text-label-sm ml-1">ALU-SYS-MOT900</span>
-          </nav>
-          <div class="flex items-center gap-space-sm flex-wrap">
-            <span
-              class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary-container text-on-primary rounded font-label-sm text-label-sm uppercase tracking-wider">
-              <span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
-              BMS / IoT Connected
-            </span>
-            <span
-              class="inline-flex items-center gap-1 px-2.5 py-1 bg-surface-container-high text-on-surface rounded font-label-sm text-label-sm uppercase tracking-wider">
-              <span class="material-symbols-outlined text-sm text-secondary">cyclone</span>
-              12-Level Typhoon Rated
-            </span>
-            <span
-              class="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary text-on-secondary rounded font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-              <span class="material-symbols-outlined text-sm">energy_savings_leaf</span>
-              SHGC Reduction ≤ 34%
-            </span>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('template-parts/product-breadcrumb'); ?>
       <!-- PRODUCT HERO & INTERACTIVE SPECIFICATION DESK -->
       <section class="w-full bg-surface-bright py-space-xl">
         <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">

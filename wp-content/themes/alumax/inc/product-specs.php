@@ -10,6 +10,22 @@ function alumax_product_specs($post_id = null) {
     return is_array($specs) ? $specs : [];
 }
 
+// 产品卡片描述：优先取手动摘要，否则取正文全文（不截断）
+function alumax_product_card_desc($post_id = null) {
+    $post_id = $post_id ?: get_the_ID();
+    $excerpt = trim((string) get_post_field('post_excerpt', $post_id));
+    if ($excerpt !== '') {
+        return $excerpt;
+    }
+    $content = get_post_field('post_content', $post_id);
+    return trim(wp_strip_all_tags(strip_shortcodes(excerpt_remove_blocks($content)), true));
+}
+
+// 产品卡片兜底图：未设置特色图片时使用
+function alumax_product_fallback_image() {
+    return 'https://lh3.googleusercontent.com/aida-public/AB6AXuBSKyFgB-1gbPpcw77fwoFlWVCl7zs2f77dw-F_B0OucwuvHrZB8vEP7rBJKUyhYc5Z8nCY_hcrotCjS9nPVqJuUPUQ0r5etRuiCD6SfwbOZaIjGx-1EcWaTq4izjVVqXD5owfxdUQCVqBbm_i9EAtd-0Hbe2iPdCCEOhJtamPymYhAueolPEEC2hg64MwJDjmfWAkfsdzhbwDrgkYmAm4wzbcSowYbFGTrrOKFfy-ENc_UOKnn-sdT';
+}
+
 add_action('add_meta_boxes', function () {
     add_meta_box(
         'alumax-product-specs',

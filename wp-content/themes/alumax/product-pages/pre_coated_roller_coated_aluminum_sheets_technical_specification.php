@@ -2,31 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- BREADCRUMB & METADATA BAR -->
-<section class="w-full bg-surface-container-low pt-28 pb-4">
-<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-<div class="flex flex-wrap items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-label-sm text-on-surface-variant uppercase tracking-wider">
-<a class="hover:text-primary transition-colors" href="#">Home</a>
-<span class="text-outline">/</span>
-<a class="hover:text-primary transition-colors" href="#">Products</a>
-<span class="text-outline">/</span>
-<span class="hover:text-primary transition-colors">Architectural Coatings &amp; Substrates</span>
-<span class="text-outline">/</span>
-<span class="text-secondary font-semibold">ALU-CC-9000 Pre-Coated Coils</span>
-</nav>
-<div class="flex items-center gap-3">
-<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-highest text-on-surface font-label text-label-sm">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-            MILL RUN // EN1396 ARCHITECTURAL SPEC
-          </span>
-<span class="hidden sm:inline-flex px-3 py-1 bg-surface-container font-label text-label-sm text-on-surface-variant">
-            REV: 2025.Q1-EXP
-          </span>
-</div>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- PRODUCT SHOWCASE & INTERACTIVE SPEC SELECTOR -->
 <section class="w-full bg-surface-container-lowest py-12">
 <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">

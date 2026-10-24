@@ -2,29 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- BREADCRUMB & PRODUCT META STRIP -->
-<section class="w-full bg-surface-container-low pt-24 pb-4">
-<div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-xs tracking-wider uppercase text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#">HOME</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary text-secondary font-semibold transition-colors" href="#featured-envelope-systems">PRODUCTS</a>
-<span class="text-outline-variant">/</span>
-<span class="text-on-surface-variant">THERMAL FACADES</span>
-<span class="text-outline-variant">/</span>
-<span class="text-primary font-bold">PRE-INSULATED INTEGRATED WALL PANELS</span>
-</nav>
-<div class="flex items-center gap-3">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container text-on-surface font-label text-xs tracking-widest uppercase">
-<span class="w-2 h-2 bg-secondary"></span>
-          SERIES: ALU-IN-8000
-        </span>
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary text-on-primary font-label text-xs tracking-wider uppercase">
-          EN 1364-1 // CLASS A1 NON-COMBUSTIBLE
-        </span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- PRODUCT HERO & CONFIGURATION ENGINE -->
 <section class="w-full bg-surface-container-low pb-16">
 <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">

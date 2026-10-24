@@ -201,6 +201,17 @@ function alumax_register_post_types() {
         'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
         'show_in_rest' => true,
     ]);
+
+    register_taxonomy('product_category', 'product', [
+        'labels' => [
+            'name' => __('Product Categories', 'alumax'),
+            'singular_name' => __('Product Category', 'alumax'),
+        ],
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+        'rewrite' => ['slug' => 'product-category'],
+    ]);
     register_post_type('news', [
         'labels' => [
             'name' => __('News', 'alumax'),

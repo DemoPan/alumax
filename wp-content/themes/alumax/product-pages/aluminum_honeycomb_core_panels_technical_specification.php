@@ -2,28 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- SECTION 1: BREADCRUMB & PRODUCT META STRIP -->
-<section class="w-full bg-surface-container-low pt-24 pb-6 px-margin-mobile md:px-margin">
-<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center flex-wrap gap-2 text-label font-label text-label-sm text-outline">
-<a class="hover:text-primary transition-colors uppercase" href="#">HOME</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors uppercase" href="#featured-envelope-systems">PRODUCTS</a>
-<span class="text-outline-variant">/</span>
-<span class="hover:text-primary transition-colors uppercase">ARCHITECTURAL COMPOSITES</span>
-<span class="text-outline-variant">/</span>
-<span class="text-secondary font-semibold uppercase">ALU-HC-5000 HONEYCOMB COMPOSITE</span>
-</nav>
-<div class="flex items-center gap-3">
-<span class="px-2.5 py-1 bg-surface-container-high text-on-surface font-label text-label-sm uppercase tracking-wider">
-          SYSTEM REF: #ALU-5000-HEX
-        </span>
-<span class="px-2.5 py-1 bg-secondary/15 text-secondary font-label text-label-sm uppercase tracking-wider font-semibold">
-          EXPORT CERTIFIED ASTM / EN
-        </span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- SECTION 2: PRODUCT HERO SHOWCASE & SPECIFICATION CALCULATOR -->
 <section class="w-full bg-surface px-margin-mobile md:px-margin py-8 md:py-12">
 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

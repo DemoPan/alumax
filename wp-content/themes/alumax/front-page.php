@@ -187,127 +187,41 @@ get_header();
           </div>
         </div>
         <!-- 5 Finish Cards Grid -->
+        <?php
+        $s2_card_gradients = [
+            'linear-gradient(rgba(13, 27, 42, 0.88) 0%, rgba(13, 27, 42, 0.96) 100%)',
+            'linear-gradient(rgba(35, 24, 12, 0.85) 0%, rgba(15, 22, 33, 0.95) 100%)',
+            'linear-gradient(rgba(25, 28, 30, 0.88) 0%, rgba(13, 27, 42, 0.95) 100%)',
+            'linear-gradient(rgba(42, 24, 0, 0.86) 0%, rgba(13, 27, 42, 0.96) 100%)',
+            'linear-gradient(rgba(15, 28, 44, 0.86) 0%, rgba(13, 27, 42, 0.96) 100%)',
+        ];
+        ?>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          <!-- Card 1 -->
+          <?php for ($i = 1; $i <= 5; $i++) :
+            $s2_card_image = alumax_home("s2_card{$i}_image");
+            $s2_card_bg = $s2_card_gradients[$i - 1]
+                . ($s2_card_image ? ', url("' . esc_url($s2_card_image) . '")' : '')
+                . ' center center / cover';
+            ?>
           <div
-            class="bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high hover:border-secondary/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-4">
-            <div class="space-y-3">
-              <div
-                class="w-12 h-12 rounded-lg bg-[#0d1b2a] flex items-center justify-center text-white font-label-md font-bold tracking-wider">
-                PVDF
+            class="relative overflow-hidden rounded-xl border border-white/10 shadow-lg hover:border-secondary hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
+            style="background: <?php echo esc_attr($s2_card_bg); ?>;">
+            <div class="p-6 space-y-4 relative z-10">
+              <div class="space-y-1">
+                <span class="font-label-sm text-[11px] text-secondary-fixed uppercase font-semibold tracking-wider block"><?php echo esc_html(alumax_home("s2_card{$i}_tag")); ?></span>
+                <h3 class="font-headline-sm text-body-lg text-white font-bold leading-tight"><?php echo esc_html(alumax_home("s2_card{$i}_title")); ?></h3>
               </div>
-              <div>
-                <h3 class="font-headline-sm text-body-lg text-on-surface font-bold">Fluorocarbon PVDF (Kynar 500)</h3>
-                <span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">AAMA 2605
-                  Certified</span>
-              </div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
-                3-Coat 2-Bake system, 35μm minimum dry film thickness. Engineered for extreme solar UV and salt-spray
-                resistance.
+              <p class="font-body-sm text-body-sm text-slate-300 leading-relaxed">
+                <?php echo esc_html(alumax_home("s2_card{$i}_desc")); ?>
               </p>
             </div>
             <div
-              class="pt-3 border-t border-surface-container-high font-label-sm text-[12px] text-on-surface font-semibold flex items-center justify-between">
-              <span class="text-on-surface-variant">Warranty</span>
-              <span class="text-secondary font-bold">30-Yr Exterior</span>
+              class="relative z-10 p-6 pt-3 border-t border-white/10 bg-black/30 backdrop-blur-sm font-label-sm text-[12px] flex items-center justify-between">
+              <span class="text-slate-400"><?php echo esc_html(alumax_home("s2_card{$i}_spec_label")); ?></span>
+              <span class="text-secondary-fixed font-bold tracking-wide"><?php echo esc_html(alumax_home("s2_card{$i}_spec_value")); ?></span>
             </div>
           </div>
-          <!-- Card 2 -->
-          <div
-            class="bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high hover:border-secondary/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-4">
-            <div class="space-y-3">
-              <div
-                class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center text-white font-label-md font-bold tracking-wider">
-                ANO
-              </div>
-              <div>
-                <h3 class="font-headline-sm text-body-lg text-on-surface font-bold">Architectural Anodizing</h3>
-                <span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">Class 1
-                  Electrolytic</span>
-              </div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
-                Electrolytic satin finish available in natural silver, champagne, and dark bronze with uniform 25μm
-                oxide depth.
-              </p>
-            </div>
-            <div
-              class="pt-3 border-t border-surface-container-high font-label-sm text-[12px] text-on-surface font-semibold flex items-center justify-between">
-              <span class="text-on-surface-variant">Oxide Layer</span>
-              <span class="text-secondary font-bold">25μm Depth</span>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high hover:border-secondary/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-4">
-            <div class="space-y-3">
-              <div
-                class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface font-label-md font-bold tracking-wider">
-                STN
-              </div>
-              <div>
-                <h3 class="font-headline-sm text-body-lg text-on-surface font-bold">Textured Stone &amp; Quartz</h3>
-                <span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">Natural Mineral
-                  Look</span>
-              </div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
-                3D mineral tactile coating providing granite/limestone look while being 80% lighter than natural stone
-                slabs.
-              </p>
-            </div>
-            <div
-              class="pt-3 border-t border-surface-container-high font-label-sm text-[12px] text-on-surface font-semibold flex items-center justify-between">
-              <span class="text-on-surface-variant">Combustibility</span>
-              <span class="text-secondary font-bold">Class A Non-Comb.</span>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div
-            class="bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high hover:border-secondary/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-4">
-            <div class="space-y-3">
-              <div
-                class="w-12 h-12 rounded-lg bg-on-secondary-container flex items-center justify-center text-white font-label-md font-bold tracking-wider">
-                WOD
-              </div>
-              <div>
-                <h3 class="font-headline-sm text-body-lg text-on-surface font-bold">Thermal Transfer Woodgrain</h3>
-                <span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">High-Vacuum
-                  Sublimation</span>
-              </div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
-                High-vacuum thermal transfer delivering warm architectural wood effect with zero rotting, swelling, or
-                splintering.
-              </p>
-            </div>
-            <div
-              class="pt-3 border-t border-surface-container-high font-label-sm text-[12px] text-on-surface font-semibold flex items-center justify-between">
-              <span class="text-on-surface-variant">Stability</span>
-              <span class="text-secondary font-bold">UV-Stabilized</span>
-            </div>
-          </div>
-          <!-- Card 5 -->
-          <div
-            class="bg-surface-container-lowest p-6 rounded-xl border border-surface-container-high hover:border-secondary/50 hover:shadow-lg transition-all flex flex-col justify-between space-y-4">
-            <div class="space-y-3">
-              <div
-                class="w-12 h-12 rounded-lg bg-[#191c1e] flex items-center justify-center text-white font-label-md font-bold tracking-wider">
-                FEVE
-              </div>
-              <div>
-                <h3 class="font-headline-sm text-body-lg text-on-surface font-bold">FEVE Ultra-Weatherable</h3>
-                <span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">Self-Cleaning
-                  Fluoropolymer</span>
-              </div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
-                High-gloss, scratch-resistant fluoropolymer coating with hydrophobic self-cleaning properties and
-                anti-graffiti finish.
-              </p>
-            </div>
-            <div
-              class="pt-3 border-t border-surface-container-high font-label-sm text-[12px] text-on-surface font-semibold flex items-center justify-between">
-              <span class="text-on-surface-variant">Gloss Retention</span>
-              <span class="text-secondary font-bold">&gt; 80% at 20 Years</span>
-            </div>
-          </div>
+          <?php endfor; ?>
         </div>
       </div>
     </section>
@@ -331,13 +245,6 @@ get_header();
               <?php echo esc_html(alumax_home('s3_subtitle')); ?>
             </p>
           </div>
-          <div class="shrink-0">
-            <span
-              class="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/15 rounded-full font-label-sm text-label-sm text-secondary font-semibold">
-              <span class="material-symbols-outlined text-base">verified</span>
-              LOD 400 BIM Ready • ASTM Certified
-            </span>
-          </div>
         </div>
         <!-- Bento Grid Showcase: Intelligent Louvers spans 2 columns, accompanied by other 5 products -->
         <!-- Bento Grid Showcase: 动态读取「产品」文章，第一张为主推大卡 -->
@@ -347,114 +254,12 @@ get_header();
               'post_type' => 'product',
               'posts_per_page' => 5,
           ]);
-          $alumax_product_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBSKyFgB-1gbPpcw77fwoFlWVCl7zs2f77dw-F_B0OucwuvHrZB8vEP7rBJKUyhYc5Z8nCY_hcrotCjS9nPVqJuUPUQ0r5etRuiCD6SfwbOZaIjGx-1EcWaTq4izjVVqXD5owfxdUQCVqBbm_i9EAtd-0Hbe2iPdCCEOhJtamPymYhAueolPEEC2hg64MwJDjmfWAkfsdzhbwDrgkYmAm4wzbcSowYbFGTrrOKFfy-ENc_UOKnn-sdT';
           if ($alumax_products->have_posts()) :
               $alumax_product_index = 0;
               while ($alumax_products->have_posts()) :
                   $alumax_products->the_post();
                   $alumax_product_index++;
-                  $alumax_product_img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: $alumax_product_fallback_img;
-                  $alumax_specs = alumax_product_specs(get_the_ID());
-                  if ($alumax_product_index === 1) :
-                      ?>
-          <!-- FEATURED CARD: 第一个产品（占两列） -->
-          <div
-            class="lg:col-span-2 bg-[#0d1b2a] text-white rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col justify-between group">
-            <div class="grid grid-cols-1 md:grid-cols-12 h-full">
-              <!-- Image half -->
-              <div class="md:col-span-6 relative min-h-[300px] md:min-h-full bg-black overflow-hidden">
-                <img alt="<?php echo esc_attr(get_the_title()); ?>"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="<?php echo esc_url($alumax_product_img); ?>">
-                <div
-                  class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-transparent via-[#0d1b2a]/40 to-[#0d1b2a]">
-                </div>
-                <div class="absolute top-4 left-4 flex items-center gap-2">
-                  <span
-                    class="bg-secondary text-on-secondary font-label-sm text-label-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                    FEATURED FLAGSHIP SYSTEM
-                  </span>
-                </div>
-              </div>
-              <!-- Content half -->
-              <div class="md:col-span-6 p-6 md:p-8 flex flex-col justify-between space-y-6">
-                <div class="space-y-4">
-                  <div class="flex items-center justify-between pb-2 border-b border-white/10">
-                    <span
-                      class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider font-semibold">Flagship
-                      System</span>
-                  </div>
-                  <h3 class="font-display-lg text-headline-lg uppercase font-bold text-white leading-tight">
-                    <?php the_title(); ?>
-                  </h3>
-                  <div class="font-body-sm text-body-sm text-slate-300">
-                    <?php echo esc_html(get_the_excerpt()); ?>
-                  </div>
-                  <?php if (!empty($alumax_specs)) : ?>
-                  <!-- Quick spec indicators -->
-                  <div class="grid grid-cols-2 gap-3 font-label-sm text-label-sm">
-                    <?php foreach ($alumax_specs as $alumax_spec) : ?>
-                    <div class="bg-white/5 p-2.5 rounded border border-white/10">
-                      <span class="text-slate-400 block text-[11px] uppercase"><?php echo esc_html($alumax_spec['name']); ?></span>
-                      <span class="text-white font-semibold"><?php echo esc_html($alumax_spec['value']); ?></span>
-                    </div>
-                    <?php endforeach; ?>
-                  </div>
-                  <?php endif; ?>
-                </div>
-                <!-- Buttons -->
-                <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/10">
-                  <a class="flex-1 inline-flex items-center justify-center gap-2 h-11 bg-secondary hover:bg-secondary/90 text-on-secondary font-headline-sm text-label-sm uppercase tracking-wider rounded transition-colors font-semibold"
-                    href="<?php echo esc_url(get_permalink()); ?>">
-                    <span class="material-symbols-outlined text-sm">tune</span>
-                    <span class="">View System</span>
-                  </a>
-                  <a class="flex-1 inline-flex items-center justify-center gap-2 h-11 bg-white/10 hover:bg-white/20 border border-white/15 text-white font-headline-sm text-label-sm uppercase tracking-wider rounded transition-colors font-semibold"
-                    href="#technical-resources">
-                    <span class="material-symbols-outlined text-sm">download</span>
-                    <span class="">Request Spec &amp; CAD</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-                  <?php else : ?>
-          <!-- 普通产品卡 -->
-          <div
-            class="bg-surface-container-lowest border border-surface-container-high rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between">
-            <div>
-              <div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
-                <img alt="<?php echo esc_attr(get_the_title()); ?>"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  src="<?php echo esc_url($alumax_product_img); ?>">
-              </div>
-              <div class="p-6 space-y-3">
-                <h4
-                  class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">
-                  <?php the_title(); ?>
-                </h4>
-                <div class="font-body-sm text-body-sm text-on-surface-variant">
-                  <?php echo esc_html(get_the_excerpt()); ?>
-                </div>
-                <?php if (!empty($alumax_specs)) : ?>
-                <div class="bg-surface-container-low p-3 rounded font-label-sm text-label-sm space-y-1">
-                  <?php foreach ($alumax_specs as $alumax_spec) : ?>
-                  <div class="flex justify-between"><span class="text-on-surface-variant"><?php echo esc_html($alumax_spec['name']); ?></span><span
-                      class="font-semibold text-on-surface"><?php echo esc_html($alumax_spec['value']); ?></span></div>
-                  <?php endforeach; ?>
-                </div>
-                <?php endif; ?>
-              </div>
-            </div>
-            <div class="p-6 pt-0">
-              <a class="font-label-md text-label-md text-secondary hover:text-primary font-semibold flex items-center gap-1 uppercase"
-                href="<?php echo esc_url(get_permalink()); ?>">
-                <span class="">View System</span>
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-                  <?php endif;
+                  get_template_part('template-parts/' . ($alumax_product_index === 1 ? 'product-card-featured' : 'product-card'));
               endwhile;
               wp_reset_postdata();
           else : ?>
@@ -475,112 +280,74 @@ get_header();
       </div>
     </section>
     <!-- ========================================================================= -->
-    <!-- SECTION 4: HEAVY INDUSTRIAL MANUFACTURING & LOGISTICS                     -->
+    <!-- SECTION 4: SMART MANUFACTURING & FABRICATION PRECISION                    -->
     <!-- ========================================================================= -->
-    <section class="w-full py-24 bg-surface-container-lowest border-y border-surface-container-high"
-      id="manufacturing-strengths">
-      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-          <div class="lg:col-span-8 space-y-3">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-6 bg-secondary rounded-full"></span>
-              <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold"><?php echo esc_html(alumax_home('s4_eyebrow')); ?></span>
+    <?php
+    $s4_bg_image = alumax_home('s4_bg_image');
+    $s4_bg = 'linear-gradient(rgba(13, 27, 42, 0.92), rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.96))'
+        . ($s4_bg_image ? ', url("' . esc_url($s4_bg_image) . '")' : '')
+        . ' center center / cover no-repeat';
+    ?>
+    <section class="relative w-full py-24 bg-[#0d1b2a] text-white border-y border-white/10 overflow-hidden"
+      id="manufacturing-strengths"
+      style="background: <?php echo esc_attr($s4_bg); ?>;">
+      <div class="relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-16">
+        <!-- Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-8">
+          <div class="space-y-3 lg:col-span-8">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/20 border border-secondary/40 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              <?php echo esc_html(alumax_home('s4_eyebrow')); ?>
             </div>
-            <h2 class="font-display-lg text-display-lg text-on-surface uppercase tracking-tight">
+            <h2 class="font-display-lg text-display-lg uppercase tracking-tight text-white font-bold leading-tight">
               <?php echo esc_html(alumax_home('s4_title')); ?>
             </h2>
           </div>
-          <div class="lg:col-span-4 lg:text-right">
-            <p class="font-body-md text-body-md text-on-surface-variant">
+          <div class="lg:max-w-md shrink-0">
+            <p class="font-body-md text-body-md text-slate-300 leading-relaxed">
               <?php echo esc_html(alumax_home('s4_subtitle')); ?>
             </p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 bg-surface-container-low rounded-xl space-y-4 border border-surface-container-high">
-            <div
-              class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
-            </div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">6 CNC Punch &amp; Bending</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">
-              Automated Trumpf &amp; Amada multi-axis turret systems providing 0.05mm positioning precision for complex
-              parametric facades.
-            </p>
-            <div class="font-label-sm text-label-sm text-secondary font-semibold">TOLERANCE: ±0.3mm MAX</div>
+
+        <!-- Core Manufacturing Metrics Strip (5 KPI Cards) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <?php for ($i = 1; $i <= 5; $i++) : ?>
+          <div
+            class="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md space-y-1<?php echo $i === 5 ? ' col-span-2 sm:col-span-1' : ''; ?>">
+            <span
+              class="font-display-lg text-headline-lg <?php echo $i % 2 === 1 ? 'text-secondary-fixed' : 'text-white'; ?> font-bold block leading-none"><?php echo esc_html(alumax_home("s4_metric{$i}_value")); ?></span>
+            <span
+              class="font-label-sm text-[12px] text-slate-300 uppercase block font-medium"><?php echo esc_html(alumax_home("s4_metric{$i}_label")); ?></span>
           </div>
-          <div class="p-6 bg-surface-container-low rounded-xl space-y-4 border border-surface-container-high">
-            <div
-              class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined text-2xl">format_paint</span>
-            </div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">Ransburg Coating Lines</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">
-              Japanese 300m automated electrostatic vertical fluorocarbon coating lines guaranteeing uniform film depth
-              and pigment adhesion.
-            </p>
-            <div class="font-label-sm text-label-sm text-secondary font-semibold">25-YEAR COATING INTEGRITY</div>
-          </div>
-          <div class="p-6 bg-surface-container-low rounded-xl space-y-4 border border-surface-container-high">
-            <div
-              class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined text-2xl">apartment</span>
-            </div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">BIM LOD 400 Integration</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">
-              In-house technical office with 35 structural facade specialists generating Rhino/Grasshopper parametric
-              geometry and fabrication models.
-            </p>
-            <div class="font-label-sm text-label-sm text-secondary font-semibold">3D SCAN COLLISION DETECT</div>
-          </div>
-          <div class="p-6 bg-surface-container-low rounded-xl space-y-4 border border-surface-container-high">
-            <div
-              class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined text-2xl">verified</span>
-            </div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">Independent Test Labs</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">
-              Full compliance with ASTM E84 Class A flame spread, EN 13501-1 reaction to fire, CWCT wind load testing,
-              and QUALICOAT certifications.
-            </p>
-            <div class="font-label-sm text-label-sm text-secondary font-semibold">CE / ISO9001 / SGS TESTED</div>
-          </div>
+          <?php endfor; ?>
         </div>
-        <!-- Packaging and Ocean Logistics Banner -->
-        <div
-          class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d1b2a] text-white p-8 md:p-12 rounded-2xl border border-white/10 shadow-xl">
-          <div class="lg:col-span-6 space-y-6">
-            <div class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest font-semibold">Export
-              Packaging &amp; Ocean Logistics</div>
-            <h3 class="font-display-lg text-display-lg uppercase leading-tight font-bold">
-              Reinforced Fumigation-Free Crating for Zero Maritime Damage
-            </h3>
-            <p class="font-body-md text-body-md text-slate-300">
-              Each architectural unit is encased in UV-resistant protective films, corner foam cushions, and
-              moisture-controlled steel-strapped crates fitted with internal desiccants to prevent container
-              condensation damage.
-            </p>
-            <div class="flex flex-wrap gap-4 pt-2">
+
+        <!-- 6 Advanced Fabrication Processes Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <?php for ($i = 1; $i <= 6; $i++) : ?>
+          <div
+            class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md space-y-4 hover:border-secondary transition-all group flex flex-col justify-between shadow-lg">
+            <div class="space-y-3">
               <div
-                class="flex items-center gap-2 font-label-sm text-label-sm bg-white/10 px-3.5 py-2 rounded border border-white/10 text-white">
-                <span class="material-symbols-outlined text-secondary-fixed text-base">directions_boat</span>
-                <span class="">Direct Seaport Clearance: Shenzhen / Guangzhou</span>
+                class="w-12 h-12 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-secondary-fixed">
+                <span class="material-symbols-outlined text-2xl"><?php echo esc_html(alumax_home("s4_card{$i}_icon")); ?></span>
               </div>
-              <div
-                class="flex items-center gap-2 font-label-sm text-label-sm bg-white/10 px-3.5 py-2 rounded border border-white/10 text-white">
-                <span class="material-symbols-outlined text-secondary-fixed text-base">security</span>
-                <span class="">100% Full Marine Insurance Coverage</span>
-              </div>
+              <h3
+                class="font-headline-md text-headline-md text-white font-bold group-hover:text-secondary-fixed transition-colors">
+                <?php echo esc_html(alumax_home("s4_card{$i}_title")); ?>
+              </h3>
+              <p class="font-body-sm text-body-sm text-slate-300 leading-relaxed">
+                <?php echo esc_html(alumax_home("s4_card{$i}_desc")); ?>
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between font-label-sm text-[12px]">
+              <span class="text-slate-400"><?php echo esc_html(alumax_home("s4_card{$i}_spec_label")); ?></span>
+              <span class="text-secondary-fixed font-semibold"><?php echo esc_html(alumax_home("s4_card{$i}_spec_value")); ?></span>
             </div>
           </div>
-          <div class="lg:col-span-6">
-            <div class="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/10">
-              <img alt="Automated robotic arm manufacturing facade components in modern plant"
-                class="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE-ogS2i698NEexYc67G_2BdzCnVs2BWBJEP09_l9Iq4-JSDFvoIlgK0Ipgxo-GG9a4YIONPzkLm6g9TiwNMGQOGbqL4VASjm_gW354KUpcfwHYyg1k3XXUcFFZ_w3HYOaLi8SRCcEWEqqgu9hY1GL-COt-TJfaueT1R_r_gt4g-loQFkolFVoObqvuuaLbD5p6NgDGMX3o5McA78MMrkPVQlcx91Ye1oKymxqEO05fb6t4Zcp28t6">
-              <div class="absolute inset-0 bg-primary/20"></div>
-            </div>
-          </div>
+          <?php endfor; ?>
         </div>
       </div>
     </section>

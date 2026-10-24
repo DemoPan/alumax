@@ -2,24 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 ?>
 <main class="w-full bg-surface"><div class="flex flex-col w-full">
-<!-- BREADCRUMB & PRODUCT META STRIP -->
-<section class="w-full bg-surface-container-low py-4 px-margin-mobile md:px-margin">
-<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
-<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label text-label-sm tracking-wider uppercase text-on-surface-variant">
-<a class="hover:text-primary transition-colors" href="#">HOME</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors" href="#featured-envelope-systems">PRODUCTS</a>
-<span class="text-outline-variant">/</span>
-<a class="hover:text-primary transition-colors" href="#">STRUCTURAL METALS</a>
-<span class="text-outline-variant">/</span>
-<span class="text-secondary font-semibold">ARCHITECTURAL STEEL WALL PANELS // 钢质墙板</span>
-</nav>
-<div class="flex items-center gap-3">
-<span class="bg-primary text-on-primary font-label text-label-sm px-3 py-1 uppercase tracking-widest">SERIES: ALU-ST-7000</span>
-<span class="bg-surface-container-high text-on-surface font-label text-label-sm px-3 py-1 uppercase tracking-widest">ISO 9001 / EN 13501 A1</span>
-</div>
-</div>
-</section>
+<?php get_template_part('template-parts/product-breadcrumb'); ?>
 <!-- PRODUCT HERO & INTERACTIVE SPECIFICATION SHOWCASE -->
 <section class="w-full bg-surface-bright py-12 md:py-16 px-margin-mobile md:px-margin">
 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
