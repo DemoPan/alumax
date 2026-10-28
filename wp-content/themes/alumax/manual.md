@@ -15,7 +15,7 @@ alumax 是一个经典 PHP 模板主题，每个页面由主题目录下固定�
 |---|---|---|---|
 | 首页 | `/` | `front-page.php` | 后台「首页设置」+ 产品/案例文章（卡片自动读取） |
 | 产品中心列表 | `/products/` | `archive-product.php` | 「产品」文章（每页 11 个） |
-| 产品详情 | `/products/文章别名/` | `single-product.php`（分发器） | 优先 `product-pages/{别名}.php` 专属页；无则回退通用模板，用文章内容自动排版 |
+| 产品详情 | `/products/文章别名/` | `single-product.php` | 统一模块化渲染（见 3.3），模块开关和内容都在后台编辑 |
 | 案例列表 | `/projects/` | `archive-case.php` | 「案例」（Projects）文章 |
 | 案例详情 | `/projects/文章别名/` | `single-case.php` | 案例文章 + 编辑页 4 个「案例详情」字段面板 |
 | 新闻中心 | `/news/` | `archive-news.php` | 「新闻」文章 + 「新闻 → 轮播设置」 |
@@ -23,7 +23,7 @@ alumax 是一个经典 PHP 模板主题，每个页面由主题目录下固定�
 | 关于我们 | `/about/` | `page-about.php` | 内容写死在模板里，需改代码 |
 | 联系我们 | `/contact/` | `page-contact.php` | 内容写死在模板里，需改代码 |
 | 资料下载 | `/resources/` | `page-resources.php` | 内容写死在模板里，需改代码 |
-| 参数配置器（产品专属页） | `/products/system-parameter-configurator/` | `product-pages/system-parameter-configurator.php` | 内容写死在模板里，需改代码 |
+| 智能百叶（产品详情页示例） | `/products/smart-louver-system/` | `single-product.php` | 模块化渲染（见 3.3），模块开关与内容均在后台编辑 |
 | 博客列表（原生文章，未启用） | — | `home.php` | WordPress 原生「文章」，与「新闻」互不影响 |
 | 博客详情（原生文章，未启用） | — | `single.php` | 同上 |
 | 兜底模板 | — | `index.php` | 以上模板都不匹配时使用，一般无需维护 |
@@ -33,7 +33,7 @@ alumax 是一个经典 PHP 模板主题，每个页面由主题目录下固定�
 模板机制要点：
 
 - **页面模板**：`page-{别名}.php` 自动作用于该别名的页面（如 `page-about.php` ↔ 别名 `about` 的页面）。about / contact / resources 三个页面由主题自动创建，不要删除或改别名，否则模板失效。
-- **产品详情分发器**（`single-product.php:6-13`）：按文章别名找 `product-pages/{别名}.php`，找到就整页用它渲染。**别名与文件名必须完全一致**，这是唯一对应关系。
+- **产品详情分发器**（`single-product.php`）：先按文章别名找 `product-pages/{别名}.php`；找不到时，若该产品绑定了**内容档案**（post meta `_alumax_pp_profile`，见 3.3.1）则直接按模块化新版渲染；都没有才回退通用模板。模块化产品改别名不会丢版式。
 - 列表页（产品中心、案例、新闻）和首页卡片都实时读取文章，发文章即出卡片，无需额外配置。
 
 ---
@@ -97,21 +97,44 @@ alumax 是一个经典 PHP 模板主题，每个页面由主题目录下固定�
 - 修改：「产品」列表里点编辑，改完更新即可
 - 下架：把文章改为「草稿」或删除，卡片随之消失
 
-### 3.3 产品详情页的两种形态
+### 3.3 产品详情页：统一模块化渲染
 
-`single-product.php` 是一个分发器：
+`single-product.php` 不再是分发器：**所有产品详情页统一由 `alumax_render_product_page()` 模块化渲染**（旧通用模板和 `product-pages/` 专属模板目录已废弃删除）。
 
-1. 访问产品详情页时，先按文章**别名**找 `product-pages/{别名}.php`
-2. **找到** → 整页由该专属文件渲染（完全定制的静态页面）
-3. **没找到** → 回退到通用动态模板（用文章的标题、正文、特性等自动排版）
+每个产品启用哪些模块，在后台 **「产品 → 编辑」右侧「详情页模块」面板**勾选（存 post meta `_alumax_pp_modules`）：
 
-已有的专属页面（别名 → 文件）：
+- 默认勾选：首屏 Hero、产品介绍、核心优势、技术参数、产品细节、安装方式、工程案例、询价表单
+- 默认不勾选：产品特殊属性（如电机与智能控制系统）、涂层结构与颜色
+- 勾选了但内容为空的模块自动跳过；取消勾选则前台整模块不渲染
 
-- `solid-aluminum-cladding-panels` → `product-pages/solid-aluminum-cladding-panels.php`
-- `system-parameter-configurator` → `product-pages/system-parameter-configurator.php`（含配置器交互）
-- 其余技术规格页（蜂窝板、铝塑板、波纹芯板、吊顶、钢质墙板、百叶、窗花、滚涂板、保温一体板）在 `product-pages/` 下均有对应文件
+**新增产品**：直接「产品 → 新建」，写完标题保存即是模块化详情页（Hero 自动取文章标题和特色图，询价表单用通用文案）；要改内容就在同页 4 个「详情页内容」面板里编辑，要开关模块就在「详情页模块」勾选。**不需要再新建模板文件**。
 
-**给新产品做专属详情页**：把设计好的 HTML 转成 `product-pages/{别名}.php`（只含 `<main>…</main>` 和页面脚本，开头加 ABSPATH 保护——照抄现有文件格式，或让 AI 助手转换）。文件名必须与文章别名完全一致。
+11 个现有产品的模块勾选已按当前页面效果固化（参数配置器含特殊属性模块，其余不含）。
+
+#### 3.3.1 模块化产品详情页（内容与默认文案）
+
+模块化详情页由 `template-parts/product-sections/` 下的 10 个可复用 section 组件拼装，渲染顺序固定（由 `alumax_render_product_page()` 统一维护，无内容的模块自动跳过）：
+
+1. **hero**（首屏，深色，面包屑内嵌顶部）
+2. **intro**（产品介绍：干嘛的、用在哪、解决什么问题）
+3. **advantages**（核心优势）
+4. **control**（产品特殊属性，可选——名称按产品定，如智能百叶的「电机与智能控制系统」；目前仅 system-parameter-configurator 启用）
+5. **specs**（技术参数：规格表 + 右侧技术图卡）
+6. **palette**（涂层结构与颜色，白底）
+7. **options**（产品细节：节点/工艺/定制卡片）
+8. **install**（安装方式：安装节点卡，白底；卷材类产品可改为「出口包装与交付」）
+9. **cases**（工程案例，浅灰底）
+10. **inquiry**（询价表单，深色）
+
+**内容在后台编辑**：打开「产品 → 所有产品 → 编辑」，页面下方会出现 4 个「详情页内容」面板（Hero+产品介绍 / 核心优势+智能控制+定制选项 / 技术参数+安装方式 / 工程案例+询价表单），所有文案、图片、规格表行、卡片都可在面板里增删改，图片支持媒体库选择。保存前页面显示主题内置的默认内容（定义在 `inc/product-page-content.php` 的 `alumax_product_page_defaults()`）。
+
+技术说明：
+
+- 数据按 section 存为 post meta（`alumax_pp_{section}`），前台由 `alumax_product_page_sections()` 组装；安装方式模块的数据存放在 specs meta 的 `install_*` 键中（历史原因，后台字段在「技术参数」面板底部）
+- **内容档案与别名解耦**：11 个现有产品存有 `_alumax_pp_profile` 档案键，默认内容（`alumax_product_page_defaults()`）按档案键分发；改文章别名不影响版式和内容。新建产品无档案键，使用通用默认内容（空内容模块不渲染），无需注册
+- 规格表的「等宽」列填 1 时数值用等宽字体；产品细节卡的「线图模式」填 1 时图片完整显示不裁切；产品细节卡、安装节点卡和技术参数侧卡均支持直接粘贴 SVG 代码（线图/示意图，`alumax_pp_kses_svg` 白名单过滤）；卡片图片和 SVG 都留空时媒体区域自动隐藏
+- 面包屑内嵌在 hero 组件顶部（`template-parts/product-breadcrumb.php` 的 `hero` 深色变体）；不启用 Hero 模块时产品页无面包屑。列表页仍用浅色条变体
+- 询价表单已对接后端：提交存入私有文章类型 `inquiry`，后台「产品 → 询价记录」查看（列表含姓名/邮箱/意向产品/来源页/附件列，详情页只读展示全部字段与留言）；必填校验（姓名+有效邮箱）、蜜罐防机器人、nonce 防跨站提交；附件限 .DWG/.DXF/.RVT/.PDF/.ZIP ≤25MB，存至媒体库目录；提交后跳回产品页锚点 `#rfq-section` 并显示成功/失败横幅。处理逻辑在 `inc/inquiries.php`
 
 ### 3.4 产品中心列表页说明
 
@@ -233,8 +256,7 @@ alumax 是一个经典 PHP 模板主题，每个页面由主题目录下固定�
 | 顶部导航 / 产品下拉菜单 | `header.php` |
 | 页脚（联系方式、链接列表） | `footer.php` |
 | 首页各板块的固定部分（卡片布局、表面处理工艺项等） | `front-page.php` |
-| 产品专属详情页 | `product-pages/*.php` |
-| 通用产品详情页结构 | `single-product.php` |
+| 产品详情页结构（所有产品共用） | `single-product.php` + `template-parts/product-sections/` |
 | 产品中心列表结构 | `archive-product.php` |
 | 案例列表/详情结构 | `archive-case.php` / `single-case.php` |
 | 新闻列表/详情结构 | `archive-news.php` / `single-news.php` |
@@ -281,11 +303,11 @@ studio pull         # 把线上站点拉回本地（会覆盖本地，先确认�
 **新增页面后访问 404？**
 到「设置 → 固定链接」点一次「保存更改」，刷新重写规则。
 
-**产品详情页想恢复成通用模板？**
-删除或重命名 `product-pages/` 下与该文章别名同名的 `.php` 文件即可。
+**产品详情页想关掉某个模块？**
+到「产品 → 编辑」右侧「详情页模块」取消勾选即可，无需改代码。
 
 **案例详情字段全部乱了想重来？**
 案例详情面板保存过就以保存值为准；把对应面板内容清空保存，该模块前台会隐藏（Snapshot 等），或参照 KAFD 示例默认值重新填写。
 
-**需要新增语言、表单邮件发送、SEO 等功能？**
-当前主题为纯模板实现，无表单提交/多语言插件，此类需求需要安装插件或开发，请联系技术人员。
+**需要新增语言、表单邮件通知、SEO 等功能？**
+产品页询价表单已支持提交入库（见 3.3），但不会发送邮件通知；多语言、邮件提醒、SEO 等需求需要安装插件或开发，请联系技术人员。

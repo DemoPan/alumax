@@ -177,7 +177,7 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
           <!-- View Switcher (Card View vs List View) & Search -->
           <div class="flex flex-wrap items-center gap-3">
             <!-- Search Input -->
-            <form class="relative w-full sm:w-64" method="get" action="<?php echo esc_url($alumax_archive_url); ?>">
+            <form class="relative w-full sm:w-64" id="news-search-form" method="get" action="<?php echo esc_url($alumax_archive_url); ?>">
               <input
                 class="w-full h-10 pl-9 pr-3 bg-surface-container-lowest border border-outline-variant text-body text-[13px] text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary"
                 placeholder="Search news or alloy..." type="text" name="news_search"
@@ -194,10 +194,11 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
             <?php if (!empty($alumax_years)) : ?>
             <select
               class="h-10 pl-3 pr-8 bg-surface-container-lowest border border-outline-variant font-label text-[12px] text-on-surface focus:outline-none focus:border-secondary"
+              id="news-year-select"
               onchange="if (this.value) { window.location.href = this.value; }">
-              <option value="<?php echo esc_url($alumax_year_base_url); ?>" <?php selected($alumax_year, 0); ?>>All Years</option>
+              <option data-year="" value="<?php echo esc_url($alumax_year_base_url); ?>" <?php selected($alumax_year, 0); ?>>All Years</option>
               <?php foreach ($alumax_years as $alumax_y) : ?>
-              <option value="<?php echo esc_url(add_query_arg('news_year', $alumax_y, $alumax_year_base_url)); ?>" <?php selected($alumax_year, (int) $alumax_y); ?>><?php echo esc_html($alumax_y); ?></option>
+              <option data-year="<?php echo esc_attr($alumax_y); ?>" value="<?php echo esc_url(add_query_arg('news_year', $alumax_y, $alumax_year_base_url)); ?>" <?php selected($alumax_year, (int) $alumax_y); ?>><?php echo esc_html($alumax_y); ?></option>
               <?php endforeach; ?>
             </select>
             <?php endif; ?>
@@ -251,7 +252,8 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
               ?>
           <article
             class="news-item flex flex-col bg-surface-container-lowest border border-surface-container-high hover:border-secondary/40 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
-            data-category="<?php echo esc_attr($alumax_cat_slug); ?>">
+            data-category="<?php echo esc_attr($alumax_cat_slug); ?>"
+            data-year="<?php echo esc_attr(get_the_date('Y', $alumax_pid)); ?>">
             <div class="relative h-60 overflow-hidden bg-primary-container">
               <img alt="<?php echo esc_attr(get_the_title($alumax_pid)); ?>"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -321,7 +323,8 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
             ?>
         <article
           class="news-list-item bg-surface-container-lowest border border-surface-container-high hover:border-secondary/50 p-5 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 group"
-          data-category="<?php echo esc_attr($alumax_cat_slug); ?>">
+          data-category="<?php echo esc_attr($alumax_cat_slug); ?>"
+          data-year="<?php echo esc_attr(get_the_date('Y', $alumax_pid)); ?>">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             <!-- 16:9 Thumbnail -->
             <div class="md:col-span-4 lg:col-span-3 relative aspect-[16/10] overflow-hidden bg-primary-container">
@@ -562,11 +565,30 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
       }
 
       // -------------------------------------------------------------
-      // 3. CATEGORY FILTER TABS
+      // 3. FILTERS: category tabs + search + year
+      // 统一状态过滤，纯前端实现，静态导出后同样可用
+      // （无 JS 时搜索表单/年份下拉仍回退为服务端 GET 筛选）
       // -------------------------------------------------------------
       const filterTabs = document.querySelectorAll('.filter-tab');
       const cardItems = document.querySelectorAll('.news-item');
       const listItems = document.querySelectorAll('.news-list-item');
+      const searchForm = document.getElementById('news-search-form');
+      const searchInput = searchForm ? searchForm.querySelector('input[name="news_search"]') : null;
+      const yearSelect = document.getElementById('news-year-select');
+
+      const filterState = { cat: 'all', search: '', year: '' };
+
+      function applyNewsFilters() {
+        const keyword = filterState.search.toLowerCase();
+        const matches = (el) => {
+          const catOk = filterState.cat === 'all' || el.getAttribute('data-category') === filterState.cat;
+          const yearOk = !filterState.year || el.getAttribute('data-year') === filterState.year;
+          const textOk = !keyword || el.textContent.toLowerCase().includes(keyword);
+          return catOk && yearOk && textOk;
+        };
+        cardItems.forEach((card) => { card.style.display = matches(card) ? 'flex' : 'none'; });
+        listItems.forEach((item) => { item.style.display = matches(item) ? 'block' : 'none'; });
+      }
 
       filterTabs.forEach((tab) => {
         tab.addEventListener('click', () => {
@@ -577,29 +599,27 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
           tab.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
           tab.classList.add('bg-primary', 'text-white', 'font-semibold');
 
-          const cat = tab.getAttribute('data-cat');
-
-          // Filter card items
-          cardItems.forEach((card) => {
-            const cardCat = card.getAttribute('data-category');
-            if (cat === 'all' || cardCat === cat) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          // Filter list items
-          listItems.forEach((item) => {
-            const itemCat = item.getAttribute('data-category');
-            if (cat === 'all' || itemCat === cat) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
+          filterState.cat = tab.getAttribute('data-cat');
+          applyNewsFilters();
         });
       });
+
+      if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', (e) => e.preventDefault());
+        searchInput.addEventListener('input', () => {
+          filterState.search = searchInput.value.trim();
+          applyNewsFilters();
+        });
+      }
+
+      if (yearSelect) {
+        yearSelect.removeAttribute('onchange');
+        yearSelect.addEventListener('change', () => {
+          const opt = yearSelect.options[yearSelect.selectedIndex];
+          filterState.year = opt ? (opt.getAttribute('data-year') || '') : '';
+          applyNewsFilters();
+        });
+      }
     });
   </script>
   </main>

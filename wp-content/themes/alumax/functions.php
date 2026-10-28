@@ -320,5 +320,7 @@ require get_template_directory() . '/inc/home-settings.php';
 require get_template_directory() . '/inc/news-hero.php';
 require get_template_directory() . '/inc/product-specs.php';
 require get_template_directory() . '/inc/case-details.php';
+require get_template_directory() . '/inc/product-page-content.php';
+require get_template_directory() . '/inc/inquiries.php';
 require get_template_directory() . '/inc/archive-product-settings.php';
 
