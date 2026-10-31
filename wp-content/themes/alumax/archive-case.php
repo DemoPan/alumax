@@ -1,694 +1,401 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
+
+// 项目中心页（案例归档）：Hero + 前端筛选条 + Spotlight（最新案例）+ 案例卡片网格 + 真实分页。
+// 筛选为纯前端 JS 按卡片文本匹配；本页不含询价表单。
+
 get_header();
+
+$paged = max(1, (int) get_query_var('paged'));
+$fallback_image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-qAi3-NkN3D5kkzbuqChEsIoeZVK9qOB_tP12pm7Ywm0MddUBrDiPoGOEo2gNnKPIrMq9PAlAds9O1lNHApr4YA0afha7J0L8rP_SGE6dEVNQkJGGpGWL_mN3K9F2OP4911zYauzoSSiTHizJkeI8KnjKXn1GMiPK2dJaYFGIxiEgRyxcWsYqSDERLDLlZb84jOHeRr9zYvT_iJcwFJApFbg5R2Ha7XEAfYCPD_cNuWh4fFm1_xuD';
+$hero_bg = 'https://lh3.googleusercontent.com/aida/AEtjO1VUQCHakCTsoRpuJrVgGotL75_s3xJUfmltXG5JSKGnrKuodK0hqQwVJbHbLwJmZFKa1DrnMeSaXK7no4Cv38op_VnK44t8_cu1_qSrFeU801bn57VmDbpeeHGpI1Sn3JJij0f_SKteAsSzUYx3XsTjV3ASNU4DqHC4bGlbe9pCgwu91yVhxu8AZ0aB2_l5oQuXFbf0XdrVczZKHDUH2PO1SIDQ1P84s-r_u0NbLOfLqpOwMtr7PDezKA';
+
+// Spotlight：仅第 1 页显示最新一篇案例，并从卡片网格中排除
+$spotlight = null;
+if ($paged === 1) {
+    $latest = get_posts(['post_type' => 'case', 'posts_per_page' => 1, 'post_status' => 'publish']);
+    $spotlight = $latest ? $latest[0] : null;
+}
+
+$query_args = [
+    'post_type'           => 'case',
+    'posts_per_page'      => 9,
+    'paged'               => $paged,
+    'post_status'         => 'publish',
+    'ignore_sticky_posts' => true,
+];
+if ($spotlight) {
+    $query_args['post__not_in'] = [$spotlight->ID];
+}
+$cases = new WP_Query($query_args);
+
+// 筛选下拉配置：option 文本 => 匹配关键词（纯前端按卡片文本过滤）
+$filters = [
+    'Fire Rating' => [
+        'Fire Rating: All Standards' => '',
+        'ASTM E84 Class A'           => 'ASTM E84',
+        'EN 13501-1'                 => 'EN 13501',
+        'CWCT Rig Certified'         => 'CWCT',
+    ],
+    'Alloy Grade' => [
+        'Alloy Grade: All Grades' => '',
+        'AA5052 Marine Grade'     => 'AA5052',
+        'AA3003 Formed Alloy'     => 'AA3003',
+        'AA6063 Extrusion Grade'  => '6063',
+    ],
+    'Surface Coating' => [
+        'Surface Coating: All Finishes' => '',
+        'PVDF Fluoropolymer'            => 'PVDF',
+        'Anodized Class 1'              => 'Anodized',
+        'Powder Coated'                 => 'Powder',
+    ],
+    'Panel System' => [
+        'Panel System: All Types' => '',
+        'Solid Aluminum'          => 'Solid Aluminum',
+        'Honeycomb'               => 'Honeycomb',
+        'Louvers / Shading'       => 'Louver',
+    ],
+];
 ?>
-  <main class="w-full pt-20 bg-surface">
-    <div class="flex flex-col w-full">
-      <!-- Top Breadcrumb & Live Certification Banner -->
-      <section class="w-full bg-surface-container-low">
-        <div class="max-w-7xl mx-auto px-margin py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
-            <a class="hover:text-primary transition-colors flex items-center gap-1" data-path="home"
-              href="<?php echo esc_url(home_url('/')); ?>">
-              <span class="material-symbols-outlined text-base">home</span>
-              <span class="">Home</span>
-            </a>
-            <span class="">/</span>
-            <span class="text-primary font-medium">Projects &amp; Case Studies Archive</span>
-          </div>
-          <div class="inline-flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-            <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">
-              60+ GLOBAL LANDMARK INSTALLATIONS <span class="text-outline-variant font-light mx-1">|</span> ASTM E330
-              &amp; CWCT VERIFIED <span class="text-outline-variant font-light mx-1">|</span> EN 13501 A2-s1,d0
-            </span>
-          </div>
+<main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+
+  <!-- HERO -->
+  <section class="relative w-full overflow-hidden bg-[#0d1b2a] text-white py-8 md:py-10 border-b border-white/10">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover opacity-25 filter brightness-75 contrast-125" alt="Architectural Facade Envelope" src="<?php echo esc_url($hero_bg); ?>">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/85 to-[#0d1b2a]/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-6">
+      <div class="pb-2">
+        <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Projects', 'archive_url' => get_post_type_archive_link('case'), 'current' => '']); ?>
+      </div>
+      <div class="max-w-4xl space-y-3 pt-2">
+        <h1 class="font-display-xl text-display-xl text-white tracking-tight">Landmark Architectural Facades &amp; Global Installations</h1>
+        <p class="font-body-md text-body-md text-slate-300 max-w-3xl">Explore precision-manufactured exterior cladding, solid aluminum cassettes, dynamic kinetic solar louvers, and bespoke honeycomb envelope assemblies engineered for iconic international towers and cultural institutions.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4 mt-6">
+        <div class="p-3 border-l-2 border-secondary">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Installed Envelope Area</span>
+          <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">1.2M+ <span class="font-label-md text-label-md text-secondary-fixed">m²</span></div>
+          <p class="font-body-sm text-body-sm text-slate-400 mt-1">Certified curtain wall &amp; cladding</p>
         </div>
-      </section>
-      <!-- Hero & Global Delivery Metrics Strip -->
-      <section class="w-full bg-surface py-12 md:py-16">
-        <div class="max-w-7xl mx-auto px-margin">
-          <div class="max-w-4xl space-y-4">
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-widest">
-              <span class="material-symbols-outlined text-sm">verified</span>
-              Tier-1 Global Architectural Portfolios &amp; Engineering References
-            </div>
-            <h1 class="font-display-xl text-display-xl text-primary tracking-tight">
-              Landmark Architectural Facades &amp; Global Installations
-            </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl pt-2">
-              Explore precision-manufactured exterior cladding, solid aluminum cassettes, dynamic kinetic solar louvers,
-              and bespoke honeycomb envelope assemblies engineered for iconic international towers, cultural
-              institutions, and mega airport hubs.
-            </p>
-          </div>
-          <!-- Quick Key Metrics Strip -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-12">
-            <div class="bg-surface-container-lowest p-6 shadow-sm relative overflow-hidden group">
-              <div class="w-1.5 h-full bg-secondary absolute left-0 top-0"></div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Installed
-                  Envelope Area</span>
-                <span class="material-symbols-outlined text-secondary text-2xl">layers</span>
-              </div>
-              <div class="font-display-lg text-display-lg text-primary tracking-tight">1.2M+ <span
-                  class="font-headline-sm text-headline-sm text-secondary">m²</span></div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Certified exterior curtain wall and
-                cladding surfaces delivered globally.</p>
-            </div>
-            <div class="bg-surface-container-lowest p-6 shadow-sm relative overflow-hidden group">
-              <div class="w-1.5 h-full bg-primary absolute left-0 top-0"></div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Global
-                  Reach</span>
-                <span class="material-symbols-outlined text-primary text-2xl">public</span>
-              </div>
-              <div class="font-display-lg text-display-lg text-primary tracking-tight">60+ <span
-                  class="font-headline-sm text-headline-sm text-on-surface-variant">Nations</span></div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Active presence across GCC, EU, UK,
-                ASEAN, and the Americas.</p>
-            </div>
-            <div class="bg-surface-container-lowest p-6 shadow-sm relative overflow-hidden group">
-              <div class="w-1.5 h-full bg-secondary absolute left-0 top-0"></div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Milling &amp;
-                  Curvature Tolerance</span>
-                <span class="material-symbols-outlined text-secondary text-2xl">precision_manufacturing</span>
-              </div>
-              <div class="font-display-lg text-display-lg text-primary tracking-tight">±0.3 <span
-                  class="font-headline-sm text-headline-sm text-secondary">mm</span></div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">German 5-axis CNC machining centers for
-                flawless joint reveals.</p>
-            </div>
-            <div class="bg-surface-container-lowest p-6 shadow-sm relative overflow-hidden group">
-              <div class="w-1.5 h-full bg-primary absolute left-0 top-0"></div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">QC Logistics
-                  Pass Rate</span>
-                <span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
-              </div>
-              <div class="font-display-lg text-display-lg text-primary tracking-tight">99.98%</div>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Export sea-transit crating standard with
-                zero micro-scratch assurance.</p>
-            </div>
-          </div>
+        <div class="p-3 border-l-2 border-white/40">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Global Reach</span>
+          <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">60+ <span class="font-label-md text-label-md text-slate-300">Nations</span></div>
+          <p class="font-body-sm text-body-sm text-slate-400 mt-1">Active presence in GCC, EU &amp; Americas</p>
         </div>
-      </section>
-      <!-- Interactive Filter & Specification Search Suite -->
-      <section class="w-full bg-surface-container-lowest py-8 shadow-sm">
-        <div class="max-w-7xl mx-auto px-margin space-y-6">
-          <!-- Search and Views -->
-          <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
-            <div class="relative flex-1">
-              <span
-                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">search</span>
-              <input
-                class="w-full pl-12 pr-4 h-12 bg-surface text-on-surface placeholder-on-surface-variant font-body-md text-body-md outline-none focus:bg-surface-container-low transition-colors"
-                placeholder="Search project name, city, architect, alloy grade (e.g. KAFD, Singapore, AA5052, Louvre)..."
-                type="text">
-            </div>
-            <div class="flex items-center gap-3 self-end lg:self-auto">
-              <div class="bg-surface-container flex p-1">
-                <button
-                  class="px-4 py-2 bg-surface-container-lowest shadow-sm text-primary flex items-center gap-2 font-label-sm text-label-sm uppercase">
-                  <span class="material-symbols-outlined text-base">grid_view</span>
-                  <span class="">Grid View</span>
-                </button>
-                <button
-                  class="px-4 py-2 text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2 font-label-sm text-label-sm uppercase">
-                  <span class="material-symbols-outlined text-base">table_rows</span>
-                  <span class="">Spec Schedule</span>
-                </button>
-              </div>
-              <button
-                class="h-12 px-5 bg-surface-container-high text-on-surface hover:bg-secondary hover:text-on-secondary transition-colors font-label-sm text-label-sm uppercase flex items-center gap-2">
-                <span class="material-symbols-outlined text-base">tune</span>
-                <span class="">Reset (58)</span>
-              </button>
-            </div>
-          </div>
-          <!-- Region Filter Tabs -->
-          <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            <button
-              class="px-5 py-2.5 bg-primary-container text-on-primary font-label-md text-label-md uppercase whitespace-nowrap">
-              All Regions (58)
-            </button>
-            <button
-              class="px-5 py-2.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md uppercase whitespace-nowrap">
-              Middle East &amp; GCC (24)
-            </button>
-            <button
-              class="px-5 py-2.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md uppercase whitespace-nowrap">
-              Europe &amp; UK (16)
-            </button>
-            <button
-              class="px-5 py-2.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md uppercase whitespace-nowrap">
-              Asia-Pacific (11)
-            </button>
-            <button
-              class="px-5 py-2.5 bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md uppercase whitespace-nowrap">
-              North America (7)
-            </button>
-          </div>
-          <!-- Dropdown Selectors: System, Typology, Code Verification -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div class="flex flex-col gap-1">
-              <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Cladding /
-                Envelope System</label>
-              <div class="relative">
-                <select
-                  class="w-full h-11 px-4 pr-10 bg-surface text-on-surface font-label-md text-label-md appearance-none outline-none cursor-pointer">
-                  <option>All Systems Matrix</option>
-                  <option>Solid Aluminum Cladding (2.5mm - 4.0mm)</option>
-                  <option>Intelligent Motorized Solar Louvers</option>
-                  <option>Calibrated Honeycomb Composite Panels</option>
-                  <option>Corrugated Core Lightweight Panels (ACCP)</option>
-                  <option>Bespoke CNC Perforated Art Screens</option>
-                </select>
-                <span
-                  class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-lg">expand_more</span>
-              </div>
-            </div>
-            <div class="flex flex-col gap-1">
-              <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Building
-                Typology</label>
-              <div class="relative">
-                <select
-                  class="w-full h-11 px-4 pr-10 bg-surface text-on-surface font-label-md text-label-md appearance-none outline-none cursor-pointer">
-                  <option>All Typologies</option>
-                  <option>Supertall Commercial &amp; Towers</option>
-                  <option>International Airport &amp; Transit Hubs</option>
-                  <option>Corporate Headquarters &amp; Campuses</option>
-                  <option>Cultural Pavilions &amp; Civic Arenas</option>
-                  <option>Maritime Ports &amp; Specialized Coastal Facilities</option>
-                </select>
-                <span
-                  class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-lg">expand_more</span>
-              </div>
-            </div>
-            <div class="flex flex-col gap-1">
-              <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Engineering
-                Code / Fire Rating</label>
-              <div class="relative">
-                <select
-                  class="w-full h-11 px-4 pr-10 bg-surface text-on-surface font-label-md text-label-md appearance-none outline-none cursor-pointer">
-                  <option>All Verified Standards</option>
-                  <option>ASTM E84 Class A Fire Certified</option>
-                  <option>EN 13501-1 Class A2-s1, d0 Combustibility</option>
-                  <option>CWCT Full Facade Rig Tested</option>
-                  <option>ASTM E330 Structural Deflection (≥ 5.0 kPa)</option>
-                  <option>AAMA 501.4 Interstory Seismic Drift Passed</option>
-                </select>
-                <span
-                  class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-lg">expand_more</span>
-              </div>
-            </div>
-          </div>
+        <div class="p-3 border-l-2 border-secondary">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Milling Tolerance</span>
+          <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">±0.3 <span class="font-label-md text-label-md text-secondary-fixed">mm</span></div>
+          <p class="font-body-sm text-body-sm text-slate-400 mt-1">German 5-axis CNC machining</p>
         </div>
-      </section>
-      <!-- Featured Landmark Project Spotlight -->
-      <section class="w-full bg-surface py-16">
-        <div class="max-w-7xl mx-auto px-margin">
-          <div class="flex items-center justify-between mb-8">
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <span
-                  class="px-2.5 py-0.5 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider">Spotlight
-                  Reference</span>
-                <span class="font-label-sm text-label-sm text-on-surface-variant">RIYADH, SAUDI ARABIA</span>
-              </div>
-              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">KAFD Tower 3 Financial District
-              </h2>
-            </div>
-            <div class="hidden sm:flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
-              <span class="">PROJECT ARCHIVE REF: #ALX-GCC-2024-K3</span>
-            </div>
+        <div class="p-3 border-l-2 border-white/40">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">QC Logistics Pass Rate</span>
+          <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">99.98%</div>
+          <p class="font-body-sm text-body-sm text-slate-400 mt-1">Zero micro-scratch export crating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR（纯前端筛选） -->
+  <section class="w-full bg-surface py-6 border-b border-surface-container-high">
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Filter case studies by engineering specification</p>
+        <div class="flex items-center bg-surface-container-low p-1 border border-outline-variant/30">
+          <button id="case-grid-view" class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest text-primary shadow-sm" type="button" aria-label="Grid view">
+            <span class="material-symbols-outlined text-[18px]">grid_view</span>
+          </button>
+          <button id="case-list-view" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button" aria-label="List view">
+            <span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <?php foreach ($filters as $group => $options) : ?>
+        <div class="relative">
+          <select class="case-filter w-full h-10 px-3 pr-8 bg-surface border border-outline-variant text-on-surface font-label-sm text-label-sm appearance-none outline-none focus:border-secondary cursor-pointer" aria-label="<?php echo esc_attr($group); ?>">
+            <?php foreach ($options as $label => $keyword) : ?>
+            <option value="<?php echo esc_attr($keyword); ?>"><?php echo esc_html($label); ?></option>
+            <?php endforeach; ?>
+          </select>
+          <span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-base">unfold_more</span>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <?php if ($spotlight) :
+      $sid       = $spotlight->ID;
+      $sheader   = alumax_case_header($sid);
+      $smetrics  = array_slice(alumax_case_metrics($sid), 0, 3);
+      $schallenge = alumax_case_challenge($sid);
+      $sverify   = array_slice(alumax_case_verification($sid), 0, 6);
+      $sdownloads = alumax_case_downloads($sid);
+      $simage    = get_the_post_thumbnail_url($sid, 'full') ?: $fallback_image;
+      $sbadges   = array_slice(array_filter(array_map('trim', explode('&', $sheader['certification']))), 0, 3);
+      $sdesc     = $schallenge['text'] !== '' ? $schallenge['text'] : wp_trim_words(wp_strip_all_tags(strip_shortcodes(excerpt_remove_blocks($spotlight->post_content)), true), 40, '…');
+      $sbim      = null;
+      foreach ($sdownloads as $dl) {
+          if (!empty($dl['url']) && $dl['url'] !== '#') { $sbim = $dl; break; }
+      }
+      ?>
+  <!-- SPOTLIGHT（最新案例） -->
+  <section class="w-full bg-surface py-16">
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+      <div class="flex items-center justify-between mb-8">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-2.5 py-0.5 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider">Spotlight Reference</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase"><?php echo esc_html($sheader['location']); ?></span>
           </div>
-          <!-- Main Spotlight Card Bento -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter bg-surface-container-lowest p-6 md:p-8 shadow-sm">
-            <!-- Visual & In-Situ Facade Photography -->
-            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
-              <div class="relative overflow-hidden group">
-                <img
-                  class="w-full h-[440px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  data-alt="Modern architectural photography of KAFD Financial Tower in Riyadh at sunset. Sleek bronze-tinted aluminum facade panels and dynamic kinetic motorized solar louvers reflecting golden desert twilight. Precision vertical joints and high-tech curtain wall cladding."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9l4zjX7ku8F7DgDE4ZWZYEsb4OjsivesQZKirh38ax61AWQpqWUEjakSkX6PTWl1FVTWabYn0602fr0qrBdi0LygjE54EUjLybMNFbCO0FIgk5jkiObvup-UbcLQk3aidVQ9Ywd34mDwDq6Y38N93WJvc4ZMDS7qX9q3gwaTIdNQBtk6Iv5aYZvznTymzwmSUk22oWUSE_RIgVD7LzgVYrMAPifjR-XMTkQQRLqya0QjPT-riEJ0W">
-                <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span
-                    class="px-3 py-1 bg-primary-container text-on-primary font-label-sm text-label-sm uppercase">LEED
-                    Platinum</span>
-                  <span
-                    class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase">CWCT
-                    Rig Certified</span>
-                  <span class="px-3 py-1 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase">Dynamic
-                    Tracking</span>
-                </div>
-                <div
-                  class="absolute bottom-4 left-4 right-4 p-4 bg-primary-container/90 backdrop-blur-md text-on-primary flex items-center justify-between">
-                  <div>
-                    <span class="font-label-sm text-label-sm uppercase text-secondary-fixed block">Facade
-                      Technology</span>
-                    <span class="font-body-md text-body-md font-medium">Kinetic Micro-Perforated Sun-Shields + Solid
-                      Aluminum Spandrel Envelope</span>
-                  </div>
-                  <span class="material-symbols-outlined text-secondary text-2xl">cyclone</span>
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-4">
-                <div class="bg-surface-container-low p-4">
-                  <span class="font-label-sm text-label-sm uppercase text-on-surface-variant block">Delivered
-                    Envelope</span>
-                  <span class="font-headline-sm text-headline-sm text-primary">22,700 m²</span>
-                  <span class="font-label-sm text-label-sm text-secondary block mt-1">14.2k m² Louvers + 8.5k m²
-                    Panels</span>
-                </div>
-                <div class="bg-surface-container-low p-4">
-                  <span class="font-label-sm text-label-sm uppercase text-on-surface-variant block">Alloy &amp;
-                    Substrate</span>
-                  <span class="font-headline-sm text-headline-sm text-primary">AA5052-H32</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant block mt-1">4.0mm CNC Deep
-                    Formed</span>
-                </div>
-                <div class="bg-surface-container-low p-4">
-                  <span class="font-label-sm text-label-sm uppercase text-on-surface-variant block">Thermal Shift</span>
-                  <span class="font-headline-sm text-headline-sm text-secondary">-34.2%</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant block mt-1">Peak Solar SHGC
-                    0.14</span>
-                </div>
-              </div>
+          <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight"><?php echo esc_html(get_the_title($sid)); ?></h2>
+        </div>
+        <?php if ($sheader['ref_code'] !== '') : ?>
+        <div class="hidden sm:flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+          <span>PROJECT ARCHIVE REF: <?php echo esc_html($sheader['ref_code']); ?></span>
+        </div>
+        <?php endif; ?>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+          <div class="relative overflow-hidden group">
+            <img class="w-full h-[440px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="<?php echo esc_attr(get_the_title($sid)); ?>" src="<?php echo esc_url($simage); ?>">
+            <?php if ($sbadges) : ?>
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              <?php foreach ($sbadges as $bi => $badge) : ?>
+              <span class="px-3 py-1 <?php echo $bi === 0 ? 'bg-primary-container text-on-primary' : 'bg-surface-container-lowest/90 backdrop-blur-md text-primary'; ?> font-label-sm text-label-sm uppercase"><?php echo esc_html($badge); ?></span>
+              <?php endforeach; ?>
             </div>
-            <!-- Technical Specification & Submittal Matrix -->
-            <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <?php endif; ?>
+            <?php if ($sheader['card_tagline'] !== '') : ?>
+            <div class="absolute bottom-4 left-4 right-4 p-4 bg-primary-container/90 backdrop-blur-md text-on-primary flex items-center justify-between">
               <div>
-                <div class="pb-4">
-                  <span class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wider">Dynamic
-                    Motorized Envelope Deployment</span>
-                  <h3 class="font-headline-md text-headline-md text-primary mt-1">Engineering Specification Breakdown
-                  </h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
-                    Engineered to resist catastrophic desert thermal cycles and abrasive sandstorm micro-erosion. Fitted
-                    with industrial stepper motors communicating via BACnet directly with building BMS.
-                  </p>
-                </div>
-                <!-- Detailed Spec Table -->
-                <div class="space-y-2 pt-2">
-                  <div class="flex items-center justify-between p-3 bg-surface-container-low">
-                    <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Surface Finish
-                      Spec</span>
-                    <span class="font-label-md text-label-md font-semibold text-primary">PPG Duranar XL 3-Coat
-                      PVDF</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3 bg-surface-container">
-                    <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Color Designation</span>
-                    <span class="font-label-md text-label-md font-medium text-primary">Desert Sand Metallic (Matte
-                      25°)</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3 bg-surface-container-low">
-                    <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Windload Proof
-                      Testing</span>
-                    <span class="font-label-md text-label-md font-semibold text-secondary">ASTM E330 6.20 kPa
-                      Ultimate</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3 bg-surface-container">
-                    <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Air &amp; Water
-                      Infiltration</span>
-                    <span class="font-label-md text-label-md font-medium text-primary">CWCT 1,200 Pa Air / 600 Pa
-                      Water</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3 bg-surface-container-low">
-                    <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Fire Reaction
-                      Index</span>
-                    <span class="font-label-md text-label-md font-semibold text-primary">EN 13501-1 Class A1 / A2
-                      Non-Combustible</span>
-                  </div>
-                  <div class="flex items-center justify-between p-3 bg-surface-container">
-                    <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Manufacturing
-                      Cycle</span>
-                    <span class="font-label-md text-label-md font-medium text-primary">Foshan Mega Plant, Bay 4 (62
-                      Days)</span>
-                  </div>
-                </div>
+                <span class="font-label-sm text-label-sm uppercase text-secondary-fixed block">Facade Technology</span>
+                <span class="font-body-md text-body-md font-medium"><?php echo esc_html($sheader['card_tagline']); ?></span>
               </div>
-              <!-- Spotlight CTAs -->
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4">
-                <a class="flex-1 h-12 bg-primary-container text-on-primary hover:bg-secondary hover:text-on-secondary transition-colors font-headline-sm text-label-md uppercase tracking-wider flex items-center justify-center gap-2"
-                  data-path="contact-us" href="<?php echo esc_url(home_url('/contact/')); ?>">
-                  <span class="">View Case Study Report</span>
-                  <span class="material-symbols-outlined text-lg">arrow_forward</span>
-                </a>
-                <a class="h-12 px-5 bg-surface-container text-primary hover:bg-surface-container-high transition-colors font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2"
-                  data-path="resources" href="<?php echo esc_url(home_url('/resources/')); ?>">
-                  <span class="material-symbols-outlined text-lg">folder_zip</span>
-                  <span class="">BIM Submittal (18.4MB)</span>
-                </a>
-              </div>
+              <span class="material-symbols-outlined text-secondary text-2xl">cyclone</span>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- Global Landmark Projects Grid (6 Reference Icons) -->
-      <section class="w-full bg-surface-container-low py-16">
-        <div class="max-w-7xl mx-auto px-margin space-y-12">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-medium">Project
-                Index Matrix</span>
-              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">International Landmark
-                Installations</h2>
-            </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
-              Precision prefabricated assemblies engineered to meet municipal building envelope fire standards, extreme
-              wind deflection criteria, and tight construction timelines.
-            </p>
-          </div>
-          <!-- 6-Card High-Performance Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-            <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-            <div
-              class="bg-surface-container-lowest flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 group">
-              <div>
-                <div class="relative overflow-hidden aspect-[16/10]">
-                  <?php if (has_post_thumbnail()) : ?>
-                  <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500']); ?>
-                  <?php else : ?>
-                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    alt="<?php echo esc_attr(get_the_title()); ?>"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNhhALaG1JSYrw57ZzWiS9ev6jkWxpCmjGF8qaOwuPZP0XJf1WbpGL2aeUsKwXGC9UiNm2JcFhtSKQPLsRBzZu0jE3gw2CPZLZQBN0HHQhPJC5kD75T4dSLlBAcAU7Q5PMVmNDX29BDNK_zBjsHhwFaz4Z-RWf5eKCi0vWFUgA5QgzhlLGXPkiYiLNUV1hdvy9XRZBeQhQg9IVK2AZ3k_TItDUwnLr72Nu1mVTg-Kn9EauH2QaFeRH">
-                  <?php endif; ?>
-                </div>
-                <div class="p-6 space-y-4">
-                  <div>
-                    <h3
-                      class="font-headline-md text-headline-md text-primary mt-1 group-hover:text-secondary transition-colors">
-                      <?php echo esc_html(get_the_title()); ?>
-                    </h3>
-                    <span class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5"><?php echo esc_html(get_the_excerpt()); ?></span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 pt-0">
-                <a class="w-full h-11 bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-primary font-label-sm text-label-sm uppercase flex items-center justify-center gap-2"
-                  href="<?php echo esc_url(get_the_permalink()); ?>">
-                  <span class="">View Case Study</span>
-                  <span class="material-symbols-outlined text-base">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-            <?php endwhile; ?>
-            <?php else : ?>
-            <p class="col-span-full py-12 text-center font-body-md text-body-md text-on-surface-variant">
-              <?php esc_html_e('No case studies published yet. Please check back soon.', 'alumax'); ?>
-            </p>
             <?php endif; ?>
           </div>
-          <!-- Pagination -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <?php
-            the_posts_pagination([
-                'mid_size'  => 2,
-                'prev_text' => '<span class="material-symbols-outlined text-lg">chevron_left</span>',
-                'next_text' => '<span class="material-symbols-outlined text-lg">chevron_right</span>',
-            ]);
-            ?>
+          <?php if ($smetrics) : ?>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <?php foreach ($smetrics as $metric) : ?>
+            <div class="bg-surface-container-low p-4">
+              <span class="font-label-sm text-label-sm uppercase text-on-surface-variant block"><?php echo esc_html($metric['name']); ?></span>
+              <span class="font-headline-sm text-headline-sm text-primary"><?php echo esc_html($metric['value']); ?></span>
+              <?php if (!empty($metric['desc'])) : ?>
+              <span class="font-label-sm text-label-sm text-secondary block mt-1"><?php echo esc_html($metric['desc']); ?></span>
+              <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+          </div>
+          <?php endif; ?>
+        </div>
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+          <div>
+            <div class="pb-4">
+              <?php if ($sheader['card_tagline'] !== '') : ?>
+              <span class="font-label-sm text-label-sm uppercase text-secondary font-medium tracking-wider"><?php echo esc_html($sheader['card_tagline']); ?></span>
+              <?php endif; ?>
+              <h3 class="font-headline-md text-headline-md text-primary mt-1">Engineering Specification Breakdown</h3>
+              <?php if ($sdesc !== '') : ?>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2"><?php echo esc_html($sdesc); ?></p>
+              <?php endif; ?>
+            </div>
+            <?php if ($sverify) : ?>
+            <div class="space-y-2 pt-2">
+              <?php foreach ($sverify as $vi => $row) : ?>
+              <div class="flex items-center justify-between gap-3 p-3 <?php echo $vi % 2 === 0 ? 'bg-surface-container-low' : 'bg-surface-container'; ?>">
+                <span class="font-label-sm text-label-sm uppercase text-on-surface-variant"><?php echo esc_html($row['param']); ?></span>
+                <span class="font-label-md text-label-md font-semibold text-primary text-right"><?php echo esc_html($row['result']); ?></span>
+              </div>
+              <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+          </div>
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4">
+            <a class="flex-1 h-12 bg-primary-container text-on-primary hover:bg-secondary hover:text-on-secondary transition-colors font-headline-sm text-label-md uppercase tracking-wider flex items-center justify-center gap-2" href="<?php echo esc_url(get_permalink($sid)); ?>">
+              <span>View Case Study Report</span>
+              <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+            <?php if ($sbim) : ?>
+            <a class="h-12 px-5 bg-surface-container text-primary hover:bg-surface-container-high transition-colors font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2" href="<?php echo esc_url($sbim['url']); ?>">
+              <span class="material-symbols-outlined text-lg">folder_zip</span>
+              <span><?php echo esc_html(!empty($sbim['btn']) ? $sbim['btn'] : 'Download Assets'); ?></span>
+            </a>
+            <?php endif; ?>
           </div>
         </div>
-      </section>
-      <!-- Global Logistics, Sea-Freight & Overseas Erection Assurance -->
-      <section class="w-full bg-surface py-16">
-        <div class="max-w-7xl mx-auto px-margin space-y-12">
-          <div class="max-w-3xl space-y-2">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-medium">Export
-              Rigor</span>
-            <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Heavy Industrial Packaging &amp;
-              Ocean Logistics</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              Standardized containerized packing engineered specifically for intermodal sea transit, zero condensation
-              damage, and streamlined site sequencing.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-            <!-- Regional Distribution Breakdown Card with Inline SVG Chart -->
-            <div
-              class="lg:col-span-4 bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between space-y-6">
-              <div>
-                <div class="flex items-center justify-between pb-4">
-                  <span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Global Dispatch
-                    Portfolio</span>
-                  <span class="material-symbols-outlined text-secondary">pie_chart</span>
-                </div>
-                <!-- Inline SVG Regional Donut Visualization -->
-                <div class="flex items-center justify-center py-4">
-                  <div class="relative w-48 h-48">
-                    <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                      <!-- GCC / Middle East: 45% (dasharray 127, circumference ~283, radius 45) -->
-                      <circle cx="50" cy="50" fill="none" r="45" stroke="#7b5825" stroke-dasharray="127 283"
-                        stroke-dashoffset="0" stroke-width="10"></circle>
-                      <!-- Europe & UK: 30% (dasharray 85) -->
-                      <circle cx="50" cy="50" fill="none" r="45" stroke="#0f1c2c" stroke-dasharray="85 283"
-                        stroke-dashoffset="-127" stroke-width="10"></circle>
-                      <!-- Asia-Pacific & Americas: 25% (dasharray 71) -->
-                      <circle cx="50" cy="50" fill="none" r="45" stroke="#bac8dc" stroke-dasharray="71 283"
-                        stroke-dashoffset="-212" stroke-width="10"></circle>
-                    </svg>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center">
-                      <span class="font-display-lg text-display-lg text-primary leading-none">60+</span>
-                      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Countries</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Legend -->
-                <div class="space-y-2 pt-4">
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                      <span class="w-3 h-3 bg-secondary"></span>
-                      <span class="font-label-sm text-label-sm text-on-surface">GCC &amp; Middle East</span>
-                    </div>
-                    <span class="font-label-sm text-label-sm font-semibold text-primary">45%</span>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                      <span class="w-3 h-3 bg-primary-container"></span>
-                      <span class="font-label-sm text-label-sm text-on-surface">Europe, UK &amp; Scandinavia</span>
-                    </div>
-                    <span class="font-label-sm text-label-sm font-semibold text-primary">30%</span>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                      <span class="w-3 h-3 bg-primary-fixed-dim"></span>
-                      <span class="font-label-sm text-label-sm text-on-surface">Asia-Pacific &amp; Americas</span>
-                    </div>
-                    <span class="font-label-sm text-label-sm font-semibold text-primary">25%</span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-3 bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
-                Direct departures via FOB Nansha, Yantian, and Ningbo container hubs.
-              </div>
-            </div>
-            <!-- 3 Feature Pillars of Sea-Freight & Packaging -->
-            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-gutter">
-              <div class="bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between space-y-6">
-                <div class="space-y-3">
-                  <div class="w-12 h-12 bg-surface-container flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined text-2xl">package_2</span>
-                  </div>
-                  <h4 class="font-headline-sm text-headline-sm text-primary">Fumigation-Free Plywood Crating</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Panels individually isolated with double 80-micron protective film, edge corner guards, desiccant
-                    bags, and heavy-duty steel bands for intermodal stability.
-                  </p>
-                </div>
-                <div class="p-3 bg-surface-container-low font-label-sm text-label-sm text-secondary font-semibold">
-                  99.98% Damage-Free Delivery
-                </div>
-              </div>
-              <div class="bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between space-y-6">
-                <div class="space-y-3">
-                  <div class="w-12 h-12 bg-surface-container flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-2xl">science</span>
-                  </div>
-                  <h4 class="font-headline-sm text-headline-sm text-primary">4,000h Salt Spray Salt-Fog ASTM B117</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Every marine and coastal batch receives laboratory validation to guarantee zero blistering,
-                    delamination, or edge corrosion in extreme marine environments.
-                  </p>
-                </div>
-                <div class="p-3 bg-surface-container-low font-label-sm text-label-sm text-primary font-semibold">
-                  ISO 9227 &amp; Qualicoat Class 2
-                </div>
-              </div>
-              <div class="bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between space-y-6">
-                <div class="space-y-3">
-                  <div class="w-12 h-12 bg-surface-container flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined text-2xl">schedule</span>
-                  </div>
-                  <h4 class="font-headline-sm text-headline-sm text-primary">18-25 Days Lead to Port</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    From shop drawing approval to shipping container seal. Fast-track fabrication sequencing aligned
-                    with overseas tower crane schedules and milestone tenders.
-                  </p>
-                </div>
-                <div class="p-3 bg-surface-container-low font-label-sm text-label-sm text-secondary font-semibold">
-                  Dedicated Berth Logistics
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Fast-Track Engineering Consultation & Tender RFP Submission -->
-      <section class="w-full bg-primary-container text-on-primary py-16">
-        <div class="max-w-7xl mx-auto px-margin">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-            <!-- Left: RFP Prompt & Assurances -->
-            <div class="lg:col-span-5 space-y-6">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider">
-                Fast-Track Engineering Services
-              </div>
-              <h2 class="font-headline-lg text-headline-lg tracking-tight">
-                Initiate Project Submittal &amp; Facade Engineering Tender
-              </h2>
-              <p class="font-body-md text-body-md text-on-primary-container">
-                Upload your architectural drawings, BIM files, or tender bill of quantities (BOQ). Our senior facade
-                engineering desk prepares structural static calculations, wind pressure estimates, and CIF freight
-                pricing within 24 business hours.
-              </p>
-              <div class="space-y-3 pt-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-lg">check</span>
-                  </div>
-                  <span class="font-body-sm text-body-sm">Complimentary 3D Structural Stress &amp; Wind Rig
-                    Calculations</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-lg">check</span>
-                  </div>
-                  <span class="font-body-sm text-body-sm">Expedited Hand-Sample Swatch Box Dispatched via DHL
-                    Express</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-lg">check</span>
-                  </div>
-                  <span class="font-body-sm text-body-sm">Certified EN / ASTM / AS Testing Submittal Package
-                    Included</span>
-                </div>
-              </div>
-              <div class="p-4 bg-surface-container-highest/10 mt-6 flex items-center gap-3">
-                <span class="material-symbols-outlined text-secondary text-2xl">support_agent</span>
-                <div>
-                  <span class="font-label-sm text-label-sm uppercase text-on-primary-container block">Direct Overseas
-                    Engineering Desk</span>
-                  <span
-                    class="font-label-md text-label-md font-semibold text-on-primary">engineering@alumax-envelopes.com</span>
-                </div>
-              </div>
-            </div>
-            <!-- Right: Technical RFQ / Tender Form -->
-            <div class="lg:col-span-7 bg-surface-container-lowest text-on-surface p-8 shadow-xl">
-              <form class="space-y-4"
-                onsubmit="event.preventDefault(); alert('Engineering submittal received. Our senior facade lead will contact you within 24 hours with static calculations.');">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Your Name /
-                      Title *</label>
-                    <input
-                      class="w-full h-11 px-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors"
-                      placeholder="e.g. David Weber, Chief Façade Consultant" required="" type="text">
-                  </div>
-                  <div>
-                    <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Company /
-                      Organization *</label>
-                    <input
-                      class="w-full h-11 px-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors"
-                      placeholder="e.g. Zaha Hadid Architects / Mace Group" required="" type="text">
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Professional
-                      Email *</label>
-                    <input
-                      class="w-full h-11 px-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors"
-                      placeholder="weber@consulting-facade.de" required="" type="email">
-                  </div>
-                  <div>
-                    <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Target
-                      Project Location / Country *</label>
-                    <input
-                      class="w-full h-11 px-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors"
-                      placeholder="e.g. Riyadh, Saudi Arabia or London, UK" required="" type="text">
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Primary
-                      Envelope System Needed</label>
-                    <select
-                      class="w-full h-11 px-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors">
-                      <option>Solid Aluminum Cladding (2.5mm - 4.0mm)</option>
-                      <option>Calibrated Honeycomb Composite Panels</option>
-                      <option>Intelligent Motorized Solar Louvers</option>
-                      <option>Corrugated Core Lightweight Panels (ACCP)</option>
-                      <option>Mixed Complex Facade Package</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Estimated
-                      Total Facade Area (m²)</label>
-                    <input
-                      class="w-full h-11 px-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors"
-                      placeholder="e.g. 15,000 m² or BOQ attached" type="text">
-                  </div>
-                </div>
-                <div>
-                  <label class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-1">Project Scope
-                    &amp; Engineering Requirements</label>
-                  <textarea
-                    class="w-full p-3 bg-surface border-b-2 border-outline-variant focus:border-secondary outline-none font-body-sm text-body-sm transition-colors resize-none"
-                    placeholder="Detail required alloy (AA3003/AA5052), wind pressure criteria, paint coating (PPG/AkzoNobel PVDF), target handover date, and testing codes..."
-                    rows="3"></textarea>
-                </div>
-                <!-- Drag & Drop File Upload Mimic -->
-                <div
-                  class="p-4 bg-surface border border-dashed border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left cursor-pointer hover:bg-surface-container-low transition-colors">
-                  <div class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-secondary text-2xl">cloud_upload</span>
-                    <div>
-                      <span class="font-label-sm text-label-sm uppercase text-primary font-medium block">Upload
-                        Architectural CAD / Revit / BOQ</span>
-                      <span class="font-body-sm text-body-sm text-on-surface-variant">DWG, RVT, PDF, or ZIP (Up to
-                        100MB)</span>
-                    </div>
-                  </div>
-                  <span
-                    class="px-3 py-1.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase">Browse
-                    File</span>
-                </div>
-                <div class="pt-2">
-                  <button
-                    class="w-full h-12 bg-primary-container text-on-primary hover:bg-secondary hover:text-on-secondary transition-colors font-headline-sm text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
-                    type="submit">
-                    <span class="">Submit Tender For Engineering Review &amp; Quotation</span>
-                    <span class="material-symbols-outlined text-lg">send</span>
-                  </button>
-                  <div
-                    class="flex items-center justify-center gap-4 mt-2 text-on-surface-variant font-label-sm text-label-sm">
-                    <span class="">✓ Non-Disclosure Agreement (NDA) Protected</span>
-                    <span class="">✓ Direct Factory Commercial Pricing</span>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  </main>
+  </section>
+  <?php endif; ?>
 
-<?php get_footer(); ?>
+  <!-- 案例卡片网格 -->
+  <section class="w-full bg-surface-container-low py-16">
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-medium">Project Index Matrix</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">International Landmark Installations</h2>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Precision prefabricated assemblies engineered to meet municipal building envelope fire standards, extreme wind deflection criteria, and tight construction timelines.</p>
+      </div>
+
+      <?php if ($cases->have_posts()) : ?>
+      <div id="case-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+        <?php
+        while ($cases->have_posts()) : $cases->the_post();
+            $cid     = get_the_ID();
+            $cheader = alumax_case_header($cid);
+            $cmetrics = array_slice(alumax_case_metrics($cid), 0, 4);
+            $cimage  = get_the_post_thumbnail_url($cid, 'large') ?: $fallback_image;
+            $cyear   = '';
+            if (preg_match('/\d{4}/', $cheader['completed'], $m)) {
+                $cyear = $m[0];
+            } else {
+                $cyear = get_the_date('Y', $cid);
+            }
+            $clocation = trim($cheader['location']);
+            ?>
+        <div class="case-card bg-surface-container-lowest flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 group">
+          <div class="case-card-body">
+            <div class="case-card-media relative overflow-hidden aspect-[16/10]">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?php echo esc_attr(get_the_title()); ?>" src="<?php echo esc_url($cimage); ?>">
+              <?php if ($cheader['card_tagline'] !== '') : ?>
+              <div class="absolute top-3 left-3 bg-primary-container text-on-primary font-label-sm text-label-sm px-2.5 py-1 uppercase"><?php echo esc_html($cheader['card_tagline']); ?></div>
+              <?php endif; ?>
+              <div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur text-primary font-label-sm text-label-sm px-2.5 py-1"><?php echo esc_html(trim($cyear . ' // ' . $clocation, ' /')); ?></div>
+            </div>
+            <div class="p-6 space-y-4">
+              <div>
+                <?php if ($cheader['certification'] !== '') : ?>
+                <span class="font-label-sm text-label-sm text-secondary uppercase font-semibold"><?php echo esc_html($cheader['certification']); ?></span>
+                <?php endif; ?>
+                <h3 class="font-headline-md text-headline-md text-primary mt-1 group-hover:text-secondary transition-colors"><?php the_title(); ?></h3>
+              </div>
+              <?php if ($cmetrics) : ?>
+              <div class="space-y-2 pt-2">
+                <?php foreach ($cmetrics as $mi => $metric) : ?>
+                <div class="flex items-center justify-between gap-3 text-body-sm <?php echo $mi % 2 === 0 ? 'bg-surface-container-low' : 'bg-surface-container'; ?> p-2">
+                  <span class="text-on-surface-variant font-label-sm text-label-sm"><?php echo esc_html($metric['name']); ?>:</span>
+                  <span class="font-label-sm text-label-sm font-semibold text-primary text-right"><?php echo esc_html($metric['value']); ?></span>
+                </div>
+                <?php endforeach; ?>
+              </div>
+              <?php endif; ?>
+            </div>
+          </div>
+          <div class="case-card-footer p-6 pt-0">
+            <a class="w-full h-11 bg-surface-container hover:bg-primary-container hover:text-on-primary transition-colors text-primary font-label-sm text-label-sm uppercase flex items-center justify-center gap-2" href="<?php the_permalink(); ?>">
+              <span>View Case Study</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <?php endwhile; ?>
+      </div>
+      <p id="case-filter-empty" class="hidden font-body-md text-body-md text-on-surface-variant text-center py-8">No case studies match the selected specification filters.</p>
+
+      <!-- 分页 -->
+      <?php
+      $total = (int) $cases->found_posts;
+      $shown_from = ($paged - 1) * 9 + 1;
+      $shown_to = min($paged * 9, $total);
+      $links = paginate_links([
+          'base'      => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+          'format'    => '?paged=%#%',
+          'current'   => $paged,
+          'total'     => (int) $cases->max_num_pages,
+          'type'      => 'array',
+          'prev_text' => '<span class="material-symbols-outlined text-lg">chevron_left</span>',
+          'next_text' => '<span class="material-symbols-outlined text-lg">chevron_right</span>',
+      ]);
+      ?>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Showing <?php echo esc_html($shown_from . ' – ' . $shown_to . ' of ' . $total); ?> Verified Global Case Studies</p>
+        <?php if ($links) : ?>
+        <div class="flex items-center gap-2">
+          <?php foreach ($links as $link) :
+              if (strpos($link, 'dots') !== false) {
+                  echo '<span class="px-2 text-on-surface-variant">…</span>';
+                  continue;
+              }
+              $is_current = strpos($link, 'current') !== false;
+              $classes = $is_current
+                  ? 'w-10 h-10 bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center'
+                  : 'w-10 h-10 bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container flex items-center justify-center';
+              echo str_replace('page-numbers', 'page-numbers ' . $classes, $link); // phpcs:ignore WordPress.Security.EscapeOutput -- paginate_links 输出
+          endforeach; ?>
+        </div>
+        <?php endif; ?>
+      </div>
+      <?php else : ?>
+      <p class="font-body-md text-body-md text-on-surface-variant text-center py-8">No case studies published yet.</p>
+      <?php endif; wp_reset_postdata(); ?>
+    </div>
+  </section>
+
+  <style>
+    /* 列表视图：横向卡片布局（自有 CSS，不依赖 Tailwind CDN 动态生成） */
+    #case-grid.list-mode { grid-template-columns: 1fr; }
+    #case-grid.list-mode .case-card { flex-direction: row; }
+    #case-grid.list-mode .case-card-body { display: flex; flex: 1 1 auto; min-width: 0; }
+    #case-grid.list-mode .case-card-media { width: 300px; flex-shrink: 0; aspect-ratio: auto; }
+    #case-grid.list-mode .case-card-footer { display: flex; align-items: center; padding: 1.5rem; }
+    #case-grid.list-mode .case-card-footer a { width: auto; height: auto; padding: 0.75rem 1.25rem; white-space: nowrap; }
+    @media (max-width: 767px) {
+      #case-grid.list-mode .case-card { flex-direction: column; }
+      #case-grid.list-mode .case-card-body { flex-direction: column; }
+      #case-grid.list-mode .case-card-media { width: 100%; aspect-ratio: 16 / 10; }
+    }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 纯前端规格筛选：按卡片文本匹配关键词
+    const selects = document.querySelectorAll('.case-filter');
+    const cards = document.querySelectorAll('.case-card');
+    const emptyMsg = document.getElementById('case-filter-empty');
+    function applyCaseFilters() {
+      const keywords = Array.from(selects).map((s) => s.value.toLowerCase()).filter(Boolean);
+      let visible = 0;
+      cards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        const ok = keywords.every((kw) => text.includes(kw));
+        card.classList.toggle('hidden', !ok);
+        if (ok) visible++;
+      });
+      if (emptyMsg) emptyMsg.classList.toggle('hidden', visible !== 0);
+    }
+    selects.forEach((s) => s.addEventListener('change', applyCaseFilters));
+
+    // 网格 / 列表视图切换：切换 #case-grid 的 list-mode class（样式见上方 <style>）
+    const grid = document.getElementById('case-grid');
+    const btnGrid = document.getElementById('case-grid-view');
+    const btnList = document.getElementById('case-list-view');
+    const activeClasses = ['bg-surface-container-lowest', 'text-primary', 'shadow-sm'];
+    const idleClasses = ['text-on-surface-variant'];
+    function setView(mode) {
+      if (!grid) return;
+      grid.classList.toggle('list-mode', mode === 'list');
+      const on = mode === 'list' ? btnList : btnGrid;
+      const off = mode === 'list' ? btnGrid : btnList;
+      on.classList.add(...activeClasses);
+      on.classList.remove(...idleClasses);
+      off.classList.remove(...activeClasses);
+      off.classList.add(...idleClasses);
+    }
+    if (btnGrid && btnList) {
+      btnGrid.addEventListener('click', () => setView('grid'));
+      btnList.addEventListener('click', () => setView('list'));
+    }
+  });
+  </script>
+
+</main>
+<?php
+get_footer();

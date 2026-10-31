@@ -11,11 +11,12 @@ if (!defined('ABSPATH')) {
 function alumax_case_defaults() {
     return [
         'header' => [
-            'ref_code'      => '#ALX-GCC-2024-K3',
-            'location'      => 'RIYADH, KSA',
-            'completed'     => 'COMPLETED 2024',
-            'certification' => 'LEED PLATINUM & CWCT',
-            'card_tagline'  => 'Dynamic Louvers & Curved Spandrels',
+            'ref_code'         => '#ALX-GCC-2024-K3',
+            'location'         => 'RIYADH, KSA',
+            'completed'        => 'COMPLETED 2024',
+            'certification'    => 'LEED PLATINUM & CWCT',
+            'card_tagline'     => 'Dynamic Louvers & Curved Spandrels',
+            'overview_heading' => 'Monumental Financial Hub Envelope Integration',
         ],
         'snapshot' => [
             ['label' => 'Client / Operator', 'value' => 'KAFD Development MC'],
@@ -49,6 +50,12 @@ function alumax_case_defaults() {
                 'title' => 'Sunset Tracking Mode Active',
                 'desc'  => '',
             ],
+            [
+                'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBFLd1R4jVu-P8PfhzYJU0v6cDXQFzUX1xZSOe7idZJFohlcKVIf_7_1pipKYPEKX7MxgDsBy-0bmYEbFsbJIZ047Tfzk6HIVWkTF3-Mv9SIiyLriJhNu2z0_0EZsXLuNp_J59drVlqlj4hcIPA9_Lx_f1B8qUi3ebduk0Hml6dLeXNEJnM4Up7WvPYzd6x48bebJn3OIXzsWUZ1EYU5LcT_k2L9BJlAmpZFbWhUxB_yC2EqmTAOIyi',
+                'label' => 'MANUFACTURING PRECISION',
+                'title' => 'Factory CNC Robotic Stud Welding',
+                'desc'  => 'Automatic stud fixing on panel reverse ensuring structural flatness.',
+            ],
         ],
         'challenge' => [
             'heading'     => 'Surviving 52°C Ambient Thermal Shock & Severe Desert Sand Abrasion',
@@ -57,6 +64,9 @@ function alumax_case_defaults() {
             'image_label' => 'On-Site Facade Erection',
             'image_title' => 'KAFD Tower 3 Curtain Wall Hoisting',
             'image_desc'  => 'Field alignment of motorized kinetic louvers and curved spandrels under 50°C solar radiation.',
+            'image2'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCS9ULCVMViTgtm5CsZabvMKbjeIpLM2UnQOXkgBZrxtdMA89QK1EcufbrioZzn_-J39kxV_YvMetu09wGM-EbJrXdhSjI_C-Tpy9CS43yxQlOB1wU93iJl5mScpLX195Ejj-5ctdSUJkzY1G3hT6p3iS5ZQLSGoDuU4SZ4qjm8i6pY0frDx4RJd1efS3gjjgS6wHfh3ADg9hwIAMGmlIYVYC5hwIorJ3IGeArgdCxfPaMfx3vVInQX',
+            'image2_label'  => 'MACRO DETAIL',
+            'image2_title'  => '10mm Shadow Reveal Joint & SS316 Concealed Fixing',
             'cards'       => [
                 [
                     'title' => 'Extreme Thermal Shock (+52°C Desert Microclimate & UV Degradation)',
@@ -183,7 +193,10 @@ function alumax_case_header($post_id = null) {
 }
 
 function alumax_case_snapshot($post_id = null) {
-    return alumax_case_meta('snapshot', $post_id);
+    $rows = alumax_case_meta('snapshot', $post_id);
+    return array_map(function ($row) {
+        return array_merge(['label' => '', 'value' => '', 'sub' => ''], is_array($row) ? $row : []);
+    }, $rows);
 }
 
 function alumax_case_metrics($post_id = null) {
@@ -193,10 +206,10 @@ function alumax_case_metrics($post_id = null) {
 function alumax_case_gallery($post_id = null) {
     $gallery = alumax_case_meta('gallery', $post_id);
     $defaults = alumax_case_defaults()['gallery'];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < 4; $i++) {
         $gallery[$i] = array_merge($defaults[$i], isset($gallery[$i]) && is_array($gallery[$i]) ? $gallery[$i] : []);
     }
-    return array_slice($gallery, 0, 3);
+    return array_slice($gallery, 0, 4);
 }
 
 function alumax_case_challenge($post_id = null) {
@@ -325,17 +338,20 @@ function alumax_case_repeater_cells($id, $columns, $row) {
  * ------------------------------------------------------------------------- */
 
 add_action('add_meta_boxes', function () {
-    add_meta_box('alumax-case-overview', '案例详情：页头信息 + Project Snapshot + 项目指标', 'alumax_case_overview_box', 'case', 'normal', 'default');
-    add_meta_box('alumax-case-gallery', '案例详情：项目图集 + Architectural Challenge', 'alumax_case_gallery_box', 'case', 'normal', 'default');
-    add_meta_box('alumax-case-systems', '案例详情：Material Substrates + Verification Metrics', 'alumax_case_systems_box', 'case', 'normal', 'default');
-    add_meta_box('alumax-case-downloads', '案例详情：下载资料', 'alumax_case_downloads_box', 'case', 'normal', 'default');
+    // 顺序严格对应详情页前端 5 个模块，最后一个是列表页 Spotlight 数据/保留字段
+    add_meta_box('alumax-case-hero', '01 Hero：页头信息 + Project Snapshot + Key Metrics', 'alumax_case_hero_box', 'case', 'normal', 'default');
+    add_meta_box('alumax-case-overview', '02 Project Overview', 'alumax_case_overview_box', 'case', 'normal', 'default');
+    add_meta_box('alumax-case-challenge', '03 Project Challenge', 'alumax_case_challenge_box', 'case', 'normal', 'default');
+    add_meta_box('alumax-case-gallery', '04 Project Gallery（图集）', 'alumax_case_gallery_box', 'case', 'normal', 'default');
+    add_meta_box('alumax-case-related', '05 Related Products', 'alumax_case_related_box', 'case', 'normal', 'default');
+    add_meta_box('alumax-case-extra', '附：Spotlight 数据与保留字段（详情页不渲染）', 'alumax_case_extra_box', 'case', 'normal', 'default');
 });
 
-function alumax_case_overview_box($post) {
+function alumax_case_hero_box($post) {
     wp_nonce_field('alumax_case_details_save', 'alumax_case_details_nonce');
     $header = alumax_case_header($post->ID);
     ?>
-    <h4>页头徽章与列表卡片信息</h4>
+    <h4>页头信息（Hero meta 行 / 列表卡片角标 / Spotlight 徽章）</h4>
     <table class="form-table" style="max-width:720px;">
       <tr><th><label>档案编号 REF</label></th>
         <td><input type="text" name="alumax_case_header[ref_code]" value="<?php echo esc_attr($header['ref_code']); ?>" class="regular-text"></td></tr>
@@ -349,11 +365,12 @@ function alumax_case_overview_box($post) {
         <td><input type="text" name="alumax_case_header[card_tagline]" value="<?php echo esc_attr($header['card_tagline']); ?>" class="regular-text"> <span class="description">如 3.0mm Curved Cladding，显示在相关案例卡片标题上方</span></td></tr>
     </table>
 
-    <h4>Project Snapshot（可增删，全部删除后该模块前台隐藏）</h4>
+    <h4>Project Snapshot（可增删；用于 Hero 右侧 Snapshot 卡前 5 行 + 02 Overview 属性瓦片，全部删除后两处前台隐藏）</h4>
     <?php
     alumax_case_repeater('alumax_case_snapshot', [
-        'label' => ['label' => '属性名（如 Client / Operator）', 'width' => '40%'],
-        'value' => ['label' => '内容（如 KAFD Development MC）'],
+        'label' => ['label' => '属性名（如 Client / Operator）', 'width' => '30%'],
+        'value' => ['label' => '内容（如 KAFD Development MC）', 'width' => '40%'],
+        'sub'   => ['label' => '副行备注（可选，瓦片小字）'],
     ], alumax_case_snapshot($post->ID), '+ 添加属性');
     ?>
 
@@ -366,17 +383,27 @@ function alumax_case_overview_box($post) {
         'icon'  => ['label' => '图标', 'width' => '14%'],
     ], alumax_case_metrics($post->ID), '+ 添加指标');
     ?>
-    <p class="description">图标填 Material Symbols 名称（如 aspect_ratio / thermostat / air / shield），留空按顺序取默认图标。</p>
+    <p class="description">图标填 Material Symbols 名称（如 aspect_ratio / thermostat / air / shield），留空按顺序取默认图标。用于 Hero 底部 4 格、Spotlight 3 格（前 3 项）和列表卡片规格行（前 4 项）。</p>
+    <?php
+}
+
+function alumax_case_overview_box($post) {
+    $header = alumax_case_header($post->ID);
+    ?>
+    <table class="form-table" style="max-width:720px;">
+      <tr><th><label>Overview 标题</label></th>
+        <td><input type="text" name="alumax_case_header[overview_heading]" value="<?php echo esc_attr($header['overview_heading']); ?>" class="large-text"> <span class="description">留空时使用文章标题</span></td></tr>
+    </table>
+    <p class="description">该板块其余内容无需在此编辑：正文段落取自文章编辑器内容；属性瓦片取自 01 Hero 面板的 Project Snapshot。</p>
     <?php
 }
 
 function alumax_case_gallery_box($post) {
     alumax_case_admin_js();
     $gallery = alumax_case_gallery($post->ID);
-    $challenge = alumax_case_challenge($post->ID);
     ?>
-    <h4>项目图集（固定三组：第 1 组为大图，留空时使用特色图片）</h4>
-    <?php for ($i = 0; $i < 3; $i++) :
+    <h4>项目图集（固定四组：第 1 组为大图，留空时使用特色图片）</h4>
+    <?php for ($i = 0; $i < 4; $i++) :
         $item = $gallery[$i];
         $input_id = 'alumax-case-gallery-image-' . $i;
         ?>
@@ -397,14 +424,20 @@ function alumax_case_gallery_box($post) {
       </table>
     </div>
     <?php endfor; ?>
+    <p class="description">前台按 8 / 4 / 6 / 6 栅格拼版显示，标签显示为「序号 // 标签」。</p>
+    <?php
+}
 
-    <h4>Architectural Challenge</h4>
+function alumax_case_challenge_box($post) {
+    alumax_case_admin_js();
+    $challenge = alumax_case_challenge($post->ID);
+    ?>
     <table class="form-table" style="max-width:960px;">
       <tr><th><label>标题</label></th>
         <td><input type="text" name="alumax_case_challenge[heading]" value="<?php echo esc_attr($challenge['heading']); ?>" class="large-text"></td></tr>
       <tr><th><label>正文</label></th>
         <td><textarea name="alumax_case_challenge[text]" class="large-text" rows="4"><?php echo esc_textarea($challenge['text']); ?></textarea>
-          <p class="description">留空时使用文章正文（编辑器内容）。</p></td></tr>
+          <p class="description">留空时不显示该段落（文章正文显示在 Overview 板块）。</p></td></tr>
       <tr><th><label>左侧配图</label></th>
         <td>
           <input type="text" id="alumax-case-challenge-image" name="alumax_case_challenge[image]" value="<?php echo esc_attr($challenge['image']); ?>" class="large-text">
@@ -417,6 +450,16 @@ function alumax_case_gallery_box($post) {
         <td><input type="text" name="alumax_case_challenge[image_title]" value="<?php echo esc_attr($challenge['image_title']); ?>" class="large-text"></td></tr>
       <tr><th><label>配图描述</label></th>
         <td><textarea name="alumax_case_challenge[image_desc]" class="large-text" rows="2"><?php echo esc_textarea($challenge['image_desc']); ?></textarea></td></tr>
+      <tr><th><label>细节小图</label></th>
+        <td>
+          <input type="text" id="alumax-case-challenge-image2" name="alumax_case_challenge[image2]" value="<?php echo esc_attr($challenge['image2']); ?>" class="large-text">
+          <button type="button" class="button alumax-media-btn" data-target="alumax-case-challenge-image2">选择图片</button>
+          <p class="description">左侧大图下方的细节小图，留空时使用图集第 2 组图片。</p>
+        </td></tr>
+      <tr><th><label>小图角标</label></th>
+        <td><input type="text" name="alumax_case_challenge[image2_label]" value="<?php echo esc_attr($challenge['image2_label']); ?>" class="regular-text"> <span class="description">如 MACRO DETAIL</span></td></tr>
+      <tr><th><label>小图标题</label></th>
+        <td><input type="text" name="alumax_case_challenge[image2_title]" value="<?php echo esc_attr($challenge['image2_title']); ?>" class="large-text"></td></tr>
     </table>
     <h4>挑战条目卡片（可增删，前台自动按 01 / 02 / 03 编号）</h4>
     <?php
@@ -426,36 +469,23 @@ function alumax_case_gallery_box($post) {
     ], isset($challenge['cards']) ? $challenge['cards'] : [], '+ 添加条目');
 }
 
-function alumax_case_systems_box($post) {
-    $systems_intro = alumax_case_systems_intro($post->ID);
-    $verification_intro = alumax_case_verification_intro($post->ID);
+function alumax_case_related_box() {
     ?>
-    <h4>Material Substrates 板块标题</h4>
-    <table class="form-table" style="max-width:960px;">
-      <tr><th><label>标题</label></th>
-        <td><input type="text" name="alumax_case_systems_intro[heading]" value="<?php echo esc_attr($systems_intro['heading']); ?>" class="large-text"></td></tr>
-      <tr><th><label>描述</label></th>
-        <td><textarea name="alumax_case_systems_intro[text]" class="large-text" rows="2"><?php echo esc_textarea($systems_intro['text']); ?></textarea></td></tr>
-    </table>
-    <h4>Material Substrates 卡片（可增删，规格每行一条，格式：名称|数值）</h4>
+    <p class="description">该板块自动读取最新发布的 3 个「产品」文章（特色图、产品分类、产品特性前 3 条），无需在此编辑；要调整内容请编辑对应产品。</p>
     <?php
-    alumax_case_repeater('alumax_case_systems', [
-        'icon'       => ['label' => '图标', 'width' => '12%'],
-        'code'       => ['label' => '代号', 'width' => '14%'],
-        'title'      => ['label' => '材料名称', 'width' => '22%'],
-        'subtitle'   => ['label' => '副标题', 'width' => '18%'],
-        'specs_text' => ['label' => '规格明细（每行：名称|数值）', 'type' => 'textarea'],
-    ], alumax_case_systems($post->ID), '+ 添加材料');
-    ?>
+}
 
-    <h4>Verification Metrics 板块标题</h4>
+function alumax_case_extra_box($post) {
+    $verification_intro = alumax_case_verification_intro($post->ID);
+    $systems_intro = alumax_case_systems_intro($post->ID);
+    ?>
+    <h4>Verification Metrics（详情页不渲染；前 6 行用于项目中心页 Spotlight 规格表）</h4>
     <table class="form-table" style="max-width:960px;">
-      <tr><th><label>标题</label></th>
+      <tr><th><label>板块标题</label></th>
         <td><input type="text" name="alumax_case_verification_intro[heading]" value="<?php echo esc_attr($verification_intro['heading']); ?>" class="large-text"></td></tr>
-      <tr><th><label>描述</label></th>
+      <tr><th><label>板块描述</label></th>
         <td><textarea name="alumax_case_verification_intro[text]" class="large-text" rows="2"><?php echo esc_textarea($verification_intro['text']); ?></textarea></td></tr>
     </table>
-    <h4>Verification Metrics 指标行（可增删）</h4>
     <?php
     alumax_case_repeater('alumax_case_verification', [
         'param'       => ['label' => '参数', 'width' => '26%'],
@@ -463,11 +493,9 @@ function alumax_case_systems_box($post) {
         'result'      => ['label' => '交付测试结果', 'width' => '28%'],
         'standard'    => ['label' => '参考标准'],
     ], alumax_case_verification($post->ID), '+ 添加指标行');
-}
-
-function alumax_case_downloads_box($post) {
     ?>
-    <h4>Downloadable Engineering Assets（可增删）</h4>
+
+    <h4 style="margin-top:24px;">下载资料（详情页不渲染；第一个有效链接用于 Spotlight 的 BIM 下载按钮）</h4>
     <?php
     alumax_case_repeater('alumax_case_downloads', [
         'icon'  => ['label' => '图标', 'width' => '12%'],
@@ -478,8 +506,23 @@ function alumax_case_downloads_box($post) {
         'btn'   => ['label' => '按钮文案', 'width' => '14%'],
     ], alumax_case_downloads($post->ID), '+ 添加下载');
     ?>
-    <p class="description">文件信息如 DWG // 8.4 MB；图标填 Material Symbols 名称；按钮文案如 Download CAD Section DWG。</p>
+    <p class="description">文件信息如 DWG // 8.4 MB；图标填 Material Symbols 名称；下载链接为 # 时前台不显示该按钮。</p>
+
+    <h4 style="margin-top:24px;">Material Substrates（当前前端模板未使用，数据保留备查）</h4>
+    <table class="form-table" style="max-width:960px;">
+      <tr><th><label>板块标题</label></th>
+        <td><input type="text" name="alumax_case_systems_intro[heading]" value="<?php echo esc_attr($systems_intro['heading']); ?>" class="large-text"></td></tr>
+      <tr><th><label>板块描述</label></th>
+        <td><textarea name="alumax_case_systems_intro[text]" class="large-text" rows="2"><?php echo esc_textarea($systems_intro['text']); ?></textarea></td></tr>
+    </table>
     <?php
+    alumax_case_repeater('alumax_case_systems', [
+        'icon'       => ['label' => '图标', 'width' => '12%'],
+        'code'       => ['label' => '代号', 'width' => '14%'],
+        'title'      => ['label' => '材料名称', 'width' => '22%'],
+        'subtitle'   => ['label' => '副标题', 'width' => '18%'],
+        'specs_text' => ['label' => '规格明细（每行：名称|数值）', 'type' => 'textarea'],
+    ], alumax_case_systems($post->ID), '+ 添加材料');
 }
 
 /* -------------------------------------------------------------------------
@@ -554,19 +597,19 @@ add_action('save_post_case', function ($post_id) {
     // 页头信息
     $header_posted = isset($_POST['alumax_case_header']) ? (array) wp_unslash($_POST['alumax_case_header']) : [];
     $header = [];
-    foreach (['ref_code', 'location', 'completed', 'certification', 'card_tagline'] as $f) {
+    foreach (['ref_code', 'location', 'completed', 'certification', 'card_tagline', 'overview_heading'] as $f) {
         $header[$f] = isset($header_posted[$f]) ? sanitize_text_field($header_posted[$f]) : '';
     }
     update_post_meta($post_id, 'alumax_case_header', $header);
 
     // 模块 1 / 2
-    alumax_case_save_repeater($post_id, 'alumax_case_snapshot', 'alumax_case_snapshot', ['label' => 'text', 'value' => 'text']);
+    alumax_case_save_repeater($post_id, 'alumax_case_snapshot', 'alumax_case_snapshot', ['label' => 'text', 'value' => 'text', 'sub' => 'text']);
     alumax_case_save_repeater($post_id, 'alumax_case_metrics', 'alumax_case_metrics', ['name' => 'text', 'value' => 'text', 'desc' => 'textarea', 'icon' => 'text']);
 
-    // 模块 3：固定三组图集
+    // 模块 3：固定四组图集
     $gallery_posted = isset($_POST['alumax_case_gallery']) ? (array) wp_unslash($_POST['alumax_case_gallery']) : [];
     $gallery = [];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < 4; $i++) {
         $item = isset($gallery_posted[$i]) ? (array) $gallery_posted[$i] : [];
         $gallery[] = [
             'image' => isset($item['image']) ? esc_url_raw($item['image']) : '',
@@ -586,6 +629,9 @@ add_action('save_post_case', function ($post_id) {
         'image_label' => isset($challenge_posted['image_label']) ? sanitize_text_field($challenge_posted['image_label']) : '',
         'image_title' => isset($challenge_posted['image_title']) ? sanitize_text_field($challenge_posted['image_title']) : '',
         'image_desc'  => isset($challenge_posted['image_desc']) ? sanitize_textarea_field($challenge_posted['image_desc']) : '',
+        'image2'        => isset($challenge_posted['image2']) ? esc_url_raw($challenge_posted['image2']) : '',
+        'image2_label'  => isset($challenge_posted['image2_label']) ? sanitize_text_field($challenge_posted['image2_label']) : '',
+        'image2_title'  => isset($challenge_posted['image2_title']) ? sanitize_text_field($challenge_posted['image2_title']) : '',
         'cards'       => alumax_case_collect_repeater('alumax_case_challenge_cards', ['title' => 'text', 'text' => 'textarea']),
     ]);
 

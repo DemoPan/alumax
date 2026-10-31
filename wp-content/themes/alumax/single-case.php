@@ -1,710 +1,331 @@
 <?php
-if (!defined('ABSPATH')) {
-    exit;
-}
-get_header();
-?>
-<?php while (have_posts()) : the_post(); ?>
-<?php
-$alumax_header       = alumax_case_header();
-$alumax_snapshot     = alumax_case_snapshot();
-$alumax_metrics      = alumax_case_metrics();
-$alumax_gallery      = alumax_case_gallery();
-$alumax_challenge    = alumax_case_challenge();
-$alumax_systems_intro = alumax_case_systems_intro();
-$alumax_systems      = alumax_case_systems();
-$alumax_verification_intro = alumax_case_verification_intro();
-$alumax_verification = alumax_case_verification();
-$alumax_downloads    = alumax_case_downloads();
+if (!defined('ABSPATH')) { exit; }
 
-$alumax_metric_icons = ['aspect_ratio', 'thermostat', 'air', 'shield'];
-$alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-qAi3-NkN3D5kkzbuqChEsIoeZVK9qOB_tP12pm7Ywm0MddUBrDiPoGOEo2gNnKPIrMq9PAlAds9O1lNHApr4YA0afha7J0L8rP_SGE6dEVNQkJGGpGWL_mN3K9F2OP4911zYauzoSSiTHizJkeI8KnjKXn1GMiPK2dJaYFGIxiEgRyxcWsYqSDERLDLlZb84jOHeRr9zYvT_iJcwFJApFbg5R2Ha7XEAfYCPD_cNuWh4fFm1_xuD';
+// 案例详情页模板：所有板块由案例文章的详情 meta 动态渲染（数据与后台面板见 inc/case-details.php）。
+// 后台「Material Substrates / Verification Metrics / 下载资料」面板数据仍保留，当前模板不渲染。
+// 本页不含询价表单。
+
+get_header();
+
+while (have_posts()) : the_post();
+$post_id  = get_the_ID();
+$header   = alumax_case_header($post_id);
+$snapshot = alumax_case_snapshot($post_id);
+$metrics  = array_slice(alumax_case_metrics($post_id), 0, 4);
+$gallery  = alumax_case_gallery($post_id);
+$challenge = alumax_case_challenge($post_id);
+
+$fallback_image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-qAi3-NkN3D5kkzbuqChEsIoeZVK9qOB_tP12pm7Ywm0MddUBrDiPoGOEo2gNnKPIrMq9PAlAds9O1lNHApr4YA0afha7J0L8rP_SGE6dEVNQkJGGpGWL_mN3K9F2OP4911zYauzoSSiTHizJkeI8KnjKXn1GMiPK2dJaYFGIxiEgRyxcWsYqSDERLDLlZb84jOHeRr9zYvT_iJcwFJApFbg5R2Ha7XEAfYCPD_cNuWh4fFm1_xuD';
+$featured  = get_the_post_thumbnail_url($post_id, 'full');
+$hero_bg   = $featured ?: $fallback_image;
+
+$excerpt = trim((string) get_post_field('post_excerpt', $post_id));
+if ($excerpt === '') {
+    $excerpt = wp_trim_words(wp_strip_all_tags(strip_shortcodes(excerpt_remove_blocks(get_post_field('post_content', $post_id))), true), 42, '…');
+}
+$content = apply_filters('the_content', get_post_field('post_content', $post_id));
+
+$hero_meta = array_filter([$header['card_tagline'], $header['location']]);
+$default_icons = ['aspect_ratio', 'thermostat', 'air', 'shield'];
+
+$challenge_image  = $challenge['image'] ?: ($featured ?: $fallback_image);
+$challenge_image2 = $challenge['image2'] ?: (!empty($gallery[1]['image']) ? $gallery[1]['image'] : $fallback_image);
+
+$archive_url = get_post_type_archive_link('case');
 ?>
-  <main class="w-full bg-surface min-h-[calc(100vh-80px)]">
-    <div class="flex flex-col w-full">
-      <!-- BREADCRUMB & METADATA BAR -->
-      <section class="w-full bg-surface-container-low">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin py-4">
-          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            <!-- Navigation Trail -->
-            <nav aria-label="Breadcrumb" class="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
-              <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase tracking-wider transition-colors"
-                data-path="home" href="<?php echo esc_url(home_url('/')); ?>">Home</a>
-              <span class="text-outline-variant font-label-md">/</span>
-              <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase tracking-wider transition-colors"
-                data-path="projects" href="<?php echo esc_url(get_post_type_archive_link('case')); ?>">Projects</a>
-              <span class="text-outline-variant font-label-md">/</span>
-              <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Landmark Case
-                Studies</span>
-              <span class="text-outline-variant font-label-md">/</span>
-              <span
-                class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold"><?php echo esc_html(get_the_title()); ?></span>
-            </nav>
-            <!-- Precision Meta Badges -->
-            <div class="flex flex-wrap items-center gap-2">
-              <?php if ($alumax_header['ref_code'] !== '') : ?>
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
-                <span class="w-1.5 h-1.5 bg-secondary"></span>
-                REF: <?php echo esc_html($alumax_header['ref_code']); ?>
-              </span>
-              <?php endif; ?>
-              <?php if ($alumax_header['location'] !== '') : ?>
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
-                <span class="material-symbols-outlined text-[13px] text-secondary">location_on</span>
-                <?php echo esc_html($alumax_header['location']); ?>
-              </span>
-              <?php endif; ?>
-              <?php if ($alumax_header['completed'] !== '') : ?>
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
-                <span class="material-symbols-outlined text-[13px] text-secondary">task_alt</span>
-                <?php echo esc_html($alumax_header['completed']); ?>
-              </span>
-              <?php endif; ?>
-              <?php if ($alumax_header['certification'] !== '') : ?>
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-secondary/10 font-label-sm text-label-sm text-secondary font-semibold">
-                <span class="material-symbols-outlined text-[13px]">verified</span>
-                <?php echo esc_html($alumax_header['certification']); ?>
-              </span>
+<main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+  <div class="flex flex-col w-full">
+
+    <!-- 01 / PROJECT HERO -->
+    <section class="w-full text-white relative overflow-hidden py-8 md:py-12 border-b border-white/10"
+      id="project-hero"
+      style="background-image: linear-gradient(rgba(13, 27, 42, 0.78), rgba(13, 27, 42, 0.88)), url('<?php echo esc_url($hero_bg); ?>'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
+        <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Projects', 'archive_url' => $archive_url]); ?>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <h1 class="font-display-xl text-display-xl tracking-tight text-white font-bold"><?php the_title(); ?></h1>
+            <div class="flex flex-wrap items-center gap-3 font-label-sm text-label-sm text-secondary-fixed-dim tracking-wider uppercase font-semibold">
+              <?php foreach ($hero_meta as $i => $meta_item) : ?>
+                <?php if ($i > 0) : ?><span class="text-white/40">//</span><?php endif; ?>
+                <span><?php echo esc_html($meta_item); ?></span>
+              <?php endforeach; ?>
+              <?php if ($header['completed'] !== '') : ?>
+                <?php if ($hero_meta) : ?><span class="text-white/40">//</span><?php endif; ?>
+                <span class="text-white"><?php echo esc_html($header['completed']); ?></span>
               <?php endif; ?>
             </div>
+            <?php if ($excerpt !== '') : ?>
+            <p class="font-body-md text-body-md text-slate-300 max-w-3xl leading-relaxed"><?php echo esc_html($excerpt); ?></p>
+            <?php endif; ?>
+          </div>
+          <?php if ($snapshot) : ?>
+          <div class="lg:col-span-4 bg-[#0d1b2a]/80 border border-white/15 backdrop-blur-md p-5 space-y-2.5 rounded-lg shadow-xl">
+            <div class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest flex items-center justify-between border-b border-white/10 pb-2">
+              <span>Project Snapshot</span>
+              <span class="material-symbols-outlined text-[16px]">domain</span>
+            </div>
+            <div class="space-y-1.5 font-body-sm text-body-sm text-slate-300">
+              <?php foreach (array_slice($snapshot, 0, 5) as $row) : ?>
+              <div class="flex justify-between gap-3 py-1 bg-white/5 px-2.5 rounded">
+                <span class="text-slate-400"><?php echo esc_html($row['label']); ?></span>
+                <span class="text-white font-medium text-right"><?php echo esc_html($row['value']); ?></span>
+              </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+          <?php endif; ?>
+        </div>
+        <?php if ($metrics) : ?>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6 pt-6 border-t border-white/10">
+          <?php foreach ($metrics as $i => $metric) :
+            $icon = !empty($metric['icon']) ? $metric['icon'] : $default_icons[$i % 4]; ?>
+          <div class="p-3.5 bg-white/5 border border-white/10 rounded">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim"><?php echo esc_html($metric['name']); ?></span>
+              <span class="material-symbols-outlined text-secondary-fixed-dim text-[18px]"><?php echo esc_html($icon); ?></span>
+            </div>
+            <div class="font-headline-md text-headline-md text-white font-bold tracking-tight"><?php echo esc_html($metric['value']); ?></div>
+            <?php if (!empty($metric['desc'])) : ?>
+            <p class="font-body-sm text-body-sm text-slate-300 mt-0.5"><?php echo esc_html($metric['desc']); ?></p>
+            <?php endif; ?>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+      </div>
+    </section>
+
+    <!-- 02 / PROJECT OVERVIEW -->
+    <section class="w-full bg-surface-container-low py-10 md:py-14 border-b border-surface-container" id="project-overview">
+      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div>
+            <div class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider font-semibold mb-1">
+              <span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+              <span>02 // Project Overview</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+              <?php echo esc_html($header['overview_heading'] !== '' ? $header['overview_heading'] : get_the_title()); ?>
+            </h2>
           </div>
         </div>
-      </section>
-      <!-- HERO SECTION -->
-      <section class="w-full bg-primary-container text-on-primary relative overflow-hidden py-16 md:py-24">
-        <!-- Architectural Subtle Grid Graphic -->
-        <div class="absolute inset-0 opacity-5 pointer-events-none">
-          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern height="64" id="arch-grid" patternUnits="userSpaceOnUse" width="64">
-                <path d="M 64 0 L 0 0 0 64" fill="none" stroke="currentColor" stroke-width="1"></path>
-              </pattern>
-            </defs>
-            <rect fill="url(#arch-grid)" height="100%" width="100%"></rect>
-          </svg>
+        <?php if (trim(wp_strip_all_tags($content)) !== '') : ?>
+        <div class="font-body-md text-body-md text-on-surface leading-relaxed max-w-4xl [&_p]:mb-4"><?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput -- the_content 已过滤 ?></div>
+        <?php endif; ?>
+        <?php if ($snapshot) : ?>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
+          <?php foreach ($snapshot as $row) : ?>
+          <div class="p-3.5 bg-surface-container-lowest border border-surface-container rounded-lg space-y-1">
+            <span class="font-label-sm text-label-sm text-secondary uppercase font-semibold block"><?php echo esc_html($row['label']); ?></span>
+            <h4 class="font-headline-sm text-[16px] text-on-surface font-semibold"><?php echo esc_html($row['value']); ?></h4>
+            <?php if (!empty($row['sub'])) : ?>
+            <p class="font-body-sm text-[11px] text-on-surface-variant"><?php echo esc_html($row['sub']); ?></p>
+            <?php endif; ?>
+          </div>
+          <?php endforeach; ?>
         </div>
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-            <div class="lg:col-span-8 space-y-6">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/15 text-secondary font-label-sm text-label-sm tracking-widest uppercase">
-                <span class="w-2 h-2 bg-secondary animate-pulse"></span>
-                Commercial High-Rise Facade Case Dossier
-              </div>
-              <h1 class="font-display-xl text-display-xl tracking-tight text-on-primary">
-                <?php echo esc_html(get_the_title()); ?>
-              </h1>
-              <p class="font-body-lg text-body-lg text-on-primary-container max-w-3xl leading-relaxed">
-                <?php echo esc_html(get_the_excerpt()); ?>
-              </p>
-              <div class="flex flex-wrap items-center gap-4 pt-2">
-                <a class="px-6 py-3 bg-secondary text-on-secondary font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-secondary-fixed transition-all flex items-center gap-2 shadow-sm"
-                  href="#rfq-section">
-                  <span class="material-symbols-outlined text-[18px]">build</span>
-                  <span class="">Engage Facade Engineering Team</span>
-                </a>
-                <?php if ($alumax_verification) : ?>
-                <a class="px-6 py-3 bg-surface-container-lowest/10 text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-surface-container-lowest/20 transition-all flex items-center gap-2"
-                  href="#technical-specifications">
-                  <span class="material-symbols-outlined text-[18px]">analytics</span>
-                  <span class="">Full Spec Matrix</span>
-                </a>
+        <?php endif; ?>
+      </div>
+    </section>
+
+    <!-- 03 / PROJECT CHALLENGE -->
+    <section class="w-full bg-surface py-16 md:py-24 border-b border-surface-container" id="project-challenge">
+      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-3 max-w-4xl">
+            <div class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider font-semibold mb-2">
+              <span class="material-symbols-outlined text-[18px]">warning</span>
+              <span>03 // Project Challenge</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+              <?php echo esc_html($challenge['heading'] !== '' ? $challenge['heading'] : 'The Design & Engineering Challenge'); ?>
+            </h2>
+            <?php if ($challenge['text'] !== '') : ?>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"><?php echo esc_html($challenge['text']); ?></p>
+            <?php endif; ?>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+          <div class="lg:col-span-5 flex flex-col gap-gutter">
+            <div class="relative group overflow-hidden rounded-xl bg-primary-container shadow-md flex-1 min-h-[300px]">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="<?php echo esc_attr($challenge['image_title'] !== '' ? $challenge['image_title'] : get_the_title()); ?>"
+                src="<?php echo esc_url($challenge_image); ?>">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <?php if ($challenge['image_label'] !== '') : ?>
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim bg-[#0d1b2a]/80 px-2.5 py-1"><?php echo esc_html($challenge['image_label']); ?></span>
+                <?php endif; ?>
+                <?php if ($challenge['image_title'] !== '') : ?>
+                <p class="font-headline-sm text-headline-sm mt-1.5 font-semibold"><?php echo esc_html($challenge['image_title']); ?></p>
+                <?php endif; ?>
+                <?php if ($challenge['image_desc'] !== '') : ?>
+                <p class="font-body-sm text-body-sm text-slate-300"><?php echo esc_html($challenge['image_desc']); ?></p>
                 <?php endif; ?>
               </div>
             </div>
-            <?php if ($alumax_snapshot) : ?>
-            <!-- Module 1: Project Snapshot -->
-            <div class="lg:col-span-4 bg-surface-container-lowest/5 backdrop-blur-md p-6 space-y-4">
-              <div
-                class="font-label-md text-label-md text-secondary uppercase tracking-widest flex items-center justify-between">
-                <span class="">Project Snapshot</span>
-                <span class="material-symbols-outlined text-[18px]">domain</span>
-              </div>
-              <div class="space-y-3 font-body-sm text-body-sm text-on-primary-container">
-                <?php foreach ($alumax_snapshot as $alumax_item) : ?>
-                <div class="flex justify-between py-1.5 bg-surface-container-lowest/5 px-2.5">
-                  <span class="text-on-primary-fixed-variant"><?php echo esc_html($alumax_item['label']); ?></span>
-                  <span class="text-on-primary font-medium"><?php echo esc_html($alumax_item['value']); ?></span>
-                </div>
-                <?php endforeach; ?>
+            <div class="relative group overflow-hidden rounded-xl bg-primary-container shadow-md h-52">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="<?php echo esc_attr($challenge['image2_title'] !== '' ? $challenge['image2_title'] : get_the_title()); ?>"
+                src="<?php echo esc_url($challenge_image2); ?>">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-white">
+                <?php if ($challenge['image2_label'] !== '') : ?>
+                <span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase"><?php echo esc_html($challenge['image2_label']); ?></span>
+                <?php endif; ?>
+                <?php if ($challenge['image2_title'] !== '') : ?>
+                <p class="font-label-md text-label-md font-semibold text-white"><?php echo esc_html($challenge['image2_title']); ?></p>
+                <?php endif; ?>
               </div>
             </div>
-            <?php endif; ?>
           </div>
-          <?php if ($alumax_metrics) : ?>
-          <!-- Module 2: KEY ENGINEERING METRICS -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mt-16 pt-8">
-            <?php foreach ($alumax_metrics as $alumax_i => $alumax_metric) :
-                $alumax_icon = $alumax_metric['icon'] !== ''
-                    ? $alumax_metric['icon']
-                    : $alumax_metric_icons[$alumax_i % count($alumax_metric_icons)];
-                ?>
-            <div class="p-6 bg-surface-container-lowest/5 hover:bg-surface-container-lowest/10 transition-colors">
-              <div class="flex items-center justify-between mb-4">
-                <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-secondary"><?php echo esc_html($alumax_metric['name']); ?></span>
-                <span class="material-symbols-outlined text-secondary text-[20px]"><?php echo esc_html($alumax_icon); ?></span>
+          <?php if (!empty($challenge['cards'])) : ?>
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+            <?php foreach ($challenge['cards'] as $i => $card) : ?>
+            <div class="p-6 bg-surface-container-low border border-surface-container rounded-lg space-y-3 hover:border-secondary transition-all">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-label-sm font-bold shrink-0"><?php echo esc_html(str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT)); ?></span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold"><?php echo esc_html($card['title']); ?></h3>
               </div>
-              <div class="font-display-lg text-display-lg text-on-primary font-bold tracking-tight">
-                <?php echo esc_html($alumax_metric['value']); ?></div>
-              <?php if ($alumax_metric['desc'] !== '') : ?>
-              <p class="font-body-sm text-body-sm text-on-primary-container mt-2">
-                <?php echo esc_html($alumax_metric['desc']); ?>
-              </p>
+              <?php if (!empty($card['text'])) : ?>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pl-11"><?php echo esc_html($card['text']); ?></p>
               <?php endif; ?>
             </div>
             <?php endforeach; ?>
           </div>
           <?php endif; ?>
         </div>
-      </section>
-      <!-- Module 3: PHOTOGRAPHY & VISUAL PROGRESSION（项目图集，固定三组） -->
-      <?php
-      $alumax_main_img = $alumax_gallery[0]['image'] !== ''
-          ? $alumax_gallery[0]['image']
-          : (get_the_post_thumbnail_url(get_the_ID(), 'large') ?: $alumax_fallback_img);
-      ?>
-      <section class="w-full bg-surface-container-low py-12">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-            <div class="md:col-span-8 relative group overflow-hidden bg-primary-container min-h-[460px]">
-              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                alt="<?php echo esc_attr($alumax_gallery[0]['title'] !== '' ? $alumax_gallery[0]['title'] : get_the_title()); ?>"
-                src="<?php echo esc_url($alumax_main_img); ?>">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent opacity-80">
-              </div>
-              <div
-                class="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                  <?php if ($alumax_gallery[0]['label'] !== '') : ?>
-                  <span
-                    class="font-label-sm text-label-sm uppercase tracking-widest text-secondary bg-primary-container/80 px-2 py-1"><?php echo esc_html($alumax_gallery[0]['label']); ?></span>
-                  <?php endif; ?>
-                  <?php if ($alumax_gallery[0]['title'] !== '') : ?>
-                  <p class="font-headline-sm text-headline-sm text-on-primary mt-1 font-semibold">
-                    <?php echo esc_html($alumax_gallery[0]['title']); ?></p>
-                  <?php endif; ?>
-                  <?php if ($alumax_gallery[0]['desc'] !== '') : ?>
-                  <p class="font-body-sm text-body-sm text-on-primary-container"><?php echo esc_html($alumax_gallery[0]['desc']); ?>
-                  </p>
-                  <?php endif; ?>
-                </div>
-                <?php if ($alumax_header['location'] !== '') : ?>
-                <span
-                  class="font-label-sm text-label-sm text-secondary px-3 py-1 bg-primary-container/90"><?php echo esc_html($alumax_header['location']); ?></span>
-                <?php endif; ?>
-              </div>
+      </div>
+    </section>
+
+    <!-- 04 / PROJECT GALLERY -->
+    <section class="w-full bg-surface py-16 md:py-24 border-b border-surface-container" id="project-gallery">
+      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider font-semibold mb-2">
+              <span class="material-symbols-outlined text-[18px]">photo_library</span>
+              <span>04 // Project Gallery</span>
             </div>
-            <div class="md:col-span-4 flex flex-col gap-gutter">
-              <?php for ($alumax_g = 1; $alumax_g < 3; $alumax_g++) :
-                  $alumax_item = $alumax_gallery[$alumax_g];
-                  if ($alumax_item['image'] === '' && $alumax_item['title'] === '') {
-                      continue;
-                  }
-                  ?>
-              <div class="relative group overflow-hidden bg-primary-container flex-1 min-h-[218px]">
-                <?php if ($alumax_item['image'] !== '') : ?>
-                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="<?php echo esc_attr($alumax_item['title']); ?>"
-                  src="<?php echo esc_url($alumax_item['image']); ?>">
-                <?php endif; ?>
-                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent">
-                </div>
-                <div class="absolute bottom-4 left-4 right-4">
-                  <?php if ($alumax_item['label'] !== '') : ?>
-                  <span class="font-label-sm text-label-sm text-secondary"><?php echo esc_html($alumax_item['label']); ?></span>
-                  <?php endif; ?>
-                  <?php if ($alumax_item['title'] !== '') : ?>
-                  <p class="font-label-md text-label-md text-on-primary font-medium"><?php echo esc_html($alumax_item['title']); ?>
-                  </p>
-                  <?php endif; ?>
-                  <?php if ($alumax_item['desc'] !== '') : ?>
-                  <p class="font-body-sm text-body-sm text-on-primary-container"><?php echo esc_html($alumax_item['desc']); ?></p>
-                  <?php endif; ?>
-                </div>
-              </div>
-              <?php endfor; ?>
-            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Architectural Envelope &amp; Fabrication Gallery</h2>
           </div>
         </div>
-      </section>
-      <!-- BLUEPRINT & ENGINEERING SPECIFICATION ANALYSIS -->
-      <section class="w-full bg-surface py-16 md:py-24">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-16">
-          <!-- Module 4: Architectural Challenge -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter">
           <?php
-          $alumax_challenge_img = $alumax_challenge['image'] !== ''
-              ? $alumax_challenge['image']
-              : (get_the_post_thumbnail_url(get_the_ID(), 'large') ?: $alumax_fallback_img);
-          ?>
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
-            <div
-              class="lg:col-span-5 relative group overflow-hidden rounded-xl bg-primary-container shadow-md flex flex-col justify-end min-h-[440px]">
-              <img
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                alt="<?php echo esc_attr($alumax_challenge['image_title'] !== '' ? $alumax_challenge['image_title'] : get_the_title()); ?>"
-                src="<?php echo esc_url($alumax_challenge_img); ?>">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/40 to-transparent">
+          $gallery_spans = ['lg:col-span-8 min-h-[380px] md:min-h-[440px]', 'lg:col-span-4 min-h-[380px] md:min-h-[440px]', 'lg:col-span-6 min-h-[340px]', 'lg:col-span-6 min-h-[340px]'];
+          foreach ($gallery as $i => $item) :
+            $image = $item['image'] !== '' ? $item['image'] : ($i === 0 && $featured ? $featured : $fallback_image);
+            ?>
+          <div class="<?php echo esc_attr($gallery_spans[$i]); ?> relative group overflow-hidden rounded-xl bg-primary-container shadow-md flex flex-col justify-end">
+            <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="<?php echo esc_attr($item['title'] !== '' ? $item['title'] : get_the_title()); ?>"
+              src="<?php echo esc_url($image); ?>">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/30 to-transparent"></div>
+            <div class="relative z-10 p-6 <?php echo $i === 0 ? 'md:p-8' : ''; ?> text-white space-y-2">
+              <?php if ($item['label'] !== '') : ?>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/10 font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim rounded">
+                <span><?php echo esc_html(($i + 1) . ' // ' . $item['label']); ?></span>
               </div>
-              <div class="relative z-10 p-6 md:p-8 space-y-2">
-                <?php if ($alumax_challenge['image_label'] !== '') : ?>
-                <div
-                  class="inline-flex items-center gap-2 px-3 py-1 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold rounded">
-                  <span class="material-symbols-outlined text-[16px]">construction</span>
-                  <span class=""><?php echo esc_html($alumax_challenge['image_label']); ?></span>
-                </div>
-                <?php endif; ?>
-                <?php if ($alumax_challenge['image_title'] !== '') : ?>
-                <h4 class="font-headline-sm text-headline-sm text-white font-bold">
-                  <?php echo esc_html($alumax_challenge['image_title']); ?></h4>
-                <?php endif; ?>
-                <?php if ($alumax_challenge['image_desc'] !== '') : ?>
-                <p class="font-body-sm text-body-sm text-slate-300"><?php echo esc_html($alumax_challenge['image_desc']); ?></p>
-                <?php endif; ?>
-              </div>
-            </div>
-            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
-              <div>
-                <div
-                  class="flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider font-semibold mb-2">
-                  <span class="material-symbols-outlined text-[18px]">error_outline</span>
-                  <span class="">01 // Architectural Challenge</span>
-                </div>
-                <?php if ($alumax_challenge['heading'] !== '') : ?>
-                <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
-                  <?php echo esc_html($alumax_challenge['heading']); ?>
-                </h2>
-                <?php endif; ?>
-                <div class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
-                  <?php
-                  if ($alumax_challenge['text'] !== '') {
-                      echo wpautop(esc_html($alumax_challenge['text']));
-                  } else {
-                      the_content();
-                  }
-                  ?>
-                </div>
-              </div>
-              <?php if (!empty($alumax_challenge['cards'])) : ?>
-              <div class="space-y-4">
-                <?php foreach ($alumax_challenge['cards'] as $alumax_ci => $alumax_card) : ?>
-                <div
-                  class="p-5 bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest transition-all rounded-lg space-y-2">
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <span
-                        class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-label-sm font-bold"><?php printf('%02d', $alumax_ci + 1); ?></span>
-                      <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
-                        <?php echo esc_html($alumax_card['title']); ?></h3>
-                    </div>
-                  </div>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant pl-10 leading-relaxed">
-                    <?php echo esc_html($alumax_card['text']); ?>
-                  </p>
-                </div>
-                <?php endforeach; ?>
-              </div>
+              <?php endif; ?>
+              <?php if ($item['title'] !== '') : ?>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-white"><?php echo esc_html($item['title']); ?></h3>
+              <?php endif; ?>
+              <?php if ($item['desc'] !== '') : ?>
+              <p class="font-body-sm text-body-sm text-slate-300 max-w-xl"><?php echo esc_html($item['desc']); ?></p>
               <?php endif; ?>
             </div>
           </div>
-          <?php if ($alumax_systems) : ?>
-          <!-- Module 5: Material Substrates -->
-          <div class="space-y-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold">02 //
-                  Material Substrates Matrix</span>
-                <?php if ($alumax_systems_intro['heading'] !== '') : ?>
-                <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
-                  <?php echo esc_html($alumax_systems_intro['heading']); ?>
-                </h2>
-                <?php endif; ?>
-                <?php if ($alumax_systems_intro['text'] !== '') : ?>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-1">
-                  <?php echo esc_html($alumax_systems_intro['text']); ?></p>
-                <?php endif; ?>
-              </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / RELATED PRODUCTS -->
+    <?php
+    $products = new WP_Query([
+        'post_type'           => 'product',
+        'posts_per_page'      => 3,
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => true,
+    ]);
+    if ($products->have_posts()) :
+        $product_archive = get_post_type_archive_link('product');
+        ?>
+    <section class="w-full bg-surface-container-low py-16 md:py-24 border-b border-surface-container" id="related-products">
+      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider font-semibold mb-2">
+              <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+              <span>05 // Related Products</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-              <?php foreach ($alumax_systems as $alumax_system) : ?>
-              <div
-                class="bg-surface-container-low p-6 rounded-lg border border-surface-container space-y-4 hover:shadow-md transition-shadow">
-                <div class="flex items-center justify-between">
-                  <span class="p-2 rounded bg-secondary/10 text-secondary">
-                    <span
-                      class="material-symbols-outlined text-[24px]"><?php echo esc_html($alumax_system['icon'] !== '' ? $alumax_system['icon'] : 'view_in_ar'); ?></span>
-                  </span>
-                  <?php if ($alumax_system['code'] !== '') : ?>
-                  <span
-                    class="font-mono font-label-sm text-label-sm text-secondary font-bold"><?php echo esc_html($alumax_system['code']); ?></span>
-                  <?php endif; ?>
-                </div>
-                <div>
-                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
-                    <?php echo esc_html($alumax_system['title']); ?></h3>
-                  <?php if ($alumax_system['subtitle'] !== '') : ?>
-                  <p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
-                    <?php echo esc_html($alumax_system['subtitle']); ?></p>
-                  <?php endif; ?>
-                </div>
-                <?php
-                $alumax_spec_lines = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $alumax_system['specs_text'])));
-                if ($alumax_spec_lines) :
-                    ?>
-                <div
-                  class="space-y-2 pt-2 border-t border-surface-container text-body-sm font-body-sm text-on-surface-variant">
-                  <?php foreach ($alumax_spec_lines as $alumax_line) :
-                      [$alumax_sname, $alumax_svalue] = array_pad(explode('|', $alumax_line, 2), 2, '');
-                      ?>
-                  <div class="flex justify-between">
-                    <span class="text-on-surface-variant"><?php echo esc_html($alumax_sname); ?></span>
-                    <span class="font-semibold text-on-surface"><?php echo esc_html($alumax_svalue); ?></span>
-                  </div>
-                  <?php endforeach; ?>
-                </div>
-                <?php endif; ?>
-              </div>
-              <?php endforeach; ?>
-            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Products Used in This Project</h2>
           </div>
-          <?php endif; ?>
-          <?php if ($alumax_verification) : ?>
-          <!-- Module 6: Verification Metrics -->
-          <div class="space-y-6 pt-6" id="technical-specifications">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold">03 //
-                  Verification Metrics</span>
-                <?php if ($alumax_verification_intro['heading'] !== '') : ?>
-                <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
-                  <?php echo esc_html($alumax_verification_intro['heading']); ?>
-                </h2>
-                <?php endif; ?>
-                <?php if ($alumax_verification_intro['text'] !== '') : ?>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-1">
-                  <?php echo esc_html($alumax_verification_intro['text']); ?></p>
-                <?php endif; ?>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-secondary/10 text-secondary font-label-sm text-label-sm rounded font-semibold">
-                  <span class="material-symbols-outlined text-[16px]">verified</span>
-                  LAB VERIFIED: EXOVA / CWCT / TUV RHEINLAND
-                </span>
-              </div>
-            </div>
-            <div
-              class="overflow-x-auto rounded-lg border border-surface-container shadow-sm bg-surface-container-lowest">
-              <table class="w-full text-left border-collapse">
-                <thead>
-                  <tr class="bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
-                    <th class="p-4 pl-6">Engineering Parameter</th>
-                    <th class="p-4 font-mono">Design Requirement</th>
-                    <th class="p-4 font-mono">ALUMAX Delivered Test Result</th>
-                    <th class="p-4 pr-6 font-mono">Reference Standard</th>
-                  </tr>
-                </thead>
-                <tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-surface-container">
-                  <?php foreach ($alumax_verification as $alumax_ri => $alumax_row) : ?>
-                  <tr
-                    class="<?php echo $alumax_ri % 2 ? 'bg-surface-container-low/40 ' : ''; ?>hover:bg-surface-container-low transition-colors">
-                    <td class="p-4 pl-6 font-medium text-on-surface"><?php echo esc_html($alumax_row['param']); ?></td>
-                    <td class="p-4 font-mono text-on-surface-variant"><?php echo esc_html($alumax_row['requirement']); ?></td>
-                    <td class="p-4 font-mono"><span
-                        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-secondary/15 text-secondary font-bold rounded"><span
-                          class="material-symbols-outlined text-[14px]">check_circle</span>
-                        <?php echo esc_html($alumax_row['result']); ?></span>
-                    </td>
-                    <td class="p-4 pr-6 font-mono text-on-surface-variant"><?php echo esc_html($alumax_row['standard']); ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <?php endif; ?>
-          <?php if ($alumax_downloads) : ?>
-          <!-- Module 7: Downloadable Engineering Assets -->
-          <div class="bg-[#0d1b2a] text-white p-8 md:p-12 rounded-xl shadow-xl space-y-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
-              <div>
-                <span class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed font-semibold">04
-                  // Downloadable Engineering Assets</span>
-                <h2 class="font-headline-lg text-headline-lg text-white tracking-tight font-bold mt-1">
-                  CAD Blueprints &amp; Technical Submittals
-                </h2>
-                <p class="font-body-sm text-body-sm text-slate-300 mt-1">Free access for verified Facade consultants,
-                  structural engineers &amp; architectural specifiers</p>
-              </div>
-              <div class="flex items-center gap-2 text-secondary-fixed font-label-sm text-label-sm">
-                <span class="material-symbols-outlined text-[16px]">lock_open</span>
-                <span class="">VERIFIED SPECIFIER DIRECT ACCESS</span>
-              </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-              <?php foreach ($alumax_downloads as $alumax_download) : ?>
-              <div
-                class="p-6 bg-white/5 border border-white/10 rounded-lg flex flex-col justify-between space-y-6 group hover:bg-white/10 hover:border-secondary transition-all">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between">
-                    <span class="p-2.5 bg-secondary/15 text-secondary-fixed rounded">
-                      <span
-                        class="material-symbols-outlined text-[24px]"><?php echo esc_html($alumax_download['icon'] !== '' ? $alumax_download['icon'] : 'download'); ?></span>
-                    </span>
-                    <?php if ($alumax_download['meta'] !== '') : ?>
-                    <span
-                      class="font-mono font-label-sm text-label-sm text-secondary-fixed font-semibold"><?php echo esc_html($alumax_download['meta']); ?></span>
-                    <?php endif; ?>
-                  </div>
-                  <h3 class="font-headline-sm text-headline-sm text-white font-semibold">
-                    <?php echo esc_html($alumax_download['title']); ?></h3>
-                  <?php if ($alumax_download['desc'] !== '') : ?>
-                  <p class="font-body-sm text-body-sm text-slate-300 leading-relaxed">
-                    <?php echo esc_html($alumax_download['desc']); ?>
-                  </p>
-                  <?php endif; ?>
-                </div>
-                <a class="inline-flex items-center justify-between w-full p-3 bg-white/10 hover:bg-secondary hover:text-on-secondary text-white font-label-md text-label-md uppercase tracking-wider transition-all rounded font-semibold"
-                  href="<?php echo esc_url($alumax_download['url'] !== '' ? $alumax_download['url'] : '#'); ?>">
-                  <span class=""><?php echo esc_html(!empty($alumax_download['btn']) ? $alumax_download['btn'] : 'Download'); ?></span>
-                  <span class="material-symbols-outlined text-[18px]">download</span>
-                </a>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
+          <?php if ($product_archive) : ?>
+          <a class="font-label-md text-label-md text-secondary hover:underline uppercase tracking-wider inline-flex items-center gap-1.5 font-semibold"
+            href="<?php echo esc_url($product_archive); ?>">
+            <span>View All Products</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
           <?php endif; ?>
         </div>
-      </section>
-      <!-- Module 9: Portfolio Context（随机其它案例） -->
-      <section class="w-full bg-surface-container-low py-16 md:py-24">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-12">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <?php
+          while ($products->have_posts()) : $products->the_post();
+              $pid   = get_the_ID();
+              $specs = array_slice(alumax_product_specs($pid), 0, 3);
+              $terms = get_the_terms($pid, 'product_category');
+              $eyebrow = ($terms && !is_wp_error($terms)) ? $terms[0]->name : 'Engineered Envelope System';
+              $badge   = !empty($specs[0]['value']) ? $specs[0]['value'] : $eyebrow;
+              $pimg    = get_the_post_thumbnail_url($pid, 'large') ?: alumax_product_fallback_image();
+              $pdesc   = wp_trim_words(alumax_product_card_desc($pid), 24, '…');
+              ?>
+          <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm hover:shadow-md hover:border-secondary transition-all flex flex-col justify-between group">
             <div>
-              <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold">Portfolio
-                Context</span>
-              <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-                Related International Envelope Projects
-              </h2>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <?php
-            $related_cases = new WP_Query([
-                'post_type'      => 'case',
-                'posts_per_page' => 3,
-                'post__not_in'   => [get_the_ID()],
-                'orderby'        => 'rand',
-            ]);
-            ?>
-            <?php while ($related_cases->have_posts()) : $related_cases->the_post(); ?>
-            <?php
-            $alumax_rel_header = get_post_meta(get_the_ID(), 'alumax_case_header', true);
-            $alumax_rel_location = is_array($alumax_rel_header) && !empty($alumax_rel_header['location']) ? $alumax_rel_header['location'] : '';
-            $alumax_rel_tagline = is_array($alumax_rel_header) && !empty($alumax_rel_header['card_tagline']) ? $alumax_rel_header['card_tagline'] : '';
-            $alumax_rel_img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-            ?>
-            <div
-              class="bg-surface-container-lowest group overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
-              <div class="relative h-60 overflow-hidden bg-primary">
-                <?php if ($alumax_rel_img) : ?>
+              <div class="relative h-56 overflow-hidden bg-primary-container">
                 <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   alt="<?php echo esc_attr(get_the_title()); ?>"
-                  src="<?php echo esc_url($alumax_rel_img); ?>">
-                <?php endif; ?>
-                <?php if ($alumax_rel_location !== '') : ?>
-                <div
-                  class="absolute top-3 left-3 bg-primary/90 text-on-primary font-label-sm text-label-sm px-2.5 py-1">
-                  <?php echo esc_html($alumax_rel_location); ?>
-                </div>
-                <?php endif; ?>
+                  src="<?php echo esc_url($pimg); ?>">
+                <div class="absolute top-3 left-3 bg-[#0d1b2a]/90 text-white font-label-sm text-label-sm px-2.5 py-1 rounded"><?php echo esc_html($badge); ?></div>
               </div>
-              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div class="p-6 space-y-4">
                 <div>
-                  <?php if ($alumax_rel_tagline !== '') : ?>
-                  <span
-                    class="font-label-sm text-label-sm text-secondary uppercase font-semibold"><?php echo esc_html($alumax_rel_tagline); ?></span>
+                  <span class="font-label-sm text-label-sm text-secondary uppercase font-semibold"><?php echo esc_html($eyebrow); ?></span>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 font-bold group-hover:text-secondary transition-colors"><?php the_title(); ?></h3>
+                  <?php if ($pdesc !== '') : ?>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed"><?php echo esc_html($pdesc); ?></p>
                   <?php endif; ?>
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-secondary transition-colors">
-                    <?php echo esc_html(get_the_title()); ?>
-                  </h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
-                    <?php echo esc_html(get_the_excerpt()); ?>
-                  </p>
                 </div>
-                <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-on-surface hover:text-secondary font-semibold"
-                  data-path="projects" href="<?php echo esc_url(get_permalink()); ?>">
-                  <span class="">View Case Study</span>
-                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                </a>
+                <?php if ($specs) : ?>
+                <div class="space-y-1.5 pt-3 border-t border-surface-container font-mono text-label-sm text-on-surface-variant">
+                  <?php foreach ($specs as $spec) : ?>
+                  <div class="flex justify-between gap-3">
+                    <span><?php echo esc_html($spec['name']); ?></span>
+                    <span class="font-semibold text-on-surface text-right"><?php echo esc_html($spec['value']); ?></span>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
+                <?php endif; ?>
               </div>
             </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-          </div>
-        </div>
-      </section>
-      <!-- ENGINEERING FAST-TRACK RFQ CONSULTATION SECTION -->
-      <section class="w-full bg-primary-container text-on-primary py-20" id="rfq-section">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-            <div class="lg:col-span-5 space-y-6">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/15 text-secondary font-label-sm text-label-sm tracking-widest uppercase">
-                Direct Technical Inquiry
-              </div>
-              <h2 class="font-display-lg text-display-lg tracking-tight text-on-primary">
-                Specify ALUMAX on Your Next High-Rise
-              </h2>
-              <p class="font-body-md text-body-md text-on-primary-container leading-relaxed">
-                Connect with our lead Facade structural engineers to discuss thermal calculations, windload simulations,
-                parametric curved geometries, and export pricing schedules.
-              </p>
-              <div class="space-y-4 pt-2">
-                <div class="flex items-center gap-3">
-                  <span class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-[18px]">verified</span>
-                  </span>
-                  <span class="font-body-sm text-body-sm text-on-primary">Complimentary Preliminary Wind &amp; Thermal
-                    FEA Analysis</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-[18px]">view_in_ar</span>
-                  </span>
-                  <span class="font-body-sm text-body-sm text-on-primary">Custom Physical Mockup Sample Shipped via DHL
-                    in 72h</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary">
-                    <span class="material-symbols-outlined text-[18px]">history_edu</span>
-                  </span>
-                  <span class="font-body-sm text-body-sm text-on-primary">Full Compliance with BS 8414, ASTM E84 &amp;
-                    EN 13501 Standards</span>
-                </div>
-              </div>
-            </div>
-            <div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-10 text-on-surface shadow-xl">
-              <form class="space-y-6" id="project-rfq-form"
-                onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); document.getElementById('form-fields').classList.add('hidden');">
-                <div class="space-y-6" id="form-fields">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                      <label class="font-label-md text-label-md uppercase text-on-surface tracking-wider block">
-                        Your Name <span class="text-secondary">*</span>
-                      </label>
-                      <input
-                        class="w-full h-11 px-3.5 bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary"
-                        placeholder="e.g. Tariq Al-Mansoor" required="" type="text">
-                    </div>
-                    <div class="space-y-2">
-                      <label class="font-label-md text-label-md uppercase text-on-surface tracking-wider block">
-                        Professional Email <span class="text-secondary">*</span>
-                      </label>
-                      <input
-                        class="w-full h-11 px-3.5 bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary"
-                        placeholder="name@consultancy-firm.com" required="" type="email">
-                    </div>
-                  </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                      <label class="font-label-md text-label-md uppercase text-on-surface tracking-wider block">
-                        Project Location / City <span class="text-secondary">*</span>
-                      </label>
-                      <input
-                        class="w-full h-11 px-3.5 bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary"
-                        placeholder="e.g. Riyadh, Dubai, or London" required="" type="text">
-                    </div>
-                    <div class="space-y-2">
-                      <label class="font-label-md text-label-md uppercase text-on-surface tracking-wider block">
-                        Est. Facade Area (m²)
-                      </label>
-                      <input
-                        class="w-full h-11 px-3.5 bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary"
-                        placeholder="e.g. 15,000 m²" type="text">
-                    </div>
-                  </div>
-                  <div class="space-y-2">
-                    <label class="font-label-md text-label-md uppercase text-on-surface tracking-wider block">
-                      Applicable Envelope Systems
-                    </label>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 font-body-sm text-body-sm">
-                      <label class="flex items-center gap-2 cursor-pointer">
-                        <input checked="" class="accent-secondary" type="checkbox">
-                        <span class="">Motorized Louvers</span>
-                      </label>
-                      <label class="flex items-center gap-2 cursor-pointer">
-                        <input checked="" class="accent-secondary" type="checkbox">
-                        <span class="">Curved Spandrels</span>
-                      </label>
-                      <label class="flex items-center gap-2 cursor-pointer">
-                        <input class="accent-secondary" type="checkbox">
-                        <span class="">Honeycomb Panels</span>
-                      </label>
-                      <label class="flex items-center gap-2 cursor-pointer">
-                        <input class="accent-secondary" type="checkbox">
-                        <span class="">Corrugated Core</span>
-                      </label>
-                      <label class="flex items-center gap-2 cursor-pointer">
-                        <input class="accent-secondary" type="checkbox">
-                        <span class="">Solid Cladding</span>
-                      </label>
-                      <label class="flex items-center gap-2 cursor-pointer">
-                        <input class="accent-secondary" type="checkbox">
-                        <span class="">Architectural Grilles</span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="space-y-2">
-                    <label class="font-label-md text-label-md uppercase text-on-surface tracking-wider block">
-                      Upload Drawing / Architectural Brief (Optional)
-                    </label>
-                    <div
-                      class="p-4 bg-surface flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
-                      <span class="material-symbols-outlined text-[28px] text-secondary">cloud_upload</span>
-                      <span class="font-label-sm text-label-sm text-on-surface mt-1">Drag DWG, RVT, or PDF files here,
-                        or browse</span>
-                      <span class="font-label-sm text-label-sm text-on-surface-variant">Max file size: 50MB</span>
-                    </div>
-                  </div>
-                  <button
-                    class="w-full py-4 bg-primary text-on-primary hover:bg-secondary hover:text-on-secondary font-headline-sm text-headline-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2"
-                    type="submit">
-                    <span class="">Submit Engineering Consultation Request</span>
-                    <span class="material-symbols-outlined text-[20px]">send</span>
-                  </button>
-                </div>
-                <!-- Submission Confirmation State -->
-                <div class="hidden p-8 text-center space-y-4" id="form-success">
-                  <div
-                    class="w-12 h-12 bg-secondary/15 text-secondary mx-auto flex items-center justify-center rounded-full">
-                    <span class="material-symbols-outlined text-[28px]">check_circle</span>
-                  </div>
-                  <h3 class="font-headline-md text-headline-md text-on-surface">Consultation Request Received</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
-                    Thank you for your submission. An ALUMAX Senior Facade Technical Specialist from our Dubai &amp;
-                    Foshan engineering teams will review your specifications and contact you within 24 business hours.
-                  </p>
-                  <button
-                    class="px-4 py-2 bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider"
-                    onclick="document.getElementById('form-success').classList.add('hidden'); document.getElementById('form-fields').classList.remove('hidden');"
-                    type="button">
-                    Submit Another Specification
-                  </button>
-                </div>
-              </form>
+            <div class="p-6 pt-0">
+              <a class="w-full py-3 bg-surface-container hover:bg-secondary hover:text-on-secondary text-on-surface font-label-md text-label-md uppercase tracking-wider rounded font-semibold transition-all flex items-center justify-center gap-2"
+                href="<?php the_permalink(); ?>">
+                <span>View Product Technical Specs</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
             </div>
           </div>
+          <?php endwhile; wp_reset_postdata(); ?>
         </div>
-      </section>
-    </div>
-  </main>
-<?php endwhile; ?>
-<?php get_footer(); ?>
+      </div>
+    </section>
+    <?php endif; ?>
+
+  </div>
+</main>
+<?php
+endwhile;
+
+get_footer();

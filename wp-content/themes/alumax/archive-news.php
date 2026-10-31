@@ -166,12 +166,12 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div class="flex items-center gap-2 font-label text-[11px] text-secondary uppercase tracking-widest mb-1">
-              <span>02 / Editorial Archive</span>
+              <span><?php echo esc_html(alumax_news_page('archive_eyebrow')); ?></span>
               <span>•</span>
               <span>Total <?php echo esc_html($alumax_news_query->found_posts); ?> Releases</span>
             </div>
             <h2 class="font-headline text-[28px] sm:text-[34px] font-bold text-on-surface tracking-tight">
-              Curated Architectural Dispatches
+              <?php echo esc_html(alumax_news_page('archive_title')); ?>
             </h2>
           </div>
           <!-- View Switcher (Card View vs List View) & Search -->
@@ -439,6 +439,62 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
         }
       </style>
     </section>
+
+  <!-- ========================================================================= -->
+  <!-- NEWSLETTER SIGNUP (可在后台「新闻 → 新闻页设置」配置，标题留空则不显示)     -->
+  <!-- ========================================================================= -->
+  <?php if (alumax_news_page('newsletter_title') !== '') : ?>
+    <section class="w-full bg-[#0a0d12] text-white py-16 lg:py-20 relative overflow-hidden">
+      <div class="max-w-2xl mx-auto px-margin-mobile md:px-margin text-center space-y-6">
+        <h2 class="font-headline text-2xl sm:text-3xl font-bold tracking-tight"><?php echo esc_html(alumax_news_page('newsletter_title')); ?></h2>
+        <p class="font-body text-sm text-slate-400"><?php echo esc_html(alumax_news_page('newsletter_desc')); ?></p>
+        <form id="alumax-newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="email" name="email" required placeholder="name@company.com" class="flex-1 h-12 px-4 bg-white/10 border border-white/20 text-white placeholder:text-slate-500 font-body text-sm focus:outline-none focus:border-secondary-fixed">
+          <button type="submit" class="h-12 px-6 bg-secondary text-on-primary font-label text-sm font-semibold uppercase tracking-wider hover:bg-secondary-fixed-dim transition-colors flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">send</span><?php echo esc_html(alumax_news_page('newsletter_button')); ?>
+          </button>
+        </form>
+        <p id="alumax-newsletter-msg" class="font-label text-[11px] text-slate-500"><?php echo esc_html(alumax_news_page('newsletter_note')); ?></p>
+      </div>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('alumax-newsletter-form');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = form.querySelector('input[name="email"]').value.trim();
+          var msg = document.getElementById('alumax-newsletter-msg');
+          var btn = form.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          var body = new FormData();
+          body.append('inquiry_name', 'Newsletter Subscriber');
+          body.append('inquiry_email', email);
+          body.append('inquiry_page', 'Newsletter Signup');
+          fetch('<?php echo esc_url(rest_url('alumax/v1/inquiry')); ?>', { method: 'POST', body: body })
+            .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+            .then(function (res) {
+              if (res.ok && res.data && res.data.success) {
+                form.innerHTML = '<p class="font-body text-sm text-secondary-fixed py-3">Thank you! You have been subscribed successfully.</p>';
+                msg.textContent = '';
+              } else {
+                btn.disabled = false;
+                msg.textContent = 'Subscription failed. Please try again.';
+                msg.classList.remove('text-slate-500');
+                msg.classList.add('text-red-400');
+              }
+            })
+            .catch(function () {
+              btn.disabled = false;
+              msg.textContent = 'Network error. Please try again.';
+              msg.classList.remove('text-slate-500');
+              msg.classList.add('text-red-400');
+            });
+        });
+      });
+    </script>
+  <?php endif; ?>
+
   <!-- ========================================================================= -->
   <!-- INTERACTIVE VANILLA JAVASCRIPT: CAROUSEL & VIEW TOGGLE (CARD / LIST)       -->
   <!-- ========================================================================= -->

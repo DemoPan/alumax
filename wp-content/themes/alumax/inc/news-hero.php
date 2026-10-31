@@ -30,15 +30,23 @@ function alumax_news_hero_defaults() {
         'slide3_location' => 'Port of Rotterdam · Hub Terminal 2',
         'slide3_tab' => 'Rotterdam Logistics Hub',
         'slide3_post' => 0,
+        // 列表区标题
+        'archive_eyebrow' => 'Press & Documentation',
+        'archive_title' => 'News & Media Archive',
+        // 底部订阅板块
+        'newsletter_title' => 'Sign up for updates on our latest innovations',
+        'newsletter_desc' => 'Monthly engineering dispatches: new facade systems, certified test results, and global project milestones.',
+        'newsletter_button' => 'Sign Up',
+        'newsletter_note' => 'Engineering updates only. Your email stays confidential and you can unsubscribe anytime.',
     ];
 }
 
 function alumax_news_hero_fields() {
-    $text = function ($key, $label) {
-        return ['key' => $key, 'label' => $label, 'type' => 'text'];
+    $text = function ($key, $label, $desc = '') {
+        return ['key' => $key, 'label' => $label, 'type' => 'text', 'desc' => $desc];
     };
-    $textarea = function ($key, $label) {
-        return ['key' => $key, 'label' => $label, 'type' => 'textarea'];
+    $textarea = function ($key, $label, $desc = '') {
+        return ['key' => $key, 'label' => $label, 'type' => 'textarea', 'desc' => $desc];
     };
     $image = function ($key, $label) {
         return ['key' => $key, 'label' => $label, 'type' => 'image'];
@@ -63,7 +71,31 @@ function alumax_news_hero_fields() {
             ],
         ];
     }
+    $groups['archive'] = [
+        'label' => '列表区标题',
+        'fields' => [
+            $text('archive_eyebrow', '眉标'),
+            $text('archive_title', '标题'),
+        ],
+    ];
+    $groups['newsletter'] = [
+        'label' => '底部订阅板块',
+        'fields' => [
+            $text('newsletter_title', '标题', '留空则整个订阅板块不显示'),
+            $textarea('newsletter_desc', '描述'),
+            $text('newsletter_button', '按钮文案'),
+            $text('newsletter_note', '表单下方备注'),
+        ],
+    ];
     return $groups;
+}
+
+function alumax_news_page($key) {
+    static $opts = null;
+    if ($opts === null) {
+        $opts = wp_parse_args(get_option('alumax_news_hero', []), alumax_news_hero_defaults());
+    }
+    return isset($opts[$key]) ? $opts[$key] : '';
 }
 
 function alumax_news_hero_slides() {
@@ -89,8 +121,8 @@ function alumax_news_hero_slides() {
 add_action('admin_menu', function () {
     add_submenu_page(
         'edit.php?post_type=news',
-        '新闻轮播设置',
-        '轮播设置',
+        '新闻页设置',
+        '新闻页设置',
         'manage_options',
         'alumax-news-hero',
         'alumax_news_hero_settings_page'
@@ -152,8 +184,8 @@ function alumax_news_hero_settings_page() {
     ]);
     ?>
     <div class="wrap">
-      <h1>新闻轮播设置</h1>
-      <p>新闻中心列表页顶部轮播的 3 张 Banner。每张可上传图片、填写标题/描述，并选择点击「View Details」后跳转到的新闻文章；不选文章则按钮不可点击。标题留空的轮播不会显示。</p>
+      <h1>新闻页设置</h1>
+      <p>新闻中心列表页的配置：顶部轮播 3 张 Banner（每张可上传图片、填写标题/描述，并选择点击「View Details」后跳转到的新闻文章；不选文章则按钮不可点击，标题留空的轮播不显示）、列表区标题、底部订阅板块。新闻卡片自动读取「新闻」文章，无需在此设置。</p>
       <form method="post" action="options.php">
         <?php settings_fields('alumax_news_hero'); ?>
         <?php foreach (alumax_news_hero_fields() as $group) : ?>
@@ -187,6 +219,9 @@ function alumax_news_hero_settings_page() {
                     </select>
                   <?php else : ?>
                     <input type="text" id="<?php echo esc_attr($key); ?>" name="alumax_news_hero[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>" class="large-text">
+                  <?php endif; ?>
+                  <?php if (!empty($field['desc'])) : ?>
+                    <p class="description"><?php echo esc_html($field['desc']); ?></p>
                   <?php endif; ?>
                 </td>
               </tr>

@@ -317,6 +317,9 @@ function alumax_product_archive_per_page($query) {
 add_action('pre_get_posts', 'alumax_product_archive_per_page');
 
 require get_template_directory() . '/inc/home-settings.php';
+require get_template_directory() . '/inc/settings-page.php';
+require get_template_directory() . '/inc/about-settings.php';
+require get_template_directory() . '/inc/contact-settings.php';
 require get_template_directory() . '/inc/news-hero.php';
 require get_template_directory() . '/inc/product-specs.php';
 require get_template_directory() . '/inc/case-details.php';

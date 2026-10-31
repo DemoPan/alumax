@@ -154,6 +154,14 @@ while (have_posts()) : the_post();
           .alumax-news-content { font-size: 1.125rem; }
         }
         .alumax-news-content p { margin: 0 0 1.25rem; }
+        .alumax-news-content > p:first-of-type::first-letter {
+          font-size: 3rem;
+          font-weight: 700;
+          float: left;
+          margin-right: 0.75rem;
+          line-height: 1;
+          color: #b88e56;
+        }
         .alumax-news-content h2,
         .alumax-news-content h3 {
           font-family: 'Space Grotesk', sans-serif;
