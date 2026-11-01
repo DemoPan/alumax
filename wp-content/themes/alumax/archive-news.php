@@ -3,7 +3,6 @@ if (!defined('ABSPATH')) { exit; }
 get_header();
 
 $alumax_paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
-$alumax_search = isset($_GET['news_search']) ? sanitize_text_field(wp_unslash($_GET['news_search'])) : '';
 $alumax_year = isset($_GET['news_year']) ? absint($_GET['news_year']) : 0;
 
 $alumax_query_args = [
@@ -12,9 +11,6 @@ $alumax_query_args = [
     'posts_per_page' => 6,
     'paged' => $alumax_paged,
 ];
-if ($alumax_search !== '') {
-    $alumax_query_args['s'] = $alumax_search;
-}
 if ($alumax_year) {
     $alumax_query_args['year'] = $alumax_year;
 }
@@ -23,7 +19,7 @@ $alumax_news_query = new WP_Query($alumax_query_args);
 $alumax_posts = $alumax_news_query->posts;
 
 $alumax_archive_url = alumax_news_url();
-$alumax_year_base_url = $alumax_search !== '' ? add_query_arg('news_search', $alumax_search, $alumax_archive_url) : $alumax_archive_url;
+$alumax_year_base_url = $alumax_archive_url;
 
 $alumax_slides = array_values(array_filter(alumax_news_hero_slides(), function ($slide) {
     return $slide['title'] !== '';
@@ -174,22 +170,8 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
               <?php echo esc_html(alumax_news_page('archive_title')); ?>
             </h2>
           </div>
-          <!-- View Switcher (Card View vs List View) & Search -->
+          <!-- View Switcher (Card View vs List View) & Year Filter -->
           <div class="flex flex-wrap items-center gap-3">
-            <!-- Search Input -->
-            <form class="relative w-full sm:w-64" id="news-search-form" method="get" action="<?php echo esc_url($alumax_archive_url); ?>">
-              <input
-                class="w-full h-10 pl-9 pr-3 bg-surface-container-lowest border border-outline-variant text-body text-[13px] text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary"
-                placeholder="Search news or alloy..." type="text" name="news_search"
-                value="<?php echo esc_attr($alumax_search); ?>" />
-              <?php if ($alumax_year) : ?>
-              <input type="hidden" name="news_year" value="<?php echo esc_attr($alumax_year); ?>" />
-              <?php endif; ?>
-              <button type="submit" aria-label="Search"
-                class="absolute left-0 top-0 w-9 h-10 flex items-center justify-center">
-                <span class="material-symbols-outlined text-[18px] text-outline">search</span>
-              </button>
-            </form>
             <!-- Year Filter -->
             <?php if (!empty($alumax_years)) : ?>
             <select
@@ -384,7 +366,6 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
           'prev_text' => '<span class="material-symbols-outlined text-[16px]">chevron_left</span>',
           'next_text' => '<span class="material-symbols-outlined text-[16px]">chevron_right</span>',
           'add_args' => array_filter([
-              'news_search' => $alumax_search !== '' ? $alumax_search : null,
               'news_year' => $alumax_year ?: null,
           ]),
       ]);
@@ -445,7 +426,7 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
   <!-- ========================================================================= -->
   <?php if (alumax_news_page('newsletter_title') !== '') : ?>
     <section class="w-full bg-[#0a0d12] text-white py-16 lg:py-20 relative overflow-hidden">
-      <div class="max-w-2xl mx-auto px-margin-mobile md:px-margin text-center space-y-6">
+      <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin text-center space-y-6">
         <h2 class="font-headline text-2xl sm:text-3xl font-bold tracking-tight"><?php echo esc_html(alumax_news_page('newsletter_title')); ?></h2>
         <p class="font-body text-sm text-slate-400"><?php echo esc_html(alumax_news_page('newsletter_desc')); ?></p>
         <form id="alumax-newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -621,26 +602,22 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
       }
 
       // -------------------------------------------------------------
-      // 3. FILTERS: category tabs + search + year
+      // 3. FILTERS: category tabs + year
       // 统一状态过滤，纯前端实现，静态导出后同样可用
-      // （无 JS 时搜索表单/年份下拉仍回退为服务端 GET 筛选）
+      // （无 JS 时年份下拉仍回退为服务端 GET 筛选）
       // -------------------------------------------------------------
       const filterTabs = document.querySelectorAll('.filter-tab');
       const cardItems = document.querySelectorAll('.news-item');
       const listItems = document.querySelectorAll('.news-list-item');
-      const searchForm = document.getElementById('news-search-form');
-      const searchInput = searchForm ? searchForm.querySelector('input[name="news_search"]') : null;
       const yearSelect = document.getElementById('news-year-select');
 
-      const filterState = { cat: 'all', search: '', year: '' };
+      const filterState = { cat: 'all', year: '' };
 
       function applyNewsFilters() {
-        const keyword = filterState.search.toLowerCase();
         const matches = (el) => {
           const catOk = filterState.cat === 'all' || el.getAttribute('data-category') === filterState.cat;
           const yearOk = !filterState.year || el.getAttribute('data-year') === filterState.year;
-          const textOk = !keyword || el.textContent.toLowerCase().includes(keyword);
-          return catOk && yearOk && textOk;
+          return catOk && yearOk;
         };
         cardItems.forEach((card) => { card.style.display = matches(card) ? 'flex' : 'none'; });
         listItems.forEach((item) => { item.style.display = matches(item) ? 'block' : 'none'; });
@@ -659,14 +636,6 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
           applyNewsFilters();
         });
       });
-
-      if (searchForm && searchInput) {
-        searchForm.addEventListener('submit', (e) => e.preventDefault());
-        searchInput.addEventListener('input', () => {
-          filterState.search = searchInput.value.trim();
-          applyNewsFilters();
-        });
-      }
 
       if (yearSelect) {
         yearSelect.removeAttribute('onchange');

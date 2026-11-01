@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
 /* -------------------------------------------------------------------------
  * 通用单页设置页生成器（关于我们 / 联系我们 等使用）
  * 字段结构同 inc/home-settings.php：groups => [ ['label'=>..., 'fields'=>[ ['key','label','type'] ] ] ]
- * type: text | textarea | url | image
+ * type: text | textarea | url | image | video
  * ------------------------------------------------------------------------- */
 
 function alumax_settings_sanitize($fields, $input) {
@@ -23,6 +23,7 @@ function alumax_settings_sanitize($fields, $input) {
                     break;
                 case 'url':
                 case 'image':
+                case 'video':
                     $output[$key] = esc_url_raw($value);
                     break;
                 default:
@@ -91,6 +92,12 @@ function alumax_render_settings_page($option, $title, $description, $defaults_fn
                       <p><button type="button" class="button alumax-image-select">选择图片</button></p>
                       <img class="alumax-image-preview" src="<?php echo esc_url($value); ?>" style="max-width:240px;height:auto;<?php echo $value ? '' : 'display:none;'; ?>border:1px solid #c3c4c7;">
                     </div>
+                  <?php elseif ($field['type'] === 'video') : ?>
+                    <div class="alumax-video-field">
+                      <input type="text" id="<?php echo esc_attr($key); ?>" name="<?php echo esc_attr($option); ?>[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>" class="large-text alumax-video-url">
+                      <p><button type="button" class="button alumax-video-select">选择视频</button></p>
+                      <video class="alumax-video-preview" src="<?php echo esc_url($value); ?>" controls preload="metadata" style="max-width:320px;height:auto;<?php echo $value ? '' : 'display:none;'; ?>border:1px solid #c3c4c7;"></video>
+                    </div>
                   <?php else : ?>
                     <input type="text" id="<?php echo esc_attr($key); ?>" name="<?php echo esc_attr($option); ?>[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>" class="large-text">
                   <?php endif; ?>
@@ -115,6 +122,17 @@ function alumax_render_settings_page($option, $title, $description, $defaults_fn
           var url = frame.state().get('selection').first().get('url');
           $wrap.find('.alumax-image-url').val(url);
           $wrap.find('.alumax-image-preview').attr('src', url).show();
+        });
+        frame.open();
+      });
+      $('.alumax-video-select').on('click', function (e) {
+        e.preventDefault();
+        var $wrap = $(this).closest('.alumax-video-field');
+        var frame = wp.media({ title: '选择视频', button: { text: '使用此视频' }, library: { type: 'video' }, multiple: false });
+        frame.on('select', function () {
+          var url = frame.state().get('selection').first().get('url');
+          $wrap.find('.alumax-video-url').val(url);
+          $wrap.find('.alumax-video-preview').attr('src', url).show();
         });
         frame.open();
       });

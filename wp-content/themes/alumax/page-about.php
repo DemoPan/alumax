@@ -38,7 +38,7 @@ get_header();
     <!-- SECTION 01 · HERITAGE -->
     <section class="w-full py-20 bg-surface border-b border-outline-variant/30">
       <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-10">
-        <div class="space-y-4 max-w-4xl">
+        <div class="space-y-4">
           <div class="flex items-center gap-3">
             <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-widest"><?php echo esc_html(alumax_about('s1_eyebrow')); ?></span>
             <span class="font-label-sm text-label-sm text-outline uppercase"><?php echo esc_html(alumax_about('s1_eyebrow_sub')); ?></span>
@@ -48,10 +48,21 @@ get_header();
         </div>
         <?php
         $video_url = alumax_about('s1_video_url');
-        $tag = $video_url !== '' ? 'a' : 'div';
-        $href = $video_url !== '' ? ' href="' . esc_url($video_url) . '" target="_blank" rel="noopener noreferrer"' : '';
+        $is_video_file = $video_url !== '' && preg_match('/\.(mp4|webm|ogv|ogg|mov|m4v)(\?.*)?$/i', $video_url);
+        if ($video_url === '') {
+            $tag  = 'div';
+            $attr = '';
+        } elseif ($is_video_file) {
+            // 媒体库上传的视频文件：点击封面页内播放
+            $tag  = 'div';
+            $attr = ' data-video-play data-video-url="' . esc_url($video_url) . '"';
+        } else {
+            // 外部视频页链接：新窗口打开
+            $tag  = 'a';
+            $attr = ' href="' . esc_url($video_url) . '" target="_blank" rel="noopener noreferrer"';
+        }
         ?>
-        <<?php echo $tag; ?> class="block relative w-full h-[320px] md:h-[520px] overflow-hidden shadow-2xl bg-surface-container border border-on-tertiary-fixed-variant group cursor-pointer"<?php echo $href; ?>>
+        <<?php echo $tag; ?> class="block relative w-full h-[320px] md:h-[520px] overflow-hidden shadow-2xl bg-surface-container border border-on-tertiary-fixed-variant group cursor-pointer"<?php echo $attr; ?>>
           <img alt="<?php echo esc_attr(alumax_about('s1_video_caption')); ?>"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             src="<?php echo esc_url(alumax_about('s1_video_image')); ?>">
@@ -77,6 +88,21 @@ get_header();
         </<?php echo $tag; ?>>
       </div>
     </section>
+    <script>
+      document.addEventListener('click', function (e) {
+        var cover = e.target.closest('[data-video-play]');
+        if (!cover) return;
+        var video = document.createElement('video');
+        video.src = cover.getAttribute('data-video-url');
+        video.controls = true;
+        video.autoplay = true;
+        video.className = 'w-full h-full object-cover';
+        cover.innerHTML = '';
+        cover.appendChild(video);
+        cover.removeAttribute('data-video-play');
+        cover.classList.remove('group', 'cursor-pointer');
+      });
+    </script>
 
     <!-- SECTION 02 · TIMELINE -->
     <section class="w-full py-20 bg-surface-container-low border-b border-outline-variant/30">

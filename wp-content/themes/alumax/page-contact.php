@@ -47,32 +47,55 @@ get_header();
           </div>
           <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed"><?php echo esc_html(alumax_contact('office_desc')); ?></p>
           <div class="space-y-5">
-            <?php for ($i = 1; $i <= 3; $i++) : ?>
+            <?php
+            // 文本中的「WhatsApp: +号码」自动渲染为 wa.me 跳转链接
+            $alumax_wa_linkify = function ($text) {
+                return preg_replace_callback('/WhatsApp[:：]?\s*(\+?[\d][\d\s\-]{5,}\d)/i', function ($m) {
+                    $digits = preg_replace('/\D+/', '', $m[1]);
+                    return '<a href="https://wa.me/' . esc_attr($digits) . '" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:underline">' . esc_html($m[0]) . '</a>';
+                }, esc_html($text));
+            };
+            for ($i = 1; $i <= 3; $i++) : ?>
             <div class="flex items-start gap-4">
               <div class="w-11 h-11 rounded-sm bg-surface-container-low border border-outline-variant/40 text-secondary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[22px]"><?php echo esc_html(alumax_contact("office_row{$i}_icon")); ?></span>
               </div>
               <div class="space-y-0.5">
                 <span class="font-label text-xs font-semibold uppercase tracking-wider text-on-surface block"><?php echo esc_html(alumax_contact("office_row{$i}_label")); ?></span>
-                <p class="font-body text-sm text-on-surface-variant"><?php echo esc_html(alumax_contact("office_row{$i}_line1")); ?></p>
+                <p class="font-body text-sm text-on-surface-variant"><?php echo $alumax_wa_linkify(alumax_contact("office_row{$i}_line1")); ?></p>
                 <?php if (alumax_contact("office_row{$i}_line2") !== '') : ?>
-                <p class="font-label text-xs text-outline"><?php echo esc_html(alumax_contact("office_row{$i}_line2")); ?></p>
+                <p class="font-label text-xs text-outline"><?php echo $alumax_wa_linkify(alumax_contact("office_row{$i}_line2")); ?></p>
                 <?php endif; ?>
               </div>
             </div>
             <?php endfor; ?>
           </div>
         </div>
-        <div class="relative w-full h-[340px] sm:h-[390px] overflow-hidden shadow-md bg-surface-container-high border border-outline-variant/30 flex flex-col items-center justify-center gap-3">
-          <span class="material-symbols-outlined text-primary-container text-[56px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
-          <span class="font-label text-sm font-semibold text-primary-container uppercase tracking-wider"><?php echo esc_html(alumax_contact('map_label')); ?></span>
-          <?php if (alumax_contact('map_url') !== '') : ?>
-          <a class="inline-flex items-center gap-2 px-4 py-2 mt-2 bg-surface-container-lowest text-primary-container font-label text-xs font-semibold shadow-md hover:bg-secondary-fixed transition-colors"
-            href="<?php echo esc_url(alumax_contact('map_url')); ?>" rel="noopener noreferrer" target="_blank">
-            <span>View on Google Maps</span>
-            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          </a>
+        <?php
+        $map_image = alumax_contact('map_image');
+        $map_url   = alumax_contact('map_url');
+        if ($map_url === '' && alumax_contact('map_address') !== '') {
+            // 链接留空时按定位地址自动生成 Google Maps 定位链接
+            $map_url = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode(alumax_contact('map_address'));
+        }
+        $on_image = $map_image !== '';
+        ?>
+        <div class="relative w-full h-[340px] sm:h-[390px] overflow-hidden shadow-md bg-surface-container-high border border-outline-variant/30">
+          <?php if ($on_image) : ?>
+          <img src="<?php echo esc_url($map_image); ?>" alt="<?php echo esc_attr(alumax_contact('map_label')); ?>" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-primary-container/45"></div>
           <?php endif; ?>
+          <div class="relative h-full flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined <?php echo $on_image ? 'text-white' : 'text-primary-container'; ?> text-[56px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+            <span class="font-label text-sm font-semibold <?php echo $on_image ? 'text-white' : 'text-primary-container'; ?> uppercase tracking-wider"><?php echo esc_html(alumax_contact('map_label')); ?></span>
+            <?php if ($map_url !== '') : ?>
+            <a class="inline-flex items-center gap-2 px-4 py-2 mt-2 bg-surface-container-lowest text-primary-container font-label text-xs font-semibold shadow-md hover:bg-secondary-fixed transition-colors"
+              href="<?php echo esc_url($map_url); ?>" rel="noopener noreferrer" target="_blank">
+              <span>View on Google Maps</span>
+              <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+            </a>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
     </section>

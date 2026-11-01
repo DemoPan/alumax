@@ -156,6 +156,9 @@ function alumax_about_fields() {
     $url = function ($key, $label, $desc = '') {
         return ['key' => $key, 'label' => $label, 'type' => 'url', 'desc' => $desc];
     };
+    $video = function ($key, $label, $desc = '') {
+        return ['key' => $key, 'label' => $label, 'type' => 'video', 'desc' => $desc];
+    };
 
     $groups = [
         'hero' => [
@@ -178,7 +181,7 @@ function alumax_about_fields() {
                 $image('s1_video_image', '工厂视频封面图'),
                 $text('s1_video_badge', '封面左上角标'),
                 $text('s1_video_caption', '封面底部标题'),
-                $url('s1_video_url', '视频链接', '填写后点击封面在新窗口打开视频；留空则封面不可点击'),
+                $video('s1_video_url', '视频', '点「选择视频」从媒体库上传或选择视频文件（MP4 等），前台点击封面后页内直接播放；也可粘贴外部视频页链接（新窗口打开）；留空则封面不可点击'),
             ],
         ],
         's2' => [

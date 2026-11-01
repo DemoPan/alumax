@@ -22,7 +22,9 @@ function alumax_contact_defaults() {
         'office_title'   => 'Visit Our Office',
         'office_desc'    => 'We are based in Foshan & Suzhou, China, and welcome you to get in touch with our engineering and export consultation team. You can also reach us via phone, email, or direct WhatsApp for expedited technical review.',
         'map_label'      => 'Foshan / Nanhai Metropolitan Core Plant',
-        'map_url'        => 'https://maps.google.com',
+        'map_image'      => '',
+        'map_address'    => 'No. 88, Industrial Avenue, Nanhai District, Foshan, Guangdong, China',
+        'map_url'        => '',
         // 询价表单板块（公共表单组件）
         'form_eyebrow'    => 'Get In Touch',
         'form_title'      => 'Send Us a Message',
@@ -30,6 +32,10 @@ function alumax_contact_defaults() {
         'form_card_title' => 'Engineering Inquiry Form',
         'form_card_badge' => '24H Response',
         'form_submit'     => 'Submit Engineering Inquiry',
+        // WhatsApp 悬浮按钮（全站右下角）
+        'whatsapp_number'  => '+86 18930079759',
+        'whatsapp_message' => 'Hello ALUMAX, I would like to inquire about your facade systems.',
+        'whatsapp_qr'      => '',
     ];
 
     // Hero 特性条（3 条）
@@ -48,7 +54,7 @@ function alumax_contact_defaults() {
     // 联系信息行（3 行）
     $rows = [
         ['icon' => 'location_on', 'label' => 'Address', 'line1' => 'No. 88, Industrial Avenue, Nanhai District, Foshan, Guangdong, China 528225', 'line2' => ''],
-        ['icon' => 'call', 'label' => 'Phone & WhatsApp', 'line1' => '+86 757 8820 9000 · WhatsApp: +86 138 2819 0280', 'line2' => 'Mon – Sat, 8:30 – 18:00 (GMT+8)'],
+        ['icon' => 'call', 'label' => 'Phone & WhatsApp', 'line1' => '+86 757 8820 9000 · WhatsApp: +86 18930079759', 'line2' => 'Mon – Sat, 8:30 – 18:00 (GMT+8)'],
         ['icon' => 'mail', 'label' => 'Email', 'line1' => 'export@alumax-facade.com / info@alumax.com', 'line2' => 'Formal engineering quote transmitted within 24 hours.'],
     ];
     foreach ($rows as $i => $row) {
@@ -107,10 +113,21 @@ function alumax_contact_fields() {
                 $text('office_title', '标题'),
                 $textarea('office_desc', '简介'),
                 $text('map_label', '地图标注文案'),
-                $url('map_url', 'Google Maps 链接'),
+                $image('map_image', '地图封面图', '从媒体库上传/选择（如厂区卫星图、位置截图）；留空则显示定位图标占位'),
+                $text('map_address', '定位地址', '跳转 Google Maps 时定位到该地址；下方链接留空时生效'),
+                $url('map_url', 'Google Maps 链接', '留空时自动按「定位地址」生成定位链接；填写则优先使用该链接'),
             ],
         ],
         'office_rows' => ['label' => '联系方式行（3 行）', 'fields' => []],
+        'whatsapp' => [
+            'label' => 'WhatsApp 悬浮按钮（全站右下角）',
+            'note'  => '号码留空则整个按钮不显示',
+            'fields' => [
+                $text('whatsapp_number', 'WhatsApp 号码', '国际格式，如 +86 138 2819 0280'),
+                $text('whatsapp_message', '预填消息', '可选，访客打开聊天窗口时自动填入'),
+                $image('whatsapp_qr', 'WhatsApp 二维码', '从媒体库上传/选择；鼠标悬停按钮时显示，留空则不显示二维码'),
+            ],
+        ],
         'form' => [
             'label' => '询价表单板块（公共表单组件，与产品页一致）',
             'fields' => [

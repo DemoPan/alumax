@@ -348,151 +348,29 @@ get_header();
           </div>
         </div>
       </section>
-      <!-- 6. HIGH-CONVERSION ENGINEERING RFQ & SPEC CONSULTATION FORM -->
-      <section class="w-full bg-primary-container text-white py-16" id="rfq-section">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <!-- Left: Consultation Narrative & Direct Engineering Access -->
-            <div class="lg:col-span-5 space-y-6">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 font-label-sm text-label-sm text-secondary-fixed">
-                <span class="material-symbols-outlined text-sm">support_agent</span>
-                <span>Direct Facade Engineering Desk</span>
-              </div>
-              <h2 class="font-display-lg text-display-lg tracking-tight text-white">
-                Need Custom Dimensions, Perforation Patterns, or Engineered Mock-ups?
-              </h2>
-              <p class="font-body-md text-body-md text-slate-300">
-                Submit your project schedule, wind-load parameters, or architectural elevations. Our technical facade
-                team responds with preliminary structural sizing, BIM details (LOD 400), and formal CIF/FOB export
-                pricing within 24 business hours.
-              </p>
-              <!-- Contact Guarantee Cards -->
-              <div class="space-y-3 pt-2">
-                <div class="flex items-center gap-3 p-3 rounded bg-white/5">
-                  <span class="material-symbols-outlined text-secondary-fixed">schedule</span>
-                  <div>
-                    <span class="block font-label-md text-label-md text-white font-semibold">24-Hour B2B
-                      Turnaround</span>
-                    <span class="block font-body-sm text-body-sm text-slate-400">Guaranteed response for commercial
-                      procurement RFQs.</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded bg-white/5">
-                  <span class="material-symbols-outlined text-secondary-fixed">box</span>
-                  <div>
-                    <span class="block font-label-md text-label-md text-white font-semibold">Global Sample
-                      Dispatch</span>
-                    <span class="block font-body-sm text-body-sm text-slate-400">FedEx / DHL express sample boxes
-                      delivered worldwide.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Right: Actionable RFQ Form -->
-            <div class="lg:col-span-7 bg-surface-container-lowest text-on-surface p-8 rounded shadow-xl">
-              <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Request Architectural Consultation &amp;
-                Tender Pricing</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Complete the engineering fields below
-                for custom production runs and export quotation.</p>
-              <form class="space-y-4" id="rfq-form">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <!-- Project Name -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">Project
-                      Name *</label>
-                    <input
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors"
-                      placeholder="e.g. Dubai Marina Horizon Tower" required="" type="text" />
-                  </div>
-                  <!-- Location / Country -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">Country /
-                      Project City *</label>
-                    <input
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors"
-                      placeholder="e.g. Riyadh, Saudi Arabia / Sydney, AU" required="" type="text" />
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <!-- System of Interest -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">System
-                      Line *</label>
-                    <select
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors cursor-pointer">
-                      <option>Solid Aluminum Panels (3.0mm)</option>
-                      <option>Intelligent Motorized Louvers</option>
-                      <option>Aluminum Honeycomb Panels</option>
-                      <option>Corrugated Core Panels (ACCP)</option>
-                      <option>Architectural Steel Wall Panels</option>
-                      <option>Aluminum Grilles / Screens</option>
-                      <option>Sunshade S-Blade Louvers</option>
-                      <option>Aluminum Composite (ACP)</option>
-                      <option>Metal Acoustic Ceilings</option>
-                      <option>Insulated Metal Panels</option>
-                      <option>Coil Coated Aluminum Sheets</option>
-                    </select>
-                  </div>
-                  <!-- Estimated Surface Area -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">Est.
-                      Quantity (m²) *</label>
-                    <input
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors"
-                      placeholder="e.g. 8,500 m²" required="" type="text" />
-                  </div>
-                  <!-- Fire Specification Requirement -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">Fire
-                      Requirement</label>
-                    <select
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors cursor-pointer">
-                      <option>EN 13501-1 Class A2-s1, d0</option>
-                      <option>ASTM E84 Non-Combustible</option>
-                      <option>Standard Architectural Grade</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <!-- Name & Company -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">Full Name
-                      &amp; Title *</label>
-                    <input
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors"
-                      placeholder="Eng. Robert Mitchell (Facade Director)" required="" type="text" />
-                  </div>
-                  <!-- Corporate Email -->
-                  <div>
-                    <label class="block font-label-sm text-label-sm uppercase text-outline mb-1 font-semibold">Corporate
-                      Email *</label>
-                    <input
-                      class="w-full px-3 py-2.5 rounded bg-surface font-body-sm text-body-sm text-on-surface border border-outline-variant focus:outline-none focus:border-secondary transition-colors"
-                      placeholder="r.mitchell@engineering-firm.com" required="" type="email" />
-                  </div>
-                </div>
-                <!-- Upload Field -->
-                <div
-                  class="p-4 rounded border border-dashed border-outline-variant bg-surface hover:bg-surface-container-low transition-colors flex flex-col items-center justify-center text-center cursor-pointer">
-                  <span class="material-symbols-outlined text-3xl text-secondary mb-1">cloud_upload</span>
-                  <span class="font-label-md text-label-md text-on-surface font-semibold">Attach Elevation Drawings or
-                    Tender Schedule</span>
-                  <span class="font-label-sm text-label-sm text-outline mt-0.5">Accepts DWG, RVT (Revit), PDF, STP up to
-                    100MB</span>
-                </div>
-                <!-- Submit Button -->
-                <button
-                  class="w-full py-3.5 px-6 rounded bg-primary hover:bg-secondary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider transition-colors shadow-md flex items-center justify-center gap-2"
-                  type="submit">
-                  <span class="material-symbols-outlined">send</span>
-                  <span>Submit for Engineering Review &amp; CIF Pricing</span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- 6. 公共询价表单（与产品详情页一致，提交进后台「询价记录」） -->
+      <?php
+      get_template_part('template-parts/product-sections/inquiry', null, [
+          'eyebrow'      => 'Direct Facade Engineering Desk',
+          'title'        => 'Need Custom Dimensions, Perforation Patterns, or Engineered Mock-ups?',
+          'description'  => 'Submit your project schedule, wind-load parameters, or architectural elevations. Our technical facade team responds with preliminary structural sizing, BIM details (LOD 400), and formal CIF/FOB export pricing within 24 business hours.',
+          'bullets'      => [
+              [
+                  'icon'  => 'schedule',
+                  'title' => '24-Hour B2B Turnaround',
+                  'text'  => 'Guaranteed response for commercial procurement RFQs.',
+              ],
+              [
+                  'icon'  => 'box',
+                  'title' => 'Global Sample Dispatch',
+                  'text'  => 'FedEx / DHL express sample boxes delivered worldwide.',
+              ],
+          ],
+          'form_title'   => 'Request Architectural Consultation & Tender Pricing',
+          'form_badge'   => '24H Response',
+          'submit_label' => 'Submit for Engineering Review & CIF Pricing',
+      ]);
+      ?>
       <!-- 7. TECHNICAL SPECIFICATION MODAL DIALOG CONTAINER (HIDDEN BY DEFAULT) -->
       <div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4"
         id="spec-modal">
@@ -668,39 +546,6 @@ get_header();
         if (modal) {
           modal.addEventListener('click', (e) => {
             if (e.target === modal) hideModal();
-          });
-        }
-
-        // 4. RFQ SUBMISSION MICRO-INTERACTION
-        const rfqForm = document.getElementById('rfq-form');
-        if (rfqForm) {
-          rfqForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = rfqForm.querySelector('button[type="submit"]');
-            const originalContent = submitBtn.innerHTML;
-
-            submitBtn.innerHTML = `
-          <span class="material-symbols-outlined animate-spin text-xl">progress_activity</span>
-          <span>Transmitting Tender Data...</span>
-        `;
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-              submitBtn.innerHTML = `
-            <span class="material-symbols-outlined text-xl">check_circle</span>
-            <span>RFQ Received // Engineering Desk Assigned</span>
-          `;
-              submitBtn.classList.remove('bg-primary');
-              submitBtn.classList.add('bg-secondary');
-              rfqForm.reset();
-
-              setTimeout(() => {
-                submitBtn.innerHTML = originalContent;
-                submitBtn.classList.add('bg-primary');
-                submitBtn.classList.remove('bg-secondary');
-                submitBtn.disabled = false;
-              }, 4000);
-            }, 1200);
           });
         }
       });
