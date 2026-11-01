@@ -116,7 +116,13 @@ async function crawlPage(urlPath) {
 }
 
 (async () => {
-  fs.rmSync(OUT, { recursive: true, force: true });
+  // 清空输出目录但保留 .git（该目录同时作为静态站仓库推送到 GitHub）
+  if (fs.existsSync(OUT)) {
+    for (const entry of fs.readdirSync(OUT)) {
+      if (entry === '.git') continue;
+      fs.rmSync(path.join(OUT, entry), { recursive: true, force: true });
+    }
+  }
   seenPages.add('/');
   while (pageQueue.length) {
     if (savedPages >= MAX_PAGES) break;
