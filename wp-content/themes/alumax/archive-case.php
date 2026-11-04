@@ -116,7 +116,7 @@ $filters = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         <?php foreach ($filters as $group => $options) : ?>
         <div class="relative">
-          <select class="case-filter w-full h-10 px-3 pr-8 bg-surface border border-outline-variant text-on-surface font-label-sm text-label-sm appearance-none outline-none focus:border-secondary cursor-pointer" aria-label="<?php echo esc_attr($group); ?>">
+          <select class="case-filter w-full h-10 px-3 pr-8 bg-surface bg-none border border-outline-variant text-on-surface font-label-sm text-label-sm appearance-none outline-none focus:border-secondary cursor-pointer" aria-label="<?php echo esc_attr($group); ?>">
             <?php foreach ($options as $label => $keyword) : ?>
             <option value="<?php echo esc_attr($keyword); ?>"><?php echo esc_html($label); ?></option>
             <?php endforeach; ?>

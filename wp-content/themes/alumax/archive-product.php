@@ -99,7 +99,7 @@ get_header();
             <!-- Fire Rating Filter -->
             <div class="relative">
               <select
-                class="w-full appearance-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
+                class="w-full appearance-none bg-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
                 id="filter-fire">
                 <option value="all">Fire Rating: All Standards</option>
                 <option value="A2">EN 13501-1 Class A2-s1, d0</option>
@@ -112,7 +112,7 @@ get_header();
             <!-- Material Alloy Filter -->
             <div class="relative">
               <select
-                class="w-full appearance-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
+                class="w-full appearance-none bg-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
                 id="filter-alloy">
                 <option value="all">Alloy Grade: All Grades</option>
                 <option value="3003">Alloy 3003-H24 (Standard Architectural)</option>
@@ -126,7 +126,7 @@ get_header();
             <!-- Coating System Filter -->
             <div class="relative">
               <select
-                class="w-full appearance-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
+                class="w-full appearance-none bg-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
                 id="filter-coating">
                 <option value="all">Surface Coating: All Finishes</option>
                 <option value="pvdf">PPG Duranar® PVDF 3-Coat (70% Kynar)</option>
@@ -140,7 +140,7 @@ get_header();
             <!-- Core / Thickness Filter -->
             <div class="relative">
               <select
-                class="w-full appearance-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
+                class="w-full appearance-none bg-none bg-surface-container px-3 py-2 rounded font-label-sm text-label-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-secondary pr-8"
                 id="filter-thickness">
                 <option value="all">Panel Caliber: Standard &amp; Custom</option>
                 <option value="2.0">Solid Sheet: 2.0mm - 3.0mm</option>

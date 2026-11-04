@@ -56,7 +56,20 @@ function alumax_head() {
     main > :first-child { margin-top: 0 !important; }
     main > :last-child { margin-bottom: 0 !important; }
   }
-  ::-webkit-scrollbar { display: none; }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.45) transparent;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.65); border: 0; }
+  ::-webkit-scrollbar-corner { background: transparent; }
   body.admin-bar > header { top: 32px; }
   @media screen and (max-width: 782px) {
     body.admin-bar > header { top: 46px; }
@@ -289,6 +302,81 @@ function alumax_ensure_static_pages() {
 
 add_action('init', 'alumax_ensure_static_pages', 20);
 
+function alumax_ensure_legal_pages() {
+    if (get_option('alumax_legal_pages_version') === '2') {
+        return;
+    }
+
+    $pages = [
+        'privacy-policy' => [
+            'Privacy Policy',
+            '<p><em>Last updated: ' . gmdate('F j, Y') . '</em></p>
+<h2>1. Information We Collect</h2>
+<p>ALUMAX Architectural Envelopes Co., Ltd. ("ALUMAX", "we", "us") collects only the information you voluntarily submit through our inquiry and consultation forms, including your name, company, email address, phone number, and project specifications.</p>
+<h2>2. How We Use Your Information</h2>
+<p>Submitted information is used exclusively to respond to engineering inquiries, prepare structural takeoffs and quotations, arrange sample logistics, and maintain business correspondence related to your project.</p>
+<h2>3. Data Protection</h2>
+<p>All tender documents, architectural drawings, and project data are treated as confidential and protected under mutual NDA where applicable. We do not sell, rent, or disclose your information to third parties except where required by law or necessary to fulfill logistics and export documentation.</p>
+<h2>4. Data Retention</h2>
+<p>Inquiry records are retained for the duration of the business relationship and archived thereafter in accordance with applicable commercial regulations. You may request deletion of your data at any time via <a href="mailto:export@alumax-facade.com">export@alumax-facade.com</a>.</p>',
+        ],
+        'export-compliance' => [
+            'Export Compliance & Certifications',
+            '<p><em>Last updated: ' . gmdate('F j, Y') . '</em></p>
+<h2>1. Export Compliance Statement</h2>
+<p>ALUMAX conducts all export operations in strict compliance with the export control laws and customs regulations of the People\'s Republic of China and the import requirements of destination markets. All shipments are accompanied by complete commercial invoices, packing lists, certificates of origin, and product test documentation.</p>
+<h2>2. Product Certifications</h2>
+<ul>
+<li>EN 13501-1 Class A2-s1, d0 &amp; A1 fire reaction classification</li>
+<li>ASTM E84 Class A flame spread certification</li>
+<li>AAMA 2605 architectural coating performance (10-year Florida weathering)</li>
+<li>ASTM E330 structural wind load testing to 5.0 kPa</li>
+<li>ISO 9001:2015 &amp; ISO 14001 certified manufacturing (TÜV SÜD audited)</li>
+<li>CE marking under CPR 305/2011 for curtain wall systems</li>
+</ul>
+<h2>3. Documentation Support</h2>
+<p>Full submittal packages, third-party test reports, BIM LOD 400 objects, and material certificates are available on request through our export desk.</p>',
+        ],
+        'terms-of-supply' => [
+            'Terms of Supply',
+            '<p><em>Last updated: ' . gmdate('F j, Y') . '</em></p>
+<h2>1. Quotations & Orders</h2>
+<p>All quotations are valid for 30 days unless otherwise stated. Orders are confirmed upon receipt of signed pro forma invoice and agreed deposit. Custom-engineered panels are manufactured to approved shop drawings only.</p>
+<h2>2. Lead Time & Delivery</h2>
+<p>Standard production lead time is 15–25 business days after drawing approval. Export terms are offered on FOB / CIF basis from our Foshan manufacturing campus; all export crating follows zero-micro-scratch protocols.</p>
+<h2>3. Quality & Warranty</h2>
+<p>All panels are manufactured under ISO 9001:2015 quality management with ±0.3 mm milling tolerance. PVDF coating systems carry up to 10-year weathering warranties per AAMA 2605. Claims must be submitted with photographic evidence within 30 days of receipt.</p>
+<h2>4. Liability</h2>
+<p>ALUMAX\'s liability is limited to replacement or refund of non-conforming goods. Installation, structural design verification, and site conditions remain the responsibility of the contractor and project engineer of record.</p>',
+        ],
+    ];
+
+    foreach ($pages as $slug => $page) {
+        $existing = get_page_by_path($slug);
+        if (!$existing) {
+            wp_insert_post([
+                'post_title'   => $page[0],
+                'post_name'    => $slug,
+                'post_content' => $page[1],
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+            ]);
+        } elseif ($existing->post_status !== 'publish') {
+            // 已存在同 slug 的非发布页面（如 WP 自带的 Privacy Policy 草稿）：直接发布并写入默认内容
+            wp_update_post([
+                'ID'           => $existing->ID,
+                'post_title'   => $page[0],
+                'post_content' => $page[1],
+                'post_status'  => 'publish',
+            ]);
+        }
+    }
+
+    update_option('alumax_legal_pages_version', '2');
+}
+
+add_action('init', 'alumax_ensure_legal_pages', 20);
+
 function alumax_news_primary_term($post_id = null) {
     $post_id = $post_id ?: get_the_ID();
     $terms = get_the_terms($post_id, 'news_category');
@@ -318,6 +406,7 @@ add_action('pre_get_posts', 'alumax_product_archive_per_page');
 
 require get_template_directory() . '/inc/home-settings.php';
 require get_template_directory() . '/inc/settings-page.php';
+require get_template_directory() . '/inc/site-settings.php';
 require get_template_directory() . '/inc/about-settings.php';
 require get_template_directory() . '/inc/contact-settings.php';
 require get_template_directory() . '/inc/news-hero.php';

@@ -6,22 +6,24 @@ if (!defined('ABSPATH')) {
   <footer class="w-full bg-[#0d1b2a] text-white border-t border-white/10">
     <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl">
-        <!-- Col 1 & 2: Brand, Summary & Social Media Icons -->
+        <!-- Col 1 & 2: Brand, Summary & Social Media Icons（品牌信息在「站点设置」编辑） -->
         <div class="lg:col-span-2 space-y-space-md">
           <div class="flex items-center gap-3">
+            <?php $footer_logo = alumax_site('brand_logo'); ?>
+            <?php if ($footer_logo !== '') : ?>
+            <img class="h-8 w-auto" src="<?php echo esc_url($footer_logo); ?>" alt="<?php echo esc_attr(alumax_site('brand_name')); ?>">
+            <?php else : ?>
             <svg class="h-8 w-8 text-secondary-fixed" fill="currentColor" viewBox="0 0 40 40">
               <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round"
                 stroke-width="3.5"></path>
               <path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
               <line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
             </svg>
-            <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-white font-bold">ALUMAX
-              ARCHITECTURAL</span>
+            <?php endif; ?>
+            <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-white font-bold"><?php echo esc_html(alumax_site('brand_name')); ?></span>
           </div>
           <p class="font-body-md text-body-md text-slate-300 max-w-md">
-            Global premier manufacturer of precision-engineered curtain walls, motorized adaptive facades, and
-            high-performance architectural envelopes. Supplying tested systems to over 60 countries across Europe, the
-            Middle East, Southeast Asia, and the Americas.
+            <?php echo esc_html(alumax_site('brand_summary')); ?>
           </p>
           <!-- Social Media Icons for International B2B Reach -->
           <div class="space-y-2 pt-2">
@@ -29,104 +31,91 @@ if (!defined('ABSPATH')) {
               class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider block font-semibold">Global
               Social &amp; Project Channels</span>
             <div class="flex items-center gap-2">
-              <!-- LinkedIn -->
-              <a aria-label="ALUMAX on LinkedIn"
+              <?php foreach ((array) alumax_site('socials') as $social) :
+                  $social_label = isset($social['label']) ? $social['label'] : '';
+                  $social_image = isset($social['image']) ? $social['image'] : '';
+                  $social_url   = isset($social['url']) ? $social['url'] : '';
+                  if ($social_url === '' || $social_label === '' || $social_image === '') {
+                      continue;
+                  }
+                  ?>
+              <a aria-label="<?php echo esc_attr('ALUMAX on ' . $social_label); ?>"
                 class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
-                href="#" title="LinkedIn">
-                <span class="font-label-sm text-label-sm font-bold group-hover:text-on-secondary">in</span>
+                href="<?php echo esc_url($social_url); ?>" title="<?php echo esc_attr($social_label); ?>">
+                <img src="<?php echo esc_url($social_image); ?>" alt="<?php echo esc_attr($social_label); ?>"
+                  class="w-5 h-5 object-contain">
               </a>
-              <!-- YouTube -->
-              <a aria-label="ALUMAX on YouTube"
-                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
-                href="#" title="YouTube">
-                <span class="material-symbols-outlined text-lg group-hover:text-on-secondary">smart_display</span>
-              </a>
-              <!-- X (Twitter) -->
-              <a aria-label="ALUMAX on X"
-                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
-                href="#" title="X (Twitter)">
-                <span class="font-label-sm text-label-sm font-bold group-hover:text-on-secondary">𝕏</span>
-              </a>
-              <!-- WeChat -->
-              <a aria-label="ALUMAX on WeChat"
-                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
-                href="#" title="WeChat">
-                <span class="material-symbols-outlined text-lg group-hover:text-on-secondary">chat</span>
-              </a>
-              <!-- Instagram -->
-              <a aria-label="ALUMAX on Instagram"
-                class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
-                href="#" title="Instagram">
-                <span class="material-symbols-outlined text-lg group-hover:text-on-secondary">photo_camera</span>
-              </a>
+              <?php endforeach; ?>
             </div>
           </div>
           <div class="flex flex-wrap gap-space-sm pt-space-xs">
+            <?php foreach ((array) alumax_site('certs') as $cert) :
+                $cert_image = isset($cert['image']) ? $cert['image'] : '';
+                $cert_text  = isset($cert['text']) ? $cert['text'] : '';
+                if ($cert_text === '') {
+                    continue;
+                }
+                ?>
             <span
-              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">ISO
-              9001:2015</span>
-            <span
-              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">CE
-              Certified</span>
-            <span
-              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">ASTM
-              E84 / EN13501 A2</span>
-            <span
-              class="font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">BMS
-              IoT Ready</span>
+              class="inline-flex items-center gap-1.5 font-label-sm text-label-sm px-space-sm py-space-xs bg-white/10 text-white uppercase rounded">
+              <?php if ($cert_image !== '') : ?>
+              <img src="<?php echo esc_url($cert_image); ?>" alt="" class="h-3.5 w-auto">
+              <?php endif; ?>
+              <?php echo esc_html($cert_text); ?>
+            </span>
+            <?php endforeach; ?>
           </div>
         </div>
-        <!-- Col 3: Systems Matrix -->
+        <!-- Col 3: Products（自动读取最新 10 个产品） -->
         <div class="space-y-space-md">
-          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Systems Matrix</div>
+          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Products</div>
           <ul class="space-y-space-xs">
+            <?php
+            $footer_products = get_posts(['post_type' => 'product', 'posts_per_page' => 10, 'post_status' => 'publish']);
+            foreach ($footer_products as $footer_product) :
+                ?>
             <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Intelligent Motorized Louvers</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Solid Aluminum Panels (3.0mm)</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Aluminum Honeycomb Panels</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Corrugated Core Panels</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Pre-Insulated Envelope Panels</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">Architectural Louvers &amp; Sunshades</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('product')); ?>">High-Traffic Steel Cladding</a></li>
+                href="<?php echo esc_url(get_permalink($footer_product)); ?>"><?php echo esc_html(get_the_title($footer_product)); ?></a></li>
+            <?php endforeach; ?>
           </ul>
         </div>
-        <!-- Col 4: Engineering & Export -->
+        <!-- Col 4: Projects（自动读取最新 10 个项目） -->
         <div class="space-y-space-md">
-          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Engineering &amp; Export</div>
+          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Projects</div>
           <ul class="space-y-space-xs">
+            <?php
+            $footer_cases = get_posts(['post_type' => 'case', 'posts_per_page' => 10, 'post_status' => 'publish']);
+            foreach ($footer_cases as $footer_case) :
+                ?>
             <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(home_url('/resources/')); ?>">BIM LOD 400 Library</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(home_url('/resources/')); ?>">ASTM &amp; EN Test Certifications</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(get_post_type_archive_link('case')); ?>">Airport &amp; High-Rise References</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(home_url('/about/')); ?>">CNC Precision Lines</a></li>
-            <li class="font-body-sm text-body-sm text-slate-300"><a class="hover:text-white transition-colors"
-                href="<?php echo esc_url(home_url('/about/')); ?>">Export Shipping &amp; Crating</a></li>
+                href="<?php echo esc_url(get_permalink($footer_case)); ?>"><?php echo esc_html(get_the_title($footer_case)); ?></a></li>
+            <?php endforeach; ?>
           </ul>
         </div>
-        <!-- Col 5: Global Inquiries -->
+        <!-- Col 5: Global Headquarters（信息在「站点设置」编辑） -->
         <div class="space-y-space-md">
-          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Global Inquiries</div>
-          <p class="font-body-sm text-body-sm text-slate-300">Engineering Consultation &amp; Overseas Export Support
-            Center.</p>
+          <div class="font-headline-sm text-headline-sm text-white uppercase font-bold"><?php echo esc_html(alumax_site('hq_title')); ?></div>
+          <p class="font-body-sm text-body-sm text-slate-300"><?php echo esc_html(alumax_site('hq_desc')); ?></p>
           <div class="font-label-sm text-label-sm space-y-space-xs text-slate-300">
-            <p class="">Dubai, UAE // Regional MENA Office</p>
-            <p class="">Rotterdam, NL // European Logistics Hub</p>
-            <p class="">Foshan, CN // Global Manufacturing Center</p>
-            <p class="text-secondary-fixed font-semibold pt-space-xs">export@alumax-facade.com</p>
+            <?php for ($i = 1; $i <= 3; $i++) :
+                $hq_icon = alumax_site("hq_row{$i}_icon");
+                $hq_text = alumax_site("hq_row{$i}_text");
+                if ($hq_text === '') {
+                    continue;
+                }
+                ?>
+            <p class="flex items-start gap-2">
+              <?php if ($hq_icon !== '') : ?>
+              <span class="material-symbols-outlined text-base text-secondary-fixed shrink-0"><?php echo esc_html($hq_icon); ?></span>
+              <?php endif; ?>
+              <span><?php echo esc_html($hq_text); ?></span>
+            </p>
+            <?php endfor; ?>
           </div>
           <div class="pt-space-xs">
             <a class="inline-block font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed hover:text-white transition-colors"
-              href="<?php echo esc_url(home_url('/contact/')); ?>">
-              Global Representative Network →
+              href="<?php echo esc_url(alumax_site('hq_link_url') !== '' ? alumax_site('hq_link_url') : home_url('/contact/')); ?>">
+              <?php echo esc_html(alumax_site('hq_link_text')); ?>
             </a>
           </div>
         </div>
@@ -134,12 +123,20 @@ if (!defined('ABSPATH')) {
       <!-- Bottom Legal & Copyright -->
       <div
         class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-md">
-        <p class="font-label-sm text-label-sm text-slate-400">© <?php echo esc_html(gmdate('Y')); ?> ALUMAX Architectural Envelopes Co., Ltd. All rights
-          reserved. Precision Architectural Facade Systems.</p>
+        <p class="font-label-sm text-label-sm text-slate-400"><?php echo esc_html(str_replace('{year}', gmdate('Y'), alumax_site('copyright_text'))); ?></p>
         <div class="flex items-center gap-space-lg font-label-sm text-label-sm text-slate-400">
-          <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
-          <a class="hover:text-white transition-colors" href="#">Export Compliance &amp; Certifications</a>
-          <a class="hover:text-white transition-colors" href="#">Terms of Supply</a>
+          <?php
+          $legal_pages = [
+              'privacy-policy'     => 'Privacy Policy',
+              'export-compliance'  => 'Export Compliance & Certifications',
+              'terms-of-supply'    => 'Terms of Supply',
+          ];
+          foreach ($legal_pages as $legal_slug => $legal_label) :
+              $legal_page = get_page_by_path($legal_slug);
+              $legal_url  = ($legal_page && $legal_page->post_status === 'publish') ? get_permalink($legal_page) : '#';
+              ?>
+          <a class="hover:text-white transition-colors" href="<?php echo esc_url($legal_url); ?>"><?php echo esc_html($legal_label); ?></a>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
