@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) { exit; }
 //   modes  [ [image, image_alt, tag, title, subtitle, text], ... ]
 $alumax_c = $args;
 ?>
-<section class="w-full bg-surface py-16 lg:py-24">
+<section class="w-full <?php echo esc_attr($alumax_c['bg'] ?? 'bg-surface'); ?> py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <div class="lg:col-span-5 flex flex-col">
@@ -19,10 +19,10 @@ $alumax_c = $args;
         <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed mb-6">
           <?php echo esc_html($alumax_c['description']); ?>
         </p>
-        <?php if (!empty($alumax_c['cta'])) : ?>
+        <?php if (!empty($alumax_c['cta']) && !empty(trim($alumax_c['cta']['label'] ?? ''))) : ?>
           <div>
             <a class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-container text-on-primary font-headline text-xs font-semibold uppercase tracking-wider hover:bg-secondary transition-colors"
-              href="<?php echo esc_url($alumax_c['cta']['url']); ?>">
+              href="<?php echo esc_url($alumax_c['cta']['url'] ?? '#'); ?>">
               <span><?php echo esc_html($alumax_c['cta']['label']); ?></span>
               <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
             </a>

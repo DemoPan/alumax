@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) { exit; }
 // 安装方式已拆分为独立模块（template-parts/product-sections/install.php）
 $alumax_s = $args;
 ?>
-<section class="w-full bg-surface-container-low py-16 lg:py-24" id="technical-specifications">
+<section class="w-full <?php echo esc_attr($alumax_s['bg'] ?? 'bg-surface-container-low'); ?> py-16 lg:py-24" id="technical-specifications">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="flex flex-col mb-10">
       <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-2"><?php echo esc_html($alumax_s['eyebrow']); ?></span>
@@ -39,10 +39,12 @@ $alumax_s = $args;
         <?php if (!empty($alumax_s['buttons'])) : ?>
           <div class="flex flex-wrap items-center gap-3 pt-6 mt-4 border-t border-surface-variant">
             <?php foreach ($alumax_s['buttons'] as $alumax_btn) : ?>
+              <?php $alumax_btn_is_pdf = ($alumax_btn['icon'] ?? '') === 'picture_as_pdf' && in_array($alumax_btn['url'] ?? '#', ['', '#'], true); ?>
               <a class="inline-flex items-center gap-2 px-5 py-3 <?php echo ($alumax_btn['style'] ?? 'primary') === 'primary'
                 ? 'bg-primary-container text-on-primary hover:bg-secondary'
                 : 'bg-surface-container text-on-surface hover:bg-surface-container-high'; ?> font-headline text-xs font-semibold uppercase tracking-wider transition-colors"
-                href="<?php echo esc_url($alumax_btn['url']); ?>">
+                href="<?php echo esc_url($alumax_btn['url']); ?>"
+                <?php echo $alumax_btn_is_pdf ? ' data-datasheet-pdf' : ''; ?>>
                 <span class="material-symbols-outlined text-[16px]"><?php echo esc_html($alumax_btn['icon']); ?></span>
                 <span><?php echo esc_html($alumax_btn['label']); ?></span>
               </a>

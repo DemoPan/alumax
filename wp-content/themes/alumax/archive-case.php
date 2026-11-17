@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-// 项目中心页（案例归档）：Hero + 前端筛选条 + Spotlight（最新案例）+ 案例卡片网格 + 真实分页。
-// 筛选为纯前端 JS 按卡片文本匹配；本页不含询价表单。
+// （）：Hero +  + Spotlight（）+  + 。
+//  JS ；。
 
 get_header();
 
@@ -10,7 +10,7 @@ $paged = max(1, (int) get_query_var('paged'));
 $fallback_image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-qAi3-NkN3D5kkzbuqChEsIoeZVK9qOB_tP12pm7Ywm0MddUBrDiPoGOEo2gNnKPIrMq9PAlAds9O1lNHApr4YA0afha7J0L8rP_SGE6dEVNQkJGGpGWL_mN3K9F2OP4911zYauzoSSiTHizJkeI8KnjKXn1GMiPK2dJaYFGIxiEgRyxcWsYqSDERLDLlZb84jOHeRr9zYvT_iJcwFJApFbg5R2Ha7XEAfYCPD_cNuWh4fFm1_xuD';
 $hero_bg = 'https://lh3.googleusercontent.com/aida/AEtjO1VUQCHakCTsoRpuJrVgGotL75_s3xJUfmltXG5JSKGnrKuodK0hqQwVJbHbLwJmZFKa1DrnMeSaXK7no4Cv38op_VnK44t8_cu1_qSrFeU801bn57VmDbpeeHGpI1Sn3JJij0f_SKteAsSzUYx3XsTjV3ASNU4DqHC4bGlbe9pCgwu91yVhxu8AZ0aB2_l5oQuXFbf0XdrVczZKHDUH2PO1SIDQ1P84s-r_u0NbLOfLqpOwMtr7PDezKA';
 
-// Spotlight：仅第 1 页显示最新一篇案例，并从卡片网格中排除
+// Spotlight： 1 ，
 $spotlight = null;
 if ($paged === 1) {
     $latest = get_posts(['post_type' => 'case', 'posts_per_page' => 1, 'post_status' => 'publish']);
@@ -29,7 +29,7 @@ if ($spotlight) {
 }
 $cases = new WP_Query($query_args);
 
-// 筛选下拉配置：option 文本 => 匹配关键词（纯前端按卡片文本过滤）
+// ：option  => （）
 $filters = [
     'Fire Rating' => [
         'Fire Rating: All Standards' => '',
@@ -99,7 +99,7 @@ $filters = [
     </div>
   </section>
 
-  <!-- FILTER BAR（纯前端筛选） -->
+  <!-- FILTER BAR -->
   <section class="w-full bg-surface py-6 border-b border-surface-container-high">
     <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-4">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -143,7 +143,7 @@ $filters = [
           if (!empty($dl['url']) && $dl['url'] !== '#') { $sbim = $dl; break; }
       }
       ?>
-  <!-- SPOTLIGHT（最新案例） -->
+  <!-- SPOTLIGHT -->
   <section class="w-full bg-surface py-16">
     <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
       <div class="flex items-center justify-between mb-8">
@@ -235,7 +235,7 @@ $filters = [
   </section>
   <?php endif; ?>
 
-  <!-- 案例卡片网格 -->
+  <!--  -->
   <section class="w-full bg-surface-container-low py-16">
     <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-12">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -301,7 +301,7 @@ $filters = [
       </div>
       <p id="case-filter-empty" class="hidden font-body-md text-body-md text-on-surface-variant text-center py-8">No case studies match the selected specification filters.</p>
 
-      <!-- 分页 -->
+      <!--  -->
       <?php
       $total = (int) $cases->found_posts;
       $shown_from = ($paged - 1) * 9 + 1;
@@ -329,7 +329,7 @@ $filters = [
               $classes = $is_current
                   ? 'w-10 h-10 bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center'
                   : 'w-10 h-10 bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container flex items-center justify-center';
-              echo str_replace('page-numbers', 'page-numbers ' . $classes, $link); // phpcs:ignore WordPress.Security.EscapeOutput -- paginate_links 输出
+              echo str_replace('page-numbers', 'page-numbers ' . $classes, $link); // phpcs:ignore WordPress.Security.EscapeOutput -- paginate_links 
           endforeach; ?>
         </div>
         <?php endif; ?>
@@ -341,7 +341,7 @@ $filters = [
   </section>
 
   <style>
-    /* 列表视图：横向卡片布局（自有 CSS，不依赖 Tailwind CDN 动态生成） */
+    /* ：（ CSS， Tailwind CDN ） */
     #case-grid.list-mode { grid-template-columns: 1fr; }
     #case-grid.list-mode .case-card { flex-direction: row; }
     #case-grid.list-mode .case-card-body { display: flex; flex: 1 1 auto; min-width: 0; }
@@ -356,7 +356,7 @@ $filters = [
   </style>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // 纯前端规格筛选：按卡片文本匹配关键词
+    // ：
     const selects = document.querySelectorAll('.case-filter');
     const cards = document.querySelectorAll('.case-card');
     const emptyMsg = document.getElementById('case-filter-empty');
@@ -373,7 +373,7 @@ $filters = [
     }
     selects.forEach((s) => s.addEventListener('change', applyCaseFilters));
 
-    // 网格 / 列表视图切换：切换 #case-grid 的 list-mode class（样式见上方 <style>）
+    //  / ： #case-grid  list-mode class（ <style>）
     const grid = document.getElementById('case-grid');
     const btnGrid = document.getElementById('case-grid-view');
     const btnList = document.getElementById('case-list-view');

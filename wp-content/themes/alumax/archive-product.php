@@ -54,7 +54,7 @@ get_header();
         <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-4">
           <!-- Top Tier: Primary Application Tabs & View Switcher -->
           <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-            <!-- Application Filter Tabs（动态读取产品分类，后台 产品 → 产品分类 配置） -->
+            <!-- Application Filter Tabs，  →   -->
             <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0" id="filter-tabs">
               <?php
               $alumax_archive_total = (int) wp_count_posts('product')->publish;
@@ -76,7 +76,7 @@ get_header();
               </button>
               <?php endforeach; ?>
             </div>
-            <!-- View Mode Switch（服务端切换：?view=list 时所有卡片用主推卡样式） -->
+            <!-- View Mode Switch: ?view=list  -->
             <?php
             $alumax_list_view = isset($_GET['view']) && $_GET['view'] === 'list';
             $alumax_archive_link = get_post_type_archive_link('product');
@@ -176,7 +176,7 @@ get_header();
                 <?php
                 $alumax_product_index++;
                 if ($alumax_list_view) {
-                    // 列表模式：所有卡片都复用主推卡样式，仅第一张显示 FEATURED 徽章
+                    // ：， FEATURED 
                     get_template_part('template-parts/product-card-featured', null, array('badge' => $alumax_product_index === 1));
                 } else {
                     get_template_part('template-parts/' . ($alumax_product_index === 1 ? 'product-card-featured' : 'product-card'));
@@ -348,7 +348,7 @@ get_header();
           </div>
         </div>
       </section>
-      <!-- 6. 公共询价表单（与产品详情页一致，提交进后台「询价记录」） -->
+      <!-- 6. ， -->
       <?php
       get_template_part('template-parts/product-sections/inquiry', null, [
           'eyebrow'      => 'Direct Facade Engineering Desk',
@@ -407,7 +407,7 @@ get_header();
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // 1. DYNAMIC CATEGORY & PARAMETER FILTERING
-        // 分类标签联动后台「产品分类」；参数下拉与产品的「产品特性」字段文本匹配
+        // 「」；「」
         const tabs = document.querySelectorAll('.filter-tab');
         const products = document.querySelectorAll('.product-item');
         const productCount = document.getElementById('product-count');

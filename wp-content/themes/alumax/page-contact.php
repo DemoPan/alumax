@@ -100,7 +100,7 @@ get_header();
       </div>
     </section>
 
-    <!-- 公共询价表单（与产品页一致） -->
+    <!--  -->
     <?php
     $bullets = [];
     for ($i = 1; $i <= 3; $i++) {

@@ -14,7 +14,7 @@ $alumax_breadcrumb_archive_url = isset($args['archive_url']) ? $args['archive_ur
 
 if ($alumax_breadcrumb_variant === 'hero') :
 ?>
-<!-- BREADCRUMB（Hero 内嵌深色版） -->
+<!-- BREADCRUMB (Hero Embedded Dark) -->
 <nav aria-label="Breadcrumb"
   class="flex items-center flex-wrap gap-2 font-label text-xs tracking-wider text-primary-fixed-dim uppercase">
   <a class="hover:text-secondary-fixed transition-colors flex items-center gap-1"

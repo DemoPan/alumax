@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) { exit; }
 //   features  [ [icon, title, text], ... ]（建议 4 个，2x2 网格）
 $alumax_i = $args;
 ?>
-<section class="w-full bg-surface-container-low py-16 lg:py-24">
+<section class="w-full <?php echo esc_attr($alumax_i['bg'] ?? 'bg-surface-container-low'); ?> py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <div class="lg:col-span-5 relative group overflow-hidden bg-surface-container shadow-md">

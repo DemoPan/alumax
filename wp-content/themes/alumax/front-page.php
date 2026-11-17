@@ -247,7 +247,7 @@ get_header();
           </div>
         </div>
         <!-- Bento Grid Showcase: Intelligent Louvers spans 2 columns, accompanied by other 5 products -->
-        <!-- Bento Grid Showcase: 动态读取「产品」文章，第一张为主推大卡 -->
+        <!-- Bento Grid Showcase: ， -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <?php
           $alumax_products = new WP_Query([
@@ -376,7 +376,7 @@ get_header();
           </div>
         </div>
         <!-- 2 Premier Benchmarks -->
-        <!-- Premier Benchmarks: 动态读取「案例」文章，第一张为主卡 -->
+        <!-- Premier Benchmarks: ， -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <?php
           $alumax_cases = new WP_Query([

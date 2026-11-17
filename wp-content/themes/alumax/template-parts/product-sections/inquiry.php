@@ -120,7 +120,7 @@ $alumax_status = isset($_GET['inquiry']) ? sanitize_key($_GET['inquiry']) : '';
           </form>
           <script>
             (function () {
-              // 提交结果横幅只显示一次：清掉 URL 里的 inquiry 参数，刷新后不再出现
+              // Submission result banner shown once: clear query param from URL so refresh does not trigger
               if (window.history.replaceState) {
                 var url = new URL(window.location.href);
                 if (url.searchParams.has('inquiry')) {
@@ -137,7 +137,7 @@ $alumax_status = isset($_GET['inquiry']) ? sanitize_key($_GET['inquiry']) : '';
                 });
               }
 
-              // 必填校验 + fetch 提交：静态导出后直接调 WP REST 接口，数据仍入后台「询价记录」
+              // Required validation + fetch submit: directly call WP REST endpoint after static export
               var form = document.getElementById('alumax-inquiry-form');
               if (!form) { return; }
               var api = <?php echo wp_json_encode(rest_url('alumax/v1/inquiry')); ?>;

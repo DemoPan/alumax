@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) { exit; }
 //   items  [ [svg(原始 SVG 标记, 优先于 image), image, image_alt, tag, title, text], ... ]
 $alumax_i = $args;
 ?>
-<section class="w-full bg-surface py-16 lg:py-24" id="installation">
+<section class="w-full <?php echo esc_attr($alumax_i['bg'] ?? 'bg-surface'); ?> py-16 lg:py-24" id="installation">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="flex flex-col mb-12">
       <?php if (!empty($alumax_i['eyebrow'])) : ?>
@@ -22,7 +22,19 @@ $alumax_i = $args;
         </p>
       <?php endif; ?>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-<?php echo count($alumax_i['items']) >= 4 ? '4' : (count($alumax_i['items']) === 2 ? '2' : '3'); ?> gap-6">
+    <?php
+    $alumax_item_cnt = count($alumax_i['items']);
+    if ($alumax_item_cnt === 5) {
+        $alumax_grid_cls = 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5';
+    } elseif ($alumax_item_cnt >= 4) {
+        $alumax_grid_cls = 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
+    } elseif ($alumax_item_cnt === 2) {
+        $alumax_grid_cls = 'grid-cols-1 sm:grid-cols-2';
+    } else {
+        $alumax_grid_cls = 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
+    }
+    ?>
+    <div class="grid <?php echo esc_attr($alumax_grid_cls); ?> gap-6">
       <?php foreach ($alumax_i['items'] as $alumax_item) : ?>
         <div class="flex flex-col bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow group">
           <?php if (!empty($alumax_item['svg']) || !empty($alumax_item['image'])) : ?>

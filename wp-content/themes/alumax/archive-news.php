@@ -422,7 +422,7 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
     </section>
 
   <!-- ========================================================================= -->
-  <!-- NEWSLETTER SIGNUP (可在后台「新闻 → 新闻页设置」配置，标题留空则不显示)     -->
+  <!-- NEWSLETTER SIGNUP ( → ，)     -->
   <!-- ========================================================================= -->
   <?php if (alumax_news_page('newsletter_title') !== '') : ?>
     <section class="w-full bg-[#0a0d12] text-white py-16 lg:py-20 relative overflow-hidden">
@@ -603,8 +603,8 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
 
       // -------------------------------------------------------------
       // 3. FILTERS: category tabs + year
-      // 统一状态过滤，纯前端实现，静态导出后同样可用
-      // （无 JS 时年份下拉仍回退为服务端 GET 筛选）
+      // ，，
+      // （ JS  GET ）
       // -------------------------------------------------------------
       const filterTabs = document.querySelectorAll('.filter-tab');
       const cardItems = document.querySelectorAll('.news-item');

@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) { exit; }
 //   cards  [ [image, image_alt, icon, title, text], ... ]（建议 4 张）
 $alumax_a = $args;
 ?>
-<section class="w-full bg-surface py-16 lg:py-24">
+<section class="w-full <?php echo esc_attr($alumax_a['bg'] ?? 'bg-surface'); ?> py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="flex flex-col mb-12">
       <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-2"><?php echo esc_html($alumax_a['eyebrow']); ?></span>

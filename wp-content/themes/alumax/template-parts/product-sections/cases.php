@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) { exit; }
 //   projects  [ [image, image_alt, location, title, product, area, year], ... ]
 $alumax_p = $args;
 ?>
-<section class="w-full bg-surface-container-low py-16 lg:py-24">
+<section class="w-full <?php echo esc_attr($alumax_p['bg'] ?? 'bg-surface-container-low'); ?> py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
       <div>

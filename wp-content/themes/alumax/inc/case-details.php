@@ -268,7 +268,9 @@ function alumax_case_admin_js() {
       });
       $(document).on('click', '.alumax-media-btn', function (e) {
         e.preventDefault();
-        var input = $('#' + $(this).data('target'));
+        // 优先按 data-target 找输入框；repeater 单元格内则取同行相邻输入框
+        var target = $(this).data('target');
+        var input = target ? $('#' + target) : $(this).siblings('input.alumax-media-input').first();
         var frame = wp.media({ title: '选择图片', button: { text: '使用此图片' }, multiple: false });
         frame.on('select', function () {
           input.val(frame.state().get('selection').first().toJSON().url);

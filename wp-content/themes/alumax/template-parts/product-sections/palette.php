@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) { exit; }
 //   swatches  [ [color(十六进制色值), name, code, bespoke(填 1 为"定制配色"渐变卡)], ... ]
 $alumax_c = $args;
 ?>
-<section class="w-full bg-surface py-16 lg:py-24">
+<section class="w-full <?php echo esc_attr($alumax_c['bg'] ?? 'bg-surface'); ?> py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="flex flex-col mb-12">
       <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-2"><?php echo esc_html($alumax_c['eyebrow']); ?></span>

@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
   <footer class="w-full bg-[#0d1b2a] text-white border-t border-white/10">
     <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl">
-        <!-- Col 1 & 2: Brand, Summary & Social Media Icons（品牌信息在「站点设置」编辑） -->
+        <!-- Col 1 & 2: Brand, Summary & Social Media Icons -->
         <div class="lg:col-span-2 space-y-space-md">
           <div class="flex items-center gap-3">
             <?php $footer_logo = alumax_site('brand_logo'); ?>
@@ -66,7 +66,7 @@ if (!defined('ABSPATH')) {
             <?php endforeach; ?>
           </div>
         </div>
-        <!-- Col 3: Products（自动读取最新 10 个产品） -->
+        <!-- Col 3: Products -->
         <div class="space-y-space-md">
           <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Products</div>
           <ul class="space-y-space-xs">
@@ -79,7 +79,7 @@ if (!defined('ABSPATH')) {
             <?php endforeach; ?>
           </ul>
         </div>
-        <!-- Col 4: Projects（自动读取最新 10 个项目） -->
+        <!-- Col 4: Projects -->
         <div class="space-y-space-md">
           <div class="font-headline-sm text-headline-sm text-white uppercase font-bold">Projects</div>
           <ul class="space-y-space-xs">
@@ -92,7 +92,7 @@ if (!defined('ABSPATH')) {
             <?php endforeach; ?>
           </ul>
         </div>
-        <!-- Col 5: Global Headquarters（信息在「站点设置」编辑） -->
+        <!-- Col 5: Global Headquarters -->
         <div class="space-y-space-md">
           <div class="font-headline-sm text-headline-sm text-white uppercase font-bold"><?php echo esc_html(alumax_site('hq_title')); ?></div>
           <p class="font-body-sm text-body-sm text-slate-300"><?php echo esc_html(alumax_site('hq_desc')); ?></p>
@@ -142,7 +142,7 @@ if (!defined('ABSPATH')) {
     </div>
   </footer>
 
-  <!-- WhatsApp 悬浮按钮：号码/预填消息/二维码在「联系我们设置」配置，号码留空则不显示 -->
+  <!-- WhatsApp floating button -->
   <?php
   $wa_number = preg_replace('/\D+/', '', alumax_contact('whatsapp_number'));
   if ($wa_number !== '') :

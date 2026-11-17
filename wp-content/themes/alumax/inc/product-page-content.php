@@ -133,7 +133,7 @@ function alumax_product_page_defaults($slug) {
                 'badges'         => [],
             ],
             'inquiry' => [
-                'eyebrow'      => 'Request a Quote // 询价与技术咨询',
+                'eyebrow'      => 'Request a Quote',
                 'title'        => 'Request a Quote',
                 'description'  => 'Submit your project requirements and our engineering team will respond with a tailored specification and quotation within 24 business hours.',
                 'form_title'   => 'Project Inquiry',
@@ -192,7 +192,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida/AEtjO1VbnhXNYxUv7Xo3QwN1xjvvquYJ6oyvme4q7adDEsW1BgJNQ23O4I-yMaZnFO9zemf1mDVTrOSBPmXkcQoK1EFRs0CREQgMaSYeRaPYGPSCseWqC0YDKwOENU4esnun3ZgGbTQ2sRFuki35MhjSjDMpEPBnEc5g_sYKt-DK8Rvsu9FKUXaHvSICwyUsnEV7fhZ-7GlChS8u99H6Yt3kX4KQi2O2mDQEQiZ8d6XxBrh-edaf6G7KHN0TSOI',
+            'bg_image'       => '/wp-content/uploads/2026/10/smart-motorized-aluminum-louvers-banner-scaled.jpg',
             'title'          => 'Smart Motorized<br>Aluminum Louvers',
             'subtitle'       => 'Intelligent sun control for modern architecture.',
             'description'    => 'Our motorized aluminum louvers provide effective solar shading, reduce cooling loads, and enhance the building facade with a clean, modern appearance. Engineered for high wind load performance and seamless architectural integration.',
@@ -209,10 +209,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCpy0Y9gLv4qQK2-qtnuwwSxiTCt2MgxGnU_EsguVx6yMQ1MO1f0avk94T020bVFJq1_Tj5HZ2BaCZ4k-d0uf-0OhO0DahveVtjYpINFN4ofZoBSFUlRmC5isPYU_xYdAFFFareanJk6ywLqU3-5QgtwiyOabJPCltqeQaEOK8njq2S2yEPq_X1ejZrNH-lopsA5zaYHCPF81uEEcVR-NiM_Qc2zBdy4dl_LhIkxHcFumby2n5KGlT',
+            'image'       => '/wp-content/uploads/alumax-img-6f0cd09a39.jpg',
             'image_alt'   => 'Close-up architectural macro photograph of precision extruded aluminum louver blades mounted on a stainless steel structural pivot arm.',
             'video_label' => 'Watch System Video',
-            'eyebrow'     => 'The Product // 系统介绍',
+            'eyebrow'     => 'The Product',
             'title'       => 'What is a Smart Louver System?',
             'description' => 'The motorized aluminum louver system consists of high-performance aluminum blades, a supporting structure, a drive system, and an intelligent control system. By adjusting the blade angle in real time, it dynamically controls direct sunlight, minimizes thermal radiation, maximizes natural daylighting, and sculpts the distinct visual aesthetic of the building facade.',
             'features'    => [
@@ -223,33 +223,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Smart Louvers?',
             'description' => 'Engineered for international commercial architectural standards, delivering quantifiable energy savings, environmental comfort, and facade prestige.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuACtfEcuRenYctCzGpZQXGAvYtSNMk5VNnFSqlhdk_mBvlIj9LyGO_8ckig9LsD0kvufxzuEYH8FTKtIK5UczrLUSIwNgtrcuJE04qxa-8BjBHyzvo9FiQfcXUC06u4Z0iuWXl1YvZ8vIkDC2Ev3dGmEpZCJXHSOy0d0sxEaP272rsOe_o6DQFLCb7FR5qqj7je0x-oYFPg20JWQmEb4nMPX6fyfaH3hmY4xeSL0mQHxh0PLgOztlrk',
+                    'image'     => '/wp-content/uploads/alumax-img-32fa214ae2.jpg',
                     'image_alt' => 'Energy-efficient solar louvers blocking intense summer solar rays from entering a large glazed atrium.',
                     'icon'      => 'solar_power',
                     'title'     => 'Solar Control',
                     'text'      => 'Block direct solar heat radiation and reduce internal air conditioning cooling demand by up to 35%.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDwdSLKwiUpwBMKM5SPCFCbBZoRZFkUzpZQACup9L-3v8TT030JScUcqJGgn3u-mvhnzvm18a34hxh1Gdvs13VJj_r9Z-3KH6yTDicocYmWCcYVo8gYXVlVyccWqr5p_nDNvUsJNseDLEi-amm3sPg1Boo9DbozPevMyb2xx-hEr5NZ5Evyq79tQnZdjRRTS7OU3J7hFZ8l83Shy_nTTZFZtNsHSwGJ0aBYA-vFJPuj4jq16QY57syw',
+                    'image'     => '/wp-content/uploads/alumax-img-ee00026186.jpg',
                     'image_alt' => 'Motorized aluminum aerofoil blades rotating synchronously at 45 degree angle with precision pivot joints.',
                     'icon'      => 'linear_scale',
                     'title'     => 'Adjustable Shading',
                     'text'      => 'Balance natural daylighting and occupant privacy with micro-precision angle positioning.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuABwKvpHBvhOjRH-0pu0lQCQXJAu8TA0DoBvk8SIZhKBd-_zLCRd_hi2lg8A-459UFvvTLD1rpizNmgSuib3HjIk_TZvVUDDS5iZ9ugeqzrJg2Oe5Ft163rYYpWEnvTE1V6Om_n8LQ0N8sOyS7-yDPzl4gN8OZPIDHLnXUxW_AyHt89UpPbTeSU5sxLYXCbY5W870w1gVzS5q_ohH7SwMdgLaKHUOmWZHjsJNlcSypIPWvaSSzDFQEz',
+                    'image'     => '/wp-content/uploads/alumax-img-3ca1e3d07c.jpg',
                     'image_alt' => 'Facade with geometric rhythms of vertical and horizontal aluminum louvers integrated with curtain wall glass framing.',
                     'icon'      => 'palette',
                     'title'     => 'Facade Design',
                     'text'      => 'Multiple extruded blade profiles, custom fluoropolymer colors, and tailored vertical or horizontal modular layouts.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnRnr29J8s4IxV5QgtBTcw9AjQ7Fy1TKfBLLKpvfyIae4yKRycrRpNm2Uj8gYVZ9qzUdlBxBuT0qc9SBCS0cN9Umb72ce5yjr8c4hSpAmS6MWO15fGeI3vtakyuF2UnRRahXv_tp9nROWhTYJAip7R5oyP901CFUIUnE_FtgCOtHiX4vXo6urIhxoiWrBFqFCb2CpgnnLs8qXcRNXlXwg7gvxFav5YImoanVle-gwpyEDz6qgLG2Kj',
+                    'image'     => '/wp-content/uploads/alumax-img-75e6ccca41.jpg',
                     'image_alt' => 'IP65 waterproof rated electric linear actuator motor mounted inside an extruded aluminum facade mullion.',
                     'icon'      => 'hub',
                     'title'     => 'Smart Automation',
@@ -258,14 +258,14 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Standard Engineering Schedule',
             'table_ref'   => 'REF: AX-LOUVER-MOT-2025',
             'rows'        => [
                 ['name' => 'Product Type', 'value' => 'Motorized / Adjustable Architectural Envelope Louver', 'mono' => ''],
                 ['name' => 'Blade Profile', 'value' => 'Aerofoil (Wing) / Elliptical / Rectangular / Bespoke Box (varies by model)', 'mono' => ''],
-                ['name' => 'Blade Dimensions', 'value' => 'Width: 100 - 300 mm | Thickness: 1.5 - 2.5 mm | Max Span: up to 6000 mm', 'mono' => '1'],
+                ['name' => 'Blade Dimensions', 'value' => 'Width: 100 - 450 mm | Thickness: 1.5 - 2.5 mm | Max Span: up to 6000 mm', 'mono' => '1'],
                 ['name' => 'Alloy & Temper', 'value' => 'Extruded Aluminum Alloy 6063-T5 / 6063-T6 (GB/T 5237 / ASTM B221)', 'mono' => '1'],
                 ['name' => 'Finish Options', 'value' => 'PVDF 3-Coat 35μm (AAMA 2605) / Architectural Powder Coating / Hard Anodized 20μm', 'mono' => ''],
                 ['name' => 'Blade Rotation', 'value' => '0° - 90° Continuous Angle Rotation (Custom 120° available)', 'mono' => '1'],
@@ -275,8 +275,8 @@ SVG;
                 ['name' => 'Customization', 'value' => 'Blade scale, RAL colors, mullion brackets & vertical/horizontal installation', 'mono' => ''],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Download Product Datasheet (PDF)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'folder_zip', 'label' => 'Request CAD / BIM Files (.DWG / .RVT)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Download Product Datasheet (PDF)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'folder_zip', 'label' => 'Request CAD / BIM Files (.DWG / .RVT)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -291,30 +291,32 @@ SVG;
                     'title'     => 'Motor & Drive Detail',
                     'tag'       => 'CONCEALED',
                     'svg'       => '',
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHCczDzmHNEO_I_AXLv4SYdH4glRUqtIngADaUOofmQfbJ0NH6OFeBf8G5YFmm7YjdGGMnzFw4O7RH2VSHfYen6op7KzUbS1k36Jy2ZIl0RYxkbcNSojuqr4ybkexXCkhhwq1ubCj7pUyXFhFxadtcLv1EwRwOQ6_dquY_7h_oIK3HuIT8VDwH0QjOUPOzV4OGNIbraiXqksgVm3ZzpWE-phE5wYdu-ccJSnUhDv6KDSc8uktjsES8',
+                    'image'     => '/wp-content/uploads/alumax-img-ff06ac6d55.jpg',
                     'image_alt' => 'Concealed electric motor actuator linkage box mounted inside an extruded aluminum facade bracket assembly.',
                     'caption'   => 'IP65 sealed transmission unit with micro-switch end-stops',
                 ],
             ],
-            'install_eyebrow'     => 'Installation // 安装方式',
-            'install_title'       => 'Mullion Integration & Mounting Typologies',
-            'install_description' => 'BIM / Revit compliant mounting schematics covering the three standard structural interfaces.',
-            'install_note'        => 'Standard stainless steel brackets Grade 304/316 with EPDM acoustic isolation dampers preventing galvanic corrosion.',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
+            'install_description' => 'Engineered to interface seamlessly with all primary building structures, curtain wall envelopes, and architectural canopy openings.',
+            'install_note'        => 'All mounting brackets manufactured from Grade 304 / 316 stainless steel or heavy 6063-T6 aluminum, isolated with EPDM gaskets and dielectric shims to eliminate galvanic corrosion and thermal bridging.',
             'install_items'       => [
-                ['svg' => $svg_horizontal, 'image' => '', 'image_alt' => '', 'tag' => 'TYPE 01', 'title' => 'Horizontal Cantilever', 'text' => 'Projecting bracket arms anchored to slab edges or structural mullions for horizontal sunshade runs.'],
-                ['svg' => $svg_vertical, 'image' => '', 'image_alt' => '', 'tag' => 'TYPE 02', 'title' => 'Vertical Continuous', 'text' => 'Continuous vertical blade stacks fixed to curtain wall mullions for full-height solar screening.'],
-                ['svg' => $svg_curtain, 'image' => '', 'image_alt' => '', 'tag' => 'TYPE 03', 'title' => 'Curtain Wall Mount', 'text' => 'Direct integration into unitized curtain wall transoms with dielectric isolation shims.'],
+                ['svg' => '', 'image' => '/wp-content/uploads/2026/11/louver-install-surface-mounted.jpg', 'image_alt' => 'Surface-mounted motorized aluminum louver installation with heavy-duty cantilever standoff brackets on exterior concrete wall.', 'tag' => 'TYPE 01 // EXTERIOR RETROFIT', 'title' => 'Surface-Mounted', 'text' => 'Engineered for solid exterior walls and building facade retrofits. Heavy-duty cantilever standoff bracket arms anchor directly onto structural concrete or steel substructures without requiring alterations to existing window openings.'],
+                ['svg' => '', 'image' => '/wp-content/uploads/2026/11/louver-install-recessed.jpg', 'image_alt' => 'Recessed motorized aluminum louver installation nested flush inside an exterior punched window reveal.', 'tag' => 'TYPE 02 // WINDOW REVEAL', 'title' => 'Recessed', 'text' => 'Engineered for punched window openings and deep facade reveals. The motorized louver assembly mounts flush within the perimeter structural pocket with concealed side guide channels, maximizing natural shade depth and wind resistance.'],
+                ['svg' => '', 'image' => '/wp-content/uploads/2026/11/louver-install-between-structure.jpg', 'image_alt' => 'Between-structure motorized louver system spanning between two primary vertical steel columns.', 'tag' => 'TYPE 03 // PRIMARY GRID', 'title' => 'Between-Structure', 'text' => 'Engineered for large spans between structural steel columns, floor slab edges, and primary framing. Heavy pivot bearings absorb significant thermal expansion, high wind loads, and inter-story seismic building movement.'],
+                ['svg' => '', 'image' => '/wp-content/uploads/2026/11/louver-install-curtain-wall-integrated.jpg', 'image_alt' => 'Curtain wall integrated motorized aluminum louvers mounted directly to aluminum transoms and mullions with architectural glass.', 'tag' => 'TYPE 04 // CURTAIN WALL', 'title' => 'Curtain Wall Integrated', 'text' => 'Engineered for unitized and stick-built glass curtain wall transoms and mullions. Features dielectric thermal-break isolators and completely concealed motor wiring within internal aluminum profile cavities.'],
+                ['svg' => '', 'image' => '/wp-content/uploads/2026/11/louver-install-overhead-mounted.jpg', 'image_alt' => 'Overhead-mounted motorized louver system suspended horizontally from structural steel overhead beams.', 'tag' => 'TYPE 05 // CANOPY & SKYLIGHT', 'title' => 'Overhead-Mounted', 'text' => 'Engineered for building entrance canopies, covered walkway corridors, and glass skylight roofs. Louvers suspend horizontally or at designated angles using high-tensile safety hanger rods and IP66 weather-sealed actuator drives.'],
             ],
         ],
         'control' => [
-            'eyebrow'     => 'Intelligent Control // 智能控制',
+            'eyebrow'     => 'Intelligent Control',
             'title'       => 'Flexible & Intelligent Operation',
             'description' => 'With integrated environmental sensors and intelligent controllers, the ALUMAX motorized louver system automatically modulates blade angles based on real-time solar azimuth, local wind velocity, temperature, and tenant preferences—creating a low-energy, highly comfortable indoor climate.',
-            'cta_label'   => 'Learn More & Integration Specs',
+            'cta_label'   => '',
             'cta_url'     => '#rfq-section',
             'modes'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHkn_WPSnBmkfeCHkpIR51CG8kPF8LwMqq_dQd3T8RsTIA3s8GtM9lEs7q4gqPxzThMsEpx6xtWgv-JTYgrG5KOjaXxfykE6sHCqPUJvQMJWkNemA20YcrddD5GkgjtljDbcWkUKsYakzTxDaBO9svEIeXvh8QDtA8MhR48VdTvG0BjOve8nIm9jFwQSZibWNOYD3ScfNX-4D0z7bi21R535enmoRq3DeGv5UUKdnrREwG-FRGNWxN',
+                    'image'     => '/wp-content/uploads/alumax-img-3fd35603d0.jpg',
                     'image_alt' => 'Motorized aluminum facade louvers fully closed in shading mode.',
                     'tag'       => '01 // 0°',
                     'title'     => 'Closed / Shading Mode',
@@ -322,7 +324,7 @@ SVG;
                     'text'      => 'Blocks 100% direct sun, minimizing HVAC peak loads during extreme heat.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyv3M3Ygpv5UHkelIrXDl3PyTVpYiDLUW6EJ_kns3Do1_MALX-ZvqTlk4H5EyJbTROwbJByERv6rcKW0POakA6dS1MMdiDfwSlHvt92vc7nTGhwLs2NyaBOl_bY1kQlvuRWeovFivBM_yl0cUGUCBwkWn_1hje023rJaJBisbMULZA2-EGmTJFY4RlyVvyxW0Z63bo1eyOhKZRTL82c-IQoaNfAax6XCP26NprTRKm1yMW34f9h1XF',
+                    'image'     => '/wp-content/uploads/alumax-img-0fa7719c0b.jpg',
                     'image_alt' => 'Exterior building louvers tilted at 45 degree angle allowing balanced natural daylight.',
                     'tag'       => '02 // 45°',
                     'title'     => 'Adjustable / Daylight Mode',
@@ -330,7 +332,7 @@ SVG;
                     'text'      => 'Harmonizes diffuse ambient daylight, eliminates glare, and retains outdoor views.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAojZ5t1uBU7bdg0JUyH9gjCfozjp_7TJUjjZgxP5R8DTN_gnUUMswzgQUWCrq0ASzXuXNe_56TatfMp9pi52vYv2wCidVdhdLp6JODMd5akh8IGEHzfyizjiliGTD6UZAP5dR2tKo6aHtq-PWD1bP6-89w1hDKwlRgk_2egwd3LQB_z3v-GBQVwl9SXvsCE0x_GiO5eNDl5eXz1-rkIhFh17KI6BW159ILVNR0gx6d50PBVecW6eEc',
+                    'image'     => '/wp-content/uploads/alumax-img-d53ef73ce3.jpg',
                     'image_alt' => 'Modern glass facade with motorized aluminum louvers turned to full 90 degree horizontal open angle.',
                     'tag'       => '03 // 90°',
                     'title'     => 'Open / View Mode',
@@ -340,33 +342,33 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Customization Options // 定制选项',
+            'eyebrow'     => 'Customization Options',
             'title'       => 'Tailored to Your Project',
             'description' => 'We offer an extensive range of engineering configurations to satisfy bespoke architectural geometries, local wind codes, and corporate branding standards.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFOs4TCX89SNJ9n4PJrVK5ZietHZEjTgixuM7mUTAf6Fj8wT0Bqxbi_BiTVgmKeNs_aFdl9BKRvVrcLzPdq_Fym44iqBZWdXt8upRaxKPn148iFJ-atp6T4S__IHRfjv8scCMxR2SaZ3jGa2tNIyob6u5JzpZDXG1AOPNTHXMRnuGnX_vBaFAIlLD5dEKkNiKg0PHdu6KvX8c0zhQ52tcsOW6v7tHSptC0GQAWp_Us7lsIziVz0kla',
-                    'image_alt' => 'Technical drawing of aerofoil, elliptical, and rectangular louver blade extruded profiles.',
+                    'image'     => '/wp-content/uploads/2026/11/louver-blade-profiles-extrusion.jpg',
+                    'image_alt' => 'Precision extruded aluminum louver blade profiles showing aerofoil, elliptical, and rectangular box sections.',
                     'contain'   => '1',
                     'title'     => 'Blade Profiles',
                     'text'      => 'Aerofoil (100–450mm), elliptical, box rectangular, and custom die extrusion profiles tailored to project wind loads.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBQBiG8BsseKsHjDEL2xZfrGNHano64lUR7gYGGOtmrcXcauTpthWCJaqbANDH-OkNGk5Otf7PlaGW8DfF0nm1zZiBDWq0IspJSWizaEzjyXJhlARJeoKD_1Cx9DbKI0ek82ZzpE9OOz4QZWQGKoXcBRKeEPfdrnFybjSayCkd46pd163Ls_8fhFIJlMUaal7dsNDICCDh3KGltFXkA_l2GMWDGGiED23tZCyMaM5JH4cTBN4UQp5i4',
-                    'image_alt' => 'Swatch fan deck of anodized bronze, champagne gold, matte slate grey, and PVDF coated aluminum finishes.',
+                    'image'     => '/wp-content/uploads/2026/11/architectural-louver-colors-finishes.jpg',
+                    'image_alt' => 'Architectural aluminum finish samples including bronze anodized, champagne gold, brushed silver, anthracite charcoal PVDF, and matte white.',
                     'contain'   => '',
                     'title'     => 'Colors & Finishes',
                     'text'      => 'AAMA 2605 certified PVDF 3-coat, architectural polyester powder coating in any RAL code, and hard anodized architectural finishes.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBpp7W_WNgcPxlqxqLV6V6Afu9zV457dFmzaQw8hcPwQzLvAFAtJGK8bA6TCVmczVkN-nJThJ6WBcVn3rFccdb37jH_fglPi0XC00f1wUOori97-WqTc_oFR_JTgoz-QGwoqcFb8_6k3diNfQC-EPY9dMwkUKxZTnnFoWDEQNIrgTswDqRdOe59Oz05Oewzk0fWokbN0sWIYrOqjtYKM_d4zcedUvOaR7pT6k7n5V3PbrFTd4iV8HkS',
+                    'image'     => '/wp-content/uploads/alumax-img-824a54575c.jpg',
                     'image_alt' => 'Aluminum motorized actuator unit with stainless steel drive shaft and planetary gearbox.',
                     'contain'   => '1',
                     'title'     => 'Drive & Controls',
                     'text'      => '24V DC / 230V AC motors, intelligent BMS controllers, wind and rain weather stations, and solar position algorithms.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCou2thiA75kbfJ7I15ROEUtJxoRhMEHDsjIuyxYxnwECn03khQIEgEfLsVG1mCHCulYk77E2GOqJjVt7pV5rK8cM04L5GX_PmVndterMtGN3TRNH7Hj6Jcq-yPs44PBAnSlquxfBwAys0qbzoO6up0KQuOyVzoJA8CqwRyX0iC-6Ox7suCdf0BFwgjB8ktLcA9yA8TfdrktCk24vO0bBk0HKfGJUocsRdUWmM-AKNHFfP95nhnRhm3',
+                    'image'     => '/wp-content/uploads/alumax-img-2040860310.jpg',
                     'image_alt' => 'Grade 316 stainless steel mounting bracket hardware and pivot joints for curtain wall louvers.',
                     'contain'   => '1',
                     'title'     => 'Mounting Options',
@@ -375,13 +377,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'   => 'Project References // 工程案例',
+            'eyebrow'   => 'Project References',
             'title'     => 'Trusted in Iconic Buildings',
             'link_label' => 'View All Global Projects',
             'link_url'  => '',
             'projects'  => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqcH0g3QS7SVBF8XrJSO8s5__jeZC_FE_66jneYbr1JotcPAvFzTuuK-quWGmkJNOlmNQkfwTjBQ_gtfw_r6f9I2YLQfX8NO9oLodEjom1EXbo7DTyTWgEwYGfJlYXVUYJD4-b6yC8L-ak0XVm9ZnlWLLr6OYu6Z31Gu_5gi2Dsay8N4ejwoyGAkCVFYU_630b9jZ4awC88HQyDAdt9zeqAk90AWVWJ7Wf9hgIxYqed6t5Cetv6ciA',
+                    'image'     => '/wp-content/uploads/alumax-img-7ceffd4dc4.jpg',
                     'image_alt' => 'Modern glass office skyscraper in New York City with motorized horizontal aluminum louvers.',
                     'location'  => 'NEW YORK, USA',
                     'title'     => 'Commercial Office Tower',
@@ -390,7 +392,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAqpJMYBwUzNkAaAytTeYlL_p07NO8OCGuHIXKPZO_kI6vgaDuHfCyrrS05mfpHjf7i7a-mUD8mSaJUnfZPt6ednwmXJ1e89wplCbKHUIy6KV1jlNG0w_8-nGPBiFH0ubGv_bvnGZTDsH-ZJ9vJEV3cISIuOtv98B_IDRlB2Z7UO_ia1AeCsoGDD1IhsjjcQOf037dXHJIQGjqPQZuxLFRCRI_nXjMWA-7qq1l_wSdBvh8FNfGJDnM0',
+                    'image'     => '/wp-content/uploads/alumax-img-31a22b8ec5.jpg',
                     'image_alt' => 'High-tech corporate campus in Singapore with custom vertical motorized sun louvers integrated with BMS.',
                     'location'  => 'SINGAPORE',
                     'title'     => 'Tech Innovation Complex',
@@ -399,7 +401,7 @@ SVG;
                     'year'      => 'Year: 2024',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoRbQRabsuMWOMsrV3xayhJYj1SaAUD1POLX_i5eid2h0E0KSQGtcar6vrt7mkp7D93ZQhUJpWos34xORXS1Xuid_rBmOzW_73sSPEzfRXkzrE593H1MG9VDwqI5dBOTKjLYplvEhPEWg8500STA8UAVIRBPhwnZ_IwCOeUU_mUbh_Wwkf0Qnak1Eozvj8YHCIGBkhtGnODkK0_vsbc-TVfrofa1XNIlSEd9gx5WcGKBADiGSETcs0',
+                    'image'     => '/wp-content/uploads/alumax-img-0a3093b951.jpg',
                     'image_alt' => 'University research building in Sydney Australia with cantilevered motorized aluminum solar shading fins.',
                     'location'  => 'SYDNEY, AUSTRALIA',
                     'title'     => 'University Research Campus',
@@ -408,7 +410,7 @@ SVG;
                     'year'      => 'Year: 2022',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHv4oXqHliPn9ps2728hViDoEEqH8Zw8a9HETf0GulrQiYzvAY_M78kKdedH7sESLU1dXsa3JXJ6WmwIuiYAT3f1atzX_ery40T9Jlgbifl0PMe95_YWTxUvfCuZVTsUCSZLNALpYU1siCyiTGHiCFU-UfiSaxWEoCj6B6U5tQd2wYeTpOkemO1V-hrpDZleJhF-W3yoVhi5N37WL4PMOK-vv4tnkkGqYrQknJUJz-mV-H7Fb0XmM7',
+                    'image'     => '/wp-content/uploads/alumax-img-4b4396bd76.jpg',
                     'image_alt' => 'Medical hospital complex in Dubai with gold champagne anodized vertical motorized sunshade louvers.',
                     'location'  => 'DUBAI, UAE',
                     'title'     => 'Specialty Medical Center',
@@ -419,7 +421,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Request a Project Quote // 询价与技术咨询',
+            'eyebrow'      => 'Request a Project Quote',
             'title'        => 'Have a Project in Mind?',
             'description'  => 'Send us your architectural drawings, tender schedules, dimensions, or specific performance criteria. Our global engineering department will respond within 24 hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -522,7 +524,7 @@ function alumax_product_page_sections($post_id = null) {
 
     $specs = alumax_product_page_section('specs', $post_id);
 
-    // 安装方式独立模块（数据仍存放在 specs meta 的 install_* 键中，兼容旧数据 label→title）
+    // Installation independent module (specs install_* keys, legacy label->title compatibility)
     $install = [
         'eyebrow'     => $specs['install_eyebrow'] ?? '',
         'title'       => $specs['install_title'] ?? '',
@@ -543,7 +545,8 @@ function alumax_product_page_sections($post_id = null) {
     unset($specs['install_eyebrow'], $specs['install_title'], $specs['install_description'], $specs['install_tag'], $specs['install_note'], $specs['install_items']);
 
     $control = alumax_product_page_section('control', $post_id);
-    $control['cta'] = ['label' => $control['cta_label'] ?? '', 'url' => $control['cta_url'] ?? ''];
+    $cta_label = trim((string) ($control['cta_label'] ?? ''));
+    $control['cta'] = $cta_label !== '' ? ['label' => $cta_label, 'url' => $control['cta_url'] ?? ''] : null;
     unset($control['cta_label'], $control['cta_url']);
 
     $cases = alumax_product_page_section('cases', $post_id);
@@ -584,6 +587,12 @@ function alumax_render_product_page($post_id = null) {
     $alumax_show = function ($key) use ($alumax_on) {
         return in_array($key, $alumax_on, true);
     };
+    // 浅色模块背景按实际渲染顺序交替（container-low / surface），
+    // 避免禁用部分模块后相邻模块同色（如技术参数与定制选项连在一起）
+    $alumax_bg_index = 0;
+    $alumax_bg = function () use (&$alumax_bg_index) {
+        return $alumax_bg_index++ % 2 === 0 ? 'bg-surface-container-low' : 'bg-surface';
+    };
     ?>
 <main class="w-full bg-surface">
   <div class="flex flex-col w-full bg-surface text-on-surface">
@@ -593,28 +602,28 @@ function alumax_render_product_page($post_id = null) {
         get_template_part('template-parts/product-sections/hero', null, $alumax_sections['hero']);
     }
     if ($alumax_show('intro') && !empty($alumax_sections['intro']['title'])) {
-        get_template_part('template-parts/product-sections/intro', null, $alumax_sections['intro']);
+        get_template_part('template-parts/product-sections/intro', null, $alumax_sections['intro'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('advantages') && !empty($alumax_sections['advantages']['cards'])) {
-        get_template_part('template-parts/product-sections/advantages', null, $alumax_sections['advantages']);
+        get_template_part('template-parts/product-sections/advantages', null, $alumax_sections['advantages'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('control') && !empty($alumax_sections['control']['modes'])) {
-        get_template_part('template-parts/product-sections/control', null, $alumax_sections['control']);
+        get_template_part('template-parts/product-sections/control', null, $alumax_sections['control'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('specs') && !empty($alumax_sections['specs']['rows'])) {
-        get_template_part('template-parts/product-sections/specs', null, $alumax_sections['specs']);
+        get_template_part('template-parts/product-sections/specs', null, $alumax_sections['specs'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('palette') && !empty($alumax_sections['palette']['swatches'])) {
-        get_template_part('template-parts/product-sections/palette', null, $alumax_sections['palette']);
+        get_template_part('template-parts/product-sections/palette', null, $alumax_sections['palette'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('options') && !empty($alumax_sections['options']['cards'])) {
-        get_template_part('template-parts/product-sections/options', null, $alumax_sections['options']);
+        get_template_part('template-parts/product-sections/options', null, $alumax_sections['options'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('install') && !empty($alumax_sections['install']['items']) && !empty($alumax_sections['install']['title'])) {
-        get_template_part('template-parts/product-sections/install', null, $alumax_sections['install']);
+        get_template_part('template-parts/product-sections/install', null, $alumax_sections['install'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('cases') && !empty($alumax_sections['cases']['projects'])) {
-        get_template_part('template-parts/product-sections/cases', null, $alumax_sections['cases']);
+        get_template_part('template-parts/product-sections/cases', null, $alumax_sections['cases'] + ['bg' => $alumax_bg()]);
     }
     if ($alumax_show('inquiry')) {
         get_template_part('template-parts/product-sections/inquiry', null, $alumax_sections['inquiry']);
@@ -623,6 +632,206 @@ function alumax_render_product_page($post_id = null) {
   </div>
 </main>
 <?php
+    // 数据表 PDF 下载：用 jsPDF 按参数数据直接绘制 PDF（矢量文字，非页面截图），
+    // 纯浏览器端实现，静态导出站点同样可用。触发按钮见 hero/specs 模板的 data-datasheet-pdf。
+    if ($alumax_show('specs') && !empty($alumax_sections['specs']['rows'])) :
+        $alumax_pid = $post_id ?: get_the_ID();
+        $alumax_spec_section = $alumax_sections['specs'];
+        $alumax_pdf_rows = [];
+        foreach ($alumax_spec_section['rows'] as $alumax_row) {
+            $alumax_pdf_rows[] = [$alumax_row['name'], $alumax_row['value']];
+        }
+        $alumax_pdf_cards = [];
+        foreach ((array) ($alumax_spec_section['side_cards'] ?? []) as $alumax_card) {
+            $alumax_pdf_cards[] = [
+                'title'   => $alumax_card['title'] ?? '',
+                'tag'     => $alumax_card['tag'] ?? '',
+                'caption' => $alumax_card['caption'] ?? '',
+            ];
+        }
+        $alumax_pdf_data = [
+            'product'    => get_the_title($alumax_pid),
+            'date'       => gmdate('Y-m-d'),
+            'eyebrow'    => $alumax_spec_section['eyebrow'] ?? '',
+            'title'      => $alumax_spec_section['title'] ?? '',
+            'tableTitle' => $alumax_spec_section['table_title'] ?? 'Specification',
+            'tableRef'   => $alumax_spec_section['table_ref'] ?? '',
+            'rows'       => $alumax_pdf_rows,
+            'cards'      => $alumax_pdf_cards,
+        ];
+        ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.jspdf) return;
+  var DATA = <?php echo wp_json_encode($alumax_pdf_data); ?>;
+  // jsPDF default font only supports Latin-1; lazy load CJK font if needed
+  var FONT_URL = 'https://cdn.jsdelivr.net/gh/StellarCN/scp_zh@master/fonts/SimHei.ttf';
+  var fontPromise = null;
+  function loadFontB64() {
+    if (!fontPromise) {
+      fontPromise = fetch(FONT_URL).then(function (r) {
+        if (!r.ok) throw new Error('font fetch failed');
+        return r.arrayBuffer();
+      }).then(function (buf) {
+        var bytes = new Uint8Array(buf), binary = '', chunk = 0x8000;
+        for (var i = 0; i < bytes.length; i += chunk) {
+          binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+        }
+        return btoa(binary);
+      });
+    }
+    return fontPromise;
+  }
+  // Greek letter mu mapping to Latin-1 equivalent for helvetica support
+  function sanitize(s) { return String(s == null ? '' : s).replace(/\u03BC/g, '\u00B5'); }
+  function isLatin(s) { return !/[^\u0000-\u00FF]/.test(s); }
+
+  function buildPdf(fontB64) {
+    var doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4' });
+    var hasCjkFont = !!fontB64;
+    if (hasCjkFont) {
+      doc.addFileToVFS('simhei.ttf', fontB64);
+      doc.addFont('simhei.ttf', 'simhei', 'normal');
+    }
+    function T(s) {
+      var v = sanitize(s);
+      if (!hasCjkFont) {
+        // Font fallback cleanup
+        v = v.replace(/[\u3000-\u9fff\uff00-\uffef]+/g, '').replace(/\s*\/\/\s*$/, '').trim();
+      }
+      return v;
+    }
+    function setFont(bold, s) {
+      if (hasCjkFont && s !== undefined && !isLatin(sanitize(s))) {
+        doc.setFont('simhei', 'normal');
+      } else {
+        doc.setFont('helvetica', bold ? 'bold' : 'normal');
+      }
+    }
+    var pageW = 210, margin = 14;
+
+    // Header dark banner
+    doc.setFillColor(13, 27, 42);
+    doc.rect(0, 0, pageW, 28, 'F');
+    setFont(true);
+    doc.setFontSize(9);
+    doc.setTextColor(255, 221, 181);
+    doc.text('ALUMAX ARCHITECTURAL', margin, 10);
+    doc.setFontSize(16);
+    doc.setTextColor(255, 255, 255);
+    setFont(true, DATA.product);
+    doc.text(T(DATA.product), margin, 19);
+    setFont(false);
+    doc.setFontSize(8);
+    doc.setTextColor(186, 200, 220);
+    doc.text('TECHNICAL DATASHEET · ' + DATA.date, margin, 25);
+
+    var y = 38;
+    if (DATA.eyebrow) {
+      setFont(false, DATA.eyebrow);
+      doc.setFontSize(8);
+      doc.setTextColor(123, 88, 37);
+      doc.text(T(DATA.eyebrow).toUpperCase(), margin, y);
+      y += 6;
+    }
+    if (DATA.title) {
+      setFont(true, DATA.title);
+      doc.setFontSize(13);
+      doc.setTextColor(13, 27, 42);
+      doc.text(doc.splitTextToSize(T(DATA.title), pageW - margin * 2), margin, y);
+      y += 8;
+    }
+    if (DATA.tableRef) {
+      setFont(false, DATA.tableRef);
+      doc.setFontSize(7);
+      doc.setTextColor(116, 119, 125);
+      doc.text(T(DATA.tableRef), margin, y);
+      y += 4;
+    }
+
+    // Specification table
+    doc.autoTable({
+      startY: y + 2,
+      head: [[T(DATA.tableTitle), '']],
+      body: DATA.rows.map(function (r) { return [T(r[0]), T(r[1])]; }),
+      styles: { fontSize: 8.5, cellPadding: 2.2, textColor: [68, 71, 76], font: 'helvetica' },
+      headStyles: { fillColor: [13, 27, 42], textColor: 255, fontSize: 9, font: 'helvetica', fontStyle: 'bold' },
+      alternateRowStyles: { fillColor: [242, 244, 246] },
+      margin: { left: margin, right: margin },
+      columnStyles: { 0: { fontStyle: 'bold', cellWidth: 62, textColor: [25, 28, 30] } },
+      didParseCell: function (data) {
+        // Switch font for CJK cells
+        var raw = data.cell.raw != null ? String(data.cell.raw) : '';
+        if (hasCjkFont && !isLatin(raw)) {
+          data.cell.styles.font = 'simhei';
+          data.cell.styles.fontStyle = 'normal';
+        }
+      }
+    });
+    y = doc.lastAutoTable.finalY + 8;
+
+    // Engineering cards text info
+    if (DATA.cards && DATA.cards.length) {
+      setFont(true);
+      doc.setFontSize(10);
+      doc.setTextColor(13, 27, 42);
+      doc.text('Engineering Schematics', margin, y);
+      y += 5;
+      DATA.cards.forEach(function (card) {
+        if (y > 270) { doc.addPage(); y = 20; }
+        var head = T(card.title) + (card.tag ? '  [' + T(card.tag) + ']' : '');
+        setFont(true, head);
+        doc.setFontSize(8.5);
+        doc.setTextColor(25, 28, 30);
+        doc.text(head, margin, y);
+        y += 4;
+        if (card.caption) {
+          setFont(false, card.caption);
+          doc.setFontSize(7.5);
+          doc.setTextColor(116, 119, 125);
+          var lines = doc.splitTextToSize(T(card.caption), pageW - margin * 2);
+          doc.text(lines, margin, y);
+          y += lines.length * 3.5 + 2;
+        } else {
+          y += 2;
+        }
+      });
+    }
+
+    // Footer
+    var pageCount = doc.getNumberOfPages();
+    for (var i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      setFont(false);
+      doc.setFontSize(7);
+      doc.setTextColor(150, 153, 158);
+      doc.text('© ' + new Date().getFullYear() + ' ALUMAX Architectural Envelopes Co., Ltd. · export@alumax-facade.com', margin, 292);
+      doc.text('Page ' + i + ' / ' + pageCount, pageW - margin, 292, { align: 'right' });
+    }
+    return doc;
+  }
+
+  document.querySelectorAll('[data-datasheet-pdf]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      btn.style.opacity = '0.6';
+      btn.style.pointerEvents = 'none';
+      loadFontB64().catch(function () { return null; }).then(function (b64) {
+        var doc = buildPdf(b64);
+        var filename = sanitize(DATA.product).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '-datasheet.pdf';
+        doc.save(filename);
+      }).finally(function () {
+        btn.style.opacity = '';
+        btn.style.pointerEvents = '';
+      });
+    });
+  });
+});
+</script>
+<?php
+    endif;
 }
 
 /* -------------------------------------------------------------------------
@@ -773,7 +982,10 @@ function alumax_pp_repeater_cells($id, $columns, $row) {
         $value = isset($row[$field]) ? $row[$field] : '';
         $name = $id . '[' . $field . '][]';
         echo '<td>';
-        if (!empty($col['type']) && in_array($col['type'], ['textarea', 'svg'], true)) {
+        if (!empty($col['type']) && $col['type'] === 'image') {
+            echo '<input type="text" name="' . esc_attr($name) . '" value="' . esc_attr($value) . '" class="large-text alumax-media-input">';
+            echo '<button type="button" class="button alumax-media-btn" style="margin-top:4px;">选择图片</button>';
+        } elseif (!empty($col['type']) && in_array($col['type'], ['textarea', 'svg'], true)) {
             echo '<textarea name="' . esc_attr($name) . '" class="large-text" rows="' . ($col['type'] === 'svg' ? '4' : '2') . '">' . esc_textarea($value) . '</textarea>';
         } else {
             echo '<input type="text" name="' . esc_attr($name) . '" value="' . esc_attr($value) . '" class="large-text">';
@@ -848,7 +1060,7 @@ function alumax_pp_hero_box($post) {
       alumax_pp_field('左侧大图', 'alumax_pp_intro[image]', $intro['image'], 'text', '', true);
       alumax_pp_field('图片描述（alt）', 'alumax_pp_intro[image_alt]', $intro['image_alt']);
       alumax_pp_field('视频按钮文案', 'alumax_pp_intro[video_label]', $intro['video_label'], 'text', '留空则不显示视频按钮');
-      alumax_pp_field('眉标（如 The Product // 系统介绍）', 'alumax_pp_intro[eyebrow]', $intro['eyebrow']);
+      alumax_pp_field('眉标（如 The Product）', 'alumax_pp_intro[eyebrow]', $intro['eyebrow']);
       alumax_pp_field('标题', 'alumax_pp_intro[title]', $intro['title']);
       alumax_pp_field('描述段落', 'alumax_pp_intro[description]', $intro['description'], 'textarea');
       ?>
@@ -882,7 +1094,7 @@ function alumax_pp_sections_box($post) {
     <h4>核心优势卡片（可增删，建议 4 张）</h4>
     <?php
     alumax_pp_repeater('alumax_pp_advantages_cards', [
-        'image'     => ['label' => '图片 URL', 'width' => '26%'],
+        'image'     => ['label' => '图片（可上传）', 'width' => '26%', 'type' => 'image'],
         'image_alt' => ['label' => '图片描述', 'width' => '18%'],
         'icon'      => ['label' => '图标', 'width' => '10%'],
         'title'     => ['label' => '标题', 'width' => '16%'],
@@ -903,7 +1115,7 @@ function alumax_pp_sections_box($post) {
     <h4>运行模式卡（可增删，建议 3 张）</h4>
     <?php
     alumax_pp_repeater('alumax_pp_control_modes', [
-        'image'     => ['label' => '图片 URL', 'width' => '24%'],
+        'image'     => ['label' => '图片（可上传）', 'width' => '24%', 'type' => 'image'],
         'image_alt' => ['label' => '图片描述', 'width' => '16%'],
         'tag'       => ['label' => '角标（如 01 // 0°）', 'width' => '12%'],
         'title'     => ['label' => '标题', 'width' => '16%'],
@@ -923,7 +1135,7 @@ function alumax_pp_sections_box($post) {
     <h4>定制选项卡片（可增删，建议 4 张）</h4>
     <?php
     alumax_pp_repeater('alumax_pp_options_cards', [
-        'image'     => ['label' => '图片 URL', 'width' => '22%'],
+        'image'     => ['label' => '图片（可上传）', 'width' => '22%', 'type' => 'image'],
         'image_alt' => ['label' => '图片描述', 'width' => '14%'],
         'svg'       => ['label' => 'SVG 线图（可选，优先于图片）', 'type' => 'textarea'],
         'contain'   => ['label' => '线图模式', 'width' => '8%'],
@@ -992,7 +1204,7 @@ function alumax_pp_specs_box($post) {
         'title'     => ['label' => '标题', 'width' => '18%'],
         'tag'       => ['label' => '角标', 'width' => '12%'],
         'svg'       => ['label' => 'SVG 代码', 'type' => 'svg'],
-        'image'     => ['label' => '图片 URL', 'width' => '20%'],
+        'image'     => ['label' => '图片（可上传）', 'width' => '20%', 'type' => 'image'],
         'image_alt' => ['label' => '图片描述', 'width' => '14%'],
         'caption'   => ['label' => '图注', 'width' => '16%'],
     ], $specs['side_cards'], '+ 添加图形卡');
@@ -1001,7 +1213,7 @@ function alumax_pp_specs_box($post) {
     <h4>安装方式模块（独立板块，显示在「产品细节」之后；标题留空则整模块不显示）</h4>
     <table class="form-table" style="max-width:960px;">
       <?php
-      alumax_pp_field('眉标（如 Installation // 安装方式）', 'alumax_pp_specs[install_eyebrow]', $specs['install_eyebrow'] ?? '');
+      alumax_pp_field('眉标（如 Installation）', 'alumax_pp_specs[install_eyebrow]', $specs['install_eyebrow'] ?? '');
       alumax_pp_field('标题', 'alumax_pp_specs[install_title]', $specs['install_title']);
       alumax_pp_field('副文', 'alumax_pp_specs[install_description]', $specs['install_description'] ?? '', 'textarea');
       alumax_pp_field('底部说明', 'alumax_pp_specs[install_note]', $specs['install_note'], 'textarea');
@@ -1013,7 +1225,7 @@ function alumax_pp_specs_box($post) {
         'title'     => ['label' => '标题', 'width' => '18%'],
         'text'      => ['label' => '说明', 'type' => 'textarea'],
         'svg'       => ['label' => 'SVG 代码（可选，优先于图片）', 'type' => 'svg'],
-        'image'     => ['label' => '图片 URL', 'width' => '20%'],
+        'image'     => ['label' => '图片（可上传）', 'width' => '20%', 'type' => 'image'],
         'image_alt' => ['label' => '图片描述', 'width' => '14%'],
     ], $specs['install_items'], '+ 添加安装节点');
 }
@@ -1034,7 +1246,7 @@ function alumax_pp_cases_box($post) {
     <h4>工程案例卡片（可增删，建议 4 张）</h4>
     <?php
     alumax_pp_repeater('alumax_pp_cases_projects', [
-        'image'     => ['label' => '图片 URL', 'width' => '24%'],
+        'image'     => ['label' => '图片（可上传）', 'width' => '24%', 'type' => 'image'],
         'image_alt' => ['label' => '图片描述', 'width' => '14%'],
         'location'  => ['label' => '地点角标', 'width' => '12%'],
         'title'     => ['label' => '项目名', 'width' => '16%'],
@@ -1120,14 +1332,14 @@ add_action('save_post_product', function ($post_id) {
     $intro['features'] = alumax_pp_collect_repeater('alumax_pp_intro_features', ['icon' => 'text', 'title' => 'text', 'text' => 'textarea']);
     update_post_meta($post_id, 'alumax_pp_intro', $intro);
 
-    // 核心优势
+   
     $advantages = alumax_pp_collect('alumax_pp_advantages', ['eyebrow' => 'text', 'title' => 'text', 'description' => 'textarea']);
     $advantages['cards'] = alumax_pp_collect_repeater('alumax_pp_advantages_cards', [
         'image' => 'url', 'image_alt' => 'text', 'icon' => 'text', 'title' => 'text', 'text' => 'textarea',
     ]);
     update_post_meta($post_id, 'alumax_pp_advantages', $advantages);
 
-    // 技术参数
+   
     $specs = alumax_pp_collect('alumax_pp_specs', [
         'eyebrow' => 'text', 'title' => 'text', 'table_title' => 'text', 'table_ref' => 'text',
         'install_eyebrow' => 'text', 'install_title' => 'text', 'install_description' => 'textarea', 'install_note' => 'textarea',
@@ -1151,21 +1363,21 @@ add_action('save_post_product', function ($post_id) {
     ]);
     update_post_meta($post_id, 'alumax_pp_control', $control);
 
-    // 定制选项
+   
     $options = alumax_pp_collect('alumax_pp_options', ['eyebrow' => 'text', 'title' => 'text', 'description' => 'textarea']);
     $options['cards'] = alumax_pp_collect_repeater('alumax_pp_options_cards', [
         'image' => 'url', 'image_alt' => 'text', 'svg' => 'svg', 'contain' => 'text', 'title' => 'text', 'text' => 'textarea',
     ]);
     update_post_meta($post_id, 'alumax_pp_options', $options);
 
-    // 色板
+   
     $palette = alumax_pp_collect('alumax_pp_palette', ['eyebrow' => 'text', 'title' => 'text', 'description' => 'textarea']);
     $palette['swatches'] = alumax_pp_collect_repeater('alumax_pp_palette_swatches', [
         'color' => 'text', 'name' => 'text', 'code' => 'text', 'bespoke' => 'text',
     ]);
     update_post_meta($post_id, 'alumax_pp_palette', $palette);
 
-    // 工程案例
+   
     $cases = alumax_pp_collect('alumax_pp_cases', [
         'eyebrow' => 'text', 'title' => 'text', 'link_label' => 'text', 'link_url' => 'url',
     ]);
@@ -1210,7 +1422,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNnODicoVzplBHNedawi0oozSJ8z-vY9JERJqqiudW4KYr8_GUf8L4ZcSS_oRBOti0I0J2U3_4kDPeoBTUBT1RIol8n79-KvyQqzSUj77zoE179nIEhhfLh0OfZtTMk8elF-aY1NpY4dvNE_h6hHNy3bnEw9gAyWZQzTUP0hM0fWv4BTjhpb-uTO5qHegAjNxr_R_LqwVNwUWluYLaI8Qf7EqPnzT9GrzZ3cLllTgVlKNTZk-B-O-s',
+            'bg_image'       => '/wp-content/uploads/alumax-img-25c504e614.jpg',
             'title'          => 'PRE-INSULATED INTEGRATED WALL PANELS',
             'subtitle'       => 'Continuous Structural Insulation. Monumental Energy Efficiency. Class A Fire Rated.',
             'description'    => 'All-in-one prefabricated building envelope solution combining precision fluorocarbon metal facing with high-density non-combustible insulation core (PIR / PUR / Mineral Wool), eliminating cold bridges while drastically reducing on-site construction schedules.',
@@ -1227,10 +1439,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuB3b_BDio9Q1CeSs5bhCIuSc_CbHuRjGiyiu0AKvKAMZeN6mNtqosLBBXEvPW8EbXqb5fIA9AXzz9XsGqV8M3mBZvSuXS6U7oHPdzC7Krk6xOL9U_4w169X_mJOFP3A0n1k6QJy7os-2i25Qzy_ukDGKfiMauwoSlN7YglHD3ZR6-kVH0Y2wLs78M2WVcZkvf-puHtoCXJyElk7GXNMMU-DCYTwTh_D0cqvuaHNFFXRxloeCAmdV2Vy',
+            'image'       => '/wp-content/uploads/alumax-img-48d7a7ad36.jpg',
             'image_alt'   => 'Engineering cutaway of pre-insulated architectural metal cladding panel revealing continuous insulation core bonded to fluorocarbon coated alloy skin.',
             'video_label' => 'Watch Thermal Break Video',
-            'eyebrow'     => 'System Architecture // 系统介绍',
+            'eyebrow'     => 'System Architecture',
             'title'       => 'What is Pre-Insulated Metal Cladding?',
             'description' => 'Traditional multi-layer field-assembled envelopes rely on sequential site installation of mineral insulation, vapor barriers, air cavity substructures, and exterior metal rainscreens. ALUMAX Series PI-800 transforms this labor-intensive workflow into a factory-bonded, monolithic insulated composite panel engineered to withstand extreme environmental wind loads and thermal cycles.',
             'features'    => [
@@ -1241,33 +1453,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Pre-Insulated Wall Panels?',
             'description' => 'Engineered for international commercial architectural standards, delivering quantifiable energy savings, environmental comfort, and facade prestige.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida/AEtjO1UPrhF4Knn1ighcHOV2pjT2rt3ryk8Gqd6Nt9wkRlGzjTn6BhgPoKCgYxU_ZHQhbYhiqKfTsLdB-u-EQfNAxXNfQFEv3myaJCMrBu9K6v4UK5UFmBkH7k-bYOlpHun4H8DC09hGE35GWPgetCRU1pCOTCacGfAlfy-qGDTKdhJs_KUdf_FmKl7TRMvr6TSnCuQRMKi8hz6TRrWWL_eYx_eBDZ3Z1KFJbuEwUpJnZ9OrlnsmW4igf8VC8bA',
+                    'image'     => '/wp-content/uploads/2026/11/pre-insulated-integrated-wall-panels-2-48d7a7ad.jpg',
                     'image_alt' => 'Thermal isolation facade panel installation.',
                     'icon'      => 'device_thermostat',
                     'title'     => 'Thermal Isolation',
                     'text'      => 'Continuous structural insulation core eliminates thermal bridging, cutting HVAC energy loss by up to 45% across extreme climates.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida/AEtjO1Xs8AL7bi_SAHAHrzLHJXKjJ2qDCneCkA_VpKdhF5FmdpHL9cXVK0N9OIQ3wTy1t0Njwef8yjgZJdf4th0zvdskzYbUdHWZH3I6FRajr3aB5rUWgeyLpxtbqyk3XoeXyKpnuoPSUYayS14hF-Vspim5h7JZk6ufQyiahBFAIPD3V5Il7Qad23vNwKctcHL3__xOCv6UkXrBeJ6zaXIyz7RI_oqWmt5Yg_sVNiYACdw44JjIDUo3nck8ncM',
+                    'image'     => '/wp-content/uploads/2026/11/pre-insulated-integrated-wall-panels-7-c8d65f52.jpg',
                     'image_alt' => 'Class A fire resistance cladding panel details.',
                     'icon'      => 'local_fire_department',
                     'title'     => 'Class A Fire Resistance',
                     'text'      => 'Non-combustible continuous mineral wool or PIR core certified to ASTM E84 & EN 13501-1, providing superior life-safety compliance.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida/AEtjO1WtjBg3bvQ3Vhf7VYA5JWnwpUhg1BiJlM6rnU-cIZC0n0yWmKAHL3790EKCMIoccPVkcdKgPhN9IfccTUklCJVjSBvJKRu60zZMdC2KBkH3no3ZjegofBvAZlsdGl4Tj7jENbO-wyIE0JSI4qN5Lmm54EicA3b6MRdpxGYnXfqb6GbK_iSI-enax2URZsntd-OszHA4fp9w8vYe_neWIWtfZqizPPTrJjOsAZX071URp-JO-nwS36drnA',
+                    'image'     => '/wp-content/uploads/2026/11/pre-insulated-integrated-wall-panels-8-06259b5d.jpg',
                     'image_alt' => 'Monolithic flatness high-end architectural facade.',
                     'icon'      => 'architecture',
                     'title'     => 'Monolithic Flatness',
                     'text'      => 'Precision automated roll-forming and tension-leveled facing panels ensure zero oil-canning with multiple shadow reveals and custom finishes.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida/AEtjO1UQylIN3_GhTLO6l7dA51NtzIP78cv3QoqePJYjS0FOYWua1fb1W8Cv9CL3ZnRYFAByjjnhrod36KViFD0Ym_vE9KuffDqySNytZllsCrgyMRJa8arQK5u-HrAxQPVNcxoYeY1FePqFFeV10CDu1EdikPsT_ztQH2s1jA9IHdd-R5gKA5YHQbTZIpiEupWg8hMGVDhI7UyTgFUl5n6VP0U3TOYg6HnSGhcWjamX2S2DS3gRHTd6cdlLyiI',
+                    'image'     => '/wp-content/uploads/2026/11/pre-insulated-integrated-wall-panels-11-ff7a618c.jpg',
                     'image_alt' => 'Fast-track erection interlocking panel seams.',
                     'icon'      => 'speed',
                     'title'     => 'Fast-Track Erection',
@@ -1276,7 +1488,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Certified Engineering Parameters',
             'table_title' => 'Certified Engineering Matrix',
             'table_ref'   => 'REF: AX-PI-800-2025',
@@ -1293,8 +1505,8 @@ SVG;
                 ['name' => 'Surface Finish Layer', 'value' => 'PVDF 2-Coat (28μm) ｜ PVDF 3-Coat / FEVE (35–42μm)', 'mono' => ''],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Download Spec Schedule (PDF)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'architecture', 'label' => 'Request BIM (.RVT) / CAD (.DWG)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Download Spec Schedule (PDF)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'architecture', 'label' => 'Request BIM (.RVT) / CAD (.DWG)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -1306,7 +1518,7 @@ SVG;
                     'caption'   => 'Self-aligning tongue & groove; concealed fasteners eliminate thermal breaks',
                 ],
             ],
-            'install_eyebrow'     => 'Installation // 安装方式',
+            'install_eyebrow'     => 'Installation',
             'install_title'       => 'Dry-Construction Fastening & Joints',
             'install_description' => 'Engineered for swift dry installation without wet plaster or silicone façade caulking. Zero thermal bridge transmission via proprietary nylon-reinforced thermal breaks.',
             'install_note'        => 'Standard installation CAD details (DWG) and LOD 400 Revit families available on request.',
@@ -1316,7 +1528,7 @@ SVG;
                     'title' => 'Concealed Fastener T&G Interlock',
                     'text'  => 'Extended female flange conceals structural self-drilling bi-metal A2/A4 fasteners; each subsequent panel locks over the fixings for a seamless monolithic façade without exposed screw heads. Factory-integrated butyl mastic and PVC isolator strip.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuADDM0hPlC-b2C82gqXA8B8QDuDD14Ft0WUu2cnUbpNiEGofxNWJ5o-4kH0-5Hl9orvMQhSC1Av79QdiDOTW5R3yPDFWmUJqTT5IsYf6-_mbqO5RiSJnF9ACLydFX8MK0fDpZFx34sZC4CQYW7fA-8Bj9mr3TZnhIGpfAYIWKKsmAQiJgx_nCXPbgAcmv404N3R29g_HQFfpTP4RMZI_7Y_bzx3C4KckfUnYjVtL9o',
+                    'image' => '/wp-content/uploads/alumax-img-ff7a618c7e.jpg',
                     'image_alt' => 'Technical CAD blueprint showing secret-fix tongue and groove joint with hidden stainless steel fastener connecting pre-insulated panel to vertical aluminum runner.',
                 ],
                 [
@@ -1324,7 +1536,7 @@ SVG;
                     'title' => 'Sub-Frame Thermal Decoupling Bracket',
                     'text'  => 'Heavy-gauge aluminum structural clips interface with the main building structure via 10mm high-density polyamide PA66 GF25 isolator shims, completely halting thermal conductance into interior slabs. Up to 6.2 kN per bracket, ±25mm adjustability in X, Y, Z axes.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDNOfT7JXuq1zM6d9XSfBsesGV1mWLYe-TVsPFUxlxWiY4CUJUifJtK4kKuPw8vqpnFS-0FYM8EWh9YYRdfrmmpVSJnZkyzqAxQBhWZVTOqqo2J4l_tmgzsjBxX5pX83lMU5APt8mSct8F7TOlfldt_zP7wuq2K_nMX4PN15YER4rz82B3r3eEBr0vgdZE6nKJtHxXgKB6dYBxIxH-S-5MWZvK05CfCgy8oJtz6y74',
+                    'image' => '/wp-content/uploads/alumax-img-b06470bcd8.jpg',
                     'image_alt' => 'Engineering schematic of thermal break aluminum wall bracket connecting heavy insulated sandwich cladding to concrete slab edge with isolator pad.',
                 ],
                 [
@@ -1332,39 +1544,39 @@ SVG;
                     'title' => 'Mitered Flashing & EPDM Gasket',
                     'text'  => 'Prefabricated factory-bent 2.0mm PVDF aluminum corner units ensure sharp 90° architectural corners without site cutting. Complete weatherproofing via dual vulcanized EPDM compression gaskets backed by integrated internal weeping drainage paths.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAY2SIkZ1wOin6vBFUfXz1Xps_3eOcDn0TFup_uuUfr4DWo9o-693YC-Exda4oAnon2vrz9hc0CIexmKSCWjUhlQavviMe-MzNRwJLrWPIF_Y54RJhfb3sJrIZ3l2t-UAlIidHKXU7Zzwc4yckKYNoqdsQyxK4hnZcLxevN_eT3H1SP8XjSkakAe1OrXhRB8PJxh6S-qIupAgb9qh6Evs-3ROE16FSnHVzdNeNqXNE',
+                    'image' => '/wp-content/uploads/alumax-img-a32ed93d8c.jpg',
                     'image_alt' => 'Close-up of tongue and groove thermal break dry interlocking joint of pre-insulated metal cladding with EPDM gasket compression.',
                 ],
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Geometry Options // 定制选项',
+            'eyebrow'     => 'Geometry Options',
             'title'       => 'Architectural Panel Facing Profiles & Finishes',
             'description' => 'Engineered face profiles configured to manipulate building shadows, structural flatness, and aesthetic rhythms. Fluorocarbon coil-coating tested under ASTM G154; custom RAL, Pantone, and metallic sheen matching available.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzFT6b667QBNiOU_jW5we-ie9fh5GmECmazEkw-4Hi8VVm37tYCNKSnWqarZGHiESv3KtQJhSos_iFGQsld4cM6PG4jS0BCIesc1p6y1YdtlR6wZXCqULj8auL4m3Rt3emm-D1paDBcFZIgpIKt8hTNrQPDOitYrjfDcyONvHYsdY2Tyky3-z1H4_Vxa6bm3UVL9UGL7YTXUKM3jHhR4Q079BHyzQM-aH6cdtaADytHWYzdTfkvjmP',
+                    'image'     => '/wp-content/uploads/alumax-img-c8d65f5262.jpg',
                     'image_alt' => 'Flat architectural reveal facade panel with crisp shadow gaps in pearl silver.',
                     'contain'   => '',
                     'title'     => 'Flat Architectural Reveal (FR-01)',
                     'text'      => 'Ultra-smooth exterior face with 15mm or 25mm shadow recess joints, engineered for monument towers demanding unblemished planar flatness.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBeHSJC8ByEX3-ap7KF7wIf4B3y9EwyhoP9ywtc7nvcpTalLlmxYRiJxfqc3lLLMoW2rdG4wPX0hqybUgJrXxkNSRHoGoTEOygY029Ic9HGUOI9pwT_OItdyMVrB2MewVos6HbGTUSgKTDlSm72_rC992eLuXtCM19Uk43edyVBZtDWZYm6KJhdhhvdqQN9KaPLvojlDi-x18qQA9SqQDmy3tLq_wnRo-A2QagR3x7atT9qHzinARyA',
+                    'image'     => '/wp-content/uploads/alumax-img-06259b5d66.jpg',
                     'image_alt' => 'Ribbed linear insulated metal cladding panel with continuous longitudinal flutes.',
                     'contain'   => '',
                     'title'     => 'Ribbed Linear Rhythm (RL-02)',
                     'text'      => 'Longitudinal extruded profile ribs providing dynamic light reflection while substantially boosting span deflection stiffness.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNtfWTeU-2df-PHtSFsEAyX0_jIka8uEBhg3gORY22meBV0KtxvZENo2VWme7RuJ4sF3jWC-0IYUEyYB0-CSTN8QPGPG3hcEqFiLi7bQP6CbaYBo-1T1F3qvqfz5PgTGglxniPZFEUr3LHN4FJUI8D67p0BQ5lrhm163jYtcYFz1IXh5KCakX-nqZfDky71gYzNOMFK_6tt4nfEWADFOGA0yjG4cti8HeAgnqHPX6HhDg07wjw9vEE',
+                    'image'     => '/wp-content/uploads/alumax-img-ce4a4caa31.jpg',
                     'image_alt' => 'Micro-fluted corrugated architectural facade panel in champagne bronze metallic finish.',
                     'contain'   => '',
                     'title'     => 'Micro-Fluted Wave (MF-03)',
                     'text'      => 'Subtle sinusoidal surface texture that masks structural oil-canning and micro-deflections over ultra-long unbraced spans up to 10 meters.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6JFYlN6SeHKdPiYAnuAYyjjfn2wXIKO5Zb_L7rHXN8aO-Q0PVppfixJIMOM0UjPhKEltNWMGKqxB9lc3_DGJdfbQ1OwbbrMJStSCJhKp4YrulRIQ01bZdsW-rkBdYSKSj2dZdKRFm3Rnh_blLHG8NuZ10jL-mCpKmlQEeBJe30H0dMpNwMOxqD8YmVHUbToNAVCgETnIdfh-gBUVXj3EPLgAFXN8RFY1oTyd3rrfZ01PuP84aso00',
+                    'image'     => '/wp-content/uploads/alumax-img-bc60b7e9f2.jpg',
                     'image_alt' => 'Embossed stucco architectural metal cladding panel in dark graphite finish.',
                     'contain'   => '',
                     'title'     => 'Embossed Stucco Texture (ET-04)',
@@ -1373,7 +1585,7 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Standard Architectural Palette & Custom Formulation',
             'description' => 'Fluorocarbon coil-coating tested under ASTM G154 accelerated weathering. Custom RAL, Pantone, and metallic sheen matching available.',
             'swatches'    => [
@@ -1386,13 +1598,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Installed Projects Across Global Environments',
             'link_label' => 'View All Global Projects',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5Pr--9UU3wmBPveKOGrC6Q351X-QpTtOM4C5r_J_X-TI-rO-5tv6vlOxzGIJBUCgTde0d933tn4kbI_tGYEBbXBlohL61kic4GBw24rUv-IAZlPLSiDXbvDRUr1zuOHhwUm2NVqudfSATd8Vir8WCx50g68iZOA2GU-Jded1xFTikPRU-TEkTBYvbTK3Phf9QT9Z7K0z-DAdLNoWdL8YFBo1uVkRFUWIGoXFMkfT6qsYDJBcj-elU',
+                    'image'     => '/wp-content/uploads/alumax-img-17935b740d.jpg',
                     'image_alt' => 'Nordic research laboratory building with white and anthracite pre-insulated metal wall cladding.',
                     'location'  => 'OSLO, NORWAY',
                     'title'     => 'Oslo Science City Campus',
@@ -1401,7 +1613,7 @@ SVG;
                     'year'      => 'Year: 2024',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCPSWEU4WAtKszwxgW6whpX4s7PVlRzp0zccJGmgAO6jtZ3Mx18EMxclkhNqvffa7O7-Ccy1DiNCkxanHO-GKg3W_UXo27F8b9Jsls0LDCbTxvF5Bii7f8vAhxw_WcPHSOjth_L3J6oTmuqWh1afVVaPgJ4x8ERU6vSWTSsOxJPl0EOroHFddbMt3ht1jLr88uV57JcUSkTaiIhQL5VJop-iXMHvUQyMv639PGBfhEXbNEzhQ6Q4AG1',
+                    'image'     => '/wp-content/uploads/alumax-img-75496f5922.jpg',
                     'image_alt' => 'High-tech logistics facility in Zurich Switzerland with silver metallic insulated panel facade.',
                     'location'  => 'ZURICH, SWITZERLAND',
                     'title'     => 'Kloten Automated Freight Hub',
@@ -1410,7 +1622,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBy-FFhDDTHucHGqGIdOO6HsR9IwX7tdQzMBvPURmaaDO5FVg_at56sb1bsBJwPv9xyJ54Bt5R1dw7Ava7Q8mWyvKXj5WpDATc4Rny2uWwHYc41VY_NBIlhbbTqO3W8jPuQXCOyAqqiX55bBj-vNa2AeE3UmeMYapMM2cyYQhHf4k4r4GvZBaCojvHl3xQwWSQX2VSeD_Zm4T-eohh9tqjZQxWZC1gUmiZLIl9XLJC2lpjYtojeK4Lr',
+                    'image'     => '/wp-content/uploads/alumax-img-076ae6e20d.jpg',
                     'image_alt' => 'International air cargo terminal in Melbourne Australia with champagne bronze pre-insulated facade.',
                     'location'  => 'MELBOURNE, AUSTRALIA',
                     'title'     => 'Tullamarine Express Logistics Port',
@@ -1421,7 +1633,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Request a Project Quote // 询价与技术咨询',
+            'eyebrow'      => 'Request a Project Quote',
             'title'        => 'Need Thermal Calculations & Engineering Support?',
             'description'  => 'Our in-house facade structural and thermal simulation team provides project-specific finite element thermal bridge analysis (U-values, condensation risk, deflection schedules, fastener pull-out) to support project authority approvals.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -1449,7 +1661,7 @@ SVG;
 function alumax_pp_defaults_steel() {
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTFIAKTmzB4rf9fOzZaRwYrAbkriAWdn_CGOQkntrrXWxYK2uI2p6Ttz4PvofrkN9rPED-B7UhWjQquagJR6WScgnfnzEtJnDNOg-JKYSV5uqgj_skdK-3xF8tO1XNoaMRgLM_iHKQk7MmTeQoSac6xS2GP0GkFDPK6yVPp30uMc529I5IPL76ZTxqtS6hSrv5eyIFYraPBFLfhUmB54QSE0DwSYk5ypd2hmbxNNU',
+            'bg_image'       => '/wp-content/uploads/alumax-img-2c7a4bdd7a.jpg',
             'title'          => 'ARCHITECTURAL STEEL WALL PANELS',
             'subtitle'       => 'Class IV Ballistic Impact. 210 GPa Rigidity. Non-Combustible A1.',
             'description'    => 'High-tensile structural steel cassettes engineered for extreme wind loads, severe public transit impact resistance, and maximum span flatness exceeding traditional aluminum thresholds. Spec ID: ALU-ST-7000 // ISO 9001 / EN 13501 A1.',
@@ -1466,10 +1678,10 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcJ3ulKOfM_ZUAgd46Fu0GT7ntIfIrDiYGt9nYo0dxefcNDlisdnvQhlrp0vyFN9Uza8gAxB-5w9IhK_zHZm4im4upUXnJ0iHCJdkD_1qUqxEEjE1jzGorc97WZDm8nerN5SuI0-gwtz1K2wScWQyuzS4WMfOc4pqUakkQSTji3cIjBsbe9Fqm4b9wXDnRAaePZczs6d7Cl_88uz0oL4OUfSduBFCRqaYIGdbCGZQ',
+            'image'       => '/wp-content/uploads/alumax-img-1d11024e78.jpg',
             'image_alt'   => 'Engineering cutaway model of a 3mm galvanized steel rainscreen cassette with robotic laser-welded stiffener ribbons and stainless steel hook-on brackets.',
             'video_label' => 'Cassette Cutaway // Laser-Welded Stiffeners',
-            'eyebrow'     => 'High-Performance Steel Envelope // 钢质墙板',
+            'eyebrow'     => 'High-Performance Steel Envelope',
             'title'       => 'What is Series ALU-ST-7000?',
             'description' => 'Heavy-duty architectural cladding for railway concourses, civic institutions and coastal high-rise crowns — where impact resilience, fire integrity and multi-storey span flatness exceed what aluminum can deliver. Cassette depth 40–120mm, single panels up to 8,000mm continuous.',
             'features'    => [
@@ -1480,33 +1692,33 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Certified Performance & Deflection Metrics',
             'description' => 'Independently tested under ASTM and European EN façade standards (CNAS / UKAS accredited lab). ALUMAX steel cassettes deliver 300% greater impact resilience than standard architectural aluminum cladding.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCI30uT7_iKJ7-nKxvIDsUjP5QpaR6Jqf0XeYm4G_72pZi87uB_TchHA9eAqTQbjmlUGRF8RA_ogKXIG9cA45O_1HCR68bdxq8LSkzfNivschfwCP5l03YzjpKAjDy1z1e9MvFFEn6rZaYXnqEVyVmNANFfaRywLddSUnMeh14N825edyK0O7LOSLQrzqrNaGC23z7kaWI5dJSvT6zdTpyNyMe7ExThhLT4cQCxYqw',
+                    'image'     => '/wp-content/uploads/alumax-img-ffc919805c.jpg',
                     'image_alt' => 'Monolithic steel facade panel cassette with razor-sharp 90 degree brake-formed returns and matte graphite metallic finish.',
                     'icon'      => 'compress',
                     'title'     => '210 GPa Modulus of Elasticity',
                     'text'      => 'Three times the rigidity of standard aluminum (70 GPa), permitting ultra-wide uninterrupted module spans with zero oil-canning — ASTM A653 / EN 10346.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8wH5E6bnVwpZs49A_eY2oT_XpamP5uBx7dwbNrSJQrkWrkra8_7ZWe2aaKFmlMOj3Zw-UnG1-bLS1kkee6-PoOjSPp4jIKAr8qLhODbfdNmSUtbJEOnqfRjhXS9iVJ9Orf1l52w0I5P32IL6ftausGOFoxJdVqz0S_Ziw1o_ODlxM_OQsnpgS4T1HrumGKVoTNmLrtzjiEHTA8qKDbM3uvxMpvZDWz6wCVr4HXAU',
+                    'image'     => '/wp-content/uploads/alumax-img-ce43269d0d.jpg',
                     'image_alt' => 'Engineered undercut anchor substructure with extruded aluminum mullion brackets mounting heavy duty steel facade panels.',
                     'icon'      => 'sports_baseball',
                     'title'     => 'Class IV Hard Body Impact',
                     'text'      => 'Surpasses 10 Joules steel sphere drop without permanent cosmetic indentation — mandatory for railway and subway concourses (EN 14019 / ASTM E695).',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhbnoJHN0RnCpCONt7pn8pNYiTmOaJbtLOJ5iye3eTb5pICE9XtgBSVzci3O7hS8M4Yzya_CVGeOjUPJmX7nVfAGKH3u3HqjXu_5zLKRcC3Dp9LSBgdcpYGBtKWw5tkCSEXdc9DUsNI9eZ2DtDTclCF6DzG4h1KWyzuSLhB4RhP-yjMWTnZtLGEla-fooX3zGN3x0eg_YKbxpUjXtxh4jyCXh7XCDlPM0Apcu-qF4',
+                    'image'     => '/wp-content/uploads/alumax-img-9a19ae2239.jpg',
                     'image_alt' => 'Desert museum with PVD titanium champagne bronze coated stainless steel facade reflecting golden sunset light.',
                     'icon'      => 'air',
                     'title'     => '5.5 kPa Design Wind Pressure',
                     'text'      => 'Tested to L/300 deflection limit under cyclic hurricane wind pressure — suited for coastal high-rise crown installations (ASTM E330 / CWCT Class 1).',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCLhU9OHZ4zk8CWheW2VcId6M3H34ThyLi0SaJX21XFiRABQw-uoTKWeQ3Dy5XPnO5OsFEQ6REuzKxzcGbPM4BhV_yT5PRXWv_2XHnBcbSbHY3FVOxmNEGvv7_QCumK542OcUkf2ZuYzwUZsFrwf7Zs1XLe5el3tPMrLA1MwU9XUkR8aNZqR8P0yMJA4ub3vvTx8Cq4eieRpsrm_KRAhkNCGVrBaPyDGi6G7rc9IeY',
+                    'image'     => '/wp-content/uploads/alumax-img-7434f36741.jpg',
                     'image_alt' => 'Weathered Cor-Ten rust textured steel and PVD titanium champagne bronze stainless panel samples side by side.',
                     'icon'      => 'water_drop',
                     'title'     => '5,000 Hrs Salt Spray Endurance',
@@ -1515,7 +1727,7 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Structural Data Schedule',
             'table_title' => 'Substrate Performance Comparison Matrix',
             'table_ref'   => 'SPEC-ALU-ST7000-REV2025',
@@ -1530,8 +1742,8 @@ function alumax_pp_defaults_steel() {
                 ['name' => 'Salt Spray Endurance', 'value' => '5,000 hrs zero blistering — ISO 9227 C5-M marine (HDG Z275 + epoxy barrier + PVDF)', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Spec Sheet (PDF 4.1MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'architecture', 'label' => 'Revit / DWG (14MB)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Spec Sheet (PDF 4.1MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'architecture', 'label' => 'Revit / DWG (14MB)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -1559,7 +1771,7 @@ function alumax_pp_defaults_steel() {
                     'caption'   => 'At 3.0mm gauge — structural subframe and anchor schedule calculated per project wind load.',
                 ],
             ],
-            'install_eyebrow'     => 'Architectural Detailing // 安装方式',
+            'install_eyebrow'     => 'Architectural Detailing',
             'install_title'       => 'Engineered Mounting Substructures',
             'install_description' => 'Three proprietary load-bearing fixing systems accommodate high dead loads, dynamic seismic inter-story drift, and thermal movement without visible exterior fasteners.',
             'install_note'        => '',
@@ -1569,7 +1781,7 @@ function alumax_pp_defaults_steel() {
                     'title' => 'Heavy-Duty Hook-On Rainscreen',
                     'text'  => 'Continuous top hook receiver tabs with integral EPDM isolators — rapid progressive installation and singular panel demountability for maintenance. Joint 15–20mm open rainscreen, ±25mm seismic drift capacity.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-l5OwmjlclB2S9YAgntm5Jv73JOjbGWdDd__fnNF0sIhqkHH_wwtRjkl9CeQM0N9YY9wjghJGmaifzXjw67sVWetfVZbI1oB6SQivuTIfZYecPokFcTAFPmQeuRWMswiQ2KJoKN_7VP-QSV7CYGMapw75qj2YCcbUtp0nfM8D5DhSy3frnoTmATsUvb3anpzEG1yLDAWGd6dGR81o0daw7qzvLxdgenm53XjJuHI',
+                    'image' => '/wp-content/uploads/alumax-img-575ee5315c.jpg',
                     'image_alt' => 'Technical CAD drawing of heavy duty hook-on steel cassette facade fixing system with EPDM anti-vibration gaskets and vertical mullion channel brackets.',
                 ],
                 [
@@ -1577,7 +1789,7 @@ function alumax_pp_defaults_steel() {
                     'title' => 'Flush Secret-Fix Stud Anchor',
                     'text'  => 'Capacitor-discharge welded M8 stainless rear studs eliminate heat tint and face print-through — a monolithic, screw-free glass-flat facade with 10mm tight hairline joints. Stud pull-out load ≥ 8.2 kN per stud.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDKarxNakGB-O1aIeDiaAo5FJG9SotvBGNnvGh7X08DOZq6xQbPWLTjo3qj5hVHuiGmJxsk6mDoBituI9Bh4Smp8NxUNslYboeSFlUURYsJheDAlETCiFTLjDz2YWsMIvVHs3KEnAfZY89KPu53HPGNxHqqZk_AR8nEJq0827KhiTaUvWvWwjZUfDiiWNuWOOkzii2PW3hSDTLY-L_-OXPkrG3F8okOd65BXm9JYKw',
+                    'image' => '/wp-content/uploads/alumax-img-1453d5f5e9.jpg',
                     'image_alt' => 'Architectural detail section of flush secret-fixing steel facade system using robotic capacitor-discharge welded threaded studs on panel rear.',
                 ],
                 [
@@ -1585,13 +1797,13 @@ function alumax_pp_defaults_steel() {
                     'title' => 'Seismic Inter-Story Expansion',
                     'text'  => 'Floor-to-floor deflection relief channels for supertall buildings, mitigating concrete slab creep and major seismic tier displacement. Joint movement horizontal ±50mm / vertical ±35mm — AAMA 501.4 / 501.6 compliant.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2BoL7XXArE-Kfu672I66mdYqgh_kuCNsn3cifhSECQ6nTJt8WEwtC3zvObJ-EBeb6BUVMbk2K2wZ-dG3Ie8xmr4UVJ8zHwddi0ixsDHmIjfjQYZdgaH-j3zskdKeniUWT4wcGGIRVY5_qJ9vTOaujw-rPYKPSsfVmNcmCs4d_-ukraVs4UcBKOS8JJfLr1YF6TVB5VNOpWo-vS3EGOijpWH8WwPCH2VhPaEFgufY',
+                    'image' => '/wp-content/uploads/alumax-img-f2f0e534bc.jpg',
                     'image_alt' => 'Engineering diagram of seismic drift expansion joint for high rise structural steel cladding with sliding spring pins and double moisture seals.',
                 ],
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Architectural Tone & Finish Library',
             'description' => 'PPG Duranar 3-coat PVDF, super-durable Qualicoat Class 2 powder, PVD ceramic sputtered titanium finishes, and stabilized Cor-Ten patina — RAL / NCS custom color match available.',
             'swatches'    => [
@@ -1604,12 +1816,12 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Smart Factory Fabrication // 产品细节',
+            'eyebrow'     => 'Smart Factory Fabrication',
             'title'       => 'Robotic Bending & 15kW Fiber Laser Centers',
             'description' => 'Millimeter-level dimensional repeatability enabled by advanced European automated sheet-metal centers — 450,000 m² annual structural facade capacity.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCI30uT7_iKJ7-nKxvIDsUjP5QpaR6Jqf0XeYm4G_72pZi87uB_TchHA9eAqTQbjmlUGRF8RA_ogKXIG9cA45O_1HCR68bdxq8LSkzfNivschfwCP5l03YzjpKAjDy1z1e9MvFFEn6rZaYXnqEVyVmNANFfaRywLddSUnMeh14N825edyK0O7LOSLQrzqrNaGC23z7kaWI5dJSvT6zdTpyNyMe7ExThhLT4cQCxYqw',
+                    'image'     => '/wp-content/uploads/alumax-img-ffc919805c.jpg',
                     'image_alt' => 'Steel cassette panel with crisp razor-sharp 90 degree brake-formed returns.',
                     'contain'   => '',
                     'title'     => 'Salvagnini P4 Automated Panel Bender',
@@ -1623,7 +1835,7 @@ function alumax_pp_defaults_steel() {
                     'text'      => 'Nitrogen high-pressure burr-free cutting on up to 8mm heavy-gauge stainless and weathering steel plates, including intricate bespoke perforated patterns.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcJ3ulKOfM_ZUAgd46Fu0GT7ntIfIrDiYGt9nYo0dxefcNDlisdnvQhlrp0vyFN9Uza8gAxB-5w9IhK_zHZm4im4upUXnJ0iHCJdkD_1qUqxEEjE1jzGorc97WZDm8nerN5SuI0-gwtz1K2wScWQyuzS4WMfOc4pqUakkQSTji3cIjBsbe9Fqm4b9wXDnRAaePZczs6d7Cl_88uz0oL4OUfSduBFCRqaYIGdbCGZQ',
+                    'image'     => '/wp-content/uploads/alumax-img-1d11024e78.jpg',
                     'image_alt' => 'Cutaway of steel rainscreen cassette with robotic laser-welded stiffener ribbons.',
                     'contain'   => '',
                     'title'     => '6-Axis Robotic Seam Welder',
@@ -1632,13 +1844,13 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Built Environment Archive // 工程案例',
+            'eyebrow'    => 'Built Environment Archive',
             'title'      => 'Landmark Transportation & Civic Projects',
             'link_label' => 'View All Completed Case Studies',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDJxC9Wp9xDP4GLo5muDWH0xzy-piPv7XO22eV1o1oZ-sbZ0hz-LOWVa6_OjrOEA7dJnShsy16PGJvk6d8MLf-vWtSBEFRxDMAv6VHMRQ-w2W2lQ2cUMNng_zdvSY5ORq96OYYCfbcpTIDoXBqh1uINIc1_zHeKWxLPoTDfdNQp2ZXth8k158iZiRXQgG04Jmz03NCVUPGXKkaePNFgbvpS7Nxb23IIvb5vMs6DTqA',
+                    'image'     => '/wp-content/uploads/alumax-img-c3388ec64e.jpg',
                     'image_alt' => 'London Crossrail Station subsurface terminal clad in monolithic PVDF steel wall panels with deep architectural reveal joints.',
                     'location'  => 'UNITED KINGDOM',
                     'title'     => 'London Metro Concourse & Tunnel Portals',
@@ -1647,7 +1859,7 @@ function alumax_pp_defaults_steel() {
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYkQ7RaxRtBCWX68WKv-c8J3XTQk0Rc-bYuPN7SMWoGFVZM54RSVjQPs_FzvhGX1SkhTTe2yEdPW6lzOnZFH4HcNOKWSSpigc_Ogqjc5r4BxoYYgUb_KrF73HTfKQPLtwWWOtSmiS6L5ueUs6kOh5gSKQCYssGMIUBVkD6hkQ5ehJo6ojeVxtqVpjILI-HSA-i7ZCzdzdOZ9zFeBNnIxNgaarX7OTSFrAR6i5pzCs',
+                    'image'     => '/wp-content/uploads/alumax-img-cf29ed29b1.jpg',
                     'image_alt' => 'Contemporary research center in Berlin with oxidized Cor-Ten weathering steel facade cladding and deep window reveals.',
                     'location'  => 'GERMANY',
                     'title'     => 'Berlin Technology Institute & Labs',
@@ -1656,7 +1868,7 @@ function alumax_pp_defaults_steel() {
                     'year'      => 'Year: 2024',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhbnoJHN0RnCpCONt7pn8pNYiTmOaJbtLOJ5iye3eTb5pICE9XtgBSVzci3O7hS8M4Yzya_CVGeOjUPJmX7nVfAGKH3u3HqjXu_5zLKRcC3Dp9LSBgdcpYGBtKWw5tkCSEXdc9DUsNI9eZ2DtDTclCF6DzG4h1KWyzuSLhB4RhP-yjMWTnZtLGEla-fooX3zGN3x0eg_YKbxpUjXtxh4jyCXh7XCDlPM0Apcu-qF4',
+                    'image'     => '/wp-content/uploads/alumax-img-9a19ae2239.jpg',
                     'image_alt' => 'Desert museum in Doha with PVD titanium champagne bronze coated 316L stainless steel facade.',
                     'location'  => 'QATAR',
                     'title'     => 'Doha Maritime Cultural Pavilion',
@@ -1667,7 +1879,7 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Global Tender Desk // 询价与技术咨询',
+            'eyebrow'      => 'Global Tender Desk',
             'title'        => 'Engineering Quotation & Sample Kit Request',
             'description'  => 'Submit your project schedule, wind-load parameters, or architectural elevations. Our senior facade engineering team delivers structural pre-calculations within 48 business hours. Direct hotline: +971 4 887 0192 (MENA) // +86 757 8588 3310 (HQ).',
             'form_title'   => 'Steel Envelope RFQ Package',
@@ -1707,7 +1919,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMaebn_zw5fDUqnAtlaZfqZvG-sCB3Fdf2KCyerz0QO_y1b7b4vqgFM8M2edZ4fukyBa_4N7F127hZSyPgGnjklyfMiUU5zgURK0ex9jg1dhafHaQ08I7zVEdMLCr-PKAoYPVCO8rIGgKXsRYAq_tvjo719MYLQNlg5TNBL7Zs8mlRmTWO_dD27bAkCglmKxcITr7MNUji6NJLzMwLbZLiiOKE4nnPOwFRN1qZ18N3h6S1LT0oUROu',
+            'bg_image'       => '/wp-content/uploads/alumax-img-dee800215e.jpg',
             'title'          => 'SOLID ALUMINUM CLADDING PANELS',
             'subtitle'       => 'Precision Brake-Formed Rainscreen Cassettes. A2-s1,d0 Non-Combustible. 30-Year Coating Warranty.',
             'description'    => 'Architectural brake-formed solid rainscreen cassettes engineered for severe wind pressures, non-combustible building codes, and high-prestige curtain wall enclosures. Code: ALU-SLD-3003.',
@@ -1724,10 +1936,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC3qXmRr9rBYqFHlsZCRnIbqrnx0ldQ99QfY3tiUIGwWZ3KRczCYALbEV0ioX2uwbi4Mr6BfrBHlY4X4uJk51oz_h2p5JMHKRTaBWlfz-5Nw_St93m735r7YyEAIEhYoLWHAvoqv9I5b1hZ6hQSuaHQwtNnZ-35wyj26qmIpxw90Rz6T4dIbRSOV6fDRobvKvTdpcugjFM4SgDzpWB4l9ybuQ2Md5HIgJfUd2r_0bXs61d_nFOyVIXD',
+            'image'       => '/wp-content/uploads/alumax-img-90f3d1d315.jpg',
             'image_alt'   => 'Completed building facade clad in solid aluminum rainscreen cassette panels.',
             'video_label' => 'Exploded Cassette Assembly & 3D BIM Viewer',
-            'eyebrow'     => 'Product Overview // 产品介绍',
+            'eyebrow'     => 'Product Overview',
             'title'       => 'Brake-Formed Solid Aluminum Rainscreen Cassettes',
             'description' => 'ALUMAX solid aluminum cassettes are CNC brake-formed from single-sheet alloy plate — no composite core, no combustible content — delivering absolute flatness, Class A2 fire performance, and full demountability for super high-rise rainscreen envelopes.',
             'features'    => [
@@ -1738,33 +1950,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Solid Aluminum Cassettes?',
             'description' => 'Laboratory-verified metrics compliant with international building safety codes for super high-rise envelopes, seismic zones, and corrosive marine coastal atmospheres.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAehKXxEpMUSxtLPiEIpzZ2VUYkJXhAyqOuYJwOOQN5Gw1xLrgGq9PD_388mrE3_ijVp-bzr4qaIOtodEu9h0Qu7-Yv-OhpaoEHidja0lqzgFc-eJbe-1M0KVlmLE3X-rpYkin5GzLqdLtRi4tw_btUzOXxk1TO97-wKs2qdHAlfPPmIVGjrFyw8fiRZxyCooebQxpjEAXkJu5m1X0uhSxv5dFYR7jU8rpobR5yi5uVs4OuikE7cR7Z',
+                    'image'     => '/wp-content/uploads/alumax-img-3b318d4319.jpg',
                     'image_alt' => 'Stud and joint rigidity detail of brake-formed aluminum cassette.',
                     'icon'      => 'air',
                     'title'     => '5.2 kPa Wind Tolerance',
                     'text'      => '3.0mm cassettes sustain 5.2 kPa design pressure with zero permanent deformation at 150% safety margin — super-tower rated under ASTM E330.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnHm8JxCmqkipz0n7PXRe53qkUXQZla6KBSlunl7yUFxNhdKiSeGTllMVT8Vg9BsT3dA7Ru24-iqYHD1OuZkv3v49hc9MBecrUvNV6PuXxwwxbRqAbNashv6I4WI3p7xLHiQrZozd_Z8pm8e6Ryyu7cF3WVSVA7FViANj9uMGWTsFxGh5fNKHD-U6JoyHKeSEXC5spq_2K3LCAsGV9-vi2GL2alhKrGUGyG_sk1nFwbtbSpG-79t2Z',
+                    'image'     => '/wp-content/uploads/alumax-img-d7f40a8de9.jpg',
                     'image_alt' => '3D exploded view of solid aluminum cassette panel assembly.',
                     'icon'      => 'local_fire_department',
                     'title'     => 'A2-s1,d0 Non-Combustible',
                     'text'      => 'Strictly non-combustible solid aluminum with flame spread 0 — ideal for high-density public towers under EN 13501-1 / ASTM E84.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRsSxZrAQ-SPkGwK7tpEAmOoKxNWyt3mLg3WQozIVYt09hzzJeDRWt1xnyFIOHBW0pm-EG9LeMgeLhDXl5yxLN4zro9DF8ozgXnwaLA0ilhnWf-4fmeNz9Yx94uoYKI8KS4Ce9CPGWnwKDI4DifeyK62WV803QY85KXCT0db82iltFv27f6mhYNqNumUrQG8qMTqJlwzD_mGUoJYMR4nd4VdKTH6L5b37CrjE7X_T27CmvZHOJq-6O',
+                    'image'     => '/wp-content/uploads/alumax-img-c233c4813a.jpg',
                     'image_alt' => 'Close-up of PVDF fluoropolymer coating texture on aluminum panel.',
                     'icon'      => 'format_paint',
                     'title'     => '30-Year Fluoropolymer Finish',
                     'text'      => 'PPG Duranar® 3-coat PVDF preserves luster without chalking for 30 years; AAMA 2605 10-year Florida exposure ΔE < 3.0 Hunters.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC3qXmRr9rBYqFHlsZCRnIbqrnx0ldQ99QfY3tiUIGwWZ3KRczCYALbEV0ioX2uwbi4Mr6BfrBHlY4X4uJk51oz_h2p5JMHKRTaBWlfz-5Nw_St93m735r7YyEAIEhYoLWHAvoqv9I5b1hZ6hQSuaHQwtNnZ-35wyj26qmIpxw90Rz6T4dIbRSOV6fDRobvKvTdpcugjFM4SgDzpWB4l9ybuQ2Md5HIgJfUd2r_0bXs61d_nFOyVIXD',
+                    'image'     => '/wp-content/uploads/alumax-img-90f3d1d315.jpg',
                     'image_alt' => 'Completed facade installation of solid aluminum cladding panels.',
                     'icon'      => 'sailing',
                     'title'     => 'Marine-Grade Corrosion Proof',
@@ -1773,7 +1985,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Engineering Performance & Static Criteria',
             'table_title' => 'Laboratory Verified Metrics',
             'table_ref'   => 'ALU-SLD-3003 // 2025',
@@ -1786,8 +1998,8 @@ SVG;
                 ['name' => 'Acoustic Transmission Loss', 'value' => 'Rw 28 dB ｜ 3.0mm Rw 32 dB, up to 48dB w/ core (ISO 10140-2 / ASTM E90)', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'TDS PDF (4.2MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'deployed_code', 'label' => 'BIM & DWG (18MB)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'TDS PDF (4.2MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'deployed_code', 'label' => 'BIM & DWG (18MB)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -1815,7 +2027,7 @@ SVG;
                     'caption'   => 'Contains up to 45% post-industrial recycled aluminum billet. 100% infinitely recyclable at building decommissioning with negligible carbon degradation.',
                 ],
             ],
-            'install_eyebrow'     => 'Facade Engineering Typologies // 安装方式',
+            'install_eyebrow'     => 'Installation Typologies',
             'install_title'       => 'Fixing Methods & Substructure Details',
             'install_description' => 'Three engineered fixing typologies with CAD elevation detail packages available. All fixing bracket slots feature 6mm ovalized thermal glide tolerances (aluminum linear expansion 2.4mm/m at ΔT 100°C) to prevent buckling.',
             'install_note'        => '',
@@ -1824,24 +2036,24 @@ SVG;
                     'tag'   => 'TYPE 01 // OPEN-JOINT',
                     'title' => 'Open-Joint Ventilated Rainscreen',
                     'text'  => '12mm dry open shadow reveals without exposed silicone. Pressure-equalized cavity drains condensate instantly, preventing facade staining and dust streaks. Joint width 10–16mm open gap on extruded 6063-T6 aluminum mullions. Best for commercial towers and public museums.',
-                    'svg'   => '', 'image' => '', 'image_alt' => '',
+                    'svg'   => '', 'image' => '/wp-content/uploads/2026/11/solid-install-open-joint.jpg', 'image_alt' => 'Open-joint ventilated rainscreen solid aluminum cassette facade detail.',
                 ],
                 [
-                    'tag'   => 'TYPE 02 // SEALED',
+                    'tag'   => 'TYPE 02 // SEALED-JOINT',
                     'title' => 'Weatherproof Sealed Joint',
                     'text'  => 'Classic watertight envelope using non-staining structural silicone (Dow Corning 791 / Sika hybrids) over PE backer rod — maximum air-impermeability and acoustic attenuation on galvanized steel tube or aluminum angle substructures. Best for high-acoustic zones and hospital facades.',
-                    'svg'   => '', 'image' => '', 'image_alt' => '',
+                    'svg'   => '', 'image' => '/wp-content/uploads/2026/11/solid-install-sealed-joint.jpg', 'image_alt' => 'Weatherproof sealed joint solid aluminum cladding cassette system.',
                 ],
                 [
                     'tag'   => 'TYPE 03 // HOOK-ON',
                     'title' => 'High-Rise Hook-On Cassette',
                     'text'  => 'Modular interlocking hung brackets designed for expedited crane-assisted exterior erection — up to 150m² per team per day. Neoprene anti-rattle bushings; each panel individually demountable for lifetime utility inspection. Best for supertall skyscrapers and tight urban sites.',
-                    'svg'   => '', 'image' => '', 'image_alt' => '',
+                    'svg'   => '', 'image' => '/wp-content/uploads/2026/11/solid-install-hook-on.jpg', 'image_alt' => 'High-rise hook-on solid aluminum cassette facade panel installation.',
                 ],
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Exterior Colors & Finishes',
             'title'       => 'Pre-Approved Exterior Finishes & Custom Matching',
             'description' => 'PPG Duranar® 3-coat PVDF, AkzoNobel Interpon® D3000 hyper-durable powder, Class I hard anodized, and architectural sublimation faux stone — all tested under AAMA 2605.',
             'swatches'    => [
@@ -1853,26 +2065,26 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Facade Engineering Typologies // 定制选项',
+            'eyebrow'     => 'Fabrication & Customization',
             'title'       => 'Fixing Methods & Substructure Details',
             'description' => 'Three engineered fixing typologies with full CAD elevation detail packages — from pressure-equalized open joints to crane-assisted high-rise cassette erection.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCoR34GLzSdo-qYsQRCBw7_pmQgW87GqXjfLoUTKmBQzvcW3ua6is9MCEernEw_rGleFzhBgUMWzRfDKB_iOu1GOdDSLWZk5m16dw0dtIC1ZFPv8PvQYylMs5rLE2X7CD6BkiagMehL43_QFZXZPNGoAZCvSTmVnV1U7R790gPzNh9uxZQDIXDzeJiSpLoKZFAcC4ldbdBAmSifuACrjBD8ppQFI3ah5vrrLUNPwivacQlzBSI4dQy_',
+                    'image'     => '/wp-content/uploads/2026/11/solid-option-curved-parametric.jpg',
+                    'image_alt' => 'Curved and hyperbolic double-curved solid aluminum cladding panels.',
+                    'contain'   => '',
+                    'title'     => 'Curved & Double-Curved Cassettes',
+                    'text'      => 'Precision roll-bent and 3D brake-formed double-curved solid aluminum panels delivering fluid, organic facade transitions with continuous shadow reveals.',
+                ],
+                [
+                    'image'     => '/wp-content/uploads/2026/11/solid-install-open-joint.jpg',
                     'image_alt' => 'Open-joint ventilated rainscreen aluminum facade detail.',
                     'contain'   => '',
                     'title'     => 'Open-Joint Ventilated Rainscreen (TYPE 01)',
                     'text'      => '12mm dry open shadow reveals without exposed silicone; pressure-equalized cavity drains condensate instantly. Substructure: extruded 6063-T6 aluminum mullion. Best for commercial towers & public museums.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDV7jiiCf7Eyx4nrwNIju5iL3PuuAhGZrcZ9h49JJgoj1tp773Iu1BneHx_9UmcC6mdUTZg0hKz0pKRKTLgVTSYtDvCuvutzRY3YG7lmWcc1EdVmc2U2Lq2eK60us4jsIix28A7H3grOL5he4qBzd9xapBT1gl3xhr0vPMmhazwRhqUNPiqB4Zc70IbgQTb1AgMin_b6Yk1T4tVZt6gm_G72ugfGELggrU2FR_ual6dUVWMjbPqMD0i',
-                    'image_alt' => 'Weatherproof sealed joint aluminum cladding system.',
-                    'contain'   => '',
-                    'title'     => 'Weatherproof Sealed Joint (TYPE 02)',
-                    'text'      => 'Non-staining structural silicone (Dow Corning 791 / Sika hybrids) over PE backer rod; maximum air-impermeability and acoustic attenuation. Best for high-acoustic zones & hospital facades.',
-                ],
-                [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzLHMDt2yUvDvMLnCCH9auUKgECDqm52qe3pPt8JBDTMZ4qzlbsNyo3BpdSITPsIroHS3MMRo8C02Yi26UXhOeqOuVxbAq5hY0f98DcNBa099qSOxABde7R3hS5CHWDv7Xpr15MXMWZJKMbOCazI61DmDW1i8C3ow192-pC3ShJpsvW_IvlldzbsOuN1utG23VdmoIMCWvxDPk0PVMuiSAwd7L18yyMQQOYwNG6IaIBoJcqLVJApSR',
+                    'image'     => '/wp-content/uploads/2026/11/solid-install-hook-on.jpg',
                     'image_alt' => 'High-rise hook-on cassette panel installation.',
                     'contain'   => '',
                     'title'     => 'High-Rise Hook-On Cassette (TYPE 03)',
@@ -1881,13 +2093,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Project References',
             'title'      => 'Global Landmark Deliveries',
             'link_label' => 'View Complete Portfolio Archive',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIdER5BVdBVcy11SFx0tMEvT9WTvVoptNe3coGStpz9GWrx6bPzftJNMhdGwm_UJntK_OvxY7lL7JZYmH3cwPU4yoIqNhvCk6uh61SFuLeT4lqubB8RF2igE4WNqhhrg-nyWBlEr1CWoU8ET8HtIwoUFYe2VBMXI4ZCbTgm1yI5wPDH57OgR3aoKFmpUTSofPnjnoRJLGTIDvM9a-7sd44kdFbE_aEEy_RgENoKTHuzOq5kwjVkeAa',
+                    'image'     => '/wp-content/uploads/alumax-img-56005ccf27.jpg',
                     'image_alt' => 'DIFC North Commercial Tower in Dubai with champagne solid aluminum cassette facade.',
                     'location'  => 'DUBAI, UAE',
                     'title'     => 'DIFC North Commercial Tower',
@@ -1896,7 +2108,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMIwf9wD7p68eLiOTa2kQyuhVrC_WJHQz25Hz9oGePyaWWXnQ4-7lloxTbOXZs5S0Tr8E2op5LzcUDbmCtPbqMGsJOBjMGhbvnMFAU7ECY46aG-dz0IlPxYlSNVjzDsTej_K5XqNgrAweWMOi7Pzz7uYrgsYJTomCsu5IhzBDzSTzI5L29pnXXyho_97IMGGJWoyYMN1t2o0KLxBqfIrumjAL1rrJjn60oHl0npZ5LVRA7BQ8ILhrW',
+                    'image'     => '/wp-content/uploads/alumax-img-2d6420d22e.jpg',
                     'image_alt' => 'Changi Aviation Expansion Concourse in Singapore with marine grade aluminum panels.',
                     'location'  => 'SINGAPORE, SG',
                     'title'     => 'Changi Aviation Expansion Concourse',
@@ -1905,7 +2117,7 @@ SVG;
                     'year'      => 'Year: 2022',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDn4sDOlD_hxwZh3ma96sOj4dC5I9wd_GaNtD7hQDO3fNKSRGcU6yzDdttNYJ6zJCVMztC1gS1I0a3IkJwcSxg0DlBvqGcD9kBswwfuRv7B1IprH3uibZSZxFRJts6V5nh9adp-nvp45KgqLgRNyCFQYQTb3-Ern4ZlD5Q_za-aPwQ5v_AXeHlLaAsx-Sg3JoXsgrFWSQX8O3au3egDizFTr-wtM70OE0vb4EEfEO0U_mipdVy-kQxy',
+                    'image'     => '/wp-content/uploads/alumax-img-e9318e18ba.jpg',
                     'image_alt' => 'Frankfurt Eco-Tech Headquarters with mica anthracite perforated aluminum cassettes.',
                     'location'  => 'FRANKFURT, GER',
                     'title'     => 'Frankfurt Eco-Tech Headquarters',
@@ -1916,7 +2128,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Global Tender Desk // 询价与技术咨询',
+            'eyebrow'      => 'Global Tender Desk',
             'title'        => 'Request Factory-Direct Pricing & Static Calculations',
             'description'  => 'Submit your tender bill of quantities (BOQ), architectural elevation drawings, or wind load parameters. Our senior facade engineering team produces official CIF/FOB proposals within 24 business hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -1955,7 +2167,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDkD14D96RfHx2yrGy5hXbrcQpsFZP2jXBlDGWdNVBRmOeNNEi4CUx0F1GgbFxyhbuIDRJTpZ3ssYnQ1m4BHF04MbWO7Qxr7P4-e_D0M39-tCmU00-i_c-SkX-Yz06gw2q8qUmc2TWKity4-xnOIR5TKR_GY9c_c_V7NJVkHDuaZUAvAnL1ASp9XaUQfVOdHdxdtOrCjQJGeG9TFgCpvmVeXk55s6VYuxoG3cZ2Lx8',
+            'bg_image'       => '/wp-content/uploads/alumax-img-1a00bef908.jpg',
             'title'          => 'FIRE-RETARDANT ALUMINUM COMPOSITE PANELS',
             'subtitle'       => 'A2/B1 Mineral Core. 3-Coat PVDF 35μm. Zero Oil-Canning Flatness.',
             'description'    => 'Engineered architectural composite material (ACM) pairing high-tensile 3003-H14 aluminum coil skins with non-combustible mineral-filled cores. Precision-bonded through continuous automated thermal lamination for mega-span curtain walls, retail pavilions, and high-wind transport hubs. Code: ALU-ACP-1000.',
@@ -1972,10 +2184,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCIaJ7Zo0k13L_e9_JJg-f_Z7TgrpSfazrfvdox_D2eOyDvDWvVqohr0sU3o8MnQvMiERflBk8hbrGuEdD14wVAvxFB_9Vtd-mEi4J_Rsp_RftPpY0G-r-AelBD6hbVXMp2KHZp0YhIfW9vRkW2fInLdIvSZfsy39ijHX0P3bx7Pbwo-ybv0gU5M9f8dK38QVQn4no_26ILz3VmZR15Nms7cXP67fDtcmxgvzagUeI',
+            'image'       => '/wp-content/uploads/alumax-img-e3771b326e.jpg',
             'image_alt'   => 'Cutaway rendering of fire-retardant aluminum composite panel ALU-ACP-1000 with 0.5mm AA3003 skin, mineral core and adhesive layers.',
             'video_label' => '360° Inspect // FR Core Cutaway',
-            'eyebrow'     => 'Systems Architecture // 系统介绍',
+            'eyebrow'     => 'Systems Architecture',
             'title'       => 'What is the ALU-ACP-1000 Composite System?',
             'description' => 'Continuous hot-melt lamination bonds coil-coated aluminum skins to a mineral-filled core under 190°C–210°C calendering, with in-line ultrasonic resonance checks every 10 meters — ensuring zero delamination risk across harsh maritime and desert thermal cyclings.',
             'features'    => [
@@ -1986,33 +2198,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Fire-Retardant ACP?',
             'description' => 'Intertek, SGS, and TÜV Rheinland verified — engineered for international commercial architectural standards with quantifiable fire safety and fabrication performance.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWx9ehUH9_uMSVoH4ftR-wHKn1uKcq2yCI0vvZNC_tK-meubnwkBMIiJsitp8kTIIrqIcUJ8ywAVrLHGxH7PJgJrj67FniRVAS_C_T4ILtgoYlvQo-_FLe-mSjcDeT-qwgMwxBkdeVGOK6uFwuC8Fu2pnph0jQQDm8FmD1R8fmKgCm0l_GBRBMDu0HQkP20rJFUKn8xR0sqxHnH1V-8SnLJPRHvP5lbGr2udLT_k4',
+                    'image'     => '/wp-content/uploads/alumax-img-a5912e182a.jpg',
                     'image_alt' => 'High-density A2 fire-rated mineral core cross section of aluminum composite material.',
                     'icon'      => 'local_fire_department',
                     'title'     => 'Non-Combustible A2 Core',
                     'text'      => '≥90% inorganic hydroxide core releases bound hydration at >340°C, self-extinguishing flame propagation — EN 13501 A2-s1,d0 & NFPA 285 passed.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZkEKnwrGokGkxARuXYbzlUKKUCQBk9m1N_lxwaiQ80Juqp9FoColq4JLa3bQo45Xm0AzTSpXgpnnfUiWNlXv19hAgXYxR9dmlBPBBVVxgGxcTJCyMfcUe0vYMRJJSFbSd0rTj-iAJcjPI-whEAvXM9N3o1T3YWD7ryBkLIzftHy75uUuxpSEkyHLW5C0QlQ8NeDA38_o9hZVY8ZV23yjWxDCOujob64b-HPqsdro',
+                    'image'     => '/wp-content/uploads/alumax-img-5a790d939b.jpg',
                     'image_alt' => 'Curved column wraps and soffits fabricated from flexible 4mm aluminum composite panels.',
                     'icon'      => 'architecture',
                     'title'     => 'Cold-Formable to R300',
                     'text'      => 'Elastomeric polymeric adhesive prevents core-skin shear delamination at cold radii as tight as R ≥ 300mm on 4.0mm panels — columns, soffits, origami cassettes.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDJlrcRQ-ftyzeMSgsrW2elAMCwW3dHm_YneJ7G63Ya6drPElCoi9d2ecTsugeJOgZH8DeJtOP-I-MEM26ywa-9wkflyALZROxYpOa1swep17kzi2QwskJeteOfZ8xlnOEyFsKGkRQd-sfq4agiWWNFKgygDosvD1KQghOascmcxhehqlr7-aHc1sKrh9KNL8YgdJyPAPMlsmx9n66ky6qve0-OvGtgkmS-8eHEGzo',
+                    'image'     => '/wp-content/uploads/alumax-img-e5199a92a7.jpg',
                     'image_alt' => 'Material swatch library of champagne bronze, chameleon pearlescent and high-gloss ACP finishes.',
                     'icon'      => 'format_paint',
                     'title'     => 'FEVE / PVDF Coating Library',
                     'text'      => 'Kynar 500® 3-coat, Lumiflon® FEVE 80% gloss, nano self-cleaning and chameleon angle-shift finishes — ΔE ≤ 0.5 batch color uniformity.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBXozRC_h7sf7re-7BnOoIksotFKymR4drwbzMjita_evJKRpfbynb3i6-8R1VLjosTvRH5ZYpddASoERPditg0J-vpxJ00iyEdNKaYFajFG4XapbGIIuHcc83C4c70AxN1umz5zRgsb3yO7GSkknMxQzKNuKGKxzk3cie1zQ9xgftoTbqOdhhd8dV7Knwp9kApEazBr5xnkosCkROX-GzjyYDnLjxKXcf1a3hMWl4',
+                    'image'     => '/wp-content/uploads/alumax-img-d3fcf20382.jpg',
                     'image_alt' => 'CNC router cutting precision 90-degree V-groove on aluminum composite panel for cassette fabrication.',
                     'icon'      => 'precision_manufacturing',
                     'title'     => 'Site-Friendly Fabrication',
@@ -2021,7 +2233,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Fire Safety & Structural Performance Metrics',
             'table_title' => 'Laboratory Verification Matrix',
             'table_ref'   => 'INTERTEK / SGS / TÜV',
@@ -2036,8 +2248,8 @@ SVG;
                 ['name' => 'Coil Slitting Dimensions', 'value' => 'Widths up to 2,000mm ｜ Lengths up to 6,000mm custom', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Brochure (PDF 5.2MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'view_in_ar', 'label' => 'BIM / CAD LOD 400', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Brochure (PDF 5.2MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'view_in_ar', 'label' => 'BIM / CAD LOD 400', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -2057,7 +2269,7 @@ SVG;
                     'caption'   => '9.42 N/mm peak tensile — ALUMAX testing average 9.4 N/mm versus 5.0 N/mm industry standard minimum.',
                 ],
             ],
-            'install_eyebrow'     => 'Installation // 安装方式',
+            'install_eyebrow'     => 'Installation',
             'install_title'       => 'Cassette Hanging & Top-Hat Substructure',
             'install_description' => 'Fix routed folded cassettes to aluminum alloy extruded subframes (6063-T6). Slotted holes allow thermal expansion; concealed rivets or structural silicone deliver continuous pristine exterior reveals.',
             'install_note'        => 'Complete milling & installation technical manual (DWG elevation assemblies, Revit LOD 400 families) available on request.',
@@ -2077,7 +2289,7 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Coating Systems & Finish Library',
             'description' => 'PVDF Kynar 500®, Lumiflon® FEVE, nano self-cleaning and chameleon optical coatings — Konica Minolta spectrophotometer tested across each coil batch at ΔE ≤ 0.5.',
             'swatches'    => [
@@ -2089,26 +2301,26 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Architectural Workshop Manual // 定制选项',
+            'eyebrow'     => 'Architectural Workshop Manual',
             'title'       => 'Panel Fabrication & Substructure Jointing Systems',
             'description' => 'ALUMAX composite panels support rapid site routing, cassette returns, and cold roll-forming with conventional CNC or handheld grooving equipment without micro-fracturing the outer coating.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLVEGfFy56Cu94mCiUmAu7c6vby27mniXLQw9DmoQBAODaSFMMDdhpDSCeujNi7Ww6pSVYHKuyvkRNbdB6aZbmAMOh9ftQwPHR-Vi3NVpACPgSpfyGHnfj0pC7ybfeeAo7vE7t3sf5tVdFad7lYJ5Y20eetzdSRW2pPniY485RDBrNmlYirFBovKuWocjRQrSvZEF5bLQDZ_GfAhVrfyUSCNyuXHtWpg-PSdyRsRQ',
+                    'image'     => '/wp-content/uploads/alumax-img-5d4d97b938.jpg',
                     'image_alt' => 'Technical schematic of CNC router bit milling 90-degree V-groove through ACP back skin and mineral core.',
                     'contain'   => '',
                     'title'     => '90° & 135° V-Groove Milling (01 // MILLING)',
                     'text'      => 'Route a V-groove on the rear face leaving 0.5–0.8mm of mineral core intact alongside the outer skin; hand-fold into crisp architectural cassettes with zero paint crazing. Feed 15–25 m/min, cutter tip R1.5–R2.0mm.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDI39xulZbQvSjuiOy3ur-o6UKfqmUvdolyDew7IdMe1lrrTh_efn3193Qew9Ap5k9dWsTd-R-9xpJarQF_urOJPg3Ksl6UgyV8DLkLsXMq_ZF4h9Lopho-8OpK1Ac1qJylCp4WTq28k49wrftP4on97RqqCar1EFY77y_rrY2iclTgRY1oJjTVEuUMpbQrGguxKGX94PMFrUSusbbQPI5b5BsTfhJHkxzdwMTLEj8',
+                    'image'     => '/wp-content/uploads/alumax-img-87fcdfd828.jpg',
                     'image_alt' => 'Three-roll pyramid plate bending machine shaping a 4mm aluminum composite panel into column cladding radius.',
                     'contain'   => '',
                     'title'     => 'Roll-Bending for Columns (02 // COLD BENDING)',
                     'text'      => 'Continuous architectural curves on precision 3-roller pyramid bending machines; minimum curvature R = 300mm on 4.0mm panels with polished or urethane-coated rollers.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxNGoXm2oOXFQjumYrAVWgUlUjOk4BNooy8OzEP7M-R63QbtZXP7azNQdcUm0zSVHkbwnAVZO32ps4TeELJw3yi9V7UUazyX2mQfGErfqinccbeKR486gpC0sD8A25SQlaFFto00oT6CDZxEDW5jznaZ1IQ6Yk2rFUoT3Ng7pifc-vyFoIIAgzaUsaS9u0hI1MNrWu9tjSUMQYKyCNt7Stgs-P-12bfxoVLY7zWe0',
+                    'image'     => '/wp-content/uploads/alumax-img-ad5656e7c1.jpg',
                     'image_alt' => 'Cross-section drawing of ACP cassette hung on extruded aluminum top-hat mullion with stainless rivets and EPDM gasket.',
                     'contain'   => '',
                     'title'     => 'Cassette Hanging & Top-Hat Subframe (03 // FIXING)',
@@ -2117,13 +2329,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Landmark Commercial & Transport Deployments',
             'link_label' => 'View All 180+ Project References',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDkD14D96RfHx2yrGy5hXbrcQpsFZP2jXBlDGWdNVBRmOeNNEi4CUx0F1GgbFxyhbuIDRJTpZ3ssYnQ1m4BHF04MbWO7Qxr7P4-e_D0M39-tCmU00-i_c-SkX-Yz06gw2q8qUmc2TWKity4-xnOIR5TKR_GY9c_c_V7NJVkHDuaZUAvAnL1ASp9XaUQfVOdHdxdtOrCjQJGeG9TFgCpvmVeXk55s6VYuxoG3cZ2Lx8',
+                    'image'     => '/wp-content/uploads/alumax-img-1a00bef908.jpg',
                     'image_alt' => 'Luxury commercial pavilion in Milan Design District clad in champagne gold iridescent ACP.',
                     'location'  => 'MILAN, ITALY',
                     'title'     => 'Milan Design District Pavilion',
@@ -2132,7 +2344,7 @@ SVG;
                     'year'      => 'Rating: EN 13501 A2',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9MM18XY8zlquCs7BzJoCL_ZNOTm38uRIzF2cTtGjLEg-0WgFQXWoofKzfK1FrUXc0EPGvlg0HZOu_s0pIDqIUGDKyC2YmUxTK1u4WajRoEGXRLl_feD-rcVS9zxMPPON_FHBzzl1KeDVwbaxZkQ9VY15rVxpRki_znrRLkWp61iHA65vgivkcOKJxaR3xobTINGs9F7FeBVBTBm0IOX9AZ39duFmYJsnedGaZ8bM',
+                    'image'     => '/wp-content/uploads/alumax-img-a49023328f.jpg',
                     'image_alt' => 'High-rise shopping mall podium in Singapore Orchard Road with ultra-flat dark graphite ACP cladding.',
                     'location'  => 'ORCHARD ROAD, SG',
                     'title'     => 'Orchard Central Commercial Atrium',
@@ -2141,7 +2353,7 @@ SVG;
                     'year'      => 'Finish: Nano PVDF',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCIbD3e5jXa906PuatU7ZHazG9k-paXj6LWjQDzvCC_fdiuhh3d6RsfZwTO0e0sKrFxPTpteBdWH7QW20AVkbQ2TV5xm6ARd6xPU9n0ZAMvvEPTM3fJlri5UqGqXzn4CWl6P12AbGyeTEN4-wIb1Dy3CeUuPqTmHHKBndI8oNuPgeJBFgSLETpCsahS6fUzzY2KQmtuW8jyHH-pxitACMN7f2mAFPBeU9U1DqXc_OE',
+                    'image'     => '/wp-content/uploads/alumax-img-e5c114973e.jpg',
                     'image_alt' => 'High traffic train concourse and retail pavilion in Sydney with curved metallic silver ACP soffits.',
                     'location'  => 'SYDNEY, AUS',
                     'title'     => 'Metro Central Retail Interchange',
@@ -2152,7 +2364,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Global Tender Support // 样品盒与工程报价',
+            'eyebrow'      => 'Global Tender Support',
             'title'        => 'Request Engineered Swatch Box & Rapid RFQ',
             'description'  => 'Receive our comprehensive overseas architect sample kit containing 12 finish swatches (PVDF, Lumiflon FEVE, Brushed, Chameleon), cutaway mineral cores (A2 & B1), and full ASTM/EN laboratory test reports.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -2192,7 +2404,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOqtNmRyl2NnQHAaSJgmkGPdNNGIVgS7ulbNI8_0PeWSvM7c8OccuY738USzPsOsVOfwzswQcdWBV_4KmSIoP-hhKp97W9o3Vs9zpBvTsGUWTCfaanc5Qo6MKF3r776LErUl9Dbsfx3IL6LKnYc5ul7xJ2res_3PU-qhgWhWXuSOLsqVhY2ZSAB9LTggfw4IEuoW2CJ3lJa0Nvfat1KgBz11fVZ-heomHFFIp6zWk',
+            'bg_image'       => '/wp-content/uploads/alumax-img-5e55ea6648.jpg',
             'title'          => 'HEXAGONAL HONEYCOMB COMPOSITE PANEL',
             'subtitle'       => 'Aerospace-Grade Core. ±6.5 kPa Typhoon Class. Zero Oil-Canning Monolithic Flatness.',
             'description'    => 'Continuous roll-bonded sandwich composite engineered for extreme wind pressure, high-rise building envelopes, and monolithic visual flatness. At only 6.85 kg/m² with 19.2 cm³/m section modulus. System ref: ALU-HC-5000.',
@@ -2209,10 +2421,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1MbVdmT_8dmFjH8F0IgVR_SQsEr3SgGwTHW3_6wd-qHzmDadsdlhi0auR4spzoTyeF8knvWDkMkcwvEqtedX_it_W0yhWw4vBlh_aEnNHYlEK_3ZBPNXMwhwSh7eh965n1PThfzPgqAivV1jBWfknonx5GoR2eYGPUwuL3To9N0QvCUO1Q6gI1Te6YaR2tWqWcoPjI0s6UWKK_Q8rfIgSxU7kBhQQV4NjDV--Vm4',
+            'image'       => '/wp-content/uploads/alumax-img-fa920e6e74.jpg',
             'image_alt'   => '3D technical cross-section render of aluminum honeycomb composite panel ALU-HC-5000 with hexagonal core foil bonded between AA3003 alloy skins.',
             'video_label' => 'Core Cutaway // 3D BIM LOD-400',
-            'eyebrow'     => 'Systems Architecture // 系统介绍',
+            'eyebrow'     => 'Systems Architecture',
             'title'       => 'What is the ALU-HC-5000 Honeycomb Composite?',
             'description' => 'Aerospace-derived hexagonal foil core is continuously roll-bonded between coil-coated aluminum skins with DuPont polyurethane hot-melt, producing an ultra-flat, ultra-light sandwich panel that outperforms solid plate on rigidity, acoustics, and fire behavior.',
             'features'    => [
@@ -2223,33 +2435,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Honeycomb Composite Panels?',
             'description' => 'Certified by TÜV Rheinland, SGS, and Intertek — validated for high-amplitude wind turbulence, typhoon zones, and stringent commercial facade codes.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBo2BF3icxVlMbshDHifitpMxjCOlzGR6w8j7hMyVtPDbonJxHSFizPHZ0ad32OFyZkzVsaxXCN0UZ2b00C5hbTsmUjciyV3hYVlC416hH4Ge7i6aidRd2me1bkK7tTpwtD_fpYUyZdK-AAPszLM7XwK-6Fbtu1Sy0HirdghTdymVpIfICRjt3TB1HBa-Cs5kHUA6M31hfgBXvIrQ3GB04ItZESMHUqswMDCgrF0AU',
+                    'image'     => '/wp-content/uploads/alumax-img-919e6fa092.jpg',
                     'image_alt' => 'Macro cutaway of hexagonal aluminum honeycomb core foil cell structure with adhesive fillets.',
                     'icon'      => 'balance',
                     'title'     => '500% Flexural Rigidity',
                     'text'      => 'Honeycomb sandwich achieves 500% higher flexural stiffness (EI 450 N·m²) than 3.0mm solid plate at 40% reduced structural dead load.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBNSeJfWO7rFwWACLKRAi-InedVOcLFGjfWMyrCcCovvNU_OmSSEtx1Beas8F9aUZk4t0AtDeCKKQqKK2JXKpfEhdFEQgBc4SePxCCfSGA4kvici-TmSdWczybxM2ea0uOkJh5RnyR9Xeuyk7OOF-94gcRIafa-mNotzjTCS0UP9oKL3GpI5D7EnlcF5_YfyHaESOcPYcP__uz06fLc4dcPZp0-7SUZ3vLi3j_IB58',
+                    'image'     => '/wp-content/uploads/alumax-img-9786deaec2.jpg',
                     'image_alt' => 'Macro sample of champagne bronze fluorocarbon PVDF coating on aluminum honeycomb substrate.',
                     'icon'      => 'local_fire_department',
                     'title'     => 'A2 Non-Combustible Core',
                     'text'      => 'PCS gross heat of combustion strictly below 3.0 MJ/kg with zero toxic smoke drop (d0) under EN 13501-1 / NFPA 285.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDTnLBY_Dj7dy7VZcrjZXf95_Z4RfXe6VmkJsSiiUpjESmZtaOO2G6htHEDwtxfh5kwUDkwaKDtKYvAduGvUl6-m8JNaOQGOKQs2Vatqmw1oodBOMNWEfZwCUO_E8LhOowAmDTEtjYhgnkhCgihm-KZHyJEtdaZd0xWyhOiOkA1VIOXNfNC-OukY6cHXRH4IW4dAXTkl65XeziObz56UMuLwIRxNOHKg9NACo8Zotg',
+                    'image'     => '/wp-content/uploads/alumax-img-c8a907f390.jpg',
                     'image_alt' => '3D visualization of concealed structural hook-on clip engaged into vertical facade mullion.',
                     'icon'      => 'air',
                     'title'     => 'Wind Tunnel Verified 6.5 kPa',
                     'text'      => 'Coastal hurricane suction vortex simulation with zero corner peel or rivet hole fatigue over 100,000 cyclic pulses at 6,500 Pa peak.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOqtNmRyl2NnQHAaSJgmkGPdNNGIVgS7ulbNI8_0PeWSvM7c8OccuY738USzPsOsVOfwzswQcdWBV_4KmSIoP-hhKp97W9o3Vs9zpBvTsGUWTCfaanc5Qo6MKF3r776LErUl9Dbsfx3IL6LKnYc5ul7xJ2res_3PU-qhgWhWXuSOLsqVhY2ZSAB9LTggfw4IEuoW2CJ3lJa0Nvfat1KgBz11fVZ-heomHFFIp6zWk',
+                    'image'     => '/wp-content/uploads/alumax-img-5e55ea6648.jpg',
                     'image_alt' => 'High-rise envelope with 2000x5000mm ultra-flat aluminum honeycomb cladding panels in champagne finish.',
                     'icon'      => 'straighten',
                     'title'     => '< 0.5mm/m Monolithic Flatness',
@@ -2258,23 +2470,23 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Structural & Physical Performance Data',
             'table_title' => 'Tested per ASTM & BS EN Specifications',
             'table_ref'   => 'TÜV PASS #8921-EU',
             'rows'        => [
-                ['name' => 'Flatness Deviation / 表面平整度', 'value' => '< 0.5 mm/m planar zero oil-canning ｜ EN 485-4 / ASTM B209', 'mono' => '1'],
-                ['name' => 'Tensile Flatwise Bond Strength / 剥离粘结强度', 'value' => '> 2.25 MPa, core failure mode only ｜ ASTM C297 / D1781', 'mono' => '1'],
-                ['name' => 'Wind Pressure Design Load / 抗风压承载力', 'value' => 'Up to +6.5 kPa / -6.5 kPa gust load ｜ ASTM E330 / BS EN 12179', 'mono' => '1'],
-                ['name' => 'Fire Classification Reaction / 防火等级', 'value' => 'Class A2-s1,d0 non-combustible core ｜ EN 13501-1 / ASTM E84 / NFPA 285', 'mono' => ''],
-                ['name' => 'Salt Spray Fog Resistance / 耐盐雾腐蚀', 'value' => '4,000 hours, rating 10 zero blistering ｜ ASTM B117 / AAMA 2605-13', 'mono' => ''],
-                ['name' => 'Acoustic Sound Transmission / 隔声降噪', 'value' => 'Rw = 33 dB sound damping resonance ｜ ASTM E90 / ISO 717-1', 'mono' => '1'],
-                ['name' => 'Thermal Linear Expansion / 热膨胀系数', 'value' => '2.4 × 10⁻⁵ / °C synchronized face & back ｜ ASTM E228', 'mono' => '1'],
+                ['name' => 'Flatness Deviation', 'value' => '< 0.5 mm/m planar zero oil-canning ｜ EN 485-4 / ASTM B209', 'mono' => '1'],
+                ['name' => 'Tensile Flatwise Bond Strength', 'value' => '> 2.25 MPa, core failure mode only ｜ ASTM C297 / D1781', 'mono' => '1'],
+                ['name' => 'Wind Pressure Design Load', 'value' => 'Up to +6.5 kPa / -6.5 kPa gust load ｜ ASTM E330 / BS EN 12179', 'mono' => '1'],
+                ['name' => 'Fire Classification Reaction', 'value' => 'Class A2-s1,d0 non-combustible core ｜ EN 13501-1 / ASTM E84 / NFPA 285', 'mono' => ''],
+                ['name' => 'Salt Spray Fog Resistance', 'value' => '4,000 hours, rating 10 zero blistering ｜ ASTM B117 / AAMA 2605-13', 'mono' => ''],
+                ['name' => 'Acoustic Sound Transmission', 'value' => 'Rw = 33 dB sound damping resonance ｜ ASTM E90 / ISO 717-1', 'mono' => '1'],
+                ['name' => 'Thermal Linear Expansion', 'value' => '2.4 × 10⁻⁵ / °C synchronized face & back ｜ ASTM E228', 'mono' => '1'],
                 ['name' => 'Unit Weight / Section Modulus', 'value' => '6.85 kg/m² (20mm panel) ｜ W = 19.2 cm³/m', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'TDS Spec (PDF)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'folder_zip', 'label' => 'BIM & CAD LOD-400', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'TDS Spec (PDF)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'folder_zip', 'label' => 'BIM & CAD LOD-400', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -2302,39 +2514,39 @@ SVG;
                     'caption'   => 'Simulated under coastal hurricane suction vortex pressures with zero corner peel or rivet hole fatigue over 100,000 cyclic pulses.',
                 ],
             ],
-            'install_eyebrow'     => 'Installation // 安装方式',
+            'install_eyebrow'     => 'Installation',
             'install_title'       => 'Three Structural Fixing Typologies',
             'install_description' => 'Engineered for rapid site installation, thermal movement compensation, and complete moisture management. Choose the structural bracket typology best suited for your facade envelope requirement.',
             'install_note'        => '',
             'install_items'       => [
                 [
-                    'tag'   => 'TYPE 01 // 挂接式 HIGH-RISE FAVORITE',
+                    'tag'   => 'TYPE 01 // HOOK-ON HIGH-RISE FAVORITE',
                     'title' => 'Concealed Hook-On Hanging Cassette',
                     'text'  => 'Extruded aluminum hook brackets with anti-vibration rubber damper pads secured to vertical curtain wall mullions — panels hang and lock progressively, individually demountable for maintenance.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmr-lVzqPy_oyivFsGWdyicQpeKgvgsbvLZxiDasRqTVQhDRO73hztcz0pr1pI4MnJDuDL-VG1_saFjiZot28s6FQxzz36QFpMSwEKzosLyVn0XczcNT21zII7l8Q2HnGheTdFkvvPzZMH2kCbKjU58eAG-Oaqosf4flMyBirGu2gGw0KJiXUeOXp3sLgjRrdvUkaN4fCuJM4sPXxTd3UN0WrTz_5OuhzfIO4eQiE',
+                    'image' => '/wp-content/uploads/alumax-img-0a5bcd95a0.jpg',
                     'image_alt' => 'Technical diagram of Type 01 concealed hook-on hanging cassette extruded aluminum brackets with anti-vibration rubber damper pads on vertical curtain wall mullion.',
                 ],
                 [
-                    'tag'   => 'TYPE 02 // 开缝式 RAINSCREEN',
+                    'tag'   => 'TYPE 02 // OPEN-JOINT RAINSCREEN',
                     'title' => 'Open-Joint Pressure-Equalized Rainscreen',
                     'text'  => 'Continuous EPDM extruded gasket baffle with ventilated drainage cavity equalizes wind pressure and evacuates driven rain — open shadow joints with zero exposed sealant.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBTob3sYkWNu-5wetrm6wvimQK1uQzSGSyRDrNV7Y2-XGhKHl4JZGkN83xB6fDsxE--a_FQSKydiu83tPYGvEuYKF5G6RgLjJiLM24d2EI3yNXL5g2pYaPuXdT330vTdV5kvkODuAs1-ZB2M6Gtl16GfVhFgzSlLNxLH1w6FaCk5fEPLPNv5tNXJEpqd-kJQKlyT6Kzf_CEnkuhcapkO2JZGcdY3q7QA6FVBVCRKNY',
+                    'image' => '/wp-content/uploads/alumax-img-396f59243e.jpg',
                     'image_alt' => 'Section drawing of Type 02 open-joint pressure-equalized rainscreen with continuous EPDM gasket baffle and ventilated drainage cavity.',
                 ],
                 [
-                    'tag'   => 'TYPE 03 // 插接式 INTERLOCK',
+                    'tag'   => 'TYPE 03 // INTERLOCK',
                     'title' => 'Interlocking Tongue & Groove',
                     'text'  => 'Continuous extruded male-female perimeter profiles bonded during panel manufacturing interlock directly on site with self-aligning precision joint lines — dramatically shortening crane installation cycles.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAGN6wcNhLZb0OZGAo_p6X9yATJnCEtaTopHPcPNOqF3IT2bW5CGIv4rN0RWnDH1TbwqDGLWbs6ILrKqGXTqHhceYl0BMeUchAjnHbEb4mHxgAtiNoX_YSjoV3kWhrrkmB9ypfNzZ6Oh_kX_GKTyEiKbQqWc-PVBjkiQS9-IjaP24GIZMQXJoZyAZvIJ0ToiTU0LgMaw7JbT23xBcT_TfFSJOAosQ_hsNynsm_gTw',
+                    'image' => '/wp-content/uploads/alumax-img-6004e5a730.jpg',
                     'image_alt' => 'Engineering cross-section of Type 03 interlocking male-female tongue and groove aluminum honeycomb cladding with concealed mechanical anchor screws.',
                 ],
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Architectural Finish Palette',
             'description' => '3-coat PPG Duranar® PVDF and Class I anodized finishes with 30-year coating life, tested under AAMA 2605 accelerated weathering.',
             'swatches'    => [
@@ -2346,41 +2558,41 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Engineering Substructure Integration // 定制选项',
+            'eyebrow'     => 'Engineering Substructure Integration',
             'title'       => 'Three Structural Fixing Typologies',
             'description' => 'Engineered for rapid site installation, thermal movement compensation, and complete moisture management. Choose the structural bracket typology best suited for your facade envelope requirement.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDTnLBY_Dj7dy7VZcrjZXf95_Z4RfXe6VmkJsSiiUpjESmZtaOO2G6htHEDwtxfh5kwUDkwaKDtKYvAduGvUl6-m8JNaOQGOKQs2Vatqmw1oodBOMNWEfZwCUO_E8LhOowAmDTEtjYhgnkhCgihm-KZHyJEtdaZd0xWyhOiOkA1VIOXNfNC-OukY6cHXRH4IW4dAXTkl65XeziObz56UMuLwIRxNOHKg9NACo8Zotg',
+                    'image'     => '/wp-content/uploads/alumax-img-c8a907f390.jpg',
                     'image_alt' => 'Concealed structural hook-on extruded aluminum clip engaged into vertical facade mullion.',
                     'contain'   => '',
-                    'title'     => 'Concealed Hook-On Cassette (TYPE 01 // 挂接式)',
+                    'title'     => 'Concealed Hook-On Cassette (TYPE 01 // HOOK-ON)',
                     'text'      => 'CNC-routed modular trays with factory-riveted aluminum hanging hooks engage extruded vertical runner mullions — zero visible fasteners, single-panel demountability, 12–20mm reveals, seismic drift up to 1:50.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBTob3sYkWNu-5wetrm6wvimQK1uQzSGSyRDrNV7Y2-XGhKHl4JZGkN83xB6fDsxE--a_FQSKydiu83tPYGvEuYKF5G6RgLjJiLM24d2EI3yNXL5g2pYaPuXdT330vTdV5kvkODuAs1-ZB2M6Gtl16GfVhFgzSlLNxLH1w6FaCk5fEPLPNv5tNXJEpqd-kJQKlyT6Kzf_CEnkuhcapkO2JZGcdY3q7QA6FVBVCRKNY',
+                    'image'     => '/wp-content/uploads/alumax-img-396f59243e.jpg',
                     'image_alt' => 'Section drawing of open-joint pressure-equalized rainscreen with EPDM gasket baffle and ventilated cavity.',
                     'contain'   => '',
-                    'title'     => 'Open-Joint Rainscreen Baffle (TYPE 02 // 开缝雨幕)',
+                    'title'     => 'Open-Joint Rainscreen Baffle (TYPE 02 // OPEN-JOINT)',
                     'text'      => 'Pressure-equalized back-ventilated cavity with internal EPDM silicone baffle profiles — eliminates silicone streaking for decades, continuous >50mm rear ventilation, optimal thermal bridge decoupling.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAGN6wcNhLZb0OZGAo_p6X9yATJnCEtaTopHPcPNOqF3IT2bW5CGIv4rN0RWnDH1TbwqDGLWbs6ILrKqGXTqHhceYl0BMeUchAjnHbEb4mHxgAtiNoX_YSjoV3kWhrrkmB9ypfNzZ6Oh_kX_GKTyEiKbQqWc-PVBjkiQS9-IjaP24GIZMQXJoZyAZvIJ0ToiTU0LgMaw7JbT23xBcT_TfFSJOAosQ_hsNynsm_gTw',
+                    'image'     => '/wp-content/uploads/alumax-img-6004e5a730.jpg',
                     'image_alt' => 'Cross-section detail of interlocking male-female tongue and groove honeycomb cladding system.',
                     'contain'   => '',
-                    'title'     => 'Tongue & Groove Interlocking (TYPE 03 // 企口插接式)',
+                    'title'     => 'Tongue & Groove Interlocking (TYPE 03 // INTERLOCKING)',
                     'text'      => 'Continuous extruded male-female perimeter profiles bonded during manufacturing — self-aligning precision joint line, minimal framing substructure, high acoustic insulation performance.',
                 ],
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Built With ALU-HC-5000 Worldwide',
             'link_label' => 'Request Case Study Dossier',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAyBVaiQ0Zuf469JZiFH3-OsYxLHuUBshdKd5GUdIE7vKbf7GaP7QdysOviiJPLQyBEQ6-S19VGtCBxRamkoq87hNWfiWD9GN3BZphTmCPPUSc3Rg4-my8ubba_cDbh5FPzlzvbh8VcH7By66dQkFjoAzs2ZcJ7-6DtltDTgz_vWVkbPgAEU4B0_4LtytLcgUWt8IyydxWEgf5Bc5llitWBZbmb9aLEtGqbGM2tig',
+                    'image'     => '/wp-content/uploads/alumax-img-f443a79a13.jpg',
                     'image_alt' => 'Singapore Changi Airport Terminal envelope clad in curved metallic champagne aluminum honeycomb panels.',
                     'location'  => 'SINGAPORE, SG',
                     'title'     => 'Changi International Hub Expansion',
@@ -2389,7 +2601,7 @@ SVG;
                     'year'      => 'Tested: 5.8 kPa',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0KJjt5oWiTr761ol1a9O_YOdyx6N9cvWPpFtpsRckqFqG1Rf0tDciN0dTJvXOi5VhVTWFrNKtgWyWOkAZpIPWYiNBGjyB5xTM0cLD61r8hhSi6Rff0wL5plUU0KDZOqI_y0R6jomlVwgrnpCY6gHMje0EQv758Gcwe9keW5JBaQrxtZmk6nffq69em5e4a3mxRvDW-iNvFs3mUOALhfsUPRel1LJz0ENcYawAuT0',
+                    'image'     => '/wp-content/uploads/alumax-img-f546982ae6.jpg',
                     'image_alt' => 'DIFC Dubai Financial District skyscraper with ultra-flat anthracite gray honeycomb cassette panels.',
                     'location'  => 'DUBAI, UAE',
                     'title'     => 'DIFC Prime Tower & Podium',
@@ -2398,7 +2610,7 @@ SVG;
                     'year'      => 'Tested: 50-Year Life',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNXKmsHVFoeNxRUimPs6CHDtq1F-jpgg3XJzf6aGVdxZyKoaGvDWNRzd2MzyGaBmbKZofh3f9xuTydI4WHGJpXKTrSuDPhyXXdPoAmjj3vVkdXECifUVHYvwv-WODUtprjPsIN0OBeBs4k6VON87xX4EE5bZX9LIvncsikQ8cz9xA-lAwLSsryCi-uwSgsjzdsKsygUPJJMPznnGuJ52yAMFoDM1C0eh3SxO8VfY8',
+                    'image'     => '/wp-content/uploads/alumax-img-8baee60689.jpg',
                     'image_alt' => 'Frankfurt commercial tower with monolithic silver anodized aluminum honeycomb cladding.',
                     'location'  => 'FRANKFURT, GER',
                     'title'     => 'Taunus Sky Corporate Portal',
@@ -2409,7 +2621,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Direct Factory Technical Desk // 询价与技术咨询',
+            'eyebrow'      => 'Direct Factory Technical Desk',
             'title'        => 'Request Project Tender Calculation & Sample Kit',
             'description'  => 'Submit your architectural schedule, elevations, or bill-of-quantities (BOQ). Our facade engineering group responds with static wind-load calculations, optimization yields, and factory-direct pricing within 24 business hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -2484,7 +2696,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIQ6MU_jPyUZhhqBnmtEtEuW0FxCAuEev8iP1grvP4EmU7-_eaSn4tN3aQJ5JbYPzHN7bRKacwdFCx7y8uAmQjsTsaQak5hoWv2arDuS38dL6dCmVry0Wn--zBMVyx0HFrsAz9pCt4_E9koqKXwdK9-PmTQ_xLAA4L8EfpanT5q_hCSP81WpWCjYGq3cpXo2i48BjyCeRaUfoVI2LO90H20IMQ52JcHxVWtmOgFLM',
+            'bg_image'       => '/wp-content/uploads/alumax-img-7d6634c76c.jpg',
             'title'          => 'CORRUGATED CORE ALUMINUM COMPOSITE PANEL',
             'subtitle'       => '100% Mono-Material Aluminum. EN 13501-1 Class A1. 60% Lighter Than Solid Plate.',
             'description'    => 'Precision roll-bonded continuous structural architectural sandwich panel featuring an engineered sinusoidal wave core made from 100% recyclable high-grade aluminum. Eliminates organic thermoplastic resins completely, delivering uncompromising EN 13501-1 Class A1 fire safety, exceptional rigidity-to-weight ratio, and flawless optical flatness. Series: ALU-CC-4000.',
@@ -2501,10 +2713,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAK8QNZGGNOSVBjbS3gftadZTZxzOsvhj0yc3iRw0AreeTQJaob1kMrj_NriMAlvDsDYNb39hXGrEXXarO6_hBLTv2g-yH6cQS5lQrx1qSBZVQGTLCkNCXXkGBHtB9JBG-w41qrFXqNEoPDZQsJHrycExKIbgrAz3srR0YHb5D-8Zj9Z2l0L0IUujTCNLGgxWSuczWDC_E20wFfvoV6mlgWbzyV9pdsi0taLIPndwU',
+            'image'       => '/wp-content/uploads/alumax-img-1a6cd5b463.jpg',
             'image_alt'   => 'Corrugated core aluminum panel cutaway showing sinusoidal wave core roll-bonded between aluminum skins.',
             'video_label' => 'Core Cross-Section // Sinusoidal Flute',
-            'eyebrow'     => 'Systems Architecture // 系统介绍',
+            'eyebrow'     => 'Systems Architecture',
             'title'       => 'What is the ALU-CC-4000 Corrugated Core Panel?',
             'description' => 'Unlike FR-ACP with mineral-filled polyethylene, the ALU-CC-4000 eliminates organic thermoplastic resins completely. The patented 12.5mm wave-pitch sinusoidal aluminum core acts as an infinite series of structural I-beams — 100% recyclable, zero-VOC, and EPD ISO 14025 compliant for LEED v4 / BREEAM credits.',
             'features'    => [
@@ -2515,33 +2727,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Corrugated Core Panels?',
             'description' => 'Tested under ISO/IEC 17025 accredited international laboratories — verified for extreme positive/negative wind loads, shear deflection, and zero-ignition structural performance.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBkcM2A1HnAwPT_5zUw1XMLvv33VXbrrZVPAsYu3VddsP1NEx2j7E2lfjzfTsJ46P3MHJho2hdjXWuds9oNiLhxhBXHOxeXMNOiDqPmb2_B8ARDHyoxehaqN1G2Fh0pk2nVYvMnrTa0_fZq0iZJj9ZEfkIYgOufKqcMvfxkVpAG-Fcw3DQolZkRNhN10jPS0XXM_6dmXbvlx_JsSMH18U2XdgD3FJ0gH96_hezajms',
+                    'image'     => '/wp-content/uploads/alumax-img-e860c81f25.jpg',
                     'image_alt' => 'Wave core section of corrugated aluminum composite panel.',
                     'icon'      => 'local_fire_department',
                     'title'     => 'Class A1 Zero-Ignition',
                     'text'      => '100% aluminum mono-material — zero polyethylene, zero toxic gases, no smoke (s1), no droplets (d0) under EN 13501-1 / BS 476 Part 4.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXKUTZ8n5QxxfgPQQYmbnhEYdXXzJP4j3R68LeGkIMXv-ERbgK2RbHaTDSuS-G9zgJ_QkrrrkVx6RGigrEkzN-_mNAOf9rn9cdyMwm9DVyFSyFDv2_aj171OrXoV8B56K6TcIVav2ZkfpcQZISQSABVRxMr2uuFBFSftsfyhCQYmALkr-GCWbClVMNDKa3MNNpmHCeiIVjIzlg_DWo5-4wT05R5bBYe1QZ4m7DWok',
+                    'image'     => '/wp-content/uploads/alumax-img-f0deb9fad1.jpg',
                     'image_alt' => 'Profile caliper measurement of corrugated core panel thickness.',
                     'icon'      => 'balance',
                     'title'     => 'Rigidity-to-Weight Champion',
                     'text'      => 'Flexural rigidity 0.245 × 10¹¹ N·mm²/m at just 4.32 kg/m² — 62% lighter than 3.0mm solid plate with equal stiffness.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBjbIfMHawUgutcryDxdKRZPI8QdKewHWWJo8KSDdvw9_NMAIqIk9nQg_vDi_Z_QbVmQXl6gT5iDqqMKt4sfcffuKQROQwv33pfwb4IUR2XVLSWgl1ZjIk_psLF1vHF_WGFJ3hwem6q5cRhmuJMaPGl_eyfsHZMk8WU5UQZEBcLRriCiXCdLAb6J6hadASdW_I38OLuB1ke_zTzOqej50t72eEVNeZBPm4LtDyvGLs',
+                    'image'     => '/wp-content/uploads/alumax-img-76d6a0b581.jpg',
                     'image_alt' => 'Concealed joint mounting detail of corrugated core facade panel.',
                     'icon'      => 'air',
                     'title'     => '±5.4 kPa Wind Deflection',
                     'text'      => 'ASTM E330 structural deflection pass at L/180 over 1500mm spans — no mid-stiffeners required on high-rise envelopes.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIQ6MU_jPyUZhhqBnmtEtEuW0FxCAuEev8iP1grvP4EmU7-_eaSn4tN3aQJ5JbYPzHN7bRKacwdFCx7y8uAmQjsTsaQak5hoWv2arDuS38dL6dCmVry0Wn--zBMVyx0HFrsAz9pCt4_E9koqKXwdK9-PmTQ_xLAA4L8EfpanT5q_hCSP81WpWCjYGq3cpXo2i48BjyCeRaUfoVI2LO90H20IMQ52JcHxVWtmOgFLM',
+                    'image'     => '/wp-content/uploads/alumax-img-7d6634c76c.jpg',
                     'image_alt' => 'Airport terminal envelope clad with corrugated core aluminum panels.',
                     'icon'      => 'recycling',
                     'title'     => 'Circular Mono-Material',
@@ -2550,7 +2762,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Mechanical Strength & Fire Physics Matrix',
             'table_title' => 'Certified Performance Matrix',
             'table_ref'   => 'SPEC REV: 2025.04.B',
@@ -2565,8 +2777,8 @@ SVG;
                 ['name' => 'Max Envelope Span', 'value' => '1,500 × 6,000 mm custom roll-form lengths', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'TDS Spec Sheet (3.9 MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'view_in_ar', 'label' => 'Revit BIM Families (LOD 400)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'TDS Spec Sheet (3.9 MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'view_in_ar', 'label' => 'Revit BIM Families (LOD 400)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -2594,7 +2806,7 @@ SVG;
                     'caption'   => '100% aluminum composition requires zero delamination sorting during decommissioning; retired cassettes melt directly into secondary ingot stock at less than 5% original smelting energy.',
                 ],
             ],
-            'install_eyebrow'     => 'Installation // 安装方式',
+            'install_eyebrow'     => 'Installation',
             'install_title'       => 'Subframe Integration & Movement Joints',
             'install_description' => 'Concealed cassette fixing with engineered movement joints for large-format corrugated core envelopes.',
             'install_note'        => 'Download the complete milling & installation technical manual: DWG elevation assemblies, CNC G-code cutter geometries and Revit families (LOD 400).',
@@ -2614,7 +2826,7 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Coil-Coated Fluorocarbon Finishes',
             'description' => 'Continuous coil-coated PVDF and FEVE finishes with zero VOC emissions during the building lifecycle — compliant with Environmental Product Declarations (EPD ISO 14025).',
             'swatches'    => [
@@ -2626,7 +2838,7 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Fabrication & Joinery Details // 节点详图',
+            'eyebrow'     => 'Fabrication & Joinery Details',
             'title'       => 'Standard Milling Profiles & Cassette Assembly',
             'description' => 'Engineered for CNC V-groove routing using standard tungsten carbide 90° or 135° cutters. Panels fold seamlessly into rigid architectural cassettes without fracturing the outer roll-coated skin.',
             'cards'       => [
@@ -2657,13 +2869,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Global Completed Landmark Projects',
             'link_label' => 'Explore All Global References',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnwZDSDmn8M_7IU1qmMXNvxy4hwmcKVL3p2UA7UlZk4JSz-0_TgDlyNHXzoIMW7vzUy9F9A6279jEWZyuqH9Ue2j2lXMnb0uyFZVqNFYVcZw744OvRhSvTlyb42jNs5FDmgmiTQ_SShI4J-LounatdAAgFeKoSVUJ8RpukQa0_vQ7zaf5IeXyh_ZhjHcb_c9QH2soAsMKtLpL-05Ab_4rct9_rr9ZV5kAEX8Nq5Qk',
+                    'image'     => '/wp-content/uploads/alumax-img-8445ed5715.jpg',
                     'image_alt' => 'Doha Metro Red Line station concourse envelope.',
                     'location'  => 'DOHA, QATAR',
                     'title'     => 'Doha Metro Red Line Concourse',
@@ -2672,7 +2884,7 @@ SVG;
                     'year'      => 'Year: 2022',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDDA6uHoNW1YZECIbfZrSlNPCHu9NzZs0w8jyb4NC-SjCtAaLmBuhAHZX7Gqomi_BwARg-hpFXc-HV4STLKlqlRmLvwiVFtDc1-kg0zQ89wVQLkBjG0CRu6fqraYUoQSwrXfkczatw5c5ptQi0lYun8H3U1MSomXX1F783IBXS6C7JaEJj5au8qX35GwMqvOEGydVfICS-ngy33ZrC9r4YGPv-qUe06mamx4xVLq5U',
+                    'image'     => '/wp-content/uploads/alumax-img-a794ad543a.jpg',
                     'image_alt' => 'IFEMA North Exhibition Expansion in Madrid Spain.',
                     'location'  => 'MADRID, SPAIN',
                     'title'     => 'IFEMA North Exhibition Expansion',
@@ -2681,7 +2893,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDV3ozKaa0dSp7tUe8PkQ521b2zYyeYQv3_9KKJ6Jzx323cnIPUworQAtFPqDID4cye3Zfn_SGVcHu-w0QyxuTVsVfhfiUF7HVBug9YCcQR-xWecellVlXILDXUsdDp_MXmcEaSbrOjsKBSbjOywPNGn7n67zn-mgWtZ27BAs6RD0rbderAp36iBdigH3yrbVRSAMk5q15QloEteXBQRH9kWkHGvHRO-xNnflQAWis',
+                    'image'     => '/wp-content/uploads/alumax-img-6d92563ece.jpg',
                     'image_alt' => 'King Abdullah Financial District Station portal in Riyadh Saudi Arabia.',
                     'location'  => 'RIYADH, KSA',
                     'title'     => 'KAFD Station Portal',
@@ -2692,7 +2904,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Direct Factory Procurement // 商务及打样',
+            'eyebrow'      => 'Direct Factory Procurement',
             'title'        => 'Request Project Quotation & Specimen Kit',
             'description'  => 'Our international engineering consultation desk provides rapid structural preliminary calculations, BOQ optimization, and overnight courier sample boxes (including 4mm/6mm panel samples and color fan decks) for registered facade contractors, consultants, and architectural practices.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -2767,7 +2979,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAV4-8kkSsJMRlCo_jUDMVF9oILKCPm9Pgeb9q6WpmvTX2nCSNyvWzaW3ACBDXAYT6DlbG25IIEWrR0yhTlsnBITXCV3rc19LxV5VleqgPE7d6Pq7nih-Z5ssohKY9PdedF7PSG2XMrpCMSa55i1fdPDhPYMA7v91NUpY0HLk2tY706OydjAAabJO_oK_-cK5d-lO4gbJgOOoURLqF-3GTlCYnnQdAhSUvvO3y7sXc',
+            'bg_image'       => '/wp-content/uploads/alumax-img-674be52934.jpg',
             'title'          => 'ARCHITECTURAL METAL CEILING SYSTEMS',
             'subtitle'       => 'Acoustic Excellence. Seismic Safety. Monolithic Suspended Baffle & Tile Matrix.',
             'description'    => 'Precision-engineered modular ceiling envelopes with acoustic fleece backing, flush services integration, and seismic compliance for large-span transport terminals and premier corporate headquarters. System code: ALU-CL-6000.',
@@ -2784,10 +2996,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC4SgXjCJxvBVA_zHUS5iMKVE0jlcfE4D4XZab8wUsniFmSG1oawYBbTG3Vjvu3EMjB3YVTjjh0S-Fzo7-VgDwmB5VpUG7E7ube1RFFTDqoVlogS9t3gRp6AUPWqOT0keQWAD5TYaWE93w7K3RWccEj5j27A6aWxYu2Pht546w54OAiFG1_mSFEP9YYYKi4rRA_AmOfXR_WeBJz5b7l7-1L02kVj2_7_CPOjaOPl1k',
+            'image'       => '/wp-content/uploads/alumax-img-e7d55cd0c1.jpg',
             'image_alt'   => '3D suspended ceiling carrier cutaway showing concealed grid and acoustic tile assembly.',
             'video_label' => '3D Suspended Ceiling Carrier Cutaway',
-            'eyebrow'     => 'Systems Architecture // 系统介绍',
+            'eyebrow'     => 'Systems Architecture',
             'title'       => 'What is the ALU-CL-6000 Ceiling Matrix?',
             'description' => 'A fully modular suspended ceiling platform combining acoustic baffles, concealed clip-in tiles, linear planks and open-cell grilles on one precision substructure — engineered for zero-deflection spans up to 3,600mm with factory-punched cutouts for HVAC diffusers and recessed luminaires.',
             'features'    => [
@@ -2798,33 +3010,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Metal Ceiling Systems?',
             'description' => 'Certified under ASTM C423 and ISO 354 reverberation chamber methodologies — engineered to minimize flutter echo in large-volume public spaces while satisfying seismic and fire codes.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCa_mpLRxeAat8N3NC4ybaZ8VclV7vZ21U6Ko07nnjfzDAzPvnJTaTOZckXwKrRcvur0fApWElgnbXfziIns4YAH_YaoP6BgU9d1NwWLYJUUfXmEDchOIRcHJ45KPMzazD0iAUtSIRL7TLCrA8pwavCRla_olG9eHPmsXN1kMGwyao2lZ9hKRrfbJqJyOvho23x-TYfabVBOhdkSlT_Ggfg-uloxzUngInwcUaJMvk',
+                    'image'     => '/wp-content/uploads/alumax-img-2719de9050.jpg',
                     'image_alt' => 'Soundtex acoustic fleece backing detail on micro-perforated metal ceiling panel.',
                     'icon'      => 'hearing',
                     'title'     => 'NRC 0.85 Acoustic Damping',
                     'text'      => 'Micro-perforated faces backed with Soundtex 0.2mm fleece achieve αw 0.85 (Class B) — minimizing flutter echo in large-volume transit halls.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAeP6yd5WCVOKs53-WciWKbvgX9V2ncgPyOuvn6zl6ReggG9O9YGvHKhqBJv5K1KBtluEmcjFfrrFOoHEim95MGtMChBQBcY0VMBdpG0SGPcW5h1miFVPxQvdEnEqFgf0aaUgiZ3ZKlrp9qG73Bdw6_CCEd4_-Es7qiOaD1uWACEQ24_7VD-k3Qbsqg5ihokWCyflZhcH_Y8YDKyjGEzu8wI02oO8aJZ6D-LwVXwRo',
+                    'image'     => '/wp-content/uploads/alumax-img-8064745743.jpg',
                     'image_alt' => 'Seismic suspension rigging with diagonal safety wires and compression struts.',
                     'icon'      => 'security',
                     'title'     => 'Seismic Category D–F',
                     'text'      => 'Heavy-gauge perimeter closure clips, rigid sway struts and high-tensile safety wires rated for 1.25g horizontal lateral acceleration in active fault zones.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBd-Yi9Viu2d-r3zwjcv41Szv9iSr8D5gTkGfm-boQwMuAyQLqly5nfZ_NFujvIKLt9cyXN-d12JtcpGzHW9Gt5ZPyqULQhsM7vAy7s8bpserzH4wvCCsdmy8tERfhkkGJuvb-uyV_48Z51oMmjqCu8x6aJz2R33Sh_VEF_fdOrpZ8YDgZKZVS09GDFEgCqigohwvUfWCMczajvI0_Vk1n9FFpzDq1ZC-TQjP7jU-8',
+                    'image'     => '/wp-content/uploads/alumax-img-89f8e5a51b.jpg',
                     'image_alt' => 'Continuous wave baffle ceiling in airport terminal.',
                     'icon'      => 'local_fire_department',
                     'title'     => 'Class A Zero Flame Spread',
                     'text'      => 'Solid aluminum substrate and non-combustible fleece — 0 FSI flame spread, 0 SDI smoke developed under ASTM E84 / EN 13501-1.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAF5ckH_UcE0qcm-Qf7WUkBfN23sY8rgGF2FDj5BTQHENAn_Z2FcinsH0b3dnU-JawkOKfsiwMX_1hkHMFNHt8Bre4DCyt3yxMSIWfHzNVPwyJPKUbkBlSCxSTmXW002JtQr93EAZl5gCywAATfLaNu2B600KFZjdmZbpYH5c8z8exYmCHGH131SZllUHTdquhn9Fi5cEJOjac-5GszQSLV-ALYPps2aZlfHXjeHOI',
+                    'image'     => '/wp-content/uploads/alumax-img-c3ea9d7638.jpg',
                     'image_alt' => 'High-speed CNC punching facility producing micro-perforated ceiling panels.',
                     'icon'      => 'precision_manufacturing',
                     'title'     => '2,000 Hits/Min CNC Precision',
@@ -2833,7 +3045,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Engineered Sound Attenuation & Structural Safety',
             'table_title' => 'Acoustic & Seismic Performance Matrix',
             'table_ref'   => 'EN 13964 CE // REV 2025.4',
@@ -2848,8 +3060,8 @@ SVG;
                 ['name' => 'Humidity Resistance', 'value' => 'RH 95% zero warp rating', 'mono' => ''],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Acoustic Dossier (PDF)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'architecture', 'label' => 'LOD 400 CAD Library', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Acoustic Dossier (PDF)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'architecture', 'label' => 'LOD 400 CAD Library', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -2877,7 +3089,7 @@ SVG;
                     'caption'   => 'Standardized extruded aluminum adapter tracks integrate DALI-controlled linear downlights, sprinkler discharge heads, and high-throw linear slot air diffusers flush with the ceiling plane.',
                 ],
             ],
-            'install_eyebrow'     => 'Engineered Integration // 龙骨与机电集成',
+            'install_eyebrow'     => 'Engineered Integration',
             'install_title'       => 'Precision Substructure & Service Interfacing',
             'install_description' => 'Concealed structural suspension components engineered for zero-deflection spans up to 3,600mm, with factory-punched cutouts for continuous HVAC linear diffusers and recessed linear luminaires.',
             'install_note'        => '',
@@ -2903,7 +3115,7 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Powder Coating & Anodized Finishes',
             'description' => 'Swiss Gema dust-free vertical coating line with multi-stage chemical pretreatment — Qualicoat Class 2 certified PVDF powders at 60–80μm, with anti-microbial silver-ion additive options.',
             'swatches'    => [
@@ -2915,7 +3127,7 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Engineered Integration // 龙骨与机电集成',
+            'eyebrow'     => 'Engineered Integration',
             'title'       => 'Precision Substructure & Service Interfacing',
             'description' => 'Concealed structural suspension components engineered for zero-deflection spans up to 3,600mm, with factory-punched cutouts for continuous HVAC linear diffusers and recessed linear luminaires.',
             'cards'       => [
@@ -2946,13 +3158,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Proven Performance Across Global Transit Hubs',
             'link_label' => 'Request Complete 120-Project Reference List',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOg5Th0p6Xq0twPGmIICLYzpomJ_ZhXFO3obyrXgPJprH-hnrx5ZpawGQR8vKj_Ly7fdEjkUG4K9VyC_ap3T5rzc3lpd_1MJgV3JPS4knqMv2bB38fw2AYTiNQD1kXM5DbrXALZqRIWPQsG3GnY1CwpKIUYDKJy58N8Tm1XPNoCnF_ocgPETIYUKnOytD26YnNhF_1zKl7iQ-u6OfS5ziRienl1G6LpbMiXf5SlL0',
+                    'image'     => '/wp-content/uploads/alumax-img-6ae2a74568.jpg',
                     'image_alt' => 'Kuala Lumpur International Airport T2 concourse wave baffle ceiling.',
                     'location'  => 'KUALA LUMPUR, MYS',
                     'title'     => 'KLIA T2 Concourse',
@@ -2961,7 +3173,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBKXWj24dnS1ovBNYyGuURYVR07LH6rq01Pl1GAMn7e31iPlLT31QEQU3Wb9vM7qmZSoH-LsmfDrcBXDZUlR_hJ5j2qql1Dfkz1S2hruDuEf8bDdPZc1hRT3Grj-0Kkwyac7kvKuHNfujASuZWHbzu8n8EPh1WxV8y_Jcplurk7jEPjj7ARxjqYOsQFvuU_GAiMdZjZP_zx_T4GPpXnK-L-P_5GgKQYt3VQXc4ceWw',
+                    'image'     => '/wp-content/uploads/alumax-img-cc4cbed1a5.jpg',
                     'image_alt' => 'London Kings Cross commercial hub clip-in acoustic tile ceiling.',
                     'location'  => 'LONDON, UK',
                     'title'     => 'King\'s Cross International Commercial Hub',
@@ -2970,7 +3182,7 @@ SVG;
                     'year'      => 'Year: 2024',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD68utNU8bkqkI_SbpSkvxAqFBz1UJFP6mxPpBrVtXPqVHXCYgLyMsd7h0bbedUbiGISc7a0V01_YIx-ulg6P276kUWrAPKnWa-aR6AJ-W7iKVxpq0WhEWdjJ6kPTRIdKcqtl7QpRcYC5cplCzx2zUDDJaKiYxHuVJMbbT2p8VlxphvNwe5VGqL2uuwEwDyqbMRYmS37KWpTdoEVwX3LGiiz0QZWQWGdqQ77TDu6-s',
+                    'image'     => '/wp-content/uploads/alumax-img-be606f7113.jpg',
                     'image_alt' => 'Hong Kong West Kowloon high speed rail station linear plank ceiling.',
                     'location'  => 'HONG KONG SAR',
                     'title'     => 'West Kowloon Express Rail Concourse',
@@ -2981,7 +3193,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Direct Factory Consultation // 工程询价与打样',
+            'eyebrow'      => 'Direct Factory Consultation',
             'title'        => 'Request Acoustic Calculation & Sample Kit Box',
             'description'  => 'Our senior architectural ceiling engineers evaluate your CAD ceiling reflection plans (RCP), calculate specific reverberation time (RT60) reductions, and ship tailored physical mock-up sample kits within 72 hours via DHL Express.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -3019,7 +3231,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMbVXdaRD--L7xuPgowh7zF-36tS_4B94Xemm8S9PO9BAgx6CZZRTmhtDZaK8qbpbOopl3jbx3b_ktTG73cGfSOUeRL9Ew47DOc89ZJ5uC12J8UqNTyIWgR5OX65_aXq8a8mZtIdyMSTNF6SJGeeRCEF77C58HyYFN6Qtc9xrUQKEeDUf3E519gad-9FvEcFII7bYagK-Ln3gzrEksMwkq9uhVJ_hr5v20jd5yZf0',
+            'bg_image'       => '/wp-content/uploads/alumax-img-1894ea3cfd.jpg',
             'title'          => 'AERODYNAMIC S-BLADE SUNSHADE LOUVERS',
             'subtitle'       => '85% Solar Heat Dissipation. Zero Water Entrainment. Continuous Ribbon Design.',
             'description'    => 'Engineered aerodynamic S-blade & rain-defense curtain wall louver system. Seamless continuous ribbon design delivering up to 85% solar heat gain dissipation with zero water entrainment at high storm wind velocities. Spec: ALU-LB-3000.',
@@ -3036,10 +3248,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCBGua-8bnA8LIbLAolK3bn5dRy2eYolCgXL0qhPe7kQF_H6hcfQ9ngGhfrG-OtrwchQwvwuD-iRvBgKUz6VRP6agUIzdYfytmPU-H_wztnqB81FlYqXGVBZcV9sonEzwzg4NJRLFWLeaZqA-Ea6YSoF2NyojB96D9Jv7Om-cExdkV3QX9stNhg8VDBvMYr-8FZD73vhgg3X6IRB-vslgTh3xPEPsUYZU0Tz-ttW7U',
+            'image'       => '/wp-content/uploads/alumax-img-ab9e91858a.jpg',
             'image_alt'   => 'Extruded 6063-T6 aluminum S-blade profile cutaway showing internal drainage water-trap pocket and dual-rib stiffeners.',
             'video_label' => 'LOD 400 Parametric Blade Cut',
-            'eyebrow'     => 'Architectural Solar Control // 遮阳百叶系统',
+            'eyebrow'     => 'Architectural Solar Control',
             'title'       => 'What is the ALU-LB-3000 S-Blade System?',
             'description' => 'A curtain wall transom-integrated louver platform with continuous ribbon sub-frame and 100% water penetration defense. Fully concealed fastening brackets eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'features'    => [
@@ -3050,33 +3262,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our S-Blade Louver System?',
             'description' => 'Tested and validated in certified climatic wind tunnel facilities under simultaneous gale-force wind vectors and simulated torrential rain.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBuzG4RTsqjBjR05024Jbc-8rQdUeUzsBaTo7fPUPYyQFkDGXuDZ6IgQ7pg00lpfe89PdcGO719vrI2_dRwflfXpJaehZJj9isH-EJlDd5mOIJoAHwcDNMBdec6ky4bXY15EZ8CmRBwWSN1xBR_Lry_3cqN3TsggmvhRT726LGharcky7GfkhRAwsvC19EUismoueUfrDgjdYWLlai-oQD4rTVw2pj_XIVRLoNIUYE',
+                    'image'     => '/wp-content/uploads/alumax-img-5ba031318a.jpg',
                     'image_alt' => 'Multi-story continuous horizontal louver ribbons wrapping cantilevered glass volumes.',
                     'icon'      => 'wb_sunny',
                     'title'     => '85% Solar Glare Attenuation',
                     'text'      => 'Daylight redirection with calculated SHGC reduction of 0.16 when paired with low-E insulated glass units.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAF1HGExSzaLWVyvS_g0_jt6mYg0wt_73jFuFijw6Xn9GiulNXpAq3z1vk-b6h0A_MnC6p-d8wFoV2Z0kcW6i_IhBZdfVe1BHUqFSnh4UxkhBuvP-ASMUIKXfLmNaiYttrWWwZYXRxP9aiZ5xNxSTEYvXx3RSSkEqsuOpKaLKkIer_1dy2CG6bW5EpyxqtrGUpEA4lDlnQNMh__bM_aIJcYFpCBH6FZO8l5dqa0dy4',
+                    'image'     => '/wp-content/uploads/alumax-img-4685405f0e.jpg',
                     'image_alt' => 'CNC-machined aluminum pivot brackets with concealed spring clips and vibration gaskets.',
                     'icon'      => 'water_drop',
                     'title'     => 'Zero Water Penetration',
                     'text'      => 'Complete defense against wind-driven rain up to 12.5 m/s storm velocity — EN 13030 Class A, 99.8% effectiveness, 0.00 oz/ft² entrainment.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRL723pKJ1qkEBsCzU6vq1W3vpA0w3k-jYX819ut8q1jt-VTv69ORphO17ZK_Mg0q2OWfbFIFHUO4fdeGPvP-buRmPQPTcRb8EhSyOtnea-H5Ry-0QTuM8ASseYBRmPjflA3d9kdcW3OJJEYv3lRQqNzwb_EvsxzdDS2p9XHB9KbmfG-ay6fKNBjUgNvd1XWxEeNKMcRsEUkR0wwVYq0MqJloPVHd-TA1AIclFaDE',
+                    'image'     => '/wp-content/uploads/alumax-img-c4d8945c33.jpg',
                     'image_alt' => 'PVDF coated aluminum louver swatches in champagne bronze, anodized slate and metallic graphite.',
                     'icon'      => 'format_paint',
                     'title'     => '30-Year Fluoropolymer Life',
                     'text'      => 'GEMA electrostatic turbo-bell applied PPG / AkzoNobel 3-coat PVDF cured at 240°C — AAMA 2605 certified.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCUtqAndLECTaIMh9fl0hZoVdsa-pevm9iRSsUatzLjgIa1GFV8pnrYmE174SJH3Rr9LNN4LD2jQrHLG2Qh3Qqobgn9UAVWP7_raYByMvyhel6AK7FOMDzniyzamCb1rLtjrXo0VqTyKPsN8fBylrjyaQLye8yGQKgh4IcLotXhjsjiTxkACHSNFGGawwFhIH4Drk8wXMIDFoND-hCJREr0L3oJDBhxlpWo3YoLogk',
+                    'image'     => '/wp-content/uploads/alumax-img-cb844b8213.jpg',
                     'image_alt' => 'Dubai medical tower with dual-toned bronze motorized sunshade louvers in desert sun.',
                     'icon'      => 'storm',
                     'title'     => '4.80 kPa Hurricane Rated',
@@ -3085,7 +3297,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Technical Parameters by Blade Geometry',
             'table_title' => 'Specification Schedule',
             'table_ref'   => 'AMCA 500-L // EN 13030',
@@ -3100,8 +3312,8 @@ SVG;
                 ['name' => 'Acoustic Isolation', 'value' => 'Rw 18 dB transmission loss (acoustic-lined options to 22 dB)', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'AMCA Dossier (3.5MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'deployed_code', 'label' => 'Revit LOD 400 (RFA)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'AMCA Dossier (3.5MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'deployed_code', 'label' => 'Revit LOD 400 (RFA)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -3129,7 +3341,7 @@ SVG;
                     'caption'   => 'Calculated solar heat gain coefficient reduction of 0.16 paired with low-E insulated glass — precision daylight redirection without darkening interiors.',
                 ],
             ],
-            'install_eyebrow'     => 'Architectural Details // 安装方式',
+            'install_eyebrow'     => 'Architectural Details',
             'install_title'       => 'Subframe Typologies & Engineered Mounting Assemblies',
             'install_description' => 'Constructed with fully concealed fastening brackets to eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'install_note'        => '',
@@ -3155,7 +3367,7 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'PVDF & Marine Anodized Finishes',
             'description' => 'GEMA electrostatic turbo-bell application of PPG / AkzoNobel fluorocarbon resin cured in continuous convection ovens up to 240°C; ISO 7599 marine-grade anodizing available.',
             'swatches'    => [
@@ -3167,26 +3379,26 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Architectural Details // 节点构造',
+            'eyebrow'     => 'Architectural Details',
             'title'       => 'Subframe Typologies & Mounting Assemblies',
             'description' => 'Constructed with fully concealed fastening brackets to eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuA2vLqDgq6tsbZWGhgOc7Pu9uv_zs8AQXy5gWO8TcyrfJXrabqTrldsHCZ8INS9SBDcGp7pnhi0GKsJYT1tYH0wDW17Ur9XdSE5H92CVd2Q1VFPI_7bCp7ZsyrdZTHAWw8B0aNE2eCX7KmyAhL7jND2QkCFYikBBYrLk3L4g8b9PV6-wMnnsABvYLZdAopRJaFJ8KAGphhRn-C0b5haoEUKpBUmAhjH9qkrZr6olNQ',
+                    'image'     => '/wp-content/uploads/alumax-img-a80058624e.jpg',
                     'image_alt' => 'Snap-on louver bracket clip assembly with dual anti-vibration neoprene isolation pads.',
                     'contain'   => '1',
                     'title'     => 'Snap-On Anti-Vibration Clip (TYPOLOGY 01)',
                     'text'      => 'Interlocking extruded clip + neoprene bushing locks blades onto vertical mullions with vibration isolation — thermal gap ±4.0mm, 3.2 min/m² install, <25 dBA wind flutter hum.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6Ovgpo2Gxiv4QfyKlGk2knLwrDVYkS081yBQBK0eoU2D7zDwBPEdhtf5AdqPgURkNMc6eMvw_sY-txXNfJHllbC4qlL68xiWTW6P1pdV76tKU3-cVD4EN7q5lOC7UE03cpQbU8-luT1DNsxveZSHaZPFrW9ZoaCtYwgShehAXteBuAAGLxmCjrQMWH3RxOffXvAYF6g6bHBqeZmy2t0WpwjWy0-RFEcyUFWZRt1Q',
+                    'image'     => '/wp-content/uploads/alumax-img-0ecddca694.jpg',
                     'image_alt' => 'Continuous hidden aluminum stringer box channel for unbroken horizontal louver ribbons.',
                     'contain'   => '1',
                     'title'     => 'Continuous Hidden Stringer Box (TYPOLOGY 02)',
                     'text'      => 'Concealed rear spine enables unbroken horizontal ribbon lines spanning hundreds of meters — 100% clear visual horizon, max unsupported span 2,400mm, 6061-T6 rear deflection anchor lug.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCYKpaLsvy6rTAi4MRE4P-cXSo4nj9RukXoWX2QjKmbaY5-5ACUwht5mXv7Smwfa8fQf8m5TnvE8rDw93YgRfv7p93Fvsl4hvIs1PimySbfKWS-BD2vST6_c9MRrHdYP6oRtklguLQvQ3fwypeWj9mtQmQrPkqJ5wg7-SJzYi-71NgpP-hL8xqaDRrPWOkkfgIdn4V0LPP639kjSyudKZRHsv7DLLIfYtLkBjt-IEA',
+                    'image'     => '/wp-content/uploads/alumax-img-144abee644.jpg',
                     'image_alt' => 'Integrated water management perimeter with drainage gutter channel and concealed sill weep holes.',
                     'contain'   => '1',
                     'title'     => 'Integrated Drainage Gutter Sill (TYPOLOGY 03)',
@@ -3195,13 +3407,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Landmark Installations & Infrastructure Projects',
             'link_label' => 'View Complete 120+ Reference Dossier',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCga9hSd9VVuQ4ZynxyACrYqsSywwj8i7mFrYOMcmNpFLqQGWh8MBM4M1PTdxMQvgz8mo34OBab4Lq7bSAD-MuFd8trDhcis2IkHTXv0VVE9Z2j1U7AW-d3RbBUYnVDU874VWrcdkKrPS3LZprB8S1lSDmMbkk5dtwYSgAN0g6BaBkHf6UeiuxBshWF3ewIqL1KbF2LC8pMXGeFUX0QkjXfQ4XIl-5qGfxmkVJOHws',
+                    'image'     => '/wp-content/uploads/alumax-img-304c49c25b.jpg',
                     'image_alt' => 'Frankfurt Airport Cargo Logistics Terminal with continuous champagne anodized louvers.',
                     'location'  => 'FRANKFURT, GER',
                     'title'     => 'Frankfurt Airport Airside Cargo Central',
@@ -3210,7 +3422,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCUtqAndLECTaIMh9fl0hZoVdsa-pevm9iRSsUatzLjgIa1GFV8pnrYmE174SJH3Rr9LNN4LD2jQrHLG2Qh3Qqobgn9UAVWP7_raYByMvyhel6AK7FOMDzniyzamCb1rLtjrXo0VqTyKPsN8fBylrjyaQLye8yGQKgh4IcLotXhjsjiTxkACHSNFGGawwFhIH4Drk8wXMIDFoND-hCJREr0L3oJDBhxlpWo3YoLogk',
+                    'image'     => '/wp-content/uploads/alumax-img-cb844b8213.jpg',
                     'image_alt' => 'Dubai Healthcare City medical tower with motorized bronze sunshade louvers.',
                     'location'  => 'DUBAI, UAE',
                     'title'     => 'Dubai Healthcare City Tower 04',
@@ -3219,7 +3431,7 @@ SVG;
                     'year'      => 'Year: 2024',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAafU2DeoZJ55fkZ3cJ6n0WLXUDpQIEjDK5TgSIoxGjCMOGYNWIfyyVTxpyc6z4elLOaD93kOm_F8dy2rJwhfrhgMPpGAEFrpzOiGKKb7TettOkdQzCcKxQhTIDYG5n-DHvN3Lljx7S5rCqPL_6SRbwj9gaZ-oz9_y8VdcrvyPKjsQgDcIEgYqAxCloyez09EO6lZBG54S5qUwACf84sYsNQYYAAwsvSrKpSp959mk',
+                    'image'     => '/wp-content/uploads/alumax-img-83dd332f27.jpg',
                     'image_alt' => 'Tokyo Metro substation with graphite gray vertical acoustic louver screen facade.',
                     'location'  => 'TOKYO, JPN',
                     'title'     => 'Tokyo Metro Central Traction Substation',
@@ -3230,7 +3442,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Engineering Utility // 气流计算与设计校验',
+            'eyebrow'      => 'Engineering Utility',
             'title'        => 'Fast Tender RFQ & Specimen Kit Order',
             'description'  => 'Have complex BIM schedules, unusual curved spans, or structural wind pressures exceeding 5.0 kPa? Our senior structural facade engineers respond within 6 business hours with complete calculations and wind deflection reports.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -3270,7 +3482,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUlT2PHMseWAPCpQM9Dx_Oy0Jf2prquHIwBMeo8w_WEyhWSkMQCksiqSzRerBW0WSuuACHPHKGfzxwZnLNWFTTFNJEjwZGwkIh5IKSnhivNRhLeSYS50zg53hy8qy4GSRr30dAcMEfNBNNkzHnd02UwbkgNYqfRTlp8NfFHYnoU4iVfnTfFF3EOUFQ23eneNhB8igvBxEjHli_s0gREifKnet_y4tUklYV7GKN3EU',
+            'bg_image'       => '/wp-content/uploads/alumax-img-dd36323b8a.jpg',
             'title'          => 'LASER-CUT & WELDED ARCHITECTURAL SCREENS',
             'subtitle'       => 'Parametric Mashrabiya Tessellation. −48.4% Peak Cooling Load. Monolithic TIG Fusion.',
             'description'    => 'Engineered solar interceptor matrix combining custom CNC multi-axis laser carving, seamless TIG seam fusion, and ASTM B117 salt-spray resistant Class I architectural finishes. Spec ID: ALU-GR-2000 // CSI 07 42 13.',
@@ -3287,10 +3499,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBQ60jGN5-PVnF4toNeRukylj4mTqwGDCmgONctDLk5IA5dTdPnSAFdqhfTRPYYlWQUcRlbvFkGICW4Mo8GnNloumm6nJp-bJ4Jj7Ug2TeQG8UM99R3xjVZgd1iwhR5EjxZSe2SftgrfsVTg3J1IsSEF736RAN7tnuPTKFb2qQXPBl-Nx8E3gnrHUA_7Ji6ZtKKSGNxSQGRs9DbY7CayR88UfFoX9Upq4p9InaESBA',
+            'image'       => '/wp-content/uploads/alumax-img-e1acc75d07.jpg',
             'image_alt'   => 'Macro close-up of 4mm aluminum screen with laser cut clean edge and robotic seamless fillet TIG welds in champagne bronze.',
             'video_label' => '3D Geometry Verified // CNC Edge Detail',
-            'eyebrow'     => 'Parametric Tessellation Envelope // 铝艺镂空窗花',
+            'eyebrow'     => 'Parametric Tessellation Envelope',
             'title'       => 'What is the ALU-GR-2000 Screen System?',
             'description' => 'Unlike static planar louvers, the ALU-GR-2000 multi-layer Mashrabiya acts as an active visual barrier and passive thermal shield. During zenith solar noon (75°+), 4mm-depth structural ribs block 88% of thermal infrared irradiance while maintaining uninterrupted outward sightlines.',
             'features'    => [
@@ -3301,33 +3513,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'Why Choose Our Architectural Screens?',
             'description' => 'Computational microclimate engineering validation based on ASHRAE 90.1, EN 1991-1-4 boundary wind tunnel models, and solar radiation ray-tracing simulations.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAYPKcIrJqC2vRMVpvMg1zsRrl50KvU2gv1WtcwlF_oaI7sxZQBrhHfiBbnZagC9Gl4sEdzVrDYegcWrFLi8OKoXKCiGHCHuiy6WS7jZHHt23zAS0gmIEus-cmboKFKNL_Wzf_iKl6UTSwqTb8T5xZ6ehj2o7pYyfQ_ynRMF0QGT2OQlydy_5bU_gLJUWE1bKr7t2vat8B24DavCiumXR0Bi0kFtbH-slOxloKIRM',
+                    'image'     => '/wp-content/uploads/alumax-img-4b049b47fd.jpg',
                     'image_alt' => 'Double-skin facade installation with dynamic shadows cast over low-e glazing.',
                     'icon'      => 'wb_sunny',
                     'title'     => '−48.4% Cooling Load',
                     'text'      => 'Peak cooling load reduction across SW elevations under 45° solar incidence — SHGC from 0.78 unshaded to 0.24 with ALU-GR-2000.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBivS5rQRHhY4gNG3JiDlKavxHS0zsHWLY5jeRIcM-6pnFPo7AUM9COdavwdW0nYO205g5NRW3_mxzqqRDTcftSgLbVEc3dN0KpGXnzcdpb14AWMZbl9skEG3YAiaSUzsTBCkpoNTNaXV1kMPJCz6wCMH1OxATLkaThn_i0N4mZePd-q1WWPOcFFuJS49ggfXJ2kvfHeTmHCIfBtyGkDZGIc0iWPT0OP-loFEyAptU',
+                    'image'     => '/wp-content/uploads/alumax-img-3a46c59353.jpg',
                     'image_alt' => 'Material swatches of architectural anodized champagne bronze and wood-grain thermal sublimation.',
                     'icon'      => 'light_mode',
                     'title'     => '82.3% Daylight Uniformity',
                     'text'      => 'Useful Daylight Illuminance (UDI 300–3000 lux) with DGP < 0.28 imperceptible direct glare cutoff.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuB1-exU3yXkdAahu68aGHCplBO3wOhzEcpwqsb1ZUyggwEtDI9Y8NCsIueVjOSgKvGXg5qBeE3Uuhp9HUEoKu8uEFv46l8H3HmWovouGwRsTNV6wPvetkL6UlLJF9fcHdALhPnmaI94rSoF0B3m3Y_Z5z7JtyY-mRNLoDrAFZ7JfWVJdME-C6EAwD4zYwDSaIYKzJ93qsoKKVk9EA-fsAJJiOU2qBh87Y0sSPTR1D0',
+                    'image'     => '/wp-content/uploads/alumax-img-19c5b917d1.jpg',
                     'image_alt' => '15kW fiber laser cutting complex Mashrabiya patterns into 4mm aluminum plate.',
                     'icon'      => 'precision_manufacturing',
                     'title'     => '15kW Fiber Laser Precision',
                     'text'      => 'Swiss Bystronic CNC fiber lasers carve burr-free chamfer contours; post-perforation thermal annealing guarantees 1.0mm flatness per 3,000mm.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCN8Wb1voVb1vgWla3rmoHl3YVNg1ydb8mzf0c1OrNirzN7ix8u_7zhWqOk03tP4W5cpwC1DUSgz8UrSIjcotNRPLoYBYHj7b-OgPylOhQDrB5xjSmb5LbvR6jbLuk1l2Tx0ZDaHbVd2o83p_NCXo6O2YnZwLHTsvoMV9B2vxfq8ZEY9qK6cNZ_apZp_4u2-oaZuf28kByTUKk6nC2mYWpchdDOGYqoiGsj8w9WbLk',
+                    'image'     => '/wp-content/uploads/alumax-img-20f221b3c5.jpg',
                     'image_alt' => 'Master metalworker performing seamless micro-grinding on welded decorative aluminum facade cassette.',
                     'icon'      => 'handyman',
                     'title'     => 'Seamless Robotic TIG Fusion',
@@ -3336,7 +3548,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Adaptive Environmental Envelope Performance',
             'table_title' => 'Thermodynamic & Structural Simulation Matrix',
             'table_ref'   => 'SPEC-ALU-GR2000-REV4',
@@ -3351,8 +3563,8 @@ SVG;
                 ['name' => 'CNC Tolerance', 'value' => '± 0.20mm laser orthogonal ｜ DIN ISO 2768-m', 'mono' => '1'],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Catalog (PDF 12MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'deployed_code', 'label' => 'BIM & CAD (.DWG)', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Catalog (PDF 12MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'deployed_code', 'label' => 'BIM & CAD (.DWG)', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -3380,7 +3592,7 @@ SVG;
                     'caption'   => 'Neoprene-isolated sliders and dielectric PTFE shims absorb thermal expansion across high-humidity coastal and marine envelopes.',
                 ],
             ],
-            'install_eyebrow'     => 'Structural Interface // 安装方式',
+            'install_eyebrow'     => 'Structural Interface',
             'install_title'       => 'Concealed Subframe & Fixing Details',
             'install_description' => 'Precision-engineered extruded aluminum mounting cleats allow three-axis site adjustment (X, Y, Z ±15mm) while mitigating thermal expansion stresses through neoprene-isolated sliders.',
             'install_note'        => '',
@@ -3390,7 +3602,7 @@ SVG;
                     'title' => 'Concealed Floating Bracket',
                     'text'  => 'Interlocking male-female 6063-T6 cleat mechanism fastened into curtain wall transoms or slab edge brackets via M10 A4-80 stainless anchors — 1.8 kN per cleat dead load, ±15mm 3-axis site adjustment.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBmYIv-hIshcD5fa7D-We-ubQg3QZJ4ffty6l2zxcIv34vFgefjyW9PnadCeaxtWndNtE7eqsmCO1NKfrva2Tn5AonRRNA-GMTRuVfLGIRJTZPKL3UWpsoVh8UknkxuDZcwi8xRRc9M35qEMqeNXPFxR7GFD_lfGFUg5zaE0s8IEa-2nHZQ1nVFu05DsTe1kPlKtfe6r5I1cJN_sxZ3ImJod8AGXajFV7ABu_CZXxU',
+                    'image' => '/wp-content/uploads/alumax-img-12d41c613c.jpg',
                     'image_alt' => 'Concealed floating bracket fixing onto vertical curtain wall mullion with stainless bolts and aluminum cleats.',
                 ],
                 [
@@ -3398,7 +3610,7 @@ SVG;
                     'title' => 'Hinged Sub-Frame for BMU Access',
                     'text'  => 'Screen panels swing 95° inward or outward on internal stainless pivot hinges for glazing washing and BMU cradle access — 10,000 operational cycles, dual aircraft wire safety lanyard.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAqS9s0FVuhwO82wL0pAfJ_oRYeKaV4NmcfNoLM3bMLHckys54SETeUy2cmlnyYfWAtEtfa7KmHffdn7RPAfiaOKp-x3qA-fe0iFTPPutGZa4Mxtc8hc6QRDPehxqwSBQ51c8CpAGqIvmNQZPkArnFbSRPpVNYI2ejEP5OLbiZZJN_FBv8F7nQI7bYTQ3tr7hCBfZDGcayP4ypht4VJ9PhaCVWRJlqosiTU-16RVnI',
+                    'image' => '/wp-content/uploads/alumax-img-ee30d62579.jpg',
                     'image_alt' => 'Heavy duty concealed pivot hinge and quick-release latch on aluminum screen frame.',
                 ],
                 [
@@ -3406,13 +3618,13 @@ SVG;
                     'title' => 'Thermal Bushing & Isolators',
                     'text'  => 'Dielectric PTFE shims and EPDM rubber collars isolate aluminum frames from carbon steel brackets, eliminating galvanic reaction in high-salinity marine environments — ΔT 60°C (+6.5mm) travel, ASTM D149 tested.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZ1ZV5iUkm9yOCSiYhlmt2vTFAI1xhDqzoFC2ZtJg8Lr-T3BQq6_e9igEwvyY0Y6MWtCNAhS9q8OgEsdKTMhs8d65I_YhIKpdSOMYtYKKteDn1zob7Wm2aCVEcEzzuTP6_TiIxcIVxtxL1QE2FcZjq1OBt0-1plUUdywHVrLjV1wnfwyZEQsJssymJG3e37YQQs6ywM1XIHIPu8wv-LUrdyCKmBIYeM0iACehwnY0',
+                    'image' => '/wp-content/uploads/alumax-img-927424ec57.jpg',
                     'image_alt' => 'EPDM thermal expansion isolator bushing and PTFE slide plates between aluminum bracket and steel frame.',
                 ],
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'Class I Architectural Finish Library',
             'description' => 'ASTM B117 salt-spray resistant Class I architectural finishes with 25-year exterior warranty — anodized, PVDF liquid, superdurable powder, and timber sublimation.',
             'swatches'    => [
@@ -3424,7 +3636,7 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Pattern Library // 产品细节',
+            'eyebrow'     => 'Pattern Library',
             'title'       => 'Perforation Patterns & Panel Geometry',
             'description' => 'Aperture-calibrated open area matrix from 15% to 65%. Standard parametric families below, or fully bespoke patterns machined from your CAD vector files (.DWG / .DXF / .AI).',
             'cards'       => [
@@ -3449,13 +3661,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Global Project References',
             'link_label' => 'View All Completed Case Studies',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBljZP2iBPKMz5bfSzEiawXsNlReWCVD3BlgMNTTabxmutC7bUX82lP708gUnpBwhCm2UYDKpHGGRW9xLI7CYH-wMcbJxIB0Spk8OD23dF2fc2mrzt3TEuPR7O2TKJa0h1-4qXOH8NjJsFeayzfC5P0s6kH2fAEznRqXIhZ-Sl2UZc38aHSBB2tLUMqrrK4T9IZ3CEuEVDIJMZvngMQh5wetU2yx-aNhcFB0FqO-Tk',
+                    'image'     => '/wp-content/uploads/alumax-img-9768350081.jpg',
                     'image_alt' => 'Cultural library in Abu Dhabi with bronze gold Mashrabiya double-skin envelope.',
                     'location'  => 'ABU DHABI, UAE',
                     'title'     => 'Abu Dhabi Cultural & Heritage Library',
@@ -3464,7 +3676,7 @@ SVG;
                     'year'      => 'Year: 2023',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuATD8AeM5KNNMsNkY6CAZJ4gei8S_NZvjarxzz9bxFcF6Hhyj5bvKNDL0cJDqojSKT8fUkCb0KpK3-ZQiplEmXKcNqTVqVZPziOW6VXRd5x8_gEKm9QyD5kbwJeGpAb6WlsZGNHIrHamPjOONktgWzOzBB0riFUw7jeMUZZmy47PFKjXnqOkaUFbWgLQPWXIDr68wyRHs1X6jK9H__DO8d5Xg1N6uQYM6HSDixM3eE',
+                    'image'     => '/wp-content/uploads/alumax-img-81def7ac2e.jpg',
                     'image_alt' => 'Luxury residential villa compound in Riyadh with parametric aluminum privacy screens.',
                     'location'  => 'RIYADH, KSA',
                     'title'     => 'Al-Nakheel Private Royal Enclave',
@@ -3473,7 +3685,7 @@ SVG;
                     'year'      => 'Year: 2024',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdUvrKuQM3VueqmnUiRSmDxAMIe8Te7WlW_7IXFsKCu-eeyR5OP5b1oNdNV59pMD_V0U5IrRFzH-3GhkOtOjUC4BiFgaypJqKtT7Y0jFDtZc4WaZNpOgxI0K5u89YgVyMW_L3vCs9TEND073utcdA6m7sSROjW1LfDIPpkTJs0dPnJyuwBcbcAjvyTV2K_sryy1CdPgyR1aCDfUJQJCvOVfMXaPn4TYcIxjrjzn_o',
+                    'image'     => '/wp-content/uploads/alumax-img-a2752397d1.jpg',
                     'image_alt' => 'Convention hotel facade in Doha Qatar with parametric wave pattern aluminum sunscreen grilles.',
                     'location'  => 'DOHA, QATAR',
                     'title'     => 'Doha Maritime Convention Tower',
@@ -3484,7 +3696,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Technical Tender Consultation // 询价与技术咨询',
+            'eyebrow'      => 'Technical Tender Consultation',
             'title'        => 'Request Screen Mock-Up & Engineering Estimate',
             'description'  => 'Submit your project elevation drawings, custom vector patterns (.DWG / .DXF / .AI), or tender schedule requirements. Our facade structural engineering department delivers finite-element load calculations and structural mock-up quotes within 24 business hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
@@ -3522,7 +3734,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC52lV-VT7687YP0v3j2Y92qRYhn3GZKoHHXfFS5vbaefrQS6mT5eqGoRqA8pUapeByV57P6B2hFQkg4tIv-naqkfRlR_TIFwcuNHtsZBY8VHZTNMtrzFHz5mInyEQAisMHBAU6sFsk94gUWr5iA6QGtb4QcNvOpzj2jbnwgYP_7lvb-VFLHuhhPkUJC52V7C-3vYWZDqkThXels6rGojleG8ICYI5P3ZcXMviPbcw',
+            'bg_image'       => '/wp-content/uploads/alumax-img-38e2b76f17.jpg',
             'title'          => 'ROLLER-COATED ALUMINUM STRIP & MASTER COILS',
             'subtitle'       => 'Continuous 3-Coat 2-Bake Precision. 0T Lock-Seaming. 30-Year Exterior Warranty.',
             'description'    => 'Mill-manufactured under continuous 3-Coat 2-Bake precision roller coating lines. Engineered specifically for complex roll-forming, deep architectural cassette drawing, high-speed corrugated sandwich panel lines, and non-cracking 0T lock-seaming. Spec ID: ALU-CC-9000 // EN 1396 Architectural Spec.',
@@ -3539,10 +3751,10 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7a-avjrmELe2qQnLvepQl23vr5UTYS9GwdhrF7IeqryQD1wuGqq3OYzx3Sjy5efTkejm7BPUeCPdNYk_BxhHnBiYRXdcYGRAmATyC-RayVp0CzNb1n57uTTPqKYkvtDLqlcI5DFhFUDu2LuyF9cctHyjtQhsbyltkcx-WzmOeuNyBiMtxzgyF40DCk6IBEUdo_jco_PMylOSnzlSlJTmi5_-3YDRX1m_q3_rbmJk',
+            'image'       => '/wp-content/uploads/alumax-img-a5b1d11c1f.jpg',
             'image_alt'   => 'Microscopic cutaway of 3-coat 2-bake continuous roller-coating application head with primer, color coat, and protective clear fluoropolymer layer.',
             'video_label' => '3C2B Process // Coating Head Detail',
-            'eyebrow'     => 'B2B Mill Direct // 滚涂铝卷板',
+            'eyebrow'     => 'B2B Mill Direct',
             'title'       => 'What is ALU-CC-9000 Pre-Coated Coil?',
             'description' => 'Surface-calibrated architectural strip and master coils produced on a 180-meter cleanroom double-coater line. Licensed Arkema Kynar 500® / Solvay Hylar 5000® fluoropolymer resins are applied, cured and verified in-line — ready for direct forming without any post-painting.',
             'features'    => [
@@ -3553,33 +3765,33 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow'     => 'Key Advantages // 核心优势',
+            'eyebrow'     => 'Key Advantages',
             'title'       => 'ASTM / EN 1396 Certified Coating Physics',
             'description' => 'Independent batch-tested fluoropolymer coating integrity, formulated with licensed Kynar 500® / Hylar 5000® resins and verified under ASTM laboratory standards.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBXapuzaQHbGQJCLrI3xQxW0ydWDgLPZxK-PmVd-aWfL3pdu2X4hoCnu3pYFXE7PA6yFboUi24nj4mmB9mVfbZdUNSLg-uvvcWiphrT7ZGOQszAjEcJKYKvkZDpf5uBG3pzSxHZgWCucFIT9tNde1km2Gv3Rr1lAo9nP7b9P0pAL8AjrQ4DoP5hQa0k72OQfOnqgSW2AXDmVgnD3kaKxYQh_SNGrUQqif-jGS1MNVc',
+                    'image'     => '/wp-content/uploads/alumax-img-8c48778a0f.jpg',
                     'image_alt' => 'Macro laboratory specimen coupon of pre-painted coil bent 180 degrees in a 0T tight bend test with zero micro cracking.',
                     'icon'      => 'straighten',
                     'title'     => '0T / 1T T-Bend Elasticity',
                     'text'      => 'Zero microfissure or white-line stress bleaching on tight reverse hems — ASTM D4145 / EN 13523-7 certified.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqMI_odiz-b6odcHkjConuY1_lDMpY11ShxlQs5td1hCMRkfSeLEaUQ3Ty3KwwojzKDm9nI2jUZ23IEZcBFQm5zB87xTqnPzXsEWaCszU_TWl6xpFwOuriDdoAlGXigy9SKivEZYq-zGcF6fUinHQsVNh0rAaLj5mQ5RFfS3uWSCAYsTQOOakcWzP3-JH7drRXs_5dHzuG6e6MOD8MOrD1KSJZlqAS943Nv7jdQmY',
+                    'image'     => '/wp-content/uploads/alumax-img-bdc2c9158a.jpg',
                     'image_alt' => 'Architectural metallic color fan deck swatches in champagne, architectural bronze, mica silver, and graphite.',
                     'icon'      => 'grade',
                     'title'     => '≥ 2H Hardness & 5B Adhesion',
                     'text'      => 'Pencil hardness with 100% cross-hatch tape adhesion — no peel-off at sharp structural edge breaks (ASTM D3363 / D3359).',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCwCHknyIyDRwOxFQ4GysfHfAmxMHnGqxFEYhRhBhVn6AQsWRGEkOmIU-ekASk4dFhoSz87XNNqqkJnJBLz8sSmhYl1kyb0WNZETRkIZzt6_ZnAaEF-mnouKqkwBUjjnM7UGuV8r3CD6YUNb0ZOG5ers5JhNtotSRehXthIQEE7EY_hnUK-YKqvfMq52kGQV2526TcjB1e0oPP4jR8FktJWBleJ6-zjXfE5qQRC7Vc',
+                    'image'     => '/wp-content/uploads/alumax-img-5ccfacc17c.jpg',
                     'image_alt' => 'High precision rotary slitting line cutting wide aluminum coils into narrow architectural strips.',
                     'icon'      => 'shield',
                     'title'     => '4,000 h Salt Fog Corrosion',
                     'text'      => '5% continuous NaCl at 35°C — blister degree ≤ 1, creepage from scribe < 0.5mm. Marine-environment verified (ASTM B117).',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIv-qIbXBqBKm0YWhxpM7EdP4B97mtwwwH2SDOoSK0ER7BGWPPl3EtsRFbMTW1rqh113VFtPVs9IY5ki-tr2z769Fjfa1Spg8kP4S5ZMW3PKQnn8tlj3RnVC8o6on9wITXCdrdnKmSfcyuX4cZzGAM3L6aiuIW6UHq2pzsUcf1-4ZhoTAXrsQ1fBMaAbQj1Ec6SAYZL7ahevmR36IZA9pbM4vyrmei4jc47dPpU1Q',
+                    'image'     => '/wp-content/uploads/alumax-img-af13bd38e1.jpg',
                     'image_alt' => 'Ultra-wide aluminum coil continuous roller coating plant with automated double-head coating station and curing oven tunnels.',
                     'icon'      => 'wb_sunny',
                     'title'     => '> 80% QUV Gloss Retention',
@@ -3588,7 +3800,7 @@ SVG;
             ],
         ],
         'specs' => [
-            'eyebrow'     => 'Technical Specifications // 技术参数',
+            'eyebrow'     => 'Technical Specifications',
             'title'       => 'Coating Physics & Mechanical Integrity',
             'table_title' => 'ASTM / EN 1396 Certified Laboratory Data',
             'table_ref'   => 'SPEC-ALU-CC9000-REV2025Q1',
@@ -3603,8 +3815,8 @@ SVG;
                 ['name' => 'Reaction to Fire', 'value' => 'Class A1 non-combustible substrate / Class A (EN 13501-1 / ASTM E84)', 'mono' => ''],
             ],
             'buttons'     => [
-                ['icon' => 'picture_as_pdf', 'label' => 'Spec Sheet (PDF 3.8MB)', 'url' => '#', 'style' => 'primary'],
-                ['icon' => 'inventory_2', 'label' => 'Export Packing PDF', 'url' => '#', 'style' => 'muted'],
+                ['icon' => 'picture_as_pdf', 'label' => 'Spec Sheet (PDF 3.8MB)', 'url' => '#rfq-section', 'style' => 'primary'],
+                ['icon' => 'inventory_2', 'label' => 'Export Packing PDF', 'url' => '#rfq-section', 'style' => 'muted'],
             ],
             'side_cards'  => [
                 [
@@ -3632,7 +3844,7 @@ SVG;
                     'caption'   => 'Dual-side or single-side 60–100μm UV-resistant polyethylene film laminated in-line at the rewinder — residue-free removal for 6 months after facade installation.',
                 ],
             ],
-            'install_eyebrow'     => 'Global Logistics // 出口包装与交付',
+            'install_eyebrow'     => 'Global Logistics',
             'install_title'       => 'Seaworthy Heavy Export Packaging',
             'install_description' => 'ISPM 15 fumigated timber standards for transoceanic container handling — coil orientation matched to your decoiling line configuration.',
             'install_note'        => '',
@@ -3642,7 +3854,7 @@ SVG;
                     'title' => 'Vertical Core Pallet Crating',
                     'text'  => 'Standard orientation for high-efficiency container stuffing and overhead forklift crane discharge. Secured on heavy solid fumigated timber skids with circumferential steel banding and VCI inner wrapping, 3-ply corrugated rim edge protectors and multi-bag silica gel desiccants inside the moisture envelope.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOYrsuU8kyn783aM-VWJmqLGY_qe_9bU0AQ5z2E-oN-RPTpDELn7UIa99sqYdpNap4Rgmf50dbID6QdX_RHhmEivHTRyPd2AV6rtK35_U2c-7puxfu29ILYrvg1zRIbYFM93M6O7PDIC6W7EkFnnbX7mvrKTkh95cLG2r4eGD8GyoDz4DJxWjr-Z6UvTgMnpifqeRdYEZSno1FKibS632Wi99dhiGFZrxnLwTGQjY',
+                    'image' => '/wp-content/uploads/alumax-img-bd6c3805e8.jpg',
                     'image_alt' => 'Aluminum master coil oriented Eye-to-Sky on solid fumigated wooden pallets wrapped with waterproof film, corrugated protectors and steel band straps.',
                 ],
                 [
@@ -3650,13 +3862,13 @@ SVG;
                     'title' => 'Horizontal Core Cradle Crating',
                     'text'  => 'Engineered for continuous uncoiler decoiling cradles — CNC contoured wooden saddles matched to coil outer diameter prevent flat-spot deformation during long transoceanic voyages. Fully sealed thermal-shrink PE outer barrier with reinforced steel corner clips resisting dynamic container rolling.',
                     'svg'   => '',
-                    'image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbkb0mHMObNaDW4I-yZx6R8lqyRvx2AbaviZbe4tLEkmkDunTXh3HXxCfA7U-PN2-xus9q7Z2jkLKWpFMLWLa4y-I9QxVWQVLwGuDmVxxmyNG7l8SPFA8ZYVQNNOeomg5jvuvTzLuxQuvGY2yem99aPuc_D3ynZ8ytimm0bWsYo3b10rKv5qd4Mp4GId0iW4zWR7lWfwsAFkGsuQXxJuqvrCsE5FXuddV1uB4rtVw',
+                    'image' => '/wp-content/uploads/alumax-img-b3b5238a5b.jpg',
                     'image_alt' => 'Master aluminum coils oriented Eye-to-Wall horizontal axis loaded on contoured wooden cradle skids inside a shipping container.',
                 ],
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating // 色板',
+            'eyebrow'     => 'Color & Coating',
             'title'       => 'PPG / Beckers Certified Color Matrix',
             'description' => 'Architectural metallic and solid finishes calibrated to ΔE < 0.5 across full master coils — custom RAL / Pantone matching available with complimentary DHL fan-deck dispatch.',
             'swatches'    => [
@@ -3669,26 +3881,26 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Fabrication & Formability // 定制选项',
+            'eyebrow'     => 'Fabrication & Formability',
             'title'       => 'Downstream Processing Capabilities',
             'description' => 'Specialized primer chemistry and high-crystallinity fluorocarbon formulation deliver extreme elongation ductility without micro-fracturing under high-speed industrial forming machines.',
             'cards'       => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCyCAjl85pG1nHXmqMeqeXBe6fp9yrwjRFBktj_PSefAJDHwcwkYgUyj0zA2iowQikeIuiQn_KBy9NNcbwn4wT4qTVivtUDykRYRbK63vwXHcMSbqc1SMe9D-EUrowyYR5-8hwEyBlRgW2JPrI_WBnfVvF49IbpB122s8xjY9DU1nR1zqaZ2WIxDjS8_fyiBQI06HLFfcuT0THdKu0Pi66TV2kkd81cc2UGA4m5vc',
+                    'image'     => '/wp-content/uploads/alumax-img-12cd718b51.jpg',
                     'image_alt' => 'Industrial metal press brake folding an architectural aluminum cassette panel with zero micro-cracking at a sharp 0T edge hem.',
                     'contain'   => '1',
                     'title'     => 'Press Brake & Hemming — 0T Façade Cassettes',
                     'text'      => 'Formed on CNC hydraulic press brakes with tight radius tooling (R = 0 to 1T). Coated film stretches seamlessly along bend apexes without crazing or white-line stress bleaching — 180° reverse hem OK.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqA-fd5VVoyHQJfZx2Zjx3n9yxk1ccWDYAB13wN1ahd_BCwDrNYNNJfOe29od2DjEpVBDbU5O7ELfWCx-P5t0KmiCYwLnu6vUwp_CNCckmT8MyILJbVk8RwU4fGHNGC6Ge-FTtnts6P22bCq_5c1UqooLDEA9WPMkd9d9zAjM5-Lcdx_zaNNd129OpsQOaUD2BZjMmVagn40IhlsD47QjGjwlt5bh3yLztL2YuuPk',
+                    'image'     => '/wp-content/uploads/alumax-img-34ba735431.jpg',
                     'image_alt' => 'Continuous high-speed roll forming line processing wide-format aluminum coil into standing seam roofing profiles.',
                     'contain'   => '1',
                     'title'     => 'High-Speed Roll Forming — Standing Seam & Corrugated',
                     'text'      => 'Engineered for continuous multi-stand roll-forming lines up to 35 m/min. Resists roller pressure galling, strip friction scuffing, and dynamic mechanical stretch — zero roller marring.',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC372eYmuP5AAoqIQCfcaC0-CLYTwyPR6wdpdSB3NzcpX4LfIy7qobHNJIsitenEshO4wZShEFp3TioZUMqGhnl7YQo_k75VjcMVUqfwRJdhmAvWIGMITfukf_nA_mknD-feK9WdAAtZfpUi2e_vrUG2A3D7DAqBEVGgtALtxJY642WnHwHPZOHk8vv0eQBwkbI0mAl_zpUkAYLGyCqETNuugAZzIv9nNmUnXYX3n4',
+                    'image'     => '/wp-content/uploads/alumax-img-84c7b47e30.jpg',
                     'image_alt' => 'Precision CNC multi-tool turret punch press perforating geometric patterns into heavy-gauge pre-coated aluminum sheet.',
                     'contain'   => '1',
                     'title'     => 'CNC Stamping & Perforation — Deep-Drawing',
@@ -3697,13 +3909,13 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References // 工程案例',
+            'eyebrow'    => 'Case References',
             'title'      => 'Global Landmark Installations',
             'link_label' => 'View All Completed Case Studies',
             'link_url'   => '',
             'projects'   => [
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbL0iMHfMpNIJN3yu55HjLNlewodU9nuaCfQrgUkQFC2i6Vx9j3UrHJGA932nrwLU2ZcjkxrF2whOzz_7yxYSWqTjezXnFbDRPHaxe-GTQJLoh7cJ3mwZgvssMPkUQLUEekQ-CPdkgy7nQwKaqU9Khk7U6wJ-L5RR3zSy4hU74ANQQNf36clv7gQQ_UEwb1fLFgmPJdRTMquKtgP__0d7gjvGGWxjHi6__IF7Eegs',
+                    'image'     => '/wp-content/uploads/alumax-img-1cd8fefaec.jpg',
                     'image_alt' => 'Futuristic airport terminal roof in Dubai with undulating standing seam champagne gold aluminum coil panels under desert sunlight.',
                     'location'  => 'DUBAI, UAE',
                     'title'     => 'Dubai Metro Red Line Expansion',
@@ -3712,7 +3924,7 @@ SVG;
                     'year'      => 'Sector: Transportation Terminal',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0QwJEsW_mQj9KM10Do8UNslQzP3B-iRzzQfGYapt5gMdMYbpPdMV7_eko3eWrsTRflO64jpJ2m1bohT3IK70IAQg2OVFo7D95nelUIQMRLjdXC3tOFLR1y9LEZYZ48FbP9FfdUMGyhkBf91c8HJRVekrsE3bSc_5KJHBK5o5SggDRxt3RKKdff7YlT7wncy97SU-fDPOjn5Vna9NhhJbbFaf_zKa0M6JQ9YTPkX4',
+                    'image'     => '/wp-content/uploads/alumax-img-282ee8f625.jpg',
                     'image_alt' => 'Modern geometric convention center and port terminal facade in Hamburg clad in dark anthracite roller-coated aluminum cassette panels.',
                     'location'  => 'HAMBURG, DE',
                     'title'     => 'Elbe River Logistics Center',
@@ -3721,7 +3933,7 @@ SVG;
                     'year'      => 'Sector: Commercial Port Logistics',
                 ],
                 [
-                    'image'     => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBudbo-umLD2MIcUECI5jjEwLykINgh-pOQQg1u451jF5dCmJWgtqQ_Ay8nHl0D5hWSMXzoRiB0DXHuYnyHyjg4_hWe1dGBzGsmdd4gJY5J2OSGEmx4rILwJ1tlTF5K9PcYaNJl16hR5tMGTbThsTLv0R9gAVJieNOquGmfEqabEQ65PoxxsWnLiiZ80eMuChynFednVbCqJPV3EeCQmW1AT2U6Fnx615OBztqdw8I',
+                    'image'     => '/wp-content/uploads/alumax-img-0c5c138ab4.jpg',
                     'image_alt' => 'High-tech semiconductor research cleanroom exterior in Singapore with ultra-flat pure white pre-insulated sandwich wall panels.',
                     'location'  => 'SINGAPORE',
                     'title'     => 'Tuas Biomedical Cleanroom Complex',
@@ -3732,7 +3944,7 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Fast B2B Engineering Quotation // 询价与技术咨询',
+            'eyebrow'      => 'Fast B2B Engineering Quotation',
             'title'        => 'Direct Mill Inquiries & Color Swatch Fan-Deck Dispatch',
             'description'  => 'Submit your commercial volume requirements. Our export engineering center provides technical mill feasibility reviews, ASTM compliance certificates, and CIF/FOB pricing within 24 hours. Certified to ISO 9001:2015, EN 1396, ASTM B209M and QUALICOAT.',
             'form_title'   => 'Coil Specification & Pricing Request',

@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) { exit; }
 //   cards  [ [image, image_alt, svg(原始 SVG 标记, 优先于 image), contain(bool, 技术线图置 true), title, text], ... ]
 $alumax_o = $args;
 ?>
-<section class="w-full bg-surface-container-low py-16 lg:py-24">
+<section class="w-full <?php echo esc_attr($alumax_o['bg'] ?? 'bg-surface-container-low'); ?> py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
     <div class="flex flex-col mb-12">
       <span class="font-label text-xs font-semibold tracking-widest text-secondary uppercase mb-2"><?php echo esc_html($alumax_o['eyebrow']); ?></span>
