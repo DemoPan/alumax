@@ -383,7 +383,7 @@ get_header();
               'post_type' => 'case',
               'posts_per_page' => 2,
           ]);
-          $alumax_case_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDSiqGc-P2zUtof-U7Frj19aZ3jT7n9WPKwqoVb72PruTpf-UlOuguqyOAj26EDvquR1sCqmQtK2TwjD_eVKQhHs-j-dnInViZEURFVnGWnpjW7nWJZh9UhSKkQRxHYgzB9QjSwCkPyMYClQjPC8nlBuMCfOK-CnpH_h456yL654iZH57rgV6SnUts7OOhdldfIc7RtAtcICgLKfKDDX4rnYdz7LOOEVVO4mfCEYNXuW8uRR3Jgjf8E';
+          $alumax_case_fallback_img = '/wp-content/uploads/alumax-site-6b0a9d3f6a.jpg';
           if ($alumax_cases->have_posts()) :
               $alumax_case_index = 0;
               while ($alumax_cases->have_posts()) :

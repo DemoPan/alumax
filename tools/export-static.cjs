@@ -34,6 +34,7 @@ function write(urlPath, content) {
 function normalize(raw, base) {
   let u;
   try {
+    raw = String(raw).replace(/^(&quot;|&#39;|['"])+/g, '').replace(/(&quot;|&#39;|['"])+$/g, '').trim();
     u = new URL(raw, base);
   } catch {
     return null;
@@ -55,6 +56,11 @@ function extractUrls(html, base) {
       if (u) urls.push(u);
     }
   }
+  const cssUrlRe = /(?<![a-zA-Z0-9_$])url\(\s*['"]?([^'")]+)['"]?\s*\)/gi;
+  while ((m = cssUrlRe.exec(html))) {
+    let raw = m[1].trim().replace(/^(&quot;|&#39;|['"])+/g, '').replace(/(&quot;|&#39;|['"])+$/g, '').trim();
+    if (!raw.startsWith('data:') && !raw.startsWith('window.') && ASSET_RE.test(raw)) urls.push(raw);
+  }
   return urls.map((raw) => normalize(raw, base)).filter(Boolean);
 }
 
@@ -68,6 +74,15 @@ async function saveAsset(u) {
     const buf = Buffer.from(await res.arrayBuffer());
     write(u.pathname, buf);
     savedAssets++;
+    if (u.pathname.endsWith('.css')) {
+      const cssText = buf.toString('utf-8');
+      const cssUrls = extractUrls(cssText, u.toString());
+      for (const cu of cssUrls) {
+        if (ASSET_RE.test(cu.pathname)) {
+          await saveAsset(cu);
+        }
+      }
+    }
   } catch (e) {
     failures.push(`${u} (${e.message})`);
   }
@@ -108,7 +123,7 @@ async function crawlPage(urlPath) {
     if (SKIP_RE.test(u.pathname)) continue;
     if (ASSET_RE.test(u.pathname)) {
       await saveAsset(u);
-    } else if (u.search === '' && !seenPages.has(u.pathname) && !SKIP_QUERY_RE.test(u.search)) {
+    } else if (u.search === '' && !seenPages.has(u.pathname) && !SKIP_QUERY_RE.test(u.search) && !u.pathname.includes(':') && !u.pathname.includes('"') && !u.pathname.includes('&')) {
       seenPages.add(u.pathname);
       pageQueue.push(u.pathname);
     }
