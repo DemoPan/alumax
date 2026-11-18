@@ -29,15 +29,15 @@ $alumax_o = $args;
                 <?php echo $alumax_card['svg']; ?>
               <?php else : ?>
                 <img class="w-full h-full <?php echo !empty($alumax_card['contain']) ? 'object-contain' : 'object-cover'; ?> transition-transform duration-500 group-hover:scale-105"
-                  alt="<?php echo esc_attr($alumax_card['image_alt']); ?>"
-                  src="<?php echo esc_url($alumax_card['image']); ?>">
+                  alt="<?php echo esc_attr($alumax_card['image_alt'] ?? ($alumax_card['title'] ?? '')); ?>"
+                  src="<?php echo esc_url($alumax_card['image'] ?? ''); ?>">
               <?php endif; ?>
             </div>
           <?php endif; ?>
           <div class="p-5 flex flex-col flex-1">
-            <h3 class="font-headline font-bold text-base text-on-surface mb-1"><?php echo esc_html($alumax_card['title']); ?></h3>
+            <h3 class="font-headline font-bold text-base text-on-surface mb-1"><?php echo esc_html($alumax_card['title'] ?? ''); ?></h3>
             <p class="font-body text-xs text-on-surface-variant leading-relaxed">
-              <?php echo esc_html($alumax_card['text']); ?>
+              <?php echo esc_html($alumax_card['text'] ?? ($alumax_card['description'] ?? '')); ?>
             </p>
           </div>
         </div>

@@ -14,8 +14,8 @@ $alumax_i = $args;
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <div class="lg:col-span-5 relative group overflow-hidden bg-surface-container shadow-md">
         <img class="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
-          alt="<?php echo esc_attr($alumax_i['image_alt']); ?>"
-          src="<?php echo esc_url($alumax_i['image']); ?>">
+          alt="<?php echo esc_attr($alumax_i['image_alt'] ?? ($alumax_i['title'] ?? '')); ?>"
+          src="<?php echo esc_url($alumax_i['image'] ?? ''); ?>">
         <div class="absolute inset-0 bg-primary-container/20 group-hover:bg-primary-container/30 transition-colors"></div>
         <?php if (!empty($alumax_i['video_label'])) : ?>
           <button class="absolute bottom-6 left-6 inline-flex items-center gap-3 px-5 py-3 bg-surface-container-lowest/95 backdrop-blur-md text-on-surface hover:text-secondary shadow-lg font-headline text-xs font-semibold uppercase tracking-wider transition-all"
@@ -40,11 +40,11 @@ $alumax_i = $args;
             <?php foreach ($alumax_i['features'] as $alumax_feat) : ?>
               <div class="flex items-start gap-4 p-4 bg-surface-container-lowest shadow-sm">
                 <div class="w-10 h-10 bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
-                  <span class="material-symbols-outlined text-[22px]"><?php echo esc_html($alumax_feat['icon']); ?></span>
+                  <span class="material-symbols-outlined text-[22px]"><?php echo esc_html($alumax_feat['icon'] ?? 'check'); ?></span>
                 </div>
                 <div class="flex flex-col">
-                  <h3 class="font-headline font-bold text-sm text-on-surface"><?php echo esc_html($alumax_feat['title']); ?></h3>
-                  <p class="font-body text-xs text-on-surface-variant mt-0.5"><?php echo esc_html($alumax_feat['text']); ?></p>
+                  <h3 class="font-headline font-bold text-sm text-on-surface"><?php echo esc_html($alumax_feat['title'] ?? ''); ?></h3>
+                  <p class="font-body text-xs text-on-surface-variant mt-0.5"><?php echo esc_html($alumax_feat['text'] ?? ($alumax_feat['description'] ?? '')); ?></p>
                 </div>
               </div>
             <?php endforeach; ?>

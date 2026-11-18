@@ -25,14 +25,16 @@ $alumax_status = isset($_GET['inquiry']) ? sanitize_key($_GET['inquiry']) : '';
           <?php echo esc_html($alumax_r['description']); ?>
         </p>
         <div class="flex flex-col space-y-5">
-          <?php foreach ($alumax_r['bullets'] as $alumax_bullet) : ?>
+          <?php
+          $alumax_bullets = $alumax_r['bullets'] ?? ($alumax_r['badges'] ?? []);
+          foreach ($alumax_bullets as $alumax_bullet) : ?>
             <div class="flex items-center gap-4">
               <div class="w-10 h-10 rounded-sm bg-surface-container-highest/20 text-secondary-fixed flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-[20px]"><?php echo esc_html($alumax_bullet['icon']); ?></span>
+                <span class="material-symbols-outlined text-[20px]"><?php echo esc_html($alumax_bullet['icon'] ?? 'verified'); ?></span>
               </div>
               <div class="flex flex-col">
-                <span class="font-headline font-semibold text-sm text-on-primary"><?php echo esc_html($alumax_bullet['title']); ?></span>
-                <span class="font-body text-xs text-on-primary-container"><?php echo esc_html($alumax_bullet['text']); ?></span>
+                <span class="font-headline font-semibold text-sm text-on-primary"><?php echo esc_html($alumax_bullet['title'] ?? ''); ?></span>
+                <span class="font-body text-xs text-on-primary-container"><?php echo esc_html($alumax_bullet['text'] ?? ($alumax_bullet['description'] ?? '')); ?></span>
               </div>
             </div>
           <?php endforeach; ?>

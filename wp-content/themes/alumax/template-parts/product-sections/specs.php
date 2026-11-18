@@ -23,7 +23,7 @@ $alumax_s = $args;
       <!-- Left: Engineering Spec Table -->
       <div class="lg:col-span-7 flex flex-col bg-surface-container-lowest shadow-sm p-6 sm:p-8">
         <div class="flex items-center justify-between pb-4 border-b border-surface-variant mb-4">
-          <span class="font-headline font-bold text-base text-primary"><?php echo esc_html($alumax_s['table_title']); ?></span>
+          <span class="font-headline font-bold text-base text-primary"><?php echo esc_html($alumax_s['table_title'] ?? 'Technical Specifications'); ?></span>
           <?php if (!empty($alumax_s['table_ref'])) : ?>
             <span class="font-label text-xs text-on-surface-variant uppercase"><?php echo esc_html($alumax_s['table_ref']); ?></span>
           <?php endif; ?>
@@ -31,8 +31,8 @@ $alumax_s = $args;
         <div class="flex flex-col divide-y divide-surface-container-high text-xs">
           <?php foreach ($alumax_s['rows'] as $alumax_row) : ?>
             <div class="grid grid-cols-1 sm:grid-cols-3 py-3">
-              <span class="font-headline font-semibold text-on-surface"><?php echo esc_html($alumax_row['name']); ?></span>
-              <span class="sm:col-span-2 <?php echo !empty($alumax_row['mono']) ? 'font-label' : 'font-body'; ?> text-on-surface-variant"><?php echo esc_html($alumax_row['value']); ?></span>
+              <span class="font-headline font-semibold text-on-surface"><?php echo esc_html($alumax_row['name'] ?? ($alumax_row['label'] ?? '')); ?></span>
+              <span class="sm:col-span-2 <?php echo !empty($alumax_row['mono']) ? 'font-label' : 'font-body'; ?> text-on-surface-variant"><?php echo esc_html($alumax_row['value'] ?? ''); ?></span>
             </div>
           <?php endforeach; ?>
         </div>

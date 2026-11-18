@@ -25,16 +25,16 @@ $alumax_a = $args;
         <div class="flex flex-col bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow group">
           <div class="h-48 overflow-hidden bg-surface-container-high relative">
             <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              alt="<?php echo esc_attr($alumax_card['image_alt']); ?>"
-              src="<?php echo esc_url($alumax_card['image']); ?>">
+              alt="<?php echo esc_attr($alumax_card['image_alt'] ?? ($alumax_card['title'] ?? '')); ?>"
+              src="<?php echo esc_url($alumax_card['image'] ?? ''); ?>">
           </div>
           <div class="p-6 flex flex-col flex-1">
             <div class="w-9 h-9 rounded-sm bg-surface-container flex items-center justify-center text-secondary mb-3">
-              <span class="material-symbols-outlined text-[20px]"><?php echo esc_html($alumax_card['icon']); ?></span>
+              <span class="material-symbols-outlined text-[20px]"><?php echo esc_html($alumax_card['icon'] ?? 'check_circle'); ?></span>
             </div>
-            <h3 class="font-headline font-bold text-base text-on-surface mb-2"><?php echo esc_html($alumax_card['title']); ?></h3>
+            <h3 class="font-headline font-bold text-base text-on-surface mb-2"><?php echo esc_html($alumax_card['title'] ?? ''); ?></h3>
             <p class="font-body text-xs text-on-surface-variant leading-relaxed">
-              <?php echo esc_html($alumax_card['text']); ?>
+              <?php echo esc_html($alumax_card['text'] ?? ($alumax_card['description'] ?? '')); ?>
             </p>
           </div>
         </div>

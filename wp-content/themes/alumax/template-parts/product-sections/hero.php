@@ -69,8 +69,8 @@ $alumax_h = $args;
               <span class="material-symbols-outlined text-[20px]"><?php echo esc_html($alumax_badge['icon']); ?></span>
             </div>
             <div class="flex flex-col">
-              <span class="font-headline font-semibold text-xs text-on-primary"><?php echo esc_html($alumax_badge['title']); ?></span>
-              <span class="font-body text-[11px] text-primary-fixed-dim leading-tight"><?php echo esc_html($alumax_badge['text']); ?></span>
+              <span class="font-headline font-semibold text-xs text-on-primary"><?php echo esc_html($alumax_badge['title'] ?? ''); ?></span>
+              <span class="font-body text-[11px] text-primary-fixed-dim leading-tight"><?php echo esc_html($alumax_badge['text'] ?? ($alumax_badge['description'] ?? '')); ?></span>
             </div>
           </div>
         <?php endforeach; ?>
