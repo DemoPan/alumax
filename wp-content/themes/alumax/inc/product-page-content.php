@@ -127,8 +127,8 @@ function alumax_product_page_defaults($slug) {
                 'description'    => '',
                 'primary_label'  => 'Request a Quote',
                 'primary_url'    => '#rfq-section',
-                'secondary_label' => '',
-                'secondary_url'  => '',
+                'secondary_label' => 'Download Datasheet',
+                'secondary_url'  => '#technical-specifications',
                 'secondary_icon' => 'download',
                 'badges'         => [],
             ],
@@ -508,8 +508,8 @@ function alumax_product_page_sections($post_id = null) {
         'title'       => $hero['title'] ?? '',
         'subtitle'    => $hero['subtitle'] ?? '',
         'description' => $hero['description'] ?? '',
-        'primary'     => ['label' => $hero['primary_label'] ?? '', 'url' => $hero['primary_url'] ?? ''],
-        'secondary'   => ['label' => $hero['secondary_label'] ?? '', 'url' => $hero['secondary_url'] ?? '', 'icon' => $hero['secondary_icon'] ?? ''],
+        'primary'     => ['label' => 'Request a Quote', 'url' => !empty($hero['primary_url']) ? $hero['primary_url'] : '#rfq-section'],
+        'secondary'   => ['label' => 'Download Datasheet', 'url' => '#technical-specifications', 'icon' => 'download'],
         'badges'      => $hero['badges'] ?? [],
     ];
 
@@ -525,6 +525,10 @@ function alumax_product_page_sections($post_id = null) {
     }
 
     $specs = alumax_product_page_section('specs', $post_id);
+    // Unify technical specifications button to single Download Product Datasheet (PDF)
+    $specs['buttons'] = [
+        ['icon' => 'picture_as_pdf', 'label' => 'Download Product Datasheet (PDF)', 'url' => '#', 'style' => 'primary'],
+    ];
 
     // Installation independent module (specs install_* keys, legacy label->title compatibility)
     $install = [
@@ -1320,8 +1324,8 @@ add_action('save_post_product', function ($post_id) {
     // Hero
     $hero = alumax_pp_collect('alumax_pp_hero', [
         'bg_image' => 'url', 'title' => 'html', 'subtitle' => 'text', 'description' => 'textarea',
-        'primary_label' => 'text', 'primary_url' => 'url',
-        'secondary_label' => 'text', 'secondary_url' => 'url', 'secondary_icon' => 'text',
+        'primary_label'  => 'Request a Quote', 'primary_url' => 'url',
+        'secondary_label' => 'Download Datasheet', 'secondary_url'  => '#technical-specifications', 'secondary_icon' => 'download',
     ]);
     $hero['badges'] = alumax_pp_collect_repeater('alumax_pp_hero_badges', ['icon' => 'text', 'title' => 'text', 'text' => 'text']);
     update_post_meta($post_id, 'alumax_pp_hero', $hero);
@@ -1428,9 +1432,9 @@ SVG;
             'title'          => 'PRE-INSULATED INTEGRATED WALL PANELS',
             'subtitle'       => 'Continuous Structural Insulation. Monumental Energy Efficiency. Class A Fire Rated.',
             'description'    => 'All-in-one prefabricated building envelope solution combining precision fluorocarbon metal facing with high-density non-combustible insulation core (PIR / PUR / Mineral Wool), eliminating cold bridges while drastically reducing on-site construction schedules.',
-            'primary_label'  => 'Request a Project Quote',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Download Technical Datasheet (PDF)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -1667,9 +1671,9 @@ function alumax_pp_defaults_steel() {
             'title'          => 'ARCHITECTURAL STEEL WALL PANELS',
             'subtitle'       => 'Class IV Ballistic Impact. 210 GPa Rigidity. Non-Combustible A1.',
             'description'    => 'High-tensile structural steel cassettes engineered for extreme wind loads, severe public transit impact resistance, and maximum span flatness exceeding traditional aluminum thresholds. Spec ID: ALU-ST-7000 // ISO 9001 / EN 13501 A1.',
-            'primary_label'  => 'Request Steel Sample Box & Tender Pricing',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Spec Sheet (PDF 4.1MB)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -1925,9 +1929,9 @@ SVG;
             'title'          => 'SOLID ALUMINUM CLADDING PANELS',
             'subtitle'       => 'Precision Brake-Formed Rainscreen Cassettes. A2-s1,d0 Non-Combustible. 30-Year Coating Warranty.',
             'description'    => 'Architectural brake-formed solid rainscreen cassettes engineered for severe wind pressures, non-combustible building codes, and high-prestige curtain wall enclosures. Code: ALU-SLD-3003.',
-            'primary_label'  => 'Request Specimen Kit & Project Quote',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Download TDS (PDF)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -2173,9 +2177,9 @@ SVG;
             'title'          => 'FIRE-RETARDANT ALUMINUM COMPOSITE PANELS',
             'subtitle'       => 'A2/B1 Mineral Core. 3-Coat PVDF 35μm. Zero Oil-Canning Flatness.',
             'description'    => 'Engineered architectural composite material (ACM) pairing high-tensile 3003-H14 aluminum coil skins with non-combustible mineral-filled cores. Precision-bonded through continuous automated thermal lamination for mega-span curtain walls, retail pavilions, and high-wind transport hubs. Code: ALU-ACP-1000.',
-            'primary_label'  => 'Request Complimentary ACP Sample Swatches',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Brochure (PDF 5.2MB)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -2410,9 +2414,9 @@ SVG;
             'title'          => 'HEXAGONAL HONEYCOMB COMPOSITE PANEL',
             'subtitle'       => 'Aerospace-Grade Core. ±6.5 kPa Typhoon Class. Zero Oil-Canning Monolithic Flatness.',
             'description'    => 'Continuous roll-bonded sandwich composite engineered for extreme wind pressure, high-rise building envelopes, and monolithic visual flatness. At only 6.85 kg/m² with 19.2 cm³/m section modulus. System ref: ALU-HC-5000.',
-            'primary_label'  => 'Request Specimen Kit & Project Quote',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'TDS Spec (PDF)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -2702,9 +2706,9 @@ SVG;
             'title'          => 'CORRUGATED CORE ALUMINUM COMPOSITE PANEL',
             'subtitle'       => '100% Mono-Material Aluminum. EN 13501-1 Class A1. 60% Lighter Than Solid Plate.',
             'description'    => 'Precision roll-bonded continuous structural architectural sandwich panel featuring an engineered sinusoidal wave core made from 100% recyclable high-grade aluminum. Eliminates organic thermoplastic resins completely, delivering uncompromising EN 13501-1 Class A1 fire safety, exceptional rigidity-to-weight ratio, and flawless optical flatness. Series: ALU-CC-4000.',
-            'primary_label'  => 'Request Specimen Kit & BOQ Quote',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'TDS Spec Sheet (3.9 MB)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -2985,9 +2989,9 @@ SVG;
             'title'          => 'ARCHITECTURAL METAL CEILING SYSTEMS',
             'subtitle'       => 'Acoustic Excellence. Seismic Safety. Monolithic Suspended Baffle & Tile Matrix.',
             'description'    => 'Precision-engineered modular ceiling envelopes with acoustic fleece backing, flush services integration, and seismic compliance for large-span transport terminals and premier corporate headquarters. System code: ALU-CL-6000.',
-            'primary_label'  => 'Request Acoustic Calculation & Sample Kit',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Download Acoustic Catalog (PDF)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -3237,9 +3241,9 @@ SVG;
             'title'          => 'AERODYNAMIC S-BLADE SUNSHADE LOUVERS',
             'subtitle'       => '85% Solar Heat Dissipation. Zero Water Entrainment. Continuous Ribbon Design.',
             'description'    => 'Engineered aerodynamic S-blade & rain-defense curtain wall louver system. Seamless continuous ribbon design delivering up to 85% solar heat gain dissipation with zero water entrainment at high storm wind velocities. Spec: ALU-LB-3000.',
-            'primary_label'  => 'Request Specimen Sample Kit (DHL Express)',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'AMCA Dossier (3.5MB)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -3488,9 +3492,9 @@ SVG;
             'title'          => 'LASER-CUT & WELDED ARCHITECTURAL SCREENS',
             'subtitle'       => 'Parametric Mashrabiya Tessellation. −48.4% Peak Cooling Load. Monolithic TIG Fusion.',
             'description'    => 'Engineered solar interceptor matrix combining custom CNC multi-axis laser carving, seamless TIG seam fusion, and ASTM B117 salt-spray resistant Class I architectural finishes. Spec ID: ALU-GR-2000 // CSI 07 42 13.',
-            'primary_label'  => 'Request Custom Mock-Up & Project Quote',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Catalog (PDF 12MB)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [
@@ -3740,9 +3744,9 @@ SVG;
             'title'          => 'ROLLER-COATED ALUMINUM STRIP & MASTER COILS',
             'subtitle'       => 'Continuous 3-Coat 2-Bake Precision. 0T Lock-Seaming. 30-Year Exterior Warranty.',
             'description'    => 'Mill-manufactured under continuous 3-Coat 2-Bake precision roller coating lines. Engineered specifically for complex roll-forming, deep architectural cassette drawing, high-speed corrugated sandwich panel lines, and non-cracking 0T lock-seaming. Spec ID: ALU-CC-9000 // EN 1396 Architectural Spec.',
-            'primary_label'  => 'Request Color Swatch Fan Deck & Coil Samples',
+            'primary_label'  => 'Request a Quote',
             'primary_url'    => '#rfq-section',
-            'secondary_label' => 'Spec Sheet (PDF 3.8MB)',
+            'secondary_label' => 'Download Datasheet',
             'secondary_url'  => '#technical-specifications',
             'secondary_icon' => 'download',
             'badges'         => [

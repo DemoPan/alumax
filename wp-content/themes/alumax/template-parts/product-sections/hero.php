@@ -45,7 +45,7 @@ $alumax_h = $args;
           </a>
         <?php endif; ?>
         <?php if (!empty($alumax_h['secondary'])) : ?>
-          <?php $alumax_secondary_is_pdf = ($alumax_h['secondary']['url'] ?? '') === '#technical-specifications'; ?>
+          <?php $alumax_secondary_is_pdf = ($alumax_h['secondary']['url'] ?? '') === '#technical-specifications' || stripos($alumax_h['secondary']['label'] ?? '', 'datasheet') !== false; ?>
           <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-surface-container-highest/20 backdrop-blur-md text-on-primary font-headline text-xs font-semibold uppercase tracking-wider border border-outline-variant/30 shadow-sm hover:bg-surface-container-highest/30 transition-colors"
             href="<?php echo esc_url($alumax_h['secondary']['url']); ?>"
             <?php echo $alumax_secondary_is_pdf ? ' data-datasheet-pdf' : ''; ?>>
