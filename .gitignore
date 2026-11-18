@@ -19,6 +19,14 @@
 
 # 静态导出产物
 /static-export/
+*.zip
+
+# 数据抓取缓存与临时文件
+/downloaded_case_images/
+/all_cases_scraped.json
+/case_urls.json
+/downloaded_images_map.json
+/scratch/
 
 # 系统与编辑器杂项
 .DS_Store

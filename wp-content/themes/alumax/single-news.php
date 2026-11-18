@@ -26,19 +26,11 @@ while (have_posts()) : the_post();
       <!-- Article Container: Clean, distraction-free centered reading column -->
       <article class="max-w-4xl mx-auto px-6 sm:px-8 py-10 md:py-16">
         <!-- Breadcrumb Navigation -->
-        <nav
-          class="flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-8 flex-wrap">
-          <a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/')); ?>">Home</a>
-          <span class="text-outline-variant">/</span>
-          <a class="hover:text-primary transition-colors" href="<?php echo esc_url(alumax_news_url()); ?>">News &amp;
-            Media</a>
-          <?php if ($alumax_term) : ?>
-          <span class="text-outline-variant">/</span>
-          <span class="text-on-surface-variant"><?php echo esc_html($alumax_term->name); ?></span>
-          <?php endif; ?>
-          <span class="text-outline-variant">/</span>
-          <span class="text-secondary font-semibold"><?php echo esc_html(wp_trim_words(get_the_title(), 6)); ?></span>
-        </nav>
+        <?php get_template_part('template-parts/product-breadcrumb', null, [
+            'variant'       => 'inline',
+            'archive_label' => 'News',
+            'archive_url'   => alumax_news_url(),
+        ]); ?>
         <!-- Article Title -->
         <h1
           class="font-display-xl text-3xl sm:text-4xl md:text-[46px] md:leading-[54px] font-bold text-on-surface uppercase tracking-tight mb-8">
