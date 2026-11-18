@@ -525,6 +525,8 @@ function alumax_product_page_sections($post_id = null) {
     }
 
     $specs = alumax_product_page_section('specs', $post_id);
+    $specs['eyebrow'] = 'Technical Specifications';
+    $specs['title']   = 'Product Parameters & Engineering Details';
     // Unify technical specifications button to single Download Product Datasheet (PDF)
     $specs['buttons'] = [
         ['icon' => 'picture_as_pdf', 'label' => 'Download Product Datasheet (PDF)', 'url' => '#', 'style' => 'primary'],
@@ -532,8 +534,8 @@ function alumax_product_page_sections($post_id = null) {
 
     // Installation independent module (specs install_* keys, legacy label->title compatibility)
     $install = [
-        'eyebrow'     => $specs['install_eyebrow'] ?? '',
-        'title'       => $specs['install_title'] ?? '',
+        'eyebrow'     => 'Installation Typologies',
+        'title'       => 'Versatile Structural Mounting & Integration Options',
         'description' => $specs['install_description'] ?? '',
         'note'        => $specs['install_note'] ?? '',
         'items'       => [],
@@ -551,29 +553,52 @@ function alumax_product_page_sections($post_id = null) {
     unset($specs['install_eyebrow'], $specs['install_title'], $specs['install_description'], $specs['install_tag'], $specs['install_note'], $specs['install_items']);
 
     $control = alumax_product_page_section('control', $post_id);
+    if (!empty($control['modes'])) {
+        $control['eyebrow'] = 'Intelligent Control';
+        $control['title']   = 'Flexible & Intelligent Operation';
+    }
     $cta_label = trim((string) ($control['cta_label'] ?? ''));
     $control['cta'] = $cta_label !== '' ? ['label' => $cta_label, 'url' => $control['cta_url'] ?? ''] : null;
     unset($control['cta_label'], $control['cta_url']);
 
+    $options = alumax_product_page_section('options', $post_id);
+    $options['eyebrow'] = 'Customization Options';
+    $options['title']   = 'Tailored to Your Project';
+
+    $palette = alumax_product_page_section('palette', $post_id);
+    $palette['eyebrow'] = 'Exterior Colors & Finishes';
+    $palette['title']   = 'Colors & Architectural Finishes';
+
     $cases = alumax_product_page_section('cases', $post_id);
+    $cases['eyebrow'] = 'Project References';
+    $cases['title']   = 'Trusted in Iconic Buildings';
     $cases['link'] = !empty($cases['link_label'])
         ? ['label' => $cases['link_label'], 'url' => !empty($cases['link_url']) ? $cases['link_url'] : get_post_type_archive_link('case')]
         : null;
     unset($cases['link_label'], $cases['link_url']);
 
     $inquiry = alumax_product_page_section('inquiry', $post_id);
+    $inquiry['eyebrow']    = 'Request a Project Quote';
+    $inquiry['title']      = 'Have a Project in Mind?';
+    $inquiry['form_title'] = 'Direct Factory Specification RFQ';
     if (!empty($inquiry['products'])) {
         $inquiry['products'][0]['checked'] = true;
     }
 
+    $intro = alumax_product_page_section('intro', $post_id);
+    $intro['eyebrow'] = 'The Product';
+
+    $advantages = alumax_product_page_section('advantages', $post_id);
+    $advantages['eyebrow'] = 'Key Advantages';
+
     return [
         'hero'       => $hero_args,
-        'intro'      => alumax_product_page_section('intro', $post_id),
-        'advantages' => alumax_product_page_section('advantages', $post_id),
+        'intro'      => $intro,
+        'advantages' => $advantages,
         'specs'      => $specs,
         'control'    => $control,
-        'options'    => alumax_product_page_section('options', $post_id),
-        'palette'    => alumax_product_page_section('palette', $post_id),
+        'options'    => $options,
+        'palette'    => $palette,
         'install'    => $install,
         'cases'      => $cases,
         'inquiry'    => $inquiry,
@@ -1429,7 +1454,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-25c504e614.jpg',
-            'title'          => 'PRE-INSULATED INTEGRATED WALL PANELS',
+            'title'          => 'Pre-Insulated Integrated<br>Wall Panels',
             'subtitle'       => 'Continuous Structural Insulation. Monumental Energy Efficiency. Class A Fire Rated.',
             'description'    => 'All-in-one prefabricated building envelope solution combining precision fluorocarbon metal facing with high-density non-combustible insulation core (PIR / PUR / Mineral Wool), eliminating cold bridges while drastically reducing on-site construction schedules.',
             'primary_label'  => 'Request a Quote',
@@ -1448,8 +1473,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-48d7a7ad36.jpg',
             'image_alt'   => 'Engineering cutaway of pre-insulated architectural metal cladding panel revealing continuous insulation core bonded to fluorocarbon coated alloy skin.',
             'video_label' => 'Watch Thermal Break Video',
-            'eyebrow'     => 'System Architecture',
-            'title'       => 'What is Pre-Insulated Metal Cladding?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What are Pre-Insulated Wall Panels?',
             'description' => 'Traditional multi-layer field-assembled envelopes rely on sequential site installation of mineral insulation, vapor barriers, air cavity substructures, and exterior metal rainscreens. ALUMAX Series PI-800 transforms this labor-intensive workflow into a factory-bonded, monolithic insulated composite panel engineered to withstand extreme environmental wind loads and thermal cycles.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Exterior Metal Skin', 'text' => 'PVDF / FEVE AA3003-H14 aluminum (0.8–1.5mm) or high-tensile galvanized steel (0.5–1.0mm).'],
@@ -1495,7 +1520,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Certified Engineering Parameters',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Certified Engineering Matrix',
             'table_ref'   => 'REF: AX-PI-800-2025',
             'rows'        => [
@@ -1524,8 +1549,8 @@ SVG;
                     'caption'   => 'Self-aligning tongue & groove; concealed fasteners eliminate thermal breaks',
                 ],
             ],
-            'install_eyebrow'     => 'Installation',
-            'install_title'       => 'Dry-Construction Fastening & Joints',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Engineered for swift dry installation without wet plaster or silicone façade caulking. Zero thermal bridge transmission via proprietary nylon-reinforced thermal breaks.',
             'install_note'        => 'Standard installation CAD details (DWG) and LOD 400 Revit families available on request.',
             'install_items'       => [
@@ -1556,8 +1581,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Geometry Options',
-            'title'       => 'Architectural Panel Facing Profiles & Finishes',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Engineered face profiles configured to manipulate building shadows, structural flatness, and aesthetic rhythms. Fluorocarbon coil-coating tested under ASTM G154; custom RAL, Pantone, and metallic sheen matching available.',
             'cards'       => [
                 [
@@ -1591,8 +1616,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Standard Architectural Palette & Custom Formulation',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'Fluorocarbon coil-coating tested under ASTM G154 accelerated weathering. Custom RAL, Pantone, and metallic sheen matching available.',
             'swatches'    => [
                 ['color' => '#F1F3F5', 'name' => 'Pure White', 'code' => 'RAL 9016 // PVDF', 'bespoke' => ''],
@@ -1604,8 +1629,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Installed Projects Across Global Environments',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View All Global Projects',
             'link_url'   => '',
             'projects'   => [
@@ -1640,7 +1665,7 @@ SVG;
         ],
         'inquiry' => [
             'eyebrow'      => 'Request a Project Quote',
-            'title'        => 'Need Thermal Calculations & Engineering Support?',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Our in-house facade structural and thermal simulation team provides project-specific finite element thermal bridge analysis (U-values, condensation risk, deflection schedules, fastener pull-out) to support project authority approvals.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H EXPORT RESPONSE',
@@ -1668,7 +1693,7 @@ function alumax_pp_defaults_steel() {
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-2c7a4bdd7a.jpg',
-            'title'          => 'ARCHITECTURAL STEEL WALL PANELS',
+            'title'          => 'Architectural Steel<br>Wall Panels',
             'subtitle'       => 'Class IV Ballistic Impact. 210 GPa Rigidity. Non-Combustible A1.',
             'description'    => 'High-tensile structural steel cassettes engineered for extreme wind loads, severe public transit impact resistance, and maximum span flatness exceeding traditional aluminum thresholds. Spec ID: ALU-ST-7000 // ISO 9001 / EN 13501 A1.',
             'primary_label'  => 'Request a Quote',
@@ -1687,8 +1712,8 @@ function alumax_pp_defaults_steel() {
             'image'       => '/wp-content/uploads/alumax-img-1d11024e78.jpg',
             'image_alt'   => 'Engineering cutaway model of a 3mm galvanized steel rainscreen cassette with robotic laser-welded stiffener ribbons and stainless steel hook-on brackets.',
             'video_label' => 'Cassette Cutaway // Laser-Welded Stiffeners',
-            'eyebrow'     => 'High-Performance Steel Envelope',
-            'title'       => 'What is Series ALU-ST-7000?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What are Architectural Steel Wall Panels?',
             'description' => 'Heavy-duty architectural cladding for railway concourses, civic institutions and coastal high-rise crowns — where impact resilience, fire integrity and multi-storey span flatness exceed what aluminum can deliver. Cassette depth 40–120mm, single panels up to 8,000mm continuous.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Substrate Alloy Grade', 'text' => 'HDG Z275 hot-dip galvanized steel / COR-TEN A/B weathering steel / AISI 316L marine stainless.'],
@@ -1699,7 +1724,7 @@ function alumax_pp_defaults_steel() {
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Certified Performance & Deflection Metrics',
+            'title'       => 'Why Choose Our Steel Wall Panels?',
             'description' => 'Independently tested under ASTM and European EN façade standards (CNAS / UKAS accredited lab). ALUMAX steel cassettes deliver 300% greater impact resilience than standard architectural aluminum cladding.',
             'cards'       => [
                 [
@@ -1734,7 +1759,7 @@ function alumax_pp_defaults_steel() {
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Structural Data Schedule',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Substrate Performance Comparison Matrix',
             'table_ref'   => 'SPEC-ALU-ST7000-REV2025',
             'rows'        => [
@@ -1777,8 +1802,8 @@ function alumax_pp_defaults_steel() {
                     'caption'   => 'At 3.0mm gauge — structural subframe and anchor schedule calculated per project wind load.',
                 ],
             ],
-            'install_eyebrow'     => 'Architectural Detailing',
-            'install_title'       => 'Engineered Mounting Substructures',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Three proprietary load-bearing fixing systems accommodate high dead loads, dynamic seismic inter-story drift, and thermal movement without visible exterior fasteners.',
             'install_note'        => '',
             'install_items'       => [
@@ -1809,8 +1834,8 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Architectural Tone & Finish Library',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'PPG Duranar 3-coat PVDF, super-durable Qualicoat Class 2 powder, PVD ceramic sputtered titanium finishes, and stabilized Cor-Ten patina — RAL / NCS custom color match available.',
             'swatches'    => [
                 ['color' => '#3A3F44', 'name' => 'Matte Graphite', 'code' => '3-Coat PVDF 35µm', 'bespoke' => ''],
@@ -1822,8 +1847,8 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Smart Factory Fabrication',
-            'title'       => 'Robotic Bending & 15kW Fiber Laser Centers',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Millimeter-level dimensional repeatability enabled by advanced European automated sheet-metal centers — 450,000 m² annual structural facade capacity.',
             'cards'       => [
                 [
@@ -1850,8 +1875,8 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Built Environment Archive',
-            'title'      => 'Landmark Transportation & Civic Projects',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View All Completed Case Studies',
             'link_url'   => '',
             'projects'   => [
@@ -1885,10 +1910,10 @@ function alumax_pp_defaults_steel() {
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Global Tender Desk',
-            'title'        => 'Engineering Quotation & Sample Kit Request',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Submit your project schedule, wind-load parameters, or architectural elevations. Our senior facade engineering team delivers structural pre-calculations within 48 business hours. Direct hotline: +971 4 887 0192 (MENA) // +86 757 8588 3310 (HQ).',
-            'form_title'   => 'Steel Envelope RFQ Package',
+            'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '48H ENGINEERING RESPONSE',
             'submit_label' => 'Submit RFQ Package & Request Sample Kit',
             'bullets'      => [
@@ -1945,8 +1970,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-90f3d1d315.jpg',
             'image_alt'   => 'Completed architectural building facade clad in solid aluminum rainscreen cassette panels.',
             'video_label' => 'Exploded Cassette Assembly & 3D BIM Viewer',
-            'eyebrow'     => 'Product Overview',
-            'title'       => 'Monolithic Solid Aluminum Rainscreen Envelopes',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What are Solid Aluminum Cladding Panels?',
             'description' => 'ALUMAX solid aluminum cladding panels are CNC brake-formed from single-sheet monolithic alloy plate — completely eliminating composite core materials, combustible bonding adhesives, and delamination risks. Engineered for exterior rainscreen facades, monumental soffits, column covers, entrance portals, and high-traffic interior public transit hubs, our solid cassettes deliver supreme optical flatness, Class A2 fire resistance, and full demountability for lifetime building maintenance.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Monolithic Alloy Substrates', 'text' => 'AA3003-H24 commercial standard and AA5052-H32 marine grade for severe coastal salt spray, compliant with ASTM B209M and EN 1396.'],
@@ -1957,7 +1982,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Specify ALUMAX Solid Aluminum Panels?',
+            'title'       => 'Why Choose Our Solid Aluminum Panels?',
             'description' => 'Engineered to meet the stringent static, seismic, and fire-life-safety demands of global commercial towers, transit terminals, and monumental civic architecture.',
             'cards'       => [
                 [
@@ -1992,7 +2017,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Engineering Performance & Static Criteria',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'ALU-SLD-3003 Comprehensive Engineering Matrix',
             'table_ref'   => 'SPEC REF: ASTM B209M // EN 1396 // AAMA 2605',
             'rows'        => [
@@ -2043,7 +2068,7 @@ SVG;
                 ],
             ],
             'install_eyebrow'     => 'Installation Typologies',
-            'install_title'       => 'Fixing Methods & Substructure Details',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Three engineered fixing typologies with comprehensive CAD/BIM elevation detail packages. Each system accommodates project wind-load criteria, thermal movement tolerances, and specific building movement requirements.',
             'install_note'        => 'Engineering Note: System selection and bracket spacing are determined by project wind load calculations (ASTM E330), panel thickness, and building height. All mounting brackets incorporate 6mm slotted oval holes to accommodate aluminum thermal expansion (2.4 mm/m at ΔT 100°C).',
             'install_items'       => [
@@ -2069,7 +2094,7 @@ SVG;
         ],
         'palette' => [
             'eyebrow'     => 'Exterior Colors & Finishes',
-            'title'       => 'High-Performance Architectural Finishes & Custom Matching',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'Formulated to withstand harsh UV exposure, coastal marine salt atmosphere, and aggressive industrial environments. Choose from AAMA 2605 compliant PPG Duranar® 70% Kynar 500® PVDF, AkzoNobel Interpon® D3000 hyper-durable powder, Class I hard anodizing, and architectural sublimation faux stone/wood.',
             'swatches'    => [
                 ['color' => '#927B5E', 'name' => 'Champagne Bronze', 'code' => 'Duranar® Sunstorm // PVDF', 'bespoke' => ''],
@@ -2081,8 +2106,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Architectural Customization',
-            'title'       => 'Bespoke Panel Geometries & Fabrication Formats',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Every architectural project demands unique spatial geometry. We manufacture tailored solid aluminum cladding panels strictly engineered to project elevations and BIM models — encompassing custom dimensions, roll-bent curves, CNC acoustic perforations, 3D parametric cassettes, and engineered subframe brackets.',
             'cards'       => [
                 [
@@ -2117,7 +2142,7 @@ SVG;
         ],
         'cases' => [
             'eyebrow'    => 'Project References',
-            'title'      => 'Global Landmark Deliveries',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View Complete Portfolio Archive',
             'link_url'   => '',
             'projects'   => [
@@ -2151,8 +2176,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Factory-Direct Engineering Desk',
-            'title'        => 'Request Pricing & Static Calculations',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Submit your architectural drawings, tender schedules, dimensions, or wind load criteria. Our engineering department will respond with a tailored specification, preliminary structural calculations, and quotation within 24 hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H ENGINEERING RESPONSE',
@@ -2185,7 +2210,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-1a00bef908.jpg',
-            'title'          => 'FIRE-RETARDANT ALUMINUM COMPOSITE PANELS',
+            'title'          => 'Fire-Retardant Aluminum<br>Composite Panels',
             'subtitle'       => 'A2/B1 Mineral Core. 3-Coat PVDF 35μm. Zero Oil-Canning Flatness.',
             'description'    => 'Engineered architectural composite material (ACM) pairing high-tensile 3003-H14 aluminum coil skins with non-combustible mineral-filled cores. Precision-bonded through continuous automated thermal lamination for mega-span curtain walls, retail pavilions, and high-wind transport hubs. Code: ALU-ACP-1000.',
             'primary_label'  => 'Request a Quote',
@@ -2204,8 +2229,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-e3771b326e.jpg',
             'image_alt'   => 'Cutaway rendering of fire-retardant aluminum composite panel ALU-ACP-1000 with 0.5mm AA3003 skin, mineral core and adhesive layers.',
             'video_label' => '360° Inspect // FR Core Cutaway',
-            'eyebrow'     => 'Systems Architecture',
-            'title'       => 'What is the ALU-ACP-1000 Composite System?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What is an Aluminum Composite Panel?',
             'description' => 'Continuous hot-melt lamination bonds coil-coated aluminum skins to a mineral-filled core under 190°C–210°C calendering, with in-line ultrasonic resonance checks every 10 meters — ensuring zero delamination risk across harsh maritime and desert thermal cyclings.',
             'features'    => [
                 ['icon' => 'local_fire_department', 'title' => 'Mineral Core Fire Rating', 'text' => 'FR-A2 ≥90% mineral non-combustible (EN 13501 A2) / FR-B1 mineral-filled flame retardant.'],
@@ -2251,7 +2276,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Fire Safety & Structural Performance Metrics',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Laboratory Verification Matrix',
             'table_ref'   => 'INTERTEK / SGS / TÜV',
             'rows'        => [
@@ -2286,8 +2311,8 @@ SVG;
                     'caption'   => '9.42 N/mm peak tensile — ALUMAX testing average 9.4 N/mm versus 5.0 N/mm industry standard minimum.',
                 ],
             ],
-            'install_eyebrow'     => 'Installation',
-            'install_title'       => 'Cassette Hanging & Top-Hat Substructure',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Fix routed folded cassettes to aluminum alloy extruded subframes (6063-T6). Slotted holes allow thermal expansion; concealed rivets or structural silicone deliver continuous pristine exterior reveals.',
             'install_note'        => 'Complete milling & installation technical manual (DWG elevation assemblies, Revit LOD 400 families) available on request.',
             'install_items'       => [
@@ -2306,8 +2331,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Coating Systems & Finish Library',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'PVDF Kynar 500®, Lumiflon® FEVE, nano self-cleaning and chameleon optical coatings — Konica Minolta spectrophotometer tested across each coil batch at ΔE ≤ 0.5.',
             'swatches'    => [
                 ['color' => '#927B5E', 'name' => 'Champagne Bronze', 'code' => 'PVDF Kynar 500® 3-Coat', 'bespoke' => ''],
@@ -2318,8 +2343,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Architectural Workshop Manual',
-            'title'       => 'Panel Fabrication & Substructure Jointing Systems',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'ALUMAX composite panels support rapid site routing, cassette returns, and cold roll-forming with conventional CNC or handheld grooving equipment without micro-fracturing the outer coating.',
             'cards'       => [
                 [
@@ -2346,8 +2371,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Landmark Commercial & Transport Deployments',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View All 180+ Project References',
             'link_url'   => '',
             'projects'   => [
@@ -2381,8 +2406,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Global Tender Support',
-            'title'        => 'Request Engineered Swatch Box & Rapid RFQ',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Receive our comprehensive overseas architect sample kit containing 12 finish swatches (PVDF, Lumiflon FEVE, Brushed, Chameleon), cutaway mineral cores (A2 & B1), and full ASTM/EN laboratory test reports.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H EXPORT RESPONSE',
@@ -2422,7 +2447,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-5e55ea6648.jpg',
-            'title'          => 'HEXAGONAL HONEYCOMB COMPOSITE PANEL',
+            'title'          => 'Hexagonal Honeycomb<br>Composite Panels',
             'subtitle'       => 'Aerospace-Grade Core. ±6.5 kPa Typhoon Class. Zero Oil-Canning Monolithic Flatness.',
             'description'    => 'Continuous roll-bonded sandwich composite engineered for extreme wind pressure, high-rise building envelopes, and monolithic visual flatness. At only 6.85 kg/m² with 19.2 cm³/m section modulus. System ref: ALU-HC-5000.',
             'primary_label'  => 'Request a Quote',
@@ -2441,8 +2466,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-fa920e6e74.jpg',
             'image_alt'   => '3D technical cross-section render of aluminum honeycomb composite panel ALU-HC-5000 with hexagonal core foil bonded between AA3003 alloy skins.',
             'video_label' => 'Core Cutaway // 3D BIM LOD-400',
-            'eyebrow'     => 'Systems Architecture',
-            'title'       => 'What is the ALU-HC-5000 Honeycomb Composite?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What is a Honeycomb Composite Panel?',
             'description' => 'Aerospace-derived hexagonal foil core is continuously roll-bonded between coil-coated aluminum skins with DuPont polyurethane hot-melt, producing an ultra-flat, ultra-light sandwich panel that outperforms solid plate on rigidity, acoustics, and fire behavior.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Facing Alloy Grade', 'text' => 'AA3003-H24 high tensile standard / AA5052-H32 marine coastal anti-corrosion.'],
@@ -2453,7 +2478,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Honeycomb Composite Panels?',
+            'title'       => 'Why Choose Our Honeycomb Panels?',
             'description' => 'Certified by TÜV Rheinland, SGS, and Intertek — validated for high-amplitude wind turbulence, typhoon zones, and stringent commercial facade codes.',
             'cards'       => [
                 [
@@ -2488,7 +2513,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Structural & Physical Performance Data',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Tested per ASTM & BS EN Specifications',
             'table_ref'   => 'TÜV PASS #8921-EU',
             'rows'        => [
@@ -2531,8 +2556,8 @@ SVG;
                     'caption'   => 'Simulated under coastal hurricane suction vortex pressures with zero corner peel or rivet hole fatigue over 100,000 cyclic pulses.',
                 ],
             ],
-            'install_eyebrow'     => 'Installation',
-            'install_title'       => 'Three Structural Fixing Typologies',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Engineered for rapid site installation, thermal movement compensation, and complete moisture management. Choose the structural bracket typology best suited for your facade envelope requirement.',
             'install_note'        => '',
             'install_items'       => [
@@ -2563,8 +2588,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Architectural Finish Palette',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => '3-coat PPG Duranar® PVDF and Class I anodized finishes with 30-year coating life, tested under AAMA 2605 accelerated weathering.',
             'swatches'    => [
                 ['color' => '#927B5E', 'name' => 'Champagne Bronze', 'code' => 'Duranar® Sunstorm // PVDF', 'bespoke' => ''],
@@ -2575,8 +2600,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Engineering Substructure Integration',
-            'title'       => 'Three Structural Fixing Typologies',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Engineered for rapid site installation, thermal movement compensation, and complete moisture management. Choose the structural bracket typology best suited for your facade envelope requirement.',
             'cards'       => [
                 [
@@ -2603,8 +2628,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Built With ALU-HC-5000 Worldwide',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'Request Case Study Dossier',
             'link_url'   => '',
             'projects'   => [
@@ -2638,8 +2663,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Direct Factory Technical Desk',
-            'title'        => 'Request Project Tender Calculation & Sample Kit',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Submit your architectural schedule, elevations, or bill-of-quantities (BOQ). Our facade engineering group responds with static wind-load calculations, optimization yields, and factory-direct pricing within 24 business hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H EXPORT RESPONSE',
@@ -2714,7 +2739,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-7d6634c76c.jpg',
-            'title'          => 'CORRUGATED CORE ALUMINUM COMPOSITE PANEL',
+            'title'          => 'Corrugated Core<br>Aluminum Composite Panels',
             'subtitle'       => '100% Mono-Material Aluminum. EN 13501-1 Class A1. 60% Lighter Than Solid Plate.',
             'description'    => 'Precision roll-bonded continuous structural architectural sandwich panel featuring an engineered sinusoidal wave core made from 100% recyclable high-grade aluminum. Eliminates organic thermoplastic resins completely, delivering uncompromising EN 13501-1 Class A1 fire safety, exceptional rigidity-to-weight ratio, and flawless optical flatness. Series: ALU-CC-4000.',
             'primary_label'  => 'Request a Quote',
@@ -2733,8 +2758,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-1a6cd5b463.jpg',
             'image_alt'   => 'Corrugated core aluminum panel cutaway showing sinusoidal wave core roll-bonded between aluminum skins.',
             'video_label' => 'Core Cross-Section // Sinusoidal Flute',
-            'eyebrow'     => 'Systems Architecture',
-            'title'       => 'What is the ALU-CC-4000 Corrugated Core Panel?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What is a Corrugated Core Aluminum Panel?',
             'description' => 'Unlike FR-ACP with mineral-filled polyethylene, the ALU-CC-4000 eliminates organic thermoplastic resins completely. The patented 12.5mm wave-pitch sinusoidal aluminum core acts as an infinite series of structural I-beams — 100% recyclable, zero-VOC, and EPD ISO 14025 compliant for LEED v4 / BREEAM credits.',
             'features'    => [
                 ['icon' => 'straighten', 'title' => 'Panel Total Thickness', 'text' => '4.0mm standard envelope / 6.0mm high wind / 8.0mm megapanel.'],
@@ -2780,7 +2805,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Mechanical Strength & Fire Physics Matrix',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Certified Performance Matrix',
             'table_ref'   => 'SPEC REV: 2025.04.B',
             'rows'        => [
@@ -2823,8 +2848,8 @@ SVG;
                     'caption'   => '100% aluminum composition requires zero delamination sorting during decommissioning; retired cassettes melt directly into secondary ingot stock at less than 5% original smelting energy.',
                 ],
             ],
-            'install_eyebrow'     => 'Installation',
-            'install_title'       => 'Subframe Integration & Movement Joints',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Concealed cassette fixing with engineered movement joints for large-format corrugated core envelopes.',
             'install_note'        => 'Download the complete milling & installation technical manual: DWG elevation assemblies, CNC G-code cutter geometries and Revit families (LOD 400).',
             'install_items'       => [
@@ -2843,8 +2868,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Coil-Coated Fluorocarbon Finishes',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'Continuous coil-coated PVDF and FEVE finishes with zero VOC emissions during the building lifecycle — compliant with Environmental Product Declarations (EPD ISO 14025).',
             'swatches'    => [
                 ['color' => '#927B5E', 'name' => 'Champagne Metallic', 'code' => 'PVDF 3-Coat', 'bespoke' => ''],
@@ -2855,8 +2880,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Fabrication & Joinery Details',
-            'title'       => 'Standard Milling Profiles & Cassette Assembly',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Engineered for CNC V-groove routing using standard tungsten carbide 90° or 135° cutters. Panels fold seamlessly into rigid architectural cassettes without fracturing the outer roll-coated skin.',
             'cards'       => [
                 [
@@ -2886,8 +2911,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Global Completed Landmark Projects',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'Explore All Global References',
             'link_url'   => '',
             'projects'   => [
@@ -2921,8 +2946,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Direct Factory Procurement',
-            'title'        => 'Request Project Quotation & Specimen Kit',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Our international engineering consultation desk provides rapid structural preliminary calculations, BOQ optimization, and overnight courier sample boxes (including 4mm/6mm panel samples and color fan decks) for registered facade contractors, consultants, and architectural practices.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H EXPORT RESPONSE',
@@ -2997,7 +3022,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-674be52934.jpg',
-            'title'          => 'ARCHITECTURAL METAL CEILING SYSTEMS',
+            'title'          => 'Architectural Metal<br>Ceiling Systems',
             'subtitle'       => 'Acoustic Excellence. Seismic Safety. Monolithic Suspended Baffle & Tile Matrix.',
             'description'    => 'Precision-engineered modular ceiling envelopes with acoustic fleece backing, flush services integration, and seismic compliance for large-span transport terminals and premier corporate headquarters. System code: ALU-CL-6000.',
             'primary_label'  => 'Request a Quote',
@@ -3016,8 +3041,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-e7d55cd0c1.jpg',
             'image_alt'   => '3D suspended ceiling carrier cutaway showing concealed grid and acoustic tile assembly.',
             'video_label' => '3D Suspended Ceiling Carrier Cutaway',
-            'eyebrow'     => 'Systems Architecture',
-            'title'       => 'What is the ALU-CL-6000 Ceiling Matrix?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What is an Architectural Metal Ceiling System?',
             'description' => 'A fully modular suspended ceiling platform combining acoustic baffles, concealed clip-in tiles, linear planks and open-cell grilles on one precision substructure — engineered for zero-deflection spans up to 3,600mm with factory-punched cutouts for HVAC diffusers and recessed luminaires.',
             'features'    => [
                 ['icon' => 'grid_4x4', 'title' => 'System Typology', 'text' => 'Acoustic baffles / concealed clip-in / linear plank strip / open-cell grille formats.'],
@@ -3063,7 +3088,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Engineered Sound Attenuation & Structural Safety',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Acoustic & Seismic Performance Matrix',
             'table_ref'   => 'EN 13964 CE // REV 2025.4',
             'rows'        => [
@@ -3106,8 +3131,8 @@ SVG;
                     'caption'   => 'Standardized extruded aluminum adapter tracks integrate DALI-controlled linear downlights, sprinkler discharge heads, and high-throw linear slot air diffusers flush with the ceiling plane.',
                 ],
             ],
-            'install_eyebrow'     => 'Engineered Integration',
-            'install_title'       => 'Precision Substructure & Service Interfacing',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Concealed structural suspension components engineered for zero-deflection spans up to 3,600mm, with factory-punched cutouts for continuous HVAC linear diffusers and recessed linear luminaires.',
             'install_note'        => '',
             'install_items'       => [
@@ -3132,8 +3157,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Powder Coating & Anodized Finishes',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'Swiss Gema dust-free vertical coating line with multi-stage chemical pretreatment — Qualicoat Class 2 certified PVDF powders at 60–80μm, with anti-microbial silver-ion additive options.',
             'swatches'    => [
                 ['color' => '#FFFFFF', 'name' => 'Matte White', 'code' => 'Powder 60–80μm // LR-1', 'bespoke' => ''],
@@ -3144,8 +3169,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Engineered Integration',
-            'title'       => 'Precision Substructure & Service Interfacing',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Concealed structural suspension components engineered for zero-deflection spans up to 3,600mm, with factory-punched cutouts for continuous HVAC linear diffusers and recessed linear luminaires.',
             'cards'       => [
                 [
@@ -3175,8 +3200,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Proven Performance Across Global Transit Hubs',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'Request Complete 120-Project Reference List',
             'link_url'   => '',
             'projects'   => [
@@ -3210,8 +3235,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Direct Factory Consultation',
-            'title'        => 'Request Acoustic Calculation & Sample Kit Box',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Our senior architectural ceiling engineers evaluate your CAD ceiling reflection plans (RCP), calculate specific reverberation time (RT60) reductions, and ship tailored physical mock-up sample kits within 72 hours via DHL Express.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H EXPORT RESPONSE',
@@ -3249,7 +3274,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-1894ea3cfd.jpg',
-            'title'          => 'AERODYNAMIC S-BLADE SUNSHADE LOUVERS',
+            'title'          => 'Architectural Solar<br>Control Louvers',
             'subtitle'       => '85% Solar Heat Dissipation. Zero Water Entrainment. Continuous Ribbon Design.',
             'description'    => 'Engineered aerodynamic S-blade & rain-defense curtain wall louver system. Seamless continuous ribbon design delivering up to 85% solar heat gain dissipation with zero water entrainment at high storm wind velocities. Spec: ALU-LB-3000.',
             'primary_label'  => 'Request a Quote',
@@ -3268,8 +3293,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-ab9e91858a.jpg',
             'image_alt'   => 'Extruded 6063-T6 aluminum S-blade profile cutaway showing internal drainage water-trap pocket and dual-rib stiffeners.',
             'video_label' => 'LOD 400 Parametric Blade Cut',
-            'eyebrow'     => 'Architectural Solar Control',
-            'title'       => 'What is the ALU-LB-3000 S-Blade System?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What is an Architectural Solar Control System?',
             'description' => 'A curtain wall transom-integrated louver platform with continuous ribbon sub-frame and 100% water penetration defense. Fully concealed fastening brackets eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'features'    => [
                 ['icon' => 'straighten', 'title' => 'Blade Profile Widths', 'text' => '75mm ribbon flute / 100mm S-curved / 150mm S-curved severe rain / 200mm aerofoil double-chamber.'],
@@ -3280,7 +3305,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our S-Blade Louver System?',
+            'title'       => 'Why Choose Our Solar Control Louvers?',
             'description' => 'Tested and validated in certified climatic wind tunnel facilities under simultaneous gale-force wind vectors and simulated torrential rain.',
             'cards'       => [
                 [
@@ -3315,7 +3340,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Technical Parameters by Blade Geometry',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Specification Schedule',
             'table_ref'   => 'AMCA 500-L // EN 13030',
             'rows'        => [
@@ -3358,8 +3383,8 @@ SVG;
                     'caption'   => 'Calculated solar heat gain coefficient reduction of 0.16 paired with low-E insulated glass — precision daylight redirection without darkening interiors.',
                 ],
             ],
-            'install_eyebrow'     => 'Architectural Details',
-            'install_title'       => 'Subframe Typologies & Engineered Mounting Assemblies',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Constructed with fully concealed fastening brackets to eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'install_note'        => '',
             'install_items'       => [
@@ -3384,8 +3409,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'PVDF & Marine Anodized Finishes',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'GEMA electrostatic turbo-bell application of PPG / AkzoNobel fluorocarbon resin cured in continuous convection ovens up to 240°C; ISO 7599 marine-grade anodizing available.',
             'swatches'    => [
                 ['color' => '#927B5E', 'name' => 'Champagne Bronze', 'code' => '3-Coat PVDF 35μm', 'bespoke' => ''],
@@ -3396,8 +3421,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Architectural Details',
-            'title'       => 'Subframe Typologies & Mounting Assemblies',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Constructed with fully concealed fastening brackets to eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'cards'       => [
                 [
@@ -3424,8 +3449,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Landmark Installations & Infrastructure Projects',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View Complete 120+ Reference Dossier',
             'link_url'   => '',
             'projects'   => [
@@ -3459,8 +3484,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Engineering Utility',
-            'title'        => 'Fast Tender RFQ & Specimen Kit Order',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Have complex BIM schedules, unusual curved spans, or structural wind pressures exceeding 5.0 kPa? Our senior structural facade engineers respond within 6 business hours with complete calculations and wind deflection reports.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '48H DHL SAMPLE DISPATCH',
@@ -3500,7 +3525,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-dd36323b8a.jpg',
-            'title'          => 'LASER-CUT & WELDED ARCHITECTURAL SCREENS',
+            'title'          => 'Laser-Cut & Welded<br>Architectural Screens',
             'subtitle'       => 'Parametric Mashrabiya Tessellation. −48.4% Peak Cooling Load. Monolithic TIG Fusion.',
             'description'    => 'Engineered solar interceptor matrix combining custom CNC multi-axis laser carving, seamless TIG seam fusion, and ASTM B117 salt-spray resistant Class I architectural finishes. Spec ID: ALU-GR-2000 // CSI 07 42 13.',
             'primary_label'  => 'Request a Quote',
@@ -3519,8 +3544,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-e1acc75d07.jpg',
             'image_alt'   => 'Macro close-up of 4mm aluminum screen with laser cut clean edge and robotic seamless fillet TIG welds in champagne bronze.',
             'video_label' => '3D Geometry Verified // CNC Edge Detail',
-            'eyebrow'     => 'Parametric Tessellation Envelope',
-            'title'       => 'What is the ALU-GR-2000 Screen System?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What are Laser-Cut Architectural Screens?',
             'description' => 'Unlike static planar louvers, the ALU-GR-2000 multi-layer Mashrabiya acts as an active visual barrier and passive thermal shield. During zenith solar noon (75°+), 4mm-depth structural ribs block 88% of thermal infrared irradiance while maintaining uninterrupted outward sightlines.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Structural Alloy Matrix', 'text' => 'AA5052-H32 marine high-yield / AA6063-T6 extruded chassis / AA3003-H14 standard sheet.'],
@@ -3566,7 +3591,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Adaptive Environmental Envelope Performance',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'Thermodynamic & Structural Simulation Matrix',
             'table_ref'   => 'SPEC-ALU-GR2000-REV4',
             'rows'        => [
@@ -3609,8 +3634,8 @@ SVG;
                     'caption'   => 'Neoprene-isolated sliders and dielectric PTFE shims absorb thermal expansion across high-humidity coastal and marine envelopes.',
                 ],
             ],
-            'install_eyebrow'     => 'Structural Interface',
-            'install_title'       => 'Concealed Subframe & Fixing Details',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'Precision-engineered extruded aluminum mounting cleats allow three-axis site adjustment (X, Y, Z ±15mm) while mitigating thermal expansion stresses through neoprene-isolated sliders.',
             'install_note'        => '',
             'install_items'       => [
@@ -3641,8 +3666,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'Class I Architectural Finish Library',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'ASTM B117 salt-spray resistant Class I architectural finishes with 25-year exterior warranty — anodized, PVDF liquid, superdurable powder, and timber sublimation.',
             'swatches'    => [
                 ['color' => '#927B5E', 'name' => 'Champagne Bronze', 'code' => '25μm Class I Anodized', 'bespoke' => ''],
@@ -3653,8 +3678,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Pattern Library',
-            'title'       => 'Perforation Patterns & Panel Geometry',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Aperture-calibrated open area matrix from 15% to 65%. Standard parametric families below, or fully bespoke patterns machined from your CAD vector files (.DWG / .DXF / .AI).',
             'cards'       => [
                 [
@@ -3678,8 +3703,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Global Project References',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View All Completed Case Studies',
             'link_url'   => '',
             'projects'   => [
@@ -3713,8 +3738,8 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Technical Tender Consultation',
-            'title'        => 'Request Screen Mock-Up & Engineering Estimate',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Submit your project elevation drawings, custom vector patterns (.DWG / .DXF / .AI), or tender schedule requirements. Our facade structural engineering department delivers finite-element load calculations and structural mock-up quotes within 24 business hours.',
             'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H EXPORT RESPONSE',
@@ -3752,7 +3777,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/alumax-img-38e2b76f17.jpg',
-            'title'          => 'ROLLER-COATED ALUMINUM STRIP & MASTER COILS',
+            'title'          => 'Roller-Coated Aluminum<br>Strip & Master Coils',
             'subtitle'       => 'Continuous 3-Coat 2-Bake Precision. 0T Lock-Seaming. 30-Year Exterior Warranty.',
             'description'    => 'Mill-manufactured under continuous 3-Coat 2-Bake precision roller coating lines. Engineered specifically for complex roll-forming, deep architectural cassette drawing, high-speed corrugated sandwich panel lines, and non-cracking 0T lock-seaming. Spec ID: ALU-CC-9000 // EN 1396 Architectural Spec.',
             'primary_label'  => 'Request a Quote',
@@ -3771,8 +3796,8 @@ SVG;
             'image'       => '/wp-content/uploads/alumax-img-a5b1d11c1f.jpg',
             'image_alt'   => 'Microscopic cutaway of 3-coat 2-bake continuous roller-coating application head with primer, color coat, and protective clear fluoropolymer layer.',
             'video_label' => '3C2B Process // Coating Head Detail',
-            'eyebrow'     => 'B2B Mill Direct',
-            'title'       => 'What is ALU-CC-9000 Pre-Coated Coil?',
+            'eyebrow'     => 'The Product',
+            'title'       => 'What is Pre-Coated Aluminum Coil?',
             'description' => 'Surface-calibrated architectural strip and master coils produced on a 180-meter cleanroom double-coater line. Licensed Arkema Kynar 500® / Solvay Hylar 5000® fluoropolymer resins are applied, cured and verified in-line — ready for direct forming without any post-painting.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Base Aluminum Alloy Substrate', 'text' => 'AA3003-H14/H24 general architectural / AA5052-H32 marine coastal / AA1100-H14 max formability / AA3105-H24 roofing.'],
@@ -3783,7 +3808,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'ASTM / EN 1396 Certified Coating Physics',
+            'title'       => 'Why Choose Our Pre-Coated Aluminum Coils?',
             'description' => 'Independent batch-tested fluoropolymer coating integrity, formulated with licensed Kynar 500® / Hylar 5000® resins and verified under ASTM laboratory standards.',
             'cards'       => [
                 [
@@ -3818,7 +3843,7 @@ SVG;
         ],
         'specs' => [
             'eyebrow'     => 'Technical Specifications',
-            'title'       => 'Coating Physics & Mechanical Integrity',
+            'title'       => 'Product Parameters & Engineering Details',
             'table_title' => 'ASTM / EN 1396 Certified Laboratory Data',
             'table_ref'   => 'SPEC-ALU-CC9000-REV2025Q1',
             'rows'        => [
@@ -3861,8 +3886,8 @@ SVG;
                     'caption'   => 'Dual-side or single-side 60–100μm UV-resistant polyethylene film laminated in-line at the rewinder — residue-free removal for 6 months after facade installation.',
                 ],
             ],
-            'install_eyebrow'     => 'Global Logistics',
-            'install_title'       => 'Seaworthy Heavy Export Packaging',
+            'install_eyebrow'     => 'Installation Typologies',
+            'install_title'       => 'Versatile Structural Mounting & Integration Options',
             'install_description' => 'ISPM 15 fumigated timber standards for transoceanic container handling — coil orientation matched to your decoiling line configuration.',
             'install_note'        => '',
             'install_items'       => [
@@ -3885,8 +3910,8 @@ SVG;
             ],
         ],
         'palette' => [
-            'eyebrow'     => 'Color & Coating',
-            'title'       => 'PPG / Beckers Certified Color Matrix',
+            'eyebrow'     => 'Exterior Colors & Finishes',
+            'title'       => 'Colors & Architectural Finishes',
             'description' => 'Architectural metallic and solid finishes calibrated to ΔE < 0.5 across full master coils — custom RAL / Pantone matching available with complimentary DHL fan-deck dispatch.',
             'swatches'    => [
                 ['color' => '#C9A87C', 'name' => 'Desert Champagne Mica', 'code' => '3-Coat Kynar 500 PVDF', 'bespoke' => ''],
@@ -3898,8 +3923,8 @@ SVG;
             ],
         ],
         'options' => [
-            'eyebrow'     => 'Fabrication & Formability',
-            'title'       => 'Downstream Processing Capabilities',
+            'eyebrow'     => 'Customization Options',
+            'title'       => 'Tailored to Your Project',
             'description' => 'Specialized primer chemistry and high-crystallinity fluorocarbon formulation deliver extreme elongation ductility without micro-fracturing under high-speed industrial forming machines.',
             'cards'       => [
                 [
@@ -3926,8 +3951,8 @@ SVG;
             ],
         ],
         'cases' => [
-            'eyebrow'    => 'Case References',
-            'title'      => 'Global Landmark Installations',
+            'eyebrow'    => 'Project References',
+            'title'      => 'Trusted in Iconic Buildings',
             'link_label' => 'View All Completed Case Studies',
             'link_url'   => '',
             'projects'   => [
@@ -3961,10 +3986,10 @@ SVG;
             ],
         ],
         'inquiry' => [
-            'eyebrow'      => 'Fast B2B Engineering Quotation',
-            'title'        => 'Direct Mill Inquiries & Color Swatch Fan-Deck Dispatch',
+            'eyebrow'      => 'Request a Project Quote',
+            'title'        => 'Have a Project in Mind?',
             'description'  => 'Submit your commercial volume requirements. Our export engineering center provides technical mill feasibility reviews, ASTM compliance certificates, and CIF/FOB pricing within 24 hours. Certified to ISO 9001:2015, EN 1396, ASTM B209M and QUALICOAT.',
-            'form_title'   => 'Coil Specification & Pricing Request',
+            'form_title'   => 'Direct Factory Specification RFQ',
             'form_badge'   => '24H MILL RESPONSE',
             'submit_label' => 'Submit Mill Production RFQ & Request Swatch Deck',
             'bullets'      => [
