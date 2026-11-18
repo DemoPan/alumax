@@ -206,6 +206,8 @@ SVG;
                 ['icon' => 'rotate_right', 'title' => 'Adjustable Angles', 'text' => 'Flexible shading'],
                 ['icon' => 'settings_input_component', 'title' => 'Smart Automation', 'text' => 'Sensors & BMS'],
                 ['icon' => 'architecture', 'title' => 'Custom Design', 'text' => 'For any building'],
+                ['icon' => 'air', 'title' => 'Wind Rated', 'text' => 'Category 5 Typhoon'],
+                ['icon' => 'volume_down', 'title' => 'Acoustic Quiet', 'text' => '< 42 dB Actuator'],
             ],
         ],
         'intro' => [

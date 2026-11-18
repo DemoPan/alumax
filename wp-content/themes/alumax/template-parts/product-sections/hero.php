@@ -58,8 +58,11 @@ $alumax_h = $args;
       </div>
     </div>
 
-    <?php if (!empty($alumax_h['badges'])) : ?>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 border-t border-outline-variant/30">
+    <?php if (!empty($alumax_h['badges'])) :
+      $alumax_badge_count = count($alumax_h['badges']);
+      $alumax_badge_grid = ($alumax_badge_count === 6) ? 'sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6' : 'sm:grid-cols-2 lg:grid-cols-4';
+    ?>
+      <div class="grid grid-cols-1 <?php echo esc_attr($alumax_badge_grid); ?> gap-4 pt-6 border-t border-outline-variant/30">
         <?php foreach ($alumax_h['badges'] as $alumax_badge) : ?>
           <div class="flex items-center gap-3 p-3 bg-surface-container-lowest/10 backdrop-blur-md border border-outline-variant/20 rounded-sm">
             <div class="w-9 h-9 rounded-sm bg-surface-container-highest/30 flex items-center justify-center text-secondary-fixed shrink-0">
