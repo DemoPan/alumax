@@ -397,8 +397,14 @@ function alumax_nav_class($active) {
 }
 
 function alumax_product_archive_per_page($query) {
-    if (!is_admin() && $query->is_main_query() && $query->is_post_type_archive('product')) {
-        $query->set('posts_per_page', 11);
+    if (!is_admin() && $query->is_main_query()) {
+        if ($query->is_post_type_archive('product')) {
+            $query->set('posts_per_page', 11);
+        } elseif ($query->is_post_type_archive('news')) {
+            $query->set('posts_per_page', 6);
+        } elseif ($query->is_post_type_archive('case')) {
+            $query->set('posts_per_page', 9);
+        }
     }
 }
 
