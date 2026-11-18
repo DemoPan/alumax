@@ -14,16 +14,26 @@ if (!defined('ABSPATH')) {
 function alumax_product_page_slugs() {
     return apply_filters('alumax_product_page_slugs', [
         'system-parameter-configurator',
+        'smart-motorized-aluminum-louvers',
         'pre_insulated_metal_cladding_panels_technical_specification',
+        'pre-insulated-integrated-wall-panels',
         'architectural_steel_wall_panels_technical_specification',
+        'architectural-steel-wall-panels',
         'solid-aluminum-cladding-panels',
         'aluminum_composite_panels',
+        'fire-retardant-aluminum-composite-panels',
         'aluminum_honeycomb_core_panels_technical_specification',
+        'hexagonal-honeycomb-composite-panels',
         'corrugated_core_composite_panels_technical_specification',
+        'corrugated-core-aluminum-composite-panels',
         'architectural_metal_ceiling_systems_technical_specification',
+        'architectural-metal-ceiling-systems',
         'architectural_s_blade_sunshade_louvers_technical_specification',
+        'architectural-solar-control-louvers',
         'architectural_aluminum_grilles_screens_technical_specification',
+        'laser-cut-welded-architectural-screens',
         'pre_coated_roller_coated_aluminum_sheets_technical_specification',
+        'roll-coated-aluminum-panels',
     ]);
 }
 
@@ -74,7 +84,7 @@ function alumax_pp_enabled_modules($post_id = null) {
     $profile = alumax_pp_profile($post_id);
     if ($profile !== '') {
         $enabled = array_keys(alumax_pp_all_modules());
-        if ($profile !== 'system-parameter-configurator') {
+        if ($profile !== 'system-parameter-configurator' && $profile !== 'smart-motorized-aluminum-louvers') {
             $enabled = array_diff($enabled, ['control']);
         }
         return array_values($enabled);
@@ -87,37 +97,37 @@ function alumax_pp_enabled_modules($post_id = null) {
  * ------------------------------------------------------------------------- */
 
 function alumax_product_page_defaults($slug) {
-    if ($slug === 'pre_insulated_metal_cladding_panels_technical_specification') {
+    if ($slug === 'pre_insulated_metal_cladding_panels_technical_specification' || $slug === 'pre-insulated-integrated-wall-panels') {
         return alumax_pp_defaults_pre_insulated();
     }
-    if ($slug === 'architectural_steel_wall_panels_technical_specification') {
+    if ($slug === 'architectural_steel_wall_panels_technical_specification' || $slug === 'architectural-steel-wall-panels') {
         return alumax_pp_defaults_steel();
     }
     if ($slug === 'solid-aluminum-cladding-panels') {
         return alumax_pp_defaults_solid();
     }
-    if ($slug === 'aluminum_composite_panels') {
+    if ($slug === 'aluminum_composite_panels' || $slug === 'fire-retardant-aluminum-composite-panels') {
         return alumax_pp_defaults_acp();
     }
-    if ($slug === 'aluminum_honeycomb_core_panels_technical_specification') {
+    if ($slug === 'aluminum_honeycomb_core_panels_technical_specification' || $slug === 'hexagonal-honeycomb-composite-panels') {
         return alumax_pp_defaults_honeycomb();
     }
-    if ($slug === 'corrugated_core_composite_panels_technical_specification') {
+    if ($slug === 'corrugated_core_composite_panels_technical_specification' || $slug === 'corrugated-core-aluminum-composite-panels') {
         return alumax_pp_defaults_corrugated();
     }
-    if ($slug === 'architectural_metal_ceiling_systems_technical_specification') {
+    if ($slug === 'architectural_metal_ceiling_systems_technical_specification' || $slug === 'architectural-metal-ceiling-systems') {
         return alumax_pp_defaults_ceiling();
     }
-    if ($slug === 'architectural_s_blade_sunshade_louvers_technical_specification') {
+    if ($slug === 'architectural_s_blade_sunshade_louvers_technical_specification' || $slug === 'architectural-solar-control-louvers') {
         return alumax_pp_defaults_louver();
     }
-    if ($slug === 'architectural_aluminum_grilles_screens_technical_specification') {
+    if ($slug === 'architectural_aluminum_grilles_screens_technical_specification' || $slug === 'laser-cut-welded-architectural-screens') {
         return alumax_pp_defaults_grilles();
     }
-    if ($slug === 'pre_coated_roller_coated_aluminum_sheets_technical_specification') {
+    if ($slug === 'pre_coated_roller_coated_aluminum_sheets_technical_specification' || $slug === 'roll-coated-aluminum-panels') {
         return alumax_pp_defaults_precoted();
     }
-    if ($slug !== 'system-parameter-configurator') {
+    if ($slug !== 'system-parameter-configurator' && $slug !== 'smart-motorized-aluminum-louvers') {
         // 无档案键的产品（如新建产品）：通用默认内容，后续在后台编辑
         return [
             'hero' => [
@@ -215,7 +225,7 @@ SVG;
             'image_alt'   => 'Close-up architectural macro photograph of precision extruded aluminum louver blades mounted on a stainless steel structural pivot arm.',
             'video_label' => 'Watch System Video',
             'eyebrow'     => 'The Product',
-            'title'       => 'What is a Smart Louver System?',
+            'title'       => 'What are Smart Motorized Aluminum Louvers?',
             'description' => 'The motorized aluminum louver system consists of high-performance aluminum blades, a supporting structure, a drive system, and an intelligent control system. By adjusting the blade angle in real time, it dynamically controls direct sunlight, minimizes thermal radiation, maximizes natural daylighting, and sculpts the distinct visual aesthetic of the building facade.',
             'features'    => [
                 ['icon' => 'tune', 'title' => 'Adjustable blade angles', 'text' => 'Precise 0° to 90° light control and glare mitigation.'],
@@ -226,7 +236,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Smart Louvers?',
+            'title'       => 'Why Choose Our Smart Motorized Aluminum Louvers?',
             'description' => 'Engineered for international commercial architectural standards, delivering quantifiable energy savings, environmental comfort, and facade prestige.',
             'cards'       => [
                 [
@@ -1474,7 +1484,7 @@ SVG;
             'image_alt'   => 'Architectural facade detail of pre-insulated integrated metal wall panels showing clean joints and crisp metallic finish.',
             'video_label' => 'Watch Thermal Break Video',
             'eyebrow'     => 'The Product',
-            'title'       => 'What are Pre-Insulated Wall Panels?',
+            'title'       => 'What are Pre-Insulated Integrated Wall Panels?',
             'description' => 'Traditional multi-layer field-assembled envelopes rely on sequential site installation of mineral insulation, vapor barriers, air cavity substructures, and exterior metal rainscreens. ALUMAX Series PI-800 transforms this labor-intensive workflow into a factory-bonded, monolithic insulated composite panel engineered to withstand extreme environmental wind loads and thermal cycles.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Exterior Metal Skin', 'text' => 'PVDF / FEVE AA3003-H14 aluminum (0.8–1.5mm) or high-tensile galvanized steel (0.5–1.0mm).'],
@@ -1485,7 +1495,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Pre-Insulated Wall Panels?',
+            'title'       => 'Why Choose Our Pre-Insulated Integrated Wall Panels?',
             'description' => 'Engineered for international commercial architectural standards, delivering quantifiable energy savings, environmental comfort, and facade prestige.',
             'cards'       => [
                 [
@@ -1724,7 +1734,7 @@ function alumax_pp_defaults_steel() {
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Steel Wall Panels?',
+            'title'       => 'Why Choose Our Architectural Steel Wall Panels?',
             'description' => 'Independently tested under ASTM and European EN façade standards (CNAS / UKAS accredited lab). ALUMAX steel cassettes deliver 300% greater impact resilience than standard architectural aluminum cladding.',
             'cards'       => [
                 [
@@ -1982,7 +1992,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Solid Aluminum Panels?',
+            'title'       => 'Why Choose Our Solid Aluminum Cladding Panels?',
             'description' => 'Engineered to meet the stringent static, seismic, and fire-life-safety demands of global commercial towers, transit terminals, and monumental civic architecture.',
             'cards'       => [
                 [
@@ -2230,7 +2240,7 @@ SVG;
             'image_alt'   => 'Cutaway rendering of fire-retardant aluminum composite panel ALU-ACP-1000 with 0.5mm AA3003 skin, mineral core and adhesive layers.',
             'video_label' => '360° Inspect // FR Core Cutaway',
             'eyebrow'     => 'The Product',
-            'title'       => 'What is an Aluminum Composite Panel?',
+            'title'       => 'What are Fire-Retardant Aluminum Composite Panels?',
             'description' => 'Continuous hot-melt lamination bonds coil-coated aluminum skins to a mineral-filled core under 190°C–210°C calendering, with in-line ultrasonic resonance checks every 10 meters — ensuring zero delamination risk across harsh maritime and desert thermal cyclings.',
             'features'    => [
                 ['icon' => 'local_fire_department', 'title' => 'Mineral Core Fire Rating', 'text' => 'FR-A2 ≥90% mineral non-combustible (EN 13501 A2) / FR-B1 mineral-filled flame retardant.'],
@@ -2241,7 +2251,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Fire-Retardant ACP?',
+            'title'       => 'Why Choose Our Fire-Retardant Aluminum Composite Panels?',
             'description' => 'Intertek, SGS, and TÜV Rheinland verified — engineered for international commercial architectural standards with quantifiable fire safety and fabrication performance.',
             'cards'       => [
                 [
@@ -2467,7 +2477,7 @@ SVG;
             'image_alt'   => '3D technical cross-section render of aluminum honeycomb composite panel ALU-HC-5000 with hexagonal core foil bonded between AA3003 alloy skins.',
             'video_label' => 'Core Cutaway // 3D BIM LOD-400',
             'eyebrow'     => 'The Product',
-            'title'       => 'What is a Honeycomb Composite Panel?',
+            'title'       => 'What are Hexagonal Honeycomb Composite Panels?',
             'description' => 'Aerospace-derived hexagonal foil core is continuously roll-bonded between coil-coated aluminum skins with DuPont polyurethane hot-melt, producing an ultra-flat, ultra-light sandwich panel that outperforms solid plate on rigidity, acoustics, and fire behavior.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Facing Alloy Grade', 'text' => 'AA3003-H24 high tensile standard / AA5052-H32 marine coastal anti-corrosion.'],
@@ -2478,7 +2488,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Honeycomb Panels?',
+            'title'       => 'Why Choose Our Hexagonal Honeycomb Composite Panels?',
             'description' => 'Certified by TÜV Rheinland, SGS, and Intertek — validated for high-amplitude wind turbulence, typhoon zones, and stringent commercial facade codes.',
             'cards'       => [
                 [
@@ -2759,7 +2769,7 @@ SVG;
             'image_alt'   => 'Macro cutaway studio photograph of aluminum corrugated core panel showing top aluminum skin, internal continuous sinusoidal wave core, and bottom backing skin.',
             'video_label' => 'Core Cutaway // Sinusoidal Flute Detail',
             'eyebrow'     => 'The Product',
-            'title'       => 'What are Corrugated Core Composite Panels?',
+            'title'       => 'What are Corrugated Core Aluminum Composite Panels?',
             'description' => 'Corrugated Core Aluminum Composite Panels (ACCP) are advanced architectural sandwich panels comprising two pre-finished aluminum facing sheets bonded to an internal sinusoidal corrugated wave aluminum core. Unlike traditional composite panels with mineral-filled polymer cores, the engineered wave core creates structural depth and continuous directional support—behaving like an infinite series of micro I-beams. This achieves exceptional flexural strength, high-span rigidity, and non-combustible fire safety at a fraction of the mass of solid metal plate.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Top & Bottom Metal Facings', 'text' => 'High-grade architectural AA3003-H14 or AA5052-H32 alloy skins (0.5mm – 1.0mm) factory-finished in multi-coat PVDF, FEVE, or specialized architectural textures.'],
@@ -2770,7 +2780,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Corrugated Core Panels?',
+            'title'       => 'Why Choose Our Corrugated Core Aluminum Composite Panels?',
             'description' => 'Combining the structural efficiency of corrugated geometry with the durability and lightness of architectural aluminum for landmark building projects.',
             'cards'       => [
                 [
@@ -3045,7 +3055,7 @@ SVG;
             'image_alt'   => '3D suspended ceiling carrier cutaway showing concealed grid and acoustic tile assembly.',
             'video_label' => '3D Suspended Ceiling Carrier Cutaway',
             'eyebrow'     => 'The Product',
-            'title'       => 'What is an Architectural Metal Ceiling System?',
+            'title'       => 'What are Architectural Metal Ceiling Systems?',
             'description' => 'A fully modular suspended ceiling platform combining acoustic baffles, concealed clip-in tiles, linear planks and open-cell grilles on one precision substructure — engineered for zero-deflection spans up to 3,600mm with factory-punched cutouts for HVAC diffusers and recessed luminaires.',
             'features'    => [
                 ['icon' => 'grid_4x4', 'title' => 'System Typology', 'text' => 'Acoustic baffles / concealed clip-in / linear plank strip / open-cell grille formats.'],
@@ -3056,7 +3066,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Metal Ceiling Systems?',
+            'title'       => 'Why Choose Our Architectural Metal Ceiling Systems?',
             'description' => 'Certified under ASTM C423 and ISO 354 reverberation chamber methodologies — engineered to minimize flutter echo in large-volume public spaces while satisfying seismic and fire codes.',
             'cards'       => [
                 [
@@ -3297,7 +3307,7 @@ SVG;
             'image_alt'   => 'Extruded 6063-T6 aluminum S-blade profile cutaway showing internal drainage water-trap pocket and dual-rib stiffeners.',
             'video_label' => 'LOD 400 Parametric Blade Cut',
             'eyebrow'     => 'The Product',
-            'title'       => 'What is an Architectural Solar Control System?',
+            'title'       => 'What are Architectural Solar Control Louvers?',
             'description' => 'A curtain wall transom-integrated louver platform with continuous ribbon sub-frame and 100% water penetration defense. Fully concealed fastening brackets eliminate external bolt heads while accommodating high thermal expansion in dynamic tall envelopes.',
             'features'    => [
                 ['icon' => 'straighten', 'title' => 'Blade Profile Widths', 'text' => '75mm ribbon flute / 100mm S-curved / 150mm S-curved severe rain / 200mm aerofoil double-chamber.'],
@@ -3308,7 +3318,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Solar Control Louvers?',
+            'title'       => 'Why Choose Our Architectural Solar Control Louvers?',
             'description' => 'Tested and validated in certified climatic wind tunnel facilities under simultaneous gale-force wind vectors and simulated torrential rain.',
             'cards'       => [
                 [
@@ -3548,7 +3558,7 @@ SVG;
             'image_alt'   => 'Macro close-up of 4mm aluminum screen with laser cut clean edge and robotic seamless fillet TIG welds in champagne bronze.',
             'video_label' => '3D Geometry Verified // CNC Edge Detail',
             'eyebrow'     => 'The Product',
-            'title'       => 'What are Laser-Cut Architectural Screens?',
+            'title'       => 'What are Laser-Cut & Welded Architectural Screens?',
             'description' => 'Unlike static planar louvers, the ALU-GR-2000 multi-layer Mashrabiya acts as an active visual barrier and passive thermal shield. During zenith solar noon (75°+), 4mm-depth structural ribs block 88% of thermal infrared irradiance while maintaining uninterrupted outward sightlines.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Structural Alloy Matrix', 'text' => 'AA5052-H32 marine high-yield / AA6063-T6 extruded chassis / AA3003-H14 standard sheet.'],
@@ -3559,7 +3569,7 @@ SVG;
         ],
         'advantages' => [
             'eyebrow'     => 'Key Advantages',
-            'title'       => 'Why Choose Our Architectural Screens?',
+            'title'       => 'Why Choose Our Laser-Cut & Welded Architectural Screens?',
             'description' => 'Computational microclimate engineering validation based on ASHRAE 90.1, EN 1991-1-4 boundary wind tunnel models, and solar radiation ray-tracing simulations.',
             'cards'       => [
                 [
@@ -3780,7 +3790,7 @@ SVG;
     return [
         'hero' => [
             'bg_image'       => '/wp-content/uploads/roll-coated-panels-hero.jpg',
-            'title'          => 'Roll-Coated Architectural<br>Aluminum Panels',
+            'title'          => 'Roll-Coated<br>Aluminum Panels',
             'subtitle'       => 'Factory Pre-Finished Surfaces • Superior Color Consistency • High-Performance Coating Protection',
             'description'    => 'Premium pre-finished solid aluminum panels manufactured with automated continuous roller coating lines. Delivering microscopic film uniformity, zero orange peel, batch-to-batch color consistency, and extreme weatherability for exterior curtain walls, ventilated rainscreens, interior cladding, and metal ceilings.',
             'primary_label'  => 'Request a Quote',

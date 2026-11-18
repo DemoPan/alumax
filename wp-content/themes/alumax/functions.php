@@ -404,6 +404,74 @@ function alumax_product_archive_per_page($query) {
 
 add_action('pre_get_posts', 'alumax_product_archive_per_page');
 
+function alumax_document_title_parts($title) {
+    $title['site'] = 'ALUMAX';
+    return $title;
+}
+add_filter('document_title_parts', 'alumax_document_title_parts');
+
+function alumax_seo_meta() {
+    $desc = '';
+    $title = wp_get_document_title();
+    $url = '';
+    $image = '';
+
+    if (is_singular('product')) {
+        $post = get_queried_object();
+        if ($post) {
+            $desc = !empty($post->post_excerpt) ? $post->post_excerpt : '';
+            if ($desc === '') {
+                $hero = alumax_product_page_section('hero', $post->ID);
+                $desc = $hero['description'] ?? '';
+            }
+            $url = get_permalink($post);
+            $thumb = get_the_post_thumbnail_url($post, 'full');
+            if ($thumb) {
+                $image = $thumb;
+            } else {
+                $hero = alumax_product_page_section('hero', $post->ID);
+                $image = !empty($hero['bg_image']) ? $hero['bg_image'] : '';
+            }
+        }
+    } elseif (is_front_page()) {
+        $desc = get_bloginfo('description') ?: 'ALUMAX – Architectural Metal Solutions, engineered facade panels, louvers, ceilings, and cladding systems.';
+        $url = home_url('/');
+    } elseif (is_post_type_archive('product')) {
+        $pa = get_option('alumax_pa_options', []);
+        $desc = !empty($pa['hero_subtitle']) ? $pa['hero_subtitle'] : 'Engineered Architectural Metal & Facade Cladding Systems. Precision-manufactured aluminum alloys and steel building envelopes.';
+        $url = get_post_type_archive_link('product');
+    } elseif (is_singular()) {
+        $post = get_queried_object();
+        if ($post) {
+            $desc = !empty($post->post_excerpt) ? $post->post_excerpt : wp_trim_words(wp_strip_all_tags($post->post_content), 30);
+            $url = get_permalink($post);
+            $thumb = get_the_post_thumbnail_url($post, 'full');
+            if ($thumb) {
+                $image = $thumb;
+            }
+        }
+    }
+
+    $desc = esc_attr(trim(preg_replace('/\s+/', ' ', wp_strip_all_tags($desc))));
+    if ($desc !== '') {
+        echo '<meta name="description" content="' . $desc . '">' . "\n";
+        echo '<meta property="og:description" content="' . $desc . '">' . "\n";
+    }
+    echo '<meta property="og:title" content="' . esc_attr($title) . '">' . "\n";
+    if ($url !== '') {
+        echo '<meta property="og:url" content="' . esc_url($url) . '">' . "\n";
+    }
+    echo '<meta property="og:type" content="' . (is_singular() ? 'article' : 'website') . '">' . "\n";
+    echo '<meta property="og:site_name" content="ALUMAX">' . "\n";
+    if ($image !== '') {
+        echo '<meta property="og:image" content="' . esc_url($image) . '">' . "\n";
+        echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    } else {
+        echo '<meta name="twitter:card" content="summary">' . "\n";
+    }
+}
+add_action('wp_head', 'alumax_seo_meta', 2);
+
 require get_template_directory() . '/inc/home-settings.php';
 require get_template_directory() . '/inc/settings-page.php';
 require get_template_directory() . '/inc/site-settings.php';

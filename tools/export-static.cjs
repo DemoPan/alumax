@@ -143,6 +143,34 @@ async function crawlPage(urlPath) {
     if (savedPages >= MAX_PAGES) break;
     await crawlPage(pageQueue.shift());
   }
+
+  const REDIRECTS = {
+    '/products/roller-coated-aluminum-strip-master-coils/': '/products/roll-coated-aluminum-panels/',
+    '/products/corrugated-core-aluminum-composite-panel/': '/products/corrugated-core-aluminum-composite-panels/',
+    '/products/hexagonal-honeycomb-composite-panel/': '/products/hexagonal-honeycomb-composite-panels/',
+    '/products/aluminum-composite-panels/': '/products/fire-retardant-aluminum-composite-panels/',
+    '/products/alu-gr-2000-laser-cut-welded-architectural-screens/': '/products/laser-cut-welded-architectural-screens/',
+    '/products/architectural-solar-control/': '/products/architectural-solar-control-louvers/',
+  };
+
+  for (const [fromPath, toPath] of Object.entries(REDIRECTS)) {
+    const redirectHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=${toPath}">
+  <link rel="canonical" href="${toPath}">
+  <title>Redirecting to ${toPath}...</title>
+</head>
+<body>
+  <p>Redirecting to <a href="${toPath}">${toPath}</a>...</p>
+</body>
+</html>
+`;
+    write(fromPath + 'index.html', redirectHtml);
+    console.log(`redirect: ${fromPath} -> ${toPath}`);
+  }
+
   console.log(`pages: ${savedPages}, assets: ${savedAssets}`);
   if (failures.length) {
     console.log('failures:');
