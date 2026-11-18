@@ -27,10 +27,11 @@ $alumax_p = $args;
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-<?php echo count($alumax_p['projects']) >= 4 ? '4' : '3'; ?> gap-6">
       <?php foreach ($alumax_p['projects'] as $alumax_proj) : ?>
-        <div class="flex flex-col bg-surface-container-lowest shadow-sm group">
+        <?php $card_has_url = !empty($alumax_proj['url']); ?>
+        <<?php echo $card_has_url ? 'a href="' . esc_url($alumax_proj['url']) . '"' : 'div'; ?> class="flex flex-col bg-surface-container-lowest shadow-sm group hover:shadow-md transition-shadow">
           <div class="h-56 overflow-hidden bg-surface-container-high relative">
             <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              alt="<?php echo esc_attr($alumax_proj['image_alt']); ?>"
+              alt="<?php echo esc_attr($alumax_proj['image_alt'] ?? $alumax_proj['title']); ?>"
               src="<?php echo esc_url($alumax_proj['image']); ?>">
             <?php if (!empty($alumax_proj['location'])) : ?>
               <div class="absolute bottom-3 left-3 px-2 py-1 bg-primary-container/90 text-primary-fixed font-label text-[10px]">
@@ -38,14 +39,14 @@ $alumax_p = $args;
             <?php endif; ?>
           </div>
           <div class="p-5 flex flex-col flex-1">
-            <h3 class="font-headline font-bold text-base text-on-surface"><?php echo esc_html($alumax_proj['title']); ?></h3>
+            <h3 class="font-headline font-bold text-base text-on-surface group-hover:text-primary transition-colors"><?php echo esc_html($alumax_proj['title']); ?></h3>
             <span class="font-body text-xs text-secondary font-medium mt-1"><?php echo esc_html($alumax_proj['product']); ?></span>
             <div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between font-label text-[11px] text-on-surface-variant">
               <span><?php echo esc_html($alumax_proj['area']); ?></span>
               <span><?php echo esc_html($alumax_proj['year']); ?></span>
             </div>
           </div>
-        </div>
+        </<?php echo $card_has_url ? 'a' : 'div'; ?>>
       <?php endforeach; ?>
     </div>
   </div>
