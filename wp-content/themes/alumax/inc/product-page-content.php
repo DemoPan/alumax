@@ -1453,7 +1453,7 @@ SVG;
 
     return [
         'hero' => [
-            'bg_image'       => '/wp-content/uploads/alumax-img-25c504e614.jpg',
+            'bg_image'       => '/wp-content/uploads/pre-insulated-wall-panels-hero-building.jpg',
             'title'          => 'Pre-Insulated Integrated<br>Wall Panels',
             'subtitle'       => 'Continuous Structural Insulation. Monumental Energy Efficiency. Class A Fire Rated.',
             'description'    => 'All-in-one prefabricated building envelope solution combining precision fluorocarbon metal facing with high-density non-combustible insulation core (PIR / PUR / Mineral Wool), eliminating cold bridges while drastically reducing on-site construction schedules.',
@@ -1470,8 +1470,8 @@ SVG;
             ],
         ],
         'intro' => [
-            'image'       => '/wp-content/uploads/alumax-img-48d7a7ad36.jpg',
-            'image_alt'   => 'Engineering cutaway of pre-insulated architectural metal cladding panel revealing continuous insulation core bonded to fluorocarbon coated alloy skin.',
+            'image'       => '/wp-content/uploads/pre-insulated-wall-panels-detail.jpg',
+            'image_alt'   => 'Architectural facade detail of pre-insulated integrated metal wall panels showing clean joints and crisp metallic finish.',
             'video_label' => 'Watch Thermal Break Video',
             'eyebrow'     => 'The Product',
             'title'       => 'What are Pre-Insulated Wall Panels?',
@@ -1600,8 +1600,8 @@ SVG;
                     'text'      => 'Longitudinal extruded profile ribs providing dynamic light reflection while substantially boosting span deflection stiffness.',
                 ],
                 [
-                    'image'     => '/wp-content/uploads/alumax-img-ce4a4caa31.jpg',
-                    'image_alt' => 'Micro-fluted corrugated architectural facade panel in champagne bronze metallic finish.',
+                    'image'     => '/wp-content/uploads/pre-insulated-option-micro-fluted-wave.jpg',
+                    'image_alt' => 'Micro-fluted wave architectural metal wall panel surface profile in metallic champagne bronze finish.',
                     'contain'   => '',
                     'title'     => 'Micro-Fluted Wave (MF-03)',
                     'text'      => 'Subtle sinusoidal surface texture that masks structural oil-canning and micro-deflections over ultra-long unbraced spans up to 10 meters.',
