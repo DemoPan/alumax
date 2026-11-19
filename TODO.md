@@ -25,11 +25,10 @@
 
 ## 一、方案 A 动静分离与双环境核心路线
 
-- [ ] **1. 域名解析与 SSL 证书**
-  - 在域名商将 `aluviona.com` 与 `www.aluviona.com` 解析到 FTP 服务器 IP（绑定生产环境静态空间）
-  - 保留 `alumax.mpan.org` 的 CNAME 解析指向 `demopan.github.io`（测试环境 GitHub Pages 托管）
-  - 将 `cms.aluviona.com` 解析到 WordPress 后端服务器 IP
-  - 各环境均开启 SSL 证书（强制 HTTPS）
+- [x] **1. 域名解析与 SSL 证书（前台部分已完成）**
+  - [x] 在域名商将 `aluviona.com` 与 `www.aluviona.com` 解析到 FTP 服务器 IP（已生效，HTTP 200 / HTTPS 正常）
+  - [x] 保留 `alumax.mpan.org` 的 CNAME 解析指向 `demopan.github.io`（测试环境 GitHub Pages 托管）
+  - [ ] 后续：将 `cms.aluviona.com` 解析到 WordPress 后端服务器 IP 并开启 SSL
 - [ ] **2. WordPress 后端服务搭建与数据迁移**
   - 在后端服务器部署 WordPress 环境（PHP 8.1+ / MySQL 8.0）
   - 将本地 Studio 的数据导出并导入线上 MySQL（`studio export --mode db`）
