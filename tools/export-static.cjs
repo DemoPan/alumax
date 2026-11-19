@@ -148,7 +148,7 @@ async function crawlPage(urlPath) {
     '/products/roller-coated-aluminum-strip-master-coils/': '/products/roll-coated-aluminum-panels/',
     '/products/corrugated-core-aluminum-composite-panel/': '/products/corrugated-core-aluminum-composite-panels/',
     '/products/hexagonal-honeycomb-composite-panel/': '/products/hexagonal-honeycomb-composite-panels/',
-    '/products/aluminum-composite-panels/': '/products/fire-retardant-aluminum-composite-panels/',
+    '/products/fire-retardant-aluminum-composite-panels/': '/products/aluminum-composite-panels/',
     '/products/alu-gr-2000-laser-cut-welded-architectural-screens/': '/products/laser-cut-welded-architectural-screens/',
     '/products/architectural-solar-control/': '/products/architectural-solar-control-louvers/',
   };
