@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 $alumax_card_img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: alumax_product_fallback_image();
-$alumax_card_specs = alumax_product_specs(get_the_ID());
+$alumax_card_specs = array_slice(alumax_product_specs(get_the_ID()), 0, 4);
 $alumax_card_terms = get_the_terms(get_the_ID(), 'product_category');
 $alumax_card_cats = ($alumax_card_terms && !is_wp_error($alumax_card_terms)) ? implode(' ', wp_list_pluck($alumax_card_terms, 'slug')) : '';
 $alumax_card_specs_text = '';
