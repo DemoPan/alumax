@@ -229,8 +229,8 @@ function alumax_inquiry_details_box($post) {
  * ------------------------------------------------------------------------- */
 
 function alumax_send_inquiry_notification($post_id) {
-    $to = defined('ALUMAX_INQUIRY_NOTIFY_EMAIL') && ALUMAX_INQUIRY_NOTIFY_EMAIL
-        ? ALUMAX_INQUIRY_NOTIFY_EMAIL
+    $to = defined('ALUVIONA_INQUIRY_NOTIFY_EMAIL') && ALUVIONA_INQUIRY_NOTIFY_EMAIL
+        ? ALUVIONA_INQUIRY_NOTIFY_EMAIL
         : get_option('admin_email');
 
     if (empty($to)) {
@@ -320,15 +320,15 @@ HTML;
  * SMTP 邮件发信支持（可直接在 wp-config.php 定义常量，或通过 SMTP 插件覆盖）
  * ------------------------------------------------------------------------- */
 add_action('phpmailer_init', function ($phpmailer) {
-    if (defined('ALUMAX_SMTP_HOST') && defined('ALUMAX_SMTP_USER') && defined('ALUMAX_SMTP_PASS')) {
+    if (defined('ALUVIONA_SMTP_HOST') && defined('ALUVIONA_SMTP_USER') && defined('ALUVIONA_SMTP_PASS')) {
         $phpmailer->isSMTP();
-        $phpmailer->Host       = ALUMAX_SMTP_HOST;
+        $phpmailer->Host       = ALUVIONA_SMTP_HOST;
         $phpmailer->SMTPAuth   = true;
-        $phpmailer->Port       = defined('ALUMAX_SMTP_PORT') ? ALUMAX_SMTP_PORT : 465;
-        $phpmailer->Username   = ALUMAX_SMTP_USER;
-        $phpmailer->Password   = ALUMAX_SMTP_PASS;
-        $phpmailer->SMTPSecure = defined('ALUMAX_SMTP_SECURE') ? ALUMAX_SMTP_SECURE : 'ssl';
-        $phpmailer->From       = defined('ALUMAX_SMTP_FROM') ? ALUMAX_SMTP_FROM : ALUMAX_SMTP_USER;
-        $phpmailer->FromName   = defined('ALUMAX_SMTP_FROM_NAME') ? ALUMAX_SMTP_FROM_NAME : 'Aluviona Website';
+        $phpmailer->Port       = defined('ALUVIONA_SMTP_PORT') ? ALUVIONA_SMTP_PORT : 465;
+        $phpmailer->Username   = ALUVIONA_SMTP_USER;
+        $phpmailer->Password   = ALUVIONA_SMTP_PASS;
+        $phpmailer->SMTPSecure = defined('ALUVIONA_SMTP_SECURE') ? ALUVIONA_SMTP_SECURE : 'ssl';
+        $phpmailer->From       = defined('ALUVIONA_SMTP_FROM') ? ALUVIONA_SMTP_FROM : ALUVIONA_SMTP_USER;
+        $phpmailer->FromName   = defined('ALUVIONA_SMTP_FROM_NAME') ? ALUVIONA_SMTP_FROM_NAME : 'Aluviona Website';
     }
 });

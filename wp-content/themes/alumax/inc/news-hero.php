@@ -7,10 +7,10 @@ if (!defined('ABSPATH')) {
 function alumax_news_hero_defaults() {
     return [
         'slide1_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7p_99scQ9WUqoT-ZE4HSj_yxMCN1qJ__EYxDmEVQYVltiNWtJ7rwJ8fYGR9ogtTc-dMfHNvzRMTBJ50kL4hwH_MsxyXkQA9igNdU78vpFeJ4X8tTv1u4nV5n9__w3MJppyMSTHHccwil1A-jNDxILd1_GPvUDNzUQiz712EKiToK4ZrEgkrVD_XpfDhNc9psZSDc_1migt5_GUV-99LNq0J8ME7Ba9cnU_D6foUn0QbM3YRccuofM',
-        'slide1_kicker' => 'ALUMAX Dispatch // World Trade Centre Dubai',
+        'slide1_kicker' => 'ALUVIONA Dispatch // World Trade Centre Dubai',
         'slide1_badge' => 'Global Exhibition',
-        'slide1_title' => 'ALUMAX Showcases Next-Gen Dynamic Solar Louvers and Ultra-Flat Solid Cladding at The Big 5 Dubai 2025',
-        'slide1_description' => 'Unveiled in Hall 2, ALUMAX\'s motorized solar blade arrays demonstrated autonomous solar tracking synchronized directly with BACnet & KNX Building Management Systems under simulated high-temperature desert conditions.',
+        'slide1_title' => 'ALUVIONA Showcases Next-Gen Dynamic Solar Louvers and Ultra-Flat Solid Cladding at The Big 5 Dubai 2025',
+        'slide1_description' => 'Unveiled in Hall 2, ALUVIONA\'s motorized solar blade arrays demonstrated autonomous solar tracking synchronized directly with BACnet & KNX Building Management Systems under simulated high-temperature desert conditions.',
         'slide1_location' => 'Dubai World Trade Centre · Stand Z2-H38',
         'slide1_tab' => 'The Big 5 Dubai 2025',
         'slide1_post' => 0,
@@ -25,7 +25,7 @@ function alumax_news_hero_defaults() {
         'slide3_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCyqEWVwyBPFRoN408trk_8DisWjnwgXpqAAmhQGI6Erj0BWWNlz4w8vv-c1iYQML84oD20H8H_O1TegCu3I5L_BxHF4twhDGp5q0_Dv1A7UxuRIRcGAuz0jZJgHHsyyPg92ElDdEc6Pmp3ChuXWl6Vjk2yHZMSUuoN4UNuwbQMaix3D4R1D7aWPboT5gJy6QG761L2Ety2MGtrj-UGopfwD2P30vz6ogk95jn2EKZrthi2EWdDEUVH',
         'slide3_kicker' => 'European Logistics // Rotterdam Port, NL',
         'slide3_badge' => 'Global Expansion',
-        'slide3_title' => 'Expanding European Distribution: ALUMAX Opens New Logistics & Rapid CNC Hub in Rotterdam',
+        'slide3_title' => 'Expanding European Distribution: ALUVIONA Opens New Logistics & Rapid CNC Hub in Rotterdam',
         'slide3_description' => 'Equipped with rapid-milling CNC sample fabrication and buffered architectural coils, slashing lead times for North European commercial building envelope tenders and sample mock-ups.',
         'slide3_location' => 'Port of Rotterdam · Hub Terminal 2',
         'slide3_tab' => 'Rotterdam Logistics Hub',

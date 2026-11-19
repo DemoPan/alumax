@@ -15,7 +15,7 @@ get_header();
             <div class="flex items-center gap-3">
               <span
                 class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
-              <span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest">ALUMAX
+              <span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest">ALUVIONA
                 Communications // Bulletin v24.9</span>
               <span class="text-on-tertiary-container text-xs">/</span>
               <span class="font-label-sm text-label-sm text-on-primary-container">Updated Daily from Foshan &amp;
@@ -68,7 +68,7 @@ get_header();
           <!-- Media Column -->
           <div class="lg:col-span-7 relative min-h-[420px] lg:min-h-[580px] bg-primary-container overflow-hidden group">
             <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              data-alt="Futuristic dual-story architectural trade exhibition booth design for ALUMAX at Dubai World Trade Center with massive illuminated kinetic gold and bronze facade panels, ultra-flat solid aluminum claddings, realistic architectural visitors walking, professional warm atmospheric lighting, and high-tech corporate signage."
+              data-alt="Futuristic dual-story architectural trade exhibition booth design for ALUVIONA at Dubai World Trade Center with massive illuminated kinetic gold and bronze facade panels, ultra-flat solid aluminum claddings, realistic architectural visitors walking, professional warm atmospheric lighting, and high-tech corporate signage."
               style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7p_99scQ9WUqoT-ZE4HSj_yxMCN1qJ__EYxDmEVQYVltiNWtJ7rwJ8fYGR9ogtTc-dMfHNvzRMTBJ50kL4hwH_MsxyXkQA9igNdU78vpFeJ4X8tTv1u4nV5n9__w3MJppyMSTHHccwil1A-jNDxILd1_GPvUDNzUQiz712EKiToK4ZrEgkrVD_XpfDhNc9psZSDc_1migt5_GUV-99LNq0J8ME7Ba9cnU_D6foUn0QbM3YRccuofM')">
             </div>
             <div
@@ -111,10 +111,10 @@ get_header();
               </div>
               <h2
                 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight mb-4 hover:text-secondary transition-colors cursor-pointer">
-                ALUMAX Showcases Next-Gen Dynamic Solar Louvers and Ultra-Flat Solid Cladding at The Big 5 Dubai 2025
+                ALUVIONA Showcases Next-Gen Dynamic Solar Louvers and Ultra-Flat Solid Cladding at The Big 5 Dubai 2025
               </h2>
               <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
-                Unveiled in Hall 2, ALUMAX's motorized solar blade arrays demonstrated autonomous solar tracking
+                Unveiled in Hall 2, ALUVIONA's motorized solar blade arrays demonstrated autonomous solar tracking
                 synchronized directly with BACnet &amp; KNX Building Management Systems. The booth exhibits
                 custom-engineered finishes designed specifically to withstand harsh GCC ultraviolet degradation and fine
                 grit sand abrasion.

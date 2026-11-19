@@ -88,7 +88,7 @@ while (have_posts()) : the_post();
                 </div>
                 <div>
                   <p class="font-label-sm text-label-sm text-outline uppercase">Published By</p>
-                  <p class="font-body-sm text-body-sm font-semibold text-on-surface">ALUMAX Global Engineering Media
+                  <p class="font-body-sm text-body-sm font-semibold text-on-surface">ALUVIONA Global Engineering Media
                     Desk</p>
                 </div>
               </div>
@@ -148,7 +148,7 @@ while (have_posts()) : the_post();
               <div class="relative w-full shadow-md overflow-hidden bg-primary-container">
                 <img class="w-full h-[460px] object-cover transition-transform duration-700 hover:scale-[1.02]"
                   alt="<?php echo esc_attr(get_the_title()); ?>"
-                  data-alt="Futuristic multi-level architectural pavilion exhibition stand for ALUMAX at Dubai World Trade Centre. The booth showcases colossal curved gold and dark champagne aluminum composite facade cassettes, kinetic automated solar louvers pivoting seamlessly under dramatic spotlighting, sleek minimalist reception counters, and international architects inspecting precision milled mockups in high-end exhibition lighting."
+                  data-alt="Futuristic multi-level architectural pavilion exhibition stand for ALUVIONA at Dubai World Trade Centre. The booth showcases colossal curved gold and dark champagne aluminum composite facade cassettes, kinetic automated solar louvers pivoting seamlessly under dramatic spotlighting, sleek minimalist reception counters, and international architects inspecting precision milled mockups in high-end exhibition lighting."
                   src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'large') ?: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZFrO4fmzFRzKCz_kLA1gAwwxtW4qWC52J88PqmyaZZUve3GU7mh9e3T9g7fPFDHMD2IdmhyMCGZjrI0cT3QWb4NFG_eTAMz_WWhxA87abVfyRPwPPmMFn6fSr_FHZsBQCpxeOJnBTB7Km2HxR9if0gZIT8of9KgmhcFCNfsvhdEnd85iRsnxkR0PU2bxWKD7Y5JwITs8paAj4_HTSWEtwMEFEhXDqW3HXVdVJABdKq-vv47vhPeKm'); ?>" />
                 <div
                   class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary-container via-primary-container/80 to-transparent p-6 text-on-primary">
@@ -157,7 +157,7 @@ while (have_posts()) : the_post();
                       <span
                         class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider block">Stand
                         SS2-D41 Architectural Mockup</span>
-                      <p class="font-headline-sm text-headline-sm font-semibold text-on-primary mt-1">ALUMAX Pavilion
+                      <p class="font-headline-sm text-headline-sm font-semibold text-on-primary mt-1">ALUVIONA Pavilion
                         Structure · DWTC Sheikh Saeed Hall 2</p>
                     </div>
                     <div
@@ -215,7 +215,7 @@ while (have_posts()) : the_post();
                   <div>
                     <span class="font-label-sm text-label-sm text-on-primary-container uppercase block">On-Site
                       Team</span>
-                    <p class="font-body-md text-body-md font-semibold text-on-primary mt-1">ALUMAX Middle East Desk</p>
+                    <p class="font-body-md text-body-md font-semibold text-on-primary mt-1">ALUVIONA Middle East Desk</p>
                     <p class="font-body-sm text-body-sm text-on-primary-container">Structural &amp; Export Engineers</p>
                   </div>
                 </div>

@@ -22,7 +22,7 @@ function alumax_case_defaults() {
             ['label' => 'Client / Operator', 'value' => 'KAFD Development MC'],
             ['label' => 'Building Height', 'value' => '42 Floors // 186.4 m'],
             ['label' => 'Facade Consultant', 'value' => 'Global Envelopes Zurich'],
-            ['label' => 'ALUMAX Scope', 'value' => 'Design, Fabricate & Export'],
+            ['label' => 'ALUVIONA Scope', 'value' => 'Design, Fabricate & Export'],
             ['label' => 'Delivery Mode', 'value' => 'Modular Sea Crate Hoist-Ready'],
         ],
         'metrics' => [
@@ -74,7 +74,7 @@ function alumax_case_defaults() {
                 ],
                 [
                     'title' => 'Kinetic Dual-Skin BMS Automation Integration',
-                    'text'  => 'ALUMAX synchronized motorized kinetic louvers into KAFD\'s central automation bus. Intelligent sensors dynamically trim aerofoil blade deflection in 0.5° increments based on solar azimuth, cutting peak solar thermal gain by 34.2%.',
+                    'text'  => 'ALUVIONA synchronized motorized kinetic louvers into KAFD\'s central automation bus. Intelligent sensors dynamically trim aerofoil blade deflection in 0.5° increments based on solar azimuth, cutting peak solar thermal gain by 34.2%.',
                 ],
                 [
                     'title' => 'Hyperbolic Sandstorm Abrasion & Micro-Scratch Resistance',

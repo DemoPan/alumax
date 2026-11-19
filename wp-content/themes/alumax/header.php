@@ -30,7 +30,7 @@ $nav_items = [
       class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-lg">
       <!-- Clean geometric logo only -->
       <div class="flex items-center">
-        <a aria-label="ALUMAX Home" class="flex items-center group" href="<?php echo esc_url(home_url('/')); ?>">
+        <a aria-label="ALUVIONA Home" class="flex items-center group" href="<?php echo esc_url(home_url('/')); ?>">
           <svg class="h-9 w-9 text-secondary-fixed transition-transform duration-300 group-hover:scale-105"
             fill="currentColor" viewBox="0 0 40 40">
             <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5">

@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
                       continue;
                   }
                   ?>
-              <a aria-label="<?php echo esc_attr('ALUMAX on ' . $social_label); ?>"
+              <a aria-label="<?php echo esc_attr('ALUVIONA on ' . $social_label); ?>"
                 class="w-10 h-10 rounded-lg bg-white/10 hover:bg-secondary border border-white/15 flex items-center justify-center text-white transition-all hover:scale-105 group"
                 href="<?php echo esc_url($social_url); ?>" title="<?php echo esc_attr($social_label); ?>">
                 <img src="<?php echo esc_url($social_image); ?>" alt="<?php echo esc_attr($social_label); ?>"

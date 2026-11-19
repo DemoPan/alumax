@@ -20,7 +20,7 @@ function alumax_about_defaults() {
         's1_eyebrow'   => '// SECTION 01',
         's1_eyebrow_sub' => 'Heritage & Manufacturing Realization',
         's1_title'     => 'Two Decades of Monumental Cladding & Structural Realization',
-        's1_narrative' => 'Founded with the foundational mission to close the gap between daring parametric architectural concepts and industrial-scale manufacturability, ALUMAX has grown from an artisan metallurgical workshop into one of the world\'s most capable envelope fabrication partners. Over 20+ years, our facade engineering studio has collaborated directly with benchmark global architectural practices—including Foster + Partners, Zaha Hadid Architects, and Skidmore, Owings & Merrill (SOM)—turning complex fluid hyperboloids, extreme wind-shear canopies, and blast-resistant assemblies into pristine, install-ready reality.',
+        's1_narrative' => 'Founded with the foundational mission to close the gap between daring parametric architectural concepts and industrial-scale manufacturability, ALUVIONA has grown from an artisan metallurgical workshop into one of the world\'s most capable envelope fabrication partners. Over 20+ years, our facade engineering studio has collaborated directly with benchmark global architectural practices—including Foster + Partners, Zaha Hadid Architects, and Skidmore, Owings & Merrill (SOM)—turning complex fluid hyperboloids, extreme wind-shear canopies, and blast-resistant assemblies into pristine, install-ready reality.',
         's1_video_image'   => $factory_image,
         's1_video_badge'   => 'PROD-LINE 03 // 5-Axis CNC Live Capture',
         's1_video_caption' => '4K UHD Factory Tour & Robotic Forming',
@@ -29,7 +29,7 @@ function alumax_about_defaults() {
         's2_eyebrow' => '// SECTION 02',
         's2_eyebrow_sub' => 'Evolution Timeline',
         's2_title'   => 'Two Decades of Innovation & Global Expansion',
-        's2_subtitle' => 'Chronological milestones tracking ALUMAX\'s progression from precision artisan workshops to global benchmark façade engineering.',
+        's2_subtitle' => 'Chronological milestones tracking ALUVIONA\'s progression from precision artisan workshops to global benchmark façade engineering.',
         // Section 03 Machinery
         's3_eyebrow' => '// SECTION 03',
         's3_eyebrow_sub' => 'Heavy Metallurgy Infrastructure',

@@ -325,7 +325,7 @@ SVG;
         'control' => [
             'eyebrow'     => 'Intelligent Control',
             'title'       => 'Flexible & Intelligent Operation',
-            'description' => 'With integrated environmental sensors and intelligent controllers, the ALUMAX motorized louver system automatically modulates blade angles based on real-time solar azimuth, local wind velocity, temperature, and tenant preferences—creating a low-energy, highly comfortable indoor climate.',
+            'description' => 'With integrated environmental sensors and intelligent controllers, the ALUVIONA motorized louver system automatically modulates blade angles based on real-time solar azimuth, local wind velocity, temperature, and tenant preferences—creating a low-energy, highly comfortable indoor climate.',
             'cta_label'   => '',
             'cta_url'     => '#rfq-section',
             'modes'       => [
@@ -765,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setFont(true);
     doc.setFontSize(9);
     doc.setTextColor(255, 221, 181);
-    doc.text('ALUMAX ARCHITECTURAL', margin, 10);
+    doc.text('ALUVIONA ARCHITECTURAL', margin, 10);
     doc.setFontSize(16);
     doc.setTextColor(255, 255, 255);
     setFont(true, DATA.product);
@@ -854,7 +854,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setFont(false);
       doc.setFontSize(7);
       doc.setTextColor(150, 153, 158);
-      doc.text('© ' + new Date().getFullYear() + ' ALUMAX Architectural Envelopes Co., Ltd. · export@alumax-facade.com', margin, 292);
+      doc.text('© ' + new Date().getFullYear() + ' ALUVIONA Architectural Envelopes Co., Ltd. · export@aluviona.com', margin, 292);
       doc.text('Page ' + i + ' / ' + pageCount, pageW - margin, 292, { align: 'right' });
     }
     return doc;
@@ -1492,7 +1492,7 @@ SVG;
             'video_label' => 'Watch Thermal Break Video',
             'eyebrow'     => 'The Product',
             'title'       => 'What are Pre-Insulated Integrated Wall Panels?',
-            'description' => 'Traditional multi-layer field-assembled envelopes rely on sequential site installation of mineral insulation, vapor barriers, air cavity substructures, and exterior metal rainscreens. ALUMAX Series PI-800 transforms this labor-intensive workflow into a factory-bonded, monolithic insulated composite panel engineered to withstand extreme environmental wind loads and thermal cycles.',
+            'description' => 'Traditional multi-layer field-assembled envelopes rely on sequential site installation of mineral insulation, vapor barriers, air cavity substructures, and exterior metal rainscreens. ALUVIONA Series PI-800 transforms this labor-intensive workflow into a factory-bonded, monolithic insulated composite panel engineered to withstand extreme environmental wind loads and thermal cycles.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Exterior Metal Skin', 'text' => 'PVDF / FEVE AA3003-H14 aluminum (0.8–1.5mm) or high-tensile galvanized steel (0.5–1.0mm).'],
                 ['icon' => 'hvac', 'title' => 'Core Insulation Layer', 'text' => 'Continuous PUR / PIR foam injection or hydrophobic structural rock wool (45–120 kg/m³).'],
@@ -2003,7 +2003,7 @@ SVG;
             'video_label' => 'Exploded Cassette Assembly & 3D BIM Viewer',
             'eyebrow'     => 'The Product',
             'title'       => 'What are Solid Aluminum Cladding Panels?',
-            'description' => 'ALUMAX solid aluminum cladding panels are CNC brake-formed from single-sheet monolithic alloy plate — completely eliminating composite core materials, combustible bonding adhesives, and delamination risks. Engineered for exterior rainscreen facades, monumental soffits, column covers, entrance portals, and high-traffic interior public transit hubs, our solid cassettes deliver supreme optical flatness, Class A2 fire resistance, and full demountability for lifetime building maintenance.',
+            'description' => 'ALUVIONA solid aluminum cladding panels are CNC brake-formed from single-sheet monolithic alloy plate — completely eliminating composite core materials, combustible bonding adhesives, and delamination risks. Engineered for exterior rainscreen facades, monumental soffits, column covers, entrance portals, and high-traffic interior public transit hubs, our solid cassettes deliver supreme optical flatness, Class A2 fire resistance, and full demountability for lifetime building maintenance.',
             'features'    => [
                 ['icon' => 'layers', 'title' => 'Monolithic Alloy Substrates', 'text' => 'AA3003-H24 commercial standard and AA5052-H32 marine grade for severe coastal salt spray, compliant with ASTM B209M and EN 1396.'],
                 ['icon' => 'straighten', 'title' => 'Structural Calibers', 'text' => 'Available in 2.0mm (soffits & interiors), 2.5mm (standard facades), 3.0mm (high-wind towers), and 4.0mm (oversized monumental spans).'],
@@ -3387,7 +3387,7 @@ SVG;
             ],
         ],
         'advantages' => [
-            'eyebrow' => 'Why Alumax',
+            'eyebrow' => 'Why Aluviona',
             'title'   => 'Why Choose Our Architectural Solar Control Louvers?',
             'cards'   => [
                 [
@@ -4042,7 +4042,7 @@ SVG;
             'form_badge'   => '24H MILL RESPONSE',
             'submit_label' => 'Submit Specification RFQ & Request Swatch Deck',
             'bullets'      => [
-                ['icon' => 'mark_email_read', 'title' => 'Global Project Email', 'text' => 'export@alumax-facade.com — direct engineering channel.'],
+                ['icon' => 'mark_email_read', 'title' => 'Global Project Email', 'text' => 'export@aluviona.com — direct engineering channel.'],
                 ['icon' => 'alarm_on', 'title' => 'Typical Response Speed', 'text' => '< 4 hours across MENA, APAC & Europe zones.'],
                 ['icon' => 'flight_takeoff', 'title' => 'Physical Color Sample Box', 'text' => 'Complimentary DHL air express fan deck & fabricated sample panel (3–5 days).'],
             ],

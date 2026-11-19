@@ -13,7 +13,7 @@ function alumax_contact_defaults() {
     $defaults = [
         // Hero
         'hero_eyebrow'      => 'Global Façade Engineering Consultation',
-        'hero_title'        => 'Get in Touch with ALUMAX.',
+        'hero_title'        => 'Get in Touch with ALUVIONA.',
         'hero_title_accent' => 'Let\'s Build Something Remarkable.',
         'hero_desc'         => 'Connect with our global facade engineering team for technical consultations, custom specifications, structural takeoff, and sample logistics.',
         'hero_image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1XLmLasodi4t5eS1a8XRjjEdyLtPH4mzGF_IS2OCs06faN4UgzK5aHqfIuK8yKyFY409q7DiZKbpWYQcDFJZwSn6Aq9qooYeljdq4N6cnW3NUlO1CIMSlVaJeUejQf4rVQ78ZaAoqcobV7Stll9hCtIKGL2giU73Soc2B1YXBRM1Db7lNts0fZHUFAuY_c5eifdp4-L94hVaPWq185FrBd4F9q_TNCTNgSpUBalH_9J6Z963vPPIgclgQ',
@@ -34,7 +34,7 @@ function alumax_contact_defaults() {
         'form_submit'     => 'Submit Engineering Inquiry',
         // WhatsApp 悬浮按钮（全站右下角）
         'whatsapp_number'  => '+86 18930079759',
-        'whatsapp_message' => 'Hello ALUMAX, I would like to inquire about your facade systems.',
+        'whatsapp_message' => 'Hello ALUVIONA, I would like to inquire about your facade systems.',
         'whatsapp_qr'      => '',
     ];
 
@@ -55,7 +55,7 @@ function alumax_contact_defaults() {
     $rows = [
         ['icon' => 'location_on', 'label' => 'Address', 'line1' => 'No. 88, Industrial Avenue, Nanhai District, Foshan, Guangdong, China 528225', 'line2' => ''],
         ['icon' => 'call', 'label' => 'Phone & WhatsApp', 'line1' => '+86 757 8820 9000 · WhatsApp: +86 18930079759', 'line2' => 'Mon – Sat, 8:30 – 18:00 (GMT+8)'],
-        ['icon' => 'mail', 'label' => 'Email', 'line1' => 'export@alumax-facade.com / info@alumax.com', 'line2' => 'Formal engineering quote transmitted within 24 hours.'],
+        ['icon' => 'mail', 'label' => 'Email', 'line1' => 'export@aluviona.com / info@alumax.com', 'line2' => 'Formal engineering quote transmitted within 24 hours.'],
     ];
     foreach ($rows as $i => $row) {
         $n = $i + 1;

@@ -170,19 +170,19 @@ function alumax_ensure_legal_pages() {
             'Privacy Policy',
             '<p><em>Last updated: ' . gmdate('F j, Y') . '</em></p>
 <h2>1. Information We Collect</h2>
-<p>ALUMAX Architectural Envelopes Co., Ltd. ("ALUMAX", "we", "us") collects only the information you voluntarily submit through our inquiry and consultation forms, including your name, company, email address, phone number, and project specifications.</p>
+<p>ALUVIONA Architectural Envelopes Co., Ltd. ("ALUVIONA", "we", "us") collects only the information you voluntarily submit through our inquiry and consultation forms, including your name, company, email address, phone number, and project specifications.</p>
 <h2>2. How We Use Your Information</h2>
 <p>Submitted information is used exclusively to respond to engineering inquiries, prepare structural takeoffs and quotations, arrange sample logistics, and maintain business correspondence related to your project.</p>
 <h2>3. Data Protection</h2>
 <p>All tender documents, architectural drawings, and project data are treated as confidential and protected under mutual NDA where applicable. We do not sell, rent, or disclose your information to third parties except where required by law or necessary to fulfill logistics and export documentation.</p>
 <h2>4. Data Retention</h2>
-<p>Inquiry records are retained for the duration of the business relationship and archived thereafter in accordance with applicable commercial regulations. You may request deletion of your data at any time via <a href="mailto:export@alumax-facade.com">export@alumax-facade.com</a>.</p>',
+<p>Inquiry records are retained for the duration of the business relationship and archived thereafter in accordance with applicable commercial regulations. You may request deletion of your data at any time via <a href="mailto:export@aluviona.com">export@aluviona.com</a>.</p>',
         ],
         'export-compliance' => [
             'Export Compliance & Certifications',
             '<p><em>Last updated: ' . gmdate('F j, Y') . '</em></p>
 <h2>1. Export Compliance Statement</h2>
-<p>ALUMAX conducts all export operations in strict compliance with the export control laws and customs regulations of the People\'s Republic of China and the import requirements of destination markets. All shipments are accompanied by complete commercial invoices, packing lists, certificates of origin, and product test documentation.</p>
+<p>ALUVIONA conducts all export operations in strict compliance with the export control laws and customs regulations of the People\'s Republic of China and the import requirements of destination markets. All shipments are accompanied by complete commercial invoices, packing lists, certificates of origin, and product test documentation.</p>
 <h2>2. Product Certifications</h2>
 <ul>
 <li>EN 13501-1 Class A2-s1, d0 &amp; A1 fire reaction classification</li>
@@ -205,7 +205,7 @@ function alumax_ensure_legal_pages() {
 <h2>3. Quality & Warranty</h2>
 <p>All panels are manufactured under ISO 9001:2015 quality management with ±0.3 mm milling tolerance. PVDF coating systems carry up to 10-year weathering warranties per AAMA 2605. Claims must be submitted with photographic evidence within 30 days of receipt.</p>
 <h2>4. Liability</h2>
-<p>ALUMAX\'s liability is limited to replacement or refund of non-conforming goods. Installation, structural design verification, and site conditions remain the responsibility of the contractor and project engineer of record.</p>',
+<p>ALUVIONA\'s liability is limited to replacement or refund of non-conforming goods. Installation, structural design verification, and site conditions remain the responsibility of the contractor and project engineer of record.</p>',
         ],
     ];
 
@@ -270,7 +270,7 @@ add_action('pre_get_posts', 'alumax_product_archive_per_page');
 
 function alumax_document_title_parts($title) {
     if (is_front_page()) {
-        $title['title'] = 'ALUMAX | Architectural Aluminum & Metal Facade Systems Manufacturer';
+        $title['title'] = 'ALUVIONA | Architectural Aluminum & Metal Facade Systems Manufacturer';
         $title['tagline'] = '';
         $title['site'] = '';
         return $title;
@@ -278,7 +278,7 @@ function alumax_document_title_parts($title) {
 
     if (is_post_type_archive('product')) {
         $title['title'] = 'Architectural Metal Facade & Cladding Systems';
-        $title['site'] = 'ALUMAX Products';
+        $title['site'] = 'ALUVIONA Products';
         return $title;
     }
 
@@ -300,47 +300,47 @@ function alumax_document_title_parts($title) {
         $slug = $post->post_name ?? '';
         if (isset($product_titles[$slug])) {
             $title['title'] = $product_titles[$slug];
-            $title['site'] = 'ALUMAX';
+            $title['site'] = 'ALUVIONA';
             return $title;
         }
     }
 
     if (is_post_type_archive('case')) {
         $title['title'] = 'Architectural Facade Projects & Case Studies';
-        $title['site'] = 'ALUMAX Worldwide';
+        $title['site'] = 'ALUVIONA Worldwide';
         return $title;
     }
 
     if (is_singular('case')) {
-        $title['site'] = 'ALUMAX Projects';
+        $title['site'] = 'ALUVIONA Projects';
         return $title;
     }
 
     if (is_page('about')) {
         $title['title'] = 'About Us | Architectural Metal & Facade Factory';
-        $title['site'] = 'ALUMAX';
+        $title['site'] = 'ALUVIONA';
         return $title;
     }
 
     if (is_page('resources')) {
         $title['title'] = 'Architectural CAD Details & Specification Resources';
-        $title['site'] = 'ALUMAX';
+        $title['site'] = 'ALUVIONA';
         return $title;
     }
 
     if (is_page('contact')) {
-        $title['title'] = 'Contact ALUMAX | Facade Consultation & Sample Requests';
-        $title['site'] = 'ALUMAX';
+        $title['title'] = 'Contact ALUVIONA | Facade Consultation & Sample Requests';
+        $title['site'] = 'ALUVIONA';
         return $title;
     }
 
     if (is_post_type_archive('news') || is_home()) {
         $title['title'] = 'Architectural Metal Industry News & Engineering Insights';
-        $title['site'] = 'ALUMAX';
+        $title['site'] = 'ALUVIONA';
         return $title;
     }
 
-    $title['site'] = 'ALUMAX';
+    $title['site'] = 'ALUVIONA';
     return $title;
 }
 add_filter('document_title_parts', 'alumax_document_title_parts');
@@ -369,25 +369,25 @@ function alumax_seo_meta() {
             }
         }
     } elseif (is_front_page()) {
-        $desc = 'ALUMAX manufactures premium architectural metal facade systems, solid aluminum cladding, honeycomb panels, louvers, and custom exterior envelopes. Inquire now.';
+        $desc = 'ALUVIONA manufactures premium architectural metal facade systems, solid aluminum cladding, honeycomb panels, louvers, and custom exterior envelopes. Inquire now.';
         $url = home_url('/');
     } elseif (is_post_type_archive('product')) {
-        $desc = 'Explore ALUMAX engineered architectural metal systems: solid aluminum cladding, composite panels, honeycomb cassettes, solar louvers, and acoustic ceilings.';
+        $desc = 'Explore ALUVIONA engineered architectural metal systems: solid aluminum cladding, composite panels, honeycomb cassettes, solar louvers, and acoustic ceilings.';
         $url = get_post_type_archive_link('product');
     } elseif (is_post_type_archive('case')) {
-        $desc = 'Discover landmark architectural projects worldwide featuring ALUMAX facade cladding, honeycomb cassettes, motorized louvers, and bespoke architectural metal envelopes.';
+        $desc = 'Discover landmark architectural projects worldwide featuring ALUVIONA facade cladding, honeycomb cassettes, motorized louvers, and bespoke architectural metal envelopes.';
         $url = get_post_type_archive_link('case');
     } elseif (is_page('about')) {
-        $desc = 'Learn about ALUMAX, an industry-leading manufacturer of architectural metal facades, operating advanced automated CNC fabrication and coil coating lines.';
+        $desc = 'Learn about ALUVIONA, an industry-leading manufacturer of architectural metal facades, operating advanced automated CNC fabrication and coil coating lines.';
         $url = get_permalink();
     } elseif (is_page('resources')) {
-        $desc = 'Download architectural specification books, BIM objects, CAD details, structural test data, and finish charts for ALUMAX engineered facade panel systems.';
+        $desc = 'Download architectural specification books, BIM objects, CAD details, structural test data, and finish charts for ALUVIONA engineered facade panel systems.';
         $url = get_permalink();
     } elseif (is_page('contact')) {
-        $desc = 'Contact ALUMAX facade engineering team for competitive project quotations, custom CAD detailing, architectural sample boxes, and global delivery support.';
+        $desc = 'Contact ALUVIONA facade engineering team for competitive project quotations, custom CAD detailing, architectural sample boxes, and global delivery support.';
         $url = get_permalink();
     } elseif (is_post_type_archive('news') || is_home()) {
-        $desc = 'Stay informed with architectural metal trends, facade engineering breakthroughs, sustainability standards, and technical case studies from ALUMAX.';
+        $desc = 'Stay informed with architectural metal trends, facade engineering breakthroughs, sustainability standards, and technical case studies from ALUVIONA.';
         $url = alumax_news_url();
     } elseif (is_singular()) {
         $post = get_queried_object();
@@ -411,7 +411,7 @@ function alumax_seo_meta() {
         echo '<meta property="og:url" content="' . esc_url($url) . '">' . "\n";
     }
     echo '<meta property="og:type" content="' . (is_singular() ? 'article' : 'website') . '">' . "\n";
-    echo '<meta property="og:site_name" content="ALUMAX">' . "\n";
+    echo '<meta property="og:site_name" content="ALUVIONA">' . "\n";
     if ($image !== '') {
         echo '<meta property="og:image" content="' . esc_url($image) . '">' . "\n";
         echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
