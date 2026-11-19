@@ -53,9 +53,9 @@ function alumax_contact_defaults() {
 
     // 联系信息行（3 行）
     $rows = [
-        ['icon' => 'location_on', 'label' => 'Address', 'line1' => 'No. 88, Industrial Avenue, Nanhai District, Foshan, Guangdong, China 528225', 'line2' => ''],
-        ['icon' => 'call', 'label' => 'Phone & WhatsApp', 'line1' => '+86 757 8820 9000 · WhatsApp: +86 18930079759', 'line2' => 'Mon – Sat, 8:30 – 18:00 (GMT+8)'],
-        ['icon' => 'mail', 'label' => 'Email', 'line1' => 'export@aluviona.com / info@alumax.com', 'line2' => 'Formal engineering quote transmitted within 24 hours.'],
+        ['icon' => 'location_on', 'label' => 'Address', 'line1' => "No. 8-1, Yinque Rd, Lu'an Economic Development Zone, Luan, Anhui, China", 'line2' => ''],
+        ['icon' => 'call', 'label' => 'Phone & WhatsApp', 'line1' => '+86 18930079759 · WhatsApp: +86 18930079759', 'line2' => 'Mon – Sat, 8:30 – 18:00 (GMT+8)'],
+        ['icon' => 'mail', 'label' => 'Email', 'line1' => 'sales@aluviona.com / info@aluviona.com', 'line2' => 'Formal engineering quote transmitted within 24 hours.'],
     ];
     foreach ($rows as $i => $row) {
         $n = $i + 1;

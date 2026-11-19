@@ -41,9 +41,9 @@ function alumax_site_defaults() {
 
     // 总部信息行（3 行）
     $rows = [
-        ['icon' => 'location_on', 'text' => 'Foshan, Guangdong, CN // Global HQ & Manufacturing Center'],
-        ['icon' => 'call', 'text' => '+86 757 8820 9000 · Mon – Sat, 8:30 – 18:00 (GMT+8)'],
-        ['icon' => 'mail', 'text' => 'export@aluviona.com'],
+        ['icon' => 'location_on', 'text' => "No. 8-1, Yinque Rd, Lu'an Economic Development Zone, Luan, Anhui, China"],
+        ['icon' => 'call', 'text' => '+86 18930079759 · WhatsApp: +86 18930079759'],
+        ['icon' => 'mail', 'text' => 'sales@aluviona.com / info@aluviona.com'],
     ];
     foreach ($rows as $i => $row) {
         $n = $i + 1;
