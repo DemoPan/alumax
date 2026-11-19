@@ -34,159 +34,17 @@ function alumax_assets() {
         null
     );
 
-    wp_enqueue_script(
-        'tailwindcss',
-        'https://cdn.tailwindcss.com?plugins=forms,container-queries',
+    $css_file = get_template_directory() . '/assets/css/main.min.css';
+    $css_ver  = file_exists($css_file) ? filemtime($css_file) : '1.0.0';
+    wp_enqueue_style(
+        'alumax-main',
+        get_template_directory_uri() . '/assets/css/main.min.css',
         [],
-        null,
-        false
+        $css_ver
     );
-
-    wp_add_inline_script('tailwindcss', alumax_tailwind_config_js(), 'after');
 }
 
 add_action('wp_enqueue_scripts', 'alumax_assets');
-
-function alumax_head() {
-    ?>
-<style>
-  @layer base {
-    html, body { margin: 0; padding: 0; }
-    body { overscroll-behavior: none; }
-    main > :first-child { margin-top: 0 !important; }
-    main > :last-child { margin-bottom: 0 !important; }
-  }
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.45) transparent;
-  }
-  ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 4px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-  }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.65); border: 0; }
-  ::-webkit-scrollbar-corner { background: transparent; }
-  body.admin-bar > header { top: 32px; }
-  @media screen and (max-width: 782px) {
-    body.admin-bar > header { top: 46px; }
-  }
-</style>
-    <?php
-}
-
-add_action('wp_head', 'alumax_head', 1);
-
-function alumax_tailwind_config_js() {
-    return <<<'JS'
-tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-container-low": "#f2f4f6",
-          "surface-container-high": "#e6e8ea",
-          "on-primary-fixed": "#0f1c2c",
-          "tertiary-fixed": "#d2e4ff",
-          "background": "#f8f9fb",
-          "inverse-primary": "#bac8dc",
-          "on-primary": "#ffffff",
-          "primary": "#000000",
-          "inverse-on-surface": "#eff1f3",
-          "primary-fixed-dim": "#bac8dc",
-          "primary-container": "#0d1b2a",
-          "on-tertiary-container": "#6f85a3",
-          "outline-variant": "#c4c6cc",
-          "on-primary-fixed-variant": "#3a4859",
-          "on-primary-container": "#778598",
-          "surface-variant": "#e0e3e5",
-          "on-surface-variant": "#44474c",
-          "outline": "#74777d",
-          "on-tertiary-fixed-variant": "#324863",
-          "primary-fixed": "#d6e4f9",
-          "on-tertiary-fixed": "#021d35",
-          "on-error-container": "#93000a",
-          "surface-tint": "#525f71",
-          "surface": "#f8f9fb",
-          "surface-bright": "#f8f9fb",
-          "on-error": "#ffffff",
-          "secondary-fixed-dim": "#edbe82",
-          "error-container": "#ffdad6",
-          "on-background": "#191c1e",
-          "tertiary-fixed-dim": "#b2c8e8",
-          "on-secondary-fixed": "#2a1800",
-          "inverse-surface": "#2d3133",
-          "tertiary": "#000000",
-          "on-surface": "#191c1e",
-          "surface-dim": "#d8dadc",
-          "on-secondary-container": "#7a5724",
-          "surface-container": "#eceef0",
-          "on-secondary": "#ffffff",
-          "tertiary-container": "#021d35",
-          "error": "#ba1a1a",
-          "on-error": "#ffffff",
-          "surface-container-highest": "#e0e3e5",
-          "surface-container-lowest": "#ffffff",
-          "on-secondary-fixed-variant": "#60400f",
-          "secondary-container": "#ffcf92",
-          "secondary-fixed": "#ffddb5",
-          "secondary": "#7b5825"
-        },
-        borderRadius: {
-          "DEFAULT": "0.25rem",
-          "lg": "0.5rem",
-          "xl": "0.75rem",
-          "full": "9999px"
-        },
-        spacing: {
-          "margin-mobile": "1.25rem",
-          "space-xs": "0.25rem",
-          "space-lg": "1.5rem",
-          "gutter-mobile": "1rem",
-          "space-xl": "2.5rem",
-          "space-sm": "0.5rem",
-          "space-md": "1rem",
-          "margin": "3rem",
-          "gutter": "1.5rem"
-        },
-        fontFamily: {
-          "body-lg": ["Manrope"],
-          "display-xl": ["Space Grotesk"],
-          "body-sm": ["Manrope"],
-          "body-md": ["Manrope"],
-          "headline-lg": ["Space Grotesk"],
-          "display-lg": ["Space Grotesk"],
-          "label-lg": ["JetBrains Mono"],
-          "headline-sm": ["Space Grotesk"],
-          "display-xl-mobile": ["Space Grotesk"],
-          "label-md": ["JetBrains Mono"],
-          "headline-md": ["Space Grotesk"],
-          "label-sm": ["JetBrains Mono"],
-          "display-lg-mobile": ["Space Grotesk"]
-        },
-        fontSize: {
-          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-          "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
-          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
-          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
-          "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-          "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "500" }],
-          "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-          "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" }],
-          "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
-          "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
-        }
-      }
-    }
-  };
-JS;
-}
 
 function alumax_register_post_types() {
     register_post_type('case', [

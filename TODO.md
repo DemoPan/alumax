@@ -48,23 +48,19 @@
 
 ## 二、上线必做重点强化项（重点推进）
 
-- [ ] **5. Tailwind CSS 静态化编译（弃用 CDN 依赖）**
-  - **现状**：前台目前依赖 `cdn.tailwindcss.com` 开发运行时模式，官方明确禁止生产使用（存在首屏闪烁及外部 CDN 依赖）。
-  - **目标**：在构建期通过 Tailwind CLI 扫描全站模板，提取类名并输出为压缩的单个静态 CSS 文件（如 `assets/css/main.min.css`）。
-  - **执行步骤**：
-    1. 配置 `tailwind.config.js`，包含所有 PHP 与 HTML 模板路径；
-    2. 运行构建脚本生成编译后的 CSS；
-    3. 在 `header.php` 中替换掉 Tailwind CDN 脚本标签；
-    4. 验证全站样式渲染无丢失后同步更新 `manual.md`。
+- [x] **5. Tailwind CSS 静态化编译（弃用 CDN 依赖 - 已完成）**
+  - [x] 配置 `tailwind.config.js`，支持 forms 与 container-queries 插件
+  - [x] 配置 `assets/css/input.css`，引入 Tailwind 指令与全局滚动条/基础层样式
+  - [x] 编译输出压缩版 `assets/css/main.min.css`（仅 61KB）
+  - [x] 更新 `functions.php`，彻底移除 `cdn.tailwindcss.com` 外部 CDN 依赖，全站通过本地静态 CSS 加载
+  - [x] 本地静态全站重新导出实测通过
 
-- [ ] **6. 配置 SMTP 询盘邮件提醒（RFQs 实时通知）**
-  - **现状**：前台询盘提交后数据仅保存在 WP 数据库 CPT `inquiry` 中，无实时通知机制，容易漏单。
-  - **目标**：客户提交 RFQ / 工程图纸后，管理员与业务团队邮箱在 10 秒内收到完整询盘通知邮件。
-  - **执行步骤**：
-    1. 在 WP 端安装并配置 SMTP 插件（如 WP Mail SMTP），绑定企业邮箱或服务商（腾讯企业邮/阿里企业邮/SendGrid/Resend）；
-    2. 在 `inc/inquiries.php` 的 `alumax_save_inquiry()` 存储成功后调用 `wp_mail()`；
-    3. 邮件模板包含：客户姓名、企业邮箱、公司、国家/港口、项目留言、图纸下载链接；
-    4. 线上实测一次真实提交，确认邮件秒级送达。
+- [x] **6. 配置 SMTP 询盘邮件提醒（RFQs 实时通知 - 代码层已就绪）**
+  - [x] 在 `inc/inquiries.php` 实现 `alumax_send_inquiry_notification()`，生成专业商务 HTML 邮件通知
+  - [x] 支持在邮件中直接展示客户姓名、企业邮箱、公司、国家、意向产品、留言及图纸附件下载直链
+  - [x] 邮件 `Reply-To` 自动设置为客户邮箱，点击“回复”即可直接与潜在客户对话
+  - [x] 内置 `phpmailer_init` 钩子，支持直接在 `wp-config.php` 配置 SMTP 常量或搭配常用 SMTP 插件发件
+  - [ ] 待上线：填入真实发信邮箱账号密码实测一次收发
 
 - [ ] **7. 文章与案例配图本地化**
   - 将外链图片（Unsplash / Google 托管图）下载收录进媒体库，避免第三方防盗链或链接失效导致前台裂图。

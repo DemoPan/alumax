@@ -29,6 +29,7 @@
 /scratch/
 
 # 系统与编辑器杂项
+node_modules/
 .DS_Store
 Thumbs.db
 .idea/

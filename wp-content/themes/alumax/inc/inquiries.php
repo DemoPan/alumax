@@ -91,6 +91,9 @@ function alumax_save_inquiry($input, $files) {
         }
     }
 
+    // 触发邮件通知（发送至管理员或指定业务邮箱）
+    alumax_send_inquiry_notification($post_id);
+
     return true;
 }
 
@@ -220,3 +223,112 @@ function alumax_inquiry_details_box($post) {
         : '<p>—</p>';
     echo '<p class="description">提交时间：' . esc_html(get_post_time('Y-m-d H:i:s', false, $post)) . '</p>';
 }
+
+/* -------------------------------------------------------------------------
+ * 询价邮件通知（发送美化 HTML 邮件至业务负责人）
+ * ------------------------------------------------------------------------- */
+
+function alumax_send_inquiry_notification($post_id) {
+    $to = defined('ALUMAX_INQUIRY_NOTIFY_EMAIL') && ALUMAX_INQUIRY_NOTIFY_EMAIL
+        ? ALUMAX_INQUIRY_NOTIFY_EMAIL
+        : get_option('admin_email');
+
+    if (empty($to)) {
+        return false;
+    }
+
+    $name     = get_post_meta($post_id, '_inquiry_name', true);
+    $email    = get_post_meta($post_id, '_inquiry_email', true);
+    $company  = get_post_meta($post_id, '_inquiry_company', true);
+    $country  = get_post_meta($post_id, '_inquiry_country', true);
+    $product  = get_post_meta($post_id, '_inquiry_product', true);
+    $page     = get_post_meta($post_id, '_inquiry_page', true);
+    $referer  = get_post_meta($post_id, '_inquiry_referer', true);
+    $message  = get_post_meta($post_id, '_inquiry_message', true);
+    $file     = get_post_meta($post_id, '_inquiry_file', true);
+    $fileName = get_post_meta($post_id, '_inquiry_file_name', true);
+
+    $subject = sprintf('[Aluviona RFQ] New Inquiry from %s (%s)', $name ?: 'Lead', $company ?: ($country ?: 'Website'));
+
+    $rows = [
+        'Full Name'    => esc_html($name),
+        'Email'        => sprintf('<a href="mailto:%s">%s</a>', esc_attr($email), esc_html($email)),
+        'Company'      => esc_html($company ?: '—'),
+        'Country/Port' => esc_html($country ?: '—'),
+        'Product'      => esc_html($product ?: '—'),
+        'Source Page'  => esc_html($page ?: '—'),
+        'Referer'      => $referer ? sprintf('<a href="%s">%s</a>', esc_url($referer), esc_html($referer)) : '—',
+        'Attachment'   => $file ? sprintf('<a href="%s" target="_blank" style="color:#7b5825;font-weight:bold;">%s (Download)</a>', esc_url($file), esc_html($fileName ?: 'Download File')) : 'None',
+    ];
+
+    $htmlRows = '';
+    foreach ($rows as $label => $val) {
+        $htmlRows .= sprintf(
+            '<tr><td style="padding:10px 14px;border-bottom:1px solid #e2e8f0;font-weight:600;color:#475569;width:140px;background:#f8fafc;">%s</td><td style="padding:10px 14px;border-bottom:1px solid #e2e8f0;color:#0f172a;">%s</td></tr>',
+            $label,
+            $val
+        );
+    }
+
+    $msgHtml = $message !== '' 
+        ? sprintf('<div style="margin-top:16px;padding:14px;background:#f8fafc;border-left:4px solid #7b5825;color:#334155;white-space:pre-wrap;font-family:sans-serif;">%s</div>', esc_html($message))
+        : '<p style="color:#94a3b8;font-style:italic;">No additional message.</p>';
+
+    $body = <<<HTML
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#1e293b;background:#f1f5f9;margin:0;padding:24px;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:620px;margin:0 auto;background:#ffffff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <tr>
+      <td style="background:#0d1b2a;padding:24px;text-align:left;border-bottom:3px solid #7b5825;">
+        <h2 style="margin:0;color:#ffffff;font-size:20px;letter-spacing:0.5px;">ALUVIONA // New RFQ Received</h2>
+        <p style="margin:4px 0 0;color:#94a3b8;font-size:12px;">Submitted at: %s UTC</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:24px;">
+        <p style="margin:0 0 16px;font-size:14px;color:#334155;">A new inquiry / quotation request has been submitted through your website:</p>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;border:1px solid #e2e8f0;">
+          %s
+        </table>
+        <h4 style="margin:24px 0 8px;font-size:14px;color:#0f172a;">Project Details & Message:</h4>
+        %s
+        <div style="margin-top:28px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:11px;color:#94a3b8;text-align:center;">
+          This is an automated notification from <a href="https://aluviona.com" style="color:#7b5825;text-decoration:none;">Aluviona Architectural Metals</a>.
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+HTML;
+
+    $body = sprintf($body, gmdate('Y-m-d H:i:s'), $htmlRows, $msgHtml);
+
+    $headers = [
+        'Content-Type: text/html; charset=UTF-8',
+    ];
+    if ($email && is_email($email)) {
+        $headers[] = sprintf('Reply-To: %s <%s>', $name ?: 'Inquiry Lead', $email);
+    }
+
+    return wp_mail($to, $subject, $body, $headers);
+}
+
+/* -------------------------------------------------------------------------
+ * SMTP 邮件发信支持（可直接在 wp-config.php 定义常量，或通过 SMTP 插件覆盖）
+ * ------------------------------------------------------------------------- */
+add_action('phpmailer_init', function ($phpmailer) {
+    if (defined('ALUMAX_SMTP_HOST') && defined('ALUMAX_SMTP_USER') && defined('ALUMAX_SMTP_PASS')) {
+        $phpmailer->isSMTP();
+        $phpmailer->Host       = ALUMAX_SMTP_HOST;
+        $phpmailer->SMTPAuth   = true;
+        $phpmailer->Port       = defined('ALUMAX_SMTP_PORT') ? ALUMAX_SMTP_PORT : 465;
+        $phpmailer->Username   = ALUMAX_SMTP_USER;
+        $phpmailer->Password   = ALUMAX_SMTP_PASS;
+        $phpmailer->SMTPSecure = defined('ALUMAX_SMTP_SECURE') ? ALUMAX_SMTP_SECURE : 'ssl';
+        $phpmailer->From       = defined('ALUMAX_SMTP_FROM') ? ALUMAX_SMTP_FROM : ALUMAX_SMTP_USER;
+        $phpmailer->FromName   = defined('ALUMAX_SMTP_FROM_NAME') ? ALUMAX_SMTP_FROM_NAME : 'Aluviona Website';
+    }
+});
