@@ -397,14 +397,14 @@ SVG;
             'link_url'   => '/projects/',
             'projects'   => [
                 [
-                    'image'     => '/wp-content/uploads/2026/10/p1.jpg',
-                    'image_alt' => 'KAFD Tower 3 Financial District in Riyadh KSA with motorized solar control louvers and curved spandrels.',
-                    'location'  => 'RIYADH, KSA',
-                    'title'     => 'KAFD Tower 3 Financial District',
-                    'url'       => '/projects/kafd-tower-3-financial-district/',
-                    'product'   => 'Dynamic Solar Louvers & Curved Spandrels',
-                    'area'      => 'Area: 22,700 m²',
-                    'year'      => 'Year: 2024',
+                    'image'     => '/wp-content/uploads/2026/11/case_32_1.jpg',
+                    'image_alt' => 'Zhejiang University International Innovation Institute with architectural aluminum facade cladding and solar louvers.',
+                    'location'  => 'HANGZHOU, ZHEJIANG',
+                    'title'     => 'Zhejiang University International Innovation Institute',
+                    'url'       => '/projects/zhejiang-university-international-innovation-institute/',
+                    'product'   => 'Curtain Wall Aluminum Envelope & Solar Louvers',
+                    'area'      => 'Area: 48,000 m²',
+                    'year'      => 'Year: 2023',
                 ],
                 [
                     'image'     => '/wp-content/uploads/2026/11/case_31_1.jpg',
