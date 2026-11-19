@@ -411,6 +411,77 @@ function alumax_product_archive_per_page($query) {
 add_action('pre_get_posts', 'alumax_product_archive_per_page');
 
 function alumax_document_title_parts($title) {
+    if (is_front_page()) {
+        $title['title'] = 'ALUMAX | Architectural Aluminum & Metal Facade Systems Manufacturer';
+        $title['tagline'] = '';
+        $title['site'] = '';
+        return $title;
+    }
+
+    if (is_post_type_archive('product')) {
+        $title['title'] = 'Architectural Metal Facade & Cladding Systems';
+        $title['site'] = 'ALUMAX Products';
+        return $title;
+    }
+
+    if (is_singular('product')) {
+        global $post;
+        $product_titles = [
+            'solid-aluminum-cladding-panels'            => 'Solid Aluminum Cladding Panels Manufacturer',
+            'smart-motorized-aluminum-louvers'          => 'Smart Motorized Aluminum Louvers & Solar Shading',
+            'aluminum-honeycomb-panels'                 => 'Aluminum Honeycomb Panels & High-Rigidity Composites',
+            'aluminum-composite-panels'                 => 'Aluminum Composite Panels (ACP/ACM) Manufacturer',
+            'laser-cut-welded-architectural-screens'    => 'Laser-Cut & Welded Architectural Screens & Panels',
+            'architectural-metal-ceiling-systems'       => 'Architectural Metal Ceiling Systems & Baffles',
+            'architectural-solar-control-louvers'       => 'Architectural Solar Control Louvers & Aerofoil Sunshades',
+            'architectural-steel-wall-panels'           => 'Architectural Steel Wall Panels & Cassette Cladding',
+            'corrugated-core-aluminum-composite-panels' => 'Corrugated Core Aluminum Composite Panels (ACCP)',
+            'roll-coated-aluminum-panels'               => 'Roll-Coated Architectural Aluminum Panels',
+            'pre-insulated-integrated-wall-panels'      => 'Pre-Insulated Integrated Wall Panels & Cladding',
+        ];
+        $slug = $post->post_name ?? '';
+        if (isset($product_titles[$slug])) {
+            $title['title'] = $product_titles[$slug];
+            $title['site'] = 'ALUMAX';
+            return $title;
+        }
+    }
+
+    if (is_post_type_archive('case')) {
+        $title['title'] = 'Architectural Facade Projects & Case Studies';
+        $title['site'] = 'ALUMAX Worldwide';
+        return $title;
+    }
+
+    if (is_singular('case')) {
+        $title['site'] = 'ALUMAX Projects';
+        return $title;
+    }
+
+    if (is_page('about')) {
+        $title['title'] = 'About Us | Architectural Metal & Facade Factory';
+        $title['site'] = 'ALUMAX';
+        return $title;
+    }
+
+    if (is_page('resources')) {
+        $title['title'] = 'Architectural CAD Details & Specification Resources';
+        $title['site'] = 'ALUMAX';
+        return $title;
+    }
+
+    if (is_page('contact')) {
+        $title['title'] = 'Contact ALUMAX | Facade Consultation & Sample Requests';
+        $title['site'] = 'ALUMAX';
+        return $title;
+    }
+
+    if (is_post_type_archive('news') || is_home()) {
+        $title['title'] = 'Architectural Metal Industry News & Engineering Insights';
+        $title['site'] = 'ALUMAX';
+        return $title;
+    }
+
     $title['site'] = 'ALUMAX';
     return $title;
 }
@@ -440,12 +511,26 @@ function alumax_seo_meta() {
             }
         }
     } elseif (is_front_page()) {
-        $desc = get_bloginfo('description') ?: 'ALUMAX – Architectural Metal Solutions, engineered facade panels, louvers, ceilings, and cladding systems.';
+        $desc = 'ALUMAX manufactures premium architectural metal facade systems, solid aluminum cladding, honeycomb panels, louvers, and custom exterior envelopes. Inquire now.';
         $url = home_url('/');
     } elseif (is_post_type_archive('product')) {
-        $pa = get_option('alumax_pa_options', []);
-        $desc = !empty($pa['hero_subtitle']) ? $pa['hero_subtitle'] : 'Engineered Architectural Metal & Facade Cladding Systems. Precision-manufactured aluminum alloys and steel building envelopes.';
+        $desc = 'Explore ALUMAX engineered architectural metal systems: solid aluminum cladding, composite panels, honeycomb cassettes, solar louvers, and acoustic ceilings.';
         $url = get_post_type_archive_link('product');
+    } elseif (is_post_type_archive('case')) {
+        $desc = 'Discover landmark architectural projects worldwide featuring ALUMAX facade cladding, honeycomb cassettes, motorized louvers, and bespoke architectural metal envelopes.';
+        $url = get_post_type_archive_link('case');
+    } elseif (is_page('about')) {
+        $desc = 'Learn about ALUMAX, an industry-leading manufacturer of architectural metal facades, operating advanced automated CNC fabrication and coil coating lines.';
+        $url = get_permalink();
+    } elseif (is_page('resources')) {
+        $desc = 'Download architectural specification books, BIM objects, CAD details, structural test data, and finish charts for ALUMAX engineered facade panel systems.';
+        $url = get_permalink();
+    } elseif (is_page('contact')) {
+        $desc = 'Contact ALUMAX facade engineering team for competitive project quotations, custom CAD detailing, architectural sample boxes, and global delivery support.';
+        $url = get_permalink();
+    } elseif (is_post_type_archive('news') || is_home()) {
+        $desc = 'Stay informed with architectural metal trends, facade engineering breakthroughs, sustainability standards, and technical case studies from ALUMAX.';
+        $url = alumax_news_url();
     } elseif (is_singular()) {
         $post = get_queried_object();
         if ($post) {
