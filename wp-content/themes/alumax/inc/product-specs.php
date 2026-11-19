@@ -7,7 +7,24 @@ if (!defined('ABSPATH')) {
 function alumax_product_specs($post_id = null) {
     $post_id = $post_id ?: get_the_ID();
     $specs = get_post_meta($post_id, 'alumax_product_specs', true);
-    return is_array($specs) ? $specs : [];
+    if (!is_array($specs)) {
+        return [];
+    }
+    $normalized = [];
+    foreach ($specs as $key => $val) {
+        if (is_array($val)) {
+            $normalized[] = [
+                'name'  => (string) ($val['name'] ?? $val['label'] ?? ''),
+                'value' => (string) ($val['value'] ?? ''),
+            ];
+        } elseif (is_string($key) && !is_numeric($key)) {
+            $normalized[] = [
+                'name'  => (string) $key,
+                'value' => (string) $val,
+            ];
+        }
+    }
+    return $normalized;
 }
 
 // 产品卡片描述：优先取手动摘要，否则取正文全文（不截断）
