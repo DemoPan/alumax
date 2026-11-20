@@ -37,136 +37,53 @@ $alumax_total_news = (int) wp_count_posts('news')->publish;
 $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAOkBKrv6a2PFgXpQ1vnS8GEWLQixnUu8eLhG5dJV8FnRmKIHvP-6MonzL8nXwBm1SSeWUeLOPVGvaLBlJ2Y_LApkt-0X2WlPMIKukpBbrlX6neR94y8rZqqWHhGFILudwNzu6UHlRfaFfqiy96c1y6BVraP1211LTE1EWbT7t9m0rJOlX6IOoA0d6FRNT4vMrThBbABfBZEzmN73RGxplrvmnq5yBSwoWQPXeyL4sjLtDFgwiTJ1';
 ?>
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
-    <?php if (!empty($alumax_slides)) : ?>
-    <!-- ======================================================================= -->
-    <!-- 2. HERO SECTION - FULL-SCREEN HIGH-IMPACT CAROUSEL / SLIDER             -->
-    <!-- ======================================================================= -->
-    <section class="relative w-full h-[620px] bg-[#0d1b2a] text-white overflow-hidden select-none" id="hero-carousel">
-      <!-- Radial grid background pattern -->
-      <div
-        class="absolute inset-0 opacity-10 bg-[radial-gradient(#edbe82_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none z-10">
-      </div>
-      <!-- Slide Items Wrapper -->
-      <div class="relative w-full h-full" id="slides-wrapper">
-        <?php foreach ($alumax_slides as $alumax_i => $alumax_slide) : ?>
-        <div
-          class="carousel-slide <?php echo $alumax_i === 0 ? 'active opacity-100 z-20' : 'opacity-0 z-10'; ?> absolute inset-0 transition-opacity duration-700 ease-in-out flex flex-col justify-between"
-          data-slide-index="<?php echo esc_attr($alumax_i); ?>">
-          <?php if ($alumax_slide['image']) : ?>
-          <div class="absolute inset-0 z-0">
-            <img alt="<?php echo esc_attr($alumax_slide['title']); ?>" class="w-full h-full object-cover"
-              src="<?php echo esc_url($alumax_slide['image']); ?>" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-[#0d1b2a]/75 to-[#0d1b2a]/50"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/80 to-transparent"></div>
-          </div>
-          <?php endif; ?>
-          <!-- Slide Top Telemetry & Breadcrumb -->
-          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin pt-6 space-y-3">
-            <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
-            <div
-              class="flex flex-wrap items-center justify-between gap-4 font-label text-[11px] pb-4 border-b border-white/10 text-[#c4c6cc]">
-              <div class="flex items-center gap-3">
-                <span
-                  class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
-                <span class="text-secondary-fixed uppercase tracking-widest font-semibold"><?php echo esc_html($alumax_slide['kicker']); ?></span>
-              </div>
-            </div>
-          </div>
-          <!-- Slide Content Center -->
-          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin my-auto pb-4">
-            <div class="max-w-3xl space-y-4">
-              <div class="flex items-center gap-2.5">
-                <?php if ($alumax_slide['badge']) : ?>
-                <span
-                  class="px-3 py-1 bg-secondary text-white font-label text-[11px] font-semibold uppercase tracking-wider">
-                  <?php echo esc_html($alumax_slide['badge']); ?>
-                </span>
-                <?php endif; ?>
-                <?php if ($alumax_slide['post_id']) : ?>
-                <span
-                  class="px-2.5 py-1 bg-white/10 text-secondary-fixed backdrop-blur-md font-label text-[11px] uppercase tracking-wider">
-                  <?php echo esc_html(get_the_date('M j, Y', $alumax_slide['post_id']) . ' · ' . alumax_reading_time($alumax_slide['post_id'])); ?>
-                </span>
-                <?php endif; ?>
-              </div>
-              <h1
-                class="font-headline text-[32px] sm:text-[44px] lg:text-[48px] font-bold text-white tracking-tight leading-tight">
-                <?php echo esc_html($alumax_slide['title']); ?>
-              </h1>
-              <?php if ($alumax_slide['description']) : ?>
-              <p class="font-body text-[15px] sm:text-[17px] text-slate-300 leading-relaxed max-w-2xl">
-                <?php echo esc_html($alumax_slide['description']); ?>
-              </p>
-              <?php endif; ?>
-              <div class="pt-3 flex flex-wrap items-center gap-4">
-                <?php if ($alumax_slide['url']) : ?>
-                <a href="<?php echo esc_url($alumax_slide['url']); ?>"
-                  class="inline-flex items-center justify-center gap-2 h-12 px-7 bg-[#b88e56] hover:bg-[#edbe82] text-[#0f1c2c] font-headline text-[14px] uppercase tracking-wider font-semibold transition-colors">
-                  <span>View Details</span>
-                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </a>
-                <?php endif; ?>
-                <?php if ($alumax_slide['location']) : ?>
-                <div
-                  class="hidden md:flex items-center gap-2 px-4 py-2.5 bg-[#021d35]/80 border border-[#324863] text-slate-300 font-label text-[12px]">
-                  <span class="material-symbols-outlined text-[16px] text-secondary-fixed">pin_drop</span>
-                  <span><?php echo esc_html($alumax_slide['location']); ?></span>
-                </div>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
-          <!-- Spacer for bottom progress bar -->
-          <div class="h-16"></div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-      <!-- Carousel Navigation & Indicators Bottom Bar -->
-      <div class="absolute bottom-0 left-0 right-0 z-40 bg-[#0a1520]/80 backdrop-blur-md border-t border-white/10 py-3">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-4">
-          <!-- Slide Switcher Tabs -->
-          <div class="flex items-center gap-2 sm:gap-4 overflow-x-auto" id="carousel-tab-nav">
-            <?php foreach ($alumax_slides as $alumax_i => $alumax_slide) : ?>
-            <button
-              class="carousel-tab-btn <?php echo $alumax_i === 0 ? 'active border-secondary text-secondary-fixed' : 'border-transparent text-slate-400 hover:text-white'; ?> px-3 py-1.5 flex items-center gap-2 text-left border-b-2 font-label text-[12px]"
-              data-target="<?php echo esc_attr($alumax_i); ?>">
-              <span class="font-bold"><?php echo esc_html(str_pad((string) ($alumax_i + 1), 2, '0', STR_PAD_LEFT)); ?></span>
-              <span class="hidden sm:inline font-medium uppercase truncate max-w-[200px]"><?php echo esc_html($alumax_slide['tab'] ?: $alumax_slide['title']); ?></span>
-            </button>
-            <?php endforeach; ?>
-          </div>
-          <!-- Slide Controls Prev/Next -->
-          <div class="flex items-center gap-2">
-            <button aria-label="Previous Slide"
-              class="w-9 h-9 border border-[#324863] bg-[#021d35] hover:bg-[#b88e56] hover:text-[#0f1c2c] text-white flex items-center justify-center transition-colors"
-              id="carousel-prev-btn">
-              <span class="material-symbols-outlined text-[18px]">chevron_left</span>
-            </button>
-            <span class="font-label text-[11px] text-[#c4c6cc] px-1" id="carousel-counter">01 / <?php echo esc_html(str_pad((string) count($alumax_slides), 2, '0', STR_PAD_LEFT)); ?></span>
-            <button aria-label="Next Slide"
-              class="w-9 h-9 border border-[#324863] bg-[#021d35] hover:bg-[#b88e56] hover:text-[#0f1c2c] text-white flex items-center justify-center transition-colors"
-              id="carousel-next-btn">
-              <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <?php else : ?>
+    <div class="flex flex-col w-full">
+
+      <!-- HERO -->
+      <?php $hero_bg = '/wp-content/uploads/alumax-site-2e42e7ec62.jpg'; ?>
       <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+          style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
         <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
           style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
         <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
           <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
           <div class="space-y-4 max-w-4xl">
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
-              <span>Architectural News &amp; Insights</span>
+              <span class="material-symbols-outlined text-[15px]">newspaper</span>
+              <span><?php echo esc_html(alumax_news_page('archive_eyebrow') ?: 'Architectural Dispatch & Media Hub'); ?></span>
             </div>
-            <h1 class="font-display-xl text-display-xl text-white tracking-tight font-bold"><?php echo esc_html(alumax_news_page('archive_title')); ?></h1>
+            <h1 class="font-display-xl text-display-xl text-white tracking-tight font-bold">
+              <?php echo esc_html(alumax_news_page('archive_title') ?: 'News, Global Exhibitions & Media Center'); ?>
+            </h1>
+            <p class="font-body-md text-body-md text-primary-fixed-dim max-w-3xl leading-relaxed">
+              <?php echo esc_html(alumax_news_page('archive_intro') ?: 'Latest Architectural Innovations, Global Trade Exhibitions, Landmark Project Completions, and Industry Insights engineered for facades that define skyline identity.'); ?>
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4 mt-6 md:mt-8">
+            <div class="p-3 border-l-2 border-secondary">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Published Releases</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1"><?php echo esc_html($alumax_total_news); ?>+ <span class="font-label-md text-label-md text-secondary-fixed">Articles</span></div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Global technical &amp; media dispatches</p>
+            </div>
+            <div class="p-3 border-l-2 border-white/40">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">International Expos</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">12+ <span class="font-label-md text-label-md text-secondary-fixed">Regions</span></div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Big 5 Dubai, Riyadh, BAU Munich</p>
+            </div>
+            <div class="p-3 border-l-2 border-secondary">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Compliance Reports</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">A2-s1,d0</div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">ASTM E84 &amp; EN 13501-1 fire dossiers</p>
+            </div>
+            <div class="p-3 border-l-2 border-white/40">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Press Inquiries</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">24h SLA</div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Dedicated architecture media desk</p>
+            </div>
           </div>
         </div>
       </section>
-    <?php endif; ?>
     <!-- ======================================================================= -->
     <!-- 3. NEWS ARTICLES DISPLAY SECTION WITH TOP CONTROL TOOLBAR & VIEW TOGGLE -->
     <!-- ======================================================================= -->
@@ -662,5 +579,6 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
       }
     });
   </script>
+    </div>
   </main>
 <?php get_footer();

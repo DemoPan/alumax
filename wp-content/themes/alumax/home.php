@@ -12,54 +12,40 @@ get_header();
           style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
         <div class="relative max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-6">
           <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
-          <!-- Overline Metadata Tracker -->
-          <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b-0">
-            <div class="flex items-center gap-3">
-              <span
-                class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
-              <span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest">ALUVIONA
-                Communications // Bulletin v24.9</span>
-              <span class="text-on-tertiary-container text-xs">/</span>
-              <span class="font-label-sm text-label-sm text-on-primary-container">Updated Daily from Foshan &amp;
-                Dubai</span>
+          <div class="space-y-4 max-w-4xl">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
+              <span class="material-symbols-outlined text-[15px]">newspaper</span>
+              <span>Architectural Dispatch &amp; Media Hub</span>
             </div>
-            <div class="flex items-center gap-4 text-on-primary-container font-label-sm text-label-sm">
-              <span>INDEX: AMX-MED-2025</span>
-              <span>•</span>
-              <span>BIM LIBRARY: VER 4.2 LIVE</span>
-            </div>
+            <h1 class="font-display-xl text-display-xl text-white tracking-tight font-bold">
+              News, Global Exhibitions &amp; Media Center
+            </h1>
+            <p class="font-body-md text-body-md text-primary-fixed-dim max-w-3xl leading-relaxed">
+              Latest Architectural Innovations, Global Trade Exhibitions, Landmark Project Completions, and Industry
+              Insights engineered for facades that define skyline identity.
+            </p>
           </div>
-          <!-- Hero Header Typography Block -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div class="lg:col-span-8 flex flex-col gap-4">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-highest/10 text-secondary-fixed w-fit rounded-none font-label-md text-label-md uppercase tracking-wider">
-                <span class="material-symbols-outlined text-[16px]">newspaper</span>
-                Architectural Dispatch &amp; Media Hub
-              </div>
-              <h1 class="font-display-xl text-display-xl tracking-tight text-on-primary max-w-4xl">
-                News, Global Exhibitions &amp; Media Center
-              </h1>
-              <p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl leading-relaxed">
-                Latest Architectural Innovations, Global Trade Exhibitions, Landmark Project Completions, and Industry
-                Insights engineered for facades that define skyline identity.
-              </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4 mt-6 md:mt-8">
+            <div class="p-3 border-l-2 border-secondary">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Published Releases</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">13+ <span class="font-label-md text-label-md text-secondary-fixed">Articles</span></div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Global technical &amp; media dispatches</p>
             </div>
-            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col justify-end gap-4 pb-2">
-              <div class="bg-tertiary-container/60 p-5 shadow-sm backdrop-blur-sm">
-                <div class="flex items-baseline justify-between mb-2">
-                  <span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Press
-                    Inquiries (EU/ME)</span>
-                  <span class="font-label-sm text-label-sm text-on-tertiary-container">24h SLA</span>
-                </div>
-                <p class="font-body-sm text-body-sm text-on-primary mb-3">Direct access for credentialed architectural
-                  journalists and facade engineering institutes.</p>
-                <a class="inline-flex items-center gap-2 font-label-md text-label-md text-secondary-fixed hover:text-on-primary transition-colors"
-                  href="mailto:press@alumax-facades.com">
-                  <span>press@alumax-facades.com</span>
-                  <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-                </a>
-              </div>
+            <div class="p-3 border-l-2 border-white/40">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">International Expos</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">12+ <span class="font-label-md text-label-md text-secondary-fixed">Regions</span></div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Big 5 Dubai, Riyadh, BAU Munich</p>
+            </div>
+            <div class="p-3 border-l-2 border-secondary">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Compliance Reports</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">A2-s1,d0</div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">ASTM E84 &amp; EN 13501-1 fire dossiers</p>
+            </div>
+            <div class="p-3 border-l-2 border-white/40">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Press Inquiries</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">24h SLA</div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Dedicated architecture media desk</p>
             </div>
           </div>
         </div>
