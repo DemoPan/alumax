@@ -20,7 +20,7 @@ $alumax_h = $args;
   <div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/80 to-transparent z-0 opacity-90"></div>
   <div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/70 to-transparent z-0"></div>
 
-  <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 pt-28 lg:pt-32 pb-16 lg:pb-24 w-full flex flex-col justify-between h-full gap-10">
+  <div class="relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-28 lg:pt-32 pb-16 lg:pb-24 w-full flex flex-col justify-between h-full gap-10">
     <?php get_template_part('template-parts/product-breadcrumb', null, array('variant' => 'hero')); ?>
     <div class="max-w-3xl flex flex-col">
       <h1 class="font-headline font-bold text-3xl sm:text-4xl lg:text-5xl text-on-primary leading-tight tracking-tight mb-4">

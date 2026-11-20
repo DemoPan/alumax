@@ -15,7 +15,7 @@ $metrics  = array_slice(alumax_case_metrics($post_id), 0, 4);
 $gallery  = alumax_case_gallery($post_id);
 $challenge = alumax_case_challenge($post_id);
 
-$fallback_image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-qAi3-NkN3D5kkzbuqChEsIoeZVK9qOB_tP12pm7Ywm0MddUBrDiPoGOEo2gNnKPIrMq9PAlAds9O1lNHApr4YA0afha7J0L8rP_SGE6dEVNQkJGGpGWL_mN3K9F2OP4911zYauzoSSiTHizJkeI8KnjKXn1GMiPK2dJaYFGIxiEgRyxcWsYqSDERLDLlZb84jOHeRr9zYvT_iJcwFJApFbg5R2Ha7XEAfYCPD_cNuWh4fFm1_xuD';
+$fallback_image = '/wp-content/uploads/2026/11/case_13_1.jpg';
 $featured  = get_the_post_thumbnail_url($post_id, 'full');
 $hero_bg   = $featured ?: $fallback_image;
 
@@ -37,9 +37,11 @@ $archive_url = get_post_type_archive_link('case');
   <div class="flex flex-col w-full">
 
     <!-- 01 / PROJECT HERO -->
-    <section class="w-full text-white relative overflow-hidden py-8 md:py-12 border-b border-white/10"
-      id="project-hero"
-      style="background-image: linear-gradient(rgba(13, 27, 42, 0.78), rgba(13, 27, 42, 0.88)), url('<?php echo esc_url($hero_bg); ?>'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+    <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10" id="project-hero">
+      <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+        style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
+      <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+        style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
       <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
         <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Projects', 'archive_url' => $archive_url]); ?>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">

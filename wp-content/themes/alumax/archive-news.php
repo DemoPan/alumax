@@ -69,6 +69,9 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
                   class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
                 <span class="text-secondary-fixed uppercase tracking-widest font-semibold"><?php echo esc_html($alumax_slide['kicker']); ?></span>
               </div>
+              <div>
+                <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
+              </div>
             </div>
           </div>
           <!-- Slide Content Center -->

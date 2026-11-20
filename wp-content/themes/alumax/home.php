@@ -5,11 +5,13 @@ get_header();
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
     <div class="flex flex-col w-full">
       <!-- Immersive Editorial Scrim / Header Extension -->
-      <div class="relative w-full bg-primary-container text-on-primary overflow-hidden pb-16">
-        <div
-          class="absolute inset-0 opacity-10 bg-[radial-gradient(#edbe82_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none">
-        </div>
-        <div class="relative max-w-[1440px] mx-auto px-margin pt-12 md:pt-16">
+      <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+          style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('/wp-content/uploads/alumax-site-2e42e7ec62.jpg');"></div>
+        <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+          style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="relative max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-6">
+          <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
           <!-- Overline Metadata Tracker -->
           <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b-0">
             <div class="flex items-center gap-3">
@@ -61,9 +63,9 @@ get_header();
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <!-- Featured Spotlight Article (Negative Overlap Bento) -->
-      <section class="relative max-w-[1440px] mx-auto px-margin -mt-8 w-full z-10 mb-20">
+      <section class="relative max-w-[1440px] mx-auto px-margin-mobile md:px-margin -mt-8 w-full z-10 mb-20">
         <div class="bg-surface-container-lowest shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           <!-- Media Column -->
           <div class="lg:col-span-7 relative min-h-[420px] lg:min-h-[580px] bg-primary-container overflow-hidden group">
@@ -161,7 +163,7 @@ get_header();
         </div>
       </section>
       <!-- Section 1 & 2: Interactive Filter & Architectural Article Matrix -->
-      <section class="w-full max-w-[1440px] mx-auto px-margin mb-24">
+      <section class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin mb-24">
         <!-- Filter Bar Header Block -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-10">
           <div>
@@ -269,7 +271,7 @@ get_header();
         </div>
       <!-- Section 3: Global Media Kit & PR Downloads -->
       <section class="w-full bg-surface-container-low py-20">
-        <div class="max-w-[1440px] mx-auto px-margin">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
           <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
             <div>
               <div
@@ -429,7 +431,7 @@ get_header();
       </section>
       <!-- Section 4: High-End Newsletter Subscription for Architects -->
       <section class="w-full bg-surface py-20">
-        <div class="max-w-[1440px] mx-auto px-margin">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
           <div class="bg-surface-container-lowest p-8 lg:p-16 shadow-lg relative overflow-hidden">
             <!-- Technical Grid Background Hint -->
             <div class="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 pointer-events-none hidden lg:block">

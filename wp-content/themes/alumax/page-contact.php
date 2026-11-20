@@ -10,24 +10,26 @@ get_header();
   <div class="flex flex-col w-full">
 
     <!-- HERO -->
-    <section class="relative bg-primary-container text-inverse-on-surface py-16 lg:py-20 border-b border-on-tertiary-fixed-variant overflow-hidden">
-      <div class="absolute inset-0 opacity-20 pointer-events-none">
-        <img alt="<?php echo esc_attr(alumax_contact('hero_title')); ?>" class="w-full h-full object-cover" src="<?php echo esc_url(alumax_contact('hero_image')); ?>">
-      </div>
-      <div class="relative max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-        <div class="max-w-3xl space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container border border-on-tertiary-fixed-variant text-secondary-fixed-dim font-label text-xs uppercase tracking-wider">
+    <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+      <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+        style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url(alumax_contact('hero_image')); ?>');"></div>
+      <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+        style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
+        <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Contact', 'archive_url' => home_url('/contact/'), 'current' => '']); ?>
+        <div class="max-w-4xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
             <span class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
             <?php echo esc_html(alumax_contact('hero_eyebrow')); ?>
           </div>
-          <h1 class="font-headline text-3xl sm:text-5xl lg:text-[46px] font-bold text-white tracking-tight leading-tight">
-            <?php echo esc_html(alumax_contact('hero_title')); ?><br>
-            <span class="text-secondary-fixed-dim"><?php echo esc_html(alumax_contact('hero_title_accent')); ?></span>
+          <h1 class="font-display-xl text-display-xl text-white tracking-tight font-bold">
+            <?php echo esc_html(alumax_contact('hero_title')); ?>
+            <span class="block text-secondary-fixed-dim font-normal text-display-lg mt-1"><?php echo esc_html(alumax_contact('hero_title_accent')); ?></span>
           </h1>
-          <p class="font-body text-outline-variant text-base sm:text-lg leading-relaxed"><?php echo esc_html(alumax_contact('hero_desc')); ?></p>
-          <div class="flex flex-wrap gap-4 pt-3">
+          <p class="font-body-md text-body-md text-primary-fixed-dim max-w-3xl leading-relaxed"><?php echo esc_html(alumax_contact('hero_desc')); ?></p>
+          <div class="flex flex-wrap gap-4 pt-2">
             <?php for ($i = 1; $i <= 3; $i++) : ?>
-            <div class="flex items-center gap-2 text-xs font-label text-inverse-on-surface bg-tertiary-container px-3.5 py-1.5 border border-on-tertiary-fixed-variant">
+            <div class="flex items-center gap-2 text-xs font-label text-inverse-on-surface bg-tertiary-container/80 backdrop-blur-md px-3.5 py-1.5 border border-on-tertiary-fixed-variant">
               <span class="material-symbols-outlined text-secondary-fixed-dim text-[18px]"><?php echo esc_html(alumax_contact("hero_pill{$i}_icon")); ?></span>
               <span><?php echo esc_html(alumax_contact("hero_pill{$i}_text")); ?></span>
             </div>

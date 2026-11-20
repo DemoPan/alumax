@@ -7,8 +7,8 @@ if (!defined('ABSPATH')) { exit; }
 get_header();
 
 $paged = max(1, (int) get_query_var('paged'));
-$fallback_image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-qAi3-NkN3D5kkzbuqChEsIoeZVK9qOB_tP12pm7Ywm0MddUBrDiPoGOEo2gNnKPIrMq9PAlAds9O1lNHApr4YA0afha7J0L8rP_SGE6dEVNQkJGGpGWL_mN3K9F2OP4911zYauzoSSiTHizJkeI8KnjKXn1GMiPK2dJaYFGIxiEgRyxcWsYqSDERLDLlZb84jOHeRr9zYvT_iJcwFJApFbg5R2Ha7XEAfYCPD_cNuWh4fFm1_xuD';
-$hero_bg = 'https://lh3.googleusercontent.com/aida/AEtjO1VUQCHakCTsoRpuJrVgGotL75_s3xJUfmltXG5JSKGnrKuodK0hqQwVJbHbLwJmZFKa1DrnMeSaXK7no4Cv38op_VnK44t8_cu1_qSrFeU801bn57VmDbpeeHGpI1Sn3JJij0f_SKteAsSzUYx3XsTjV3ASNU4DqHC4bGlbe9pCgwu91yVhxu8AZ0aB2_l5oQuXFbf0XdrVczZKHDUH2PO1SIDQ1P84s-r_u0NbLOfLqpOwMtr7PDezKA';
+$fallback_image = '/wp-content/uploads/2026/11/case_13_1.jpg';
+$hero_bg = '/wp-content/uploads/2026/11/case_13_1.jpg';
 
 // Spotlight： 1 ，
 $spotlight = null;
@@ -60,21 +60,22 @@ $filters = [
 <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
 
   <!-- HERO -->
-  <section class="relative w-full overflow-hidden bg-[#0d1b2a] text-white py-8 md:py-10 border-b border-white/10">
-    <div class="absolute inset-0 z-0">
-      <img class="w-full h-full object-cover opacity-25 filter brightness-75 contrast-125" alt="Architectural Facade Envelope" src="<?php echo esc_url($hero_bg); ?>">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/85 to-[#0d1b2a]/60"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent"></div>
-    </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-margin-mobile md:px-margin space-y-6">
-      <div class="pb-2">
-        <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Projects', 'archive_url' => get_post_type_archive_link('case'), 'current' => '']); ?>
+  <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+    <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+      style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
+    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+      style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6 md:space-y-8">
+      <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Projects', 'archive_url' => get_post_type_archive_link('case'), 'current' => '']); ?>
+      <div class="space-y-4 max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
+          <span class="material-symbols-outlined text-[15px]">location_city</span>
+          <span>Global Reference Projects</span>
+        </div>
+        <h1 class="font-display-xl text-display-xl text-white tracking-tight font-bold">Landmark Architectural Facades &amp; Global Installations</h1>
+        <p class="font-body-md text-body-md text-primary-fixed-dim max-w-3xl leading-relaxed">Explore precision-manufactured exterior cladding, solid aluminum cassettes, dynamic kinetic solar louvers, and bespoke honeycomb envelope assemblies engineered for iconic international towers and cultural institutions.</p>
       </div>
-      <div class="max-w-4xl space-y-3 pt-2">
-        <h1 class="font-display-xl text-display-xl text-white tracking-tight">Landmark Architectural Facades &amp; Global Installations</h1>
-        <p class="font-body-md text-body-md text-slate-300 max-w-3xl">Explore precision-manufactured exterior cladding, solid aluminum cassettes, dynamic kinetic solar louvers, and bespoke honeycomb envelope assemblies engineered for iconic international towers and cultural institutions.</p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4 mt-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-4">
         <div class="p-3 border-l-2 border-secondary">
           <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Installed Envelope Area</span>
           <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">1.2M+ <span class="font-label-md text-label-md text-secondary-fixed">m²</span></div>

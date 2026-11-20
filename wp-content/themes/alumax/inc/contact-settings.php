@@ -16,7 +16,7 @@ function alumax_contact_defaults() {
         'hero_title'        => 'Get in Touch with ALUVIONA.',
         'hero_title_accent' => 'Let\'s Build Something Remarkable.',
         'hero_desc'         => 'Connect with our global facade engineering team for technical consultations, custom specifications, structural takeoff, and sample logistics.',
-        'hero_image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1XLmLasodi4t5eS1a8XRjjEdyLtPH4mzGF_IS2OCs06faN4UgzK5aHqfIuK8yKyFY409q7DiZKbpWYQcDFJZwSn6Aq9qooYeljdq4N6cnW3NUlO1CIMSlVaJeUejQf4rVQ78ZaAoqcobV7Stll9hCtIKGL2giU73Soc2B1YXBRM1Db7lNts0fZHUFAuY_c5eifdp4-L94hVaPWq185FrBd4F9q_TNCTNgSpUBalH_9J6Z963vPPIgclgQ',
+        'hero_image'        => '/wp-content/uploads/solid-aluminum-cladding-hero-building.jpg',
         // Office
         'office_eyebrow' => 'Our Office',
         'office_title'   => 'Visit Our Office',

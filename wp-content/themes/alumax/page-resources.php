@@ -5,12 +5,14 @@ get_header();
 <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
     <div class="flex flex-col w-full">
       <!-- Hero Section: Technical Library & Compliance Hub -->
-      <section class="relative w-full bg-primary-container text-on-primary overflow-hidden py-16 lg:py-24">
-        <!-- Ambient Structural Grid Overlay -->
-        <div
-          class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#edbe82_1px,transparent_1px)] [background-size:24px_24px]">
-        </div>
-        <div class="max-w-[1440px] mx-auto px-margin relative z-10">
+      <?php $hero_bg = '/wp-content/uploads/steel-wall-panels-hero.jpg'; ?>
+      <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+          style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
+        <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+          style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
+          <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Resources', 'archive_url' => home_url('/resources/'), 'current' => '']); ?>
           <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12">
             <div class="max-w-3xl space-y-4">
               <div
@@ -96,7 +98,7 @@ get_header();
       </section>
       <!-- Section 1: Interactive Download Matrix -->
       <section class="w-full bg-surface-bright py-16">
-        <div class="max-w-[1440px] mx-auto px-margin space-y-8">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-8">
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <span
@@ -414,7 +416,7 @@ get_header();
       </section>
       <!-- Section 2: Facade Engineering Calculators & Tools -->
       <section class="w-full bg-surface-container-low py-16">
-        <div class="max-w-[1440px] mx-auto px-margin space-y-10">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-10">
           <div class="max-w-2xl">
             <span class="font-label-sm text-label-sm uppercase text-secondary font-semibold tracking-widest">Interactive
               Engineering Suite</span>

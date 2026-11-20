@@ -6,26 +6,22 @@ get_header();
     <div class="flex flex-col w-full">
       <!-- 1. INTRO HERO BAR -->
       <?php $hero_bg = alumax_pa('hero_bg') ?: '/wp-content/uploads/alumax-site-2e42e7ec62.jpg'; ?>
-      <section class="relative w-full overflow-hidden bg-[#0d1b2a] text-white py-12 md:py-16 border-b border-white/10">
-        <div class="absolute inset-0 z-0">
-          <img class="w-full h-full object-cover opacity-25 filter brightness-90 contrast-125" alt="Aluviona Factory Interior" src="<?php echo esc_url($hero_bg); ?>">
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/85 to-[#0d1b2a]/60"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent"></div>
-          <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
-        </div>
-        <div class="relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-6">
-          <div>
-            <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Products', 'archive_url' => get_post_type_archive_link('product'), 'current' => '']); ?>
-          </div>
+      <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+          style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
+        <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+          style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
+          <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Products', 'archive_url' => get_post_type_archive_link('product'), 'current' => '']); ?>
           <div class="space-y-4 max-w-4xl">
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/15 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
               <span class="material-symbols-outlined text-[15px]">precision_manufacturing</span>
               <span>Architectural Systems Manufacturing Hub</span>
             </div>
             <h1 class="font-display-xl text-display-xl tracking-tight text-white font-bold">
               <?php echo esc_html(alumax_pa('hero_title')); ?>
             </h1>
-            <p class="font-body-lg text-body-lg text-slate-300 max-w-3xl leading-relaxed">
+            <p class="font-body-md text-body-md text-primary-fixed-dim max-w-3xl leading-relaxed">
               <?php echo esc_html(alumax_pa('hero_subtitle')); ?>
             </p>
           </div>
