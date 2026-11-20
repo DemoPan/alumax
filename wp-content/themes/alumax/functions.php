@@ -259,7 +259,7 @@ add_action('pre_get_posts', 'alumax_product_archive_per_page');
 
 function alumax_document_title_parts($title) {
     if (is_front_page()) {
-        $title['title'] = 'ALUVIONA | Architectural Aluminum & Metal Facade Systems Manufacturer';
+        $title['title'] = 'Aluviona | Architectural Metal Solutions — Shaping Architecture with Metal.';
         $title['tagline'] = '';
         $title['site'] = '';
         return $title;
@@ -358,7 +358,7 @@ function alumax_seo_meta() {
             }
         }
     } elseif (is_front_page()) {
-        $desc = 'ALUVIONA manufactures premium architectural metal facade systems, solid aluminum cladding, honeycomb panels, louvers, and custom exterior envelopes. Inquire now.';
+        $desc = 'Aluviona — Architectural Metal Solutions. Shaping Architecture with Metal. Global manufacturer of precision-engineered curtain walls, solid aluminum cladding, honeycomb panels, and motorized louvers.';
         $url = home_url('/');
     } elseif (is_post_type_archive('product')) {
         $desc = 'Explore ALUVIONA engineered architectural metal systems: solid aluminum cladding, composite panels, honeycomb cassettes, solar louvers, and acoustic ceilings.';

@@ -13,15 +13,21 @@ if (!defined('ABSPATH')) {
             <?php if ($footer_logo !== '') : ?>
             <img class="h-8 w-auto" src="<?php echo esc_url($footer_logo); ?>" alt="<?php echo esc_attr(alumax_site('brand_name')); ?>">
             <?php else : ?>
-            <svg class="h-8 w-8 text-secondary-fixed" fill="currentColor" viewBox="0 0 40 40">
+            <svg class="h-9 w-9 text-secondary-fixed shrink-0" fill="currentColor" viewBox="0 0 40 40">
               <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round"
                 stroke-width="3.5"></path>
               <path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
               <line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
             </svg>
             <?php endif; ?>
-            <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-white font-bold"><?php echo esc_html(alumax_site('brand_name')); ?></span>
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-white font-bold leading-none"><?php echo esc_html(alumax_site('brand_name')); ?></span>
+              <span class="font-label text-[9px] text-secondary-fixed tracking-widest uppercase mt-1 leading-none font-semibold">Architectural Metal Solutions</span>
+            </div>
           </div>
+          <p class="font-body-sm text-secondary-fixed font-medium italic border-l-2 border-secondary pl-3 py-0.5">
+            “Shaping Architecture with Metal.”
+          </p>
           <p class="font-body-md text-body-md text-slate-300 max-w-md">
             <?php echo esc_html(alumax_site('brand_summary')); ?>
           </p>

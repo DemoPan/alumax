@@ -28,16 +28,20 @@ $nav_items = [
     class="fixed top-0 left-0 right-0 z-50 bg-[#0d1b2a]/95 backdrop-blur-xl border-b border-white/10 transition-all">
     <div
       class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-lg">
-      <!-- Clean geometric logo only -->
+      <!-- Clean geometric logo + Brand Name & Descriptor -->
       <div class="flex items-center">
-        <a aria-label="ALUVIONA Home" class="flex items-center group" href="<?php echo esc_url(home_url('/')); ?>">
-          <svg class="h-9 w-9 text-secondary-fixed transition-transform duration-300 group-hover:scale-105"
+        <a aria-label="Aluviona - Architectural Metal Solutions" class="flex items-center gap-3 group" href="<?php echo esc_url(home_url('/')); ?>">
+          <svg class="h-9 w-9 text-secondary-fixed transition-transform duration-300 group-hover:scale-105 shrink-0"
             fill="currentColor" viewBox="0 0 40 40">
             <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5">
             </path>
             <path d="M20 14L28 30H12L20 14Z" fill="currentColor" fill-opacity="0.85"></path>
             <line stroke="#ffffff" stroke-width="2" x1="8" x2="32" y1="26" y2="26"></line>
           </svg>
+          <div class="flex flex-col justify-center">
+            <span class="font-headline font-bold text-white tracking-wider text-[17px] uppercase leading-none">ALUVIONA</span>
+            <span class="font-label text-[8px] text-secondary-fixed tracking-widest uppercase mt-1 leading-none">Architectural Metal Solutions</span>
+          </div>
         </a>
       </div>
       <!-- Navigation links -->

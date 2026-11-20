@@ -13,7 +13,7 @@ function alumax_site_defaults() {
     $defaults = [
         // 品牌信息（页脚第一列）
         'brand_logo'    => '',
-        'brand_name'    => 'ALUVIONA ARCHITECTURAL',
+        'brand_name'    => 'Aluviona',
         'brand_summary' => 'Global premier manufacturer of precision-engineered curtain walls, motorized adaptive facades, and high-performance architectural envelopes. Supplying tested systems to over 60 countries across Europe, the Middle East, Southeast Asia, and the Americas.',
         // 全球总部信息（页脚第四列）
         'hq_title'     => 'Global Headquarters',
@@ -21,7 +21,7 @@ function alumax_site_defaults() {
         'hq_link_text' => 'Global Representative Network →',
         'hq_link_url'  => '',
         // 底部版权信息（页脚最底部）
-        'copyright_text' => '© {year} ALUVIONA Architectural Envelopes Co., Ltd. All rights reserved. Precision Architectural Facade Systems.',
+        'copyright_text' => '© {year} Aluviona Architectural Metal Solutions Co., Ltd. All rights reserved.',
         // 社媒链接（行数不限，页脚第一列）
         'socials' => [
             ['label' => 'LinkedIn', 'image' => '', 'url' => '#'],
