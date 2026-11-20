@@ -15,7 +15,7 @@ $metrics  = array_slice(alumax_case_metrics($post_id), 0, 4);
 $gallery  = alumax_case_gallery($post_id);
 $challenge = alumax_case_challenge($post_id);
 
-$fallback_image = '/wp-content/uploads/2026/11/case_13_1.jpg';
+$fallback_image = '/wp-content/uploads/pre-insulated-wall-panels-hero-building.jpg';
 $featured  = get_the_post_thumbnail_url($post_id, 'full');
 $hero_bg   = $featured ?: $fallback_image;
 
@@ -37,7 +37,7 @@ $archive_url = get_post_type_archive_link('case');
   <div class="flex flex-col w-full">
 
     <!-- 01 / PROJECT HERO -->
-    <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10" id="project-hero">
+    <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10" id="project-hero">
       <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
         style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
       <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"

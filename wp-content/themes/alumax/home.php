@@ -5,7 +5,7 @@ get_header();
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
     <div class="flex flex-col w-full">
       <!-- Immersive Editorial Scrim / Header Extension -->
-      <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+      <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
         <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
           style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('/wp-content/uploads/alumax-site-2e42e7ec62.jpg');"></div>
         <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"

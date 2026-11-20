@@ -10,7 +10,7 @@ get_header();
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <!-- HERO -->
-    <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+    <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
       <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
         style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
       <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">

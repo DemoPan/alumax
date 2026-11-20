@@ -60,17 +60,15 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
             <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/80 to-transparent"></div>
           </div>
           <?php endif; ?>
-          <!-- Slide Top Telemetry -->
-          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin pt-8">
+          <!-- Slide Top Telemetry & Breadcrumb -->
+          <div class="relative z-30 max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin pt-6 space-y-3">
+            <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
             <div
               class="flex flex-wrap items-center justify-between gap-4 font-label text-[11px] pb-4 border-b border-white/10 text-[#c4c6cc]">
               <div class="flex items-center gap-3">
                 <span
                   class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
                 <span class="text-secondary-fixed uppercase tracking-widest font-semibold"><?php echo esc_html($alumax_slide['kicker']); ?></span>
-              </div>
-              <div>
-                <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
               </div>
             </div>
           </div>
@@ -154,6 +152,20 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
         </div>
       </div>
     </section>
+    <?php else : ?>
+      <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+        <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
+          style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
+          <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'News', 'archive_url' => alumax_news_url(), 'current' => '']); ?>
+          <div class="space-y-4 max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
+              <span>Architectural News &amp; Insights</span>
+            </div>
+            <h1 class="font-display-xl text-display-xl text-white tracking-tight font-bold"><?php echo esc_html(alumax_news_page('archive_title')); ?></h1>
+          </div>
+        </div>
+      </section>
     <?php endif; ?>
     <!-- ======================================================================= -->
     <!-- 3. NEWS ARTICLES DISPLAY SECTION WITH TOP CONTROL TOOLBAR & VIEW TOGGLE -->

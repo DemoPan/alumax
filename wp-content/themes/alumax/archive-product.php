@@ -6,7 +6,7 @@ get_header();
     <div class="flex flex-col w-full">
       <!-- 1. INTRO HERO BAR -->
       <?php $hero_bg = alumax_pa('hero_bg') ?: '/wp-content/uploads/alumax-site-2e42e7ec62.jpg'; ?>
-      <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+      <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
         <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
           style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
         <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"

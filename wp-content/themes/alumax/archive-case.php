@@ -7,8 +7,8 @@ if (!defined('ABSPATH')) { exit; }
 get_header();
 
 $paged = max(1, (int) get_query_var('paged'));
-$fallback_image = '/wp-content/uploads/2026/11/case_13_1.jpg';
-$hero_bg = '/wp-content/uploads/2026/11/case_13_1.jpg';
+$fallback_image = '/wp-content/uploads/pre-insulated-wall-panels-hero-building.jpg';
+$hero_bg = '/wp-content/uploads/pre-insulated-wall-panels-hero-building.jpg';
 
 // Spotlight： 1 ，
 $spotlight = null;
@@ -58,14 +58,15 @@ $filters = [
 ];
 ?>
 <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+  <div class="flex flex-col w-full">
 
-  <!-- HERO -->
-  <section class="relative w-full -mt-20 pt-28 pb-14 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
+    <!-- HERO -->
+  <section class="relative w-full -mt-20 pt-32 pb-12 bg-primary-container text-on-primary overflow-hidden border-b border-white/10">
     <div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
       style="background-image: linear-gradient(to right, rgba(13, 27, 42, 0.94) 0%, rgba(13, 27, 42, 0.84) 60%, rgba(13, 27, 42, 0.92) 100%), url('<?php echo esc_url($hero_bg); ?>');"></div>
     <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen"
       style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
-    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6 md:space-y-8">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin relative z-10 space-y-6">
       <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Projects', 'archive_url' => get_post_type_archive_link('case'), 'current' => '']); ?>
       <div class="space-y-4 max-w-4xl">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container/80 backdrop-blur-md border border-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">
@@ -397,6 +398,7 @@ $filters = [
   });
   </script>
 
+  </div>
 </main>
 <?php
 get_footer();
