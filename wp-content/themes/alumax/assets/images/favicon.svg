@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="aluvionaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16273b"/>
+      <stop offset="100%" stop-color="#0a1420"/>
+    </linearGradient>
+    <linearGradient id="aluvionaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4c4"/>
+      <stop offset="100%" stop-color="#edbe82"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Container with subtle border -->
+  <rect width="64" height="64" rx="14" fill="url(#aluvionaBg)"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#25384d" stroke-width="1.5"/>
+
+  <!-- Aluviona Architectural Metal A-Geometry -->
+  <g transform="translate(32, 33) scale(1.28) translate(-20, -18)">
+    <!-- Outer Triangle Structural Frame -->
+    <path d="M20 2L37 32H3L20 2Z" fill="none" stroke="url(#aluvionaGold)" stroke-linejoin="round" stroke-linecap="round" stroke-width="3.5"/>
+    <!-- Inner Facade Infill -->
+    <path d="M20 14L28 30H12L20 14Z" fill="url(#aluvionaGold)" fill-opacity="0.88"/>
+    <!-- Horizontal Structural Transom -->
+    <line stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" x1="7.5" x2="32.5" y1="26" y2="26"/>
+  </g>
+</svg>

@@ -10,7 +10,7 @@ const PUBLIC_ORIGIN = process.argv[3] || ORIGIN;
 const OUT = path.join(__dirname, '..', 'static-export');
 const MAX_PAGES = 500;
 
-const ASSET_RE = /\.(css|js|jpe?g|png|gif|svg|webp|ico|woff2?|ttf|eot|pdf|zip|mp4|webm|avif)(\?|#|$)/i;
+const ASSET_RE = /\.(css|js|jpe?g|png|gif|svg|webp|ico|woff2?|ttf|eot|pdf|zip|mp4|webm|avif|webmanifest)(\?|#|$)/i;
 const SKIP_RE = /^\/(wp-admin|wp-json|wp-login\.php|xmlrpc\.php|feed)/;
 const SKIP_QUERY_RE = /[?&](news_search|news_year|s|p|replytocom|inquiry)=/;
 
@@ -134,7 +134,7 @@ async function crawlPage(urlPath) {
   // 清空输出目录但保留 .git（该目录同时作为静态站仓库推送到 GitHub）
   if (fs.existsSync(OUT)) {
     for (const entry of fs.readdirSync(OUT)) {
-      if (entry === '.git' || entry === 'CNAME' || entry === '.github' || entry.endsWith('.xlsx')) continue;
+      if (entry === '.git' || entry === 'CNAME' || entry === '.github' || entry === 'favicon.ico' || entry.endsWith('.xlsx')) continue;
       fs.rmSync(path.join(OUT, entry), { recursive: true, force: true });
     }
   }
@@ -170,6 +170,30 @@ async function crawlPage(urlPath) {
 `;
     write(fromPath + 'index.html', redirectHtml);
     console.log(`redirect: ${fromPath} -> ${toPath}`);
+  }
+
+  // 确保根目录 favicon 与 PWA 图标完整
+  const rootFavicon = path.join(__dirname, '..', 'favicon.ico');
+  if (fs.existsSync(rootFavicon)) {
+    fs.copyFileSync(rootFavicon, path.join(OUT, 'favicon.ico'));
+  }
+  const themeImgDir = path.join(__dirname, '..', 'wp-content', 'themes', 'alumax', 'assets', 'images');
+  if (fs.existsSync(themeImgDir)) {
+    const outThemeImg = path.join(OUT, 'wp-content', 'themes', 'alumax', 'assets', 'images');
+    fs.mkdirSync(outThemeImg, { recursive: true });
+    for (const file of fs.readdirSync(themeImgDir)) {
+      if (file.startsWith('android-chrome') || file.startsWith('apple-touch') || file.startsWith('favicon') || file.endsWith('.webmanifest')) {
+        fs.copyFileSync(path.join(themeImgDir, file), path.join(outThemeImg, file));
+      }
+    }
+    const rootAppleTouch = path.join(themeImgDir, 'apple-touch-icon.png');
+    if (fs.existsSync(rootAppleTouch)) {
+      fs.copyFileSync(rootAppleTouch, path.join(OUT, 'apple-touch-icon.png'));
+    }
+    const rootSvg = path.join(themeImgDir, 'favicon.svg');
+    if (fs.existsSync(rootSvg)) {
+      fs.copyFileSync(rootSvg, path.join(OUT, 'favicon.svg'));
+    }
   }
 
   console.log(`pages: ${savedPages}, assets: ${savedAssets}`);
