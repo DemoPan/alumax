@@ -67,9 +67,9 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
               <p class="font-body-sm text-body-sm text-slate-400 mt-1">Global technical &amp; media dispatches</p>
             </div>
             <div class="p-3 border-l-2 border-white/40">
-              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">International Expos</span>
-              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">12+ <span class="font-label-md text-label-md text-secondary-fixed">Regions</span></div>
-              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Big 5 Dubai, Riyadh, BAU Munich</p>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Manufacturing Base</span>
+              <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">150K <span class="font-label-md text-label-md text-secondary-fixed">m²</span></div>
+              <p class="font-body-sm text-body-sm text-slate-400 mt-1">Smart CNC &amp; automated coating lines</p>
             </div>
             <div class="p-3 border-l-2 border-secondary">
               <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Compliance Reports</span>

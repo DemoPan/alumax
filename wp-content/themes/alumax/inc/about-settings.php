@@ -14,7 +14,7 @@ function alumax_about_defaults() {
         // Hero
         'hero_badge'   => 'Global Architectural Manufacturing Complex // ISO 9001 · EN 13501-1',
         'hero_title'   => 'Engineering Global Skylines Through Precision Metallurgy',
-        'hero_intro'   => 'State-of-the-Art 150,000 m² Automated Manufacturing Hub & Facade Engineering Excellence. Supplying monument-scale architectural envelopes to over 60 international sovereign territories.',
+        'hero_intro'   => 'State-of-the-Art 150,000 m² Automated Manufacturing Campus & Facade Engineering Excellence. Powered by China\'s premier industrial manufacturing ecosystem and precision supply chain, delivering world-leading architectural envelopes certified to international ASTM and EN standards.',
         'hero_bg'      => $factory_image,
         // Section 01 Heritage
         's1_eyebrow'   => '// SECTION 01',
@@ -47,7 +47,7 @@ function alumax_about_defaults() {
         ['value' => '150K m²', 'label' => 'Facility Footprint', 'sub' => 'Spanning 4 robotic fabrication halls'],
         ['value' => '12', 'label' => 'Automated CNC Lines', 'sub' => 'German 5-axis ±0.3mm tolerance'],
         ['value' => '35+', 'label' => 'Proprietary Patents', 'sub' => 'Hyperbolic, honeycomb, acoustic'],
-        ['value' => '60+', 'label' => 'Export Destinations', 'sub' => 'EU, MENA, Americas, APAC'],
+        ['value' => 'A2-s1,d0', 'label' => 'Fire & Safety Code', 'sub' => 'EN 13501-1 & ASTM E84 Class A'],
         ['value' => '25-Yr', 'label' => 'Coating Warranty', 'sub' => 'PPG / AkzoNobel PVDF Class 1'],
     ];
     foreach ($metrics as $i => $metric) {
@@ -61,7 +61,7 @@ function alumax_about_defaults() {
     $timeline = [
         ['years' => '2004 — 2010', 'title' => 'Pioneering Solid Cladding', 'desc' => 'Commissioning of the first automated 3.0mm solid PVDF coil lines. Initial export deliveries for high-traffic civil infrastructure including terminal concourses at Hong Kong International Airport.', 'foot_label' => 'Core Achievement', 'foot_value' => 'Automated PVDF Coils'],
         ['years' => '2011 — 2018', 'title' => 'Honeycomb & 3D Hyperbolics', 'desc' => 'Strategic expansion into the unified 150,000 m² campus. Attainment of European CE & EN 13501-1 A2 non-combustible composite core certification and specialized roll-curving capabilities.', 'foot_label' => 'Certification', 'foot_value' => 'EN 13501-1 A2 Fire Safe'],
-        ['years' => '2019 — Present', 'title' => 'Digital BIM & Smart Facades', 'desc' => 'End-to-end integration of motorized solar shading systems, parametric CAD-to-CNC LOD 400 fabrication pipelines, and international logistics directly servicing global supertall towers.', 'foot_label' => 'Platform', 'foot_value' => 'Parametric BIM LOD 400'],
+        ['years' => '2019 — Present', 'title' => 'Digital BIM & Smart Facades', 'desc' => 'End-to-end integration of motorized solar shading systems, parametric CAD-to-CNC LOD 400 fabrication pipelines, and advanced manufacturing infrastructure built to deliver world-leading facade quality.', 'foot_label' => 'Platform', 'foot_value' => 'Parametric BIM LOD 400'],
     ];
     foreach ($timeline as $i => $card) {
         $n = $i + 1;
@@ -257,6 +257,14 @@ function alumax_about($key) {
     static $opts = null;
     if ($opts === null) {
         $opts = wp_parse_args(get_option('alumax_about', []), alumax_about_defaults());
+        if (isset($opts['hero_intro']) && strpos($opts['hero_intro'], 'over 60') !== false) {
+            $defaults = alumax_about_defaults();
+            $opts['hero_intro'] = $defaults['hero_intro'];
+            $opts['hero_metric4_value'] = $defaults['hero_metric4_value'];
+            $opts['hero_metric4_label'] = $defaults['hero_metric4_label'];
+            $opts['hero_metric4_sub']   = $defaults['hero_metric4_sub'];
+            update_option('alumax_about', $opts);
+        }
     }
     return isset($opts[$key]) ? $opts[$key] : '';
 }

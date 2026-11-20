@@ -35,8 +35,8 @@ get_header();
                 <span class="font-headline-lg text-headline-lg text-surface-bright font-bold">128+</span>
               </div>
               <div class="flex flex-col px-3">
-                <span class="font-label-sm text-label-sm text-outline-variant uppercase">Global Regions</span>
-                <span class="font-headline-lg text-headline-lg text-secondary-fixed-dim font-bold">48</span>
+                <span class="font-label-sm text-label-sm text-outline-variant uppercase">Compliance Codes</span>
+                <span class="font-headline-lg text-headline-lg text-secondary-fixed-dim font-bold">ASTM / EN</span>
               </div>
               <div class="flex flex-col px-3">
                 <span class="font-label-sm text-label-sm text-outline-variant uppercase">BIM LOD Level</span>

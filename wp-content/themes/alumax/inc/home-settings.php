@@ -17,14 +17,14 @@ function alumax_home_defaults() {
         'hero_stat2_label' => 'Fluorocarbon PVDF Warranty',
         'hero_stat3_value' => '1,200+',
         'hero_stat3_label' => 'Landmark Installations',
-        'hero_stat4_value' => '60+',
-        'hero_stat4_label' => 'Countries Supplied',
+        'hero_stat4_value' => '85,000 m²',
+        'hero_stat4_label' => 'Smart Fabrication Campus',
         'hero_slide1_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDAzjju-ydUmitWslhrr0mA1qamRtzU6zGsa3F4Rg1IQP2_Zwol1uS4XGtaXiR83eloxmYfk1PCT3IO-wYBtUbVCTKvpYklnffhYaVZ_sS9ClJKQhRXlpV97SpSldtJRIfTh_JxTRkhuSw0ePcHPBF_jjzTGwrlvcK-400-m3i2PflHYCwvGIYJwF3NyybHveT6NCdoq_-Jnl8k4PwD57OqCuaSCvg0lGYeqO6zlR97QMBTAQ78sRfP',
         'hero_slide1_title' => '1. Kinetic Intelligent Facade',
         'hero_slide1_sub' => 'Automated Motorized Sunshades',
         'hero_slide2_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8wuyzUaiCDi4lc20UMHFnTqoxEpEgReYPtYYlM1LahFedp1QHaxFSgTMgUtrzpqIXbCytDJQnBQ1uB2xhui_9XBZ0plu1nrJ6Gao1cNGJDZZzE8UPZmmlq6rS0jMNEhXj9BiWp5GwZ_QqVURejkBZMzAdqnuITSCWquVDWErDQ1s_GgUVHyWtGySMK5OYFXkSWkUQEUK8CfCc3e75bV9nwiaxf5zTzhNpyKTEanP5HJJg9-E2_lKW',
         'hero_slide2_title' => '2. Landmark Airport Canopy',
-        'hero_slide2_sub' => 'Dubai Concourse Honeycomb',
+        'hero_slide2_sub' => 'Transit Concourse Honeycomb',
         'hero_slide3_image' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBM-pEeC3oGTrZ1GQvz14eind6a-1BuRjK-RSWNEXkZer_QhGLD3oTbaL60gBpIAyRhaxBwtcA-I-uyPxbXOpQ4nb_CScmx8Qg_ppQ5zqtTybrvcSXlYMmLTj4VS84D5Srq4MqsVujt7u1jsGxxxrkf0yZGUudF1SBycw4tzEA6bDIkLfpjd0vr2rGwbVoeAJUjq2AFKocQqoZ9_Ue0q1A7pGJhXZBLP8UlKusNVQrf8mcOeka1JHCO',
         'hero_slide3_title' => '3. Hyperboloid Metal Tower',
         'hero_slide3_sub' => 'Curved Solid Aluminum Panels',
@@ -43,7 +43,7 @@ function alumax_home_defaults() {
         's4_bg_image' => 'https://lh3.googleusercontent.com/aida/AEtjO1VX-1APmxkQtKJO_kHBQr_udIAcu29QJBYCEvpD_4lIb4tA6bAUOcW9LKboQdvXLVXeVhuppuqjFlUgURlUTgqqLmUU1wNV5uHe9f1pXW5XuiAVSQ7BQI2TSxzRmzkNX5TETbp_qfXSYonIdkll9Pp52qPRF8B26RjxoU89e26hSueuMcfukKIoe03Wv4MTWUNnoX0RKyU61DGWGiGjprkVO0DIec8R0yz7M3B4Yaki9qkNFGaswEmyhmo',
         // Section 5: Landmark Projects
         's5_eyebrow' => 'Global Project References',
-        's5_title' => '1,200+ Projects Completed Across 6 Continents',
+        's5_title' => '1,200+ Landmark Projects Engineered with World-Class Precision',
     ];
 
     // Section 2 finish cards
@@ -260,6 +260,13 @@ function alumax_home($key) {
     static $opts = null;
     if ($opts === null) {
         $opts = wp_parse_args(get_option('alumax_home', []), alumax_home_defaults());
+        if (isset($opts['hero_stat4_label']) && strpos($opts['hero_stat4_label'], 'Countries') !== false) {
+            $defaults = alumax_home_defaults();
+            $opts['hero_stat4_value'] = $defaults['hero_stat4_value'];
+            $opts['hero_stat4_label'] = $defaults['hero_stat4_label'];
+            $opts['s5_title']         = $defaults['s5_title'];
+            update_option('alumax_home', $opts);
+        }
     }
     return $opts[$key] ?? '';
 }

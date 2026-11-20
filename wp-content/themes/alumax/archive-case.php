@@ -83,9 +83,9 @@ $filters = [
           <p class="font-body-sm text-body-sm text-slate-400 mt-1">Certified curtain wall &amp; cladding</p>
         </div>
         <div class="p-3 border-l-2 border-white/40">
-          <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Global Reach</span>
-          <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">60+ <span class="font-label-md text-label-md text-slate-300">Nations</span></div>
-          <p class="font-body-sm text-body-sm text-slate-400 mt-1">Active presence in GCC, EU &amp; Americas</p>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Engineering Standard</span>
+          <div class="font-headline-lg text-headline-lg text-white tracking-tight mt-1">ASTM <span class="font-label-md text-label-md text-slate-300">&amp; EN</span></div>
+          <p class="font-body-sm text-body-sm text-slate-400 mt-1">Certified to global building codes</p>
         </div>
         <div class="p-3 border-l-2 border-secondary">
           <span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-400 block">Milling Tolerance</span>

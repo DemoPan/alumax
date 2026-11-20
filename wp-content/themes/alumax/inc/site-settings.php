@@ -14,7 +14,7 @@ function alumax_site_defaults() {
         // 品牌信息（页脚第一列）
         'brand_logo'    => '',
         'brand_name'    => 'Aluviona',
-        'brand_summary' => 'Global premier manufacturer of precision-engineered curtain walls, motorized adaptive facades, and high-performance architectural envelopes. Supplying tested systems to over 60 countries across Europe, the Middle East, Southeast Asia, and the Americas.',
+        'brand_summary' => 'Pioneering manufacturer of precision-engineered architectural metal envelopes, solid aluminum cladding, and adaptive facade systems. Anchored in China\'s world-class industrial manufacturing ecosystem and advanced supply chain, ALUVIONA delivers cutting-edge metallurgical engineering certified to international ASTM & EN standards—built for landmark architecture worldwide.',
         // 全球总部信息（页脚第四列）
         'hq_title'     => 'Global Headquarters',
         'hq_desc'      => 'Engineering Consultation & Overseas Export Support Center.',
@@ -139,6 +139,10 @@ function alumax_site($key) {
     static $opts = null;
     if ($opts === null) {
         $opts = wp_parse_args(get_option('alumax_site', []), alumax_site_defaults());
+        if (isset($opts['brand_summary']) && strpos($opts['brand_summary'], 'over 60 countries') !== false) {
+            $opts['brand_summary'] = alumax_site_defaults()['brand_summary'];
+            update_option('alumax_site', $opts);
+        }
     }
     return isset($opts[$key]) ? $opts[$key] : '';
 }

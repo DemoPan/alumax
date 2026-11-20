@@ -139,7 +139,7 @@ spacing:
 This design system is engineered for a premier B2B manufacturer and global exporter of high-performance architectural envelope systems—specializing in solid aluminum cladding, aluminum honeycomb composite panels, intelligent louvers, and bespoke curtain wall solutions.
 
 ### Personality & Demographics
-- **Target Audience:** Overseas commercial architects, façade engineers, general procurement contractors, real estate developers, and international engineering consultancies across Europe, the Middle East, Southeast Asia, and the Americas.
+- **Target Audience:** Commercial architects, facade engineers, general contractors, developers, and global engineering consultancies seeking world-leading manufacturing precision, certified compliance (ASTM / EN), and unmatched industrial scale.
 - **Brand Attributes:** Monumental, rigorously engineered, internationally certified (ASTM/EN/BS standards), refined, and unassailable.
 - **Emotional Response:** Inspires absolute structural trust, technical sophistication, and architectural prestige. It communicates industrial power balanced with precision craftsmanship.
 

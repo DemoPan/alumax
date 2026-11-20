@@ -40,7 +40,7 @@ get_header();
             <span class="flex items-center gap-1.5"><span
                 class="material-symbols-outlined text-secondary text-sm">hub</span> Global LOD 400 BIM</span>
             <span class="flex items-center gap-1.5"><span
-                class="material-symbols-outlined text-secondary text-sm">public</span> Export to 60+ Nations</span>
+                class="material-symbols-outlined text-secondary text-sm">precision_manufacturing</span> World-Class Supply Chain</span>
             <span class="flex items-center gap-1.5"><span
                 class="material-symbols-outlined text-secondary text-sm">precision_manufacturing</span> ISO 9001 / CE
               Certified</span>
@@ -457,14 +457,12 @@ get_header();
         <div
           class="p-8 bg-surface-container-low rounded-xl border border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-6">
           <div class="space-y-1">
-            <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Looking for references in your
-              geographic region?</h4>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">We have supplied high-rise commercial, airport,
-              transit hub, and stadium envelopes across North America, Europe, MENA, and Asia Pacific.</p>
+            <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Looking for landmark project references?</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">We have engineered high-rise commercial towers, high-speed rail transit terminals, university science complexes, and civic stadium envelopes—delivering world-leading precision across major infrastructure landmarks.</p>
           </div>
           <a class="shrink-0 px-6 py-3 bg-secondary hover:bg-secondary/90 text-on-secondary font-label-md text-label-md uppercase tracking-wider rounded transition-colors"
             href="<?php echo esc_url(get_post_type_archive_link('case')); ?>">
-            Explore Global Project Case Studies →
+            Explore Landmark Case Studies →
           </a>
         </div>
       </div>
