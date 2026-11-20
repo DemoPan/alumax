@@ -137,7 +137,7 @@ while (have_posts()) : the_post();
       </article>
       <style>
         .alumax-news-content {
-          font-family: 'Manrope', sans-serif;
+          font-family: inherit;
           font-size: 1rem;
           line-height: 1.75;
           color: #44474c;
@@ -156,7 +156,7 @@ while (have_posts()) : the_post();
         }
         .alumax-news-content h2,
         .alumax-news-content h3 {
-          font-family: 'Space Grotesk', sans-serif;
+          font-family: inherit;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: -0.01em;
@@ -182,7 +182,7 @@ while (have_posts()) : the_post();
         .alumax-news-content figure img { margin: 0; }
         .alumax-news-content figcaption {
           margin-top: 0.625rem;
-          font-family: 'JetBrains Mono', monospace;
+          font-family: inherit;
           font-size: 11px;
           line-height: 14px;
           letter-spacing: 0.08em;

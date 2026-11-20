@@ -325,7 +325,8 @@ $alumax_fallback_img = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKAO
           min-width: 2.25rem;
           height: 2.25rem;
           padding: 0 0.25rem;
-          font-family: 'JetBrains Mono', monospace;
+          font-family: inherit;
+          font-weight: 500;
           font-size: 12px;
           background: #ffffff;
           color: #191c1e;

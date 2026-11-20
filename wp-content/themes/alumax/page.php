@@ -32,7 +32,7 @@ get_header();
   </main>
   <style>
     .alumax-page-content h2 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: inherit;
       font-size: 24px;
       line-height: 32px;
       font-weight: 600;

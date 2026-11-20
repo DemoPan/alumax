@@ -50,74 +50,74 @@ colors:
   surface-variant: '#e0e3e5'
 typography:
   display-xl:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 56px
     fontWeight: '700'
     lineHeight: 64px
     letterSpacing: -0.03em
   display-xl-mobile:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 36px
     fontWeight: '700'
     lineHeight: 44px
     letterSpacing: -0.02em
   display-lg:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 44px
     fontWeight: '600'
     lineHeight: 52px
     letterSpacing: -0.02em
   display-lg-mobile:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 30px
     fontWeight: '600'
     lineHeight: 38px
     letterSpacing: -0.01em
   headline-lg:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 32px
     fontWeight: '600'
     lineHeight: 40px
     letterSpacing: -0.01em
   headline-md:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 24px
     fontWeight: '600'
     lineHeight: 32px
   headline-sm:
-    fontFamily: Space Grotesk
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 20px
     fontWeight: '600'
     lineHeight: 28px
   body-lg:
-    fontFamily: Manrope
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 18px
     fontWeight: '400'
     lineHeight: 28px
   body-md:
-    fontFamily: Manrope
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 15px
     fontWeight: '400'
     lineHeight: 24px
   body-sm:
-    fontFamily: Manrope
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 13px
     fontWeight: '400'
     lineHeight: 20px
   label-lg:
-    fontFamily: JetBrains Mono
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 14px
     fontWeight: '500'
     lineHeight: 20px
     letterSpacing: 0.04em
   label-md:
-    fontFamily: JetBrains Mono
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 12px
     fontWeight: '500'
     lineHeight: 16px
     letterSpacing: 0.06em
   label-sm:
-    fontFamily: JetBrains Mono
+    fontFamily: Inter, system-ui, sans-serif
     fontSize: 11px
     fontWeight: '500'
     lineHeight: 14px
