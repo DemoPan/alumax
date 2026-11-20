@@ -33,3 +33,23 @@ body.admin-bar > header { top: 32px; }
 @media screen and (max-width: 782px) {
   body.admin-bar > header { top: 46px; }
 }
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga' 1 !important;
+    -webkit-font-feature-settings: 'liga' !important;
+    font-variant-ligatures: normal !important;
+    -webkit-font-smoothing: antialiased;
+  }
+}

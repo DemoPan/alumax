@@ -34,6 +34,9 @@ $nav_items = [
   <link rel="manifest" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/site.webmanifest'); ?>">
   <link rel="shortcut icon" href="<?php echo esc_url(home_url('/favicon.ico')); ?>">
   <meta name="theme-color" content="#0d1b2a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <?php wp_head(); ?>
 </head>
 
