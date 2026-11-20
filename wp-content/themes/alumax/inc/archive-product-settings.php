@@ -9,6 +9,7 @@ function alumax_pa_defaults() {
         // Hero 页头
         'hero_title' => 'Engineered Architectural Metal & Facade Cladding Systems',
         'hero_subtitle' => 'Precision-manufactured aluminum alloys and cold-rolled steel building envelopes tailored for international curtain wall contractors, facade consultants, and commercial mega-projects. Engineered to withstand peak cyclonic wind pressures and stringent international fire safety mandates.',
+        'hero_bg' => '/wp-content/uploads/alumax-site-2e42e7ec62.jpg',
         // 页头右侧快捷入口
         'cta1_title' => 'Master Spec Book',
         'cta1_sub' => 'PDF Catalog, 42MB (Metric & Imperial)',
@@ -53,6 +54,7 @@ function alumax_pa_fields() {
             'fields' => [
                 $text('hero_title', '主标题'),
                 $textarea('hero_subtitle', '副标题'),
+                $text('hero_bg', 'Hero 背景图片 URL（默认工厂内景）'),
             ],
         ],
         'cta' => [

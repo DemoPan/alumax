@@ -2,50 +2,32 @@
 if (!defined('ABSPATH')) { exit; }
 get_header();
 ?>
-  <main class="w-full bg-surface">
+  <main class="w-full pt-20 bg-surface">
     <div class="flex flex-col w-full">
-      <?php get_template_part('template-parts/product-breadcrumb', null, array('current' => '')); ?>
       <!-- 1. INTRO HERO BAR -->
-      <section class="w-full bg-surface-container-low py-12">
-        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin">
-          <!-- Main Headline Grid -->
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div class="lg:col-span-8 space-y-4">
-              <h1 class="font-display-xl text-display-xl tracking-tight text-on-surface">
-                <?php echo esc_html(alumax_pa('hero_title')); ?>
-              </h1>
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-                <?php echo esc_html(alumax_pa('hero_subtitle')); ?>
-              </p>
+      <?php $hero_bg = alumax_pa('hero_bg') ?: '/wp-content/uploads/alumax-site-2e42e7ec62.jpg'; ?>
+      <section class="relative w-full overflow-hidden bg-[#0d1b2a] text-white py-12 md:py-16 border-b border-white/10">
+        <div class="absolute inset-0 z-0">
+          <img class="w-full h-full object-cover opacity-25 filter brightness-90 contrast-125" alt="Aluviona Factory Interior" src="<?php echo esc_url($hero_bg); ?>">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/85 to-[#0d1b2a]/60"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent"></div>
+          <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#d6e4f9 1px, transparent 1px); background-size: 32px 32px;"></div>
+        </div>
+        <div class="relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin space-y-6">
+          <div>
+            <?php get_template_part('template-parts/product-breadcrumb', null, ['variant' => 'hero', 'archive_label' => 'Products', 'archive_url' => get_post_type_archive_link('product'), 'current' => '']); ?>
+          </div>
+          <div class="space-y-4 max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/15 rounded-full font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">
+              <span class="material-symbols-outlined text-[15px]">precision_manufacturing</span>
+              <span>Architectural Systems Manufacturing Hub</span>
             </div>
-            <!-- Quick Spec Document CTA Stack -->
-            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-              <a class="group flex items-center justify-between p-4 rounded bg-primary text-on-primary hover:bg-secondary transition-all shadow-md"
-                href="#technical-resources">
-                <div class="flex items-center gap-3">
-                  <span
-                    class="material-symbols-outlined text-secondary-fixed group-hover:text-white transition-colors">menu_book</span>
-                  <div class="text-left">
-                    <span class="block font-headline-sm text-headline-sm leading-tight">Master Spec Book</span>
-                    <span class="block font-label-sm text-label-sm text-outline-variant group-hover:text-white/80">PDF
-                      Catalog, 42MB (Metric &amp; Imperial)</span>
-                  </div>
-                </div>
-                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">download</span>
-              </a>
-              <a class="flex items-center justify-between p-4 rounded bg-surface-container-highest hover:bg-secondary-fixed/50 text-on-surface transition-all"
-                href="#rfq-section">
-                <div class="flex items-center gap-3">
-                  <span class="material-symbols-outlined text-secondary">inventory_2</span>
-                  <div class="text-left">
-                    <span class="block font-headline-sm text-headline-sm leading-tight">Request Sample Box</span>
-                    <span class="block font-label-sm text-label-sm text-on-surface-variant">Includes 6 finishes &amp;
-                      core mockups</span>
-                  </div>
-                </div>
-                <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
-              </a>
-            </div>
+            <h1 class="font-display-xl text-display-xl tracking-tight text-white font-bold">
+              <?php echo esc_html(alumax_pa('hero_title')); ?>
+            </h1>
+            <p class="font-body-lg text-body-lg text-slate-300 max-w-3xl leading-relaxed">
+              <?php echo esc_html(alumax_pa('hero_subtitle')); ?>
+            </p>
           </div>
         </div>
       </section>
