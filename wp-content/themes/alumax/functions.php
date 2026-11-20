@@ -13,25 +13,14 @@ function alumax_setup() {
 add_action('after_setup_theme', 'alumax_setup');
 
 function alumax_assets() {
+    // 本地托管字体（符合欧盟 GDPR 合规要求，国内及海外均能秒级加载，零外部连接依赖）
+    $fonts_file = get_template_directory() . '/assets/css/fonts.css';
+    $fonts_ver  = file_exists($fonts_file) ? filemtime($fonts_file) : '1.0.0';
     wp_enqueue_style(
-        'alumax-fonts',
-        'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap',
+        'alumax-fonts-local',
+        get_template_directory_uri() . '/assets/css/fonts.css',
         [],
-        null
-    );
-
-    wp_enqueue_style(
-        'alumax-material-symbols',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0',
-        [],
-        null
-    );
-
-    wp_enqueue_style(
-        'alumax-material-symbols-variable',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap',
-        [],
-        null
+        $fonts_ver
     );
 
     $css_file = get_template_directory() . '/assets/css/main.min.css';
@@ -39,7 +28,7 @@ function alumax_assets() {
     wp_enqueue_style(
         'alumax-main',
         get_template_directory_uri() . '/assets/css/main.min.css',
-        [],
+        ['alumax-fonts-local'],
         $css_ver
     );
 }

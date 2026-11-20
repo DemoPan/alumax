@@ -166,6 +166,55 @@ if (!defined('ABSPATH')) {
   </div>
   <?php endif; ?>
 
+  <!-- Cookie Consent Banner (GDPR / ePrivacy Compliant) -->
+  <div id="aluviona-cookie-banner" class="hidden fixed bottom-4 left-4 right-4 sm:right-auto sm:max-w-md sm:bottom-6 sm:left-6 z-50 bg-[#0d1b2a]/95 backdrop-blur-md border border-white/15 p-5 shadow-2xl rounded-sm text-white">
+    <div class="flex items-start gap-3.5">
+      <div class="w-8 h-8 rounded-full bg-secondary-fixed/15 text-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+        <span class="material-symbols-outlined text-[20px]">cookie</span>
+      </div>
+      <div class="flex-1 space-y-2">
+        <div class="font-headline text-sm font-bold text-white tracking-tight">Cookie &amp; Privacy Preferences</div>
+        <p class="font-body text-xs text-slate-300 leading-relaxed">
+          We use essential cookies to ensure site functionality and performance cookies to optimize your architectural inquiry experience. Read our <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="text-secondary-fixed font-semibold underline hover:text-white transition-colors">Privacy Policy</a> to learn more.
+        </p>
+        <div class="flex flex-wrap items-center gap-2.5 pt-2">
+          <button id="cookie-accept-all" type="button" class="px-4 py-2 bg-secondary hover:bg-secondary-fixed text-on-secondary font-label text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm cursor-pointer">
+            Accept All
+          </button>
+          <button id="cookie-essential-only" type="button" class="px-3.5 py-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-label text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer">
+            Essential Only
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var key = 'aluviona_cookie_consent';
+      var banner = document.getElementById('aluviona-cookie-banner');
+      if (!banner) return;
+      if (!localStorage.getItem(key)) {
+        setTimeout(function () {
+          banner.classList.remove('hidden');
+        }, 600);
+      }
+      function dismiss(val) {
+        try { localStorage.setItem(key, val); } catch (e) {}
+        banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(12px)';
+        setTimeout(function () {
+          banner.style.display = 'none';
+        }, 320);
+      }
+      var acceptBtn = document.getElementById('cookie-accept-all');
+      var essentialBtn = document.getElementById('cookie-essential-only');
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { dismiss('accepted'); });
+      if (essentialBtn) essentialBtn.addEventListener('click', function () { dismiss('essential'); });
+    })();
+  </script>
+
   <?php wp_footer(); ?>
 </body>
 
